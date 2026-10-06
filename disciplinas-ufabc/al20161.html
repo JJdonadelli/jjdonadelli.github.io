@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
+<title>Álgebra Linear</title>
+
+<style type="text/css" >
+
+  body { font-family: Ubuntu, sans-serif; }
+  
+  div.my_wrapper{
+  width: 930px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 908px;
+  height: 1s0px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+
+  li.my_nav_link2{
+#  text-align: left;
+#  float: right;
+  list-style: none;
+  padding-right: 10px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 510px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 10px;
+  width: 330px;
+  border: 1px solid gray;
+    background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 908px;
+  border: 1px solid gray;
+  }
+  
+</style>
+
+<script language="javascript">
+
+  function showorhide(enla , id){
+            var ele  = document.getElementById(id);    
+
+            
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+		enla.innerHTML = "[+]";
+            }
+	    else {
+		ele.style.display = "block";
+		enla.innerHTML = "[-]";
+            }
+  }
+
+  
+</script>
+</head>
+
+<body  bgcolor="#ffffff">
+  
+  <div class="my_wrapper">
+    <!----------------------------------------------------------------------------------------------------------->    
+    <!----------------------------------------------------------------------------------------------------------->    
+    <div class="my_header">
+      <center>
+	<font size="+3" color="blue">Álgebra Linear </font> 
+	<font size="+3"> /
+	</font>
+	<font size="+2">
+	  Prof.: <a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair Donadelli</a>
+	</font>
+      </center>
+      <ul>
+	<font size="+1">
+<!--	  <li class="my_nav_link"><font color="blue"><a href="#links"><i>links</i></a></font> </li>-->
+	  <li class="my_nav_link"><font color="blue"><a href="Conceitos.html"><i>Conceitos</i></a></font> </li>
+	  <li class="my_nav_link"><font color="blue"><a href="#foot"><i>Notícias</i></a></font> </li>
+	</font>
+      </ul>
+      <b>Atendimento</b>: <font size=-1>2ª feira depois da aula
+	ou horário de atendimento: 4ª 14h-15h na sala 546, torre 2,
+	bloco A. <br />Em outro horário, agende por email</font>
+    </div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+<div style="display:block;text-align:left"><img src="../images/emailufabc.png" border="0"></a></div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+    <div class="my_left_box">
+	      
+      <p align="justify">
+	<b style= "color: blue">Código</b> MCTB001-13 (BC 1425)
+	<b style= "color: blue">TPI</b> 6-0-5 
+	<b style= "color: blue">Recomendações</b> Geometria Analítica
+	<b style= "color: blue">Horário</b> 2ª as 10hs na 211-0, 4ª 08hs na 104-0 e 6ª as 10hs na 211-0.   
+	<b style= "color: blue">Monitoria</b>  
+
+<li>Monitor Antero:
+<ul>
+<li>Quarta, 13-15 horas, Santo André - SALA S-304-1
+<li>Sexta, 16-18 horas, São Bernardo do Campo - SALA A2 - S306.
+</ul>
+<li>Monitor Yuri:
+<ul>
+<li>Segunda das 17:30 às 18:30 horas, SA, Bloco A, Sala S-006-0
+<li>Terça das 17:30 às 18:30 horas, SA, Bloco A, Sala A-101-0
+<li>Quarta das 17-19 horas, SA, Bloco A, Sala S-303-1
+</ul>
+</ul>
+	<b style= "color: blue">Conteúdo Programatico:</b> Sistemas de
+	Equações Lineares. Espaço Vetorial.  Transformações
+	Lineares. Autovalores e
+	Autovetores. <a onclick="showorhide(this , 'EMENTA'); return
+	false" href="#" style="font-family: monospace;
+	text-decoration:none"> [+]</a>
+      </p>
+  <!----------------------------------------------------------------------------------------------------------->      
+  <DIV id="EMENTA" style="display: none">
+    Sistemas de Equações Lineares: <font size=-1>Sistemas e
+      matrizes; Matrizes escalonadas; Sistemas homogêneos; Posto e
+      Nulidade de uma matriz.</font> Espaço Vetorial:<font size=-1>
+      Definição e exemplos; Subespaços vetoriais; Combinação
+      linear; Dependência e independência linear; Base de um espaço
+      vetorial e mudança de base.</font>  Transformações
+    Lineares: <font size=-1> Definição de transformação linear e
+      exemplos; Núcleo e imagem de uma transformação linear;
+      Transformações lineares e matrizes; Matriz mudança de
+      base.</font>  Autovalores e Autovetores: <font size=-1>
+      Polinômio característico; Base de autovetores; Diagonalização
+      de operadores.</font>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->    
+  <font>
+    <p> 
+      <b style= "color:blue">Referências
+	<a onclick="showorhide(this,'REFS'); return false" href="#"
+	style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </b>
+    </p>
+  </font>
+
+  <ol>
+
+    <font size=-1>
+      <p><b style= "color: blue">Bibliografia básica</b></p>
+    </font>
+    
+    <li>T. Apostol, <i>Calculus, volume II</i>. Ed. Wiley, 1969.
+      <b><font size=-2>[515.15 APOc2]</font></b>.<br/> Em
+      Português <i>Cálculo II</i>. Ed. Reverté <b><font size=-2> [515.15 APOSca]</font></b> 
+    </li>
+    
+    <li>Gilbert Strang, <i>Álgebra Linear e suas aplicações</i> <b><font size=-2>[512.5 STRAal]</font></b>
+    </li>
+    
+
+    <!----------------------------------------------------------------------------------------------------------->    
+
+    <DIV id="REFS" style="display: none">
+      
+      <font size=-1>
+	<p><b style= "color: blue">Textos eletrônicos</b></p>
+      </font>
+     
+      <li> Jerônimo C. Pellegrini,<a href="http://aleph0.info/cursos/al/notas/al.pdf">
+	<i> Notas de aula de Álgebra Linear</i></a>.
+     </li>
+
+      <li>Sérgio Luís Zani, <i>Álgebra Linear</i> (<a href="http://www.icmc.usp.br/~szani/alglin.pdf">pdf</a>)
+      </li>
+
+      <li>Jim Hefferon, <i>Linear Algebra</i>: 
+	<a href="http://joshua.smcvt.edu/linearalgebra/book.pdf">livro
+	</a> e 
+	<a href="http://joshua.smcvt.edu/linearalgebra/jhanswer.pdf">resolução dos exercícios
+	</a>
+      </li>
+      
+      <li>Sergei Treil, 
+	<a href="http://www.math.brown.edu/~treil/papers/LADW/book.pdf"><i>Linear Algebra Done Wrong</i></a>.
+      </li>
+
+
+      <li>Antônio
+      C. Faleiros, <a href="https://sites.google.com/site/professorfaleiros/UFABCDocsAlgLin/AlgebraLinearProfessorFaleiros.pdf?attredirects=0">
+	<i> Notas de aula de Álgebra Linear</i></a>.
+      </li>
+	  
+      <font size=-1>
+	<p><b style= "color: blue">Bibliografia complementar</b></p>
+      </font>
+	  
+      <li>Elon Lages, <i>Álgebra Linear</i>, 
+	<b><font size=-2>[512 LIMa7]</font></b>
+      </li>
+	  
+      <li>Boldrini e outros, <i>Álgebra linear</i>,
+	<b><font size=-2>[512.5 BOLa3]</font></b>
+      </li>
+	  
+      <li>Howard Anton, <i>Álgebra linear com aplicações</i>,  
+	<b><font size=-2>[512.5 ANTOal10]</font></b>
+      </li>
+	  
+	  
+      <font size=-1>
+	<p><b style= "color: blue">Livros bacanas para os mais empolgados</b></p>
+      </font>
+	  
+      <li><i>A (terse) introduction to linear algebra</i>, Yitzhak Katznelson. 
+	<b><font size=-2>[512.5 KATZte]</font></b>
+      </li>
+	  
+      <li> <i>Linear Algebra Done Right</i>. Axler, S.,
+	    <b><font size=-2>[512.5 AXLl2]</font></b>
+      </li>
+	  
+      <font size="-1">
+	<h4><i>Material Complementar</i></h4>
+	<a name="mc"></a>
+	<ol>
+	  <li> R. Bianconi,
+	    <a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como
+	      ler e estudar matemática?</a>  
+	  </li>
+	  <li>
+	    Fernando Q. Gouvêa e Shai
+	    Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+	      to Read Mathematics</a> ( uma tradução "rápida e grosseira",
+	    segundo o
+	    tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+	  </li>
+	</ol>
+      </font>
+    </DIV>
+    <!----------------------------------------------------------------------------------------------------------->    
+  </ol>
+
+  
+  <font size="+1"><b style= "color:blue">Avaliação</b> </font><a name="provas"></a> 
+
+  <p align="justify"><b>TRÊS PROVAS: 07/03, 04/04, 04/05</b>. 
+  </p>
+		  
+  <p>
+    <ul>
+      <li class="my_nav_link2"><b>Substitutiva</b>
+	<a onclick="showorhide(this,'SUB'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </li>   
+      <li class="my_nav_link2"><b>Exame de Recuperação</b>
+	<a onclick="showorhide(this,'REC'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </li>
+      <li class="my_nav_link2"><b>Conceito Final</b>
+	<a onclick="showorhide(this,'NOTA'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </li>
+    </ul>
+  </p>
+
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="SUB" style="display: none" >
+    <p style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Sub</u>: Para o aluno que <b>faltou em dia de prova</b> com
+      uma <b><a href="http://www.ufabc.edu.br/index.php?option=com_content&view=article&id=8901:resolucao-consepe-nd-181-regulamenta-a-aplicacao-de-mecanismos-de-avaliacao-substitutivos-nos-cursos-de-graduacao-da-ufabc&catid=427:consepe-resolucoes">justificativa
+      válida</a></b> a ser realizada  em <b>06/05</b>, último dia letivo do quadrimestre.
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="REC" style="display: none">
+    <p  style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Exame</u>: <i>Qualquer aluno que não reprovou por falta</i>
+      pode fazer o exame de recuperação. Nesse caso, o conceito final
+      será o conceito obtido no exame. O exame será realizada na 1ª
+      semana do Q2 em 08/06 as 14hs na sala S008-0.
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="NOTA" style="display: none">
+    <p style="padding:6px; background-color: white; border: gray 2px
+      solid" > A avaliação final de cada aluno <u>não</u> será o
+      resultado de alguma média feita a partir das avaliações.  O
+      resultado de cada avaliação reflete o desempenho do aluno <u>em
+      todo o curso até aquele instante</u>. Isso significa que a cada
+      conceito atribuído durante o curso leva em conta o resultado das
+      avaliações até o momento. O conceito final da disciplina poderá
+      ser:<br />
+      <br />
+	  <b>F</b> - Reprovado. O aluno deve cursar novamente a disciplina.
+      <br />
+      <br />
+	  <b>D</b> - Aproveitamento mínimo não satisfatório dos conceitos
+	  da disciplina, com familiaridade parcial do assunto e alguma
+	  capacidade para resolver problemas simples, mas demonstrando
+	  deficiências que exigem trabalho adicional para prosseguir em
+	  estudos avançados. Nesse caso, o aluno é aprovado na
+	  expectativa de que obtenha um conceito melhor em outra
+	  disciplina, para compensar o conceito D no cálculo do CR.
+      <br />
+      <br />
+	  <b>C</b> - Desempenho mínimo satisfatório, demonstrando
+	  capacidade de uso adequado dos conceitos da disciplina,
+	  habilidade para enfrentar problemas relativamente simples e
+	  prosseguir em estudos avançados.
+      <br />
+      <br />
+	  <b>B</b> - Bom desempenho, demonstrando boa capacidade de uso
+	  dos conceitos da disciplina.
+      <br />
+      <br />
+	  <b>A</b> - Desempenho excepcional, demonstrando excelente
+	  compreensão da disciplina e do uso da matéria.
+    </p>
+  </DIV>
+ <!----------------------------------------------------------------------------------------------------------->
+
+ <h4><i>Links</i></h4>
+ <a name="links"></a>
+ <ol>
+   <li>
+     <a href="http://www.technologyreview.com/view/519581/how-google-converted-language-translation-into-a-problem-of-vector-space-mathematics/">
+       How Google Converted Language Translation Into a Problem of
+      Vector Space Mathematics</a>
+   </li>
+   <li>
+     <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5459511&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5459511">
+       A Linear Algebraic Approach to Kalman Filtering</a>(precisa de IP autorizado)
+   </li>
+   <li>
+     <a href="http://teamat.oxfordjournals.org/content/27/2/53.abstract">Motivating
+      the concept of eigenvectors via cryptography</a></li>
+   <li>
+     <a href="http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf">The
+       $25,000,000,000 eigenvector. The linear algebra behind
+       Google</a>
+   </li>
+   <li>
+     The Reduced Row Echelon Form of a Matrix is Unique: A Simple
+      Proof, Thomas Yuster
+      [<a href="http://web.gccaz.edu/~wkehowsk/225-linear-10-11-sp/yuster-rref-unique.pdf">pdf</a>]
+      (uma demonstração simples de que a forma reduzida escalonada por
+      linhas de uma matrix é única)
+   </li>
+   <li>
+     <a href="http://www.wolframalpha.com/examples/Matrices.html">Matrizes
+       no Wolfram alpha</a>
+   </li>
+   <li>
+     <A href="https://www.dpmms.cam.ac.uk/~wtg10/vspaces.html">Why
+       study finite-dimensional vector spaces in the abstract if they
+       are all isomorphic to Rn?</a>
+   </li>
+   <li>
+     <a href="ProvasAntigas">Provas anteriores</a>
+   </li>
+ </ol>
+</div>
+<!----------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------->    	    
+<div style="display:inline;float:left;margin:15px 45px">
+  <img src="../images/alp3.png" height="199" width="300" border="0"></img>
+</div>
+<!----------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------->    	    
+<div class="my_right_box">
+  
+  <center><b>Programação das aulas</b> (tentativa)</center>
+  
+  <center>
+    <font color="blue"><a href="http://prograd.ufabc.edu.br/doc/calendario_academico_2016.pdf">
+	<i>Calendário acadêmico</i></a></font> 
+  </center>
+  
+  <ul>
+    <li>
+      <b>semana 01</b> --
+      
+      Administrativia. Motivação. [<A href="apresentacao.pdf">slides</a> (atenção, tem  erros corrigidos só em sala)]
+      Espaço Vetorial. Subespaço.  <a href="lista1.pdf">Lista
+      1</a>
+    </li>
+    
+    <li><b>semana 02</b> -- 
+      
+      Combinação Linear. Dependência/Independência Linear.
+      Base. Dimensão.  <a href="lista2.pdf">Lista
+      2</a>
+    </li>
+    
+    <li><b>semana 03</b> -- 
+      Sistemas Lineares. Matrizes: subespaços
+      associados, posto, nulidade.<a href="lista3.pdf">Lista
+      3</a>
+    </li>
+    
+    <li><b>semana 04</b>  -- 
+      
+      <a href="prova1.pdf"><b>prova</b></a><br /> Transformações Lineares. Núcleo e Imagem,
+      posto e nulidade de Transformações
+      Lineares. <a href="lista4.pdf">Lista 4</a>
+    </li> 
+    
+    <li><b>semana 05</b>  -- 
+      
+      Transformações Lineares: Teorema do posto.  Matrizes e
+      transformações Lineares. Matriz mudança de base.
+    </li>
+    
+    <li><b>semana 06</b>   -- 
+      
+      Espaço vetorial das transformações.
+      <a href="lista5.pdf">Lista 5</a>
+    </li>
+    
+    <li><b>semana 07</b>  -- 
+      
+      Matrizes: inversas; elementares. Aula de exercícios.
+    </li>
+    
+    <li><b>semana 08</b> -- 
+      <a href="prova2.pdf"><b>prova</b></a></br>
+      Determinantes. 
+    </li>
+    
+    <li><b>semana 09</b> -- Determinantes.</br>
+    <a href="lista6.pdf">Lista 6</a>
+    </li>
+    
+    <li><b>semana 10</b>   -- 
+      Autovalores e autovetores.</br>      
+    </li>
+    
+    <li><b>semana 11</b> --  
+
+      Autovalores e autovetores.</br>
+      Diagonalização. <a href="lista7.pdf">Lista 7</a>
+    </li>
+    <li><b>semana 12</b>  -- 
+      <a href="prova3.pdf"><b>prova</b></a>
+      <b>prova sub</b>
+    </li>
+  </ul>
+</div>
+<!----------------------------------------------------------------------------------------------------------->    	    
+<!----------------------------------------------------------------------------------------------------------->    	        
+    <div class="my_footer">
+      <a name="foot">
+	<h2>Notícias</h2>
+      </a>
+      <ol>
+	<li>
+	  <i>fique ligado neste espaço</i> ou
+	  acompanhe <a href="http://twitter.com/QuadroDeAvisos">por aqui</a>
+	</li>
+	<li>
+	  lista 1 disponível. [em 17/02]
+	</li>
+	<li>
+	  lista 2 disponível. [em 24/02]
+	</li>
+	<li>
+	  lista 3 disponível. 
+	</li>
+	<li>
+	  Confira horário da monitoria acima
+	</li>
+	<li>
+	  lista 4 disponível.  [em 09/03]
+	</li>
+	<li>
+	  lista 5 disponível.  [em 21/03]
+	</li>
+	<li>
+	  conceitos da P1 lançados [em 27/03]
+	</li>
+	<li>
+	  a monitoria da Daniele foi cancelada [em 27/03]
+	</li>
+	<li>
+	  Transformações lineares também será cobrado na P3.
+	</li>
+	<li>
+	  conceitos P1+P2 disponíveis [em 18/04]
+	</li>
+	<li>
+	  confira acima horários no novo monitor[em 18/04]
+	</li>
+	<li>
+	  Quem for fazer a sub deve me enviar um email até a véspera e
+  dizer em qual prova faltou (P1,P2,P3).
+	</li>
+	<li>Quem for fazer o exame deve me enviar um email até a
+	véspera.
+	</li>
+	<li> Conceitos finais no link [em 05/05]
+	</br>
+  <b>IMPORTANTE:</b>
+  <ul>
+    <li>
+      Confiram suas faltas, > 18 faltas é reprovado.
+    </li> 
+    <li>
+      Se existir a mínima possibilidade de vc fazer o exame mande um
+      email pra mim o quanto antes. </br>Ponha no assunto -exame algelin-
+    não precisa escrever nada na mensagem.  </br>Será para combinarmos
+  uma data que agrade a maioria.
+	</li> 
+	<li> Vista na 6ª das 11h50 a 13hs na minha sala.
+	</li>
+      </ul>
+  </li> 
+
+      </div>
+<!----------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------->    	          
+    </body>
+  </html>
+  

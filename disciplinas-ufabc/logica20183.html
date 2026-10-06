@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plano de aula:Lógica 2018-3</title>
+
+<style type="text/css" >
+
+  body { font-family: sans-serif; }
+  
+  div.my_wrapper{
+  width: 930px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 908px;
+  height: 1s0px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+
+  li.my_nav_link2{
+#  text-align: left;
+#  float: right;
+  list-style: none;
+  padding-right: 10px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 330px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 10px;
+  width: 510px;
+  border: 1px solid gray;
+    background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 908px;
+  border: 1px solid gray;
+  }
+
+  ol#page_one {margin-left:0; padding-left:0; counter-reset:item -2} ol>li
+  {margin-left:0; padding-left:0; counter-increment:item;
+  list-style:none inside} ol>li:before {content: "[" counter(item)
+  "]" ; padding-right:0.5em; font-weight: bold;}
+
+
+  ol#page_two {margin-left:0; padding-left:0; counter-reset:item 3} ol>li
+  {margin-left:0; padding-left:0; counter-increment:item;
+  list-style:none inside} ol>li:before {content: "[" counter(item)
+  "]" ; padding-right:0.5em; font-weight: bold;}
+
+
+
+</style>
+
+<script language="javascript">
+
+  function showorhide(enla , id){
+            var ele  = document.getElementById(id);    
+
+            
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+		enla.innerHTML = "[+info]";
+            }
+	    else {
+		ele.style.display = "block";
+		enla.innerHTML = "[-]";
+            }
+  }
+
+  
+</script>
+
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       
+
+
+
+
+</head>
+
+<body  bgcolor="#fffff">
+  
+  <div class="my_wrapper">
+    <!----------------------------------------------------------------------------------------------------------->    
+   
+    <div class="my_header">
+      <center>
+	<font size="+3" color="blue">Lógica Básica</font> (2018-3) 
+	<font size="+3">  / </font>
+	<font size="+2">
+	  Prof.: <a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair Donadelli</a> 
+	</font> 
+      </center>
+      <ul>
+	<font size="+1">
+<!--	  <li class="my_nav_link"><font color="black"><a href="#links"><i>links</i></a></font> </li>-->
+	  <li class="my_nav_link"><font color="black"><a href="#conc"><i>Conceitos</i></a></font> </li>
+	  <li class="my_nav_link"><font color="black"><a href="#foot"><i>Notícias</i></a></font> </li>
+	</font>
+      </ul>
+      <b>Atendimento</b>: <font size=-1> sala 546-2: 2ª 10h-12h, 18h-19h, 21h-22h; 5ª 20h-21h </font>
+      <div style="display:block;text-align:left">Contato: <img src="../images/emailufabc2.png" border="0"></a></div>
+    </div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+
+    <!----------------------------------------------------------------------------------------------------------->    	    
+    <div class="my_left_box">
+	      
+      <p align="justify">
+	<b style= "color: black">Código</b> NHI2049-13
+	<b style= "color: black">TPI</b> 4-0-4
+	<b style= "color: black">Onde</b> <b>(D)</b> 2ª 08h e 5ª 10h na
+	 302-1 e <b>(N)</b> 2ª 19h e 5ª 21h na 311-3
+
+	<b style= "color: black">Ementa:</b> Cálculos proposicional e
+de predicados. Semântica. Consistência e
+completude.<a onclick="showorhide(this , 'EMENTA'); return false"
+href="#" style="font-family: monospace; text-decoration:none">
+[+aqui]</a>
+      </p>
+  <!----------------------------------------------------------------------------------------------------------->      
+  <DIV id="EMENTA" style="display: none">
+    Cálculo proposicional (ou sentencial)
+clássico: <font size=-1>noções de linguagem, conectivos, dedução e
+teorema, semântica de valorações.</font> Cálculo clássico de predicados
+de primeira ordem:<font size=-1> os conceitos de linguagem de primeira
+ordem, igualdade, teorema da dedução, conseqüência sintática.</font>
+Semântica: <font size=-1> noções de interpretação, verdade em uma
+estrutura, modelo.</font>  O conceito formal de teoria, fecho
+dedutivo. Exposição informal de temas, e.g., acerca da consistência de
+teorias, completude de teorias.
+  </DIV>
+
+  <DIV>
+    <p align="justify"><b>Objetivos:</b> Apresentar conceitos e
+    teoremas de lógica de primeira ordem clássica e seus usos na
+    atividade conceitual em matemática e computação.</p>
+</DIV>
+
+  <!----------------------------------------------------------------------------------------------------------->    
+  <font>
+    <p> 
+      <b style= "color:black">Referências
+	<a onclick="showorhide(this,'REFS'); return false" href="#"
+	style="font-family:monospace;text-decoration:none">[+aqui]
+	</a>
+      </b>
+    </p>
+  </font>
+
+  <UL>
+      <li>
+	<a href="https://anotacoesdeaula.wordpress.com/category/logica/">Notas
+	de aula</a> (versões corrigidas/adaptadas-ao-quadrimestre dessas notas no quadro
+	laranja ao lado)
+    </li>
+  </UL>
+
+  
+  <ol id="page_one">
+
+<li>
+      OLIVEIRA, A.J.F.  <i>Lógica & aritmética: uma introdução à
+      lógica, matemática e computacional</i></a>.
+      <b><font size=-2><u><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=14049">[511.3
+      OLIVlo3]</a></u></font></b>.
+    </li>
+    
+    <li>Hodel, Richard E., <i>An introduction to mathematical
+    logic</i>.
+      <b><font size=-2><u><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=48830">[511.3]</a></u></font></b>
+    </li>
+
+ <font size=-1>
+	<p><b style= "color: black">Bibliografia básica</b></p>
+      </font>
+    
+    <li>Stefan BILANIUK, <i>A Problem Course in Mathematical
+	Logic</i>
+	(<a href="http://euclid.trentu.ca/math/sb/pcml/pcml-16.pdf">pdf</a>)
+    </li>
+
+    <li>D. Van DALEN, <i>Logic and
+	structure</i>. <a href="https://link.springer.com/book/10.1007%2F978-1-4471-4558-5">
+	Livro digital</a>(exige IP da ufabc)
+      <b><font size=-2><u><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=19592">[511.3
+	      DALl4]</a></u></font></b>
+    </li>
+       <li>Elliott MENDELSON. <i>Introduction to mathematical
+	  logic</i>.<b><font size=-2><u><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=12951">[511.3
+	  MENDin4]</a></u>; <u><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=1492">[511.3
+	  MENDin5]</a></u></font></b>
+      </li>   
+    <font size=-1>
+	<p><b style= "color: black">Bibliografia complementar</b></p>
+      </font>
+ </ol>
+    <!----------------------------------------------------------------------------------------------------------->    
+
+    <DIV id="REFS" style="display: none">
+      
+     
+      
+      <ol id="page_two">      
+
+    <li>Herbert  ENDERTON,<i>A mathematical introduction to
+	logic.</i>  <b><font size=-2>[511.3 ENDEma2]</font></b>
+	(<a href="http://libgen.io/ads.php?md5=0ABDEF2D4C533352D09EB58A7868E6F9">aqui</a>)
+    </li>
+    <li>Wolfgang RAUTENBERG, <i>A Concise Introduction to Mathematical
+	Logic</i>.  <b><font size=-2><u><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=75589
+	">[511.3RAUTco3]</a></u></font></b>. <a href="http://link.springer.com/book/10.1007%2F978-1-4419-1221-3">Livro
+	digital</a> (exige IP da UFABC)
+    </li>
+    
+  
+    <li>
+      R. SMULLYAN, <i>Lógica de primeira ordem</i>.
+      <b><font size=-2>[511.3 SMUl]</font></b>
+    </li>
+
+     
+    <li>
+      M. BEN-ARI,
+      <i>Mathematical Logic for Computer Science</i>
+      <a href="http://link.springer.com/book/10.1007%2F978-1-4471-4129-7">Livro
+	digital</a> (exige IP da UFABC) <b><font size=-2>[005.133
+	BENAad2]</font></b>
+    </li>
+    
+    <li>C. MORTARI, <i>Introdução à lógica</i>.
+      <b><font size=-2><a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=387">[511.3
+	    MORTin]</a></font></b>
+    </li>
+    
+    
+<!--                <font size=-1>
+      <p><b style= "color: black">Notas de aula</b></p>
+      </font>
+
+      <li>
+	Lou van den Dries, <i>Mathematical Logic Lecture Notes </i>
+	(<a href="http://www.math.uiuc.edu/~vddries/main.pdf">pdf</a>)
+      </li>
+
+      <li>
+	David W. Kueker, <i>Notes on Mathematical Logic</i>
+	(<a href="http://www.math.umd.edu/~dkueker/712.pdf">pdf</a>)
+      </li>
+      
+      <li> Rogério Fajardo, <i>Lógica Matemática</i>
+      <a href="http://www.ime.usp.br/~fajardo/Logica.pdf">pdf</a>
+      </li>
+
+     <font size=-1>
+	<p><b style= "color: black">Para os mais empolgados</b></p>
+       </font>
+       
+      <li>
+	Joseph R. SHOENFIELD, <i>Mathematical logic </i>
+	<b><font size=-2>[511.3 SHOEma]</font></b>
+      </li>
+      
+      <li>Peter G HINMAN,
+	<i>Fundamentals of mathematical logic</i>
+	<b><font size=-2>[511.3 HINf]</font></b>
+      </li>
+
+ <font size=-1>
+	<p><b style= "color: black">Um livro didático</b></p>
+      </font>
+
+  -->    
+    <li>
+      Leônidas HEGENBERG, <i>Lógica</i>. (<a href="http://libgen.io/ads.php?md5=D121C44AF867467292C163B932148D6B">aqui</a>)
+    </li>
+    
+
+      
+      <font size="-1">
+	<h4><i>Material Complementar</i></h4>
+	<a name="mc"></a>
+       <ol>
+	  <li> <i><a href="http://libgen.io/ads.php?md5=0D216DBA43D93B44EB7E589C6233D21F">Logicomix</a>: An epic search for truth</i> by Apostolos
+Doxiadis, Christos Papadimitriou
+	  </li>
+	  <li> R. Bianconi,
+	    <a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como
+	      ler e estudar matemática?</a>  
+	  </li>
+	  <li>
+	    Fernando Q. Gouvêa e Shai
+	    Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+	      to Read Mathematics</a> ( uma tradução "rápida e grosseira",
+	    segundo o
+	    tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+	  </li>
+	</ol>
+      </font>
+    </DIV>
+    <!----------------------------------------------------------------------------------------------------------->    
+  </ol>
+
+  
+  <font size="+1"><b style=
+  "color:black">Avaliação</b> </font><a name="provas"></a>
+
+  <p align="justify"> Consiste de duas provas, em cada uma será
+  atribuído um conceito, o conceito final é de acordo com 
+  <a href="../tabela.html">critério de composição de notas</a></p>
+ 
+  
+      <p align="justify"><b>2 PROVAS:</b>
+
+	<br/><b>P1</b>01/11, conteúdo: lógica proposicional
+	<br/><b>P2</b>03/12, conteúdo: lógica de predicados
+	</br><b>SUB<a onclick="showorhide(this,'SUB'); return false"
+	href="#"
+	style="font-family:monospace;text-decoration:none">[+info]
+      </a></b>06/12
+      	</br><b>REC<a onclick="showorhide(this,'REC'); return
+	false" href="#"
+	style="font-family:monospace;text-decoration:none">[+info]
+    </a></b>18/12, Todo o conteúdo. </br>(Atenção para o calendário de
+    reposição 18/12(3ª) repõe 19/11(2ª), portanto será no horário da
+    aula de segunda, 8hs(M) e 19hs(N), na mesma sala)
+  </p>
+		  
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="SUB" style="display: none" >
+    <p style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Sub</u>: Para o aluno que <b>faltou em dia de prova</b> com
+      uma <b><a href="http://www.ufabc.edu.br/administracao/conselhos/consepe/resolucoes/resolucao-consepe-nd-181-regulamenta-a-aplicacao-de-mecanismos-de-avaliacao-substitutivos-nos-cursos-de-graduacao-da-ufabc">justificativa
+      válida</a></b> (resolução 181-Consepe). Quem for fazer a
+      avaliação substitutiva deve me enviar um email com assunto
+      <tt>[sub lógica]</tt> até dois dias antes da data da avaliação
+      (4/12) dizendo qual prova será subistituída, o período e com
+      documento comprobatório (Art. 2º da res. 181).
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="REC" style="display: none">
+    <p  style="padding:6px;  background-color: white; border: gray 2px solid" align="justify"><a name="aqui"></a>
+      <u>Exame</u>: <i>Qualquer aluno que não reprovou por falta</i>
+      pode fazer o exame de recuperação. Nesse caso, o conceito final
+      será o conceito obtido no exame. Quem for fazer a avaliação deve
+      me enviar um email com assunto [<tt>rec lógica</tt>] até o dia
+      anterior da data marcada para a avaliação para que eu possa
+      imprimir a quantidade certa de provas.
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+<!--  <DIV id="NOTA" style="display: none">
+    <p style="padding:6px; background-color: white; border: gray 2px
+	      solid" >
+	   <br />O conceito final da disciplina poderá
+      ser:<br />
+	   <br />
+	  <b>F</b> - Reprovado. O aluno deve cursar novamente a disciplina.
+      <br />
+      <br />
+	  <b>D</b> - Aproveitamento mínimo não satisfatório dos conceitos
+	  da disciplina, com familiaridade parcial do assunto e alguma
+	  capacidade para resolver problemas simples, mas demonstrando
+	  deficiências que exigem trabalho adicional para prosseguir em
+	  estudos avançados. Nesse caso, o aluno é aprovado na
+	  expectativa de que obtenha um conceito melhor em outra
+	  disciplina, para compensar o conceito D no cálculo do CR.
+      <br />
+      <br />
+	  <b>C</b> - Desempenho mínimo satisfatório, demonstrando
+	  capacidade de uso adequado dos conceitos da disciplina,
+	  habilidade para enfrentar problemas relativamente simples e
+	  prosseguir em estudos avançados.
+      <br />
+      <br />
+	  <b>B</b> - Bom desempenho, demonstrando boa capacidade de uso
+	  dos conceitos da disciplina.
+      <br />
+      <br />
+	  <b>A</b> - Desempenho excepcional, demonstrando excelente
+	  compreensão da disciplina e do uso da matéria.
+    </p>
+    </div>
+ -->
+
+<h4><i>Links</i></h4>
+ <a name="links"></a>
+ <ul>
+   <li>
+    Material de outros anos: <a href="ProvasAntigas">Provas</a>, 
+    <a href="ListaAntigas">Listas</a> e 
+    <a href="SlidesAntigos">Slides</a>.
+   </li>
+<!--
+   </li>
+
+   <li> <a href="https://en.wikipedia.org/wiki/Hilbert%27s_problems#Table_of_problems">Os problemas de Hilbert</a> (wikipedia)
+   </li>
+   <li><a href="https://en.wikipedia.org/wiki/Entscheidungsproblem">Entscheidungsproblem (problema de decisão)</a> (wikipedia)
+   </li>
+   <li>
+     <a href="http://www.claymath.org/millennium-problems">Os problemas do milênio</a> (Clay Mathematics Institute)
+   </li>
+   <li>
+     <a href="https://www.youtube.com/watch?v=_vKMyRj855A">O problema do
+Caixeiro Viajante</a> (Isto é matemática)
+   </li>
+-->
+ </ul>
+</div>
+
+
+
+<div style="display:inline;float:left;margin:0px 100px">
+  <img src="../Cartoons/445-three-logicians-walk-into-a-bar.png" height="200" width="380" border="0"></img>
+</div>
+<!----------------------------------------------------------------------------------------------------------->    	    
+<div class="my_right_box">
+  
+  <center><b>Programação das aulas</b></center>
+  
+  <center>
+    <font color="black"><a href="http://prograd.ufabc.edu.br/pdf/calendario_academico_2018.pdf">
+	<i>Calendário acadêmico</i></a></font> 
+  </center>
+  
+  <ul>
+    <li>
+      <b>semana 01</b> A presentação da disciplina. Linguagem da lógica
+      proposicional: alfabeto, fórmula, subfórmula,
+      indução. <i>Refs.</i>: sec 2.1 de [2]; Cap 1 de [1]; sec 1.1 de
+      [5]. Semântica: valoração; Tautologia e contradição.
+      Equivalência semântica.<i>Refs.</i>: sec 2.2 de [2]; Cap 2 de
+      [1]; sec 1.1,1,2 de [5].
+      <i>Leitura adicional</i>: <a href="Mortari -cap3.pdf">cap 3</a>
+      do Mortari [10] e as <i>regras de omissão de parênteses</i> nas
+      notas de aula.  Exercícios sugeridos: Exercício 1 do início das
+      notas, exercícios (1) ao (7), (12) da seção 3.4 e (14) ao (18),
+      (22) da seção 4.3 das <a href="notasdeaulas-1.pdf">notas de
+      aula</a>. [<a href="semana01.pdf">slides</a>]
+    </li>
+
+ <HR WIDTH="89%", color="yellow">
+    
+    <li><b>semana 02</b> Consequência semântica e
+      propriedades. Argumento válido. Sistema Dedutivo axiomático;
+      provas e propriedades.  <i>Refs.</i> Caps. 2 e 3 de [1];
+      sec. 1.4 de [5]<br/> Exercícios sugeridos: (25)--(30) da seção
+      5.4 e (38)--(44) da seção 6.6
+      das <a href="notasdeaulas-2.pdf">notas de
+      aula</a>. [<a href="semana02.pdf">slides</a>]
+    </li>
+
+    <HR WIDTH="89%", color="yellow">
+
+    <li><b>semana 03</b> Teorema da dedução <i>Refs.</i> cap 3 de [1];
+      sec 1.6 de [5]. Correção, Consistência e Completude da Lógica
+      proposicional. <i>Refs.</i> sec 1.4 de [5]; cap 4 [1]. Exercícios
+      sugeridos: 47 ao 64  das <a href="notasdeaula-3.pdf">notas de
+      aula</a>. [<a href="semana03.pdf">slides</a>]
+    </li>
+
+    <HR WIDTH="89%", color="yellow">
+
+<a href="proposicional.pdf">Notas de aula</a> de lógica proposicional
+      
+    <HR WIDTH="89%", color="yellow">
+     
+    <li><b>semana 04</b> Linguagens de primeira ordem: discussão
+      informal, alfabeto, termo, fórmula, exemplo: linguagem para a
+      aritmética. Refs.: sec 3.1 e 3.3 de [2]; cap 5 de [1]. Exercícios
+      sugeridos: todos da <a href="notasdeaulas-4.pdf">notas de
+      aula</a>. [<a href="semana04.pdf">slides</a>]
+    </li>
+
+    <HR WIDTH="89%", color="yellow">
+    
+    <li><b>semana 05</b> Linguagens de primeira ordem: variáveis livres
+      e ligadas, substituição, indução em fórmulas e em
+      termos. <br/>Sistema dedutivo, axiomas não lógicos, regra de
+      inferência, regras derivadas refs.: cap 7 de [1]; 2.4 de
+      [3]. [<a href="semana05.pdf">slides</a>]
+    </li>
+
+    <HR WIDTH="89%", color="yellow">
+
+    <li><b>semana 06</b> Sistema dedutivo:propriedades da dedução,
+    Teorema da Generalização; axiomas não-logicos para
+    aritmética. Exemplo de dedução na aritmética usando indução.
+    </li>
+
+    <HR WIDTH="89%", color="yellow">
+
+    <li><b>semana 07</b> Aula de dúvidas e exercícios. <b>Avaliação</b>
+   </li>
+
+    <a href="notasdeaulas-5.pdf">Notas de aula</a> semanas 04, 05 e 06.
+    
+    <HR WIDTH="89%", color="yellow">
+
+
+    <li><b>semana 08</b> Discussão dos exercícios da
+            avaliação. Semântica para lógica de predicados: estrutura e
+            valoração. Refs.: sec 6 de [1]; sec 2.1 e 2.3 de [5];
+            sec. 3.2 e 3.4 de [2]<br/>
+    </li>
+    <HR WIDTH="89%", color="yellow">
+
+<a href="predicados.pdf">Notas de aula</a> de lógica de predicados
+
+<HR WIDTH="89%", color="yellow">
+
+   <li><b>semana 10</b> Semântica para lógica de predicados:
+            satisfazibilidade. Refs.: cap 6 de
+            [1]. <a href="notasdeaulas-7.pdf">notas de
+            aula</a>. [<a href="semana1011.pdf">slides</a>]<br/>
+   </li>
+
+<HR WIDTH="89%", color="yellow">
+
+  <li><b>semana 11</b> Semântica para linguagens de primeira ordem:
+      modelo. consequência lógica. <i>Aula de exercícios.</i> <br/>
+  <!--<a href="lista7.pdf">Exercícios</a> -
+      <a href="https://anotacoesdeaula.wordpress.com/2017/11/23/nhi2049-13-logica-basica-logica-de-predicados-de-primeira-ordem-semantica/">notas de aula</a>-->
+  </li>
+
+    <HR WIDTH="89%", color="yellow">
+
+    <li><b>semana 12</b>  --  <b>Avaliação</b> P2 e Sub.
+      
+    </li>
+  </ul>
+</div>
+<!----------------------------------------------------------------------------------------------------------->    	    
+<!----------------------------------------------------------------------------------------------------------->    	        
+<div class="my_footer">
+      <a name="foot">
+	<h2>Notícias</h2>
+      </a>
+      <ol>
+	<li>
+	  <i>fique ligado neste espaço</i> ou
+	  acompanhe <a href="http://twitter.com/QuadroDeAvisos">por aqui</a>
+	<li>
+	  A partir de 2ª, 15/10,  passarei lista de presença
+	</li>
+	<li>
+	  A aula de 12/11 será resposta em 01/12
+	</li>
+	<li><a name=conc></a>
+	  <a href="https://docs.google.com/spreadsheets/d/1_pkUELLz98-2dwhmI0ZqOWFpaGcc2uGLD2-RmlZf_kI/edit#gid=19521127">conceitos da P1 do matutino </a>, vista 26/11, 16h30-17h30
+	</li>
+	<li> <a href="https://docs.google.com/spreadsheets/d/1hxpOfj_khzBelxQ4scMaK0rvjFEbFiP3_LBDOrH3AZQ/edit?usp=sharing">conceitos
+	da P1 do noturno </a>, vista 26/11, depois da aula
+	</li>
+	<li> <a href="https://docs.google.com/spreadsheets/d/1hxpOfj_khzBelxQ4scMaK0rvjFEbFiP3_LBDOrH3AZQ/edit?usp=sharing">conceitos
+	da P2 do noturno </a>, vista 6/12, 20h-21h30, 546-2 (ou no
+	horário do matutino). <a href="ProvasAntigas">Prova e esboço das
+	soluções</a>.
+	</li>
+	<li>
+	   <a href="https://docs.google.com/spreadsheets/d/1_pkUELLz98-2dwhmI0ZqOWFpaGcc2uGLD2-RmlZf_kI/edit?usp=sharing">conceitos
+	da P2 do matutino </a>, <a href="ProvasAntigas">Prova e esboço das soluções</a>. vista 05/12 11-12hs ou 07/12 16-17hs (ou no horário do noturno). Veja info sobre a REC se for o caso.
+	</li>
+	</li>
+      </div>
+<!----------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------->    	          
+    </body>
+  </html>
+  
+
+

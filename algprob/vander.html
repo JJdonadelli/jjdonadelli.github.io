@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8"> 
+   <style>
+.MathJax nobr>span.math>span{border-left-width:0 !important};
+   </style>   
+
+  
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+<!--    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script> 
+
+  
+</head>
+
+$$ \sum_{\sigma} - \textrm{sinal} \biggl( \prod_{ 1 \leq i < j \leq n } ( \sigma(j)-\sigma(i) ) \biggr) \prod_{i=1}^{n} {x_{i}}^{\sigma(i)-1}$$
+
+com a soma  sobre toda   permutação   $\sigma$ de  $\{1,2,\dots,n\}$   define o   mesmo   polinômio  que
+
+$$ \prod_{1\leq i <  j \leq  n}(x_{j}-x_{i})\;\mathrm{?}  $$

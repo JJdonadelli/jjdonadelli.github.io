@@ -1,0 +1,81 @@
+<head>
+
+   <style>
+.MathJax nobr>span.math>span{border-left-width:0 !important};
+   </style>   
+
+  
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+<!--    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>       
+</head>
+<p>
+
+  <meta charset="UTF-8">
+  
+<center><a href="prova2.pdf">Enunciados</a></center>
+  <ol>
+
+    <li> uma escolha de de 4 algarismos de $\{0,1,2,3,4,5,6,7,8,9\}$
+    determina, unicamente, um número de 4 algarismos com os dígitos em
+    ordem decrescente, e vice-versa, tod tal número corresponde a uma
+    única escolha, portanto, são $\binom {10}4$ números.</li>
+
+    <li> (a) há $h$ escolhas para um homem no fim da fila e as $h+m-1$
+    pessoas restantes podem formar $(h+m-1)!$ filas defirentes. Pelo
+    princípio multiplicativo serão $h\cdot (h+m-1)!$ filas.
+      <p>
+      (b) há $h$ escolhas para um homem no fim da fila, $h-1$ escolhas
+    para um homem no começo da fila e as $h+m-2$ pessoas restantes
+    podem formar $(h+m-2)!$ filas defirentes. Pelo princípio
+    multiplicativo serão $h\cdot (h-1)\cdot (h+m-2)!$ filas.</li>
+
+    <li> <a href="http://www.profmat-sbm.org.br/wp-content/uploads/sites/23/2017/06/ENQ20171_Gabarito.pdf">questão
+	6 do ENQ 2017-1</a> (com gabarito). </li>
+
+    <li> das $n$ caixas há $\binom nm$ escolhas para deixar $m$
+    vazias. As $n-m$ caixas restantes devem ter $\geq 1$ bolas. Se
+    $x_1,\dots,x_{n-m}$ são o número de bolas em cada caixa então a
+    quantidade de modos de distribuir as $r$ bolas nas $n-m$ caixas é o
+    número de soluções inteiras de $$x+1+x_2+\cdots+x_{n-m}=r \text{
+    com } x_i\geq 1 \text{ para todo }i$$ que são
+    $\binom{r-1}{n-m-1}$. Pelo principio multiplicativo são $$\binom nm
+    \cdot \binom {r-1}{n-m-1}$$ maneiras de distribuir $r$ bolas em $n$
+      caixas de modo que exatamente $m$ caixas fiquem vazias?</li>
+
+    <li> <b>5.1</b> Seja $a_n$ o número de maneiras de subir a escada.
+      Se há 1 degrau então $a_1=1$, se há 2 degraus então $a_2=2$.
+
+      Se há $n+2$ degraus então se chegamos ao degrau $n+1$ só ha uma
+      maneira de chegar ao $n+2$; se chegamos ao degrau $n$ então ha
+      duas maneiras de chegar ao $n+2$ mas uma delas (subindo um degrau
+      por vez) já foi contada no caso anterior, portanto, só há mais
+      uma maneira de chagar ao $n+2$. Portanto, $$ a_1=1, ~a_2=2 \text{
+      e }a_{n+2} = a_{n+1} + a_n \text{ para todo }n\in \mathbb{N}$$
+      A partir daí a solução é análoga a da sequência de Fibonacci.
+      <p>
+     <b>5.2</b> é um exercício do livro texto </li>
+
+    <li> o rendimento da poupança é $500 \cdot 0,0056=2,80$ e o
+    rendimento do CDB é $500 \cdot 0,0086=4,30$, entretanto há 5% de
+    4,30 (=0,21)de taxa e imposto.  Após mês o montante é 502,80 na
+    poupança e 504,09 no CDB que é mais vantajoso.</li>
+      
+    <li> Seja $i$ uma taxa mensal de juros. Chamemos de $3V$ o valor do
+      carro.
+      <p>
+      No caso (a) o valor do montante no ato da compra é
+      $$\frac{3V}{i+1}.$$
+      <p>
+      No caso (b) o valor do montante no ato da compra é $$V +
+      \frac{V}{i+1} + \frac{V}{(i+1)^2} =
+      3V\left(\frac{1+i+i^2/3}{(i+1)^2}\right) = 3V\left(\frac{1}{i+1}
+      + \frac{i^2}{3(i+1)^2}\right) = \frac{3V}{i+1} +
+      \frac{3Vi^2}{3(i+1)^2}$$ como o segundo somando é $\geq 0$ a caso
+      (a) é mais vantajoso para qualquer $i>0$.

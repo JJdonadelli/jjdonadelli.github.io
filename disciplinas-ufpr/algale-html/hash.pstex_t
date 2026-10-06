@@ -1,0 +1,41 @@
+\begin{picture}(0,0)%
+\includegraphics{hash.pstex}%
+\end{picture}%
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2832,1761)(1343,-2070)
+\put(1722,-408){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$0$}%
+}}}}
+\put(2163,-408){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$1$}%
+}}}}
+\put(2601,-408){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$2$}%
+}}}}
+\put(3042,-408){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$3$}%
+}}}}
+\put(3482,-408){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$4$}%
+}}}}
+\put(3878,-408){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$5$}%
+}}}}
+\put(1358,-615){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{11}{13.2}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$N:$}%
+}}}}
+\put(2115,-1515){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}31}%
+}}}}
+\put(2115,-1980){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}55}%
+}}}}
+\put(2108,-1036){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}13}%
+}}}}
+\put(3960,-1551){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}65}%
+}}}}
+\put(3958,-1085){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}49}%
+}}}}
+\put(2985,-1081){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}63}%
+}}}}
+\put(3518,-1085){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}52}%
+}}}}
+\end{picture}%

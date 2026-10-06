@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CI065 - Plano de Aula</title>
+</head>
+
+<body text="black" LINK="blue" VLINK="red" bgcolor="#ffffcc">
+    <center>
+      <h1> <a href="http://www.inf.ufpr.br/bcc/programas/CI065.html">
+	  CI065 - Algoritmos e Teoria dos Grafos</a>
+      </h1>
+    </center>
+    <center>
+      <h3>Segundo semestre de 2006</h3> 
+      <h4>sala: PC02</h4>4a e 6a 15:30
+    </center>
+<hr>
+<h2><a href="prova3.pdf">gabarito</a> da P3 </h2>
+<hr>
+   <center>Sumário: &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href=#ementa>Conteúdo</a> -- 
+      <a href=#biblio>Bibliografia</a> -- 
+      <a href=#provas>Avaliação</a> --
+      <a href=#listas>Notas de aula e Listas de exercícios</a> -- 
+      <a href=#aula>Programa</a> -- 
+      <a href=#freq>Calendário</a> -- 
+      <a href="ci06520062.html">Notas</a> --
+      <a href=#atendimento>Atendimento</a> --
+      <a href=#exemp>provas de outros semestres</a> 
+    </center>
+<hr> 
+
+<a name=ementa> 
+<h3>Conteúdo:</h3>
+<ul>
+      <li>Noções Básicas de Teoria dos Grafos. Definições, exemplos, e 
+	aplicações. </li>
+      <li>Representação e Implementação.</li>
+      <li>Caminhos e Percursos.</li>
+      <li>Conectividade.</li>
+      <li>Árvores.</li>
+      <li>Emparelhamento.</li>
+      <li>Caminho mínimo, Árvore geradora mínima, emparelhamento
+	mínimo.</li>
+      <li>Coloração.</li>
+</ul> 
+<font size=+1><b>Objetivos:</b> </font>
+      Dar aos  alunos noções de teoria  dos grafos e  apresentar o seu
+      uso na resolução de problemas. <br>
+<table>
+<tr>
+<td>
+<font size=+1><b>Pré-requisito:</b> </font>
+</td><td>CI057 - Algoritmos e Estruturas de Dados III (obrigatório)</tr>
+<tr><td></td><td>CI237 - Matemática Discreta	 (fortemente recomendado)</tr>
+</table>
+<font size=+1><b>Carga horária:</b></font> 60 
+<font size=+1><b>Créditos:</b></font> 4 
+<font size=+1><b>Responsável:</b></font> Jair. 
+<p> 
+<a name=biblio>
+<h3>Bibliografia básica:</h3>
+<ol>
+    <li><i>Graph Theory</i>, R. Diestel. (Capítulo 1) </li>
+    Há um link para livro em pdf <a href="http://www.math.uni-hamburg.de/home/diestel/books/graph.theory">aqui</a>.  
+    <li><i>Graph Theory with applications</i>, A.  Bondy e
+      U.S.S.R. Murty. (Capítulos 1 --- 6)</li>
+    O livro está disponível em pdf <a href="http://www.ecp6.jussieu.fr/pageperso/bondy/books/gtwa/gtwa.html">aqui</a>
+    <li><i>Introduction to Algorithms</i>, Cormen,
+      Leiserson, Rivest e Stein (Capítulos 22, 23 e 24). 
+(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=cormen&scanu1=1003&u1=2000&t1=@376329&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>)
+ </li> 
+<h3>Bibliografia complementar:</h3> 
+    <li> <i>Algorithms in C</i>, R.  Sedgewick. 
+      (Capítulos 29 --- 34). 
+(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=sedgewick&scanu1=1003&u1=2000&t1=@208341&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>)
+</li> 
+<!--    <li> <a href="ci065.pdf">Notas de aula</a> </li> -->
+    <li> <i>Graph Theory</i>, F.  Harary.
+(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=harary&scanu1=1003&u1=2000&t1=@61798&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>)
+</li> 
+    <li> <i>Grafos e Algoritmos Computacionais</i>,
+      J.L. Szwarcfiter.
+(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Grafos%20e%20algoritmos%20computacionais%20%2f%20Jayme%20Luiz%20Szwarcfiter.%20-&scanu1=4&u1=2000&t1=@23457&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>)
+</li> 
+    <li> <i>Grafos:  Teoria, Modelos, Algoritmos</i>,  P.O. Boaventura
+    Neto.
+(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Grafos%20e%20algoritmos%20computacionais%20%2f%20Jayme%20Luiz%20Szwarcfiter.%20-&scanu1=4&u1=2000&t1=@248615&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>)
+</li> 
+    <li>   <i>Data   Structures   and   Algorithms</i>,   A.V.    Aho,
+    J.E. Hopcroft, J.D. Ullman.
+(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Data%20Structures%20and%20Algorithms&scanu1=4&u1=2000&t1=@78721&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>)
+</li> 
+</ol>
+<a name=provas>
+<h3>Avaliação</h3>
+São  4  provas, 3  regulares  e  1 prova  final.  A  média final  para
+    aprovação é 50 porém alunos com desempenho <i>muito</i> superior a
+    média  (leia-se média  das  provas regulares  pelo  menos 70)  são
+    dispensados da prova final.
+<ul>
+      <li>Média  das provas regulares dá a média parcial.</li>
+      <li>Tendo 75% de freqüência, o aluno com média parcial maior ou igual
+	a 70 estará aprovado.</li> 
+      <li>Tendo 75% de freqüência, o aluno com média parcial maior ou igual a
+	40  e  menor do  que  70 estará  habilitado  a  fazer a  prova
+      final. A média final é a média aritmética da média parcial com a
+      nota da prova final, o aluno com média final maior ou igual
+	a 50 estará aprovado.</li> 
+      <li>Em qualquer outro caso o aluno estará reprovado e será
+	indicado se houve ou não freqüência mínima.</li> 
+</ul> 
+
+O aluno que perder alguma(s) avaliação(ões) deve
+entrar em contato para agendar <i>2a chamada</i> <font size=+1><b>desde que</b></font>
+esteja dentro do previsto na seção V da resolução 
+<a href="http://www.ufpr.br/soc/pdf/cepe/cepe3797.pdf">37/97</a>. 
+
+<a name=listas> 
+<h3>Notas de aula e Listas de exercícios</h3>
+
+As  listas não  são obrigatórias  e não  valem nota,  porém  você pode
+    enviar algumas  de suas soluções    para serem corrigidas.  
+
+<div class="document">
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr>
+<td><b>Anotações</b></td>
+<td><b>Exercícios</b></td>
+<td>
+<b>Tema da semana</b>
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana1.pdf">notas 1</a></td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista1-065.pdf">lista 1</a></td>
+<td>
+definições iniciais e grau
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana2.pdf">notas 2</a></td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista2-065.pdf">lista 2</a></td>
+<td>
+ subgrafo, isomorfismo e estruturas de dados
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana3.pdf">notas 3</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista3-065.pdf">lista 3</a></td>
+<td>
+percursos, busca em largura e em profundidade
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana4.pdf">notas 4</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista4-065.pdf">lista 4</a></td>
+<td>
+caminhos, algoritmo p/ calcular distância
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana5.pdf">notas 5</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista5-065.pdf">lista 5</a></td>
+<td>
+Correção da prova. Circuito. 
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana6.pdf">notas 6</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista6-065.pdf">lista 6</a></td>
+<td>
+Dijkstra, Bellman-Ford
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana7.pdf">notas 7</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista7-065.pdf">lista 7</a></td>
+<td>
+Grafos conexos e biconexos
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana8.pdf">notas 8</a>
+</td>
+<td>lista 7</td>
+<td>
+Conexidade
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana9.pdf">notas 9</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista8-065.pdf">lista 8</a></td>
+<td>
+construção de grafos k-conexos<br>
+***<a href="s9-err.pdf">correção</a>*** numa definição
+</td>
+</tr>
+<!--<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/prova2-grafos.pdf">P2</a>
+</td>
+<td>sem lista</td>
+<td>
+gabarito da 2a prova
+</td>
+</tr>-->
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana10.pdf">notas 10</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista9-065.pdf">lista 9</a>
+</td>
+<td>
+gabarito da 2a prova, árvores, florestas
+</td>
+</tr>
+</tbody>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana11.pdf">notas 11</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista10-065.pdf">lista 10</a>
+</td>
+<td>
+árvore geradoras mínimas, <a href="union-find.pdf">"union-find"</a>
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana12.pdf">notas 12</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista11-065.pdf">lista 11</a>
+</td>
+<td>
+emparelhamentos
+</td>
+</tr>
+<tr>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/semana13.pdf">notas 13</a>
+</td>
+<td><a class="reference" href="http://www.inf.ufpr.br/jair/lista12-065.pdf">lista 12</a>
+</td>
+<td>
+Algoritmo de Edmonds
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<a name=freq> 
+<h3>Calendário</h3>
+<ul>
+      <li>31/07 - Início das aulas</li>
+      <li>30/08 - <b>Prova 1:</b> conteúdo das aulas </li>
+      <li>07/09 - Feriado: Independência</li>
+      <li>08/09 - Feriado: Padroeira</li>
+      <li>28/09 - Prazo final para cancelamento de matrícula</li>
+      <li>11/10 - <b>Prova 2:</b> conteúdo das aulas </li>
+      <li>12/10 - Feriado: Padroeira (do Brasil dessa vez)</li>
+      <li>02/11 - Feriado: Finados</li>
+      <li>24/11 - <b>Prova 3:</b> conteúdo das aulas </li>
+      <li>30/11 - Último dia letivo e encerramento da monitoria</li>
+      <li>06/12 - <b>Prova final</b> todo conteúdo </li>
+</ul> 
+<pre> 
+         August 2006             September 2006            October 2006    
+     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa 
+            1  2  3  4  5                     1  2      1  2  3  4  5  6  7 
+      6  7  8  9 10 11 12      3  4  5  6  7  8  9      8  9 10 11 12 13 14 
+     13 14 15 16 17 18 19     10 11 12 13 14 15 16     15 16 17 18 19 20 21 
+     20 21 22 23 24 25 26     17 18 19 20 21 22 23     22 23 24 25 26 27 28 
+     27 28 29 30 31           24 25 26 27 28 29 30     29 30 31 
+
+         October 2006            November 2006            December 2006    
+     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa 
+      1  2  3  4  5  6  7               1  2  3  4                     1  2 
+      8  9 10 11 12 13 14      5  6  7  8  9 10 11      3  4  5  6  7  8  9 
+     15 16 17 18 19 20 21     12 13 14 15 16 17 18     10 11 12 13 14 15 16 
+     22 23 24 25 26 27 28     19 20 21 22 23 24 25     17 18 19 20 21 22 23 
+     29 30 31                 26 27 28 29 30           24 25 26 27 28 29 30 
+                                                       31 
+
+</pre>
+
+<hr><a name=aula> Programação das aulas: 
+<pre>
+aula 01 - Grafos.
+aula 02 - Grau.
+aula 03 - Subgrafos.
+aula 04 - Outras noções de grafos. Isomorfismo. Representação computacional.
+aula 05 - Percursos em grafos.
+aula 06 - Busca em largura e Busca em profundidade. 
+aula 07 - Caminho; distancia. 
+aula 08 - Aula de exercícios.
+
+aula 09 -- <b>PROVA</b>
+
+aula 10 - Correção da prova. Circuito. 
+aula 11 - Caminhos e circuitos orientados em grafos dirigidos.
+          Caminhos mínimos em grafos dirigidos com pesos nas arestas. 
+aula 12 - Algoritmo de Dijkstra. 
+aula 13 - Algoritmo de Bellman-Ford.
+aula 14 - Grafos conexos. Grafos biconexos, blocos. 
+aula 15 - Conexidade de grafos.
+aula 16 - Construção de grafos $k$-conexos minimais.
+aula 17 - Aula de exercícios.
+
+aula 18 - <b>PROVA</b>
+
+aula 19 - Correção da prova. 
+aula 20 - Árvores e Florestas.
+aula 21 - Árvores geradoras de custo mínimo.  Algoritmo de Prim. 
+aula 22 - Algoritmo de Kruskal.
+aula 23 - Emparelhamentos.
+aula 24 - Emparelhamentos em grafos bipartidos - Teorema de Hall. 
+aula 25 - Algoritmo Húngaro. 
+aula 26 - Emparelhamentos em grafos bipartidos com pesos nas arestas. 
+
+aula 27 - <b>PROVA</b>
+</pre>
+<hr> 
+
+<a name=atendimento>
+<h3>Horário de atendimento aos alunos:</h3>
+<ul>
+<li>Monitor: Leonardo  Boiko (lfsb01@inf.ufpr.br). <br>Local: sala  dos professores ou
+	sala de estudos do mestrado. 
+	<ul>
+	  <li>2a. 17:30--18:30</li>
+	  <li>6a. 19:00--20:00</li>
+	</ul>
+</li>
+<li>Professor 
+	<ul>
+	  <li>preferencialmente 3a. das 13:30 as 15:00hs</li>
+	  <li>ou      em      horário      agendado      (olhe      <a
+	  href="horario.html">aqui</a>    antes)    previamente    por
+	  <b>email</b>:  se eu  não responder  o seu  email  num prazo
+	  razoável ele pode ter sido decaptado pelo spamassassin. Esse
+	  não  será o  caso  se  você enviá-lo  pelo  seu endereço  da
+	  universidade ou do 	 departamento.</li> 
+	</ul>
+<li><b>NÃO ATENDO EM DIA DE PROVA. </b></li>
+</ul>
+<hr>
+<h3>Provas de semestres anteriores</h3>
+<a name=exemp>
+<li><a href="exemp1.ps">exemplo 1</a></li>
+<li><a href="exemp2.ps">exemplo 2</a></li>
+<li><a href="exemp3.ps">exemplo 3</a></li>
+<li><a href="exemp4.ps">exemplo 4</a></li>
+<li><a href="exemp5.ps">exemplo 5</a></li>
+<li><a href="exemp6.ps">exemplo 6</a></li>
+<li><a href="exemp7.ps">exemplo 7</a></li>
+<li><a href="exemp8.ps">exemplo 8</a></li>
+<li><a href="exemp9.ps">exemplo 9</a></li>
+<li><a href="exemp10.ps">exemplo 10</a></li>
+<li><a href="exemp11.ps">exemplo 11</a></li>
+<li><a href="exemp12.ps">exemplo 12</a></li>
+<li><a href="exemp13.ps">exemplo 13</a></li>
+<li><a href="exemp14.ps">exemplo 14</a></li>
+<li><a href="exemp15.pdf">exemplo 15</a></li>
+<li><a href="exemp16.pdf">exemplo 16</a></li>
+<li><a href="exemp17.pdf">exemplo 17</a></li>
+<li><a href="exemp18.pdf">exemplo 18</a></li>
+<li><a href="exemp19.pdf">exemplo 19</a></li>
+<li><a href="exemp20.pdf">exemplo 20</a> <a href="gabaritoP3.txt">gabarito</a></li>
+<li><a href="exemp21.pdf">exemplo 21</a> <a href="gabaritoFINAL.txt">gabarito</a></li>
+<hr>
+<!-- Created: Thu Aug  5 10:35:42 BRT 2004 -->
+<!-- hhmts start -->
+Last modified: Fri Dec  8 13:29:44 BRST 2006
+<!-- hhmts end -->
+  </body>
+</html>
+ 

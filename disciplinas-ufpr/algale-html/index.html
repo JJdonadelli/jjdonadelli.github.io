@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html xml:lang="pt" > 
+<head><title>Probabilidade em Computa¸cao</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="algale.tex"> 
+<meta name="date" content="2010-03-04 09:39:00"> 
+<link rel="stylesheet" type="text/css" href="algale.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+
+<h2 class="titleHead">Probabilidade em Algoritmos</h2>
+<center>
+<a href="http://www.inf.ufpr.br/jair/COURSES/algale.html">Página da disciplina</a>
+</center>
+
+<div class="author" > <span 
+class="ccr-10x-x-120">Jair Donadelli </span></div><br />
+<div class="date" ><span 
+class="ccr-10x-x-120">2008</span></div>
+   </div>
+     <div class="quote">
+     <!--l. 108--><p class="noindent" ><span 
+class="ccr-9">&#8220;</span><span 
+class="ccti-10x-x-90">Numbers that fool the Fermat test are called Carmichael numbers,</span>
+     <span 
+class="ccti-10x-x-90">and little is known about them other than that they are extremely rare.</span>
+     <span 
+class="ccti-10x-x-90">There are 255 Carmichael numbers below 100,000,000. The smallest</span>
+     <span 
+class="ccti-10x-x-90">few are 561, 1105, 1729, 2465, 2821, and 6601. In testing primality</span>
+     <span 
+class="ccti-10x-x-90">of very large numbers chosen at random, the chance of stumbling upon</span>
+     <span 
+class="ccti-10x-x-90">a value that fools the Fermat test is less than the chance that cosmic</span>
+     <span 
+class="ccti-10x-x-90">radiation will cause the computer to make an error in carrying out</span>
+     <span 
+class="ccti-10x-x-90">a &#8221;correct&#8221;algorithm. Considering an algorithm to be inadequate for</span>
+     <span 
+class="ccti-10x-x-90">the first reason but not for the second illustrates the difference between</span>
+     <span 
+class="ccti-10x-x-90">mathematics and engineering</span><span 
+class="ccr-9">.&#8221; </span><a 
+href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_idx_910"" ><span 
+class="ccr-9">Abelson &amp; Sussman</span></a></div>
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Sumário</h3>
+   <div class="tableofcontents">
+   <span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Espaços de probabilidade discretos</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.1 <a 
+href="#x1-30001.1" id="QQ2-1-3">Identidade polinomial</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="#x1-40002" id="QQ2-1-5">Probabilidade condicional e Independência</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="#x1-50002.1" id="QQ2-1-9">Espaço produto</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="#x1-60002.2" id="QQ2-1-11">Identidade polinomial revisitada</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.3 <a 
+href="#x1-70002.3" id="QQ2-1-13">Igualdade do produto de matrizes</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="#x1-80003" id="QQ2-1-15">Teorema de Bayes</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="#x1-90003.1" id="QQ2-1-16">Sigilo perfeito</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.2 <a 
+href="#x1-100003.2" id="QQ2-1-17">Mensagens eletrônicas indesejáveis (<span 
+class="ccti-10">Spam</span>)</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="#x1-110004" id="QQ2-1-18">Variáveis aleatórias discretas</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.1 <a 
+href="#x1-120004.1" id="QQ2-1-19">Distribuições de Bernoulli, binomial, geométrica e uniforme</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.2 <a 
+href="#x1-130004.2" id="QQ2-1-20">MAX 3-SAT</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.3 <a 
+href="#x1-140004.3" id="QQ2-1-22">Gerador de prováveis primos</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.4 <a 
+href="#x1-150004.4" id="QQ2-1-24"><span 
+class="ccti-10">Quicksort</span></a></span>
+                                                                  
+
+                                                                  
+<br />   &#x00A0;<span class="subsectionToc" >4.5 <a 
+href="#x1-160004.5" id="QQ2-1-27"><span 
+class="ccti-10">Skip lists</span></a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="#x1-170005" id="QQ2-1-29">Leis de Desvio</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.1 <a 
+href="#x1-180005.1" id="QQ2-1-30">Markov e Chebyshev</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.2 <a 
+href="#x1-200005.2" id="QQ2-1-32">Tabelas de espalhamento (<span 
+class="ccti-10">Hashing</span>)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.2.1 <a 
+href="#x1-210005.2.1" id="QQ2-1-33"><span 
+class="ccti-10">Hashing </span>universal.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.3 <a 
+href="#x1-220005.3" id="QQ2-1-34">Desigualdades de Chernoff&#8211;Hoeffding.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.4 <a 
+href="#x1-230005.4" id="QQ2-1-35"><span 
+class="ccti-10">Treaps</span></a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="#x1-250006" id="QQ2-1-39">Modelos de Computação</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.1 <a 
+href="#x1-260006.1" id="QQ2-1-40">Máquinas de Turing</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >6.1.1 <a 
+href="#x1-270006.1.1" id="QQ2-1-41">Máquina de Acesso Aleatório &#8212; RAM</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >6.1.2 <a 
+href="#x1-280006.1.2" id="QQ2-1-42">Algoritmos.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.2 <a 
+href="#x1-290006.2" id="QQ2-1-43">Algoritmos aleatorizados</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >6.2.1 <a 
+href="#x1-300006.2.1" id="QQ2-1-45">Máquina de Turing probabilística <span 
+class="ccti-10">off-line</span>.</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >6.2.2 <a 
+href="#x1-310006.2.2" id="QQ2-1-46">Máquina de Turing não-determinística.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.3 <a 
+href="#x1-320006.3" id="QQ2-1-47">Circuitos booleanos</a></span>
+<br />   <span class="sectionToc" >7 <a 
+href="#x1-330007" id="QQ2-1-49">Classes de complexidade</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.0.1 <a 
+href="#x1-340007.0.1" id="QQ2-1-50">Complexidade de máquinas de Turing.</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.0.2 <a 
+href="#x1-350007.0.2" id="QQ2-1-51">Complexidade de programas RAM.</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.0.3 <a 
+href="#x1-360007.0.3" id="QQ2-1-52">Complexidade de circuitos.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.1 <a 
+href="#x1-370007.1" id="QQ2-1-53">Classes probabilísticas</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.1.1 <a 
+href="#x1-380007.1.1" id="QQ2-1-54">Definição alternativa de <span 
+class="cmtt-10">BPP</span>.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
+href="#x1-390007.2" id="QQ2-1-56"><span 
+class="cmtt-10">BPP</span> <span 
+class="cmsy-10">&#x2286;</span> <span 
+class="cmtt-10">P/poly</span></a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
+href="#x1-400007.3" id="QQ2-1-57">BPP está na Hierarquia Polinomial</a></span>
+<br />   <span class="sectionToc" >8 <a 
+href="#x1-420008" id="QQ2-1-59">Cadeias de Markov homogêneas</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >8.1 <a 
+href="#x1-430008.1" id="QQ2-1-60">2-SAT</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >8.2 <a 
+href="#x1-440008.2" id="QQ2-1-62">Distribuição estacionária de uma cadeia de Markov</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >8.2.1 <a 
+href="#x1-450008.2.1" id="QQ2-1-63">O Teorema Fundamental das Cadeias de Markov</a></span>
+<br />   <span class="sectionToc" >9 <a 
+href="#x1-460009" id="QQ2-1-64">Passeios aleatórios em grafos</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >9.1 <a 
+href="#x1-470009.1" id="QQ2-1-65"><span 
+class="eurm-10">s </span><span 
+class="eufm-10">- </span><span 
+class="eurm-10">t </span>conexidade em grafos</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >9.2 <a 
+href="#x1-480009.2" id="QQ2-1-67">Passeio aleatório em grafos regulares</a></span>
+<br />   <span class="sectionToc" >10 <a 
+href="#x1-4900010" id="QQ2-1-68">Passeios aleatórios em grafos expansores</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.0.1 <a 
+href="#x1-5000010.0.1" id="QQ2-1-69"><span 
+class="ccti-10">Expander mixing lemma</span></a></span>
+<br />   <span class="sectionToc" >11 <a 
+href="#x1-5100011" id="QQ2-1-70">Passeio aleatório na <span 
+class="ccti-10">WEB</span>: o <span 
+class="ccti-10">Google PageRank</span></a></span>
+<br />   <span class="sectionToc" >12 <a 
+href="#x1-5300012" id="QQ2-1-74">Desaleatorização de BPP</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.1 <a 
+href="#x1-5400012.1" id="QQ2-1-75">Geradores pseudoaleatórios</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >12.1.1 <a 
+href="#x1-5500012.1.1" id="QQ2-1-76">Existência de geradores pseudoaleatórios condicionada a existência
+de problemas difíceis.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.2 <a 
+href="#x1-5600012.2" id="QQ2-1-77">Construções de sequências <span 
+class="eurm-10">k</span>-a-<span 
+class="eurm-10">k </span>independentes</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >12.2.1 <a 
+href="#x1-5700012.2.1" id="QQ2-1-78">Sequências com distribuição uniforme e independência 2-a-2.</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >12.2.2 <a 
+href="#x1-5800012.2.2" id="QQ2-1-81">Sequências com distribuição uniforme e independência <span 
+class="eurm-10">k</span>-a-<span 
+class="eurm-10">k</span>.</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.3 <a 
+href="#x1-5900012.3" id="QQ2-1-82"><span 
+class="ccti-10">Hash </span>Universal</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >12.4 <a 
+href="#x1-6000012.4" id="QQ2-1-84">Desaleatorização com grafos expansores</a></span>
+   </div>
+                                                                  
+
+                                                                  
+<!--l. 127--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>Espaços de probabilidade discretos</h3>
+<!--l. 130--><p class="noindent" >Neste texto consideraremos triplas <span 
+class="eufm-10">(</span><span 
+class="eurm-10">&#x03A9;,</span><span 
+class="cmsy-10"><img 
+src="cmsy10-45.png" alt="E" class="10x-x-45" /></span><span 
+class="eurm-10">,</span><span 
+class="cmbx-10">P</span><span 
+class="eufm-10">) </span>que definem um <span 
+class="cmbx-10">espa</span><span 
+class="cmbx-10">ço de</span>
+<span 
+class="cmbx-10">probabilidade discreto</span>, ou seja,
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-2002x1"><span 
+class="eurm-10">&#x03A9; </span>é um conjunto enumerável, chamado <span 
+class="cmbx-10">espa</span><span 
+class="cmbx-10">ço amostral</span>;
+     </li>
+     <li 
+  class="enumerate" id="x1-2004x2"><span 
+class="cmsy-10"><img 
+src="cmsy10-45.png" alt="E" class="10x-x-45" /></span><span 
+class="eufm-10">= </span><span 
+class="eurm-10">2</span><sup><span 
+class="eurm-7">&#x03A9;</span></sup> é a <span 
+class="eurm-10">&#x03C3;</span>-álgebra de eventos,
+     </li>
+     <li 
+  class="enumerate" id="x1-2006x3"><span 
+class="cmbx-10">P</span><span 
+class="eufm-10">:</span> <span 
+class="cmsy-10"><img 
+src="cmsy10-45.png" alt="E" class="10x-x-45" /></span><span 
+class="euex-10">&#x2192; </span><span 
+class="msbm-10">&#x211D; </span>é tal que
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-2008x1"><span 
+class="eurm-10">0 </span><span 
+class="msam-10">&#x2264;</span><span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">E</span><span 
+class="eufm-10">) </span><span 
+class="msam-10">&#x2264; </span><span 
+class="eurm-10">1 </span>para todo <span 
+class="cmbx-10">evento </span><span 
+class="eurm-10">E </span><span 
+class="cmsy-10">&#x2208;<img 
+src="cmsy10-45.png" alt="E" class="10x-x-45" /></span>;
+         </li>
+         <li 
+  class="enumerate" id="x1-2010x2"><span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">&#x03A9;</span><span 
+class="eufm-10">) = </span><span 
+class="eurm-10">1</span>;
+         </li>
+         <li 
+  class="enumerate" id="x1-2012x3">para qualquer seqüência enumerável <span class="big"><img 
+src="algale0x.png" alt="("  class="left" align="middle"></span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">i</span></sub><span class="big"><img 
+src="algale1x.png" alt=")"  class="left" align="middle"></span><sub><span 
+class="eurm-7">i</span><span 
+class="msam-7">&#x2265;</span><span 
+class="eurm-7">1</span></sub> de eventos disjuntos
+         vale
+         <table 
+class="equation"><tr><td><a 
+ id="x1-2013r1"></a>
+         <center class="math-display" >
+         <img 
+src="algale2x.png" alt="  (     )
+    &#x22C3;        &#x2211;
+P (    Ei)  =    P(Ei).
+    i&#x2265;1       i&#x2265;1
+         " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+         <!--l. 145--><p class="nopar" >
+         </li></ol>
+     </li></ol>
+<!--l. 149--><p class="indent" >   O lado esquerdo da equação (<a 
+href="#x1-2013r1">1<!--tex4ht:ref: eq:aditivo --></a>) não depende de uma enumeração particular dos
+conjuntos e um teorema do cálculo garante o mesmo para o lado direito: se uma série
+de termos não-negativos converge então qualquer rearranjo dos termos resulta
+numa série que converge para o mesmo valor (veja&#x00A0;<a 
+href="#Xbartle">Bartle</a>,&#x00A0;<a 
+href="#Xbartle">1976</a>). Como
+<span 
+class="cmsy-10"><img 
+src="cmsy10-45.png" alt="E" class="10x-x-45" /></span><span 
+class="eufm-10">= </span><span 
+class="eurm-10">2</span><sup><span 
+class="eurm-7">&#x03A9;</span></sup> <span 
+class="eufm-10">= </span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">E</span><span 
+class="eufm-10">:</span> <span 
+class="eurm-10">E </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="eurm-10">&#x03A9;</span><span 
+class="eusm-10">} </span>está fixo escrevemos somente <span 
+class="eufm-10">(</span><span 
+class="eurm-10">&#x03A9;,</span><span 
+class="cmbx-10">P</span><span 
+class="eufm-10">)</span>. No caso de espaços
+discretos a função de probabilidade <span 
+class="cmbx-10">P</span> fica definida pelos valores de <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">&#x03C9;</span><span 
+class="eusm-10">}</span><span 
+class="eufm-10">) </span>para todo
+<span 
+class="eurm-10">&#x03C9; </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="eurm-10">&#x03A9; </span>pois decorre de (<a 
+href="#x1-2013r1">1<!--tex4ht:ref: eq:aditivo --></a>) que
+   <table 
+class="equation-star"><tr><td>
+                                                                  
+
+                                                                  
+   <center class="math-display" >
+<img 
+src="algale3x.png" alt="       &#x2211;
+P(E) =    P({a})
+       a&#x2208;E
+" class="math-display" ></center></td></tr></table>
+<!--l. 160--><p class="nopar" >
+para todo evento <span 
+class="eurm-10">E </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="eurm-10">&#x03A9;</span>. Com isso, podemos tomar <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">:</span> <span 
+class="eurm-10">&#x03A9; </span><span 
+class="euex-10">&#x2192; </span><span 
+class="eufm-10">[</span><span 
+class="eurm-10">0,1</span><span 
+class="eufm-10">] </span>e como
+consequência escrevemos <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">&#x03C9;</span><span 
+class="eufm-10">) </span>ao inves de <span 
+class="cmbx-10">P</span><img 
+src="algale4x.png" alt="({&#x03C9;})"  class="left" align="middle"> omitindo as chaves nos eventos
+unitários.
+   <div class="newtheorem">
+<!--l. 166--><p class="noindent" ><span class="head">
+<a 
+ id="x1-2014r1"></a>
+<span 
+class="ccti-10">Exemplo </span>1<span 
+class="ccti-10">.</span>  </span> Quando nos referimos ao lançamento de uma moeda equilibrada,
+estamos  considerando  o  espaço  amostral  <span 
+class="eusm-10">{</span><span 
+class="eurm-10">cara</span><span 
+class="eurm-10">,</span><span 
+class="eurm-10">coroa</span><span 
+class="eusm-10">}  </span>com  a  função  de
+probabilidade  <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">cara</span><span 
+class="eusm-10">}</span><span 
+class="eufm-10">)   =</span>   <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">coroa</span><span 
+class="eusm-10">}</span><span 
+class="eufm-10">)   =   </span><span 
+class="eurm-10">1&#x2215;2</span>,  portanto,  <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="msbm-10">&#x2205;</span><span 
+class="eufm-10">)   =   </span><span 
+class="eurm-10">0  </span>e
+<span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">cara</span><span 
+class="eurm-10">,</span><span 
+class="eurm-10">coroa</span><span 
+class="eusm-10">}</span><span 
+class="eufm-10">) = </span><span 
+class="eurm-10">1</span>. Agora, suponha que uma moeda equilibrada é lançada
+até  sair  cara.  Então,  o  espaço  amostral  que  modela  esse  experimento  é  o
+conjunto das seqüencias <span 
+class="eurm-10">&#x03C9;</span><sub><span 
+class="eurm-7">n</span></sub>  <span 
+class="eufm-10">= (</span><span 
+class="eurm-10">c</span><sub><span 
+class="eurm-7">1</span></sub><span 
+class="eurm-10">,c</span><sub><span 
+class="eurm-7">2</span></sub><span 
+class="eurm-10">,</span><span 
+class="eurm-10">&#x2026;</span><span 
+class="eurm-10">,c</span><sub><span 
+class="eurm-7">n</span></sub><span 
+class="eufm-10">) </span>tal que para cada <span 
+class="eurm-10">n </span><span 
+class="msam-10">&#x2265; </span><span 
+class="eurm-10">1 </span>temos
+<span 
+class="eurm-10">c</span><sub><span 
+class="eurm-7">n</span></sub>  <span 
+class="eufm-10">=</span> <span 
+class="eurm-10">cara</span> e para <span 
+class="eurm-10">1 </span><span 
+class="msam-10">&#x2264; </span><span 
+class="eurm-10">i &#x003C; n </span>temos <span 
+class="eurm-10">c</span><sub><span 
+class="eurm-7">i</span></sub>  <span 
+class="eufm-10">=</span> <span 
+class="eurm-10">coroa</span>, logo <span 
+class="eurm-10">&#x03A9; </span><span 
+class="eufm-10">= </span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">&#x03C9;</span><sub><span 
+class="eurm-7">n</span></sub><span 
+class="eufm-10">:</span> <span 
+class="eurm-10">n </span><span 
+class="msam-10">&#x2265; </span><span 
+class="eurm-10">1</span><span 
+class="eusm-10">}</span>. Esse
+conjunto é claramente enumerável. Ainda, se definimos
+   <center class="math-display" >
+<img 
+src="algale5x.png" alt="        ( 1)n
+P(&#x03C9;n ) =  2   " class="math-display" ></center>
+então temos um espaço de probabilidade pois <span 
+class="eurm-10">0 &#x003C;</span> <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">&#x03C9;</span><sub><span 
+class="eurm-7">n</span></sub><span 
+class="eufm-10">) </span><span 
+class="eurm-10">&#x003C; 1 </span>para todo <span 
+class="eurm-10">&#x03C9;</span><sub><span 
+class="eurm-7">n</span></sub>
+e
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2015r2"></a>
+   <center class="math-display" >
+                                                                  
+
+                                                                  
+<img 
+src="algale6x.png" alt=" &#x2211;         &#x2211;   -i
+    P (&#x03C9; ) =   2   = 1.
+&#x03C9;&#x2208;&#x03A9;        i&#x2265;1
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 185--><p class="nopar" >
+   </div>
+<!--l. 188--><p class="indent" >   Seja <span 
+class="cmsy-10"><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /> </span>a descrição de um evento <span 
+class="eurm-10">P </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="eurm-10">&#x03A9;</span>. Denotamos por
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="algale7x.png" alt="P [ P ]
+" class="math-display" ></center></td></tr></table>
+<!--l. 191--><p class="nopar" >
+a propbabilidade do evento <span 
+class="eurm-10">P</span>, isto é, <span 
+class="cmbx-10">P</span><img 
+src="algale8x.png" alt="[ P ]"  class="left" align="middle"> <span 
+class="eufm-10">=</span> <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">P</span><span 
+class="eufm-10">) </span>e para evidenciar o espaço
+amostral escrevemos
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="algale9x.png" alt="P&#x03A9; [ P ] ou P &#x03C9;&#x2208;R&#x03A9; [ P ].
+" class="math-display" ></center></td></tr></table>
+<!--l. 197--><p class="nopar" >
+Por exemplo, quando consideramos a probabilidade de um algoritmo aleatorizado <span 
+class="eurm-10">A</span>
+com entrada <span 
+class="eurm-10">x </span>responder errado, escrevemos
+   <center class="math-display" >
+<img 
+src="algale10x.png" alt="P        m [ A (x, &#x03C9;) est´a errado ]
+  &#x03C9;&#x2208;R{0,1}  " class="math-display" ></center>
+para denotar a probabilidade das seqüências <span 
+class="eurm-10">&#x03C9; </span>de <span 
+class="eurm-10">m </span>bits que fazem com que o
+algoritmo responda errado, ou em outras palavras, a probabilidade que uma <span 
+class="cmbx-10">escolha</span>
+<span 
+class="cmbx-10">aleat</span><span 
+class="cmbx-10">ória </span><span 
+class="eurm-10">&#x03C9; </span><span 
+class="cmsy-10">&#x2208;</span><sub>R</sub><span 
+class="eusm-10">{</span><span 
+class="eurm-10">0,1</span><span 
+class="eusm-10">}</span><sup><span 
+class="eurm-7">m</span></sup> faça o algoritmo responder errado.
+<!--l. 207--><p class="indent" >   Nos algoritmos, nós vamos assumir a possibilidade de se fazer escolhas aleatórias,
+ou seja, assumir que os algoritmos dispõem de uma fonte de bits aleatórios e
+escrevemos a instrução
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="algale11x.png" alt="a &#x2190;R {0, 1}
+" class="math-display" ></center></td></tr></table>
+<!--l. 212--><p class="nopar" >
+para denotar o fato de que <span 
+class="eurm-10">a </span>é uma variável do algoritmo e que após a execução da
+atribuição <span 
+class="euex-10">&#x2190;</span> <sub>R</sub> o valor da variável <span 
+class="eurm-10">a </span>é um elemento qualquer de <span 
+class="eusm-10">{</span><span 
+class="eurm-10">0,1</span><span 
+class="eusm-10">} </span>com <span 
+class="eurm-10">1&#x2215;2</span>. De
+um modo geral, se <span 
+class="eufm-10">(</span><span 
+class="eurm-10">&#x03A9;,</span><span 
+class="cmbx-10">P</span><span 
+class="eufm-10">) </span>é um espaço de probabilidade finito, então escrevemos a
+instrução
+   <center class="math-display" >
+<img 
+src="algale12x.png" alt="a &#x2190;R &#x03A9;  " class="math-display" ></center>
+chamada de <span 
+class="cmbx-10">escolha aleat</span><span 
+class="cmbx-10">ória uniforme </span>em <span 
+class="eurm-10">&#x03A9;</span>.
+   <div class="newtheorem">
+<!--l. 223--><p class="noindent" ><span class="head">
+<a 
+ id="x1-2016r2"></a>
+<span 
+class="ccti-10">Observa</span><span 
+class="ccti-10">ç</span><span 
+class="ccti-10">ão </span>2<span 
+class="ccti-10">.</span>  </span> Para a análise de complexidade dos algoritmos, assumimos que
+a instrução <span 
+class="eurm-10">a </span><span 
+class="euex-10">&#x2190;</span> <sub>R</sub><span 
+class="eusm-10">{</span><span 
+class="eurm-10">0,1</span><span 
+class="eusm-10">} </span>tem custo constante. No caso geral, <span 
+class="eurm-10">a </span><span 
+class="euex-10">&#x2190;</span> <sub>R</sub><span 
+class="eurm-10">&#x03A9;</span>, é feito
+em tempo <span 
+class="eurm-10">O</span><span 
+class="eufm-10">(</span>log <span 
+class="eusm-10">|</span><span 
+class="eurm-10">&#x03A9;</span><span 
+class="eusm-10">|</span><span 
+class="eufm-10">)</span>.
+                                                                  
+
+                                                                  
+   </div>
+   <div class="newtheorem">
+<!--l. 230--><p class="noindent" ><span class="head">
+<a 
+ id="x1-2017r3"></a>
+<span 
+class="ccti-10">Exerc</span><span 
+class="ccti-10">ício </span>3<span 
+class="ccti-10">.</span>  </span>Prove  que  <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">1</span></sub>  <span 
+class="cmsy-10">&#x222A; </span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">2</span></sub><span 
+class="eufm-10">)  =</span>  <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">1</span></sub><span 
+class="eufm-10">) +</span> <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">2</span></sub><span 
+class="eufm-10">) -</span> <span 
+class="cmbx-10">P</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">1</span></sub>  <span 
+class="cmsy-10">&#x2229; </span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">2</span></sub><span 
+class="eufm-10">)</span>,  para
+quaisquer eventos <span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">1</span></sub> e <span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">2</span></sub> num espaço de probabilidade discreto.
+   </div>
+   <div class="newtheorem">
+<!--l. 236--><p class="noindent" ><span class="head">
+<a 
+ id="x1-2018r4"></a>
+<span 
+class="ccti-10">Exerc</span><span 
+class="ccti-10">ício </span>4<span 
+class="ccti-10">.</span>  </span>Prove que para qualquer seqüência enumerável <span 
+class="eufm-10">(</span><span 
+class="eurm-10">E</span><sub><span 
+class="eurm-7">i</span></sub><span 
+class="eufm-10">)</span><sub><span 
+class="eurm-7">i</span><span 
+class="msam-7">&#x2265;</span><span 
+class="eurm-7">1</span></sub> de eventos
+num espaço discreto vale
+   <center class="math-display" >
+<img 
+src="algale13x.png" alt="  ( &#x22C3;   )    &#x2211;
+P (    Ei)  &#x2264;    P(Ei).
+    i&#x2265;1       i&#x003E;1
+" class="math-display" ></center>
+   </div>
+<!--l. 244--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-30001.1"></a>Identidade polinomial</h4>
+<!--l. 246--><p class="noindent" >Consideremos o problema de decidir se <span 
+class="eurm-10">f </span><span 
+class="eufm-10">= </span><span 
+class="eurm-10">0</span>, onde <span 
+class="eurm-10">f </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><span 
+class="eufm-10">[</span><span 
+class="eurm-10">x</span><span 
+class="eufm-10">] </span>é um polinômio não-nulo
+de grau no máximo <span 
+class="eurm-10">d &#x003E; 0</span>. Esse problema e sua variante multivariáveis tem
+importância central em complexidade computacional e voltaremos a estudá-lo na
+seção <a 
+href="#x1-60002.2">2.2<!--tex4ht:ref: sec:ip2 --></a> e veremos sua importância na seção <a 
+href="#x1-5300012">12<!--tex4ht:ref: sec:desaleatorizacao --></a>. Por ora, limitamo-nos a
+descrição do caso mais simples para ilustrar as definições apresentadas até
+agora.
+<!--l. 254--><p class="indent" >   Dado <span 
+class="eurm-10">f </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><span 
+class="eufm-10">[</span><span 
+class="eurm-10">x</span><span 
+class="eufm-10">] </span>de grau no máximo <span 
+class="eurm-10">d</span>, escolhemos aleatoriamente e uniformemente
+<span 
+class="eurm-10">a </span><span 
+class="cmsy-10">&#x2208;</span><span 
+class="eusm-10">{</span><span 
+class="eurm-10">1,2,</span><span 
+class="eurm-10">&#x2026;</span><span 
+class="eurm-10">,3d</span><span 
+class="eusm-10">}</span>. Se <span 
+class="eurm-10">f</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">a</span><span 
+class="eufm-10">) = </span><span 
+class="eurm-10">0</span>, então respondemos <span 
+class="ccti-10">sim</span>, <span 
+class="eurm-10">f </span><span 
+class="eufm-10">= </span><span 
+class="eurm-10">0</span>, senão respondemos <span 
+class="ccti-10">n</span><span 
+class="ccti-10">ão</span>,
+<span 
+class="eurm-10">f</span><span 
+class="eurm-10">&#x2260;</span><span 
+class="eurm-10">0</span>. Notemos que se <span 
+class="eurm-10">f </span><span 
+class="eufm-10">= </span><span 
+class="eurm-10">0 </span>então a resposta <span 
+class="ccti-10">sim </span>está correta entretanto se <span 
+class="eurm-10">f</span><span 
+class="eurm-10">&#x2260;</span><span 
+class="eurm-10">0</span>, então
+pode ocorrer <span 
+class="eurm-10">f</span><span 
+class="eufm-10">(</span><span 
+class="eurm-10">a</span><span 
+class="eufm-10">) = </span><span 
+class="eurm-10">0 </span>caso a escolha aleatória <span 
+class="eurm-10">a </span>seja uma raiz de <span 
+class="eurm-10">f</span>; nesse caso a
+resposta <span 
+class="ccti-10">sim </span>está errada. Uma resposta <span 
+class="ccti-10">n</span><span 
+class="ccti-10">ão </span>está sempre correta, ou seja, de fato
+<span 
+class="eurm-10">f</span><span 
+class="eurm-10">&#x2260;</span><span 
+class="eurm-10">0</span>.
+<!--l. 264--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                  
+
+                                                                  
+<a 
+ id="x1-30011"></a>
+                                                                  
+
+                                                                  
+__________________________________________________________________<div class="alltt">
+<!--l. 266--><p class="noindent" ><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Dados</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale14x.png" alt="d &#x2208;  &#x2115;   "  class="math" ><span 
+class="cmtt-10">&#x00A0;e</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale15x.png" alt="f &#x2208; &#x211D; [x]   "  class="math" ><span 
+class="cmtt-10">&#x00A0;de</span><span 
+class="cmtt-10">&#x00A0;grau</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;m</span><span 
+class="cmtt-10">áximo</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale16x.png" alt="d   "  class="math" >
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;Devolve</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmitt-10">n</span><span 
+class="cmitt-10">ão</span><span 
+class="cmtt-10">&#x00A0;se</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale17x.png" alt="f &#x2044;= 0   "  class="math" ><span 
+class="cmtt-10">&#x00A0;ou</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmitt-10">sim</span><span 
+class="cmtt-10">,</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale18x.png" alt="f =  0   "  class="math" ><span 
+class="cmtt-10">&#x00A0;com</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;probabilidade</span><span 
+class="cmtt-10">&#x00A0;de</span><span 
+class="cmtt-10">&#x00A0;erro</span><span 
+class="cmtt-10">&#x00A0;no</span><span 
+class="cmtt-10">&#x00A0;m</span><span 
+class="cmtt-10">áximo</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale19x.png" alt="1&#x2215;3   "  class="math" ><span 
+class="cmtt-10">.</span>
+<br />
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale20x.png" alt="a &#x2190;R  {1, 2, . .. , 3d}   "  class="math" ><span 
+class="cmtt-10">;</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;se</span><span 
+class="cmtt-10">&#x00A0;</span><img 
+src="algale21x.png" alt="f(a) =  0   "  class="math" ><span 
+class="cmtt-10">&#x00A0;ent</span><span 
+class="cmtt-10">ão</span><span 
+class="cmtt-10">&#x00A0;devolva(sim);</span>
+<br /><span 
+class="cmtt-10">&#x00A0;</span><span 
+clas

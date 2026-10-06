@@ -1,0 +1,748 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>index</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><p><span>[07/08]</span></p><h1 id='matemática-discreta-2023---2'><span>Matemática Discreta 2023 - 2</span></h1><p><strong><span>Professor</span></strong><span> </span><a href='http://hostel.ufabc.edu.br/~jair.donadelli'><span>Jair Donadelli</span></a><span>   ---  </span><strong><span>email</span></strong><span>  jair.donadelli &#39;arroba&#39; ufabc. ...</span></p><hr /><p><img src="../images/discreto.jpg" align="right" valign="top" height="130px" /><span>Matemática Discreta (porém, exuberante) expõe o aluno aos princípios, técnicas e metodologias associadas a problemas em  estruturas matemáticas discretas. </span></p><p><span>O horário semanal é terça das 08:00 às 10:00 e quinta das 10:00 às 12:00, sala 302-3.</span></p><p><strong><span>Disciplina prévia recomendada:</span></strong><span> Funções de uma variável </span><strong><span>T-P-I</span></strong><span>: 4-0-4</span></p><p><span>(</span><a href='http://professor.ufabc.edu.br/~jair.donadelli/discreta/PreBases.png'><span>tópicos de BM que vou considerar conhecidos pelos estudantes</span></a><span>)</span></p><hr /><p><strong><span>ÍNDICE:</span></strong></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#matemática-discreta-2023---2">Matemática Discreta 2023 - 2</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n12"><a class="md-toc-inner" href="#programação-da-disciplina"><strong>Programação da disciplina</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n13"><a class="md-toc-inner" href="#ementa">Ementa</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n15"><a class="md-toc-inner" href="#objetivos">Objetivos </a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n17"><a class="md-toc-inner" href="#bibliografia-básica">Bibliografia básica</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n25"><a class="md-toc-inner" href="#cronograma">Cronograma</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n99"><a class="md-toc-inner" href="#bibliografia-complementar">Bibliografia complementar</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n115"><a class="md-toc-inner" href="#atendimento"><strong>Atendimento</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n119"><a class="md-toc-inner" href="#avaliação"><strong>Avaliação</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n151"><a class="md-toc-inner" href="#datas">Datas</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n157"><a class="md-toc-inner" href="#substitutiva">Substitutiva </a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n159"><a class="md-toc-inner" href="#recuperação">Recuperação</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n163"><a class="md-toc-inner" href="#links"><strong>Links</strong></a></span></p></div><h2 id='programação-da-disciplina'><strong><span>Programação da disciplina</span></strong></h2><h3 id='ementa'><span>Ementa</span></h3><p><span>Teoria intuitiva dos conjuntos.  Relações: relações de equivalência, relações de ordem. Funções. Cardinalidade. Técnicas de demonstração: prova direta, prova por contradição. Indução. Introdução à Análise Combinatória. Princípio multiplicativo. Princípio aditivo. Permutação, arranjo, combinação. Princípio de inclusão e exclusão. O princípio da casa dos pombos. Funções geradoras. Partição de um inteiro. Relações de recorrência.</span></p><h3 id='objetivos'><span>Objetivos </span></h3><p><span>Utilizar a linguagem da lógica de primeira ordem. Compreender diferentes tipos de relações. Construir demonstrações com uso de notação adequada e argumentação logicamente fundamentada. Entender a necessidade do rigor formal ao se argumentar. Desenvolver, em particular, a capacidade de elaborar provas indutivas. Interpretar problemas de contagem em termos matemáticos. Aplicar técnicas de combinatória básica. Conhecer noções de cardinalidade em geral. Reconhecer as diferenças entre estruturas discretas e contínuas.</span></p><h3 id='bibliografia-básica'><span>Bibliografia básica</span></h3><ul><li><p><span>GRIMALDI, R.P., </span><em><span>Discrete and combinatorial mathematics : an applied introduction</span></em><span>. </span><strong><span>[</span><a href='http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=8910'><span>510 GRIMdi5</span><span>]</span><span> </span></a></strong></p></li><li><p><span>ROSEN, K.H. </span><em><span>Matemática discreta e suas aplicações</span></em><span>. 6ªEdição </span><strong><span>[</span><a href='http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=13171'><span>510 ROSEma6</span><span>]</span><span> </span></a></strong></p></li><li><p><span>SCHEINERMAN, E. R.; Matemática discreta: uma introdução. 1. ed., Thompson, 2003</span></p></li></ul><h3 id='cronograma'><span>Cronograma</span></h3><p><img src="./q2.png" referrerpolicy="no-referrer" alt="q2"></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>Semana</span></th><th><span>Tema</span></th><th><span>Refs</span></th><th><span>Atividades</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><strong><span>01</span></strong></td><td><em><span>Introdução à lógica e Demonstrações</span></em></td><td><span>Cap. 1 do Rosen</span></td><td><strong><a href='https://drive.google.com/file/d/1Z20J1woQHTRq540R5MVqxn0NiEuwxxf1/view?usp=sharing'><span>Notas de aula</span></a><span> </span></strong><br/><strong><span>Lista de Exercícios sugeridos:</span></strong><br/><span>(Rosen 6ªed.)</span><strong><a href='https://drive.google.com/file/d/1Ceb2A-TTgbzVY6u_yPJbDMJP-IiNSyD-/view?usp=sharing'><span>§1.1</span></a></strong><span>: 9,13,19,31,42,43, 45,49;</span><strong><a href='https://drive.google.com/file/d/1yDIm_sT7wziS4JN7qAoTAi1BkydFGX3Y/view?usp=sharing'><span>§1.2</span></a></strong><span>: 7,9,18,28,41,57; </span><strong><a href='https://drive.google.com/file/d/1_HFNyao1l_TW0eZ4tInz54nGU8_p9VH9/view?usp=sharing'><span>§1.3</span></a></strong><span>: 7,15,17,21,25,39,52,53; </span><strong><a href='https://drive.google.com/file/d/1U8f5w0aund88cJoMSRQcSLRKDA5NV73w/view?usp=sharing'><span>§1.4</span></a></strong><span>: 3,1,13,25,30,31,39,47;  </span><strong><a href='https://drive.google.com/file/d/1XdqVLLeLDID70rBqEMenG3HeEE2u4FiQ/view?usp=sharing'><span>§1.5</span></a></strong><span>: 11,13,15,17,19,23,25,34,35.  </span><br/><a href='https://drive.google.com/file/d/1CEflG_gG0FP8fGvkCi7aG_AVoDjaAtnM/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>02</span></strong></td><td><em><span>Técnicas de demonstração</span></em><br/><span> (feriado)</span></td><td><span>“”</span></td><td><strong><span>Lista de Exercícios sugeridos:</span></strong><span>  </span><a href='https://drive.google.com/file/d/17YhUWZJzou1b4pD4tcEOXN7Cfkq1N-3r/view?usp=sharing'><strong><span>§1.6</span></strong></a><span> 7,11,13,17,23,25,29,31,33,35,37,39,41</span><a href='https://drive.google.com/file/d/1pBxhprEUnK3IVxsHklmnHPZn1usagPfy/view?usp=sharing'><strong><span>§1.7</span></strong></a><span> 3,7,11,13,19,25,27,33 </span><br/><a href='https://drive.google.com/file/d/1HUyXkB9M960qOZEVfgi0UGYi45gL5usK/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>03</span></strong></td><td><span>(aula suspensa)</span><br/><em><span>Introdução  à Teoria Ingênua de  Conjuntos. Relações e funções.</span></em></td><td><span>Halmos (da bibliografia complementar), Caps. 2 e 8 do Rosen</span></td><td><a href='https://drive.google.com/file/d/1xIFQWdv2G4IapUV1KF1uZOhFCQMfWtsT/view?usp=sharing'><span>Notas de aula</span></a><span> </span><br/><strong><span>Lista de Exercícios sugeridos</span></strong><span>:</span><br/><a href='https://drive.google.com/file/d/1AELBFGYFxQCsbvt07ZzCtPsl8I-eSu7s/view?usp=sharing'><strong><span>§2.1</span></strong></a><span>: 3,5-9,15,21,23,27,28,35,37; </span><a href='https://drive.google.com/file/d/12lN3AU6doEtxy6feA2B_G6lxFy-sjx8x/view?usp=sharing'><strong><span>§2.2</span></strong></a><span>: 5-13,23,29,32,35,45,47,57; </span><a href='https://drive.google.com/file/d/1XovZchZMPOAGsNORVsP1oly37pNfd4Rq/view?usp=sharing'><strong><span>§2.3</span></strong></a><span>:1,5,18,19,25,67; </span><a href='https://drive.google.com/file/d/1FKoOZsiCCmldYtzxqE-ZdM082uAzQct2/view?usp=sharing'><strong><span>§8.1</span></strong></a><span>:1,5,23,25,33,35. </span><br/><a href='https://drive.google.com/file/d/12-R2aH4aCmiHfre0Y0GW3Jh0qyCaryC4/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>04</span></strong></td><td><em><span>Relações e funções. Relações de equivalência</span></em><br/><em><span>Indução</span></em></td><td><span>8.5 , 4.1 , 4.2 do Rosen</span></td><td><strong><span>Lista de Exercícios sugeridos</span></strong><span>:</span><br/><span> </span><a href='https://drive.google.com/file/d/1pwnWsrJ0mMGTTOzLfPtMCLJSRe_oDzZD/view?usp=sharing'><strong><span>§8.5</span></strong></a><span>: 1, 3, 11, 17, 31, 33, 35, 43, 59,68  </span><strong><a href='https://drive.google.com/file/d/1wYJkgB6jUGxX12V6yUZtEq3onzvUkS3J/view?usp=sharing'><span>§4.1</span></a><span>:</span></strong><span> 9,11,14,19,29,35,39,41,47--49,53,59 </span><a href='https://drive.google.com/file/d/1RNk13G_R7QhvDVZxCXvnjeNAdY3dpvAi/view?usp=sharing'><strong><span>§4.2</span></strong></a><span>: 3,11,17,23,24,25,27,29--32,36-43</span><br/><a href='https://drive.google.com/file/d/1L3YRr07N99i5fiueGY90qc1nheOj1P-M/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>05</span></strong></td><td><em><span>Indução</span></em><br/><strong><span>Avaliação</span></strong><span>.</span></td><td><span>‘“”</span></td><td><a href='https://drive.google.com/file/d/1ZvAljaoX2SS7_P9Onyk8jN1I7x2gpMpo/view?usp=sharing'><span>Notas de aula</span></a><span> </span><br/><span>Lista de Exercícios:  </span><a href='https://drive.google.com/file/d/1RNk13G_R7QhvDVZxCXvnjeNAdY3dpvAi/view?usp=sharing'><strong><span>§4.2</span></strong></a><span> </span><br/><a href='https://drive.google.com/file/d/164ZW-uSkdRC_744atD-1KwB_TiiFfb6_/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>06</span></strong></td><td><em><span>Relação de ordem</span></em></td><td><span>8.4, 8.6 do Rosen</span></td><td><a href='https://drive.google.com/file/d/1cdSxRxvAieeHIq7X5NgJDwnKJ2JdAMA4/view?usp=sharing'><span>Notas de aula</span></a><span> </span><br/><strong><span>Lista de Exercícios sugeridos</span></strong><span> </span><a href='https://drive.google.com/file/d/1quhhELGZAhrSfeNOQx3sggDlOssqoGr2/view?usp=sharing'><strong><span>§8.4</span></strong></a><span>: 1,3,29 </span><a href='https://drive.google.com/file/d/1bOagkzEOYsWEUzEsixqOmd_AOaHJ2yTb/view?usp=sharing'><strong><span>§8.6</span></strong></a><span>:1,12,13,15,23,33,35,39,53-60,65</span><br/><a href='https://drive.google.com/file/d/1GflsXIzjM26XRLMqM0djNReUpOuiwZlj/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>07</span></strong></td><td><em><span>Induções estrutural e bem fundada.</span></em></td><td><span>4.3 do Rosen e notas de aula</span></td><td><strong><span>Lista de Exercícios sugeridos</span></strong><span>: </span><a href='https://drive.google.com/file/d/1vZGCjU1VN3jx382R-crdzs0SXkh-eAYr/view?usp=drive_link'><strong><span>§4.3</span></strong></a><span>: 3,5,12,13,23,27, 29, 33, 34, 35,36,37,38,43,44,45,46,36, 48, 50, 51,61</span></td></tr><tr><td style='text-align:center;' ><strong><span>08</span></strong></td><td><em><span>Induções estrutural e bem fundada.</span></em></td><td><span>4.3 do Rosen e notas de aula</span></td><td><span>“”</span></td></tr><tr><td style='text-align:center;' ><strong><span>09</span></strong></td><td><em><span>Contagem, princípios básicos de contagem.</span></em></td><td><span>2.4, 5.1 e 5.2 do Rosen e notas de aula</span></td><td><a href='https://drive.google.com/file/d/1lzzFRM6qTZgRt7fDwS9leXKP73IazTII/view?usp=sharing'><span>Notas de aula</span></a><span> </span><br/><strong><span>Lista de Exercícios:</span></strong><span> </span><a href='https://drive.google.com/file/d/1e4O_PoOQWt1VKZcPYVB1nfXHFAniQGhL/view?usp=sharing'><strong><span>§2.4</span></strong></a><span>: 31,33,37,42,45,47; </span><strong><a href='https://drive.google.com/file/d/1Ej23ghiMx1O70kCeA_cdH0v21vef0_az/view?usp=sharing'><span>§5.1:</span></a></strong><span> 21,29,33,35,37,39,41, 45; </span><strong><a href='https://drive.google.com/file/d/1b_kxMNfQVVOyPHal0pVuj4dR8G3l3fFZ/view?usp=sharing'><span>§5.2:</span></a></strong><span> 1,3,5,7,9,11,…,39,41,43 </span><br/><a href='https://drive.google.com/file/d/1xOauxVhkqL0HzxruHkjNNz7JzTovpWj4/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>10</span></strong></td><td><strong><span>Avaliação</span></strong><span> </span></br><em><span>Princípio das gavetas</span></em></td><td><span>5.2 do Rosen</span></td><td><span>“”</span></td></tr><tr><td style='text-align:center;' ><strong><span>11</span></strong></td><td><em><span>Combinatória</span></em></td><td><span>Cap. 5 do Rosen</span></td><td><a href='https://drive.google.com/file/d/1T_ss5NfgNmy201-OYYL_khPQq7DHXXgs/view?usp=sharing'><span>Notas de aula</span></a><span> </span><br/><strong><span>Lista de Exercícios</span></strong><span>:</span><br/><span> </span><strong><span>§5.3</span></strong><span> 3,7,11,19,23,29,35,43,44 ; </span><strong><span>§5.4</span></strong><span> 9, 11, 13, 15, 17, 21, 27, 31, 37;  </span><strong><span>§5.5</span></strong><span> 7,15,21, 23,30,31, 39, 42, 49,50,53,63</span><br/><span> </span><a href='https://drive.google.com/file/d/1Lb0eshddUotRQf6gN3bi12jWsxtr7-Om/view?usp=sharing'><span>slides</span></a></td></tr><tr><td style='text-align:center;' ><strong><span>12</span></strong></td><td><strong><span>Avaliação</span></strong><span>. Avaliação Substitutiva</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td style='text-align:center;' ><strong><span>13</span></strong></td><td><span>Avaliação Recuperativa</span></td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='bibliografia-complementar'><span>Bibliografia complementar</span></h3><ol start='' ><li><p><span>Matosek, J. e Nesetril, J.I. </span><em><span>An Invitation to Discrete Mathematics</span></em><span> </span><strong><span>[510 MATOin2]</span></strong></p></li><li><p><span>Velleman, Daniel J </span><em><span>How to prove it : a structured approach</span></em><span> 2. ed. </span><strong><span>[511.3 VELh2]</span></strong></p></li><li><p><span>Mitchel T. Keller e William T. Trotter </span><em><span>Applied Combinatorics</span></em><span> </span><strong><span>[</span><a href='https://people.math.gatech.edu/~trotter/book.pdf'><span>aqui</span></a><span>]</span></strong></p></li><li><p><span>Halmos, Paul R. </span><em><span>Teoria ingênua dos conjuntos</span></em><span> </span><strong><span>[</span><a href='http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=2439'><span>511.322HALt</span><span>]</span></a></strong></p></li><li><p><span>Ronald L Graham; Donald E Knuth; Oren Patashnik.</span><em><span>Matemática concreta</span></em><span> 2. ed. </span><strong><span>[510 GRAHma2]</span></strong></p></li></ol><hr /><p><img src="../images/cramming-for-a-test.jpg" align="right" valign="top" style="zoom:18%;" />
+<span>R. Bianconi, </span><a href='http://www.ime.usp.br/~bianconi/recursos/mat.pdf'><span>Como ler e estudar matemática?</span></a><span> </span></p><p><span>Fernando Q. Gouvêa e Shai Simonson, </span><a href='http://web.stonehill.edu/compsci/history_math/math-read.htm'><span>How to Read Mathematics</span></a><span> (uma tradução &quot;rápida e grosseira&quot;, segundo o tradutor, </span><a href='http://hostel.ufabc.edu.br/~daniel.miranda/?p=628'><span>aqui</span></a><span>).</span></p><hr /><h2 id='atendimento'><strong><span>Atendimento</span></strong></h2><p><em><span>professor</span></em><span>:  4as. 14h15 as 15h na 546-2 bloco A , 5ªs depois da aula até 13h15 na própria sala de aula, ou em horário agendado por email.</span></p><p><em><span>monitor</span></em><span>:  Richard,  S-307-2, das 18:00 às 19:00, às segundas, quartas e sextas. </span></p><hr /><h2 id='avaliação'><strong><span>Avaliação</span></strong></h2><p><span>3 </span><strong><span>provas</span></strong><span> presenciais. As avaliações são individuais. Os critérios de avaliação incluem</span></p><ol start='' ><li><p><span>Apresentação clara, legível, discursiva, uniforme e objetiva.</span></p></li><li><p><span>Construção correta e em ordem dos argumentos.</span></p></li><li><p><span>Atendimento às normas de correção ortográfica e gramatical.</span></p></li><li><p><span>Observância às orientações específicas da atividade e aos prazos de entrega quando for o caso.</span></p></li></ol><p><span>Serão atribuídas notas de  0 a 100 nas atividades avaliativas e o resultado é definido como segue:</span></p><p><span>                                 </span><strong><span>M</span></strong><span> = media aritmética simples</span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>M</span></th><th style='text-align:center;' ><span>Conceito final</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>85 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 778 580" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><defs><path id="MJX-14-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="3C" xlink:href="#MJX-14-TEX-N-3C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex"><</script><span> Nota</span></td><td style='text-align:center;' ><span>A</span></td></tr><tr><td style='text-align:center;' ><span>70 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 778 580" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><defs><path id="MJX-14-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="3C" xlink:href="#MJX-14-TEX-N-3C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex"><</script><span> Nota </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><defs><path id="MJX-16-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-16-TEX-N-2264"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\leq</script><span>  85</span></td><td style='text-align:center;' ><span>B</span></td></tr><tr><td style='text-align:center;' ><span>50 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 778 580" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><defs><path id="MJX-14-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="3C" xlink:href="#MJX-14-TEX-N-3C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex"><</script><span> Nota </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><defs><path id="MJX-16-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-16-TEX-N-2264"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\leq</script><span> 70</span></td><td style='text-align:center;' ><span>C</span></td></tr><tr><td style='text-align:center;' ><span>45 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 778 580" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><defs><path id="MJX-14-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="3C" xlink:href="#MJX-14-TEX-N-3C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex"><</script><span> Nota </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><defs><path id="MJX-16-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-16-TEX-N-2264"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\leq</script><span> 50</span></td><td style='text-align:center;' ><span>D</span></td></tr><tr><td style='text-align:center;' ><span>Nota </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><defs><path id="MJX-16-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-16-TEX-N-2264"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\leq</script><span> 45</span></td><td style='text-align:center;' ><span>F</span></td></tr></tbody></table></figure><h3 id='datas'><span>Datas</span></h3><p><strong><span>P1</span></strong><span> – dia 29/06</span></p><p><strong><span>P2</span></strong><span> – dia </span><del><span>20/07</span></del><span> 03/08</span></p><p><strong><span>P3</span></strong><span> – dia 15/08</span></p><p><strong><span>Sub</span></strong><span> – dia 17/08</span></p><p><strong><span>Rec</span></strong><span> - dia 21/08 uma segunda, porém o horário é o da quinta (atenção horário de reposição)</span></p><h3 id='substitutiva'><span>Substitutiva </span></h3><p><span>O aluno que perder uma prova por razão justificada de acordo com o </span><a href='https://www.ufabc.edu.br/images/consepe/resolucoes/resolucao_227_-_regulamenta_a_aplicacao_de_mecanismos_de_avaliacao_substitutivos_nos_cursos_de_graduacao_da_ufabc_revoga_e_substitui_a_resolucao_consepe_n_181.pdf'><span>regimento da UFABC </span></a><span>deve manifestar o interesse em realizar uma prova substitutiva no prazo especificado pelo professor.</span></p><h3 id='recuperação'><span>Recuperação</span></h3><p><span>Tem direito a exame  recuperação, que engloba todo o conteúdo da disciplina, aqueles que foram aprovado com D ou reprovado com F e obtiveram frequência mínima.  O resultado do exame é um conceito que compõe com o conceito final </span><strong><span>M</span></strong><span> obtido na avaliação regular da disciplina como segue:</span></p><p><img src="./image-20230203090019550.png" referrerpolicy="no-referrer" alt="image-20230203090019550"></p><p><span>O aluno deve manifestar interesse em fazer a recuperação de acordo com as instruções que serão enviadas em momento apropriado.</span></p><h2 id='links'><strong><span>Links</span></strong></h2><ol start='' ><li><p><a href='https://docs.google.com/document/d/1St2GniLrGAuDBJgnb1oFfAlJiLwAJPucC3t0c_Vbza4/edit'><span>Plataformas digitais</span></a><span>, Biblioteca UFABC</span></p></li><li><p><span>Material antigo: </span><a href='https://drive.google.com/drive/folders/1nw_n9APcyIBohGt8ZRg59fS_jUpNEhTD?usp=sharing'><span>Provas</span></a><span>, </span><a href='https://drive.google.com/drive/folders/1cOzmxCBJfYMiaLB7AbmDddCfGp6c34w-?usp=sharing'><span>listas</span></a><span>, </span><a href='https://drive.google.com/drive/folders/1MsCP132CI9uwO0Ok3RzXnKMWgJbjx6NR?usp=sharing'><span>slides</span></a><span>, </span><a href='https://drive.google.com/drive/folders/1lpIok5SnUaoUyV6BBIu1lGEct_sarTuE?usp=sharing'><span>Notas de aulas</span></a></p></li><li><p><a href='https://en.wikipedia.org/wiki/Discrete_mathematics'><span>Matemática discreta</span></a><span>, entrada no wikipedia (em inglês, a página em português não está boa).</span></p></li><li><p><span>Lásló Lovász, </span><a href='http://www.cs.elte.hu/~lovasz/telaviv.pdf'><span>Discrete and Continuous: Two sides of the same?</span></a><span>.</span></p></li><li><p><a href='https://www.youtube.com/watch?v=aDOP0XynAzA'><span>Death by infinity puzzles and Axiom of Choice </span></a><span>(video ~12min)</span></p></li><li><p><span>(Video) </span><a href='https://www.youtube.com/watch?v=s86-Z-CbaHA&amp;t=58s'><span>The Banach–Tarski Paradox</span></a></p></li><li><p><em><span>Foolproof: A Sampling of Mathematical Folk Humor</span></em><span> Paul Renteln and Alan Dundes. [</span><a href='http://www.ams.org/notices/200501/fea-dundes.pdf'><span>pdf</span></a><span>]</span></p></li></ol></div></div>
+</body>
+</html>

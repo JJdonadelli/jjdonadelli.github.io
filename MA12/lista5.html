@@ -1,0 +1,64 @@
+<head>
+
+   <style>
+.MathJax nobr>span.math>span{border-left-width:0 !important};
+   </style>   
+
+  
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+<!--    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>       
+</head>
+<p>
+
+  <meta charset="UTF-8">
+  
+<h3>
+Lista 5 de Matemática Discreta (MA12)
+</h3>
+<h4>
+Data de entrega: no dia da P3
+</h4>
+
+
+<p>
+Um lago tem um número desconhecido de peixes, que denotamos por ${n}$,
+e queremos estimá-lo. Para tal, pescamos (aleatoriamente) ${n_1}$
+peixes e cada um deles recebe uma marca e é devolvida para o lago.
+
+<ol>
+  <li> De quantas maneiras podemos extrair ${r}$ peixes de modo que
+    ${k}$ estarão marcados?</li>
+  <li>Qual é o número de seleções de ${r}$ bolas? </li>
+  <li>Defina o índice de acerto por
+    
+    $ p_k(n)=\frac{\text{resultado do item (1)}}{\text{resultado do
+    item (2)}}.$
+
+    Mostre que ${p_k(n)}$ é
+    <ul>
+      <li>crescente para os valores de ${n}$ tais que ${p_k(n) {>}
+	p_k(n-1)}$,</li>
+      <li> decrescente para os valores de ${n}$ tais que ${p_k(n) {<} 
+	p_k(n-1)}$.</li>
+    </ul>
+
+    <li>Conclua que ${\lfloor \frac{n_1r}{k} \rfloor}$ é ponto de máximo de
+		      ${p_k(n)}$.</li>
+
+    </ul>
+</ol>
+
+<p>
+
+Num lago 1000 peixes foram capturados, marcados e devolvidos. Uma nova
+captura de 1000 peixes é feita 100 deles estão marcados. Supondo que
+esses eventos ocorrem com a maior probabilidade possível nessas
+condições, de uma estimativa para o tamanho da população de peixes no
+lago?

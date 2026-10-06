@@ -1,0 +1,685 @@
+htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmti  font-style: italic;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+File: ci065.html
+File: ci065.css
+File: ci065.tmp
+Font_Class(1,"1"): <img  src="" alt="" class="%s-%dx-x-%x" />
+Css: p.noindent { text-indent: 0em }
+Css: td p.noindent { text-indent: 0em; margin-top:0em; }
+Css: p.nopar { text-indent: 0em; }
+Css: p.indent{ text-indent: 1.5em }
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: img.math{vertical-align:middle;}
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 1px; margin:0px; }
+Css: .tabbing-right {text-align:right;}
+Css: span.TEX {letter-spacing: -0.125em; }
+Css: span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+Css: a span.TEX span.E {text-decoration: none; }
+Css: span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+Css: span.LATEX span.TEX{ position:relative; left: -0.4em; }
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: table.equation {width:100%;}
+Css: .equation td{text-align:center; }
+Css: td.equation { margin-top:1em; margin-bottom:1em; } 
+Css: td.equation-label { width:5%; text-align:center; }
+Css: td.eqnarray4 { width:5%; white-space: normal; }
+Css: td.eqnarray2 { width:5%; }
+Css: table.eqnarray-star, table.eqnarray {width:100%;}
+Css: div.eqnarray{text-align:center;}
+Css: div.array {text-align:center;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.pmatrix img{vertical-align:middle;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.bar-css {text-decoration:overline;}
+Css: img.cdots{vertical-align:middle;}
+Css: span.footnote-mark{ vertical-align: super; font-size:80%; }
+Css: div.submaketitle{ text-align:left; margin-top:2em; border-top: 1px solid black; border-bottom: 1px solid black; margin-left:5%; margin-right:5%; font-size:85%; line-height: 95%;}
+Css: div.submaketitle div {margin-top:0.5em; margin-bottom:0.5em; }
+Css: div.submaketitle p { margin-top:0em; margin-bottom:0em; }
+Css: div.abstract{ margin-top: 2em; text-align:left; margin-right:15pt; margin-left:15pt; }
+Css: div.addresses p {margin-top:0em; margin-bottom:0em; }
+Css: h2.titleHead{text-align:center;}
+Css: div.maketitle{ margin-bottom: 2em; text-align:center; }
+Css: div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+Css: div.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: .qed {width:2ex; float:right; text-align:right;}
+Css: .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+Font_Size: 11
+Css: div.translators {text-align:right; margin-bottom:0.7em;}
+Css: .sectionHead{text-align:center;}
+Css: .equation td{text-align:center; }
+Css: .equation-star td{text-align:center; }
+Css: table.equation-star { width:100%; }
+Css: table.equation { width:100%; }
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+Css: td.align-label { width:5%; text-align:center; }
+Css: td.align-odd { text-align:right; padding-right:0.3em;}
+Css: td.align-even { text-align:left; padding-right:0.6em;}
+Css: table.multline, table.multline-star {width:100%;}
+Css: td.gather {text-align:center; }
+Css: table.gather {width:100%;}
+Css: div.gather-star {text-align:center;}
+Css: .figure img.graphics {margin-left:10%;}
+Css: table.multicols { width:100%; margin-left:1em; margin-top:1em; margin-bottom:1em; }
+Css: .alltt P { margin-bottom : 0em; margin-top : 0em; }
+Css: .alltt { margin-bottom : 1em; margin-top : 1em; }
+Css: .lstlisting .label{margin-right:0.5em; }
+Css: div.lstlisting{font-family: monospace; white-space: nowrap; margin-top:0.5em; margin-bottom:0.5em; }
+Css: div.lstinputlisting{ font-family: monospace; white-space: nowrap; }
+Css: .lstinputlisting .label{margin-right:0.5em;}
+--- needs --- ci065.idv[2] ==> ci0650x.png ---
+--- needs --- ci065.idv[3] ==> ci0651x.png ---
+--- needs --- ci065.idv[4] ==> ci0652x.png ---
+--- needs --- ci065.idv[6] ==> ci0653x.png ---
+File: ci065.4idx
+--- needs --- ci065.idv[7] ==> ci0654x.png ---
+--- needs --- ci065.idv[8] ==> ci0655x.png ---
+File: grafo1.png
+--- needs --- ci065.idv[10] ==> ci0656x.png ---
+--- needs --- ci065.idv[11] ==> ci0657x.png ---
+--- needs --- ci065.idv[13] ==> ci0658x.png ---
+--- needs --- ci065.idv[14] ==> ci0659x.png ---
+--- needs --- ci065.idv[16] ==> ci06510x.png ---
+--- needs --- ci065.idv[17] ==> ci06511x.png ---
+--- needs --- ci065.idv[18] ==> ci06512x.png ---
+--- needs --- ci065.idv[20] ==> ci06513x.png ---
+--- needs --- ci065.idv[21] ==> ci06514x.png ---
+--- needs --- ci065.idv[23] ==> ci06515x.png ---
+--- needs --- ci065.idv[25] ==> ci06516x.png ---
+--- needs --- ci065.idv[27] ==> ci06517x.png ---
+--- needs --- ci065.idv[29] ==> ci06518x.png ---
+--- needs --- ci065.idv[31] ==> ci06519x.png ---
+--- needs --- ci065.idv[33] ==> ci06520x.png ---
+--- needs --- ci065.idv[35] ==> ci06521x.png ---
+--- needs --- ci065.idv[37] ==> ci06522x.png ---
+--- needs --- ci065.idv[38] ==> ci06523x.png ---
+--- needs --- ci065.idv[40] ==> ci06524x.png ---
+--- needs --- ci065.idv[41] ==> ci06525x.png ---
+--- needs --- ci065.idv[42] ==> ci06526x.png ---
+File: subgrafoinduzido.png
+--- needs --- ci065.idv[44] ==> ci06527x.png ---
+--- needs --- ci065.idv[46] ==> ci06528x.png ---
+--- needs --- ci065.idv[48] ==> ci06529x.png ---
+--- needs --- ci065.idv[50] ==> ci06530x.png ---
+--- needs --- ci065.idv[51] ==> ci06531x.png ---
+--- needs --- ci065.idv[53] ==> ci06532x.png ---
+--- needs --- ci065.idv[55] ==> ci06533x.png ---
+--- needs --- ci065.idv[57] ==> ci06534x.png ---
+--- needs --- ci065.idv[59] ==> ci06535x.png ---
+--- needs --- ci065.idv[60] ==> ci06536x.png ---
+--- needs --- ci065.idv[61] ==> ci06537x.png ---
+--- needs --- ci065.idv[63] ==> ci06538x.png ---
+--- needs --- ci065.idv[64] ==> ci06539x.png ---
+--- needs --- ci065.idv[66] ==> ci06540x.png ---
+File: petersen2.png
+File: triangs.png
+File: triangs2.png
+File: isomorfismo.png
+File: outrosgrafos.png
+--- needs --- ci065.idv[68] ==> ci06541x.png ---
+--- needs --- ci065.idv[69] ==> ci06542x.png ---
+File: listaadjacencias.png
+File: grafico1.png
+File: grafico2.png
+--- needs --- ci065.idv[71] ==> ci06543x.png ---
+--- needs --- ci065.idv[72] ==> ci06544x.png ---
+--- needs --- ci065.idv[73] ==> ci06545x.png ---
+--- needs --- ci065.idv[75] ==> ci06546x.png ---
+--- needs --- ci065.idv[77] ==> ci06547x.png ---
+--- needs --- ci065.idv[78] ==> ci06548x.png ---
+--- needs --- ci065.idv[79] ==> ci06549x.png ---
+--- needs --- ci065.idv[80] ==> ci06550x.png ---
+--- needs --- ci065.idv[81] ==> ci06551x.png ---
+--- needs --- ci065.idv[82] ==> ci06552x.png ---
+--- needs --- ci065.idv[83] ==> ci06553x.png ---
+--- needs --- ci065.idv[84] ==> ci06554x.png ---
+--- needs --- ci065.idv[85] ==> ci06555x.png ---
+--- needs --- ci065.idv[86] ==> ci06556x.png ---
+--- needs --- ci065.idv[87] ==> ci06557x.png ---
+--- needs --- ci065.idv[88] ==> ci06558x.png ---
+--- needs --- ci065.idv[89] ==> ci06559x.png ---
+--- needs --- ci065.idv[90] ==> ci06560x.png ---
+--- needs --- ci065.idv[91] ==> ci06561x.png ---
+--- needs --- ci065.idv[92] ==> ci06562x.png ---
+--- needs --- ci065.idv[93] ==> ci06563x.png ---
+--- needs --- ci065.idv[94] ==> ci06564x.png ---
+--- needs --- ci065.idv[95] ==> ci06565x.png ---
+--- needs --- ci065.idv[96] ==> ci06566x.png ---
+--- needs --- ci065.idv[97] ==> ci06567x.png ---
+--- needs --- ci065.idv[98] ==> ci06568x.png ---
+--- needs --- ci065.idv[99] ==> ci06569x.png ---
+--- needs --- ci065.idv[100] ==> ci06570x.png ---
+--- needs --- ci065.idv[101] ==> ci06571x.png ---
+--- needs --- ci065.idv[102] ==> ci06572x.png ---
+--- needs --- ci065.idv[103] ==> ci06573x.png ---
+--- needs --- ci065.idv[104] ==> ci06574x.png ---
+--- needs --- ci065.idv[106] ==> ci06575x.png ---
+--- needs --- ci065.idv[108] ==> ci06576x.png ---
+--- needs --- ci065.idv[110] ==> ci06577x.png ---
+--- needs --- ci065.idv[111] ==> ci06578x.png ---
+--- needs --- ci065.idv[112] ==> ci06579x.png ---
+--- needs --- ci065.idv[113] ==> ci06580x.png ---
+--- needs --- ci065.idv[114] ==> ci06581x.png ---
+--- needs --- ci065.idv[115] ==> ci06582x.png ---
+--- needs --- ci065.idv[116] ==> ci06583x.png ---
+--- needs --- ci065.idv[117] ==> ci06584x.png ---
+--- needs --- ci065.idv[118] ==> ci06585x.png ---
+--- needs --- ci065.idv[119] ==> ci06586x.png ---
+--- needs --- ci065.idv[120] ==> ci06587x.png ---
+--- needs --- ci065.idv[121] ==> ci06588x.png ---
+--- needs --- ci065.idv[122] ==> ci06589x.png ---
+--- needs --- ci065.idv[123] ==> ci06590x.png ---
+--- needs --- ci065.idv[124] ==> ci06591x.png ---
+--- needs --- ci065.idv[125] ==> ci06592x.png ---
+--- needs --- ci065.idv[126] ==> ci06593x.png ---
+--- needs --- ci065.idv[127] ==> ci06594x.png ---
+--- needs --- ci065.idv[128] ==> ci06595x.png ---
+--- needs --- ci065.idv[129] ==> ci06596x.png ---
+--- needs --- ci065.idv[130] ==> ci06597x.png ---
+--- needs --- ci065.idv[131] ==> ci06598x.png ---
+--- needs --- ci065.idv[132] ==> ci06599x.png ---
+--- needs --- ci065.idv[133] ==> ci065100x.png ---
+--- needs --- ci065.idv[134] ==> ci065101x.png ---
+--- needs --- ci065.idv[135] ==> ci065102x.png ---
+--- needs --- ci065.idv[136] ==> ci065103x.png ---
+--- needs --- ci065.idv[137] ==> ci065104x.png ---
+--- needs --- ci065.idv[138] ==> ci065105x.png ---
+--- needs --- ci065.idv[139] ==> ci065106x.png ---
+--- needs --- ci065.idv[140] ==> ci065107x.png ---
+--- needs --- ci065.idv[141] ==> ci065108x.png ---
+--- needs --- ci065.idv[143] ==> ci065109x.png ---
+--- needs --- ci065.idv[144] ==> ci065110x.png ---
+--- needs --- ci065.idv[145] ==> ci065111x.png ---
+--- needs --- ci065.idv[146] ==> ci065112x.png ---
+--- needs --- ci065.idv[147] ==> ci065113x.png ---
+--- needs --- ci065.idv[148] ==> ci065114x.png ---
+--- needs --- ci065.idv[149] ==> ci065115x.png ---
+--- needs --- ci065.idv[150] ==> ci065116x.png ---
+--- needs --- ci065.idv[151] ==> ci065117x.png ---
+--- needs --- ci065.idv[152] ==> ci065118x.png ---
+--- needs --- ci065.idv[153] ==> ci065119x.png ---
+--- needs --- ci065.idv[155] ==> ci065120x.png ---
+--- needs --- ci065.idv[156] ==> ci065121x.png ---
+--- needs --- ci065.idv[157] ==> ci065122x.png ---
+--- needs --- ci065.idv[158] ==> ci065123x.png ---
+--- needs --- ci065.idv[159] ==> ci065124x.png ---
+--- needs --- ci065.idv[161] ==> ci065125x.png ---
+--- needs --- ci065.idv[162] ==> ci065126x.png ---
+--- needs --- ci065.idv[163] ==> ci065127x.png ---
+--- needs --- ci065.idv[164] ==> ci065128x.png ---
+--- needs --- ci065.idv[165] ==> ci065129x.png ---
+--- needs --- ci065.idv[166] ==> ci065130x.png ---
+--- needs --- ci065.idv[167] ==> ci065131x.png ---
+--- needs --- ci065.idv[168] ==> ci065132x.png ---
+--- needs --- ci065.idv[169] ==> ci065133x.png ---
+--- needs --- ci065.idv[170] ==> ci065134x.png ---
+--- needs --- ci065.idv[171] ==> ci065135x.png ---
+--- needs --- ci065.idv[172] ==> ci065136x.png ---
+--- needs --- ci065.idv[173] ==> ci065137x.png ---
+--- needs --- ci065.idv[174] ==> ci065138x.png ---
+--- needs --- ci065.idv[175] ==> ci065139x.png ---
+--- needs --- ci065.idv[176] ==> ci065140x.png ---
+--- needs --- ci065.idv[177] ==> ci065141x.png ---
+--- needs --- ci065.idv[178] ==> ci065142x.png ---
+--- needs --- ci065.idv[179] ==> ci065143x.png ---
+--- needs --- ci065.idv[180] ==> ci065144x.png ---
+--- needs --- ci065.idv[181] ==> ci065145x.png ---
+--- needs --- ci065.idv[182] ==> ci065146x.png ---
+--- needs --- ci065.idv[183] ==> ci065147x.png ---
+--- needs --- ci065.idv[184] ==> ci065148x.png ---
+--- needs --- ci065.idv[185] ==> ci065149x.png ---
+--- needs --- ci065.idv[186] ==> ci065150x.png ---
+--- needs --- ci065.idv[187] ==> ci065151x.png ---
+--- needs --- ci065.idv[188] ==> ci065152x.png ---
+File: BL.png
+File: BP.png
+File: BLxBP.png
+--- needs --- ci065.idv[190] ==> ci065153x.png ---
+--- needs --- ci065.idv[191] ==> ci065154x.png ---
+--- needs --- ci065.idv[192] ==> ci065155x.png ---
+--- needs --- ci065.idv[193] ==> ci065156x.png ---
+--- needs --- ci065.idv[194] ==> ci065157x.png ---
+--- needs --- ci065.idv[195] ==> ci065158x.png ---
+--- needs --- ci065.idv[196] ==> ci065159x.png ---
+--- needs --- ci065.idv[197] ==> ci065160x.png ---
+--- needs --- ci065.idv[198] ==> ci065161x.png ---
+--- needs --- ci065.idv[199] ==> ci065162x.png ---
+--- needs --- ci065.idv[200] ==> ci065163x.png ---
+--- needs --- ci065.idv[201] ==> ci065164x.png ---
+--- needs --- ci065.idv[202] ==> ci065165x.png ---
+--- needs --- ci065.idv[204] ==> ci065166x.png ---
+--- needs --- ci065.idv[206] ==> ci065167x.png ---
+--- needs --- ci065.idv[207] ==> ci065168x.png ---
+--- needs --- ci065.idv[208] ==> ci065169x.png ---
+--- needs --- ci065.idv[209] ==> ci065170x.png ---
+--- needs --- ci065.idv[210] ==> ci065171x.png ---
+--- needs --- ci065.idv[211] ==> ci065172x.png ---
+--- needs --- ci065.idv[212] ==> ci065173x.png ---
+--- needs --- ci065.idv[213] ==> ci065174x.png ---
+--- needs --- ci065.idv[214] ==> ci065175x.png ---
+--- needs --- ci065.idv[215] ==> ci065176x.png ---
+--- needs --- ci065.idv[216] ==> ci065177x.png ---
+--- needs --- ci065.idv[217] ==> ci065178x.png ---
+--- needs --- ci065.idv[219] ==> ci065179x.png ---
+File: caminho.png
+--- needs --- ci065.idv[221] ==> ci065180x.png ---
+File: caminhosecircuitos.png
+--- needs --- ci065.idv[223] ==> ci065181x.png ---
+--- needs --- ci065.idv[225] ==> ci065182x.png ---
+--- needs --- ci065.idv[227] ==> ci065183x.png ---
+--- needs --- ci065.idv[229] ==> ci065184x.png ---
+--- needs --- ci065.idv[231] ==> ci065185x.png ---
+--- needs --- ci065.idv[233] ==> ci065186x.png ---
+--- needs --- ci065.idv[234] ==> ci065187x.png ---
+--- needs --- ci065.idv[235] ==> ci065188x.png ---
+--- needs --- ci065.idv[236] ==> ci065189x.png ---
+--- needs --- ci065.idv[238] ==> ci065190x.png ---
+--- needs --- ci065.idv[240] ==> ci065191x.png ---
+File: 3cubo.png
+--- needs --- ci065.idv[242] ==> ci065192x.png ---
+--- needs --- ci065.idv[244] ==> ci065193x.png ---
+File: compeso.png
+File: listaadjacencias2.png
+--- needs --- ci065.idv[246] ==> ci065194x.png ---
+--- needs --- ci065.idv[248] ==> ci065195x.png ---
+--- needs --- ci065.idv[249] ==> ci065196x.png ---
+--- needs --- ci065.idv[250] ==> ci065197x.png ---
+--- needs --- ci065.idv[251] ==> ci065198x.png ---
+--- needs --- ci065.idv[252] ==> ci065199x.png ---
+--- needs --- ci065.idv[253] ==> ci065200x.png ---
+--- needs --- ci065.idv[254] ==> ci065201x.png ---
+--- needs --- ci065.idv[255] ==> ci065202x.png ---
+--- needs --- ci065.idv[257] ==> ci065203x.png ---
+--- needs --- ci065.idv[258] ==> ci065204x.png ---
+--- needs --- ci065.idv[259] ==> ci065205x.png ---
+--- needs --- ci065.idv[260] ==> ci065206x.png ---
+--- needs --- ci065.idv[261] ==> ci065207x.png ---
+--- needs --- ci065.idv[263] ==> ci065208x.png ---
+--- needs --- ci065.idv[264] ==> ci065209x.png ---
+--- needs --- ci065.idv[265] ==> ci065210x.png ---
+--- needs --- ci065.idv[266] ==> ci065211x.png ---
+--- needs --- ci065.idv[267] ==> ci065212x.png ---
+--- needs --- ci065.idv[268] ==> ci065213x.png ---
+--- needs --- ci065.idv[269] ==> ci065214x.png ---
+--- needs --- ci065.idv[270] ==> ci065215x.png ---
+--- needs --- ci065.idv[271] ==> ci065216x.png ---
+--- needs --- ci065.idv[272] ==> ci065217x.png ---
+--- needs --- ci065.idv[273] ==> ci065218x.png ---
+--- needs --- ci065.idv[274] ==> ci065219x.png ---
+--- needs --- ci065.idv[275] ==> ci065220x.png ---
+--- needs --- ci065.idv[276] ==> ci065221x.png ---
+--- needs --- ci065.idv[278] ==> ci065222x.png ---
+--- needs --- ci065.idv[280] ==> ci065223x.png ---
+--- needs --- ci065.idv[281] ==> ci065224x.png ---
+--- needs --- ci065.idv[283] ==> ci065225x.png ---
+--- needs --- ci065.idv[284] ==> ci065226x.png ---
+--- needs --- ci065.idv[286] ==> ci065227x.png ---
+--- needs --- ci065.idv[288] ==> ci065228x.png ---
+--- needs --- ci065.idv[290] ==> ci065229x.png ---
+--- needs --- ci065.idv[291] ==> ci065230x.png ---
+--- needs --- ci065.idv[292] ==> ci065231x.png ---
+--- needs --- ci065.idv[293] ==> ci065232x.png ---
+--- needs --- ci065.idv[294] ==> ci065233x.png ---
+--- needs --- ci065.idv[295] ==> ci065234x.png ---
+--- needs --- ci065.idv[296] ==> ci065235x.png ---
+--- needs --- ci065.idv[297] ==> ci065236x.png ---
+--- needs --- ci065.idv[298] ==> ci065237x.png ---
+--- needs --- ci065.idv[299] ==> ci065238x.png ---
+--- needs --- ci065.idv[300] ==> ci065239x.png ---
+--- needs --- ci065.idv[301] ==> ci065240x.png ---
+--- needs --- ci065.idv[302] ==> ci065241x.png ---
+--- needs --- ci065.idv[303] ==> ci065242x.png ---
+--- needs --- ci065.idv[304] ==> ci065243x.png ---
+--- needs --- ci065.idv[305] ==> ci065244x.png ---
+--- needs --- ci065.idv[306] ==> ci065245x.png ---
+--- needs --- ci065.idv[307] ==> ci065246x.png ---
+--- needs --- ci065.idv[308] ==> ci065247x.png ---
+--- needs --- ci065.idv[309] ==> ci065248x.png ---
+--- needs --- ci065.idv[310] ==> ci065249x.png ---
+--- needs --- ci065.idv[311] ==> ci065250x.png ---
+--- needs --- ci065.idv[312] ==> ci065251x.png ---
+--- needs --- ci065.idv[313] ==> ci065252x.png ---
+--- needs --- ci065.idv[314] ==> ci065253x.png ---
+--- needs --- ci065.idv[315] ==> ci065254x.png ---
+--- needs --- ci065.idv[317] ==> ci065255x.png ---
+--- needs --- ci065.idv[318] ==> ci065256x.png ---
+--- needs --- ci065.idv[319] ==> ci065257x.png ---
+--- needs --- ci065.idv[320] ==> ci065258x.png ---
+--- needs --- ci065.idv[321] ==> ci065259x.png ---
+--- needs --- ci065.idv[322] ==> ci065260x.png ---
+--- needs --- ci065.idv[323] ==> ci065261x.png ---
+--- needs --- ci065.idv[324] ==> ci065262x.png ---
+--- needs --- ci065.idv[325] ==> ci065263x.png ---
+--- needs --- ci065.idv[326] ==> ci065264x.png ---
+--- needs --- ci065.idv[327] ==> ci065265x.png ---
+--- needs --- ci065.idv[328] ==> ci065266x.png ---
+--- needs --- ci065.idv[330] ==> ci065267x.png ---
+--- needs --- ci065.idv[331] ==> ci065268x.png ---
+--- needs --- ci065.idv[332] ==> ci065269x.png ---
+--- needs --- ci065.idv[333] ==> ci065270x.png ---
+--- needs --- ci065.idv[334] ==> ci065271x.png ---
+--- needs --- ci065.idv[335] ==> ci065272x.png ---
+--- needs --- ci065.idv[336] ==> ci065273x.png ---
+--- needs --- ci065.idv[337] ==> ci065274x.png ---
+--- needs --- ci065.idv[338] ==> ci065275x.png ---
+--- needs --- ci065.idv[339] ==> ci065276x.png ---
+--- needs --- ci065.idv[340] ==> ci065277x.png ---
+--- needs --- ci065.idv[341] ==> ci065278x.png ---
+--- needs --- ci065.idv[342] ==> ci065279x.png ---
+--- needs --- ci065.idv[343] ==> ci065280x.png ---
+--- needs --- ci065.idv[344] ==> ci065281x.png ---
+--- needs --- ci065.idv[345] ==> ci065282x.png ---
+--- needs --- ci065.idv[346] ==> ci065283x.png ---
+--- needs --- ci065.idv[347] ==> ci065284x.png ---
+--- needs --- ci065.idv[348] ==> ci065285x.png ---
+--- needs --- ci065.idv[349] ==> ci065286x.png ---
+--- needs --- ci065.idv[350] ==> ci065287x.png ---
+--- needs --- ci065.idv[351] ==> ci065288x.png ---
+--- needs --- ci065.idv[353] ==> ci065289x.png ---
+File: floydwarshall.png
+--- needs --- ci065.idv[355] ==> ci065290x.png ---
+--- needs --- ci065.idv[357] ==> ci065291x.png ---
+--- needs --- ci065.idv[358] ==> ci065292x.png ---
+--- needs --- ci065.idv[359] ==> ci065293x.png ---
+--- needs --- ci065.idv[360] ==> ci065294x.png ---
+--- needs --- ci065.idv[361] ==> ci065295x.png ---
+--- needs --- ci065.idv[362] ==> ci065296x.png ---
+--- needs --- ci065.idv[363] ==> ci065297x.png ---
+--- needs --- ci065.idv[364] ==> ci065298x.png ---
+--- needs --- ci065.idv[365] ==> ci065299x.png ---
+--- needs --- ci065.idv[366] ==> ci065300x.png ---
+--- needs --- ci065.idv[367] ==> ci065301x.png ---
+--- needs --- ci065.idv[368] ==> ci065302x.png ---
+--- needs --- ci065.idv[369] ==> ci065303x.png ---
+--- needs --- ci065.idv[370] ==> ci065304x.png ---
+--- needs --- ci065.idv[372] ==> ci065305x.png ---
+--- needs --- ci065.idv[373] ==> ci065306x.png ---
+--- needs --- ci065.idv[374] ==> ci065307x.png ---
+--- needs --- ci065.idv[375] ==> ci065308x.png ---
+--- needs --- ci065.idv[376] ==> ci065309x.png ---
+--- needs --- ci065.idv[377] ==> ci065310x.png ---
+--- needs --- ci065.idv[378] ==> ci065311x.png ---
+--- needs --- ci065.idv[379] ==> ci065312x.png ---
+--- needs --- ci065.idv[380] ==> ci065313x.png ---
+--- needs --- ci065.idv[381] ==> ci065314x.png ---
+--- needs --- ci065.idv[382] ==> ci065315x.png ---
+--- needs --- ci065.idv[383] ==> ci065316x.png ---
+--- needs --- ci065.idv[384] ==> ci065317x.png ---
+--- needs --- ci065.idv[385] ==> ci065318x.png ---
+--- needs --- ci065.idv[386] ==> ci065319x.png ---
+--- needs --- ci065.idv[387] ==> ci065320x.png ---
+--- needs --- ci065.idv[388] ==> ci065321x.png ---
+File: articulacao.png
+File: componentesBi.png
+--- needs --- ci065.idv[390] ==> ci065322x.png ---
+--- needs --- ci065.idv[392] ==> ci065323x.png ---
+--- needs --- ci065.idv[394] ==> ci065324x.png ---
+--- needs --- ci065.idv[395] ==> ci065325x.png ---
+--- needs --- ci065.idv[396] ==> ci065326x.png ---
+--- needs --- ci065.idv[398] ==> ci065327x.png ---
+--- needs --- ci065.idv[400] ==> ci065328x.png ---
+File: Hnk.png
+--- needs --- ci065.idv[402] ==> ci065329x.png ---
+--- needs --- ci065.idv[404] ==> ci065330x.png ---
+--- needs --- ci065.idv[406] ==> ci065331x.png ---
+File: arv_geradora.png
+--- needs --- ci065.idv[408] ==> ci065332x.png ---
+--- needs --- ci065.idv[409] ==> ci065333x.png ---
+--- needs --- ci065.idv[411] ==> ci065334x.png ---
+--- needs --- ci065.idv[412] ==> ci065335x.png ---
+--- needs --- ci065.idv[413] ==> ci065336x.png ---
+--- needs --- ci065.idv[414] ==> ci065337x.png ---
+--- needs --- ci065.idv[415] ==> ci065338x.png ---
+--- needs --- ci065.idv[416] ==> ci065339x.png ---
+--- needs --- ci065.idv[417] ==> ci065340x.png ---
+--- needs --- ci065.idv[418] ==> ci065341x.png ---
+--- needs --- ci065.idv[419] ==> ci065342x.png ---
+--- needs --- ci065.idv[421] ==> ci065343x.png ---
+--- needs --- ci065.idv[422] ==> ci065344x.png ---
+--- needs --- ci065.idv[423] ==> ci065345x.png ---
+--- needs --- ci065.idv[424] ==> ci065346x.png ---
+--- needs --- ci065.idv[425] ==> ci065347x.png ---
+--- needs --- ci065.idv[426] ==> ci065348x.png ---
+--- needs --- ci065.idv[427] ==> ci065349x.png ---
+--- needs --- ci065.idv[428] ==> ci065350x.png ---
+--- needs --- ci065.idv[429] ==> ci065351x.png ---
+--- needs --- ci065.idv[430] ==> ci065352x.png ---
+--- needs --- ci065.idv[431] ==> ci065353x.png ---
+--- needs --- ci065.idv[432] ==> ci065354x.png ---
+--- needs --- ci065.idv[433] ==> ci065355x.png ---
+--- needs --- ci065.idv[435] ==> ci065356x.png ---
+--- needs --- ci065.idv[436] ==> ci065357x.png ---
+File: emparelhamento.png
+--- needs --- ci065.idv[437] ==> ci065358x.png ---
+--- needs --- ci065.idv[438] ==> ci065359x.png ---
+--- needs --- ci065.idv[439] ==> ci065360x.png ---
+--- needs --- ci065.idv[440] ==> ci065361x.png ---
+--- needs --- ci065.idv[441] ==> ci065362x.png ---
+--- needs --- ci065.idv[442] ==> ci065363x.png ---
+--- needs --- ci065.idv[443] ==> ci065364x.png ---
+--- needs --- ci065.idv[445] ==> ci065365x.png ---
+--- needs --- ci065.idv[447] ==> ci065366x.png ---
+--- needs --- ci065.idv[448] ==> ci065367x.png ---
+--- needs --- ci065.idv[449] ==> ci065368x.png ---
+--- needs --- ci065.idv[450] ==> ci065369x.png ---
+--- needs --- ci065.idv[451] ==> ci065370x.png ---
+--- needs --- ci065.idv[452] ==> ci065371x.png ---
+--- needs --- ci065.idv[453] ==> ci065372x.png ---
+--- needs --- ci065.idv[455] ==> ci065373x.png ---
+--- needs --- ci065.idv[457] ==> ci065374x.png ---
+--- needs --- ci065.idv[459] ==> ci065375x.png ---
+--- needs --- ci065.idv[461] ==> ci065376x.png ---
+--- needs --- ci065.idv[463] ==> ci065377x.png ---
+--- needs --- ci065.idv[464] ==> ci065378x.png ---
+--- needs --- ci065.idv[466] ==> ci065379x.png ---
+--- needs --- ci065.idv[468] ==> ci065380x.png ---
+--- needs --- ci065.idv[470] ==> ci065381x.png ---
+File: hungaro.png
+File: hungaro2.png
+--- needs --- ci065.idv[472] ==> ci065382x.png ---
+--- needs --- ci065.idv[473] ==> ci065383x.png ---
+--- needs --- ci065.idv[474] ==> ci065384x.png ---
+--- needs --- ci065.idv[475] ==> ci065385x.png ---
+--- needs --- ci065.idv[476] ==> ci065386x.png ---
+--- needs --- ci065.idv[477] ==> ci065387x.png ---
+--- needs --- ci065.idv[478] ==> ci065388x.png ---
+--- needs --- ci065.idv[479] ==> ci065389x.png ---
+--- needs --- ci065.idv[480] ==> ci065390x.png ---
+--- needs --- ci065.idv[481] ==> ci065391x.png ---
+--- needs --- ci065.idv[482] ==> ci065392x.png ---
+--- needs --- ci065.idv[483] ==> ci065393x.png ---
+--- needs --- ci065.idv[484] ==> ci065394x.png ---
+--- needs --- ci065.idv[485] ==> ci065395x.png ---
+--- needs --- ci065.idv[486] ==> ci065396x.png ---
+--- needs --- ci065.idv[487] ==> ci065397x.png ---
+--- needs --- ci065.idv[488] ==> ci065398x.png ---
+--- needs --- ci065.idv[489] ==> ci065399x.png ---
+--- needs --- ci065.idv[490] ==> ci065400x.png ---
+--- needs --- ci065.idv[491] ==> ci065401x.png ---
+--- needs --- ci065.idv[492] ==> ci065402x.png ---
+--- needs --- ci065.idv[493] ==> ci065403x.png ---
+--- needs --- ci065.idv[494] ==> ci065404x.png ---
+--- needs --- ci065.idv[495] ==> ci065405x.png ---
+--- needs --- ci065.idv[496] ==> ci065406x.png ---
+--- needs --- ci065.idv[497] ==> ci065407x.png ---
+--- needs --- ci065.idv[498] ==> ci065408x.png ---
+--- needs --- ci065.idv[499] ==> ci065409x.png ---
+--- needs --- ci065.idv[500] ==> ci065410x.png ---
+Css: td#TBL-2-1-2{border-left:solid black 0.4pt;border-right:solid black 0.4pt;}
+File: emparelha_bip.png
+--- needs --- ci065.idv[502] ==> ci065411x.png ---
+--- needs --- ci065.idv[504] ==> ci065412x.png ---
+--- needs --- ci065.idv[506] ==> ci065413x.png ---
+--- needs --- ci065.idv[508] ==> ci065414x.png ---
+--- needs --- ci065.idv[510] ==> ci065415x.png ---
+File: hamilton.png
+File: petersen.png
+--- needs --- ci065.idv[512] ==> ci065416x.png ---
+File: dirac.png
+--- needs --- ci065.idv[514] ==> ci065417x.png ---
+File: euler.png
+--- needs --- ci065.idv[516] ==> ci065418x.png ---
+File: trilha.png
+File: figura.png
+--- needs --- ci065.idv[518] ==> ci065419x.png ---
+--- needs --- ci065.idv[519] ==> ci065420x.png ---
+--- needs --- ci065.idv[520] ==> ci065421x.png ---
+--- needs --- ci065.idv[521] ==> ci065422x.png ---
+--- needs --- ci065.idv[522] ==> ci065423x.png ---
+--- needs --- ci065.idv[523] ==> ci065424x.png ---
+--- needs --- ci065.idv[524] ==> ci065425x.png ---
+--- needs --- ci065.idv[525] ==> ci065426x.png ---
+--- needs --- ci065.idv[526] ==> ci065427x.png ---
+--- needs --- ci065.idv[527] ==> ci065428x.png ---
+--- needs --- ci065.idv[528] ==> ci065429x.png ---
+--- needs --- ci065.idv[529] ==> ci065430x.png ---
+File: mirror.png
+--- needs --- ci065.idv[531] ==> ci065431x.png ---
+--- needs --- ci065.idv[532] ==> ci065432x.png ---
+--- needs --- ci065.idv[533] ==> ci065433x.png ---
+File: dirigido2.png
+File: listaadjacencias4.png
+File: caminhoorientado.png
+--- needs --- ci065.idv[535] ==> ci065434x.png ---
+--- needs --- ci065.idv[536] ==> ci065435x.png ---
+File: SAVE2.png
+--- needs --- ci065.idv[538] ==> ci065436x.png ---
+--- needs --- ci065.idv[540] ==> ci065437x.png ---
+--- needs --- ci065.idv[541] ==> ci065438x.png ---
+--- needs --- ci065.idv[542] ==> ci065439x.png ---
+--- needs --- ci065.idv[544] ==> ci065440x.png ---
+--- needs --- ci065.idv[546] ==> ci065441x.png ---
+--- needs --- ci065.idv[547] ==> ci065442x.png ---
+--- needs --- ci065.idv[549] ==> ci065443x.png ---
+--- needs --- ci065.idv[551] ==> ci065444x.png ---
+--- needs --- ci065.idv[553] ==> ci065445x.png ---
+--- needs --- ci065.idv[555] ==> ci065446x.png ---
+--- needs --- ci065.idv[557] ==> ci065447x.png ---
+--- needs --- ci065.idv[559] ==> ci065448x.png ---
+--- needs --- ci065.idv[560] ==> ci065449x.png ---
+File: rede.png
+File: fluxo.png
+File: fluxo2.png
+--- needs --- ci065.idv[562] ==> ci065450x.png ---
+--- needs --- ci065.idv[563] ==> ci065451x.png ---
+--- needs --- ci065.idv[564] ==> ci065452x.png ---
+--- needs --- ci065.idv[565] ==> ci065453x.png ---
+--- needs --- ci065.idv[566] ==> ci065454x.png ---
+--- needs --- ci065.idv[567] ==> ci065455x.png ---
+--- needs --- ci065.idv[568] ==> ci065456x.png ---
+--- needs --- ci065.idv[569] ==> ci065457x.png ---
+--- needs --- ci065.idv[570] ==> ci065458x.png ---
+--- needs --- ci065.idv[571] ==> ci065459x.png ---
+--- needs --- ci065.idv[572] ==> ci065460x.png ---
+--- needs --- ci065.idv[573] ==> ci065461x.png ---
+File: uri.png
+--- needs --- ci065.idv[575] ==> ci065462x.png ---
+--- needs --- ci065.idv[576] ==> ci065463x.png ---
+--- needs --- ci065.idv[577] ==> ci065464x.png ---
+--- needs --- ci065.idv[578] ==> ci065465x.png ---
+--- needs --- ci065.idv[580] ==> ci065466x.png ---
+--- needs --- ci065.idv[582] ==> ci065467x.png ---
+--- characters ---
+Font("cmr","10","10","109")
+Font("cmr","9","9","100")
+Font("cmr","6","6","100")
+Font("cmmi","9","9","100")
+Font("cmmi","6","6","100")
+Font("cmsy","9","9","100")
+Font("cmsy","6","6","100")
+Font("cmex","9","9","100")
+Font("msam","10","10","90")
+Font("cmbx","10","10","109")
+Font("cmtt","10","10","109")
+Font("cmr","8","8","100")
+Font("cmmi","10","10","109")
+Font("cmmi","8","8","100")
+Font("cmsy","10","10","109")
+--- needs --- ci065.idv[584] ==> cmsy10-41.png ---
+Font("cmsy","8","8","100")
+Font("cmex","10","10","109")
+Font("msam","10","10","109")
+Font("msbm","10","10","109")
+Font("cmti","10","10","109")
+Font("cmbx","8","8","100")
+Font("bbding","10","10","109")
+Font("cmti","9","9","100")
+Font("cmbx","9","9","100")
+Font("cmtt","9","9","100")

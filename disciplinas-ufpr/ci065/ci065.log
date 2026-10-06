@@ -1,0 +1,1742 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=latex 2007.12.8)  30 MAY 2008 10:59
+entering extended mode
+**\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCo
+de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
+{\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
+documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
+ tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  ci065
+(./ci065.tex (/usr/share/texmf-tetex/tex/latex/amscls/amsart.cls
+Document Class: amsart 2004/08/06 v2.20
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+(/usr/share/texmf-tetex/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-tetex/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-tetex/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+(/usr/share/texmf-tetex/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/share/texmf-tetex/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 407.
+
+(/usr/share/texmf-tetex/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+(/usr/share/texmf-tetex/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)
+\copyins=\insert233
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+(/usr/share/texmf/tex/generic/tex4ht/tex4ht.sty
+version 2006-08-28-20:58
+Package: tex4ht 
+--------------------------------------
+--- Note --- for _ at preamble, use the command line option `early_'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ at preamble, use the command line option `early^'
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/usepackage.4ht
+version 2006-08-29-04:36
+)
+(/usr/share/texmf-tetex/tex/generic/babel/babel.sty
+Package: babel 2004/11/20 v3.8d The Babel package
+
+(/usr/share/texmf-tetex/tex/generic/babel/portuges.ldf
+Language: portuges 2004/02/19 v1.2p Portuguese support from the babel system
+
+(/usr/share/texmf-tetex/tex/generic/babel/babel.def
+File: babel.def 2004/11/20 v3.8d Babel common definitions
+\babel@savecnt=\count99
+\U@D=\dimen114
+)
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+(/usr/share/texmf-tetex/tex/latex/base/inputenc.sty
+Package: inputenc 2004/02/05 v1.0d Input encoding file
+
+(/usr/share/texmf-tetex/tex/latex/base/latin1.def
+File: latin1.def 2004/02/05 v1.0d Input encoding file
+))
+(/usr/share/texmf-tetex/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-tetex/tex/latex/graphics/color.cfg
+File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 125.
+
+(/usr/share/texmf-tetex/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf-tetex/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf-tetex/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-tetex/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+(/usr/share/texmf-tetex/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-tetex/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf-tetex/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+)
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
+)
+(/usr/share/texmf-tetex/tex/latex/natbib/natbib.sty
+Package: natbib 2003/06/06 7.1 (PWD)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 518.
+\c@NAT@ctr=\count100
+)
+(/usr/share/texmf-tetex/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+)
+(/usr/share/texmf-tetex/tex/latex/tools/multicol.sty
+Package: multicol 2004/02/14 v1.6e multicolumn formatting (FMi)
+\c@tracingmulticols=\count101
+\mult@box=\box29
+\multicol@leftmargin=\dimen117
+\c@unbalance=\count102
+\c@collectmore=\count103
+\doublecol@number=\count104
+\multicoltolerance=\count105
+\multicolpretolerance=\count106
+\full@width=\dimen118
+\page@free=\dimen119
+\premulticols=\dimen120
+\postmulticols=\dimen121
+\multicolsep=\skip53
+\multicolbaselineskip=\skip54
+\partial@page=\box30
+\last@line=\box31
+\mult@rightbox=\box32
+\mult@grightbox=\box33
+\mult@gfirstbox=\box34
+\mult@firstbox=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\c@columnbadness=\count107
+\c@finalcolumnbadness=\count108
+\last@try=\dimen122
+\multicolovershoot=\dimen123
+\multicolundershoot=\dimen124
+\mult@nat@firstbox=\box53
+\colbreak@box=\box54
+)
+(/usr/share/texmf-texlive/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count109
+
+(/usr/share/texmf-tetex/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-tetex/tex/latex/tools/xspace.sty
+Package: xspace 1997/10/13 v1.06 Space after command names (DPC)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip55
+\skiprule=\skip56
+\skiphlne=\skip57
+\skiptext=\skip58
+\skiplength=\skip59
+\algomargin=\skip60
+\skipalgocfslide=\skip61
+\algowidth=\dimen125
+\inoutsize=\dimen126
+\inoutline=\dimen127
+\algocf@inoutbox=\box55
+\algocf@inputbox=\box56
+\AlCapSkip=\skip62
+\AlCapHSkip=\skip63
+\algocf@capbox=\box57
+\c@algocfline=\count110
+\c@algocf=\count111
+\algocf@algoframe=\box58
+\algocf@algobox=\box59
+) (/usr/share/texmf-tetex/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2003/11/30 v6.74m Hypertext links for LaTeX
+\@linkdim=\dimen128
+\Hy@linkcounter=\count112
+\Hy@pagecounter=\count113
+
+(/usr/share/texmf-tetex/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2003/11/30 v6.74m Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-tetex/tex/latex/hyperref/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive and teTeX
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 1830.
+Package hyperref Info: Hyper figures OFF on input line 1880.
+Package hyperref Info: Link nesting OFF on input line 1885.
+Package hyperref Info: Hyper index ON on input line 1888.
+Package hyperref Info: Plain pages ON on input line 1893.
+Package hyperref Info: Backreferencing OFF on input line 1900.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2004.
+(/usr/share/texmf-tetex/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 2143.
+\Fld@menulength=\count114
+\Field@Width=\dimen129
+\Fld@charsize=\dimen130
+\Choice@toks=\toks26
+\Field@toks=\toks27
+Package hyperref Info: Hyper figures OFF on input line 2618.
+Package hyperref Info: Link nesting OFF on input line 2623.
+Package hyperref Info: Hyper index ON on input line 2626.
+Package hyperref Info: backreferencing OFF on input line 2633.
+Package hyperref Info: Link coloring ON on input line 2636.
+
+Hyperref stopped early
+)
+*hyperref using driver htex4ht*
+(/usr/share/texmf-tetex/tex/latex/hyperref/htex4ht.def
+File: htex4ht.def 2003/11/30 v6.74m Hyperref driver for TeX4ht
+
+hyperref tex4ht: tex4ht already loaded
+) (/usr/share/texmf-tetex/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/share/texmf-texlive/tex/latex/bbding/bbding.sty
+Package: bbding 1996/06/21 v1.0 Dingbats symbols
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count115
+\lst@gtempboxa=\box60
+\lst@token=\toks28
+\lst@length=\count116
+\lst@currlwidth=\dimen131
+\lst@column=\count117
+\lst@pos=\count118
+\lst@lostspace=\dimen132
+\lst@width=\dimen133
+\lst@newlines=\count119
+\lst@lineno=\count120
+\c@lstlisting=\count121
+\lst@maxwidth=\dimen134
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2004/10/17 1.3b (Carsten Heinz)
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+\c@lstnumber=\count122
+\lst@skipnumbers=\count123
+\lst@framebox=\box61
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2004/09/05 1.3 listings configuration
+))
+Package: listings 2004/10/17 1.3b (Carsten Heinz)
+\c@teo=\count124
+\c@observacao=\count125
+\c@exemplo=\count126
+\c@exercicio=\count127
+\@indexfile=\write3
+\openout3 = `ci065.idx'.
+
+
+Writing index file ci065.idx
+(/usr/share/texmf/tex/generic/tex4ht/tex4ht.4ht
+version 2006-02-22-12:25
+--------------------------------------
+--- Note --- for additional information, use the command line option `info'
+--------------------------------------
+
+::::::::::::::::::::::::::::::::::::::::::
+ TeX4ht info is available in the log file 
+::::::::::::::::::::::::::::::::::::::::::
+) (/usr/share/texmf/tex/generic/tex4ht/tex4ht.sty
+version 2006-08-28-20:58
+
+--- needs --- tex4ht ci065 ---
+\tmp:cnt=\count128
+\openout15 = `ci065.tmp'.
+
+(./ci065.tmp)
+\tmp:toks=\toks29
+\tmp:dim=\skip64
+--------------------------------------
+--- Note --- for XML code, use the command line option `xml' or `xhtml'
+--------------------------------------
+ (./ci065.xref)
+\:refout=\write4
+\openout4 = `ci065.xref'.
+
+ (/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- to remove the DOCTYPE declaration use the command line option `no-
+DOCTYPE'
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+)
+--------------------------------------
+--- Note --- for marking of the base font, use the command line option `fonts+'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for non active _, use the command line option `no_'
+--------------------------------------
+--------------------------------------
+--- Note --- for _ of catcode 13, use the command line option `_13'
+--------------------------------------
+--------------------------------------
+--- Note --- for non active ^, use the command line option `no^'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ of catcode 13, use the command line option `^13'
+--------------------------------------
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- for alternative charset, use the command line option `charset=...'
+
+--------------------------------------
+--------------------------------------
+--- Note --- to ignore CSS font decoration, use the `NoFonts' command line opti
+on
+--------------------------------------
+--------------------------------------
+--- Note --- for jpg bitmaps of pictures, use the `jpg' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for gif bitmaps of pictures, use the `gif' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for content and toc in 2 frames, use the command line option `fram
+es'
+--------------------------------------
+--------------------------------------
+--- Note --- for content, toc, and footnotes in 3 frames, use the command line 
+option `frames-fn'
+--------------------------------------
+--------------------------------------
+--- Note --- for file extension name xht, use the command line option `xht'
+--------------------------------------
+TeX4ht package options: html
+--------------------------------------
+--- Note --- for inline CSS code, use the command line option `css-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for pop ups on mouse over, use the command line option `mouseover'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for addressing images in a subdirectory, use the command line opti
+on `imgdir:.../'
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+)
+\:tokwrite=\toks30
+\:tokpage=\toks31
+--------------------------------------
+--- Note --- for back links to toc, use the command line option `sections+'
+--------------------------------------
+--------------------------------------
+--- Note --- for linear crosslinks of pages, use the command line option `next'
+
+--------------------------------------
+\openout15 = `ci065.4ct'.
+
+\:tocout=\write5
+\openout5 = `ci065.4tc'.
+
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/latex.4ht
+version 2006-08-29-04:36
+--------------------------------------
+--- Note --- for links into captions, instead of float heads, use the command l
+ine option `refcaption'
+--------------------------------------
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- for enumerated list elements li's with value attributes, use the c
+ommand line option `li-'
+--------------------------------------
+--------------------------------------
+--- Note --- for CSS2 code, use the command line option `css2'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial tabular, use the command line option `pic-tabular'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap fbox'es, use the command line option `pic-fbox'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap framebox'es, use the command line option `pic-framebox'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for inline footnotes use command line option `fn-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for a JavaHelp output format, use the command line option `javahel
+p'
+--------------------------------------
+--------------------------------------
+--- Note --- for tracing of latex font commands, use the command line option `f
+onts'
+--------------------------------------
+--------------------------------------
+--- Note --- for width specifications of tabular p entries, use the `p-width' c
+ommand line option or a configuration similar to \Configure{HColWidth}{\HCode{ 
+style="width:\HColWidth"}}
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- for pictorial eqnarray, use the command line option `pic-eqnarray'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ environments, use the command line option `pic
+-m' (not recommended!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ and $$...$$ environments with latex alt, use t
+he command line option `pic-m+' (not safe!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+))
+(/usr/share/texmf/tex/generic/tex4ht/fontmath.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsart.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- for automatic sectioning pagination, use the command line option `
+1', `2', `3', '4', '5', '6', or '7'
+--------------------------------------
+--------------------------------------
+--- Note --- for files named derived from section titles, use the command line 
+option `sec-filename'
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsmath.4ht
+version 2006-08-29-04:36
+\tmp:muskip=\muskip12
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amstext.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsbsy.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsopn.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsfonts.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/babel.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/portuges.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/inputenc.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/latin1.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/color.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/dvips.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/dvipsnam.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf-tetex/tex/latex/graphics/dvipsnam.def)
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/graphicx.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/graphics.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- if included graphics are of degraded quality, try the command line
+ options `graphics-num' or `graphics-'. The `num' should provide the density of
+ pixels in the bitmaps (e.g., 110). 
+--------------------------------------
+--------------------------------------
+--- Note --- for key dimensions try the option `Gin-dim'; for key dimensions wh
+en bounding box is unavailable try `Gin-dim+'; neither is recommended
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/natbib.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amssymb.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/multicol.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/ifthen.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/hyperref.4ht
+version 2006-08-29-04:36
+
+l.287 --- TeX4ht warning --- \href of hyperref.sty introduces the prefix `file:
+' to prefix-free references. The command \hyperlinkfileprefix{...} may be used 
+for changing the prefix (probably \hyperlinkfileprefix{}). ---
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/pd1enc.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/url.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- for URL encoding within href use the command line option `url-enc'
+
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/alltt.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/listings.4ht
+version 2006-08-29-04:36
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+--------------------------------------
+--- Note --- to ensure proper alignments use fixed size fonts (see listings.dtx
+)
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2006-08-30-02:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2006-08-30-02:01
+)) (./ci065.aux)
+\openout1 = `ci065.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Try loading font information for U+msa on input line 126.
+
+(/usr/share/texmf-tetex/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 126.
+
+(/usr/share/texmf-tetex/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+Package hyperref Info: Link coloring ON on input line 126.
+LaTeX Info: Redefining \ref on input line 126.
+LaTeX Info: Redefining \pageref on input line 126.
+--- file ci065.css ---
+ (./ci065.4ct) [1]
+l. 173 Writing ci065.idv[1] (ci0650x.png)
+l. 175 Writing ci065.idv[2] (ci0651x.png)
+l. 177 Writing ci065.idv[3] (ci0652x.png)
+ [2]
+[3]
+---------------------------------------------------------
+l.192 --- TeX4ht warning --- If not done so, the index is to be processed by 
+  tex '\def\filename{{ci065}{idx}{4dx}{ind}} \input  idxmake.4ht' 
+  makeindex -o ci065.ind ci065.4dx 
+instead of 
+  makeindex -o ci065.ind ci065.idx 
+On some platforms, the quotation marks ' should be 
+ replaced by double quotation marks " or eliminated. 
+---------------------------------------------------------  ---
+l. 193 Writing ci065.idv[4] (ci0653x.png)
+l. 209 Writing ci065.idv[5] (ci0654x.png)
+l.217 --- TeX4ht warning --- Cannot determine size of graphic in grafo1.png (no
+ BoundingBox) ---
+l. 217 --- needs --- grafo1.png ---
+[4] [5]
+LaTeX Font Info:    Try loading font information for U+ding on input line 286.
+ (/usr/share/texmf-texlive/tex/latex/bbding/Uding.fd
+File: Uding.fd 1996/02/01 v1.0 BBding font definitions
+)
+LaTeX Font Info:    Font shape `U/ding/m/n' will be
+(Font)              scaled to size 140.15999pt on input line 286.
+l. 292 Writing ci065.idv[6] (ci0655x.png)
+l. 301 Writing ci065.idv[7] (ci0656x.png)
+ [6]
+l. 307 Writing ci065.idv[8] (ci0657x.png)
+l. 312 Writing ci065.idv[9] (ci0658x.png)
+l. 323 Writing ci065.idv[10] (ci0659x.png)
+ [7]
+l. 334 Writing ci065.idv[11] (ci06510x.png)
+l. 337 Writing ci065.idv[12] (ci06511x.png)
+l. 350 Writing ci065.idv[13] (ci06512x.png)
+ [8]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 357.
+l. 362 Writing ci065.idv[14] (ci06513x.png)
+l. 367 Writing ci065.idv[15] (ci06514x.png)
+
+[9]
+l. 382 Writing ci065.idv[16] (ci06515x.png)
+l. 411 Writing ci065.idv[17] (ci06516x.png)
+ [10]
+l. 423 Writing ci065.idv[18] (ci06517x.png)
+l. 429 Writing ci065.idv[19] (ci06518x.png)
+ [11]
+l. 446 Writing ci065.idv[20] (ci06519x.png)
+ [12] [13]
+l. 505 Writing ci065.idv[21] (ci06520x.png)
+l. 507 Writing ci065.idv[22] (ci06521x.png)
+ [14]
+l. 531 Writing ci065.idv[23] (ci06522x.png)
+l. 539 Writing ci065.idv[24] (ci06523x.png)
+l. 563 Writing ci065.idv[25] (ci06524x.png)
+ [15]
+l. 572 Writing ci065.idv[26] (ci06525x.png)
+l. 574 Writing ci065.idv[27] (ci06526x.png)
+
+l.585 --- TeX4ht warning --- Cannot determine size of graphic in subgrafoinduzi
+do.png (no BoundingBox) ---
+l. 585 --- needs --- subgrafoinduzido.png ---
+[16]
+l. 597 Writing ci065.idv[28] (ci06527x.png)
+ [17]
+l. 659 Writing ci065.idv[29] (ci06528x.png)
+l. 674 Writing ci065.idv[30] (ci06529x.png)
+ [18]
+l. 680 Writing ci065.idv[31] (ci06530x.png)
+l. 688 Writing ci065.idv[32] (ci06531x.png)
+ [19]
+l. 725 Writing ci065.idv[33] (ci06532x.png)
+l. 738 Writing ci065.idv[34] (ci06533x.png)
+ [20]
+l. 757 Writing ci065.idv[35] (ci06534x.png)
+ [21]
+l. 784 Writing ci065.idv[36] (ci06535x.png)
+ [22]
+l. 795 Writing ci065.idv[37] (ci06536x.png)
+l. 806 Writing ci065.idv[38] (ci06537x.png)
+l. 811 Writing ci065.idv[39] (ci06538x.png)
+ [23]
+l. 825 Writing ci065.idv[40] (ci06539x.png)
+l. 830 Writing ci065.idv[41] (ci06540x.png)
+ [24]
+l.849 --- TeX4ht warning --- Cannot determine size of graphic in petersen2.png 
+(no BoundingBox) ---
+l. 849 --- needs --- petersen2.png ---
+l.866 --- TeX4ht warning --- Cannot determine size of graphic in triangs.png (n
+o BoundingBox) ---
+l. 866 --- needs --- triangs.png ---
+l.873 --- TeX4ht warning --- Cannot determine size of graphic in triangs2.png (
+no BoundingBox) ---
+l. 873 --- needs --- triangs2.png ---
+[25]
+l.890 --- TeX4ht warning --- Cannot determine size of graphic in isomorfismo.pn
+g (no BoundingBox) ---
+l. 890 --- needs --- isomorfismo.png ---
+[26] [27] [28]
+l. 1029 Writing ci065.idv[42] (ci06541x.png)
+ [29] [30
+
+]
+l.1045 --- TeX4ht warning --- Cannot determine size of graphic in outrosgrafos.
+png (no BoundingBox) ---
+l. 1045 --- needs --- outrosgrafos.png ---
+[31
+
+] [32
+
+]
+l. 1089 Writing ci065.idv[43] (ci06542x.png)
+l. 1101 Writing ci065.idv[44] (ci06543x.png)
+
+l.1126 --- TeX4ht warning --- Cannot determine size of graphic in listaadjacenc
+ias.png (no BoundingBox) ---
+l. 1126 --- needs --- listaadjacencias.png ---
+[33]
+l.1156 --- TeX4ht warning --- Cannot determine size of graphic in grafico1.png 
+(no BoundingBox) ---
+l. 1156 --- needs --- grafico1.png ---
+l.1157 --- TeX4ht warning --- Cannot determine size of graphic in grafico2.png 
+(no BoundingBox) ---
+l. 1157 --- needs --- grafico2.png ---
+l. 1168 Writing ci065.idv[45] (ci06544x.png)
+[34]
+l. 1170 Writing ci065.idv[46] (ci06545x.png)
+l. 1188 Writing ci065.idv[47] (ci06546x.png)
+ [35]
+l. 1229 Writing ci065.idv[48] (ci06547x.png)
+ [36]
+l. 1249 Writing ci065.idv[49] (ci06548x.png)
+ [37] [38] [39] [40] [41
+
+]
+l. 1372 Writing ci065.idv[50] (ci06549x.png)
+l. 1374 Writing ci065.idv[51] (ci06550x.png)
+l. 1374 Writing ci065.idv[52] (ci06551x.png)
+l. 1374 Writing ci065.idv[53] (ci06552x.png)
+l. 1374 Writing ci065.idv[54] (ci06553x.png)
+l. 1375 Writing ci065.idv[55] (ci06554x.png)
+l. 1375 Writing ci065.idv[56] (ci06555x.png)
+l. 1375 Writing ci065.idv[57] (ci06556x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 1375.
+
+l. 1376 Writing ci065.idv[58] (ci06557x.png)
+l. 1377 Writing ci065.idv[59] (ci06558x.png)
+l. 1377 Writing ci065.idv[60] (ci06559x.png)
+l. 1377 Writing ci065.idv[61] (ci06560x.png)
+l. 1377 Writing ci065.idv[62] (ci06561x.png)
+l. 1378 Writing ci065.idv[63] (ci06562x.png)
+l. 1378 Writing ci065.idv[64] (ci06563x.png)
+l. 1379 Writing ci065.idv[65] (ci06564x.png)
+l. 1379 Writing ci065.idv[66] (ci06565x.png)
+l. 1379 Writing ci065.idv[67] (ci06566x.png)
+l. 1380 Writing ci065.idv[68] (ci06567x.png)
+l. 1380 Writing ci065.idv[69] (ci06568x.png)
+l. 1380 Writing ci065.idv[70] (ci06569x.png)
+l. 1381 Writing ci065.idv[71] (ci06570x.png)
+l. 1381 Writing ci065.idv[72] (ci06571x.png)
+l. 1381 Writing ci065.idv[73] (ci06572x.png)
+l. 1381 Writing ci065.idv[74] (ci06573x.png)
+l. 1382 Writing ci065.idv[75] (ci06574x.png)
+l. 1382 Writing ci065.idv[76] (ci06575x.png)
+l. 1382 Writing ci065.idv[77] (ci06576x.png)
+[42
+
+] [43
+
+] [44]
+l. 1452 Writing ci065.idv[78] (ci06577x.png)
+l. 1457 Writing ci065.idv[79] (ci06578x.png)
+ [45] [46] [47
+
+]
+l. 1530 Writing ci065.idv[80] (ci06579x.png)
+l. 1532 Writing ci065.idv[81] (ci06580x.png)
+l. 1532 Writing ci065.idv[82] (ci06581x.png)
+l. 1532 Writing ci065.idv[83] (ci06582x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 1532.
+
+l. 1533 Writing ci065.idv[84] (ci06583x.png)
+l. 1534 Writing ci065.idv[85] (ci06584x.png)
+l. 1534 Writing ci065.idv[86] (ci06585x.png)
+l. 1534 Writing ci065.idv[87] (ci06586x.png)
+l. 1534 Writing ci065.idv[88] (ci06587x.png)
+l. 1535 Writing ci065.idv[89] (ci06588x.png)
+l. 1535 Writing ci065.idv[90] (ci06589x.png)
+l. 1535 Writing ci065.idv[91] (ci06590x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 1535.
+
+l. 1536 Writing ci065.idv[92] (ci06591x.png)
+l. 1537 Writing ci065.idv[93] (ci06592x.png)
+l. 1537 Writing ci065.idv[94] (ci06593x.png)
+l. 1537 Writing ci065.idv[95] (ci06594x.png)
+l. 1537 Writing ci065.idv[96] (ci06595x.png)
+l. 1538 Writing ci065.idv[97] (ci06596x.png)
+l. 1538 Writing ci065.idv[98] (ci06597x.png)
+l. 1539 Writing ci065.idv[99] (ci06598x.png)
+l. 1539 Writing ci065.idv[100] (ci06599x.png)
+l. 1539 Writing ci065.idv[101] (ci065100x.png)
+l. 1540 Writing ci065.idv[102] (ci065101x.png)
+l. 1540 Writing ci065.idv[103] (ci065102x.png)
+l. 1540 Writing ci065.idv[104] (ci065103x.png)
+l. 1541 Writing ci065.idv[105] (ci065104x.png)
+l. 1541 Writing ci065.idv[106] (ci065105x.png)
+l. 1541 Writing ci065.idv[107] (ci065106x.png)
+l. 1541 Writing ci065.idv[108] (ci065107x.png)
+l. 1542 Writing ci065.idv[109] (ci065108x.png)
+l. 1542 Writing ci065.idv[110] (ci065109x.png)
+l. 1542 Writing ci065.idv[111] (ci065110x.png)
+[48
+
+]
+l. 1578 Writing ci065.idv[112] (ci065111x.png)
+l. 1580 Writing ci065.idv[113] (ci065112x.png)
+l. 1581 Writing ci065.idv[114] (ci065113x.png)
+l. 1581 Writing ci065.idv[115] (ci065114x.png)
+l. 1581 Writing ci065.idv[116] (ci065115x.png)
+l. 1581 Writing ci065.idv[117] (ci065116x.png)
+l. 1582 Writing ci065.idv[118] (ci065117x.png)
+l. 1582 Writing ci065.idv[119] (ci065118x.png)
+l. 1582 Writing ci065.idv[120] (ci065119x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 1582.
+
+l. 1583 Writing ci065.idv[121] (ci065120x.png)
+l. 1583 Writing ci065.idv[122] (ci065121x.png)
+l. 1584 Writing ci065.idv[123] (ci065122x.png)
+l. 1584 Writing ci065.idv[124] (ci065123x.png)
+[49
+
+]
+l. 1585 Writing ci065.idv[125] (ci065124x.png)
+l. 1585 Writing ci065.idv[126] (ci065125x.png)
+l. 1586 Writing ci065.idv[127] (ci065126x.png)
+ [50]
+l.1627 --- TeX4ht warning --- Cannot determine size of graphic in BL.png (no Bo
+undingBox) ---
+l. 1627 --- needs --- BL.png ---
+l.1645 --- TeX4ht warning --- Cannot determine size of graphic in BP.png (no Bo
+undingBox) ---
+l. 1645 --- needs --- BP.png ---
+l.1656 --- TeX4ht warning --- Cannot determine size of graphic in BLxBP.png (no
+ BoundingBox) ---
+l. 1656 --- needs --- BLxBP.png ---
+[51] [52] [53
+
+]
+l. 1684 Writing ci065.idv[128] (ci065127x.png)
+l. 1686 Writing ci065.idv[129] (ci065128x.png)
+l. 1687 Writing ci065.idv[130] (ci065129x.png)
+l. 1688 Writing ci065.idv[131] (ci065130x.png)
+l. 1688 Writing ci065.idv[132] (ci065131x.png)
+l. 1688 Writing ci065.idv[133] (ci065132x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 1688.
+
+l. 1689 Writing ci065.idv[134] (ci065133x.png)
+l. 1689 Writing ci065.idv[135] (ci065134x.png)
+l. 1689 Writing ci065.idv[136] (ci065135x.png)
+l. 1690 Writing ci065.idv[137] (ci065136x.png)
+l. 1691 Writing ci065.idv[138] (ci065137x.png)
+l. 1692 Writing ci065.idv[139] (ci065138x.png)
+l. 1693 Writing ci065.idv[140] (ci065139x.png)
+[54
+
+]
+l. 1719 Writing ci065.idv[141] (ci065140x.png)
+ [55
+
+]
+l. 1746 Writing ci065.idv[142] (ci065141x.png)
+l. 1746 Writing ci065.idv[143] (ci065142x.png)
+l. 1746 Writing ci065.idv[144] (ci065143x.png)
+l. 1747 Writing ci065.idv[145] (ci065144x.png)
+l. 1750 Writing ci065.idv[146] (ci065145x.png)
+l. 1750 Writing ci065.idv[147] (ci065146x.png)
+l. 1750 Writing ci065.idv[148] (ci065147x.png)
+l. 1751 Writing ci065.idv[149] (ci065148x.png)
+l. 1754 Writing ci065.idv[150] (ci065149x.png)
+l. 1754 Writing ci065.idv[151] (ci065150x.png)
+l. 1754 Writing ci065.idv[152] (ci065151x.png)
+l. 1755 Writing ci065.idv[153] (ci065152x.png)
+l. 1771 Writing ci065.idv[154] (ci065153x.png)
+ [56] [57] [58
+
+]
+l.1782 --- TeX4ht warning --- Cannot determine size of graphic in caminho.png (
+no BoundingBox) ---
+l. 1782 --- needs --- caminho.png ---
+[59
+
+]
+l. 1788 Writing ci065.idv[155] (ci065154x.png)
+
+l.1812 --- TeX4ht warning --- Cannot determine size of graphic in caminhosecirc
+uitos.png (no BoundingBox) ---
+l. 1812 --- needs --- caminhosecircuitos.png ---
+l. 1825 Writing ci065.idv[156] (ci065155x.png)
+[60
+
+]
+l. 1837 Writing ci065.idv[157] (ci065156x.png)
+l. 1854 Writing ci065.idv[158] (ci065157x.png)
+ [61]
+l. 1865 Writing ci065.idv[159] (ci065158x.png)
+l. 1874 Writing ci065.idv[160] (ci065159x.png)
+ [62]
+l. 1885 Writing ci065.idv[161] (ci065160x.png)
+l. 1895 Writing ci065.idv[162] (ci065161x.png)
+l. 1895 Writing ci065.idv[163] (ci065162x.png)
+l. 1907 Writing ci065.idv[164] (ci065163x.png)
+ [63]
+l. 1920 Writing ci065.idv[165] (ci065164x.png)
+l. 1932 Writing ci065.idv[166] (ci065165x.png)
+ [64] [65]
+l.2045 --- TeX4ht warning --- Cannot determine size of graphic in 3cubo.png (no
+ BoundingBox) ---
+l. 2045 --- needs --- 3cubo.png ---
+[66]
+l. 2066 Writing ci065.idv[167] (ci065166x.png)
+l. 2073 Writing ci065.idv[168] (ci065167x.png)
+l. 2137 Writing ci065.idv[169] (ci065168x.png)
+ [67]
+l. 2142 Writing ci065.idv[170] (ci065169x.png)
+
+l.2167 --- TeX4ht warning --- Cannot determine size of graphic in compeso.png (
+no BoundingBox) ---
+l. 2167 --- needs --- compeso.png ---
+l.2181 --- TeX4ht warning --- Cannot determine size of graphic in listaadjacenc
+ias2.png (no BoundingBox) ---
+l. 2181 --- needs --- listaadjacencias2.png ---
+[68]
+l. 2200 Writing ci065.idv[171] (ci065170x.png)
+ [69] [70] [71
+
+]
+l. 2254 Writing ci065.idv[172] (ci065171x.png)
+l. 2256 Writing ci065.idv[173] (ci065172x.png)
+l. 2256 Writing ci065.idv[174] (ci065173x.png)
+l. 2257 Writing ci065.idv[175] (ci065174x.png)
+l. 2257 Writing ci065.idv[176] (ci065175x.png)
+l. 2257 Writing ci065.idv[177] (ci065176x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 2257.
+
+l. 2258 Writing ci065.idv[178] (ci065177x.png)
+l. 2259 Writing ci065.idv[179] (ci065178x.png)
+l. 2260 Writing ci065.idv[180] (ci065179x.png)
+l. 2260 Writing ci065.idv[181] (ci065180x.png)
+[72
+
+]
+l. 2265 Writing ci065.idv[182] (ci065181x.png)
+l. 2271 Writing ci065.idv[183] (ci065182x.png)
+ [73
+
+] [74
+
+]
+l. 2285 Writing ci065.idv[184] (ci065183x.png)
+l. 2287 Writing ci065.idv[185] (ci065184x.png)
+l. 2287 Writing ci065.idv[186] (ci065185x.png)
+l. 2287 Writing ci065.idv[187] (ci065186x.png)
+l. 2288 Writing ci065.idv[188] (ci065187x.png)
+ [75
+
+] [76
+
+] [77
+
+]
+l. 2307 Writing ci065.idv[189] (ci065188x.png)
+l. 2309 Writing ci065.idv[190] (ci065189x.png)
+l. 2310 Writing ci065.idv[191] (ci065190x.png)
+l. 2310 Writing ci065.idv[192] (ci065191x.png)
+l. 2310 Writing ci065.idv[193] (ci065192x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 2310.
+
+l. 2311 Writing ci065.idv[194] (ci065193x.png)
+l. 2312 Writing ci065.idv[195] (ci065194x.png)
+l. 2312 Writing ci065.idv[196] (ci065195x.png)
+l. 2313 Writing ci065.idv[197] (ci065196x.png)
+l. 2313 Writing ci065.idv[198] (ci065197x.png)
+l. 2313 Writing ci065.idv[199] (ci065198x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2313.
+
+l. 2314 Writing ci065.idv[200] (ci065199x.png)
+[78
+
+]
+l. 2353 Writing ci065.idv[201] (ci065200x.png)
+ [79
+
+]
+l. 2360 Writing ci065.idv[202] (ci065201x.png)
+ [80]
+l. 2396 Writing ci065.idv[203] (ci065202x.png)
+l. 2398 Writing ci065.idv[204] (ci065203x.png)
+l. 2406 Writing ci065.idv[205] (ci065204x.png)
+l. 2406 Writing ci065.idv[206] (ci065205x.png)
+l. 2407 Writing ci065.idv[207] (ci065206x.png)
+l. 2414 Writing ci065.idv[208] (ci065207x.png)
+ [81]
+l. 2444 Writing ci065.idv[209] (ci065208x.png)
+l. 2454 Writing ci065.idv[210] (ci065209x.png)
+l. 2459 Writing ci065.idv[211] (ci065210x.png)
+ [82]
+l. 2464 Writing ci065.idv[212] (ci065211x.png)
+ [83]
+l. 2485 Writing ci065.idv[213] (ci065212x.png)
+l. 2487 Writing ci065.idv[214] (ci065213x.png)
+l. 2487 Writing ci065.idv[215] (ci065214x.png)
+l. 2488 Writing ci065.idv[216] (ci065215x.png)
+l. 2488 Writing ci065.idv[217] (ci065216x.png)
+l. 2488 Writing ci065.idv[218] (ci065217x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 2488.
+
+l. 2489 Writing ci065.idv[219] (ci065218x.png)
+l. 2490 Writing ci065.idv[220] (ci065219x.png)
+l. 2491 Writing ci065.idv[221] (ci065220x.png)
+l. 2492 Writing ci065.idv[222] (ci065221x.png)
+l. 2493 Writing ci065.idv[223] (ci065222x.png)
+l. 2493 Writing ci065.idv[224] (ci065223x.png)
+l. 2494 Writing ci065.idv[225] (ci065224x.png)
+l. 2494 Writing ci065.idv[226] (ci065225x.png)
+l. 2494 Writing ci065.idv[227] (ci065226x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2494.
+
+l. 2495 Writing ci065.idv[228] (ci065227x.png)
+l. 2496 Writing ci065.idv[229] (ci065228x.png)
+l. 2496 Writing ci065.idv[230] (ci065229x.png)
+l. 2497 Writing ci065.idv[231] (ci065230x.png)
+l. 2497 Writing ci065.idv[232] (ci065231x.png)
+l. 2497 Writing ci065.idv[233] (ci065232x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2497.
+
+l. 2498 Writing ci065.idv[234] (ci065233x.png)
+l. 2498 Writing ci065.idv[235] (ci065234x.png)
+l. 2498 Writing ci065.idv[236] (ci065235x.png)
+l. 2499 Writing ci065.idv[237] (ci065236x.png)
+l. 2500 Writing ci065.idv[238] (ci065237x.png)
+l. 2501 Writing ci065.idv[239] (ci065238x.png)
+l. 2501 Writing ci065.idv[240] (ci065239x.png)
+l. 2501 Writing ci065.idv[241] (ci065240x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2501.
+
+l. 2502 Writing ci065.idv[242] (ci065241x.png)
+l. 2502 Writing ci065.idv[243] (ci065242x.png)
+l. 2503 Writing ci065.idv[244] (ci065243x.png)
+l. 2504 Writing ci065.idv[245] (ci065244x.png)
+l. 2505 Writing ci065.idv[246] (ci065245x.png)
+l. 2505 Writing ci065.idv[247] (ci065246x.png)
+l. 2505 Writing ci065.idv[248] (ci065247x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2505.
+
+l. 2506 Writing ci065.idv[249] (ci065248x.png)
+[84]
+l. 2593 Writing ci065.idv[250] (ci065249x.png)
+l. 2595 Writing ci065.idv[251] (ci065250x.png)
+l. 2596 Writing ci065.idv[252] (ci065251x.png)
+l. 2597 Writing ci065.idv[253] (ci065252x.png)
+l. 2597 Writing ci065.idv[254] (ci065253x.png)
+l. 2597 Writing ci065.idv[255] (ci065254x.png)
+l. 2597 Writing ci065.idv[256] (ci065255x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 2597.
+
+l. 2598 Writing ci065.idv[257] (ci065256x.png)
+l. 2598 Writing ci065.idv[258] (ci065257x.png)
+l. 2598 Writing ci065.idv[259] (ci065258x.png)
+l. 2598 Writing ci065.idv[260] (ci065259x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2598.
+
+l. 2599 Writing ci065.idv[261] (ci065260x.png)
+l. 2600 Writing ci065.idv[262] (ci065261x.png)
+l. 2600 Writing ci065.idv[263] (ci065262x.png)
+l. 2600 Writing ci065.idv[264] (ci065263x.png)
+l. 2600 Writing ci065.idv[265] (ci065264x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2600.
+
+l. 2601 Writing ci065.idv[266] (ci065265x.png)
+l. 2601 Writing ci065.idv[267] (ci065266x.png)
+l. 2601 Writing ci065.idv[268] (ci065267x.png)
+l. 2602 Writing ci065.idv[269] (ci065268x.png)
+l. 2602 Writing ci065.idv[270] (ci065269x.png)
+l. 2602 Writing ci065.idv[271] (ci065270x.png)
+[85]
+l. 2783 Writing ci065.idv[272] (ci065271x.png)
+ [86] [87] [88
+
+]
+l.2805 --- TeX4ht warning --- Cannot determine size of graphic in floydwarshall
+.png (no BoundingBox) ---
+l. 2805 --- needs --- floydwarshall.png ---
+[89
+
+]
+l. 2827 Writing ci065.idv[273] (ci065272x.png)
+ [90
+
+] [91
+
+]
+l. 2860 Writing ci065.idv[274] (ci065273x.png)
+l. 2862 Writing ci065.idv[275] (ci065274x.png)
+l. 2862 Writing ci065.idv[276] (ci065275x.png)
+l. 2862 Writing ci065.idv[277] (ci065276x.png)
+l. 2862 Writing ci065.idv[278] (ci065277x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 2862.
+
+l. 2863 Writing ci065.idv[279] (ci065278x.png)
+l. 2864 Writing ci065.idv[280] (ci065279x.png)
+l. 2864 Writing ci065.idv[281] (ci065280x.png)
+l. 2864 Writing ci065.idv[282] (ci065281x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2864.
+
+l. 2865 Writing ci065.idv[283] (ci065282x.png)
+l. 2865 Writing ci065.idv[284] (ci065283x.png)
+l. 2865 Writing ci065.idv[285] (ci065284x.png)
+l. 2865 Writing ci065.idv[286] (ci065285x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2865.
+
+l. 2866 Writing ci065.idv[287] (ci065286x.png)
+[92
+
+]
+l. 2892 Writing ci065.idv[288] (ci065287x.png)
+l. 2894 Writing ci065.idv[289] (ci065288x.png)
+l. 2894 Writing ci065.idv[290] (ci065289x.png)
+l. 2894 Writing ci065.idv[291] (ci065290x.png)
+l. 2894 Writing ci065.idv[292] (ci065291x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 2894.
+
+l. 2895 Writing ci065.idv[293] (ci065292x.png)
+l. 2896 Writing ci065.idv[294] (ci065293x.png)
+l. 2896 Writing ci065.idv[295] (ci065294x.png)
+l. 2896 Writing ci065.idv[296] (ci065295x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2896.
+
+l. 2897 Writing ci065.idv[297] (ci065296x.png)
+l. 2897 Writing ci065.idv[298] (ci065297x.png)
+l. 2897 Writing ci065.idv[299] (ci065298x.png)
+l. 2897 Writing ci065.idv[300] (ci065299x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 2897.
+
+l. 2898 Writing ci065.idv[301] (ci065300x.png)
+l. 2923 Writing ci065.idv[302] (ci065301x.png)
+[93
+
+]
+l. 2982 Writing ci065.idv[303] (ci065302x.png)
+l. 2982 Writing ci065.idv[304] (ci065303x.png)
+
+l.2993 --- TeX4ht warning --- Cannot determine size of graphic in articulacao.p
+ng (no BoundingBox) ---
+l. 2993 --- needs --- articulacao.png ---
+l.3000 --- TeX4ht warning --- Cannot determine size of graphic in componentesBi
+.png (no BoundingBox) ---
+l. 3000 --- needs --- componentesBi.png ---
+[94]
+l. 3028 Writing ci065.idv[305] (ci065304x.png)
+l. 3028 Writing ci065.idv[306] (ci065305x.png)
+l. 3028 Writing ci065.idv[307] (ci065306x.png)
+l. 3028 Writing ci065.idv[308] (ci065307x.png)
+l. 3031 Writing ci065.idv[309] (ci065308x.png)
+l. 3031 Writing ci065.idv[310] (ci065309x.png)
+l. 3031 Writing ci065.idv[311] (ci065310x.png)
+l. 3031 Writing ci065.idv[312] (ci065311x.png)
+l. 3034 Writing ci065.idv[313] (ci065312x.png)
+l. 3034 Writing ci065.idv[314] (ci065313x.png)
+l. 3034 Writing ci065.idv[315] (ci065314x.png)
+l. 3034 Writing ci065.idv[316] (ci065315x.png)
+
+l.3058 --- TeX4ht warning --- Cannot determine size of graphic in BP_articulaca
+o.png (no BoundingBox) ---
+l. 3058 --- needs --- BP_articulacao.png ---
+l. 3064 Writing ci065.idv[317] (ci065316x.png)
+l. 3064 Writing ci065.idv[318] (ci065317x.png)
+l. 3064 Writing ci065.idv[319] (ci065318x.png)
+l. 3064 Writing ci065.idv[320] (ci065319x.png)
+[95] [96]
+l. 3115 Writing ci065.idv[321] (ci065320x.png)
+l. 3115 Writing ci065.idv[322] (ci065321x.png)
+l. 3115 Writing ci065.idv[323] (ci065322x.png)
+l. 3116 Writing ci065.idv[324] (ci065323x.png)
+l. 3121 Writing ci065.idv[325] (ci065324x.png)
+l. 3121 Writing ci065.idv[326] (ci065325x.png)
+l. 3121 Writing ci065.idv[327] (ci065326x.png)
+l. 3122 Writing ci065.idv[328] (ci065327x.png)
+l. 3140 Writing ci065.idv[329] (ci065328x.png)
+ [97]
+l. 3179 Writing ci065.idv[330] (ci065329x.png)
+ [98] [99
+
+] [100
+
+] [101
+
+]
+l. 3261 Writing ci065.idv[331] (ci065330x.png)
+ [102] [103]
+l. 3322 Writing ci065.idv[332] (ci065331x.png)
+l. 3340 Writing ci065.idv[333] (ci065332x.png)
+l. 3340 Writing ci065.idv[334] (ci065333x.png)
+l. 3344 Writing ci065.idv[335] (ci065334x.png)
+ [104]
+l. 3351 Writing ci065.idv[336] (ci065335x.png)
+l. 3356 Writing ci065.idv[337] (ci065336x.png)
+
+l.3367 --- TeX4ht warning --- Cannot determine size of graphic in Hnk.png (no B
+oundingBox) ---
+l. 3367 --- needs --- Hnk.png ---
+l. 3372 Writing ci065.idv[338] (ci065337x.png)
+[105]
+l. 3418 Writing ci065.idv[339] (ci065338x.png)
+ [106] [107]
+l. 3505 Writing ci065.idv[340] (ci065339x.png)
+ [108]
+l.3514 --- TeX4ht warning --- Cannot determine size of graphic in arv_geradora.
+png (no BoundingBox) ---
+l. 3514 --- needs --- arv_geradora.png ---
+[109]
+l. 3570 Writing ci065.idv[341] (ci065340x.png)
+ [110]
+l. 3577 Writing ci065.idv[342] (ci065341x.png)
+ [111]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3619
+.
+ (/usr/share/texmf-tetex/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3619.
+
+ [112]
+[113] [114
+
+]
+l. 3732 Writing ci065.idv[343] (ci065342x.png)
+l. 3733 Writing ci065.idv[344] (ci065343x.png)
+l. 3734 Writing ci065.idv[345] (ci065344x.png)
+l. 3734 Writing ci065.idv[346] (ci065345x.png)
+l. 3734 Writing ci065.idv[347] (ci065346x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 3734.
+
+l. 3735 Writing ci065.idv[348] (ci065347x.png)
+l. 3735 Writing ci065.idv[349] (ci065348x.png)
+l. 3735 Writing ci065.idv[350] (ci065349x.png)
+l. 3736 Writing ci065.idv[351] (ci065350x.png)
+l. 3736 Writing ci065.idv[352] (ci065351x.png)
+l. 3737 Writing ci065.idv[353] (ci065352x.png)
+l. 3737 Writing ci065.idv[354] (ci065353x.png)
+l. 3738 Writing ci065.idv[355] (ci065354x.png)
+[115
+
+]
+l. 3764 Writing ci065.idv[356] (ci065355x.png)
+l. 3764 Writing ci065.idv[357] (ci065356x.png)
+ [116
+
+]
+l. 3796 Writing ci065.idv[358] (ci065357x.png)
+l. 3807 Writing ci065.idv[359] (ci065358x.png)
+l. 3808 Writing ci065.idv[360] (ci065359x.png)
+l. 3808 Writing ci065.idv[361] (ci065360x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 3808.
+
+l. 3809 Writing ci065.idv[362] (ci065361x.png)
+l. 3810 Writing ci065.idv[363] (ci065362x.png)
+l. 3811 Writing ci065.idv[364] (ci065363x.png)
+l. 3812 Writing ci065.idv[365] (ci065364x.png)
+l. 3813 Writing ci065.idv[366] (ci065365x.png)
+l. 3814 Writing ci065.idv[367] (ci065366x.png)
+l. 3814 Writing ci065.idv[368] (ci065367x.png)
+l. 3814 Writing ci065.idv[369] (ci065368x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 3814.
+
+l. 3815 Writing ci065.idv[370] (ci065369x.png)
+l. 3815 Writing ci065.idv[371] (ci065370x.png)
+l. 3816 Writing ci065.idv[372] (ci065371x.png)
+l. 3816 Writing ci065.idv[373] (ci065372x.png)
+l. 3816 Writing ci065.idv[374] (ci065373x.png)
+
+LaTeX Warning: Command \c invalid in math mode on input line 3816.
+
+l. 3817 Writing ci065.idv[375] (ci065374x.png)
+l. 3817 Writing ci065.idv[376] (ci065375x.png)
+l. 3817 Writing ci065.idv[377] (ci065376x.png)
+l. 3817 Writing ci065.idv[378] (ci065377x.png)
+l. 3818 Writing ci065.idv[379] (ci065378x.png)
+l. 3819 Writing ci065.idv[380] (ci065379x.png)
+l. 3830 Writing ci065.idv[381] (ci065380x.png)
+[117]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 3868
+.
+ (/usr/share/texmf-tetex/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 3868.
+
+l. 3888 Writing ci065.idv[382] (ci065381x.png)
+ [118] [119] [120]
+l. 4040 Writing ci065.idv[383] (ci065382x.png)
+l. 4040 Writing ci065.idv[384] (ci065383x.png)
+
+l.4045 --- TeX4ht warning --- Cannot determine size of graphic in emparelhament
+o.png (no BoundingBox) ---
+l. 4045 --- needs --- emparelhamento.png ---
+l. 4047 Writing ci065.idv[385] (ci065384x.png)
+l. 4047 Writing ci065.idv[386] (ci065385x.png)
+l. 4062 Writing ci065.idv[387] (ci065386x.png)
+l. 4065 Writing ci065.idv[388] (ci065387x.png)
+l. 4065 Writing ci065.idv[389] (ci065388x.png)
+l. 4066 Writing ci065.idv[390] (ci065389x.png)
+l. 4066 Writing ci065.idv[391] (ci065390x.png)
+l. 4071 Writing ci065.idv[392] (ci065391x.png)
+[121]
+l. 4078 Writing ci065.idv[393] (ci065392x.png)
+l. 4079 Writing ci065.idv[394] (ci065393x.png)
+l. 4088 Writing ci065.idv[395] (ci065394x.png)
+l. 4107 Writing ci065.idv[396] (ci065395x.png)
+l. 4107 Writing ci065.idv[397] (ci065396x.png)
+l. 4108 Writing ci065.idv[398] (ci065397x.png)
+l. 4109 Writing ci065.idv[399] (ci065398x.png)
+ [122]
+l. 4111 Writing ci065.idv[400] (ci065399x.png)
+l. 4148 Writing ci065.idv[401] (ci065400x.png)
+ [123] [124] [125]
+l. 4234 Writing ci065.idv[402] (ci065401x.png)
+
+l.4244 --- TeX4ht warning --- Cannot determine size of graphic in emparelha_bip
+.png (no BoundingBox) ---
+l. 4244 --- needs --- emparelha_bip.png ---
+l. 4250 Writing ci065.idv[403] (ci065402x.png)
+[126]
+l. 4261 Writing ci065.idv[404] (ci065403x.png)
+l. 4270 Writing ci065.idv[405] (ci065404x.png)
+ [127]
+l. 4304 Writing ci065.idv[406] (ci065405x.png)
+ [128]
+l. 4331 Writing ci065.idv[407] (ci065406x.png)
+ [129]
+l. 4349 Writing ci065.idv[408] (ci065407x.png)
+l. 4385 Writing ci065.idv[409] (ci065408x.png)
+ [130]
+l. 4399 Writing ci065.idv[410] (ci065409x.png)
+ [131]
+l. 4428 Writing ci065.idv[411] (ci065410x.png)
+ [132]
+l. 4469 Writing ci065.idv[412] (ci065411x.png)
+ [133]
+l. 4478 Writing ci065.idv[413] (ci065412x.png)
+ [134] [135] [136
+
+]
+l.4514 --- TeX4ht warning --- Cannot determine size of graphic in hungaro.png (
+no BoundingBox) ---
+l. 4514 --- needs --- hungaro.png ---
+[137
+
+] [138
+
+] [139
+
+]
+l.4530 --- TeX4ht warning --- Cannot determine size of graphic in hungaro2.png 
+(no BoundingBox) ---
+l. 4530 --- needs --- hungaro2.png ---
+[140
+
+]
+l. 4538 Writing ci065.idv[414] (ci065413x.png)
+l. 4539 Writing ci065.idv[415] (ci065414x.png)
+ [141
+
+] [142]
+l.4658 --- TeX4ht warning --- Cannot determine size of graphic in hamilton.png 
+(no BoundingBox) ---
+l. 4658 --- needs --- hamilton.png ---
+[143] [144
+
+]
+l.4685 --- TeX4ht warning --- Cannot determine size of graphic in petersen.png 
+(no BoundingBox) ---
+l. 4685 --- needs --- petersen.png ---
+[145
+
+]
+l. 4699 Writing ci065.idv[416] (ci065415x.png)
+l. 4709 Writing ci065.idv[417] (ci065416x.png)
+
+l.4713 --- TeX4ht warning --- Cannot determine size of graphic in dirac.png (no
+ BoundingBox) ---
+l. 4713 --- needs --- dirac.png ---
+
+LaTeX Warning: Reference `exerc:grau_min_conexo' on page 146 undefined on input
+ line 4720.
+
+
+LaTeX Warning: Reference `exerc:grau_min_conexo' on page 146 undefined on input
+ line 4721.
+
+[146
+
+]
+l. 4742 Writing ci065.idv[418] (ci065417x.png)
+ [147]
+l. 4770 Writing ci065.idv[419] (ci065418x.png)
+ [148] [149
+
+]
+l.4796 --- TeX4ht warning --- Cannot determine size of graphic in euler.png (no
+ BoundingBox) ---
+l. 4796 --- needs --- euler.png ---
+[150
+
+]
+l. 4803 Writing ci065.idv[420] (ci065419x.png)
+l. 4808 Writing ci065.idv[421] (ci065420x.png)
+l. 4808 Writing ci065.idv[422] (ci065421x.png)
+ [151
+
+] [152
+
+]
+l.4812 --- TeX4ht warning --- Cannot determine size of graphic in trilha.png (n
+o BoundingBox) ---
+l. 4812 --- needs --- trilha.png ---
+[153
+
+] [154
+
+]
+l.4897 --- TeX4ht warning --- Cannot determine size of graphic in figura.png (n
+o BoundingBox) ---
+l. 4897 --- needs --- figura.png ---
+[155]
+l. 4908 Writing ci065.idv[423] (ci065422x.png)
+l. 4910 Writing ci065.idv[424] (ci065423x.png)
+l. 4911 Writing ci065.idv[425] (ci065424x.png)
+l. 4911 Writing ci065.idv[426] (ci065425x.png)
+l. 4911 Writing ci065.idv[427] (ci065426x.png)
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 4911.
+
+l. 4912 Writing ci065.idv[428] (ci065427x.png)
+l. 4912 Writing ci065.idv[429] (ci065428x.png)
+l. 4913 Writing ci065.idv[430] (ci065429x.png)
+l. 4913 Writing ci065.idv[431] (ci065430x.png)
+l. 4913 Writing ci065.idv[432] (ci065431x.png)
+l. 4914 Writing ci065.idv[433] (ci065432x.png)
+l. 4915 Writing ci065.idv[434] (ci065433x.png)
+l.4942 --- TeX4ht warning --- Cannot determine size of graphic in mirror.png (n
+o BoundingBox) ---
+[156]
+l. 4942 --- needs --- mirror.png ---
+ [157] (./ci065.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 12151 strings out of 94492
+ 152922 string characters out of 1175585
+ 343264 words of memory out of 1000000
+ 14843 multiletter control sequences out of 10000+50000
+ 13598 words of font info for 53 fonts, out of 500000 for 2000
+ 743 hyphenation exceptions out of 8191
+ 34i,22n,48p,1547b,1378s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on ci065.dvi (157 pages, 631796 bytes).

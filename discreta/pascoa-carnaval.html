@@ -1,0 +1,165 @@
+<head>
+<meta charset="UTF-8"> 
+   <style>
+.MathJax nobr>span.math>span{border-left-width:0 !important};
+   </style>   
+
+  
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+<!--    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>       
+
+    <!-- Pyodide: roda Python de verdade dentro do navegador (WebAssembly) -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
+</head>
+<p>
+
+<h1><i>Comptus</i></h1>
+
+Como a data do Carnaval é definida?
+
+<h3>Introdução</h3>
+<p align="justify">O carnaval é um dos feriados móveis do calendário,
+os outros são: Sexta-Feira Santa, Páscoa e Corpus Christi. A data do
+feriado de Carnaval (a terça-feira) é definida pela data da Páscoa,
+ocorre 47 dias antes da Páscoa.</p>
+
+<p align="justify">A Páscoa cristã tem relação com o Pesach (Páscoa
+judaica). Há registros de que até o século 2 muitos cristãos celebravam
+a festa no dia 14 de Nisan do calendário judaico, mesma data do
+Pesach. Alguns grupos passaram a celebrar a Páscoa no domingo após o
+Pesach.  Convencionou-se então que a Páscoa seria celebrada no domingo
+após a primeira lua cheia da primavera, guiando-se pela data do
+equinócio. Cada um continuou a celebrar na data que considerava
+correta, até o Primeiro Concílio de Niceia, em 325 dC, convocado pelo
+imperador Constantino para unificar as normas e a tradição cristã.  O
+concílio decidiu que todos os cristãos deveriam celebrar a Páscoa na
+mesma data e que esta seria separada do Pesach.</p>
+
+<p align="justify">A Páscoa está definida como sendo o primeiro domingo
+após a primeira Lua cheia que ocorre após ou no equinócio do outono do
+hemisfério sul.</p>
+
+<h3>O equinócio</h3>
+
+<p align="justify">Os equinócios (o instante em que o Sol, em sua
+órbita como vista da Terra, cruza o equador celeste --- a linha do
+equador terrestre projetada na esfera celeste) ocorrem nos meses de
+março e setembro. Em março, o equinócio marca o início da primavera no
+hemisfério norte e do outono no hemisfério sul.</p>
+
+<p align="justify">As datas dos equinócios variam pois o período entre
+dois equinócios de março não têm exatamente 365 dias, fazendo com que a
+hora precisa do equinócio varie ao longo de um período de dezoito
+horas, que não se encaixa necessariamente no mesmo dia.  Ao longo do
+mesmo século, as datas dos equinócios tendem a ocorrer cada vez mais
+cedo. No século XXI só houve dois anos em que o equinócio de março
+aconteceu no dia 21 (2003 e 2007); nos demais, o equinócio tem ocorrido
+em 20 de março e prevê-se que, a partir de 2044, passe a haver anos em
+que o equinócio aconteça no dia 19.
+
+<h3>O dia da Páscoa e do Carnaval</h3>
+
+<p align="justify">O problema de se calcular de fato a data da Páscoa
+foi resolvido pelo concílio ao se fixar "datas eclesiásticas"
+diferentes das datas astronômicas.  O decreto do papa Gregório XIII de
+24/02/1582, seguindo o concílio de Nicéia, a Páscoa é no primeiro
+domingo depois da Lua Cheia que ocorre em ou logo após 21 de
+março. Entretanto, a data da Lua Cheia não é a real, mas a definida nas
+Tabelas Eclesiásticas, que, sem levar totalmente em conta o movimento
+complexo da Lua, podia ser calculada facilmente, e está próxima da lua
+real.</p>
+
+<p align="justify">De acordo com essas regras, a Páscoa nunca acontece
+  antes de 22 de março nem depois de 25 de abril.</p>
+
+ <p align="justify"> A terça-Feira de carnaval ocorre 47 dias antes da
+Páscoa. Logo o Carnaval pode acontecer de 4 de fevereiro a 9 de
+março. </p>
+
+
+
+<h3>Como calcular o dia do Carnaval</h3>
+
+
+
+<center>
+  <label for="ano-input">Ano: </label>
+  <input type="number" id="ano-input" value="2026" min="1583" max="9999" style="width:6em;">
+  <button id="btn-calcular" disabled>Calcular</button>
+  <p id="status-pyodide"><i>Carregando Python (Pyodide)...</i></p>
+  <p id="resultado" style="font-weight:bold; font-size:1.1em;"></p>
+</center>
+
+<pre style="background:#f5f5f5; border:1px solid #ccc; padding:10px; overflow-x:auto;"><code id="codigo-python">def data_pascoa(ano):
+    a = ano % 19
+    b = ano // 100
+    c = ano % 100
+    d = b // 4
+    e = b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i = c // 4
+    k = c % 4
+    L = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * L) // 451
+    mes = (h + L - 7 * m + 114) // 31
+    dia = ((h + L - 7 * m + 114) % 31) + 1
+    return dia, mes
+
+def data_carnaval(ano):
+    from datetime import date, timedelta
+    dia, mes = data_pascoa(ano)
+    carnaval = date(ano, mes, dia) - timedelta(days=47)
+    return carnaval.day, carnaval.month
+</code></pre>
+
+<script type="text/javascript">
+async function main() {
+    const status = document.getElementById("status-pyodide");
+    let pyodide = await loadPyodide();
+    pyodide.runPython(document.getElementById("codigo-python").textContent);
+    status.textContent = "";
+    document.getElementById("btn-calcular").disabled = false;
+
+    const meses = ["", "janeiro", "fevereiro", "março", "abril", "maio"];
+
+    document.getElementById("btn-calcular").addEventListener("click", () => {
+        const ano = parseInt(document.getElementById("ano-input").value);
+        const dataPascoa = pyodide.globals.get("data_pascoa")(ano).toJs();
+        const dataCarnaval = pyodide.globals.get("data_carnaval")(ano).toJs();
+        const [diaP, mesP] = dataPascoa;
+        const [diaC, mesC] = dataCarnaval;
+        document.getElementById("resultado").textContent =
+            `Em ${ano}: Páscoa em ${diaP} de ${meses[mesP]} · Carnaval em ${diaC} de ${meses[mesC]}`;
+    });
+}
+main();
+</script>
+
+<h3>Distribuição </h3> 
+
+<center>
+<img src="histograma_pascoa.png" width="900px">
+</center>
+
+<h3>Referências</h3>
+
+[1] BBC Brasil, Como se calcula a data da Páscoa?  31 março 2013
+https://www.bbc.com/portuguese/noticias/2013/03/130331_pascoa_calculo_data_mm<br>
+
+[2] Cabral, R., Cálculo do Dia da Páscoa, https://www.inf.ufrgs.br/~cabral/Pascoa.html<br>
+
+[3] Kepler de Souza Oliveira Filho, Data da Páscoa, 22 de Fevereiro de
+2016, http://astro.if.ufrgs.br/pascoa.htm<br>
+
+[3] Wikipedia, Cálculo da Páscoa, https://pt.wikipedia.org/wiki/C%C3%A1lculo_da_P%C3%A1scoa<br>
+
+[4] Professor Cardy, Como calcular a data da Páscoa, http://www.profcardy.com/artigos/pascoa.php

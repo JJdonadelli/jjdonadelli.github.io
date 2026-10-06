@@ -1,0 +1,216 @@
+\beforeentry{ci065.html}{dx1-4001}{}
+\indexentry{grafo}{3}
+\beforeentry{ci065.html}{dx1-4002}{}
+\indexentry{v\'ertice}{3}
+\beforeentry{ci065.html}{dx1-4003}{}
+\indexentry{aresta}{3}
+\beforeentry{ci065.html}{dx1-4004}{}
+\indexentry{diagrama}{3}
+\beforeentry{ci065.html}{dx1-4008}{}
+\indexentry{$G=(V,E)$}{4}
+\beforeentry{ci065.html}{dx1-4009}{}
+\indexentry{incide}{4}
+\beforeentry{ci065.html}{dx1-4010}{}
+\indexentry{adjacentes}{4}
+\beforeentry{ci065.html}{dx1-4011}{}
+\indexentry{adjacentes}{4}
+\beforeentry{ci065.html}{dx1-4012}{}
+\indexentry{extremos}{4}
+\beforeentry{ci065.html}{dx1-4013}{}
+\indexentry{ordem}{4}
+\beforeentry{ci065.html}{dx1-4014}{}
+\indexentry{tamanho}{4}
+\beforeentry{ci065.html}{dx1-4015}{}
+\indexentry{grafo vazio}{4}
+\beforeentry{ci065.html}{dx1-4016}{}
+\indexentry{grafo trivial}{4}
+\beforeentry{ci065.html}{dx1-5005}{}
+\indexentry{complemento}{5}
+\beforeentry{ci065.html}{dx1-5017}{}
+\indexentry{uni\~ao}{6}
+\beforeentry{ci065.html}{dx1-5019}{}
+\indexentry{completo}{7}
+\beforeentry{ci065.html}{dx1-5021}{}
+\indexentry{$\chi (G)$}{7}
+\beforeentry{ci065.html}{dx1-6001}{}
+\indexentry{$E_G(v)$}{8}
+\beforeentry{ci065.html}{dx1-6003}{}
+\indexentry{$N_G(v)$}{8}
+\beforeentry{ci065.html}{dx1-6005}{}
+\indexentry{vizinhan\c ca}{9}
+\beforeentry{ci065.html}{dx1-6006}{}
+\indexentry{vizinhos}{9}
+\beforeentry{ci065.html}{dx1-6007}{}
+\indexentry{grau}{9}
+\beforeentry{ci065.html}{dx1-7007}{}
+\indexentry{regular}{13}
+\beforeentry{ci065.html}{dx1-7011}{}
+\indexentry{$\textrm  {L}G$}{13}
+\beforeentry{ci065.html}{dx1-8001}{}
+\indexentry{subgrafo}{14}
+\beforeentry{ci065.html}{dx1-8002}{}
+\indexentry{$H\subseteq G$}{14}
+\beforeentry{ci065.html}{dx1-8006}{}
+\indexentry{subgrafo gerador}{14}
+\beforeentry{ci065.html}{dx1-9001}{}
+\indexentry{$G[U]$}{15}
+\beforeentry{ci065.html}{dx1-10001}{}
+\indexentry{$G[M]$}{15}
+\beforeentry{ci065.html}{dx1-12001}{}
+\indexentry{clique}{16}
+\beforeentry{ci065.html}{dx1-12002}{}
+\indexentry{$k$-clique}{16}
+\beforeentry{ci065.html}{dx1-12003}{}
+\indexentry{conjunto independente}{16}
+\beforeentry{ci065.html}{dx1-12004}{}
+\indexentry{$k$-conjunto-independente}{16}
+\beforeentry{ci065.html}{dx1-12009}{}
+\indexentry{subgrafo bipartido induzido}{18}
+\beforeentry{ci065.html}{dx1-12010}{}
+\indexentry{corte definido por $A$}{18}
+\beforeentry{ci065.html}{dx1-13003}{}
+\indexentry{$\mathbf@@ {\alpha (G)}$}{19}
+\beforeentry{ci065.html}{dx1-13005}{}
+\indexentry{$\mathbf@@ {\omega (G)}$}{19}
+\beforeentry{ci065.html}{dx1-13014}{}
+\indexentry{vizinhan\c ca de $U$}{21}
+\beforeentry{ci065.html}{dx1-13015}{}
+\indexentry{$N_G(U)$}{21}
+\beforeentry{ci065.html}{dx1-14001}{}
+\indexentry{isomorfos}{23}
+\beforeentry{ci065.html}{dx1-14002}{}
+\indexentry{$G\simeq H$}{23}
+\beforeentry{ci065.html}{dx1-14005}{}
+\indexentry{isomorfismo}{24}
+\beforeentry{ci065.html}{dx1-15011}{}
+\indexentry{automorfismo}{27}
+\beforeentry{ci065.html}{dx1-16001}{}
+\indexentry{Grafo com pesos nas arestas}{27}
+\beforeentry{ci065.html}{dx1-16002}{}
+\indexentry{$(V,E,\rho )$}{27}
+\beforeentry{ci065.html}{dx1-16003}{}
+\indexentry{grafo subjacente}{27}
+\beforeentry{ci065.html}{dx1-16004}{}
+\indexentry{Grafo orientado}{28}
+\beforeentry{ci065.html}{dx1-16005}{}
+\indexentry{Grafos dirigido ou digrafo}{28}
+\beforeentry{ci065.html}{dx1-16006}{}
+\indexentry{Multigrafo}{28}
+\beforeentry{ci065.html}{dx1-22007}{}
+\indexentry{vetores de incid\^encias}{36}
+\beforeentry{ci065.html}{dx1-22012}{}
+\indexentry{tra\c co}{37}
+\beforeentry{ci065.html}{dx1-32001}{}
+\indexentry{caminho}{55}
+\beforeentry{ci065.html}{dx1-32004}{}
+\indexentry{extremos}{59}
+\beforeentry{ci065.html}{dx1-32005}{}
+\indexentry{v\'ertices internos}{59}
+\beforeentry{ci065.html}{dx1-32006}{}
+\indexentry{comprimento}{59}
+\beforeentry{ci065.html}{dx1-32007}{}
+\indexentry{$P^{k+1}$}{59}
+\beforeentry{ci065.html}{dx1-32010}{}
+\indexentry{ligados}{59}
+\beforeentry{ci065.html}{dx1-32011}{}
+\indexentry{dist\^ancia}{59}
+\beforeentry{ci065.html}{dx1-32012}{}
+\indexentry{$\textrm  {dist}_G(u,v)$}{59}
+\beforeentry{ci065.html}{dx1-32014}{}
+\indexentry{$\textrm  {dist}_G(u,v)=\infty $}{60}
+\beforeentry{ci065.html}{dx1-32019}{}
+\indexentry{di\^ametro}{61}
+\beforeentry{ci065.html}{dx1-32020}{}
+\indexentry{$\textrm  {diam}(G)$}{61}
+\beforeentry{ci065.html}{dx1-32022}{}
+\indexentry{circuito}{61}
+\beforeentry{ci065.html}{dx1-32024}{}
+\indexentry{$C=0,1,...,{k},0$}{61}
+\beforeentry{ci065.html}{dx1-32025}{}
+\indexentry{comprimento}{62}
+\beforeentry{ci065.html}{dx1-32026}{}
+\indexentry{$C^k$}{62}
+\beforeentry{ci065.html}{dx1-32031}{}
+\indexentry{cintura}{63}
+\beforeentry{ci065.html}{dx1-32032}{}
+\indexentry{$\textrm  {cin}(G)$}{63}
+\beforeentry{ci065.html}{dx1-33003}{}
+\indexentry{concatena\c c\~ao}{64}
+\beforeentry{ci065.html}{dx1-33004}{}
+\indexentry{concatena\c c\~ao de caminhos}{64}
+\beforeentry{ci065.html}{dx1-33012}{}
+\indexentry{$k$-cubo}{65}
+\beforeentry{ci065.html}{dx1-33015}{}
+\indexentry{grafo de Fibonacci}{65}
+\beforeentry{ci065.html}{dx1-34001}{}
+\indexentry{comprimento}{66}
+\beforeentry{ci065.html}{dx1-34002}{}
+\indexentry{dist\^ancia}{66}
+\beforeentry{ci065.html}{dx1-34003}{}
+\indexentry{caminho m\IeC {\protect \'\i }nimo}{67}
+\beforeentry{ci065.html}{dx1-39015}{}
+\indexentry{Fecho transitivo}{86}
+\beforeentry{ci065.html}{dx1-40001}{}
+\indexentry{conexo}{86}
+\beforeentry{ci065.html}{dx1-40002}{}
+\indexentry{articula\c c\~ao}{86}
+\beforeentry{ci065.html}{dx1-40003}{}
+\indexentry{v\'ertice de corte}{86}
+\beforeentry{ci065.html}{dx1-40004}{}
+\indexentry{biconexo}{86}
+\beforeentry{ci065.html}{dx1-41003}{}
+\indexentry{$G-e$}{87}
+\beforeentry{ci065.html}{dx1-41017}{}
+\indexentry{$k$-conexo}{89}
+\beforeentry{ci065.html}{dx1-41018}{}
+\indexentry{conexidade}{89}
+\beforeentry{ci065.html}{dx1-41019}{}
+\indexentry{$\kappa (G)$}{89}
+\beforeentry{ci065.html}{dx1-42001}{}
+\indexentry{floresta}{91}
+\beforeentry{ci065.html}{dx1-42002}{}
+\indexentry{\'arvore}{91}
+\beforeentry{ci065.html}{dx1-42012}{}
+\indexentry{folha}{92}
+\beforeentry{ci065.html}{dx1-45001}{}
+\indexentry{custo de um subgrafo}{95}
+\beforeentry{ci065.html}{dx1-52001}{}
+\indexentry{emparelhamento}{106}
+\beforeentry{ci065.html}{dx1-52004}{}
+\indexentry{coberto}{106}
+\beforeentry{ci065.html}{dx1-52005}{}
+\indexentry{$\mu (G)$}{106}
+\beforeentry{ci065.html}{dx1-52008}{}
+\indexentry{$M$-aumentante}{107}
+\beforeentry{ci065.html}{dx1-55012}{}
+\indexentry{permanente}{116}
+\beforeentry{ci065.html}{dx1-59001}{}
+\indexentry{cobertura por v\'ertices}{124}
+\beforeentry{ci065.html}{dx1-59003}{}
+\indexentry{cobertura m\IeC {\protect \'\i }nima}{124}
+\beforeentry{ci065.html}{dx1-59004}{}
+\indexentry{$\nu (G)$}{124}
+\beforeentry{ci065.html}{dx1-63002}{}
+\indexentry{trilha}{136}
+\beforeentry{ci065.html}{dx1-67002}{}
+\indexentry{Fecho~transitivo}{149}
+\beforeentry{ci065.html}{dx1-67004}{}
+\indexentry{Ordena\c c\~ao~topol\'ogica}{149}
+\beforeentry{ci065.html}{dx1-68001}{}
+\indexentry{rede}{150}
+\beforeentry{ci065.html}{dx1-68002}{}
+\indexentry{$s$-$t$ fluxo}{150}
+\beforeentry{ci065.html}{dx1-68009}{}
+\indexentry{valor do fluxo}{151}
+\beforeentry{ci065.html}{dx1-68011}{}
+\indexentry{$s$-$t$ corte}{152}
+\beforeentry{ci065.html}{dx1-68012}{}
+\indexentry{capacidade do corte}{152}
+\beforeentry{ci065.html}{dx1-68019}{}
+\indexentry{$f(S)$}{154}
+\beforeentry{ci065.html}{dx1-68020}{}
+\indexentry{$c(S)$}{154}
+\beforeentry{ci065.html}{dx1-68022}{}
+\indexentry{$f$-aumentante}{155}
+\beforeentry{ci065.html}{dx1-68039}{}
+\indexentry{grafo residual}{159}

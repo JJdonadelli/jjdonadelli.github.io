@@ -1,0 +1,469 @@
+<!-- Time-stamp: <qui set  3 09:31:35 2015 jair@ergodico> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bc0406 Introdução à Probabilidade e à Estatística</title>
+
+<style type="text/css" >
+
+  body { font-family: Ubuntu, sans-serif; }
+  
+  div.my_wrapper{
+  width: 1025px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 1000px;
+  height: 140px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 480px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 9px;
+  width: 500px;
+  border: 1px solid gray;
+  background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 1000px;
+  border: 1px solid gray;
+  }
+  
+</style>
+
+</head>
+
+<body>
+  
+  <div class="my_wrapper">
+    
+    <div class="my_header">
+<center>      <font size="+3" color="blue">BC0406 Introdução à Probabilidade e a Estatística</font> </center>
+<center>	<font size="+2"
+		      ><a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair  Donadelli Jr</a></font></center>
+	      <ul>
+		<font size="+1">
+		  <li class="my_nav_link"><font color="blue"><a href="#links"><i>links inúteis</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="http://prograd.ufabc.edu.br/images/pdf/calendario_2014.pdf"><i>Calendário acadêmico</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="notas.html"><i>Conceitos</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="#foot"><i>Notícias</i></a> / 
+		  <font color="blue"><a href="http://twitter.com/QuadroDeAvisos"><i>Twitter</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/listas/"><i>Listas de exercícios</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="#avaliacao"><i>Avaliação</i></a></font> </li>
+		</font>
+	      </ul><br><br>
+<b>Horário de atendimento</b>: 4ª 15hs na sala 546-2, bloco A ou em
+outro horária agendado por email<br>
+</div>
+	    
+	    
+	    <div class="my_left_box">
+	      
+<p align="justify">
+  <b style= "color: blue">Horário</b> --- 3ª 10hs na 207-0 e 5ª
+nas semanas pares 08hs na 214-0 <br>
+  <!-- <b style= "color: blue">Código: </b> BC 0406 -->
+  <b style= "color: blue">TPI: </b> 3-0-4
+  <!--<b style= "color: blue">Carga Horária: </b> 48 horas -->
+<b style= "color: blue">Recomendações: </b> BM e FUV<p>
+<b style= "color: blue"> Objetivos: </b> Introduzir os conceitos
+essenciais da teoria de probabilidade  e suas implicações na estatística.
+<!--<b style= "color: blue">Competências: </b> Capacidade de resolver
+ problemas simples de Probabilidade.  Compreender o teorema do limite
+ central e ser capaz de utilizá-lo nas aplicações estatísticas.
+ Adquirir conceitos básicos em estatística para análise e interpretação
+ de conjuntos de dados experimentais. --><p align="justify">
+<b style= "color: blue">Ementa:</b> Princípios básicos de
+análise combinatória. Definição de probabilidade. Probabilidade
+condicional e independência. Variáveis aleatórias. Funções distribuição
+de probabilidades discretas e contínuas. Principais distribuições: de
+Bernoulli, binomial, de Poisson, geométrica, hipergeométrica, uniforme,
+de Cauchy, exponencial, normal. Variáveis Aleatórias
+Independentes. Valor médio e variâncias. Estatística descritiva. Lei
+fraca dos Grandes números. Teorema Central do Limite. Consequências do
+Teorema central do Limite.
+</p>
+
+<font size=+1>
+<p align="justify"><b style= "color: blue">Bibliografia</b>
+<ol>
+<li><a name="ross"></a> ROSS, Sheldon <i>Probabilidade: um curso moderno com
+aplicações</i>
+<b><font size=-1>[519.2 ROSSpr8]</font></b>
+</li>
+<li>
+LARSON, Ron; FARBER, Betsy. <i>Estatística aplicada.</i> 2.ed. São
+Paulo: Pearson Prentice Hall, 2004. ISBN 8587918591.
+<b><font size=-1>[519.5 LARe2]</font></b>
+</li>
+</ol></p>
+<p align="justify">
+Essa serão os livros que usaremos na disciplinas. Há outros livros
+interessantes que contemplam a ementa,
+confira a bibliografia completa <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/">aqui</a>.
+</p>
+   <h4><i>Material Complementar</i></h4>
+    <a name="mc"></a>
+    <ul>
+      <li> R. Bianconi,
+	<a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como
+	ler e estudar matemática?</a>  
+      </li>
+      <li>
+	Fernando Q. Gouvêa e Shai
+	Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+	to Read Mathematics</a> ( uma tradução rápida e grosseira,
+	segundo o
+	tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+      </li>
+
+      </ul>
+
+
+</font>
+
+		  <a name="avaliacao"></a>
+		  <font size="+1"><b>Avaliação:</b> </font><a name="provas"></a> 
+
+
+
+		  <p align="justify">A availação consiste de <b>duas
+		    provas</b> e uma <b>sub aberta do mal</b>. 
+
+<p align="justify">A avaliação final de cada aluno <u>não</u> será o
+		    resultado de alguma média feita a partir das
+		    avaliações.  O resultado de cada avaliação é um
+		    conceito que leva em conta o resultado das
+		    avaliações até o momento.</p>
+		  
+		  <p align="justify">
+		     O aluno que <u>faltou em dia de prova</u> por
+		     qualquer motivo pode fazer a substitutiva no final
+		     do quadrimestre, ou se faltou por uma
+		    <a href="https://drive.google.com/file/d/0B5ErAuDa44VOTU0zNXVPa3dvSjVtTnRvTkk0V0xfNnpfb1hB/edit?usp=sharing">justificativa
+		    válida</a> pode, se quiser, entrar em contato por
+		    email o quanto antes para agendar uma 2a chamada.
+		  </p>
+
+
+		  <font size="+0"><b>Entrega de exercícios:</b> </font>
+		  <p align="justify">
+		  Participação e entrega de exercícios serão
+		    considerados no conceito final, não são
+		    obrigatórios.
+
+		  <dl>
+		    <dd>[em 07/10] exercícios 1, 2L, 4, e 12
+		    da nota de aula <a href="http://anotacoesdeaula.wordpress.com/2014/09/19/bc0405-generalidades-sobre-conjuntos/">Revisão
+		    de conjuntos</a>
+		    <dd>[em 21/10] exercícios 4, 7 e 11
+		      da nota de aula  <a href="http://anotacoesdeaula.wordpress.com/2014/09/22/bc0405-principios-da-analise-combinatoria/#exercicios">Combinatória </a>
+		    <dd>[em 11/11] exercícios 8, 11 e 12
+		      da nota de aula  <a href="http://anotacoesdeaula.wordpress.com/2014/10/25/bc0406-probabilidade-condicional-e-independencia/#exercicios">probabilidade condicional </a>
+		      <dd>[em 18/11] exercícios 1,2 e 3
+		      da nota de aula  <a href="http://anotacoesdeaula.wordpress.com/2014/11/06/bc0406-variaveis-aleatorias-discretas/#exercicios"> V.A.'s discretas </a>
+		    </dl> 
+
+
+		  <p>
+		    O conceito final da disciplina poderá ser:
+		  </p>
+		  
+		  <ul>
+		    <li> <p align="justify"><b>F</b> Reprovado. O
+		    aluno deve cursar novamente a disciplina.
+		    <li>
+		      <p align="justify"><b>D</b> Aproveitamento
+		      mínimo não satisfatório dos conceitos da
+		      disciplina, com familiaridade parcial do assunto
+		      e alguma capacidade para resolver problemas
+		      simples, mas demonstrando deficiências que exigem
+		      trabalho adicional para prosseguir em estudos
+		      avançados. Nesse caso, o aluno é aprovado na
+		      expectativa de que obtenha um conceito melhor em
+		      outra disciplina, para compensar o conceito D no
+		      cálculo do CR.
+		    </li>
+
+		    <li> <p align="justify"><b>C</b> Desempenho
+		      mínimo satisfatório, demonstrando capacidade de
+		      uso adequado dos conceitos da disciplina,
+		      habilidade para enfrentar problemas relativamente
+		      simples e prosseguir em estudos avançados.
+		    <li> <p align="justify"><b>B</b> Bom desempenho,
+		      demonstrando boa capacidade de uso dos conceitos
+		      da disciplina.
+		    <li> <p align="justify"><b>A</b> Desempenho
+		      excepcional, demonstrando excelente compreensão
+		      da disciplina e do uso da matéria.
+		    </ul>  
+		    
+		    
+
+
+<hr size=8 width=50% noshade align=right> <h4><i>Links</i> uns inúteis
+outros nem tanto</h4>
+      <a name="links"></a>
+<ol>
+<li> <a href="http://setosa.io/conditional/">Uma explicação gráfica de probabilidade condicional</a> 
+</li>
+<li><a href="http://simplystatistics.org/2014/10/17/bayes-rule-in-a-gif/">Uma explicação gráfica para o Teorema de Bayes</a> 
+</li>
+<li><a href="http://www.stat.tamu.edu/~west/applets/Venn1.html">Conditional probability applet</a>
+</li>
+<li>
+<a href="http://www.math.uah.edu/stat/">Virtual Laboratories in Probability and Statistics</a>
+</li>
+<li>
+<a href="http://www.statlect.com/">The digital textbook on probability and statistics</a>
+</li>
+<li>
+<a href="http://web2.uwindsor.ca/math/hlynka/stochOnline.html">Página web com material em vários níveis sobre probabilidade e aplicações</a>
+</li>
+<li><a href="http://mathoverflow.net/questions/37151/what-are-the-big-problems-in-probability-theory">What are the big problems in probability?</a>
+</li>
+<li>
+<a href="http://understandinguncertainty.org/">Understanding Uncertainty</a>
+</li>
+<li>
+<a href="http://www.dartmouth.edu/~chance/">Chance</a> (Chance is a
+quantitative literacy course developed cooperatively by the Chance
+Team)
+</li>
+<li>
+<a href="http://normaldeviate.wordpress.com/2013/06/30/lost-causes-in-statistics-i-finite-additivity/">LOST
+CAUSES IN STATISTICS I: Finite Additivity</a>, Larry Wasserman
+</li>
+</ol>
+
+
+
+    </div>
+
+
+<div style="display:inline;float:left;margin:20px 50px"><a href="http://nautil.us/issue/4/the-unlikely/the-man-who-invented-modern-probability">    <!--<img src="images/ipe1.jpg" width="420"  height="380" border="0" ></a></div>-->
+  <SCRIPT Language="JavaScript">
+    <!--
+
+    x = Math.floor(Math.random()*8)
+    document.write("<IMG SRC=\"")
+    document.write("../images/ipe")
+    document.write(x)
+    document.write(".jpg")
+    document.write("\" width=\"420\"  height=\"380\" border=\"0\" title=\"Essa imagem é aleatória\" >")
+
+    // -->
+    </SCRIPT>
+
+    <NOSCRIPT>
+
+    <IMG SRC="ipe1.gif" width="420"  height="380" border="0" >
+
+    </NOSCRIPT>
+
+</a></div>
+
+ <div class="my_right_box">
+
+   
+
+      <center><b>Programação das aulas</b> </center><br>
+
+<ul>
+<li><b>semana 01 </b>(1 aula)<br> 
+30/09 - Administrativia. Revisão de conjuntos
+(Ref.: <a href="http://gradmat.ufabc.edu.br/disciplinas/bm/notas-de-aulas/">livro de BM</a> cap. 2 e cap. 4).<br>
+<a href="http://anotacoesdeaula.wordpress.com/2014/09/19/bc0405-generalidades-sobre-conjuntos/">Notas de aula</a>(Revisão de conjuntos)
+</li>
+
+<br>
+
+<li><b>semana 02 </b>(2 aulas)<br> 
+07/10 - Princípios básicos de análise combinatória. Arranjos.  ROSS: Capítulo 1<br>
+
+<br>
+  
+09/10 - Combinações e o Teorema Binomial. Solução inteira de equação linear. ROSS: Capítulo 1 <br> 
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_1_IPE.pdf">Lista 1</a><br>
+<a href="http://anotacoesdeaula.wordpress.com/2014/09/22/bc0405-principios-da-analise-combinatoria/">Notas de aula</a> (Combinatória)<br>
+</li>
+
+<br>
+
+<li><b>semana 03 </b>(1 aula)<br> 
+14/10 - Modelo probabilístico: Experimentos aleatórios. Espaço amostral e Eventos. Probabilidade classica. ROSS: Capítulo 2- Seções 2.2 e 2.5. <br>
+<a href="http://anotacoesdeaula.wordpress.com/2014/10/08/bc0406-espaco-amostral-evento-e-probabilidade-classica/">Notas de aula</a> (Espaço amostral, evento e Probabilidade clássica)<br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_2_IPE.pdf">Lista 2</a> (exercs. 1 ao 12)<br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_3_IPE.pdf">Lista 3</a><br>
+</li>
+
+<br>
+
+<li><b>semana 04 </b>(2 aulas)<br>
+
+21/10 - Modelo probabilístico: Axiomas de probabilidade. Propriedades  de uma probabilidade. ROSS: Capítulo 2- Seções 2.3-2.4<br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_2_IPE.pdf">Lista 2</a> (exercs. 13 ao 18)<br>
+<a href="http://anotacoesdeaula.wordpress.com/2014/10/18/bc0406-axiomas-de-probabilidade-e-modelo-probabilistico/">Notas de aula</a> (Axiomas de probabilidade)<br>
+
+
+<br>
+
+23/10 - Probabilidade Condicional. Teorema da multiplicação e da
+Probabilidade Total. Teorema de Bayes e suas
+consequências. Independência. ROSS: Capítulo 3<br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_4_IPE.pdf">Lista 4</a> (Probabilidade Condicional)<br>
+<a href="https://anotacoesdeaula.wordpress.com/2014/10/25/bc0406-probabilidade-condicional-e-independencia/">Notas de aula</a> (Probabilidade Condicional)</li>
+
+<br>
+
+<li><b>semana 05 </b>(semana sem aula)<br>
+       28/10 - recesso
+<br><a name="P1"></a><br></li>
+
+
+
+<li><b>semana 06 </b>(2 aulas)<br>
+       04/11 - <b>PROVA 1</b> <a href="prova1.pdf">questões</a> - <a href="rascunho.pdf">esboço das soluções</a> <br><br>
+
+       06/11 - Variáveis aleatórias discretas. Modelos de distribuições
+       	       discretas: Bernoulli, Binomial, Poisson e Geométrica.
+       ROSS: Capitulo 4- Seções 4.1-4.7, 4.8.1, 4.9
+       <br>
+	 <a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_5_IPE.pdf">Lista 5</a> (Variáveis aleatórias) exercs. 1,2,3,7,10,11,17,18,20,21,22,24<br>
+<a href="http://anotacoesdeaula.wordpress.com/2014/11/06/bc0406-variaveis-aleatorias-discretas">Notas de aula</a>(Variáveis discretas)
+<br><br></li>
+
+
+<li><b>semana 07 </b>(1 aula)<br>
+       11/11 - Esperança. Variância. (<a href="http://anotacoesdeaula.wordpress.com/2014/11/06/bc0406-variaveis-aleatorias-discretas/#esperanca">N.A.<a/>) <br>
+      
+       ROSS: Capitulo 4- Seções 4.1-4.7, 4.8.1, 4.9
+<br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_5_IPE.pdf">Lista 5</a> (Variáveis aleatórias)<br>
+<br>
+
+<li><b>semana 08 </b>(1 aula)<br> 
+
+    18/11 - Função de distribuição acumulada. ROSS: seções 4.1 e 4.10.
+    Variáveis aleatórias continuas. Função de densidade.  ROSS: seção
+    5.1 <br>
+<a href="https://anotacoesdeaula.wordpress.com/2014/11/19/bc0406-funcao-de-distribuicao-acumulada-e-variaveis-aleatorias-continuas/">Notas de aula</a><br>
+     <a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_6_IPE.pdf">Lista
+      6</a> (Variáveis aleatórias contínuas) Exercs. 1 a 7
+<br><br>
+
+    20/11 - recesso
+
+</li>
+<br>
+<li><b>semana 09 </b>(1 aula)<br> 25/11 - Modelos de distribuições
+       contínuas: Uniforme, Exponencial. Distribuição de uma função de
+       uma variável aleatória. Esperança e Variância. ROSS: Seções 5.2
+       – 5.5<br>
+<a href="https://anotacoesdeaula.wordpress.com/2014/11/28/modelos-continuos/">Notas de aula</a><br>
+     <a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_6_IPE.pdf">Lista
+      6</a> (Variáveis aleatórias contínuas) Exercs. 8,9,10,13,18,19,20
+<br>
+
+<br>
+
+
+<!--Função de distribuição conjunta. Independência de variáveis aleatórias. 
+       	       ROSS: Capítulo 6- Seções 6.1,6.2, 6.3-->
+
+</li>
+<li><b>semana 10 </b>(2 aulas)<br> 02/12 - Distribuição Normal. Teorema
+       Central do Limite. Aproximação Normal à Binomial. Consequências
+       práticas do Teorema Central do Limite: Intervalos de
+       confiança. ROSS: Seções 5.4 e 8.3<br>
+<a href="https://anotacoesdeaula.wordpress.com/2014/11/28/modelos-continuos/#normal">Notas de aula</a> (Distr. normal)  <br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_6_IPE.pdf">Lista 6</a> (Variáveis aleatórias contínuas) Exercs. 11,12,14 a 17
+<br><a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_9_IPE.pdf">Lista
+9</a> (Desigualdades e teoremas limites) Exercs. 8 a 11, 14 a 18
+
+<br>
+<br>
+
+04/12 - Estatística Descritiva: Medidas descritivas para distribuições
+       de frequências: Medidas de posição. Medidas de dispersão. LARSON
+       - FARBER: Capítulo 2- Seção:2.4-2.5<br>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_8_IPE.pdf">Lista 8</a> <br>
+<a href="Estat.pdf">slides</a>  <br>
+<br></li>
+<li><b>semana 11 </b>(1 aula)<br>
+       09/12 - <b>Prova 2</b>  <a href="prova2.pdf">questões</a> - <a href="rascunho2.pdf">esboço das soluções</a> <br><br></li>
+
+
+<li><b>semana 12 </b>(2 aulas)<br>
+       16/12 - Aula para tirar dúvidas <br><br>
+       18/12 - <b>Prova Sub</b> <a href="provasub.pdf">questões</a> - <a href="rascunho3.pdf">esboço das soluções</a> 
+
+</ul>
+
+      </div>
+
+    <div class="my_footer">
+      <a name="foot">
+       <h2>Notícias</h2>
+      </a>
+<ol>
+  <li>
+    <i>fique ligado neste espaço</i> ou
+    acompanhe as notícias <a href="http://twitter.com/QuadroDeAvisos">por
+      aqui</a>
+  </li>
+  <li>(em 06/10)<b>Monitoria</b>
+<br><br>
+Em Santo André
+<br><br>
+2a-feira 13hs - 15hs e 17hs - 19hs na  SALA 301-2 (Paulo/Leandro)<br>
+4a-feira 13hs - 15hs na SALA 103-0 (Lukas)<br>
+6a-feira 14hs - 18hs na SALA 207-0 (Lukas/Paulo)<br>
+<br><br>
+Em São Bernardo
+<br><br>
+5a 16-18hs sala A2-S206 (Alfa 2) (Leandro)
+  </li>
+  <li>(em 13/10) nova entraga para 21/10. 
+  </li>
+  <li>(em 13/10)
+    na proxima quarta, 14/10, não poderei atender no horário de
+    atendimento.
+  </li>
+  <li>(em 05/11) o <a href="prova1.pdf">enunciado da P1</a> e
+  um <a href="rascunho.pdf">esboço das soluções</a>
+  </li>
+  <li>(em 25/11)
+    Amanhã, 26/11, atendo até as 11hs <br>
+    Quinta, 27/11, atendo das 16 até as 17hs <br>
+  </li>
+  <li>(em 08/12)
+    atendo hoje  das 14 até quase 17hs <br>
+  </li>
+</ol>
+    
+  </body>
+</html>
+

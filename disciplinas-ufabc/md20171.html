@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Matemática Discreta 2017-1</title>
+
+<style type="text/css" >
+
+  body { font-family: Ubuntu, sans-serif; }
+  
+  div.my_wrapper{
+  width: 930px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 908px;
+  height: 1s0px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+
+  li.my_nav_link2{
+#  text-align: left;
+#  float: right;
+  list-style: none;
+  padding-right: 10px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 330px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 10px;
+  width: 510px;
+  border: 1px solid gray;
+    background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 908px;
+  border: 1px solid gray;
+  }
+
+  ol#page_one {margin-left:0; padding-left:0; counter-reset:item} ol>li
+  {margin-left:0; padding-left:0; counter-increment:item;
+  list-style:none inside} ol>li:before {content: "[" counter(item)
+  "]" ; padding-right:0.5em; font-weight: bold;}
+
+  ol#page_two {margin-left:0; padding-left:0; counter-reset:item 4} ol>li
+  {margin-left:0; padding-left:0; counter-increment:item;
+  list-style:none inside} ol>li:before {content: "[" counter(item)
+  "]" ; padding-right:0.5em; font-weight: bold;}
+
+</style>
+
+<script language="javascript">
+
+  function showorhide(enla , id){
+            var ele  = document.getElementById(id);    
+
+            
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+		enla.innerHTML = "[+info]";
+            }
+	    else {
+		ele.style.display = "block";
+		enla.innerHTML = "[-]";
+            }
+  }
+
+  
+</script>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       
+
+  </head>
+
+<body bgcolor="white">
+  
+  <div class="my_wrapper">
+    <!----------------------------------------------------------------------------------------------------------->    
+    <div class="my_header">
+      <center>
+	<font size="+3" color="blue"> Matemática discreta </font> 
+	<font size="+3"> /
+	</font>
+	<font size="+2">
+	  Prof.: <a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair Donadelli</a>
+	</font>
+      </center>
+      <ul>
+	<font size="+1">
+	  <li class="my_nav_link"><font color="black"><a href="Conceitos.html"><i>Conceitos</i></a></font> </li>
+	  <li class="my_nav_link"><font color="black"><a href="#foot"><i>Notícias</i></a></font> </li>
+	</font>
+      </ul>
+      <b>Atendimento</b>: <font size=-1> 2ª-feira a partir das 17h40 na
+	sala 546, torre 2, bloco A. <br/>No período noturno, depois das
+	aulas.<br />Em outro horário, agende por email</font>
+    </div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+<div style="display:block;text-align:left"><img src="../images/emailufabc.png" border="0"></a></div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+    <div class="my_left_box">
+	      
+      <p align="justify">
+	<b style= "color: black">Código</b> MCTB019-17
+	<b style= "color: black">TPI</b> 4-0-4
+	<b style= "color: blue">Onde</b> <b>(D)</b> 2ª 08hs e 4ª
+  10hs <b>(N)</b> 2ª 19hs e 4ª 21hs - <b>Sala:</b> 213-0<br>
+
+	<b style= "color: black">Ementa:</b> Teoria  de
+conjuntos. Relações e Funções. Técnicas de Demonstração. Análise
+Combinatória. Funções geradoras.  Relações de
+recorrência.<a onclick="showorhide(this , 'EMENTA'); return false"
+href="#" style="font-family: monospace; text-decoration:none">
+[+info]</a>
+      </p>
+  <!----------------------------------------------------------------------------------------------------------->      
+  <DIV id="EMENTA" style="display: none">
+    Teoria intuitiva dos conjuntos. Operações com conjuntos. Álgebra de
+    conjuntos. Relações: relações de equivalência, relações de
+    ordem. Funções. Coleções de Conjuntos. Conjuntos
+    Numéricos. Cardinalidade. Técnicas de demonstração: prova direta,
+    prova por contradição. Indução Finita. Introdução à Análise
+    Combinatória. Princípio multiplicativo. Princípio
+    aditivo. Permutação, arranjo, combinação. Princípio de inclusão e
+    exclusão. O princípio da casa dos pombos. Funções
+    geradoras. Partição de um inteiro. Relações de recorrência.
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->    
+  <font>
+    <p> 
+      <b style= "color:black">Referências
+	<a onclick="showorhide(this,'REFS'); return false" href="#"
+	style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </b>
+    </p>
+  </font>
+
+  <ol id="page_one">
+
+    <font size=-1>
+      <p><b style= "color: black">Bibliografia básica</b></p>
+    </font>
+    
+    <li> GRIMALDI, Ralph Peter, <i>Discrete and combinatorial
+	mathematics : an applied introduction</i>.
+      <b>
+	<font size=-2>
+	  <u>
+	    <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=8910">[510 GRIMdi5]
+	    </a>
+	  </u>
+	</font>
+      </b>.
+    </li>
+
+      <li>ROSEN, Kenneth H.  <i>Matemática discreta e suas
+	  aplicações</i>. 6ªEdição
+	<b>
+	  <font size=-2>
+	    <u>
+	      <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=13171">[510 ROSEma6]
+	      </a>
+	    </u>;
+	  </font>
+	</b>
+      </li>
+    
+</ol>
+    <!----------------------------------------------------------------------------------------------------------->    
+
+    <DIV id="REFS" style="display: none">
+      
+      <font size=-1>
+	<p><b style= "color: black">Bibliografia complementar</b></p>
+      </font>
+
+      <ol id="page_two">      
+
+	<h4>Livros legais</h4>
+
+	<li><a name="Matosek"></a> Matosek, J. e Nesetril, J.I.
+	  <i>An Invitation to Discrete Mathematics</i>
+	  <b><font size=-1>[510 MATOin2]</font></b>
+	</li>
+	<li><a name="lovasz"></a> Lovász, László.
+	  <i>Matemática discreta : Elementar e além</i>
+	  <b><font size=-1>[510 LOVÁma]</font></b>
+	</li>
+	<li><a name="velleman"></a> Velleman, Daniel J 
+	  <i>How to prove it : a structured approach</i> 2. ed.
+	  <b><font size=-1>[511.3 VELh2]</font></b>
+	</li>
+	
+	<li><a name="halmos"></a>Halmos, Paul R. <i>Teoria ingênua dos
+	conjuntos</i>
+	  <b><font size=-1>[511.322HALt]</font></b>
+	</li>
+
+
+	
+	<h4>Livros OK</h4>
+
+
+	<li><a name="schenerman"></a> Scheinerman, E.
+	  <i>Matemática discreta : uma introdução </i>2. ed.
+	  <b><font size=-1>[511.3 SCHm2]</font></b>
+	</li>
+
+	<li> Santos, J. P. O; Mello, M. P.; Murari, I. T. C.
+	  <i>Introdução à Análise Combinatória.</i>
+	  <b><font size=-1>[511.6 SANi]</font></b>
+	</li>
+
+	<!--
+        <font size=-1>
+	  <p><b style= "color: black">Notas de aula</b></p>
+	</font>
+	-->
+
+	 <!--   
+	<font size=-1>
+	  <p><b style= "color: black">Para os mais empolgados</b></p>
+	</font>
+	-->
+
+	 <h4>Para os mais empolgados</h4>
+
+	 
+	<li><a name="knuth"></a> Ronald L Graham; Donald E Knuth; Oren
+	  Patashnik.<i>Matemática concreta: fundamentos para a ciência
+	    da computação</i> 2. ed.
+	  <b><font size=-1>[510 GRAHma2]</font></b>
+	</li>
+      
+
+      <font size="-1">
+	<h4><i>Material Complementar</i></h4>
+	<a name="mc"></a>
+       <ol>
+	 <li>
+	   Lásló Lovász,
+	   <a href="http://www.cs.elte.hu/~lovasz/telaviv.pdf">Discrete
+	     and Continuous: Two sides of the same?</a>.
+	 </li>
+	 <li> R. Bianconi,
+	   <a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como ler e estudar matemática?</a>
+	 </li>
+	 <li>
+	   Fernando Q. Gouvêa e Shai
+	   Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+	   to Read Mathematics</a> ( uma tradução "rápida e grosseira",
+	   segundo o tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+	  </li>
+	</ol>
+      </font>
+    </DIV>
+    <!----------------------------------------------------------------------------------------------------------->    
+  </ol>
+
+  
+  <font size="+1"><b style=
+  "color:black">Avaliação</b> </font><a name="provas"></a>
+
+  <p align="justify"><b><u>PROVAS</u>: 08/03(P1), 05/04(P2), 26/04(P3),
+  03/05(Sub), <del>13/05(Rec, sábado)</del></b>
+  </p>
+		  
+  <p>
+    <ul>
+      <li class="my_nav_link2"><b>Substitutiva</b>
+	<a onclick="showorhide(this,'SUB'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+info] 
+	</a>
+      </li>   
+      <li class="my_nav_link2"><b>Exame de Recuperação</b>
+	<a onclick="showorhide(this,'REC'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+info] 
+	</a>
+      </li>
+      <li class="my_nav_link2"><b>Conceito Final</b>
+	<a onclick="showorhide(this,'NOTA'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+info]
+	</a>
+      </li>
+    </ul>
+  </p>
+
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="SUB" style="display: none" >
+    <p style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Sub</u>: Para o aluno que <b>faltou em dia de prova</b> com
+      uma <b><a href="http://www.ufabc.edu.br/index.php?option=com_content&view=article&id=8901:resolucao-consepe-nd-181-regulamenta-a-aplicacao-de-mecanismos-de-avaliacao-substitutivos-nos-cursos-de-graduacao-da-ufabc&catid=427:consepe-resolucoes">justificativa
+      válida</a></b>. Entre em contato por email o quanto antes
+      enviando justificativa. Veja no final dessa página a relação de
+      quem já pediu pra fazer a SUB.
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="REC" style="display: none">
+    <p  style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Exame</u>: <i>Qualquer aluno que não reprovou por falta</i>
+      pode fazer o exame de recuperação. Nesse caso, o conceito final
+      será o conceito obtido no exame. O exame será realizada na 1ª ou
+      2ª semana do Q2 (provavelmente num sabado).  Os alunos que têm
+      intenção de fazer o exame devem enviar um email até o dia 15/05
+      com assunto 'exame-matutino' ou 'exame-noturno' (de acordo com o
+      período no qual fará o exame). Esse email é importante para eu
+      comunicar a data e o local de prova. A data mais provavel é 03/06
+      as 14hs
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="NOTA" style="display: none">
+    <p style="padding:6px; background-color: white; border: gray 2px
+      solid" > A avaliação final de cada aluno <u>não</u> será o
+      resultado de alguma média feita a partir das avaliações.  O
+      resultado de cada avaliação reflete o desempenho do aluno <u>em
+      todo o curso até aquele instante</u>. Isso significa que a cada
+      conceito atribuído durante o curso leva em conta o resultado das
+      avaliações até o momento. O conceito final da disciplina poderá
+      ser:<br /> <br />
+	  <b>F</b> - Reprovado. O aluno deve cursar novamente a
+      disciplina.  <br /> <br />
+	  <b>D</b> - Aproveitamento mínimo não satisfatório dos
+	  conceitos da disciplina, com familiaridade parcial do assunto
+	  e alguma capacidade para resolver problemas simples, mas
+	  demonstrando deficiências que exigem trabalho adicional para
+	  prosseguir em estudos avançados. Nesse caso, o aluno é
+	  aprovado na expectativa de que obtenha um conceito melhor em
+	  outra disciplina, para compensar o conceito D no cálculo do
+	  CR.  <br /> <br />
+	  <b>C</b> - Desempenho mínimo satisfatório, demonstrando
+	  capacidade de uso adequado dos conceitos da disciplina,
+	  habilidade para enfrentar problemas relativamente simples e
+	  prosseguir em estudos avançados.  <br /> <br />
+	  <b>B</b> - Bom desempenho, demonstrando boa capacidade de uso
+	  dos conceitos da disciplina.  <br /> <br />
+	  <b>A</b> - Desempenho excepcional, demonstrando excelente
+	  compreensão da disciplina e do uso da matéria.
+    </p>
+
+  </div>
+
+<h4><i>Links</i></h4>
+ <a name="links"></a>
+ <ul>
+   <li><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">Metemática
+   discreta<a/>, entrada no wikipedia (a página em português está
+   muito ruim).
+   </li>
+   <li> <a href="ProvasAntigas">Provas anteriores</a>
+   </li> <a href="http://www.sbm.org.br/coloquio-sul-4/wp-content/uploads/sites/4/2016/04/Minicurso_Belos_Problemas.pdf">Belos problemas de matemática</a>(sobre indução, contagem e casa dos pombos)
+	 <li>
+	   Lásló Lovász,
+	   <a href="http://www.cs.elte.hu/~lovasz/telaviv.pdf">Discrete
+	     and Continuous: Two sides of the same?</a>.
+	 </li>
+   <li>
+     <a href="https://www.youtube.com/watch?v=s86-Z-CbaHA&t=17s">Banach-Tarski paradox</a> (video ~24min)
+   </li>
+   <li>
+     <a href="https://www.youtube.com/watch?v=aDOP0XynAzA">
+Death by infinity puzzles and Axiom of Choice
+</a> (video ~12min)
+   </li>
+   <li>
+   </li>
+   </ul>  
+</div>
+
+
+ <!-------------------------------------------------------------------------------------------->
+
+<div class="image" style="text-align:right;padding:10px">
+  <a href="http://web.mit.edu/sp.268/www/rubik.pdf">
+    <IMG SRC="cube.png" height="127"
+    border="0" style="vertical-align:middle;float:left;margin:10px 0
+    10px 30px;" /></a>
+    <font size="-1" face="verdana" color="green">
+      <p align="justify">
+	"Even
+	<a href="http://en.wikipedia.org/wiki/Richard_Feynman">
+	  Feynman</a> got into the act. He attended two lectures I gave
+	at Cal Tech in November 1952 and came up with the clearest and
+	sharpest formulation of what was needed to fill the gap. The
+	only time I have ever seen Feynman take notes was during these
+	two lectures. Usually, he is miles ahead of the speaker but
+	following combinatorial argument is difficult for all mortals."
+      </p>
+      <a href="http://en.wikipedia.org/wiki/Mark_Kac">Mark
+      Kac</a>, <i>Enigmas of chance</i>
+    </font>
+  </div>
+<!---------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------->    	    
+<div class="my_right_box">
+  
+  <center><b>Programação das aulas</b> </center>
+  
+  <center>
+    <font color="black"><a href="http://antigo.ufabc.edu.br/images/stories/pdfs/administracao/ConsEP/anexo-ato-decisorio-131-calendario-academico-2017.pdf">
+	<i>Calendário acadêmico</i></a></font> 
+  </center>
+  
+  <ul>
+    <li align=justify>
+      <b>semana 01</b> -- Apresentação, administrativia. <i>Elementos
+      de lógica de 1ª ordem</i>: proposicões, valor-logico, conectivos
+      logicos, tabela-verdade, tautologia, contradição, equivalência
+      logica, implicação lógica. Predicado, quantificadores,
+      negação. Regras de inferência.<br/> Ref.: seções 2.1 a 2.5
+      de <a href="http://gen.lib.rus.ec/search.php?req=%09Ralph+P.+Grimaldi&open=0&res=25&view=simple&phrase=1&column=def"><b>[1]</b></a> (em especial, sugiro a leitura dos
+      exemplos
+      2.1,2.10,2.15,2.22,2.25,2.28,2.31,2.33,2.37,2.41,2.42,2.44,2.53,2.55)
+      <br/> <a href="lista1.pdf">Exercícios</a> <br/> <a href="https://anotacoesdeaula.wordpress.com/2017/02/06/semana-1-elementos-de-logica-de-1a-ordem/">Notas de
+      aula</a>
+    </li>
+
+    
+    <li><b>semana 02</b> -- Técnicas de demonstração.<br/> Ref.: seç
+       2.5 (a partir da def 2.8, pág. 113) de [1], seções 1.6 e 1.7 de
+       [2], cap
+       3 <a href="http://gen.lib.rus.ec/search.php?req=How+to+prove+it+%3A+a+structured+approach&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def">[7]</a> </br>
+ <a href="https://anotacoesdeaula.wordpress.com/2017/02/10/mctb019-17-2-tecnicas-de-demonstracao/">notas
+       de aula</a> <br/>
+      <a href="lista2.pdf">Exercícios</a>
+    </li>
+
+    
+    <li><b>semana 03</b> -- Indução: Princípio da Boa Ordem, Princípio
+    da Indução Finita e variantes, Provas por indução, Definições
+    recursivas. <br/>refs.:  seç 4.1-4.2 de [1], seções 4.1-4.3 [2]<br/>
+      <a href="lista3.pdf">Exercícios</a> - 
+      <br/> <a href="https://anotacoesdeaula.wordpress.com/2017/02/18/mctb019-17-3-o-principio-de-inducao-e-provas-por-inducao/">Notas
+      de aula</a>
+    </li>
+
+  
+    <li><b>semana 04</b> --  Carnaval.
+    </li> 
+    
+    <li><b>semana 05</b>
+    -- <b>Avaliação</b> <a href="questoesP1.pdf">questões da prova</a>
+    </li>
+    
+
+
+	<li><b>semana 06</b> -- Teoria Intuitiva de Conjuntos:
+      conjunto, pertinência, inclusão, operações e suas propriedades,
+      conjunto das partes. Axiomas de ZFC. Par ordenado e produto
+      cartesiano. Relações e funções (definição).<br/>  refs.:
+      seç. ,3.2,3.3,5.1 e 5.2 de [1], refs.: seç. 2.1,2.2,9.1,9.2 de
+      [2], seções 1 a 8
+      de <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=2439">[8]</a> <font size=-1>
+      (se quiser começar a ler mais sobre teoria dos conjuntos (ZFC)
+      tente começar
+      por <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=13340">aqui</a>)</font> <a href="https://anotacoesdeaula.wordpress.com/2017/03/19/mctb019-17-%C2%A74-teoria-intuitiva-de-conjuntos/">Notas
+      de aula</a>
+      <br/>
+      <a href="lista4.pdf">Exercícios</a> 
+	</li>
+	    
+    <li><b>semana 07</b> -- Relações.  <br/>refs. seç. 7.1, 7.3 e 7.4
+  de [1], seç. 9.5 e 9.6 de [2]<br/>
+      <a href="lista5.pdf">Exercícios</a> 
+      <br/> <a href="https://anotacoesdeaula.wordpress.com/2017/03/23/mctb019-17-%C2%A76-relacoes/">Notas de aula</a>.
+    </li>
+
+	<br/> Princípios de contagem: bijeções, cardinalidade
+	<br/>refs 1.1, 3.3 de [1] e partes das seções 2.3 e 2.4, 5.1 de [2]e cap 7 de  [7] e  
+	<a href="https://anotacoesdeaula.wordpress.com/2017/03/29/mctb019-17-%c2%a7-7-principios-de-contagem/">Notas de aula</a>
+		<br/>  <a href="lista6.pdf">Exercícios</a> 
+
+</li>
+
+	<li><b>semana 08</b> -- <b>Avaliação</b> <a href="questoesP2.pdf">questões da prova</a>  e <a href="resolucaoP2.pdf">resolução</a>
+	</li>
+	
+	<li><b>semana 09</b> --  Contagem: Combinatória
+    	  <br/>refs: cap 1  de [1] e cap 5 de  [2]
+    	  <br/><a href="https://anotacoesdeaula.wordpress.com/2017/04/11/mctb019-17-%c2%a7-9-principios-de-contagem-combinatoria/">Notas de aula</a> </br> <a href="lista7.pdf">Exercícios</a></li>
+      
+      <li><b>semana 10</b> -- Contagem: funções geradoras. <br/>refs:
+    9.1--9.3 de [1], 7.4 de
+    [2],  <a href="https://www.math.upenn.edu/~wilf/gfologyLinked2.pdf">o
+    livro</a> de funções geradoras.
+    	  <br/><a href="https://anotacoesdeaula.wordpress.com/2017/04/17/mctb019-17-10-funcoes-geradoras/">Notas de aula</a> </br> <a href="lista8.pdf">Exercícios</a></li>
+    
+    <li><b>semana 11</b> -- Equações de recorrência.       
+    </li>
+    
+    <li><b>semana 12</b>  --  <b>Avaliação</b> <a href="questoesP3.pdf">questões da prova</a>  e <a href="resolucaoP3.pdf">resolução</a>
+      
+    </li>
+  </ul>
+</div>
+<!----------------------------------------------------------------------------------------------------------->    	    
+<!----------------------------------------------------------------------------------------------------------->    	        
+<div class="my_footer">
+      <a name="foot">
+	<h2>Notícias</h2>
+      </a>
+      <ol>
+	<li>
+	  <i>fique ligado neste espaço</i> ou
+	  acompanhe <a href="http://twitter.com/QuadroDeAvisos">por aqui</a>
+	</li>
+	<li>
+	  Amanhã 15/03, não haverá em virtude das paralisações contra a "reforma" da previdência.
+
+	  Sugiro aos alunos que aproveitem o tempo extra, manifestem-se, informem-se se for o caso. Trata-se do futuro de vcs também.
+	  <ul>
+
+	  <li><a href="http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=2119881">A proposta apresentada pelo governo</a>
+	  
+	  <li><a href="http://plataformapoliticasocial.com.br/wp-content/uploads/2017/02/Previdencia_Doc_Sintese.pdf.">Uma
+	  análise crítica feita pelo DIEESE e pela Associação Nacional
+	  dos Auditores-Fiscais da Receita Federal do Brasil</a>
+	  </ul>
+	</li>
+	  <li>
+	    <a href="conceitos_Noturno.html">Conceitos</a> e <a href="P1N.pdf">esboço</a> das
+	    resoluções para quem fez a P1 no período noturno. A vista é nessa segunda 27/3 depois da aula ou quarta depois da aula.
+	</li>
+	  <li>
+	    <a href="Conceitos.html">Conceitos</a> da P1. A correção pode ser vista no horário de atendimento.   <a href="P1D.pdf">Gabarito</a> das
+	    resoluções para quem fez a P1 no período diurno.
+	</li>
+	<li>P2 - 
+ <a href="questoesP2.pdf">questões da prova</a>  e <a href="resolucaoP2.pdf">resolução</a>
+	</li>
+	<li> [<b>errata lista de combinatoria</b>] no exercicio 2 deve ser '7 pontos' ao inves de "5 pontos" e deve ser √2 ao inves de √2/2
+	</li>
+	<li>conceitos de P1+P2  <a href="Conceitos.html">Conceitos</a>
+	</li>
+	<li>
+	  Alunos q pediram <b>sub/exame</b> até  momento, mudei <a href="pra-ca.html">prá cá</a> as listas
+	</li>
+	<li>O exame será realizada no 1º sabado do Q2 (03/06) em sala (331-2) e
+      horário a ser definido (16hs).
+	</li>
+	      </ul>
+</div>
+<!----------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------->    	          
+    </body>
+  </html>
+  
+
+

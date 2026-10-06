@@ -1,0 +1,34 @@
+body{margin:10px 10px 10px 10px;font-family: sans-serif;background-color:#ffffff;}
+
+
+a.linkum:link {
+color:#8A2BE2;
+text-decoration:none;
+}
+a.linkum:visited {
+color:#4444aa;
+text-decoration:none;
+}
+a.linkum:hover {
+color:#FFFFFF;
+text-decoration:none;
+background-color:#000FFF;
+}
+a.linkum:active {
+color:#aaaaFF;
+text-decoration:none;
+}
+
+a.linkdo:link {
+color:#000FFF;
+text-decoration:underline;
+}
+a.linkdo:visited {
+color:#4444aa;
+text-decoration:none;
+}
+a.linkdo:hover {
+color:#aaaFFF;
+text-decoration:none;
+background-color:#000FFF;
+}

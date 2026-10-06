@@ -1,0 +1,27 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Sum\'ario}}{3}\relax 
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-20001}{QQ2-1-2}{Grafos extremais sem tri\^angulos}}{5}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-30002}{QQ2-1-3}{Grafos extremais sem $K^p$}}{7}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-40003}{QQ2-1-4}{Colora\c c\~ao de v\'ertices}}{10}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-50004}{QQ2-1-5}{$\alpha $ e $\chi $ t\IeC {\'\i }picos}}{14}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-60005}{QQ2-1-6}{Matrizes}}{17}\relax 
+\doTocEntry\tocsection{6}{\csname a:TocLink\endcsname{1}{x1-70006}{QQ2-1-7}{Autovalores e autovetores}}{23}\relax 
+\doTocEntry\tocsection{7}{\csname a:TocLink\endcsname{1}{x1-80007}{QQ2-1-8}{Matrizes sim\'etricas e o Teorema Espectral}}{40}\relax 
+\doTocEntry\tocsection{8}{\csname a:TocLink\endcsname{1}{x1-90008}{QQ2-1-9}{Teorema de Courant-Fischer e Teorema de Perron-Frobenius}}{56}\relax 
+\doTocEntry\tocsection{9}{\csname a:TocLink\endcsname{1}{x1-100009}{QQ2-1-10}{Teoria Espectral de Grafos}}{73}\relax 
+\doTocEntry\tocsubsection{9.1}{\csname a:TocLink\endcsname{1}{x1-110009.1}{QQ2-1-11}{Grau}}{81}\relax 
+\doTocEntry\tocsubsection{9.2}{\csname a:TocLink\endcsname{1}{x1-120009.2}{QQ2-1-12}{Subgrafos}}{85}\relax 
+\doTocEntry\tocsubsection{9.3}{\csname a:TocLink\endcsname{1}{x1-130009.3}{QQ2-1-13}{Conexidade}}{87}\relax 
+\doTocEntry\tocsubsection{9.4}{\csname a:TocLink\endcsname{1}{x1-140009.4}{QQ2-1-14}{Grafos bipartidos}}{93}\relax 
+\doTocEntry\tocsection{10}{\csname a:TocLink\endcsname{1}{x1-1500010}{QQ2-1-15}{$\alpha ,\chi ,\omega ,\lambda $}}{95}\relax 
+\doTocEntry\tocsection{11}{\csname a:TocLink\endcsname{1}{x1-1600011}{QQ2-1-16}{Distribui\c c\~ao das arestas e $\lambda $}}{104}\relax 
+\doTocEntry\tocsubsection{11.1}{\csname a:TocLink\endcsname{1}{x1-1700011.1}{QQ2-1-17}{Grafos $d$-regulares}}{112}\relax 
+\doTocEntry\tocsubsection{11.2}{\csname a:TocLink\endcsname{1}{x1-1800011.2}{QQ2-1-18}{Grafos n\~ao-regulares}}{113}\relax 
+\doTocEntry\tocsection{12}{\csname a:TocLink\endcsname{1}{x1-1900012}{QQ2-1-19}{Grafos Expansores}}{114}\relax 
+\doTocEntry\tocsection{13}{\csname a:TocLink\endcsname{1}{x1-2000013}{QQ2-1-20}{$\lambda _1$, $\lambda $ t\IeC {\'\i }picos}}{122}\relax 
+\doTocEntry\tocsubsection{13.1}{\csname a:TocLink\endcsname{1}{x1-2100013.1}{QQ2-1-21}{$e(G)$ e $r_G(C^4)$ t\IeC {\'\i }picos}}{130}\relax 
+\doTocEntry\tocsubsection{13.2}{\csname a:TocLink\endcsname{1}{x1-2200013.2}{QQ2-1-22}{N\'umero de arestas t\IeC {\'\i }pico.}}{137}\relax 
+\doTocEntry\tocsection{14}{\csname a:TocLink\endcsname{1}{x1-2300014}{QQ2-1-23}{Laplaciano}}{140}\relax 
+\doTocEntry\tocsubsection{14.1}{\csname a:TocLink\endcsname{1}{x1-2400014.1}{QQ2-1-24}{Autovalores da matriz laplaciana}}{148}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-2500014.1}{QQ2-1-25}{Refer\^encias}}{154}\relax 
+\par 

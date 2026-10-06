@@ -1,0 +1,744 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						} .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style><title>index</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='laboratório-de'><span>Laboratório de</span></h1><h1 id='processamento-da-informação-pi-20222'><span>Processamento da Informação PI-2022.2</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#laboratório-de">Laboratório de</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#processamento-da-informação-pi-20222">Processamento da Informação PI-2022.2</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n7"><a class="md-toc-inner" href="#turmas">Turmas</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n18"><a class="md-toc-inner" href="#critérios-de-avaliação">Critérios de Avaliação</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n41"><a class="md-toc-inner" href="#conversão-nota-para-conceito">Conversão Nota para Conceito</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n53"><a class="md-toc-inner" href="#referências"><em>Referências:</em></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n64"><a class="md-toc-inner" href="#ferramentas-e-links-úteis">Ferramentas e links úteis</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n74"><a class="md-toc-inner" href="#python">Python</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n85"><a class="md-toc-inner" href="#calendário-acadêmico">Calendário acadêmico</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n87"><a class="md-toc-inner" href="#práticas-semanais-às-6as-conforme-calendário">Práticas Semanais às 6as conforme calendário</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n155"><a class="md-toc-inner" href="#atendimento">Atendimento</a></span></p></div><p><span>Essa disciplina está no moodle:  </span><a href='https://www.google.com/url?q=https%3A%2F%2Fmoodle.ufabc.edu.br&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw07_fWMSTWFSxkuGR78cKAc'><span>moodle.ufabc.edu.br</span></a><span> - </span><a href='https://www.google.com/url?q=https%3A%2F%2Fmoodle.ufabc.edu.br%2Fcourse%2Fview.php%3Fid%3D3183&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3_z-Yvil0xsHWJX7mpyyUY'><strong><span>PI-202</span></strong></a><a href='https://www.google.com/url?q=https%3A%2F%2Fmoodle.ufabc.edu.br%2Fcourse%2Fview.php%3Fid%3D3183&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3_z-Yvil0xsHWJX7mpyyUY'><strong><span>2</span></strong></a><a href='https://moodle.ufabc.edu.br/course/view.php?id=3351'><strong><span>.2-Donadelli</span></strong></a></p><p><span>As aulas são semanais, presenciais e em laboratório de informática. Haverá conteúdo teórico por meio de cadernos (Notebooks) de atividades, que podem ser utilizados para complementar os estudos, contendo textos, figuras, exemplos de código, links para vídeos, etc. As turmas serão ministradas em </span><strong><span>PYTHON</span></strong><span>. O aluno vai receber uma lista antes da aula para praticar resolução de problemas utilizando lógica de programação. </span></p><p><span>As aulas de </span><strong><span>laboratório</span></strong><span> serão utilizadas para\ uma rápida revisão da teoria e principalmente, para a prática de programação e para tirar dúvidas das listas semanais. </span></p><h3 id='turmas'><span>Turmas</span></h3><p><span>(Teoria com o Prof. Fernando):  </span></p><ul><li><span>DA5BCM0505-15SA - sexta das 08:00 às 10:00, sala L506.</span></li><li><span>DB5BCM0505-15SA - sexta das 10:00 às 12:00, sala</span>
+<span>L506.</span></li><li><span>NA5BCM0505-15SA - sexta das 19:00 às 21:00, sala</span>
+<span>L506.</span></li><li><span>NB5BCM0505-15SA - sexta das 21:00 às 23:00, sala L506.</span></li></ul><h3 id='critérios-de-avaliação'><span>Critérios de Avaliação</span></h3><p><span>A composição do conceito final será obtida da seguinte forma: </span></p><ul><li><p><strong><span>Atividades Síncronas e Assíncronas Semanais e Individuais,</span></strong><span> Moodle: 20% </span></p><ul><li><strong><span>Listas</span></strong><span>: Cada estudante vai receber no </span><strong><span>seu email institucional</span></strong><span> um arquivo </span><strong><span>PDF</span></strong><span> do remetente </span><a href='mailto:webmctest@ufabc.edu.br'><span>webmctest@ufabc.edu.br</span></a><span>  antes da aula e terá até a segunda-feira (às 6h da manhã) seguinte à aula para entregar as atividades no Moodle (ver instruções em cada </span><strong><span>PDF</span></strong><span> recebido). Se o estudante receber um arquivo </span><strong><span>.bin ou não conseguir abrir o arquivo</span></strong><span>, tente renomear para </span><strong><span>lista.pdf</span></strong><span> (cada lista recebe uma nota de 0 até 100). </span></li><li><strong><span>Exercícios</span></strong><span> com correção automática disponíveis no Moodle (a nota de cada questão no Moodle recebe uma nota de 0 até 10).</span></li></ul></li></ul><p><em><span>Normalização</span></em><span>: 0</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><defs><path id="MJX-4-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-4-TEX-N-2264"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\leq</script><span> </span><strong><span>Exercícios</span></strong><span> + </span><strong><span>Listas</span></strong><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><defs><path id="MJX-4-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-4-TEX-N-2264"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\leq</script><span>20%</span></p><ul><li><span>Prova1 (30% - semana 5) + Prova Final (50% - semana 10). </span><strong><span>Provas Individuais</span></strong><span> no mesmo formato das listas, porém realizadas em laboratório durante a aula presencial. Nas provas há correção </span>“<span>manual</span>”<span> além da automática, portanto a nota final poderá ser diferente (menor ou maior) da atribuida pelo sistema.</span></li><li><span>Bônus de 5% na Nota Final de Prática para as atividades entregues de </span><a href='https://www.google.com/url?q=https%3A%2F%2Fmoodle.ufabc.edu.br%2Fcourse%2Fview.php%3Fid%3D3190&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0u8p6WOhC3Vv9ICBYyT5F4'><span>PI - EPs - BCM0505-15SA - 202</span></a><a href='https://www.google.com/url?q=https%3A%2F%2Fmoodle.ufabc.edu.br%2Fcourse%2Fview.php%3Fid%3D3190&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0u8p6WOhC3Vv9ICBYyT5F4'><span>2</span></a><a href='https://www.google.com/url?q=https%3A%2F%2Fmoodle.ufabc.edu.br%2Fcourse%2Fview.php%3Fid%3D3190&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0u8p6WOhC3Vv9ICBYyT5F4'><span>.2</span></a><span> (APENAS Python ou Java).</span></li><li><strong><span>Prática vale 40%</span></strong><span> (Listas+Exercícios+Prova1+Prova2) e </span><strong><span>Teoria vale 60%</span></strong><span> da Nota Final da disciplina. Ver conversão no Plano de Ensino.</span></li><li><em><span>Todo código submetido no Moodle será avaliado por ferramentas de detecção de Plágio</span></em><span>, que ignoram mudanças em </span><strong><span>nomes de variáveis</span></strong><span>, </span><strong><span>comentários</span></strong><span> e </span><strong><span>espaçamentos</span></strong><span>. Casos comprovados serão atribuídos conceito F na disciplina para os envolvidos.</span></li></ul><p><strong><span>Prova Substitutiva:  com atestado legal</span></strong></p><p><strong><span>Mecanismo de Recuperação: prova na semana 12</span></strong></p><p><img src="image-20220824110024034.png" referrerpolicy="no-referrer" alt="image-20220824110024034"></p><p><strong><span>Dedicação Teoria-Prática-Individual (T-P-I):</span></strong><span> </span><strong><span>3h-2h-5h</span></strong></p><h4 id='conversão-nota-para-conceito'><span>Conversão Nota para Conceito</span></h4><ul><li><span>F: se Nota &lt; 6</span></li><li><span>D: se Nota &lt; 7</span></li><li><span>C: se Nota &lt; 8</span></li><li><span>B: se Nota &lt; 9</span></li><li><span>A: nos outros casos.</span></li></ul><h3 id='referências'><em><span>Referências:</span></em></h3><ol start='' ><li><p><a href='https://www.google.com/url?q=https%3A%2F%2Feditora.ufabc.edu.br%2Fmatematica-e-ciencias-da-computacao%2F58-processando-a-informacao&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2vyoTEfZ0tbIIjrQ2l6lNm'><span>Livro Texto</span></a><span> (</span><a href='https://b975a98e-2a27-49cc-b1ea-10ad7878b54f.filesusr.com/ugd/20f8bd_25d1ba3639ca4194ba84bf6df9b450d0.pdf'><span>pdf</span></a><span>)</span></p></li><li><p><span>Outros materiais didáticos:</span></p><ul><li><span>PI de 2019: </span><a href='https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Fpi-bct-ufabc&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0lqQg60qYxF0msRz04YYQt'><span>https://sites.google.com/view/pi-bct-ufabc</span></a><span> </span></li><li><span>Vídeo aulas PI-EAD:</span><a href='https://www.google.com/url?q=https%3A%2F%2Fprocinfoead.wordpress.com%2Faulas%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw28pqaER6AXgZ9yGYelN93E'><span> </span></a><a href='https://www.google.com/url?q=https%3A%2F%2Fprocinfoead.wordpress.com%2Faulas%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw28pqaER6AXgZ9yGYelN93E'><span>https://procinfoead.wordpress.com/aulas/</span></a><span> </span></li></ul></li></ol><h3 id='ferramentas-e-links-úteis'><span>Ferramentas e links úteis</span></h3><p><a href='https://colab.research.google.com' target='_blank' class='url'>https://colab.research.google.com</a></p><p><a href='https://replit.com/languages' target='_blank' class='url'>https://replit.com/languages</a></p><p><a href='http://www.drjava.org' target='_blank' class='url'>http://www.drjava.org</a></p><p><a href='https://sourceforge.net/projects/nbportable' target='_blank' class='url'>https://sourceforge.net/projects/nbportable</a><span>\</span></p><p><a href='https://www.anaconda.com/distribution' target='_blank' class='url'>https://www.anaconda.com/distribution</a></p><p><a href='https://netbeans.org' target='_blank' class='url'>https://netbeans.org</a></p><p><a href='http://pythontutor.com' target='_blank' class='url'>http://pythontutor.com</a></p><p><a href='https://learnxinyminutes.com/docs/python3' target='_blank' class='url'>https://learnxinyminutes.com/docs/python3</a></p><p><a href='https://learnxinyminutes.com/docs/java' target='_blank' class='url'>https://learnxinyminutes.com/docs/java</a></p><h4 id='python'><span>Python</span></h4><ul><li><p><a href='https://panda.ime.usp.br/pensepy/static/pensepy/index.html'><span>Como Pensar Como um Cientista da Computação</span></a><span>. Tradução do livro </span><a href='https://runestone.academy/runestone/books/published/thinkcspy/index.html'><span>How to Think Like a Computer Scientist: Interactive Version</span></a><span> de Brad Miller e David Ranum [Luther College]</span></p></li><li><p><a href='https://panda.ime.usp.br/cc110/static/cc110/'><span>Introdução à Computação com Python: um curso interativo</span></a></p></li><li><p><a href='https://panda.ime.usp.br/panda/static/aulasPython/index.html'><span>Aulas de Introdução à Computação em Python</span></a></p></li><li><p><a href='https://books.goalkicker.com/PythonBook/'><span>Python® Notes for Professionals book</span></a></p><p>&nbsp;</p></li></ul><h3 id='calendário-acadêmico'><a href='https://www.ufabc.edu.br/images/consepe/pautas_anteriores/2021/iii_sesso_extraordinria_-_31_de_agosto_de_2021-3zd7f/ordem_do_dia_-_anexo_1b_-_calendrio_2022_-_inicio_14.02_-_academico_2022-2.pdf'><span>Calendário acadêmico</span></a></h3><p><img src="image-20220630142914703.png" referrerpolicy="no-referrer" alt="image-20220630142914703"></p><h3 id='práticas-semanais-às-6as-conforme-calendário'><span>Práticas Semanais às 6as conforme calendário</span></h3><p><strong><span>Notebooks e Vídeos são de ofertas anteriores</span></strong><span> e poderão ser utilizados para complementar os estudos. A parte prática será conduzida através de atividades no Moodle.</span></p><figure><table><thead><tr><th><span>Semana</span></th><th><span>Tópico</span></th><th><span>Videoaulas de apoio (PI 2021-Prof Zampirolli)</span></th><th><span>Atividade</span></th></tr></thead><tbody><tr><td><strong><span>01</span></strong><span> (10/06)</span></td><td><strong><span>Fundamentos</span></strong><span> Fundamentos básicos da Ciência da Computação e familiarização com o ambiente.</span></td><td><span>Conceitos (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fd72670e171ea4ecd9981db3969e3aa2b&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2F-_PY36l-vXUN6AptoGi1'><span>aula01-61min</span></a><span>) Revisão e Aprendendo a Programar (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F3de2a6c01efc4b41a65ba2cbb67da0bd&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0Vo1ssH1twzCGKnvKE4yjt'><span>aula02-48min</span></a><span>) Prática 1 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fcd6bcbe6805e41a4959237ba67175994&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0VPtIx31LWoe8TAcoT7-iJ'><span>aula02-23min</span></a><span>) Prática 2 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F95b225e2dd54464587e994da14726965&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2eI3yGNRtziwmP36kGgr4x'><span>aula03-45min</span></a><span>)</span></td><td><strong><span>(</span></strong><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F83ec19d21b454dae8b13f5dd7170d060&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3MZrnHgxsNH60S4lCQVImb'><strong><span>21min</span></strong></a><strong><span>)</span></strong><br><span>EP1_1</span><br><span>EP1_2</span><br><span>Lista 1 - Introdução</span></td></tr><tr><td><strong><span>02</span></strong><span> (24/06) 17 é feriado</span></td><td><strong><span>Organização de Código</span></strong></td><td><span>Conceitos (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fbb1499a8f63b4ccca48cf33baf6a3431&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2I7Gkd40qARmiitAqO47tL'><span>93min</span></a><span>) Prática 1 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F7f137b33ff9e43b38ac3dcbe37c46900&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw28LKfynHnL1Rufgbi86T7i'><span>30min</span></a><span> - </span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F9fb81992985a4ee6b42d53987abb718b&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2u8fo0fxLGmdATW6dsQZ-W'><span>35min</span></a><span>) Prática 2 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F6986e232b666492db644ccee02139dbe&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3eOhHv5y_ZyqihTNIBHYsw'><span>28min</span></a><span>)</span></td><td><span>EP2_1</span><br><span>Lista 2</span></td></tr><tr><td><strong><span>03</span></strong><span> (01/07)</span></td><td><strong><span>Desvios Condicionais</span></strong></td><td><span>Conceitos (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F93d6a6ef06154bc2b9d49dad791f3d5d&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2LmU8_kRcjtNwDBwFG8P_e'><span>35min</span></a><span>) Prática 1 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F3c3c242cd25c41b685015b9f2e48e28c&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2HIli1RGALRap-OkzHeCeY'><span>28min</span></a><span>) Prática 2 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F0ad3eb0c214f4ace8c906ddc4253a403&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1TAQYAqAGlValZlCH2h7bh'><span>21min</span></a><span>) Prática 3 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F479ac99cc187446287b0ac0b0f1c9822&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3RGcmJDNayAijrF_kfT6nK'><span>24min</span></a><span>)</span></td><td><span>EP3_1 </span><br><span>Lista 3</span></td></tr><tr><td><strong><span>04</span></strong><span> (08/07)</span></td><td><strong><span>Estruturas de Repetição</span></strong></td><td><span>Conceitos (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F03f02d477f0e402a8679150bdd17839d&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2rYaM-dX3vOI1hhWhkq5L8'><span>51</span></a><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F03f02d477f0e402a8679150bdd17839d&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2rYaM-dX3vOI1hhWhkq5L8'><span>min</span></a><span>) Prática 1 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F0954e1c0c2444c51b941d1125a8dd504&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3RP_16SsxuQAWpN8xfrTKI'><span>21min</span></a><span> + </span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F14a44aef031a4a35838cc1c1a7e6a97d&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw20e0aybi1nJfLBYd4KZDbq'><span>11min</span></a><span>) Prática 2 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fa7d81fad11c04a5899783361d2b0c174&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Y07OpJiOzKFSOK-aiuFlD'><span>24min</span></a><span> + </span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F5c0899a3bfbe42128cfdde10dcda8450&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw29quWMUn_KriqShiPiiO14'><span>45min</span></a><span> + </span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fba74d86d5530428d948e9cf8e0ab3ba8&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw15ZE_vlCTZEgRQ2g3IcojS'><span>61min</span></a><span>) Prática3 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F292666d9e19f4e6db9c1bd4274257d35&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw26fYEGMpH3E_6yjeXq-YtL'><span>57min</span></a><span>)</span></td><td><span>EP4_1</span><br><span> Lista 4</span></td></tr><tr><td><strong><span>05</span></strong><span> (15/07)</span></td><td><strong><span>Primeira Prova</span></strong></td><td>&nbsp;</td><td><strong><span>Prova 1</span></strong><span>\</span></td></tr><tr><td><strong><span>06</span></strong><span> (22/07)</span></td><td><strong><span>Vetores</span></strong><span> Parte 1</span></td><td><span>Conceitos (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Ffd356559d80144c6bf2db7451c59e4fb&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1QpTQ7AxOd_RuUavfy25B4'><span>72min</span></a><span>) Prática 1 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F002d520fa3534195b7325cba8bdd58d1&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3NJEELQaZIFNG9vDE5jl9S'><span>61min</span></a><span>)</span></td><td><span>EP5_1</span><br><span>  EP5_2  Lista6</span></td></tr><tr><td><strong><span>07</span></strong><span> (29/07)</span></td><td><strong><span>Vetores</span></strong><span> Parte 2</span></td><td><span>Prática 2 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fae399b83daa74b1b80abc346b5768d34&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2NioW6va1IMWfKlF27G-Xp'><span>62min</span></a><span>) Prática 3 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fc555fb0e3720485dab59fc71096ae11e%3FsharedAppSource%3Dpersonal_library&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw34hpuzfWuVeCeftAsPy6rp'><span>48min</span></a><span>) Prática 4 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fc8b4caf628574c899e3defd097d1b031&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0Z-P_Wm5EkYEdEsFv84l4H'><span>40min</span></a><span>)</span></td><td><span>EP5_3 </span><br><span>Lista6</span></td></tr><tr><td><strong><span>08</span></strong><span> (05/08)</span></td><td><strong><span>Matrizes</span></strong><span>  Parte 1</span></td><td><span>Conceitos </span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fb72227fa79d4442d9c2f8e66cd01c355&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1WTmGAPrMtShPR-Zmu1f2y'><span>(63min</span></a><span>) Prática 1 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fe2fdfdb56b044f32825e6e25cd2e6aaa&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3q7TNdCPlxz-MibpRt_U7h'><span>24min</span></a><span>)</span></td><td><span>EP6_1  </span><br><span>Lista7</span></td></tr><tr><td><strong><span>09</span></strong><span> (12/08)</span></td><td><strong><span>Matrizes</span></strong><span>  Parte 2</span></td><td><span>Prática2 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F486494e151b14235a27e69422efdd16f&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1jYewSH3u4yfi3KGiyISXL'><span>60min</span></a><span>) Prática3 (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F959cef12d7654410aeb91a6bb2d10316&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1eLt0J58klBuw2WhXQ-U1r'><span>56min</span></a><span>) Prática4 (59</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2Fdad2a23819764a62a85117dbb66bd728&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2gj2uJlHRoHQXXZ40vN0-p'><span>min</span></a><span>) Debug de código Python (</span><a href='https://www.google.com/url?q=https%3A%2F%2Fwww.loom.com%2Fshare%2F826b63c71b4340c6a39c7072c59df7cf&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2Fc17vseoJivPUoPqHHreR'><span>30min</span></a><span>)</span></td><td><span>Lista8</span></td></tr><tr><td><strong><span>10</span></strong><span> (19/08)</span></td><td><strong><span>Prova Final</span></strong></td><td>&nbsp;</td><td><strong><span>Prova 2</span></strong></td></tr><tr><td><strong><span>11</span></strong><span> (26/08)</span></td><td><strong><span>Prova Sub</span></strong></td><td>&nbsp;</td><td><strong><span>Prova Sub</span></strong></td></tr><tr><td><strong><span>12</span></strong><span> (30/08)</span></td><td><strong><span>Prova Rec</span></strong></td><td>&nbsp;</td><td><strong><span>Prova Rec</span></strong></td></tr></tbody></table></figure><h4 id='atendimento'><span>Atendimento</span></h4><p><span>Segundas 13h-15h Quintas 17h-19h. O atendimento é virtual e combinado por email.</span></p></div></div>
+</body>
+</html>

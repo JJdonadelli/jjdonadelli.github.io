@@ -1,0 +1,25 @@
+\begin{picture}(0,0)%
+\includegraphics{treap.pstex}%
+\end{picture}%
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(2842,1588)(1564,-2660)
+\put(1732,-2586){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$13$}}}}
+\put(4236,-1959){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$27$}}}}
+\put(3172,-1209){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$j$}}}}
+\put(1608,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$a$}}}}
+\put(2234,-1835){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$i$}}}}
+\put(2860,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$b$}}}}
+\put(3485,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$\ell$}}}}
+\put(4112,-1835){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$m$}}}}
+\put(3298,-1334){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$31$}}}}
+\put(2985,-2586){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$25$}}}}
+\put(2359,-1959){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$26$}}}}
+\put(3611,-2586){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{6}{7.2}{\familydefault}{\mddefault}{\updefault}$14$}}}}
+\end{picture}%

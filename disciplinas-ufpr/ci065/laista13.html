@@ -1,0 +1,1351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html lang="pt" > 
+<head><title>CI065 &#8211; Algoritmos e Teoria dos Grafos (em construo)</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="ci065.tex"> 
+<meta name="date" content="2007-10-24 10:32:00"> 
+<link rel="stylesheet" type="text/css" href="ci065.css"> 
+</head><body 
+>
+<!--l. 3386--><p class="noindent"><span class="subsectionHead"><a 
+ id="x1-5000015"></a><span 
+class="cmbx-10x-x-109">Exerc</span><span 
+class="cmbx-10x-x-109">ícios.</span></span>
+         <ol  class="enumerate1" >
+       <li class="enumerate"><a 
+ id="x1-50002x1"></a>Determine o número de arestas num emparelhamento máximo nos
+       grafos: <span 
+class="cmmi-10x-x-109">K</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-10x-x-109">C</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-10x-x-109">P</span><sup><span 
+class="cmmi-8">n</span></sup> e <span 
+class="cmmi-10x-x-109">K</span><sup><span 
+class="cmmi-8">m,n</span></sup>.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50004x2"></a>Se <span 
+class="cmmi-10x-x-109">M </span>é um emparelhamento em um grafo <span 
+class="cmmi-10x-x-109">G </span>qualquer e se <span 
+class="cmmi-10x-x-109">P </span>é um
+       caminho <span 
+class="cmmi-10x-x-109">M</span>-aumentante em <span 
+class="cmmi-10x-x-109">G</span>, mostre que <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">&#x2295;</span><span 
+class="cmmi-10x-x-109">E</span>(<span 
+class="cmmi-10x-x-109">P</span>) também é um
+       emparelhamento em <span 
+class="cmmi-10x-x-109">G </span>e com uma aresta a mais que <span 
+class="cmmi-10x-x-109">M</span>.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50006x3"></a>Prove que uma árvore qualquer tem no máximo um emparelhamento
+       perfeito.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50008x4"></a>Considere  um  grafo  qualquer  <span 
+class="cmmi-10x-x-109">G </span>de  <span 
+class="cmmi-10x-x-109">n </span>vértices.  Mostre  que  um
+       emparelhamento em <span 
+class="cmmi-10x-x-109">G </span>tem no máximo <span 
+class="cmmi-10x-x-109">n&#x2215;</span>2 arestas.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50010x5"></a>Mostre que o <span 
+class="cmmi-10x-x-109">k</span>-cubo admite emparelhamento perfeito, para todo
+       <span 
+class="cmmi-10x-x-109">k </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>2.
+                                                                     
+
+                                                                     
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50012x6"></a>Duas  pessoas  jogam  um  jogo  sobre  um  grafo  <span 
+class="cmmi-10x-x-109">G </span>alternadamente
+       selecionando vértices distintos <span 
+class="cmmi-10x-x-109">v</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">,v</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,v</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span> tais que, para <span 
+class="cmmi-10x-x-109">i &#x003E; </span>0, <span 
+class="cmmi-10x-x-109">v</span><sub><span 
+class="cmmi-8">i</span></sub>
+       é adjacente a <span 
+class="cmmi-10x-x-109">v</span><sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub>. O último jogador que conseguir selecionar um
+       vértice vence o jogo.
+       <!--l. 3409--><p class="indent">   Mostre que o primeiro jogador tem uma estratégia para vencer o
+       jogo se e somente se o grafo <span 
+class="cmmi-10x-x-109">G </span>não tem um emparelhamento perfeito.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50014x7"></a>Prove  que  se  <span 
+class="cmmi-10x-x-109">M  </span>é  emparelhamento  em  <span 
+class="cmmi-10x-x-109">G  </span>então  existe  um
+       emparelhamento máximo que cobre todos os vértices cobertos por
+       <span 
+class="cmmi-10x-x-109">M</span>.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-50016x8"></a>Denotemos  <span 
+class="cmmi-10x-x-109">c</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">G</span>)  o  número  de  componentes  conexas  do  grafo  <span 
+class="cmmi-10x-x-109">G</span>
+       com  um  número  ímpar  de  vértices.  Mostre  que  se  <span 
+class="cmmi-10x-x-109">G </span>tem  um
+       emparelhamento perfeito então <span 
+class="cmmi-10x-x-109">c</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">G </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">S</span>) <span 
+class="cmsy-10x-x-109">&#x2264;|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| </span>para todo conjunto
+       <span 
+class="cmmi-10x-x-109">S </span>de vértices.</li></ol>
+  <h3 class="sectionHead"><span class="titlemark">16. </span> <a 
+ id="x1-5100016"></a>Emparelhamentos em grafos bipartidos</h3>
+<!--l. 3429--><p class="noindent">Por toda esta seção adotaremos as seguintes convenções: as partes de
+vértices independentes de um grafo bipartido <span 
+class="cmmi-10x-x-109">G </span>são denotadas por <span 
+class="cmmi-10x-x-109">A </span>e <span 
+class="cmmi-10x-x-109">B </span>e
+escrevemos <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">B,E</span>). Sem perda de generalidade consideraremos
+como caminhos <span 
+class="cmmi-10x-x-109">M</span>-alternante os que têm um extremo descoberto em
+<span 
+class="cmmi-10x-x-109">A</span>.
+<!--l. 3435--><p class="indent">  Uma <a 
+ id="dx1-51001"></a><span 
+class="cmbx-10x-x-109">cobertura por v</span><span 
+class="cmbx-10x-x-109">értices </span>em um grafo <span 
+class="cmmi-10x-x-109">G </span>(não necessariamente
+bipartido) é um subconjunto <span 
+class="cmmi-10x-x-109">U </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">V </span>(<span 
+class="cmmi-10x-x-109">G</span>) tal que <span 
+class="cmmi-10x-x-109">e</span><span 
+class="cmsy-10x-x-109">&#x2229;</span><span 
+class="cmmi-10x-x-109">U</span><img 
+src="ci065151x.png" alt="&#x2044;="  class="neq" align="middle"><span 
+class="cmsy-10x-x-109">&#x2205; </span>para toda aresta <span 
+class="cmmi-10x-x-109">e </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">E</span>,
+ou seja, toda aresta de <span 
+class="cmmi-10x-x-109">G </span>encontra <span 
+class="cmmi-10x-x-109">U</span>.
+  <div class="newtheorem">
+<!--l. 3440--><p class="noindent"><span class="head">
+<a 
+ id="x1-51002r25"></a>
+<span 
+class="cmti-10x-x-109">Exemplo </span>25<span 
+class="cmti-10x-x-109">.</span>  </span>No exemplo da figura abaixo temos o diagrama de um grafo
+bipartido, as arestas em destaque definem um emparelhamento <span 
+class="cmmi-10x-x-109">M</span>. O
+subconjunto de vértices <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,a</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,b</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,b</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmsy-10x-x-109">}</span>é uma cobertura pois <span 
+class="cmti-10x-x-109">todas </span>as arestas do
+grafo incidem em pelo menos um desses vértices. <hr class="figure"><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+> <img 
+src="emparelha_bip.png" alt="PIC"  
+>
+</td></tr></table></div><hr class="endfigure">
+  </div>
+<!--l. 3451--><p class="indent">  Uma <a 
+ id="dx1-51003"></a><span 
+class="cmbx-10x-x-109">cobertura m</span><span 
+class="cmbx-10x-x-109">ínima </span>é uma cobertura com o menor número possível de
+vértices que é denotado por <a 
+ id="dx1-51004"></a><span 
+class="cmmi-10x-x-109">&#x03BD;</span>(<span 
+class="cmmi-10x-x-109">G</span>),
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51005r28"></a>
+                                                                     
+
+                                                                     
+  <center class="math-display" >
+<img 
+src="ci065152x.png" alt="           {                                  }
+&#x03BD;(G) = min  |U |: U ´e cobertura por v´ertices em G  .
+" class="math-display" ></center></td><td class="equation-label">(28)</td></tr></table>
+<!--l. 3457--><p class="nopar">
+<a 
+ id="dx1-51006"></a>
+  <div class="newtheorem">
+<!--l. 3461--><p class="noindent"><span class="head">
+<a 
+ id="x1-51007r26"></a>
+<span 
+class="cmbx-10x-x-109">Teorema 26 </span>(Teorema de König, 1931)<span 
+class="cmbx-10x-x-109">.</span>  </span> <span 
+class="cmti-10x-x-109">Num grafo bipartido </span><span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">B,E</span>) <span 
+class="cmti-10x-x-109">o</span>
+<span 
+class="cmti-10x-x-109">tamanho de um emparelhamento m</span><span 
+class="cmti-10x-x-109">áximo </span><span 
+class="cmti-10x-x-109">é igual ao tamanho de uma cobertura</span>
+<span 
+class="cmti-10x-x-109">m</span><span 
+class="cmti-10x-x-109">ínima, ou seja</span>
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51008r29"></a>
+  <center class="math-display" >
+<img 
+src="ci065153x.png" alt="&#x03BC;(G ) = &#x03BD;(G ).
+" class="math-display" ></center></td><td class="equation-label">(29)</td></tr></table>
+<!--l. 3467--><p class="nopar">
+  </div>
+  <div class="proof">
+<!--l. 3470--><p class="indent">  <span class="head">
+<span 
+class="cmti-10x-x-109">Demonstra</span><span 
+class="cmti-10x-x-109">ç</span><span 
+class="cmti-10x-x-109">ão.</span> </span>Para qualquer cobertura <span 
+class="cmmi-10x-x-109">U </span>e qualquer emparelhamento <span 
+class="cmmi-10x-x-109">M </span>vale
+que toda aresta de <span 
+class="cmmi-10x-x-109">M </span>tem que ter pelo menos um extremo em <span 
+class="cmmi-10x-x-109">U</span>, portanto
+<span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">M</span><span 
+class="cmsy-10x-x-109">|&#x2264;|</span><span 
+class="cmmi-10x-x-109">U</span><span 
+class="cmsy-10x-x-109">|</span>. Em particular,
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51009r30"></a>
+                                                                     
+
+                                                                     
+  <center class="math-display" >
+<img 
+src="ci065154x.png" alt="&#x03BC;(G ) &#x2264; &#x03BD;(G ).
+" class="math-display" ></center></td><td class="equation-label">(30)</td></tr></table>
+<!--l. 3476--><p class="nopar">
+<!--l. 3478--><p class="indent">  Agora, considere <span 
+class="cmmi-10x-x-109">M </span>um emparelhamento máximo em <span 
+class="cmmi-10x-x-109">G </span>e vamos construir uma
+cobertura <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">V </span>(<span 
+class="cmmi-10x-x-109">G</span>) da seguinte maneira: para cada aresta <span 
+class="cmmi-10x-x-109">ab </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">M</span>,
+<span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">A </span>e <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">B</span>, escolhemos <span 
+class="cmmi-10x-x-109">b </span>para <span 
+class="cmmi-10x-x-109">C </span>se <span 
+class="cmmi-10x-x-109">b </span>é extremo de algum caminho
+<span 
+class="cmmi-10x-x-109">M</span>-alternante, caso contrário, escolhemos <span 
+class="cmmi-10x-x-109">a</span>. Note que dessa forma temos
+<span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">C</span><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">M</span><span 
+class="cmsy-10x-x-109">|</span>.
+<!--l. 3484--><p class="indent">  Vamos mostrar que <span 
+class="cmmi-10x-x-109">C </span>é uma cobertura. Considere uma aresta qualquer <span 
+class="cmmi-10x-x-109">ab </span>em
+<span 
+class="cmmi-10x-x-109">E</span>(<span 
+class="cmmi-10x-x-109">G</span>), <span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">A </span>e <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">B</span>. Se <span 
+class="cmmi-10x-x-109">ab </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">M </span>então a aresta encontra <span 
+class="cmmi-10x-x-109">C</span>. Vamos supor que <span 
+class="cmmi-10x-x-109">ab</span>
+não é aresta de <span 
+class="cmmi-10x-x-109">M</span>. Como <span 
+class="cmmi-10x-x-109">M </span>é máximo, ou <span 
+class="cmmi-10x-x-109">a </span>ou <span 
+class="cmmi-10x-x-109">b </span>ou ambos são cobertos por
+<span 
+class="cmmi-10x-x-109">M</span>.
+<!--l. 3489--><p class="indent">  Se <span 
+class="cmmi-10x-x-109">M </span>não cobre <span 
+class="cmmi-10x-x-109">a </span>então <span 
+class="cmmi-10x-x-109">b </span>pertence ao um caminho <span 
+class="cmmi-10x-x-109">M</span>-alternante <span 
+class="cmmi-10x-x-109">P </span>= <span 
+class="cmmi-10x-x-109">a,b </span>e
+como <span 
+class="cmmi-10x-x-109">b </span>é coberto por <span 
+class="cmmi-10x-x-109">M</span>, digamos <span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">&#x2032;</span><span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">M</span>, então <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">C</span>. Vamos supor que <span 
+class="cmmi-10x-x-109">M</span>
+cobre <span 
+class="cmmi-10x-x-109">a </span>e <span 
+class="cmmi-10x-x-109">ab</span><span 
+class="cmsy-10x-x-109">&#x2032;<img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">M </span>para algum <span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">&#x2032;<img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">B </span>diferente de <span 
+class="cmmi-10x-x-109">b</span>. Agora, se <span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109">&#x2044;<img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">C</span>
+então <span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">&#x2032;<img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">C</span>, pela construção do conjunto <span 
+class="cmmi-10x-x-109">C</span>. Mas, isso significa que
+<span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>está no extremo de algum caminho <span 
+class="cmmi-10x-x-109">M</span>-alternante que chamamos de
+<span 
+class="cmmi-10x-x-109">P</span>.
+<!--l. 3498--><p class="indent">  Se <span 
+class="cmmi-10x-x-109">b </span>está em <span 
+class="cmmi-10x-x-109">P </span>então <span 
+class="cmmi-10x-x-109">b </span>é extremo de algum caminho <span 
+class="cmmi-10x-x-109">M</span>-alternante. Caso
+contrário, também haverá um caminho <span 
+class="cmmi-10x-x-109">M</span>-alternante com extremo <span 
+class="cmmi-10x-x-109">b</span>, ou
+<span 
+class="cmmi-10x-x-109">P,a,b </span>no caso <span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109">&#x2044;<img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">V </span>(<span 
+class="cmmi-10x-x-109">P</span>), ou <span 
+class="cmmi-10x-x-109">P</span><span 
+class="cmsy-10x-x-109">&#x2032;</span><span 
+class="cmmi-10x-x-109">,b </span>caso <span 
+class="cmmi-10x-x-109">a </span>pertence a <span 
+class="cmmi-10x-x-109">P</span>, onde <span 
+class="cmmi-10x-x-109">P</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>denota o
+subcaminho alternante de <span 
+class="cmmi-10x-x-109">P </span>com extremo em <span 
+class="cmmi-10x-x-109">a</span>. Em ambos os casos
+teremos <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">C </span>pois não pode haver caminho <span 
+class="cmmi-10x-x-109">M</span>-aumentante <span 
+class="cmmi-10x-x-109">G </span>logo <span 
+class="cmmi-10x-x-109">b </span>deve
+estar coberto por <span 
+class="cmmi-10x-x-109">M</span>. Com isso temos <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(<span 
+class="cmmi-10x-x-109">G</span>) = <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">M</span><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">C</span><span 
+class="cmsy-10x-x-109">|&#x2265; </span><span 
+class="cmmi-10x-x-109">&#x03BD;</span>(<span 
+class="cmmi-10x-x-109">G</span>), ou
+seja,
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51010r31"></a>
+  <center class="math-display" >
+<img 
+src="ci065155x.png" alt="&#x03BC;(G ) &#x2265; &#x03BD;(G ).
+                                                                     
+
+                                                                     
+" class="math-display" ></center></td><td class="equation-label">(31)</td></tr></table>
+<!--l. 3509--><p class="nopar">
+Das equações (<a 
+href="#x1-51009r30">30<!--tex4ht:ref: eq:konig_1 --></a>) e (<a 
+href="#x1-51010r31">31<!--tex4ht:ref: eq:konig_2 --></a>) concluímos que <span 
+class="cmmi-10x-x-109">&#x03BD;</span>(<span 
+class="cmmi-10x-x-109">G</span>) = <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(<span 
+class="cmmi-10x-x-109">G</span>). <span class="qed"><span 
+class="msam-10x-x-109">&#x25A1;</span></span>
+  </div>
+<!--l. 3514--><p class="indent">  O seguinte resultado dá uma condição necessária e suficiente para que exista
+um emparelhamento que cobre umas das partes do grafo.
+<a 
+ id="dx1-51011"></a>
+  <div class="newtheorem">
+<!--l. 3518--><p class="noindent"><span class="head">
+<a 
+ id="x1-51012r27"></a>
+<span 
+class="cmbx-10x-x-109">Teorema 27 </span>(Teorema de Hall, 1935)<span 
+class="cmbx-10x-x-109">.</span>  </span> <span 
+class="cmti-10x-x-109">Em todo grafo bipartido </span><span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">B,E</span>)
+<span 
+class="cmti-10x-x-109">existe um emparelhamento que cobre </span><span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmti-10x-x-109">se, e somente se,</span>
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51013r32"></a>
+  <center class="math-display" >
+<img 
+src="ci065156x.png" alt="|N (S)| &#x2265; |S| para todo S &#x2286; A.
+" class="math-display" ></center></td><td class="equation-label">(32)</td></tr></table>
+<!--l. 3524--><p class="nopar">
+  </div>
+  <div class="proof">
+<!--l. 3527--><p class="indent">  <span class="head">
+<span 
+class="cmti-10x-x-109">Demonstra</span><span 
+class="cmti-10x-x-109">ç</span><span 
+class="cmti-10x-x-109">ão.</span> </span>Se existe um emparelhamento <span 
+class="cmmi-10x-x-109">M </span>que cobre <span 
+class="cmmi-10x-x-109">A </span>então tome
+<span 
+class="cmmi-10x-x-109">H </span>= (<span 
+class="cmmi-10x-x-109">V </span>(<span 
+class="cmmi-10x-x-109">G</span>)<span 
+class="cmmi-10x-x-109">,M</span>). Para todo <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">A </span>temos <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">G</span></sub>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">|&#x2265;|</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">H</span></sub>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">.</span>
+<!--l. 3531--><p class="indent">  Agora, suponha que <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| &#x2265; |</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| </span>para todo <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">A</span>. Seja <span 
+class="cmmi-10x-x-109">U </span>= <span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x222A; </span><span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>
+uma cobertura mínima em <span 
+class="cmmi-10x-x-109">G </span>com <span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032; &#x2282; </span><span 
+class="cmmi-10x-x-109">A </span>e <span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032; &#x2282; </span><span 
+class="cmmi-10x-x-109">B</span>. Se não existe um
+emparelhamento que cobre <span 
+class="cmmi-10x-x-109">A </span>então <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">U</span><span 
+class="cmsy-10x-x-109">| </span><span 
+class="cmmi-10x-x-109">&#x003C; </span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">| </span>pelo teorema&#x00A0;<a 
+href="#x1-51007r26">26<!--tex4ht:ref: teo:konig --></a>.
+<!--l. 3537--><p class="indent">  Notemos que essa última desigualdade implica que <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032;| </span><span 
+class="cmmi-10x-x-109">&#x003C; </span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;| </span>e que não
+há arestas de <span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>para <span 
+class="cmmi-10x-x-109">B </span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>, pois elas não estariam cobertas por <span 
+class="cmmi-10x-x-109">U</span>, ou seja
+<span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>) <span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>. Portanto
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51014r33"></a>
+                                                                     
+
+                                                                     
+  <center class="math-display" >
+<img 
+src="ci065157x.png" alt="|N (A - A&#x2032;)| &#x2264; |B &#x2032;| &#x003C; |A - A&#x2032;|,
+" class="math-display" ></center></td><td class="equation-label">(33)</td></tr></table>
+<!--l. 3543--><p class="nopar">
+contrariando a hipótese. <span class="qed"><span 
+class="msam-10x-x-109">&#x25A1;</span></span>
+  </div>
+<!--l. 3547--><p class="indent">  Essa demonstração é bastante simples pois todo o trabalho já foi feito no
+Teorema de König. Vejamos uma demonstração que não depende de outros
+resultados.
+  <div class="proof">
+<!--l. 3551--><p class="indent">  <span class="head">
+<span 
+class="cmti-10x-x-109">Demonstra</span><span 
+class="cmti-10x-x-109">ç</span><span 
+class="cmti-10x-x-109">ão alternativa.</span> </span>  Vamos  provar  por  indução  em  <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">| </span>que  se
+<span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">|&#x2265;|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| </span>para todo <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">A </span>então existe um emparelhamento que cobre
+<span 
+class="cmmi-10x-x-109">A</span>.
+<!--l. 3555--><p class="indent">  Se <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">| </span>= 1 então facilmente constatamos que existe um emparelhamento
+que cobre <span 
+class="cmmi-10x-x-109">A</span>. Seja <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">B,E</span>) um grafo bipartido que satisfaz (<a 
+href="#x1-51013r32">32<!--tex4ht:ref: eq:hall --></a>) e
+suponha que todo grafo bipartido (<span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x222A;</span><span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032;</span><span 
+class="cmmi-10x-x-109">,E</span>) com <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;| </span><span 
+class="cmmi-10x-x-109">&#x003C; </span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">| </span>que satisfaz a
+condição de Hall (<a 
+href="#x1-51013r32">32<!--tex4ht:ref: eq:hall --></a>) tem um emparelhamento que cobre <span 
+class="cmmi-10x-x-109">A</span>.
+<!--l. 3561--><p class="indent">  Caso 1: <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">G</span></sub>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| </span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| </span>para todo <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="cmmi-10x-x-109">A </span>não-vazio. Escolha uma aresta
+<span 
+class="cmmi-10x-x-109">ab </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">E </span>e considere o grafo bipartido <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= <span 
+class="cmmi-10x-x-109">G </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">b </span>sobre <span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">-{</span><span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">} </span>e
+<span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= <span 
+class="cmmi-10x-x-109">B </span><span 
+class="cmsy-10x-x-109">-{</span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">}</span>.
+<!--l. 3565--><p class="indent">  Nesse caso, para cada <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2282; </span><span 
+class="cmmi-10x-x-109">A </span>vale que <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">G</span><span 
+class="cmsy-8">&#x2032;</span></sub>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">|&#x2265;|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| </span>e pela hipótese
+indutiva concluímos que existe <span 
+class="cmmi-10x-x-109">M </span>que cobre <span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>. Portanto <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">&#x222A;{</span><span 
+class="cmmi-10x-x-109">ab</span><span 
+class="cmsy-10x-x-109">} </span>cobre
+<span 
+class="cmmi-10x-x-109">A</span>.
+<!--l. 3569--><p class="indent">  Caso 2: <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| </span>para algum <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="cmmi-10x-x-109">A </span>não-vazio. O grafo bipartido
+induzido <span 
+class="cmmi-10x-x-109">H </span>= <span 
+class="cmmi-10x-x-109">G</span>[<span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)] satisfaz a condição de Hall (os vizinhos de <span 
+class="cmmi-10x-x-109">S </span>em
+<span 
+class="cmmi-10x-x-109">H </span>são os mesmo vizinhos em <span 
+class="cmmi-10x-x-109">G</span>) e pela hipótese indutiva podemos concluir
+que existe um emparelhamento <span 
+class="cmmi-10x-x-109">M </span>em <span 
+class="cmmi-10x-x-109">H </span>que cobre <span 
+class="cmmi-10x-x-109">S</span>.
+<!--l. 3575--><p class="indent">  Agora  considere  o  subgrafo  bipartido  induzido  <span 
+class="cmmi-10x-x-109">J  </span>=  <span 
+class="cmmi-10x-x-109">G</span>[<span class="overline"><span 
+class="cmmi-10x-x-109">S</span></span> <span 
+class="cmsy-10x-x-109">&#x222A;</span><span class="overline"><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">G</span></sub>(<span 
+class="cmmi-10x-x-109">S</span>)</span>]  e
+suponha que exista <span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">&#x2286;</span><span class="overline"><span 
+class="cmmi-10x-x-109">S</span></span> tal que no grafo <span 
+class="cmmi-10x-x-109">J </span>vale <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">J</span></sub>(<span 
+class="cmmi-10x-x-109">X</span>)<span 
+class="cmsy-10x-x-109">| </span><span 
+class="cmmi-10x-x-109">&#x003C; </span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">X</span><span 
+class="cmsy-10x-x-109">|</span>. Teremos
+no grafo <span 
+class="cmmi-10x-x-109">G</span>
+                                                                     
+
+                                                                     
+  <center class="math-display" >
+<img 
+src="ci065158x.png" alt="|NG (S &#x222A; X)| = |NH (S )&#x222A; NJ (X )| = |NH (S)|+ |NJ (X)| &#x003C; |S |+ |X |
+" class="math-display" ></center> contrariando a hipótese de <span 
+class="cmmi-10x-x-109">G </span>satisfazer a condição de Hall. Assim <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">J</span></sub>(<span 
+class="cmmi-10x-x-109">X</span>)<span 
+class="cmsy-10x-x-109">|&#x2265;</span>
+<span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">X</span><span 
+class="cmsy-10x-x-109">| </span>para todo <span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">&#x2286;</span><span class="overline"><span 
+class="cmmi-10x-x-109">S</span></span> e, pela hipótese indutiva, existe um emparelhamento
+<span 
+class="cmmi-10x-x-109">M</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>em <span 
+class="cmmi-10x-x-109">J </span>que cobre <span class="overline"><span 
+class="cmmi-10x-x-109">S</span></span>.
+<!--l. 3586--><p class="indent">  Para concluir a demonstração é suficiente observarmos que <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">M</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>é um
+emparelhamento em <span 
+class="cmmi-10x-x-109">G </span>que cobre <span 
+class="cmmi-10x-x-109">A</span>. <span class="qed"><span 
+class="msam-10x-x-109">&#x25A1;</span></span>
+  </div>
+<a 
+ id="dx1-51015"></a>
+  <div class="newtheorem">
+<!--l. 3591--><p class="noindent"><span class="head">
+<a 
+ id="x1-51016r28"></a>
+<span 
+class="cmbx-10x-x-109">Corol</span><span 
+class="cmbx-10x-x-109">ário 28 </span>(Forma defectiva do teorema de Hall)<span 
+class="cmbx-10x-x-109">.</span>  </span> <span 
+class="cmti-10x-x-109">Em todo grafo bipartido</span>
+<span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">B,E</span>) <span 
+class="cmti-10x-x-109">existe um emparelhamento que cobre </span><span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmti-10x-x-109">a menos de </span><span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmti-10x-x-109">v</span><span 
+class="cmti-10x-x-109">értices se,</span>
+<span 
+class="cmti-10x-x-109">e somente se,</span>
+  <table 
+class="equation"><tr><td><a 
+ id="x1-51017r34"></a>
+  <center class="math-display" >
+<img 
+src="ci065159x.png" alt="|N (S)| &#x2265; |S|- d para todo S &#x2286; A.
+" class="math-display" ></center></td><td class="equation-label">(34)</td></tr></table>
+<!--l. 3597--><p class="nopar">
+  </div>
+<!--l. 3600--><p class="noindent"><span class="subsectionHead"><a 
+ id="x1-5200016"></a><span 
+class="cmbx-10x-x-109">Exerc</span><span 
+class="cmbx-10x-x-109">ícios.</span></span>
+         <ol  class="enumerate1" >
+       <li class="enumerate"><a 
+ id="x1-52002x1"></a>Prove que se <span 
+class="cmmi-10x-x-109">G </span>é bipartido então existe um emparelhamento que
+       cobre todos os vértices de grau &#x0394;(<span 
+class="cmmi-10x-x-109">G</span>).
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52004x2"></a>Prove que se <span 
+class="cmmi-10x-x-109">G </span>é bipartido e regular então <span 
+class="cmmi-10x-x-109">G </span>tem emparelhamento
+       perfeito.
+                                                                     
+
+                                                                     
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52006x3"></a>Seja <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">B,E</span>) um grafo bipartido com <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">B</span><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmmi-10x-x-109">n</span>. Mostre
+       que se não existe um emparelhamento perfeito em <span 
+class="cmmi-10x-x-109">G </span>então existe
+       um subconjunto <span 
+class="cmmi-10x-x-109">S </span>com <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">|&#x2264;</span><img 
+src="ci065160x.png" alt="&#x2308;n &#x2215;2&#x2309;"  class="left" align="middle"> tal que <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">|- </span>1 e ou
+       <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="cmmi-10x-x-109">A </span>ou <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="cmmi-10x-x-109">B</span>.(Dica: considere um conjunto <span 
+class="cmmi-10x-x-109">T </span>minimal violando
+       a condição de Hall, dada pela equação&#x00A0;(<a 
+href="#x1-51013r32">32<!--tex4ht:ref: eq:hall --></a>).)
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52008x4"></a>Prove a seguinte implicação da forma defectiva do teorema de Hall:
+       Se  <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| &#x2265; |</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">| - </span><span 
+class="cmmi-10x-x-109">d </span>para  todo  <span 
+class="cmmi-10x-x-109">S  </span><span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="cmmi-10x-x-109">A</span>,  então  <span 
+class="cmmi-10x-x-109">G </span>contém  um
+       emparelhamento de cardinalidade <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">|- </span><span 
+class="cmmi-10x-x-109">d</span>.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52010x5"></a>Prove que se o grafo bipartido <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">B,E</span>) contém exatamente
+       um emparelhamento perfeito então contém aresta de corte.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52012x6"></a>Seja <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">B,E</span>) um grafo bipartido e <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,A</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmsy-10x-x-109">} </span>uma partição de
+       <span 
+class="cmmi-10x-x-109">A </span>e <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">B</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,B</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmsy-10x-x-109">} </span>uma partição de <span 
+class="cmmi-10x-x-109">B</span>. Mostre que se <span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">B</span><sub><span 
+class="cmr-8">1</span></sub> então
+       <span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">B</span><sub><span 
+class="cmr-8">2</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmr-8">2</span></sub>.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52014x7"></a>Seja <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A</span><span 
+class="cmsy-10x-x-109">&#x222A;</span><span 
+class="cmmi-10x-x-109">B,E</span>) um grafo bipartido e <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,A</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmsy-10x-x-109">} </span>uma partição de
+       <span 
+class="cmmi-10x-x-109">A </span>e <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">B</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,B</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmsy-10x-x-109">} </span>uma partição de <span 
+class="cmmi-10x-x-109">B</span>. Mostre que se <span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">B</span><sub><span 
+class="cmr-8">1</span></sub> então
+       <span 
+class="cmmi-10x-x-109">B</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmr-8">2</span></sub> é uma cobertura.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52016x8"></a>Seja <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">B,E</span>) um grafo bipartido e <span 
+class="cmmi-10x-x-109">M </span>um emparelhamento
+       em <span 
+class="cmmi-10x-x-109">G</span>. Seja <span 
+class="cmmi-10x-x-109">U </span><span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="cmmi-10x-x-109">V </span>(<span 
+class="cmmi-10x-x-109">G</span>) o conjunto dos vértices cobertos por <span 
+class="cmmi-10x-x-109">M </span>e <span 
+class="cmmi-10x-x-109">W </span>o
+       conjunto dos vértices de todos os caminhos <span 
+class="cmmi-10x-x-109">M</span>-alternantes que têm
+       um dos extremos em <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">U</span>. Prove que (<span 
+class="cmmi-10x-x-109">B </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">W</span>) <span 
+class="cmsy-10x-x-109">&#x222A; </span>(<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">W</span>) é uma
+       cobertura em <span 
+class="cmmi-10x-x-109">G</span>.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-52018x9"></a>Na primeira prova que apresentamos do teorema de Hall deduzimos
+       o  resultado  do  teorema  de  König.  Esses  teoremas  são,  de  fato,
+       equivalentes. Demonstre o teorema de König (<span 
+class="cmmi-10x-x-109">&#x03BC; &#x003E; &#x03BD;</span>) a partir do
+       teorema de Hall.</li></ol>
+<!--l. 3657--><p class="noindent"><span class="subsectionHead"><span class="titlemark">16.1. </span> <a 
+ id="x1-5300016.1"></a><span 
+class="cmbx-10x-x-109">Algoritmo de Edmonds.</span></span>
+  O algoritmo abaixo recebe um grafo bipartido <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x222A; </span><span 
+class="cmmi-10x-x-109">B,E</span>) e devolve um
+emparelhamento que cobre <span 
+class="cmmi-10x-x-109">A </span>ou um subconjunto <span 
+class="cmmi-10x-x-109">S </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">A </span>tal que <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmmi-10x-x-109">S</span>)<span 
+class="cmsy-10x-x-109">| </span><span 
+class="cmmi-10x-x-109">&#x003C; </span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">|</span>
+cuja existência é garantida pelo teorema de Hall.
+<!--l. 3663--><p class="indent">  A idéia do algoritmo é construir caminhos alternantes a partir de um vértice
+não-coberto em <span 
+class="cmmi-10x-x-109">A</span>. Por exemplo, no grafo da figura abaixo, o algoritmo começa
+pelo vértice <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub> não-coberto por <span 
+class="cmmi-10x-x-109">M</span>. O próximo passo é escolher um vizinho de
+<span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub>. Se existir algum vizinho não coberto, então achamos um caminho
+aumentante, caso contrário uma aresta de <span 
+class="cmmi-10x-x-109">M </span>incide nesse vizinho e temos um
+caminho alternante, no exemplo <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,b</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,a</span><sub><span 
+class="cmr-8">3</span></sub>. O próximo passo é continuar a
+busca a partir de um vizinho dos vértices da forma <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">i</span></sub> já escolhidos.
+Notemos, entretanto, que basta buscar tais vizinhos dentre os vértices
+                                                                     
+
+                                                                     
+ainda não escolhidos, no nosso exemplo, após o estágio representado pela
+figura (e) abaixo não há necessidade de considerar a aresta <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,b</span><sub><span 
+class="cmr-8">5</span></sub><span 
+class="cmsy-10x-x-109">} </span>pois o
+novo caminho alternante definido por essa aresta seria redundante para
+nossos propósitos. No estágio dado pela figura (f) chegamos a um caminho
+aumentante.
+<!--l. 3678--><p class="indent">  <hr class="figure"><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+<!--l. 3679--><p class="indent">  <img 
+src="hungaro.png" alt="PIC"  
+>
+                                                                     
+
+                                                                     
+<!--l. 3680--><p class="indent">  </td></tr></table></div><hr class="endfigure">
+<!--l. 3682--><p class="indent">  Quando o algoritmo descobre um caminho aumentante, usa-o para obter um
+emparelhamento com mais arestas e recomeça o processo. Caso contrário,
+teremos construído caminhos alternantes que começam num vértice
+descoberto e todos terminam num vértice coberto. Os vértices desses
+caminhos definem um conjunto que viola a condição de Hall. Por exemplo,
+na figura abaixo o algoritmo começa pelo vértice não-coberto <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">4</span></sub>. Esse
+vértice tem os vizinhos <span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmr-8">2</span></sub> e <span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmr-8">3</span></sub> que estão cobertos pelas arestas <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmr-8">2</span></sub> e <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmr-8">3</span></sub>
+respectivamente. O vértice <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub> já tem todos os seus vizinhos escolhidos,
+assim como <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">3</span></sub>, e não se pode mais estender os caminhos. Nesse caso
+<span 
+class="cmmi-10x-x-109">N</span>(<span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,a</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,a</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmsy-10x-x-109">}</span>) = <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,b</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmsy-10x-x-109">} </span>e <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,a</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,a</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmsy-10x-x-109">}</span>é um obstáculo para um emparelhamento
+cobrir <span 
+class="cmmi-10x-x-109">A</span>. <hr class="figure"><div class="figure" 
+><table class="figure"><tr class="figure"><td class="figure" 
+>
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+<!--l. 3695--><p class="indent">  <img 
+src="hungaro2.png" alt="PIC"  
+>
+                                                                     
+
+                                                                     
+<!--l. 3696--><p class="indent">  </td></tr></table></div><hr class="endfigure">
+<a 
+ id="dx1-53001"></a>
+                                                                     
+
+                                                                     
+  <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;&#x00A0;Edmonds(G)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;Seja&#x00A0;M&#x00A0;um&#x00A0;emparelhamento&#x00A0;arbitrário&#x00A0;em&#x00A0;G;
+&#x00A0;<br />2:&#x00A0;&#x00A0;Se&#x00A0;(&#x00A0;existe&#x00A0;u&#x00A0;em&#x00A0;A&#x00A0;não&#x00A0;coberto&#x00A0;por&#x00A0;M)&#x00A0;então
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;S&#x00A0;&#x003C;-&#x00A0;{u};
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;T&#x00A0;&#x003C;-&#x00A0;vazio;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;senão
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Devolva&#x00A0;M;
+&#x00A0;<br />7:&#x00A0;&#x00A0;Se&#x00A0;(&#x00A0;N(S)&#x00A0;=&#x00A0;T&#x00A0;)&#x00A0;então
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Devolva&#x00A0;S;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;senão
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Escolha&#x00A0;b&#x00A0;em&#x00A0;N(S)-T;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;Se&#x00A0;(&#x00A0;existe&#x00A0;a&#x00A0;em&#x00A0;V-S&#x00A0;tal&#x00A0;que&#x00A0;ab&#x00A0;em&#x00A0;M&#x00A0;)&#x00A0;então
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Insere&#x00A0;a&#x00A0;em&#x00A0;S;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Insere&#x00A0;b&#x00A0;em&#x00A0;T;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Volte&#x00A0;para&#x00A0;7;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;senão
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;P&#x00A0;&#x003C;-&#x00A0;caminho&#x00A0;M-aumentante&#x00A0;de&#x00A0;u&#x00A0;até&#x00A0;b;
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;M&#x00A0;&#x003C;-&#x00A0;diferença&#x00A0;simétrica&#x00A0;de&#x00A0;M&#x00A0;e&#x00A0;E(P);
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;Volte&#x00A0;para&#x00A0;2;
+</div>
+</td></tr></table>
+<!--l. 3719--><p class="nopar">
+<!--l. 3721--><p class="noindent"><span class="subsectionHead"><a 
+ id="x1-5400016.1"></a><span 
+class="cmbx-10x-x-109">Exerc</span><span 
+class="cmbx-10x-x-109">ícios.</span></span>
+         <ol  class="enumerate1" >
+       <li class="enumerate"><a 
+ id="x1-54002x1"></a>Determine a complexidade do algoritmo Edmonds(G).
+         </li>
+       <li class="enumerate"><a 
+ id="x1-54004x2"></a>Modifique  o  algoritmo  Edmonds(G)  para  que  ele  devolva  um
+       emparelhamento máximo.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-54006x3"></a>Uma escola secundária abriu vagas para contratação de 6 docentes para
+       as seguintes áreas: Matemática, Química, Física, Biologia, Psicologia e
+       Ecologia. Para que um(a) candidato(a) se inscreva ele(a) deve informar a
+       área em que se graduou e as áreas correlatas em que se sente à vontade
+       para lecionar. A escola recebeu seis inscrições para estas posições, da
+       seguinte maneira:
+       <div class="center" 
+>
+<!--l. 3735--><p class="noindent">
+                                                                     
+
+                                                                     
+<div class="tabular"><table class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><colgroup id="TBL-2-3g"><col 
+id="TBL-2-3"></colgroup><colgroup id="TBL-2-4g"><col 
+id="TBL-2-4"></colgroup><colgroup id="TBL-2-5g"><col 
+id="TBL-2-5"></colgroup><colgroup id="TBL-2-6g"><col 
+id="TBL-2-6"></colgroup><colgroup id="TBL-2-7g"><col 
+id="TBL-2-7"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11"><span 
+class="cmbx-10x-x-109">Candidato</span></td><td colspan="6" style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td11">                              <div class="multicolumn"  style="white-space:nowrap; text-align:center;"><span 
+class="cmbx-10x-x-109">Áreas</span></div>
+</td></tr><tr 
+class="cline"><td></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11">                </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td11">Matem.</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-3"  
+class="td11">Química</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-4"  
+class="td11">Física</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-5"  
+class="td11">Biol.</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-6"  
+class="td11">Psicol.</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-7"  
+class="td11">Ecol.</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11">Antônio     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td11">          </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-3"  
+class="td11">     <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-4"  
+class="td11">   <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-5"  
+class="td11">      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-6"  
+class="td11">         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-7"  
+class="td11">       </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11">Bernardo   </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td11">          </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-3"  
+class="td11">            </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-4"  
+class="td11">   <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-5"  
+class="td11">  <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-6"  
+class="td11">   <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-7"  
+class="td11">  <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11">Cássia       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td11">    <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-3"  
+class="td11">     <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-4"  
+class="td11">   <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-5"  
+class="td11">      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-6"  
+class="td11">         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-7"  
+class="td11">       </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11">Débora      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-2"  
+class="td11">          </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-3"  
+class="td11">     <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-4"  
+class="td11">        </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-5"  
+class="td11">  <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-6"  
+class="td11">   <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-7"  
+class="td11">  <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td11">Evandro     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-2"  
+class="td11">    <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-3"  
+class="td11">     <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-4"  
+class="td11">        </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-5"  
+class="td11">      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-6"  
+class="td11">         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-7"  
+class="td11">       </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td11">Fernanda   </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-2"  
+class="td11">    <span 
+class="cmsy-10x-x-109">&#x00D7;  </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-3"  
+class="td11">            </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-4"  
+class="td11">   <span 
+class="cmsy-10x-x-109">&#x00D7; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-5"  
+class="td11">      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-6"  
+class="td11">         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-8-7"  
+class="td11">       </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-1"  
+class="td11">                </td>
+</tr></table></div></div>
+       <!--l. 3750--><p class="indent">   Execute um algoritmo conhecido que determine o maior número de
+       professores que a escola pode contratar.
+         </li>
+       <li class="enumerate"><a 
+ id="x1-54008x4"></a>Seja <span 
+class="cmmi-10x-x-109">B </span>um grafo bipartido com bipartição <span 
+class="cmmi-10x-x-109">A,B</span>. Construa um grafo
+       orientado <span 
+class="cmmi-10x-x-109">D </span>a partir de <span 
+class="cmmi-10x-x-109">B </span>orientando as arestas no sentido de <span 
+class="cmmi-10x-x-109">X </span>para <span 
+class="cmmi-10x-x-109">Y </span>.
+       Agora, acrescente aos vértices de <span 
+class="cmmi-10x-x-109">D </span>dois novos vértices <span 
+class="cmmi-10x-x-109">s </span>e <span 
+class="cmmi-10x-x-109">t</span>,
+       com <span 
+class="cmmi-10x-x-109">s </span>ligado a todos os vértices de <span 
+class="cmmi-10x-x-109">X</span>, no sentido de <span 
+class="cmmi-10x-x-109">s </span>para <span 
+class="cmmi-10x-x-109">X</span>,
+       e com <span 
+class="cmmi-10x-x-109">t </span>ligado a todos os vértices de <span 
+class="cmmi-10x-x-109">Y </span>no sentido de <span 
+class="cmmi-10x-x-109">Y </span>para
+       <span 
+class="cmmi-10x-x-109">t</span>.
+       <!--l. 3760--><p class="indent">   Suponha que esse grafo orientado <span 
+class="cmmi-10x-x-109">D </span>que você construiu modela uma
+       rede de computadores onde cada aresta tem a capacidade de 1
+       unidade de transmissão. Mostre que o fluxo máximo de <span 
+class="cmmi-10x-x-109">s </span>para <span 
+class="cmmi-10x-x-109">t </span>é
+       igual ao número máximo de arestas num emparelhamento em
+       <span 
+class="cmmi-10x-x-109">B</span>.
+         </li></ol>
+  <div class="addresses">
+<!--l. 3771--><p class="indent">  <span class="address-title"></span><span class="address"><span 
+class="cmcsc-10x-x-90">D<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">f</span> &#8212; UFPR</span></span>
+  </div> 
+</body></html> 
+

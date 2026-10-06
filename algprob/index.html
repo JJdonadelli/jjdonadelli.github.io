@@ -1,0 +1,643 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+img:not([height]) { height: auto; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; position: relative; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&amp;subset=latin,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+strong,
+b,
+table th {
+    color: #555555;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+    color: #0078C8;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #0078C8;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+    color: #0078C8;
+}
+h4 {
+    font-size: 1.25em;
+    color: #0078C8;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+
+<title>index</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#objetivos"><strong>Objetivos</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#objetivos-específicos">Objetivos específicos</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#programação-da-disciplina"><strong>Programação da disciplina</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ementa">Ementa</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#calendário">Calendário</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#reposição-de-feriados">Reposição de feriados</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#programação-das-aulas">Programação das Aulas</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bibliografia">Bibliografia</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bibliografia-complementar">Bibliografia complementar</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#atendimento">Atendimento</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#avaliação"><strong>Avaliação</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#conceito-final">Conceito final</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#instruções-para-as-provas">Instruções para as provas</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#recuperação">Recuperação</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#substitutiva">Substitutiva</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#links"><strong>Links</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#material-de-ofertas-anteriores">Material de ofertas anteriores</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#notícias-relacionadas">Notícias relacionadas </a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#material-online">Material online </a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ap-em-outras-instituições">A.P. em outras instituições</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><div style="text-align:center; color:#006080; font-size:32px;">
+MCZA035-17 Algoritmos Probabilísticos<br>
+<span style="color:initial;font-size:22px;">2026-3</span>
+</div>
+<div style="font-size: 20px; text-align: center;">
+    <a href="http://hostel.ufabc.edu.br/~jair.donadelli">Jair Donadelli</a> --- jair.donadelli&#64;ufabc.edu.br --- Sala 546 torre 2 bloco A<br>
+    4ª 8h00 sala S-206-0   e   6ª 10h00 sala S-206-0  
+</div> <hr /><p><a href='https://www.estadao.com.br/link/cultura-digital/como-a-aleatoriedade-pode-ajudar-algoritmos-a-solucionarem-problemas-impossiveis/'><img src="../images/estadao.png" style="float:right;width:350px;border:2px solid #444;border-radius:8px;padding:4px;background:white;box-shadow:2px 2px 6px rgba(0,0,0,.3);"/></a><span>A aleatoriedade consolidou-se como um dos paradigmas centrais no projeto de algoritmos eficientes. Em muitos problemas computacionais, algoritmos aleatorizados são mais simples, mais rápidos e utilizam menos memória do que suas contrapartes determinísticas. Em outros, especialmente em aplicações de larga escala, constituem a única abordagem computacionalmente viável. Atualmente, algoritmos aleatorizados estão presentes em inúmeras tecnologias utilizadas diariamente, desde mecanismos de busca na Web, bancos de dados e sistemas distribuídos até criptografia, inteligência artificial, aprendizado de máquina e processamento de grandes volumes de dados. Ao longo do curso, serão estudados tanto os fundamentos teóricos quanto aplicações em problemas práticos, evidenciando como a aleatoriedade pode ser utilizada para obter soluções eficientes e confiáveis.</span></p><hr /><p><strong><span>E-mails:</span></strong><span> Toda comunicação ‘aluno → professor’ por email deve ser com o endereço oficial.</span></p><p><span>Os comunicados gerais ‘professor → aluno’ serão pelo sigaa.</span></p><hr /><h2 id='objetivos'><strong><span>Objetivos</span></strong></h2><p><span>Esta disciplina propõe uma mudança conceitual no raciocínio algorítmico, substituindo garantias determinísticas e absolutas por análises probabilísticas de desempenho e erro. O objetivo pedagógico central do curso não é a mera apresentação de um catálogo de algoritmos, mas o desenvolvimento de uma intuição probabilística: um arcabouço analítico que capacite o estudante a projetar e avaliar soluções sob condições de incerteza, aproximação e escala. A capacidade de identificar quando e como substituir a certeza absoluta por ganhos expressivos em tratabilidade computacional constitui uma das competências mais relevantes para a formação do profissional, preparando-o para enfrentar os desafios computacionais mais complexos da atualidade.</span></p><p><span class='md-image'><img src="../images/uR4WuQ0h.jpg" alt="image-20260806182211831" align="center" style="zoom:40%;" /></span></p><h3 id='objetivos-específicos'><span>Objetivos específicos</span></h3><p><img src="../images/cartoon017.gif"  align="right" style="zoom:140%;" /><span>Esta disciplina tem como objetivo  apresentar os fundamentos dos algoritmos aleatorizados, capacitando o aluno a  compreender, analisar e projetar algoritmos que utilizam aleatoriedade como ferramenta para obter soluções eficientes para problemas computacionais. Ao final do curso, o aluno deverá ser capaz de:</span></p><ul><li><p><em><span>Compreender</span></em><span>  o comportamento de processos e algoritmos aleatórios, o poder e as limitações da aleatoriedade no projeto de algoritmos. </span></p></li><li><p><em><span>Analisar</span></em><span> algoritmos aleatorizados, dominando técnicas de análise probabilística baseadas em desigualdades de concentração; a maestria dessas técnicas é um resultado central do curso. </span></p></li><li><p><em><span>Projetar e implementar</span></em><span> algoritmos aleatorizados para problemas em diversas áreas da ciência da computação, utilizando técnicas como  aleatorização, amostragem  e cadeias de Markov. </span></p></li><li><p><em><span>Reconhecer</span></em><span> e justificar situações em que abordagens probabilísticas são superiores a abordagens determinísticas. </span></p></li><li><p><em><span>Aplicar</span></em><span> técnicas probabilísticas a diversas áreas, como estruturas de dados, algoritmos em grafos, testes probabilísticos e problemas computacionais de grande escala.</span></p></li></ul><h2 id='programação-da-disciplina'><strong><span>Programação da disciplina</span></strong></h2><h3 id='ementa'><span>Ementa</span></h3><p><span>Revisão de probabilidade discreta. Exemplos de algoritmos aleatorizados: Algoritmo para</span>
+<span>Identidade polinomial; Sigilo perfeito; MAX 3-SAT. Leis de desvios e aplicações em algoritmos e</span>
+<span>estruturas de dados: hashing universal; treaps. Modelos de computação e classes</span>
+<span>probabilísticas de complexidade. Aplicações de Cadeias de Markov. Passeios aleatórios em</span>
+<span>grafos. Algoritmos distribuídos probabilísticos.</span></p><h3 id='calendário'><span>Calendário</span></h3><p><img src="image-20260806182003853.png" alt="image-20260806182003853" style="zoom:80%;" /></p><h4 id='reposição-de-feriados'><span>Reposição de feriados</span></h4><p><img src="image-20260806182211831.png" alt="image-20260806182211831" align="left" style="zoom:80%;" /><span> </span><img src="../images/cartoon002.png" alt="image-20260806182211831" align="right" style="zoom:35%;" /><span> </span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h3 id='programação-das-aulas'><span>Programação das Aulas</span></h3><figure class='table-figure'><table><thead><tr><th><span>Semana</span></th><th><span>Módulo temático</span></th><th><span>Tópicos principais</span></th><th><span>Referências</span></th><th><span>Leitura e exercícios</span></th></tr></thead><tbody><tr><td><strong><span>1</span></strong></td><td><span>Fundamentos</span></td><td><span>Probabilidade discreta, RVs, esperança, linearidade, Monte Carlo/Las Vegas</span></td><td><span>Mitzenmacher &amp; Upfal, Motwani &amp; Raghavan, Cap. 1</span></td><td><a href='semana01.pdf'><span>Notas de aula</span></a><span> e </span><a href='lista1.pdf'><span>exercícios da semana</span></a></td></tr><tr><td><strong><span>2</span></strong></td><td><span>Análise Probabilística de Algoritmos (Congresso UFABC e UFABC para todos)</span></td><td><span>Quicksort aleatorizado, esperança, variância, Markov, Chebyshev</span></td><td><span>Mitzenmacher &amp; Upfal, Cap. 2,3. Motwani &amp; Raghavan, Cap. 1,3</span></td><td><a href='semana02.pdf'><span>Notas de aula</span></a><span> e </span><a href='lista2.pdf'><span>exercícios</span></a><span>.</span></td></tr><tr><td><strong><span>3</span></strong></td><td>&nbsp;</td><td><span>QS, Markov, Chebyshev (cont) </span><br><span>Dominância estocástica e acoplamento</span></td><td>&nbsp;</td><td><a href='dominancia.pdf'><span>slide</span></a><br><a href='lista3.pdf'><span>exercícios</span></a></td></tr><tr><td><strong><span>4</span></strong></td><td><span>Concentração e amplificação</span><br><span>Balls and Bins</span></td><td><span>Birthday paradox, coupon collector, ocupação, maximum load, Poisson</span></td><td><span>Mitzenmacher &amp; Upfal, Cap. 5</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>5</span></strong></td><td><span>Hashing e estruturas aleatorizadas</span></td><td><span>Universal hashing, skip lists, Bloom filters e análise de falso positivo, Cuckoo hashing</span></td><td><span>Motwani &amp; Raghavan, Cap. 8; Mitzenmacher &amp; Upfal</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>6</span></strong></td><td><span>Fingerprinting e métodos algébricos</span></td><td><span>Fingerprinting, Freivalds, identidade polinomial, Schwartz–Zippel</span></td><td><span>Motwani &amp; Raghavan; Mitzenmacher &amp; Upfal</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>7</span></strong></td><td><span>Algoritmos aleatorizados em grafos</span></td><td><span>Karger; análise de probabilidade de sucesso e amplificação</span></td><td><span>Motwani &amp; Raghavan, Cap. 7</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>8</span></strong></td><td><span>Passeios aleatórios e Markov</span></td><td><span>Random walks, Markov chains, hitting/cover time, distribuição estacionária</span></td><td><span>Motwani &amp; Raghavan; Levin, Peres &amp; Wilmer</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>9</span></strong></td><td><span>Mixing e Monte Carlo</span></td><td><span>Coupling, mixing times, MCMC; Metropolis–Hastings como exemplo</span></td><td><span>Levin, Peres &amp; Wilmer; Mitzenmacher &amp; Upfal</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>10</span></strong></td><td><span>Redução de dimensionalidade </span><strong><span>ou</span></strong><span> Algoritmos aleatorizados para grandes volumes de dados </span><strong><span>ou</span></strong><span> Complexidade computacional</span></td><td><span>Projeções aleatórias, Lema de Johnson–Lindenstrauss </span><br><span> </span><strong><span>ou</span></strong><span> </span><br><span> streaming, sketches, estimação de frequência, elementos distintos</span><br/><span> </span><strong><span>ou</span></strong><span> </span><br/><span>classes de complexidade, P, NP,RP, ZPP, BPP.</span></td><td><span>Vershynin, Arora &amp; Barak; Dubahshi &amp; Panconesi; Motwani &amp; Raghavan; Mitzenmacher &amp; Upfal</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>11</span></strong></td><td><span>Redução de dimensionalidade </span><strong><span>ou</span></strong><span> Algoritmos aleatorizados para grandes volumes de dados </span><strong><span>ou </span></strong><span>Criptografia</span></td><td><span>Locality Sensitive Hashing e approximate nearest neighbors </span><br><span> </span><strong><span>ou</span></strong><span> </span><br><span> streaming, heavy hitters, estimação de frequência, elementos distintos</span><br/><span> </span><strong><span>ou</span></strong><span> </span><br/><span> funções one-way; geradores pseudoaleatórios seguros;criptografia de chave pública. Provas com conhecimento zero.</span></td><td><span>Vershynin, Arora &amp; Barak; Dubahshi &amp; Panconesi; Motwani &amp; Raghavan; Mitzenmacher &amp; Upfal</span></td><td><span>Notas de aula e exercícios.</span></td></tr><tr><td><strong><span>12</span></strong></td><td><strong><span>Prova</span></strong><span> e </span><strong><span>Sub</span></strong></td><td><span>—</span></td><td><span>—</span></td><td><span>—</span></td></tr><tr><td><strong><span>13</span></strong></td><td><strong><span>Avaliação recuperativa</span></strong><span> em </span><strong><span>11/12</span></strong></td><td><span>Todo conteúdo</span></td><td><span>—</span></td><td><span>—</span></td></tr></tbody></table></figure><p><a href='algale.pdf'><span>NOTAS DE AULA</span></a><span> (contruída no decorrer da disciplina)</span></p><h3 id='bibliografia'><span>Bibliografia</span></h3><ol start='' ><li><p><span>DUBHASHI, Devdatt; PANCONESI, Alessandro. </span><em><span>Concentration of measure for the analysis of randomized algorithms</span></em><span>. Cambridge: Cambridge University Press, 2009.</span></p></li><li><p><span>MITZENMACHER, Michael; UPFAL, Eli. </span><em><span>Probability and computing: randomized algorithms and probabilistic analysis</span></em><span>. Cambridge: Cambridge University Press, 2005.</span></p></li><li><p><span>MOTWANI, Rajeev; RAGHAVAN, Prabhakar. </span><em><span>Randomized algorithms</span></em><span>. Cambridge: Cambridge University Press, 1995.</span></p></li></ol><h4 id='bibliografia-complementar'><span>Bibliografia complementar</span></h4><ol start='4' ><li><p><span>HROMKOVIČ, Juraj. </span><em><span>Design and analysis of randomized algorithms: introduction to design paradigms</span></em><span>. Berlin: Springer, 2005. (</span><em><a href='https://link.springer.com/book/10.1007/3-540-27903-2'><span>online</span></a></em><span>)</span></p></li><li><p><span>ARORA, Sanjeev; BARAK, Boaz. </span><em><span>Computational complexity: a modern approach</span></em><span>. Cambridge: Cambridge University Press, 2009.</span></p></li><li><p><span>BLUM, Avrim; HOPCROFT, John; KANNAN, Ravindran. </span><em><span>Foundations of data science</span></em><span>. Cambridge: Cambridge University Press, 2020. (</span><a href='https://www.cs.cornell.edu/jeh/book.pdf'><em><span>online</span></em></a><span>)</span></p></li><li><p><span>VERSHYNIN, Roman. High-dimensional probability: an introduction with applications in data science. Cambridge: Cambridge University Press, 2018. (online, soluções)</span></p></li><li><p><span>HÄGGSTRÖM, Olle. </span><em><span>Finite Markov chains and algorithmic applications</span></em><span>. Cambridge: Cambridge University Press, 2002.</span></p></li></ol><hr /><h3 id='atendimento'><span>Atendimento</span></h3><p><span>Quartas das 10h às 12h ou em horário previamente combinado, pessoalmente ou por email.</span></p><hr /><h2 id='avaliação'><strong><span>Avaliação</span></strong></h2><p><span> </span><strong><span>Provas</span></strong><span>.  30/10 e 27/11  </span></p><p><span>As avaliações são individuais, presenciais e sem consulta. Avalia-se a capacidade do aluno de analisar algoritmos probabilísticos de forma rigorosa, com ênfase em demonstrações, garantias probabilísticas e raciocínio matemático estruturado. Critérios e Pesos:</span></p><figure class='table-figure'><table><thead><tr><th><span>Critério</span></th><th><span>Peso</span></th></tr></thead><tbody><tr><td><span>Correção matemática</span></td><td><span>40%</span></td></tr><tr><td><span>Rigor e completude das provas</span></td><td><span>30%</span></td></tr><tr><td><span>Uso adequado de ferramentas probabilísticas</span></td><td><span>20%</span></td></tr><tr><td><span>Clareza, organização e notação</span></td><td><span>10%</span></td></tr></tbody></table></figure><p><strong><span>Expectativas formais</span></strong><span> : – Escrita matemática clara, precisa e bem organizada. – Uso consistente de notação. – Argumentos probabilísticos explícitos e justificados. – Definição clara de eventos, variáveis aleatórias e espaços de probabilidade.</span></p><p><strong><span>Observações específicas</span></strong><span>: - Resultados conhecidos podem ser utilizados apenas se explicitamente citados. - Demonstrações parciais corretamente estruturadas podem receber crédito proporcional. - Respostas corretas sem justificativa não recebem pontuação.</span></p><h4 id='conceito-final'><span>Conceito final</span></h4><ul><li><p><span>Conceito A: média final ≥ 90  </span></p></li><li><p><span>Conceito B: 75 ≤ média final &lt; 90  </span></p></li><li><p><span>Conceito C: 52 ≤ média final &lt; 75  </span></p></li><li><p><span>Conceito D: 50 &lt; média final &lt; 52  </span></p></li><li><p><span>Conceito F: média final ≤ 50  </span></p></li></ul><h3 id='instruções-para-as-provas'><span>Instruções para as provas</span></h3><ol start='' ><li><p><em><span>Podem</span></em><span> utilizar lápis, desde que a escrita seja legível, ou caneta, exceto na cor vermelha.</span></p></li><li><p><em><span>Podem</span></em><span> responder às questões em qualquer ordem.</span></p></li><li><p><em><span>Podem</span></em><span> usar parte da folha de resposta como rascunho, identificando-a no topo da página com a palavra Rascunho.</span></p></li><li><p><em><span>Podem</span></em><span> entregar a prova a qualquer momento, desde que assinem a lista de presença.</span></p></li><li><p><em><span>Devem</span></em><span> trazer um documento com foto atual.</span></p></li><li><p><em><span>Devem</span></em><span> deixar as mochilas no chão, com o celular dentro (desligado ou silenciado). É </span><strong><span>proibido</span></strong><span> o uso de eletrônicos (celular, calculadoras, smartwatches,  etc), bem como bonés e chapéus.</span></p></li><li><p><em><span>Devem</span></em><span> entregar a folha de questões juntamente com a folha de respostas.</span></p></li><li><p><em><span>Devem</span></em><span> deixar sobre a carteira </span><strong><span>somente</span></strong><span> lápis, caneta, borracha, documento e garrafa d&#39;água. Qualquer outro objeto deve ser guardado.</span></p></li><li><p><span>Ida ao banheiro apenas mediante a entrega definitiva da prova.</span></p></li><li><p><span>Todo aluno poderá, eventualmente e a critério do professor, ser arguido oralmente sobre as soluções apresentadas na prova e essa arguição será parte da avaliação.</span></p></li></ol><p><span>   </span></p><p><span>   ​        </span><strong><span>O não cumprimento das instruções implica anulação da prova.</span></strong><span> </span></p><p><span>   ​        </span><strong><span>Na constatação de fraude, o aluno será </span><em><span>reprovado</span></em><span>.</span></strong></p><hr /><h3 id='recuperação'><span>Recuperação</span></h3><p><span>Tem direito ao exame recuperação, que engloba todo o conteúdo da disciplina, aqueles que foram aprovados com D ou reprovados com F e obtiveram frequência mínima.  O resultado do exame é um conceito que compõe com o conceito final M obtido na avaliação regular da disciplina como segue:</span></p><p><img src="../images/conceito-final.png" alt="image-20260825103756873"></p><p><em><span>A prova será em 9/12. O aluno interessado em realizar a recuperação deverá se  manifestar de 04/12 a 07/12 por email ou através de formulário de acordo com as instruções que serão enviadas em um momento apropriado durante a disciplina.</span></em></p><hr /><h3 id='substitutiva'><span>Substitutiva</span></h3><p><span>Nos casos previstos em resolução, mediante a devida comprovação. O aluno que perder prova e  tiver interesse  em fazer a substitutiva deve entrar em contato com o professor.</span></p><hr /><h2 id='links'><strong><span>Links</span></strong></h2><h6 id='material-de-ofertas-anteriores'><span>Material de ofertas anteriores</span></h6><ul><li><p><a href='https://drive.google.com/drive/folders/1M3lQQ4VZOiEep4P1j5J3mVWmmTe3MezI'><span>Listas</span></a></p></li><li><p><a href='https://drive.google.com/drive/folders/1UF8pUMdSfYy59Rx2hFMTxqdhiTySE5TC'><span>Provas</span></a></p></li><li><p><a href='https://drive.google.com/drive/folders/1hVRZpo6rJw45oOMo1UTOaP8WrjGPEkiU?usp=sharing'><span>notas</span></a></p></li></ul><h6 id='notícias-relacionadas'><span>Notícias relacionadas </span></h6><ul><li><p><a href='https://www.estadao.com.br/link/cultura-digital/como-a-aleatoriedade-pode-ajudar-algoritmos-a-solucionarem-problemas-impossiveis/'><span>Como a aleatoriedade pode ajudar algoritmos a solucionarem problemas impossíveis</span></a></p></li><li><p><a href='https://www.quantamagazine.org/how-randomness-improves-algorithms-20230403/'><span>How Randomness Improves Algorithms</span></a><span> (original do item anterior)</span></p></li><li><p><a href='https://visao.pt/exameinformatica/noticias-ei/internet/2024-04-12-avi-wigderson-ganha-premio-turing-o-nobel-da-computacao/'><span>Avi Wigderson ganha prémio Turing, o ‘Nobel da computação’</span></a><span> pelos estudos sobre a aplicação da aleatoridade na criação de algoritmos de computação</span></p></li><li><p><a href='https://www.bbc.com/portuguese/articles/c51y05zev73o'><span>Os números aleatórios</span></a><span> que guiam nossas vidas e a busca para encontrá-los</span></p></li></ul><h6 id='material-online'><span>Material online </span></h6><ul><li><p><a href='https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf'><span>Markov Chains and Mixing Times</span></a><span>, David A. Levin, Yuval Peres With contributions by Elizabeth L. Wilmer</span></p></li><li><p><a href='https://people.seas.harvard.edu/~salil/pseudorandomness/'><span>Pseudorandomness</span></a><span>, Salil Vadhan</span></p></li><li><p><a href='https://www.math.cmu.edu/users/af1p/Teaching/RandomGraphs/Undergraduate/BOOK.pdf'><span>Introduction to Random Graphs</span></a><span>, Frieze and Karonski</span></p></li><li><p><a href='https://arxiv.org/pdf/math/0001057'><span>Random walks and electric networks</span></a><span>, Peter G. Doyle  e J. Laurie Snell</span></p></li><li><p><a href='https://www.cs.cmu.edu/~harchol/Probability/chapters/HarcholBalterWholeBook.pdf'><span>Introduction to Probability for Computin</span></a><span>g, Harchol-Balter.</span></p></li><li><p><a href='https://www.stat.berkeley.edu/~aldous/RWG/book.pdf'><span>Reversible Markov Chains and Random Walks on Graphs</span></a><span>, David Aldous and James Allen Fill</span></p></li><li><p><a href='https://www.cs.princeton.edu/~chazelle/pubs/book.pdf'><span>The Discrepancy Method</span></a><span> Randomness and Complexity, Bernard Chazelle</span></p></li><li><p><a href='https://www.lkozma.net/inequalities_cheat_sheet/ineq.pdf'><span>Useful Inequalities</span></a><span> cheat sheet</span></p></li><li><p><a href='https://www.cs.yale.edu/homes/aspnes/classes/4690/notes.pdf'><span>Notes on Randomized Algorithms</span></a><span>, James Aspnes</span></p></li><li><p><a href='https://courses.grainger.illinois.edu/cs498abg/fa2022/schedule.html'><span>Algorithms for Big Data</span></a><span>, Chandra Chekuri</span></p></li><li><p><a href='https://udiwieder.wordpress.com/wp-content/uploads/2014/10/hashbook.pdf'><span>Hashing, Load Balancing and Multiple Choice</span></a><span>, Udi Wieder</span></p></li></ul><h6 id='ap-em-outras-instituições'><span>A.P. em outras instituições</span></h6><ul><li><p><a href='https://courses.grainger.illinois.edu/cs574/fa2026/'><span>CS 574 Randomized Algorithms</span></a><span>, Sariel Har-Peled, University of Illinois Urbana-Champaign</span></p></li><li><p><a href='https://courses.csail.mit.edu/6.856/current/'><span>6.5220/6.856J/18.416J Randomized Algorithms</span></a><span>, David Karger, MIT</span></p></li><li><p><a href='https://kentq.s3.us-east-1.amazonaws.com/raf25.pdf'><span>CS588 Randomized Algorithms</span></a><span>, Kent Quanrud, Purdue University</span></p></li><li><p><a href='https://www.cs.ubc.ca/~nickhar/W23/'><span>CPSC 436R: Introduction to Randomized Algorithms</span></a><span>, </span><a href='https://www.cs.ubc.ca/~nickhar/W27/'><span>CPSC 536N: Randomized Algorithms</span></a><span>, Nick Harvey, The University of British Columbia</span></p></li><li><p><a href='https://cs.uwaterloo.ca/~lapchi/cs761/'><span>CS 761: Randomized Algorithms</span></a><span>, Lap Chi Lau, University of Waterloo</span></p></li><li><p><a href='CS265/CME309 Randomized Algorithms and Probabilistic Analysis'><span>CS265/CME309 Randomized Algorithms and Probabilistic Analysis</span></a><span>, Mary Wootters, Stanford University</span></p></li><li><p><a href='https://courses.cs.washington.edu/courses/cse525/25sp/'><span>CSE 525: Randomized Algorithms</span></a><span>, Shayan Oveis Gharan, University of Washington</span></p></li><li><p><a href='https://www.wisdom.weizmann.ac.il/~robi/teaching/2025a-RandomizedAlgorithms/'><span>Randomized Algorithms</span></a><span>,  Robert Krauthgamer and Moni Naor, Weizmann Institute of Science</span></p></li><li><p><a href='https://www.csa.iisc.ac.in/~arindamkhan/courses/RandAlgo25/RandAlgo25.html'><span>E0 234: Introduction to Randomized Algorithms</span></a><span>, Arindam Khan and Anand Louis,  Indian Institute of Science (IISc)</span></p></li></ul><p>&nbsp;</p><p><img src="../images/ecda4411-52c7-4059-beef-0f9194e20e6c.jpeg" alt="image-20260806182211831" style="zoom:80%;" /></p><hr /><blockquote><p><span>Numbers that fool the Fermat test are called </span><em><span>Carmichael numbers</span></em><span>, and little is known about them other than that they are extremely rare. There are 255 Carmichael numbers below 100,000,000. The smallest few are 561, 1105, 1729, 2465, 2821, and 6601. In testing primality of very large numbers chosen at random, the chance of stumbling upon a value that fools the Fermat test is less than the chance that cosmic radiation will cause the computer to make an error in carrying out a “correct” algorithm. Considering an algorithm to be inadequate for the first reason but not for the second illustrates the difference between mathematics and engineering. [Abelson e Sussman em </span><a href='https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html'><span>SICP</span></a><span> (o “livro dos magos”)]</span></p></blockquote><hr /><p>&nbsp;</p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash=t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>

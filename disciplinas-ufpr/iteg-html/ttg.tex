@@ -1,0 +1,3948 @@
+%Time-stamp: <Sat Feb 20 16:41:50 2010 jair@asterix>edit by Jair
+\documentclass[11pt,reqno]{article}
+\usepackage[brazil]{babel}                                                     
+\usepackage[latin1]{inputenc}                                                  
+%\usepackage[only,ninrm,elvrm,twlrm,sixrm,egtrm,tenrm,sevrm,fivrm]{rawfonts}
+%\usepackage{piclatex}                                          
+%\usepackage{epsfig}
+\usepackage{url} 
+\usepackage{html}
+\usepackage{hyperref} 
+\hypersetup{backref=true,pdfpagemode=UseOutlines,colorlinks=true,
+breaklinks=true,hyperindex=true,linkcolor=blue,pagebackref=true,
+anchorcolor=yellow,citecolor=red,filecolor=magenta,
+menucolor=red,pagecolor=red,urlcolor=blue,bookmarks=true,
+bookmarksopen=true,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
+\usepackage{amssymb,amsfonts,amsmath,amsthm}                                         
+
+
+%%%%%%%%%%%%TEOREMAS
+\newtheorem{teo} {Teorema}
+\newtheorem{corol} {Corolário}
+\newtheorem{propo} [teo] {Proposição}
+\newtheorem{lema}  [teo] {Lema}
+\newtheorem{conjec}[teo] {Conjectura}
+\newtheorem{claim} [teo] {Afirmação}
+\newtheorem*{teoun}{Teorema}
+%
+\newtheorem{exercicio} [teo]  {Exercício}       
+\newtheorem{observacao}[teo]   {Observação}       
+\newtheorem{exemplo}   [teo]  {Exemplo}       
+\newtheorem{definicao} [teo]  {Definição}   
+%%%%%%%%%%%MACROS
+\def\eps{\varepsilon}
+\def\teto#1{\left\lceil #1 \right\rceil}
+\def\chao#1{\left\lfloor #1 \right\rfloor}
+\def\:{\colon}
+\def\>{\geqslant}
+\def\<{\leqslant}
+\def\P{\mathbb P}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+\def\escalar#1#2{\langle #1,#2 \rangle}
+\def\norma#1{|\!| \mathbf{#1} |\!|}
+\def\norm#1{\left| {#1} \right|}
+
+\renewcommand{\qedsymbol}{$\blacklozenge$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%FORMATO
+%%\textwidth=17cm
+%%\textheight=25cm
+%%\voffset=-.1in
+%%\hoffset=-1in
+%%\setlength{\parskip}{.5pc}
+%\setlength{\textwidth}{37pc}
+%\textheight=55\baselineskip   %a4
+%%\setlength{\textheight}{52pc}
+%\setlength{\topmargin}{0cm}
+%\setlength{\oddsidemargin}{-.7cm}
+%\setlength{\evensidemargin}{1cm}
+%%\setlength{\baselineskip}{10pc}
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}             
+
+%\pagestyle{plain}
+%
+%\begin{titlepage}
+%\thispagestyle{empty}
+%\vspace*{-2cm}
+\title{Tópicos em Teoria dos Grafos \\
+{\small --- Métodos da Álgebra Linear em Teoria de Grafos --- }}
+\author{Jair Donadelli}
+\maketitle
+\tableofcontents
+%\end{titlepage}
+
+
+\begin{abstract}
+  Estas são  notas de aula  da disciplina optativa  CI084­--Tópicos em
+  Teoria dos Grafos que foi  ofertada no segundo semestre de 2005 para
+  o Bacharelado  em Ciência da  Computação na UFPR.   Mais informações
+  sobre      a      discplina      podem      ser      obtidas      em
+  \begin{center}
+    \url{http://www.inf.ufpr.br/jair/COURSES/ttg.html}
+  \end{center}
+  Aqui apresentamos
+  os  principais ferramentas  da  Álgebra Linear  para  a Teoria  dos
+  Grafos e as técnicas elementares para a análise estrutural de grafos
+  a partir dos autovetores e  autovalores da matriz de adjacências dos
+  grafos.
+
+  Parte  das  notas  foram  redigidas  pelos  alunos  do  curso,  aqui
+  apresento-as  revisada  e  com  algumas  alterações  que,  acredito,
+  melhoram  a  apresentação.   A  redação  das notas  foram  parte  da
+  avaliação e  em cada seção  desta nota apresento  o aluno que  foi o
+  responsável  pela seção.  Agradeço  ao empenho  do alunos  do curso:
+  Ander Conselvan  de Oliveira, Everson Carlos  Mauda, Gustavo Baggio,
+  Leonardo Ferreira  da Silva Boiko,  Luiz Alberto A~Santos  Jr, Renan
+  Fischer E.~Silva, Ricardo Fabiano Samila, Tiago Sak, Tiago Vignatti.
+
+  \flushright{Jair}
+
+\end{abstract}
+
+\newpage
+
+\section{Grafos extremais sem triângulos}
+
+Suponha que $G=G^n$ é um grafo de ordem $n$ que não contenha três
+vértices formando um triângulo. Vamos determinar o número máximo de
+arestas em $G$.
+  
+Seja $A\subset V(G)$ um conjunto independente em $G$ de cardinalidade
+$\alpha(G)$ (máxima).
+
+Como $G$ não contém triângulos temos
+\begin{equation}
+  \label{eq:grau_turan}
+  d_G(v) \< \alpha(G), \quad \mathrm{para\;todo\;}v\in V(G).
+\end{equation}
+%Como $A$ é um conjunto independente maximal todo vértice $u\in
+%\overline{A}=V(G)\setminus A$ tem vizinho em $A$.  
+Dessa forma
+\begin{equation}
+  \label{eq:arestas_turan}
+  |E(G)|\<  \sum_{u\in \overline{A}} d(u) \< \alpha(G)|\overline{A}|=\alpha(G)(n-\alpha(G)),
+\end{equation}
+e da desigualdade entre média geométrica e média aritmética concluímos
+que
+\begin{equation}
+  \label{eq:arestas_turan_final}
+  |E(G)|\< \left(\frac{\alpha(G)+(n-\alpha(G))}{2}\right)^2 = \frac{n^2}{4}. 
+\end{equation}
+
+Assim provamos o seguinte resultado. 
+\begin{teoun}
+  Se $G$ é um grafo sem triângulos então $|E(G)|\<\frac{|V(G)|^2}{4}$.\qed
+\end{teoun}
+
+Um candidato natural a \emph{grafo extremal sem $K^3$}, ou seja, um
+grafo sem triângulo e com o maior número possível de arestas, é o grafo
+bipartido completo. Suponha que $A$ e $B$ são partes de um grafo
+bipartido com $|A|-|B|\>2$.  Note que transferindo um vértice de $A$
+para $B$ temos um novo grafo bipartido com $|A|-|B|$ arestas a mais.
+
+Mostraremos que esse é o único grafo extremal na próxima seção. 
+
+\begin{exercicio}\label{exerc:grafo_turan}
+  Denotamos por $K_{n_1,n_2,\dots,n_{p-1}}$ o grafo $(p-1)$-partido
+  completo onde as partes têm cardinalidades $n_1,n_2,\dots,n_{p-1}$.
+  Mostre que dentre os grafos $(p-1)$-partidos completos com $n$
+  vértices o número máximo de arestas é atingido quando $|n_i-n_j|\<1$
+  para todos $i,j\in [p-1]$.
+  
+  Em 1941, Paul Turán provou que esse grafo é extremal com relação a
+  conter $K^p$.  Mais que isso, esse grafo é único\footnote{a menos de
+    isomorfismo.} com essa propriedade.  Esse grafo é conhecido como de
+  \emph{grafo de Turán}
+\end{exercicio}
+\begin{exercicio}\label{exerc:ars_grafo_turan}
+  Mostre que para inteiros $n$, $p>1$, se $n=(p-1)k+r$, com $0\<r<p-1$,
+  então o número de arestas no grafo de Turán é 
+  \begin{equation}
+    \label{eq:ars_grafo_turan}
+    \frac{1}{2}\left(\frac{p-2}{p-1}\right)(n^2-r^2)+\binom{r}{2}
+    \< \frac{p-2}{p-1} \binom{n}{2}.
+  \end{equation}
+\end{exercicio}
+
+\section{Grafos extremais sem $K^p$}
+
+\begin{teo}\label{turan}
+  Para todos $n$, $p>1$ o número de arestas num grafo de ordem $n$
+  extremal sem $K^p$ é dado por \emph{(\ref{eq:ars_grafo_turan})}.  Ainda, todo
+  grafo extremal $G^n$ que não contém $K^p$ é o grafo de Turán.
+\end{teo}
+
+\begin{proof}
+  Seja $G^n$ um grafo extremal sem $K^p$.  Vamos mostrar que em $G^n$
+  não existem três vértices $u,v,w$ tais que $uw\in E(G)$, $vu\not\in
+  E(G)$ e $vw\not\in E(G)$. 
+  
+  Suponha o contrário e vamos derivar uma contradição em dois casos.
+  Primeiro, vamos supor que $d(v)<d(u)$. Nesse caso removemos o vértice
+  $v$, ou seja consideramos $G-v=G[(V\setminus\{v\}]$, e nesse grafo
+  duplicamos o vértice $u$: o conjunto de vértices fica $V(G-v)\cup
+  \{u'\}$, supondo que $u'$ é um vértice novo, e ligamos $u'$ a todos os
+  vértices de $N(u)$.  Esse grafo resultante tem ordem $n$ e
+  $d(u)-d(v)$ arestas a mais que $G^n$; também (exercício) não contém
+  $K^p$, um absurdo pois $G^n$ é extremal.  
+  
+  Portanto  $d(v)\>d(u)$  e,  analogamente,  $d(v)\>d(w)$.  Nesse  caso,
+  removemos  $u$ e  $w$  do grafo  $G$ e  duplicamos  $v$ em  $v'$ e  em
+  $v''$.  Novamente, o grafo  obtido tem  mais arestas  que $G^n$  e não
+  contém $K^p$, um absurdo.
+  
+  Com esse fato concluímos que a relação $u\sim v$ dada por $uv\not\in
+  E(G)$ é de equivalência sobre $V(G)$.  Claramente, as classes de
+  equivalência são conjuntos independentes.  Do fato de $G^n$ ser
+  extremal concluímos que é um grafo $(p-1)$-partido completo.
+\end{proof}
+
+O caso genérico de grafo extremal sem $H$, para um grafo $H$ fixo, foi
+resolvido por Erd\H os e Stone.  O Teorema de Erd\H os--Stone, algumas
+vezes chamado Teorema Fundamental da Teoria Extremal de Grafos, foi
+provado em 1946 e diz que se $n$ for suficientemente grande, então um
+grafo de ordem $n$ com uma fração $\rho>(p-2)/(p-1)$ das arestas contém
+não só um $K^p$ mas um $K^{p}(t)$, isto é, o grafo $p$-partido completo
+com $t$ vértices em cada classe, para todo inteiro positivo $t$.
+
+\begin{teoun}
+  Dados inteiros $p\>2$ e $t\>1$ e um real $0<\rho<1$,  existe $n_0>0$ tal que
+  todo grafo com $n\>n_0$ vértices e pelo menos
+  $$
+  \frac{1}{2}\left(\frac{p-2}{p-1}\right)(n^2-r^2)+\binom{r}{2}+\rho
+  n^2
+  $$
+  arestas, contém uma cópia do $K^{p}(t)$, onde $r= n \mod p-1$. 
+\end{teoun}
+
+Em outras palavras, o número de arestas no grafo extremal é
+$$
+\left(\frac{p-2}{p-1} + o(1)\right)\binom{n}{2},
+$$
+onde $o(1)$ denota uma função $f(n)$ tal que $\lim_{n\to \infty} f(n)=0$.
+
+O Teorema de Erd\H os--Stone tem o seguinte, bastante interessante, corolário.
+
+\begin{corol}\label{co:erdos-stone}
+  Para todo  grafo $H$, o número  de arestas num grafo  extremal sem $H$
+  denotado por $\mathrm{ex}(n,H)$ satisfaz
+  $$
+  \lim_{n\to \infty} \frac{\mathrm{ex}({n},{H})}{\binom{n}{2}} =
+  \frac{\chi(H)-2}{\chi (H)-1},
+  $$
+  onde $\chi (H)$ é o menor  número de partes numa partição de $V(H)$ em
+  conjuntos independentes.
+\end{corol} 
+
+\section{Coloração de vértices}
+
+Uma \emph{$p$-coloração} dos vértices de $G$ é uma partição
+$V(G)=V_1\cup V_2\cup \cdots \cup V_p$.  Se as classes $V_i$ são
+conjuntos independentes então dizemos que a coloração é \emph{própria}. 
+
+O \emph{número cromático} de $G$ é definido por 
+$$
+\chi (G) = \min \{p\in \N\: G \textrm{ admite uma }p\textrm{-coloração própria}\}. 
+$$
+
+\begin{propo}
+  Se $\omega(G)$ é a ordem do maior subgrafo completo em $G$
+  $$\chi (G)\> \omega(G).$$\qed
+\end{propo}
+\begin{propo}
+  Para todo $G=G^n$
+  $$\chi(G)\>\frac{n}{\alpha(G)}.$$\qed
+\end{propo}
+\begin{propo}
+  Para todo $G$ 
+  $$\chi(G)\< \frac{1}{2}+\sqrt{2|E(G)|+\frac{1}{4}}.$$
+\end{propo}
+\begin{proof}
+  Dada uma $\chi(H)$-coloração própria teremos pelo menos uma aresta
+  entre vértices de cada par de classes de cor. Assim
+  $$
+  |E(G)|\>\binom{\chi (G)}{2}=\frac{\chi(G)^2 - \chi(G)}{2},
+  $$
+  donde concluímos o limitante superior enunciado pois derivamos da
+  desigualdade acima  
+  $$
+  2|E(G)|+\frac{1}{4}\>\left(\chi(G)-\frac{1}{2}\right)^2. 
+  $$
+\end{proof}
+\begin{teo}
+  Para todo $G=G^n$
+  $$
+  \chi(G)\<\Delta(G)+1. 
+  $$
+\end{teo}
+\begin{proof}
+  A prova  é por indução em $n$.  Se $n=1$ então o  enunciado do teorema
+  vale, trivialmente. 
+
+  Seja $G$ um grafo de ordem $n$ e seja $v$ um vértice qualquer. tomemos
+  $H=G-v$. 
+
+  Pela   hipótese    indutiva   temos   que    $\chi   (H)   =    k   \<
+  \Delta(H)+1\<\Delta(G)+1$. Seja  $\{V_1,V_2,\dots,V_k\}$ uma coloração
+  própria de $H$. 
+
+  Se  $k<\Delta(G)+1$ então  $\{\{v\},V_1,\dots,V_k\}$  é uma  coloração
+  própria de $G$ com $\<\Delta(G)+1$ cores. 
+
+  Se $k=\Delta(G)+1$  então existe uma cor  $i$ que não  ocorre entre os
+  vizinhos de $v$ pois $d_G(v)\< \Delta(G)$. Dessa forma podemos tomar a
+  coloração própria $\{V_1,V_2,\dots,V_i\cup\{v\},\dots,V_k\}$.
+\end{proof}
+Um pouco mais pode ser dito em certos casos:
+\begin{teoun}[teorema de Brooks]
+  Se $G$ não é um circuito ímpar nem um grafo completo então $\chi(G)\<\Delta(G)$.\qed
+\end{teoun}
+
+Apesar do resultado mostrado acima, chamamos a atenção para do fato de
+$\Delta(G)-\chi(G)$ poder ser arbitrariamente grande, como demonstra o
+$K_{1,n}$.
+
+\section{$\alpha$ e $\chi$ típicos}\label{sec:tipicos}
+
+Por típico, entendemos resultados do  tipo: \emph{$99,9\%$ dos grafos com $1024$
+vértices têm $\alpha < 22$} e \emph{$99,9\%$ dos grafos com $1024$
+vértices  têm  $\chi>46$}.  Esses   enunciados  serão  corolários  de  um
+resultado mais geral que provaremos a seguir. 
+
+Fixamos $V=[n]$ e definimos $\mathcal{G}(n)$ como o conjunto de todos os
+grafos sobre $V$.  Claramente $|\mathcal{G}(n)|=2^N$, onde
+$N=\binom{n}{2}$.
+
+Denotamos por $\mathcal{Q}_k(n)$ o conjunto dos grafos $G\in
+\mathcal{G}(n)$ tais que $\alpha(G)\>k$. Para estima a cardinalidade
+desse conjunto, fixamos $X\subset [n]$ de cardinalidade $k$. Os grafos
+de $\mathcal{G}(n)$ nos quais $X$ é um conjunto independente podem ser
+identificados numa relação de um-para-um com os subconjuntos de $V^{(2)}
+\setminus X^{(2)}$, onde $X^{(2)}$ é o conjunto de todas as arestas
+sobre $X$. Segue-se que 
+$$
+|\mathcal{Q}_k(n)|\< \binom{n}{k}2^{N-\binom{k}{2}},
+$$
+donde deduzimos
+$$
+\frac{|\mathcal{Q}_k(n)|}{|\mathcal{G}(n)|}
+\<n^k2^{-\frac{k(k-1)}{2}}
+$$
+e tirando o logaritmo de ambos os lados
+$$
+2\lg \left( \frac{|\mathcal{Q}_k(n)|}{|\mathcal{G}(n)|} \right)\<
+k\lg (n) - k(k-1) = k(-k+\lg(n) +1). 
+$$
+
+Tomando $k=\teto{(2+\eps)\lg(n)}$
+\begin{eqnarray*}
+  2\lg \left( \frac{|\mathcal{Q}_k(n)|}{|\mathcal{G}(n)|} \right)&\<
+\teto{(2+\eps)\lg(n)}(-{(2+\eps)\lg(n)}+\lg(n)+1)= \\
+&\teto{(2+\eps)\lg(n)}(-{(1+\eps)\lg(n)}+\lg(n)+1)\to -\infty  
+\end{eqnarray*}
+conforme $n\to \infty$. Ou seja 
+\begin{teo}
+  Por menor que seja $\eps>0$
+  $$\alpha(G)< \teto{(2+\eps)\lg n}$$
+  para quase todo $G\in \mathcal{G}(n)$.\qed
+\end{teo}
+\begin{corol}
+    Por menor que seja $\eps>0$
+    $$\chi(G) > \frac{n}{\teto{(2+\eps)\lg n}}$$
+    para quase todo $G\in
+    \mathcal{G}(n)$.\qed
+\end{corol}
+
+Acima, para quase todo significa que
+$|\mathcal{P}(n)|/|\mathcal{G}(n)|\to 1$ conforme $n\to \infty$, onde
+$\mathcal{P}$ é o subconjunto dos grafos que satisfazem a propriedade de
+interesse (no nosso caso, número de independência pequeno e número
+cromático alto).
+
+\begin{exercicio}
+    Por menor que seja $\eps>0$
+    $$\omega(G) \> {{(2+\eps)\lg n}}$$
+    para quase todo $G\in
+    \mathcal{G}(n)$.
+
+\section{Matrizes}
+
+Vamos assumir que as matrizes são sempre quadradas $n\times n$ a menos
+que seja mencionado o contrário. Denotamos por $A=(a_{i,j})$ a matriz
+cuja entrada na $i$-ésima linha e $j$-ésima coluna é $a_{i,j} \in \C$.
+
+Um vetor $\mathbf{v}$ é uma matriz coluna
+$$
+\mathbf{v}=
+\begin{pmatrix}
+  a_1 \\ a_2\\ \vdots \\a_n
+\end{pmatrix}
+$$
+e também denotamos matrizes através dos seus vetores colunas
+$$
+A=(\mathbf{v}_1,\mathbf{v}_2,\cdots,\mathbf{v}_n)=
+\begin{pmatrix}
+  a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+  a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+  \vdots & \vdots & \ddots & \vdots  \\
+  a_{n,1} & a_{n,2} & \cdots & a_{n,n} \\
+\end{pmatrix}.
+$$
+A transposta da matriz $A$ é a matriz
+$$
+A^\mathtt{T} = 
+\begin{pmatrix}
+  {\mathbf{v}_1}^\mathtt{T} \\ {\mathbf{v}_2}^\mathtt{T}\\ \vdots \\{\mathbf{v}_n}^\mathtt{T}
+\end{pmatrix}=
+\begin{pmatrix}
+  a_{1,1} & a_{2,1} & \cdots & a_{n,1} \\
+  a_{1,2} & a_{2,2} & \cdots & a_{n,2} \\
+  \vdots & \vdots & \ddots & \vdots  \\
+  a_{1,n} & a_{2,n} & \cdots & a_{n,n} \\
+\end{pmatrix}, 
+$$
+e a conjugada-transposta é a matriz
+$$
+A^{*} = 
+\begin{pmatrix}
+  \overline{a_{1,1}} & \overline{a_{2,1}} & \cdots &  \overline{a_{n,1}} \\
+  \overline{a_{1,2}} & \overline{a_{2,2}} & \cdots &  \overline{a_{n,2}} \\
+  {\vdots } & {\vdots } & \ddots & {\vdots } \\
+  \overline{a_{1,n}} & \overline{a_{2,n}} & \cdots &  \overline{a_{n,n}} \\
+\end{pmatrix}, 
+$$
+onde $\bar{z}=\overline{x+iy}=x-iy$ é o conjugado de um número complexo.
+\end{exercicio}
+
+Dizemos que a matriz $A$ é invertível se existe uma matriz $B$ tal que
+$$
+AB= B A = \mathrm{Id}=
+\begin{pmatrix}
+  1 & 0 &  \cdots & 0 \\
+  0 & 1 &  \cdots & 0 \\
+  {\vdots } & {\vdots } & \ddots & {\vdots } \\
+  0 & 0 &  \cdots & 1 \\
+\end{pmatrix},
+$$
+e dizemos que $A$ e $B$ são semelhantes, denotado por $A\sim B$, se
+existe uma matriz invertível $P$ tal que $B=P^{-1} A  P$. A matriz $A$ é
+diagonalizável se for semelhante a uma matriz diagonal
+$$
+\mathrm{diag}(a_1,a_2,\dots,a_n)=
+\begin{pmatrix}
+  a_1 & 0 &  \cdots & 0 \\
+  0 & a_2 &  \cdots & 0 \\
+  {\vdots } & {\vdots } & \ddots & {\vdots } \\
+  0 & 0 &  \cdots & a_n \\
+\end{pmatrix}.
+$$
+
+O traço de uma matriz é a soma dos elementos da diagonal
+$$
+\mathrm{tr}(A)=\sum_{i=1}^n a_{i,i}
+$$
+e o determinante
+$$
+\mathrm{det}(A)=\sum_{\sigma}(\mathrm{sinal}(\sigma))
+a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}
+$$
+onde a soma é sobre toda permutação $\sigma\: \{1,2,\dots,n\}\to
+\{1,2,\dots,n\}$. Equivalentemente, 
+$$
+\mathrm{det}(A)=\sum_{j=1}^n (-1)^{1+j}a_{1,j}\mathrm{det}(A_{1,j}),
+\quad \mathrm{onde}\quad
+A_{1,j}=(a_{i,\ell})_{i\neq 1, \ell \neq j} .
+$$
+
+\begin{exercicio}\label{exerc:1} Mostre
+  \begin{enumerate}
+  \item $\mathrm{tr}(AB)=\mathrm{tr}(BA)$.
+  \item $(AB)^*=B^*A^*$.
+  \item $\mathrm{det}(A^{\mathtt{T}})=\mathrm{det}(A)$.
+  \item $\mathrm{det}(AB)=\mathrm{det(A)}\mathrm{det}(B)$.
+  \item Se $A\sim B$ então $\mathrm{det}(A)=\mathrm{det}(B)$.
+  \item Se $A$ e $B$ são matrizes quadradas então
+    $$
+    \mathrm{det}
+    \begin{pmatrix}
+      A&C\\
+      \mathbf{0}&B
+    \end{pmatrix}
+    =\mathrm{det}(A)\mathrm{det(B)},
+    $$
+    onde $\mathbf{0}$ é a matriz nula.
+  \end{enumerate}
+\end{exercicio}
+\begin{teo}\label{teo:1}
+  São equivalentes
+  \begin{enumerate}\renewcommand{\labelenumi}{(\roman{enumi})}
+  \item $A$ é invertível;
+  \item $A\mathbf{x}=0$ tem apenas a solução trivial;
+  \item os vetores coluna de $A$ são linearmente independentes;
+  \item $\mathrm{det}(A)\neq 0$.
+  \end{enumerate}
+\end{teo}
+\begin{proof}[Esboço de uma prova]
+  Se $A$ é invertível então $A\mathbf{x}=\mathbf{b}$ tem única solução, a
+  saber $\mathbf{x}=A^{-1}\mathbf{b}$, portanto
+  (i)$\Rightarrow$(ii). Pelo item (2) do exercício acima
+  $\mathrm{det}(A)\neq 0$, logo (i)$\Rightarrow$(iv).
+
+  Como $A\mathbf{x}$ é uma
+  combinação linear das colunas de $A$ a solução trivial única significa
+  independência linear dos vetores coluna, e vice-versa, portanto (ii) e
+  (iii) são equivalentes.
+
+  Tome o cofator de $a_{i,j}$
+  $$
+  \mathrm{cof}(a_{i,j})=(-1)^{i+j}\mathrm{det}(A_{i,j}), \quad\mathrm{onde}\quad
+  A_{i,j}=(a_{k,\ell})_{k\neq i,\ell \neq j}
+  $$
+  e é deixado como exercício mostrar que $B$ dada por 
+  $$
+  b_{i,j}=\frac{\mathrm{cof}(a_{j,i})}{\mathrm{det}(A)}
+  $$ 
+  é a inversa de $A$, dado que $\mathrm{det}(A)\neq 0$. Dessa forma
+  (iv)$\Rightarrow$(i).
+
+  Pra terminar vamos mostrar que (iii)$\Rightarrow$(i). Considere a
+  transformação linear
+  \begin{eqnarray*}
+    T\: &\R^n \to &\R^n \\
+    &\mathbf{x}\;\;\,\mapsto &A\mathbf{x},
+  \end{eqnarray*}
+  como as colunas são linearmente independentes a dimensão da imagem de
+  $T$ é $n$, portanto $T$ é sobrejetora. Como domínio e imagem têm a
+  mesma dimensão $T$ é bijetora. Por ser bijetora admite uma inversa
+  $T^{-1}$ e assim $A$ é invertível.
+\end{proof}
+
+\section{Autovalores e autovetores}
+
+Seja $A$ uma matriz quadrada $n\times n$ sobre $\C$. Dizemos que
+$\lambda \in \C$ é \emph{autovalor} se existe um vetor $\mathbf{v} \neq
+\mathbf{0}$ tal que 
+\begin{equation}
+  \label{eq:auto}
+  A\mathbf{v} = \lambda \mathbf{v}.
+\end{equation}
+Dizemos que $\mathbf{v}$ é um \emph{autovetor} associado ao autovalor
+$\lambda$. Um autovalor de uma matriz não é único, tampouco os
+autovetores associados a um autovalor.
+
+A equação (\ref{eq:auto}) acima pode ser escrita na forma
+$$
+(A-\lambda\mathrm{Id})\mathbf{v} = 0,
+$$
+e, pelo Teorema~\ref{teo:1}, para que sejam admitidas soluções
+não-nulas, a matriz denotada pelo termo $A-\lambda\mathrm{Id}$ deve ser
+não-invertível, ou seja,
+$$
+\det (A-\lambda\mathrm{Id}) = 0.
+$$
+
+O determinante $\det (A-\lambda\mathrm{Id})$ é um polinômio em $\lambda$
+denominado \emph{polinômio característico} de $A$:
+\begin{equation}
+  \label{eq:polinomio_caracteristico}
+  p_A(x) = \det (A- x \mathrm{Id}),
+\end{equation}
+cujo grau corresponde à ordem da matriz $A$ (ou seja, $n$). Portanto, a
+condição para a existência de autovetores associados a um autovalor
+$\lambda$ pode ser expressa por
+$$
+p_A(\lambda) = 0 \Leftrightarrow \exists\mathbf{v}, A\mathbf{v}=\lambda \mathbf{v}.
+$$
+
+Pelo Teorema Fundamental da Álgebra, toda matriz possui autovalor
+$\lambda \in \C$. Note que se $A$ é real e $\lambda$ é real, então
+podemos tomar autovetores $\mathbf{v}$ reais.
+
+\begin{propo}
+  {Toda matriz tem autovalor $\lambda \in \C$.}\qed
+\end{propo}
+
+\begin{exemplo}
+A matriz 
+$$
+A = \begin{pmatrix}
+        1 & 1 \\ -1 & 1 \\ 
+    \end{pmatrix} 
+$$
+tem polinômio característico
+$$
+p_A(x) = \det \left( 
+  \begin{pmatrix}
+    1 & 1 \\ -1 & 1 \\ 
+  \end{pmatrix} 
+  - x 
+  \begin{pmatrix}
+    1 & 0 \\ 0 & 1 \\ 
+  \end{pmatrix} 
+\right)
+=\det 
+\begin{pmatrix} 
+  1-x & 0 \\ -1 & 1-x \\ 
+\end{pmatrix}
+=
+ 2 - 2x + x^2,
+$$
+como o discriminante é $\Delta = -4$, os autovalores são $1+i$ e $1-i$.
+\end{exemplo}
+
+\begin{exemplo}\label{ex:2}
+A matriz 
+$$
+A = \begin{pmatrix}
+        -3 & 4 \\
+        -1 & 2 \\
+    \end{pmatrix}
+$$
+tem autovalores $\lambda_1=1$ e $\lambda_2=-2$.
+
+\newcommand{\vetor}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+
+Os autovetores associados a $\lambda_1$ satisfazem 
+$$
+\begin{array}{lcl}
+  \begin{pmatrix}
+    -3 & 4 \\
+    -1 & 2 \\
+  \end{pmatrix}
+  \vetor{x}{y} = 1 \vetor{x}{y}
+& \Longrightarrow &
+  \left\{
+    \begin{array}{l}
+    -x+y = 0 \\
+    -x+y = 0 \\
+    \end{array}
+  \right.
+\end{array},
+$$
+como $x=y$, o conjunto de autovetores é 
+$$
+V_{\lambda_1}=\left\{\vetor{x}{x}\colon x \in
+  \R^*\right\}.
+$$
+
+Analogamente, os autovetores associados a $\lambda_2$ são
+$$
+V_{\lambda_2}=\left\{\vetor{4y}{y}\colon y \in \R^*\right\}.
+$$ 
+\end{exemplo}
+
+\newcommand{\vetort}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand{\lvetor}[2]{\begin{pmatrix}#1&#2\end{pmatrix}}
+
+\begin{exemplo}
+Para a matriz
+$$
+A = \begin{pmatrix}
+        1 & 0 \\
+        1 & -2 \\
+    \end{pmatrix}
+$$
+temos autovalores $\lambda_1=1$, com autovetores
+$V_{\lambda_1}=\{\binom{3a}{a}\colon a\in \R^*\}$; e
+$\lambda_2=-2$, com autovetores $V_{\lambda_2}=\{\binom{0}{b}\colon b\in
+\R^*\}$.
+\end{exemplo}
+
+\begin{exemplo}
+$$
+A = \begin{pmatrix}
+        3 & 0 & -4 \\
+        0 & 3 & 5 \\
+        0 & 0 & -1 \\
+    \end{pmatrix}
+$$
+
+O polinômio característico $p_A(x) = (3-x)^2(-1-x)$ admite como raízes
+$(3,3,-1)$. Portanto os autovalores são $\lambda_1=3$ com multiplicidade
+$2$ e $\lambda_2=-1$ com multiplicidade $1$.
+
+Os autovetores associados a $\lambda_1$ satisfazem
+$$
+\begin{array}{lcl}
+  \begin{pmatrix}
+    3 & 0 & -4 \\
+    0 & 3 & 5 \\
+    0 & 0 & -1 \\
+  \end{pmatrix}
+  \vetort{x}{y}{z} = 3 \vetort{x}{y}{z}
+& \Longrightarrow &
+  \left\{
+    \begin{array}{l}
+    3y-7z=0 \\
+    3x-2z=0 \\
+    3x+3y+4z=0
+    \end{array}
+  \right.
+\end{array},
+$$
+a partir do que se obtém os autovetores 
+$$
+V_{\lambda_1}=\left\{\vetort{x}{y}{0}\colon x,y \in \R^*\right\}.
+$$
+
+
+Os autovetores associados a $\lambda_2=-1$ são 
+$$
+V_{\lambda_2}=\left\{\vetort{z}{\frac{5}{4}z}{z}, z \in \R^*\right\}.
+$$
+\end{exemplo}
+
+\begin{exemplo}\label{ex:5}
+$$
+A = \begin{pmatrix}
+        3 & -3 & -4 \\
+        0 & -1 & 5 \\
+        0 & 0 & -1 \\
+    \end{pmatrix}
+$$
+tem polinômio característico $p_A(x) = (3-x)(-1-x)^2$, com raízes
+$(3,-1,-1)$, portanto autovalores $\lambda_1=3$ com multiplicidade $1$ e
+$\lambda_2=-1$ com multiplicidade $2$.
+
+Autovetores associados a $\lambda_1$
+$$
+V_{\lambda_1}=\left\{\vetort{x}{0}{0} \colon x \in \R^* \right\}.
+$$
+
+Autovetores associados a $\lambda_2$
+$$
+V_{\lambda_2}=\left\{\vetort{-\frac{31}{16}z}{-\frac{5}{4}z}{z} \colon z
+  \in \R^*\right\}.
+$$
+\end{exemplo}
+
+
+A união do conjunto $V_\lambda$ dos autovetores associados a $\lambda$
+com o vetor nulo $\mathbf{0}$ define um \emph{subespaço vetorial} que
+também denotamos por $V_\lambda$. Por
+exemplo, se $A$ é uma matriz real e $\lambda_1\in \R$ um autovalor então
+$$
+V_\lambda = \{\mathbf{v} \in \R^3 \colon A\mathbf{v} = \lambda \mathbf{v}\}
+$$
+é um subespaço do $\R^3$.
+
+A dimensão $\dim V$ de um subespaço $V$ é o menor número de vetores que
+geram o subespaço, por exemplo
+$$
+V_{\lambda_1} = \left\{\vetort{x}{y}{0} \in \R^3 \colon x,y \in \R \right\} 
+$$
+tem dimensão $\dim V_{\lambda_1} = 2$.
+
+Se $\lambda$ é autovalor de $A$, então $V_\lambda = \{\mathbf{v} \in
+\C^n : A\mathbf{v} = \lambda \mathbf{v}\}$ é subespaço de $\C^n$
+(denominado \emph{auto-espaço associado} a $\lambda$)
+%, isto é,
+%$$
+%\forall u, v \in V_\lambda \ \textrm{e}\ \forall \alpha \in \C:
+%$$
+%$$
+%u+v \in V_\lambda \ \textrm{e}\ \alpha u \in V_\lambda.
+%$$
+
+A \emph{multiplicidade geométrica} de $\lambda$, $\mathrm{mg}(\lambda)$,
+é a dimensão do auto-espaço associado ao autovalor $\lambda$, $\dim
+V_\lambda$. A \emph{multiplicidade algébrica} de $\lambda$,
+$\mathrm{ma}(\lambda)$, é a multiplicidade da raiz $\lambda$ de $p_A(x)
+= 0$, isto é, o número de fatores $(x-\lambda)$ no polinômio
+característico da matriz.
+
+Compare as multiplicidades nos exemplos \ref{ex:2} --- \ref{ex:5} acima.
+
+\begin{propo}
+  Se $\lambda$ é um autovalor de uma matriz então
+  $$\mathrm{mg}(\lambda) \leq \mathrm{ma}(\lambda).$$
+\end{propo}
+
+\begin{proof}
+  Sejam $A$ matriz, $\lambda$ autovalor, $V_\lambda \in \C^n$ auto-espaço
+  e $p = \mathrm{mg}(\lambda) = \dim V_\lambda$. Sejam
+  $\{\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{p}\} \in V_\lambda$ vetores
+  linearmente independentes, e
+  $\{\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{p},\mathbf{u}_1,\dots,\mathbf{u}_{{n-p}}\}$
+  o conjunto completado para uma base do $\C^n$. Tome a matriz
+  $$
+  P = (\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{p},\mathbf{u}_1,\dots,\mathbf{u}_{{n-p}}) = \lvetor{V}{U}.
+  $$
+  A matriz $P$ é invertível, portanto existe
+  $$
+  P^{-1} = \binom{\overline{V}}{\overline{U}}.
+  $$
+  Como $PP^{-1}=\mathrm{Id}$,
+  $$
+  P^{-1}P =
+  \binom{\overline{V}}{\overline{U}}
+  \lvetor{V}{U}
+  =
+  \begin{pmatrix}
+    \overline{V}V & \overline{V}U \\
+    \overline{U}V & \overline{U}U
+  \end{pmatrix} \\
+  =
+  \begin{pmatrix}
+    1 & & \mathbf{0} \\
+    & \ddots & \\
+    \mathbf{0} & & 1
+  \end{pmatrix},
+  $$
+  e de $A\mathbf{v} = \lambda \mathbf{v}$, tem-se
+  \begin{eqnarray*}
+    P^{-1}AP &=&
+    \binom{\overline{V}}{\overline{U}}
+    A
+    \lvetor{V}{U}
+    =
+    \binom{\overline{V}}{\overline{U}}
+    \lvetor{AV}{AU} \\
+    &=&
+    \begin{pmatrix}
+      \lambda\overline{V}V & \overline{V}AU \\
+      \lambda\overline{U}V & \overline{U}AU
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda\mathrm{Id} & \overline{V}AU \\
+      \mathbf{0} & \overline{U}AU
+    \end{pmatrix}.
+  \end{eqnarray*}
+  Fazendo
+  $$
+  \begin{pmatrix}
+    \lambda\mathrm{Id} & \overline{V}AU \\
+    \mathbf{0} & \overline{U}AU
+  \end{pmatrix}
+  -
+  \begin{pmatrix}
+    x & & \mathbf{0} \\
+    & \ddots & \\
+    \mathbf{0} & & x
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \lambda\mathrm{Id} - x\mathrm{Id} & \overline{V}AU \\
+    \mathbf{0} & \overline{U}AU - x\mathrm{Id}
+  \end{pmatrix},
+  $$
+  e levando em conta que matrizes semelhantes possuem mesmos autovalores e
+  mesmo polinômio característico, verificam-se as igualdades
+  \begin{eqnarray*}
+    \det(P^{-1}AP - x\mathrm{Id})
+    &=&
+    \det(\lambda\mathrm{Id}- x\mathrm{Id})
+    \det(\overline{U}AU - x\mathrm{Id}) \\
+    &=&
+    \det((\lambda-x)\mathrm{Id})
+    \det(\overline{U}AU - x\mathrm{Id}) \\
+    &=&
+    (\lambda-x)^p
+    \det(\overline{U}AU - x\mathrm{Id}),
+  \end{eqnarray*}
+  donde $\lambda$ é raiz de $p_A(x) = (\lambda-x)^p q(x)$ com 
+  multiplicidade algébrica $ \geq p$.
+\end{proof}
+
+\begin{lema}
+  {Autovetores associados a autovalores distintos são linearmente independentes.}
+\end{lema}
+
+\begin{proof}
+  Seja $A$ matriz, $\lambda_1,\dots,\lambda_k$ autovalores distintos, e
+  $\mathbf{v}_1,\dots,\mathbf{v}_k$ os respectivos autovetores. 
+
+  A prova é por contradição. Seja 
+  $$
+  j = \min\{i\colon \{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_i,\mathbf{v}_{i+1}\} \textrm{ é l.d.}\}.
+  $$
+  Então
+  $$
+  \mathbf{v}_{i+1} = \alpha_1\mathbf{v}_1 + \alpha_2\mathbf{v}_2 + \dots 
+  + \alpha_i\mathbf{v}_i
+  $$
+  e multiplicando por $A$ ambos os lados da igualdade
+  $$
+  A\mathbf{v}_{i+1} = \sum_{j=1}^i \alpha_jA\mathbf{v}_j\Longrightarrow 
+  \lambda_{i+1}\mathbf{v}_{i+1}=\sum_{j=1}^i \alpha_j\lambda_j\mathbf{v}_j.
+  $$
+  Por outro lado, multiplicando ambos os lados por $\lambda_{i+1}$, temos
+  a igualdade
+  $$
+  \lambda_{i+1}\mathbf{v}_{i+1} = \sum_{j=1}^i \alpha_j\lambda_{i+1}\mathbf{v}_j,
+  $$
+  e portanto
+  \begin{eqnarray*}
+    0 &=& \sum_{j=1}^i (\lambda_j-\lambda_{i+1})\alpha_j\mathbf{v}_j \\
+    &=& (\lambda_1-\lambda_{i+1})\alpha_i\mathbf{v}_i + (\lambda_2-\lambda_{i+1})\alpha_2\mathbf{v}_2 + \dots + (\lambda_i-\lambda_{i+1})\alpha_i\mathbf{v}_i.
+  \end{eqnarray*}
+  Isso implica que $(\lambda_j-\lambda_{i+1})\alpha_j = 0 \ (\forall
+  j)$, e como o termo $(\lambda_j-\lambda_{i+1})$ não pode ser nulo, por
+  se tratar de um autovalores distintos, tem-se
+  $$
+  \alpha_j = 0 \ (\forall j) \Rightarrow \mathbf{v}_{i+1} = 0,
+  $$
+  portanto $\mathbf{v}_{i+1}$ não é autovetor.
+\end{proof}
+
+\begin{lema}
+  {Uma matriz $A$ é diagonalizável se, e somente se, tem $n$ autovetores linearmente independentes.}
+\end{lema}
+
+\begin{proof}
+  Seja $A$ matriz diagonalizável, então existe $P$ invertível e $D=\mathrm{diag}(x_1,\dots,x_n)$
+  diagonal tal que
+  $$
+  A = P^{-1}
+  \begin{pmatrix}
+    x_1 & & \mathbf{0} \\
+    & \ddots & \\
+    \mathbf{0} & & x_n
+  \end{pmatrix}
+  P
+  $$
+  Observe que $A = P^{-1}DP \Leftrightarrow AP^{-1} = P^{-1}D.$
+
+  A condição ``$A$ diagonalizável $\Rightarrow$ $A$ tem $n$ autovetores l.i.''
+  é provada pelas equações abaixo:
+  \begin{eqnarray*}
+    P^{-1} &=& (\mathbf{u}_1,\dots,\mathbf{u}_n), \textrm{ onde
+    }\{\mathtt{u}_1,\dots,\mathbf{u}_n\} \ \textrm{l.i. pois a matriz é invertível} \\ 
+    AP^{-1} &=& (A\mathbf{u}_1,A\mathbf{u}_2,\dots,A\mathbf{u}_n) \\
+    P^{-1}D &=& (x_1\mathbf{u}_1,x_2\mathbf{u}_2,\dots,x_n\mathbf{u}_n) \\
+    & \Rightarrow & A\mathbf{u}_i = x_i\mathbf{u}_i \ (\forall i),
+  \end{eqnarray*}
+  portanto $\mathbf{u}_i$ são autovetores.
+  
+  Prova-se a recíproca considerando a matriz invertível $P =
+  (\mathbf{u}_1,\dots,\mathbf{u}_n)$, onde $\mathbf{u}_i$ são $n$ autovetores
+  l.i., 
+  \begin{eqnarray*}
+    AP &=& (A\mathbf{u}_1,A\mathbf{u}_2,\dots,A\mathbf{u}_n) \\
+    &=& (\lambda_1\mathbf{u}_1,\lambda_2\mathbf{u}_2,\dots,\lambda_n\mathbf{u}_n) \\
+    &=&
+    (\mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_n)
+    \begin{pmatrix}
+      \lambda_1 & & \mathbf{0} \\
+      & \ddots & \\
+      \mathbf{0} & & \lambda_n
+    \end{pmatrix} \\
+    &=& PD 
+  \end{eqnarray*}
+  portanto $A = PDP^{-1}$, ou seja, $A$ é semelhante a uma matriz diagonal.
+\end{proof}
+
+\begin{teo}\label{teo:ma-mg}
+  Se uma matriz $A$ é diagonalizável, então
+  $\mathrm{ma}(\lambda)=\mathrm{mg}(\lambda)$ para todo autovalor
+  $\lambda$ de $A$.
+\end{teo}
+\begin{proof}
+  Exercício.
+\end{proof}
+
+\begin{exercicio}
+  Mostre que se $A \sim B$ então $p_A(x) = p_B(x)$.
+%  \begin{proof}[Esboço de uma demonstração]
+%    Se $A$ e $B$ são similares ($A \sim B$), então existe uma matriz
+%    invertível $P$ tal que $B=P^{-1}AP$. O polinômio característico de
+%    $B$, $p_B(x)$ é dado por:
+%    \begin{eqnarray*}
+%      \det(B - \lambda\mathrm{Id}) &=& \det(P^{-1}AP - \lambda\mathrm{Id}) \\
+%      &=& \det(P^{-1}(A-\lambda\mathrm{Id})P) \\
+%      &=& \det(P) \det(A-\lambda\mathrm{Id}) \det(P^{-1}) \\
+%      &=& \det(A-\lambda\mathrm{Id}),
+%    \end{eqnarray*}
+%    portanto $A$ e $B$ têm o mesmo polinômio característico, assim como os mesmos autovalores.
+%  \end{proof}
+\end{exercicio}
+
+\section{Matrizes simétricas e o Teorema Espectral}
+
+
+Seja $A$ uma matriz quadrada $n\times n$ sobre $\R$. Dizemos que $A$ é
+\emph{simétrica} se
+$$
+A = A^\mathtt{T}.
+$$
+Por exemplo, a matriz de adjacências de um grafo é uma matriz simétrica.
+
+\begin{teo}\label{teo:3}
+Se $A$ é uma matriz simétrica então seus autovalores são reais.
+\end{teo}
+
+\begin{proof}
+  Seja $\lambda$ um autovalor de $A$ e $\mathbf{v}$ autovetor de $A$
+  associado ao autovalor.
+  % suponha a fórmula utilizada no lema \ref{lema:11}, assim:
+  % $$
+  % \mathbf{v}^{*} A \mathbf{v}
+  % $$
+  % 
+  % A partir desta podemos dividir o problema em dois tópicos:
+  % \begin{enumerate}
+  Por um lado temos 
+  % \item 
+  $$
+  \mathbf{v}^{*} A \mathbf{v}  =  \mathbf{v}^{*} \lambda  \mathbf{v}  =
+  \lambda \mathbf{v}^{*} \mathbf{v},$$  
+  % \item 
+  e por outro,
+  $$  
+  \mathbf{v}^{*} A \mathbf{v} = %(\mathbf{v}^{*} A) \mathbf{v} =
+  (A^{*} \mathbf{v})^{*} \mathbf{v} = (A \mathbf{v})^{*} \mathbf{v} =
+  (\lambda \mathbf{v})^{*} \mathbf{v} = \overline{\lambda}
+  \mathbf{v}^{*} \mathbf{v}.
+  $$
+    % \end{enumerate} 
+  Portanto, $\overline{\lambda} = \lambda$, ou seja $\lambda\in \R$.
+  %Chegando a duas conclusões abaixo:
+  %\begin{enumerate}
+  %\item $\lambda \mathbf{v}^{*} \mathbf{v}$
+  %\item $\overline{\lambda} \mathbf{v}^{*} \mathbf{v}$
+  %\end{enumerate}
+  %
+  %Assim, como os dois descendem de um mesmo inicial, lema \ref{lema:11},
+  %pela igualdade temos $(1) = (2)$, então:
+  %$$
+  %\lambda \mathbf{v}^{*} \mathbf{v} = \overline{\lambda} \mathbf{v}^{*} \mathbf{v}
+  %$$
+  %
+  %fazendo a simplificação dos termos iguais temos:
+  %$$
+  %\lambda  = \overline{\lambda} 
+  %$$
+  %
+  %logo $\lambda$ é $\R$
+\end{proof}
+
+Assim pelo teorema \ref{teo:3} daqui em diante trabalharemos somente em  $\R$.
+
+$Produto \ Interno$ - Um Produto Interno é uma operação que associa a
+cada par de vetores $\mathbf{u}$, $\mathbf{v}\in \R^n$ um número real
+$\escalar{\mathbf{u}}{\mathbf{v}}$, que satisfaça as seguinte condições
+(axiomas):
+\begin{enumerate}
+\item $\escalar{\mathbf{u}}{\mathbf{v}}$ =
+  $\escalar{\mathbf{v}}{\mathbf{u}}$.
+\item $\escalar{C\mathbf{u}}{\mathbf{v}}$ =
+  C$\escalar{\mathbf{u}}{\mathbf{v}}$ \ \ \ $(\forall C \in \R)$.
+\item $\escalar{\mathbf{u}}{\mathbf{v}+\mathbf{w}}$ =
+  $\escalar{\mathbf{u}}{\mathbf{v}}$ +
+  $\escalar{\mathbf{u}}{\mathbf{w}}$.
+\item $\escalar{\mathbf{u}}{\mathbf{u}}$ = 0 $\Leftrightarrow$
+  $\mathbf{u}$ = 0.
+\end{enumerate}
+O Produto Interno canônico em $\R^n$ é o produto escalar:
+\begin{equation}
+  \label{eq:ProdInterno}
+        \escalar{\mathbf{u}}{\mathbf{v}} = \mathbf{u}^\mathtt{T} \mathbf{v}
+%        = u_1v_1+u_2v_2+\cdots +u_nv_n, \ em \ \R^n \times \ \R^n \to \R.
+\end{equation}
+
+Em particular se $\mathbf{v}$ é um vetor em um espaço vetorial
+$\mathbf{V}$ munido de um produto interno, o comprimento desse vetor,
+também chamado de $norma$, é definido por:
+\begin{equation}
+  \label{eq:norma}
+\norma{v} = \sqrt{\escalar{ \mathbf{v}}{\mathbf{v}} }.
+\end{equation}
+%Ou seja, 
+%$$
+%\mathbf{u}^T \mathbf{v} = \mathbf{u}_{1} \!^{2} + \dots + \mathbf{u}_{n} \!^{2} = 
+%\sqrt{\mathbf{u}_{1} \!^{2} + \dots + \mathbf{u}_{n} \!^{2} } = Comprimento \ do \ vetor
+%$$
+%O Espaço Vetorial C[a,b] pode definir um produto interno por:
+%$$
+%f[a,b] \Rightarrow \R \escalar{\mathbf{f}}{\mathbf{g}} = \int_a^b f(x)g(x) \mathrm{d}x = Produto \ Interno
+%$$
+
+\begin{exercicio}
+  Deduza a partir de (1)---(4) acima as seguintes igualdades
+  \begin{enumerate}
+  \item $\escalar{\mathbf{u}}{C\mathbf{v}} =
+    C\escalar{\mathbf{u}}{\mathbf{v}}$ \ \ \ $(\forall C \in \R)$.
+  \item $\escalar{\mathbf{u}+\mathbf{v}}{\mathbf{w}} =
+    \escalar{\mathbf{u}}{\mathbf{w}} +
+    \escalar{\mathbf{v}}{\mathbf{w}}$.
+  \item $\escalar{\mathbf{u}}{\mathbf{0}} =
+    \escalar{\mathbf{0}}{\mathbf{v}} = 0$.
+  \end{enumerate}
+\end{exercicio}
+\begin{exercicio}
+  Mostre que se $\Theta$ é o ângulo entre vetores $\mathbf{u},
+  \mathbf{v}$, então:
+  \begin{equation}
+    \escalar{\mathbf{u}}{\mathbf{v}} = \norma{u} \norma{v} \cos{\Theta}.
+  \end{equation}
+\end{exercicio}
+
+Se $\escalar{\mathbf{u}}{\mathbf{v}} = 0$ então dizemos que $\mathbf{u}$
+e $\mathbf{v}$ são \emph{ortogonais}, para quaisquer $\mathbf{u}$ e
+$\mathbf{v}$ diferentes de $\mathbf{0}$. Para $\mathbf{u}$ e $\mathbf{v}$
+ortogonais escrevemos $\mathbf{u}\perp \mathbf{v}$.
+
+\begin{teo}\label{teo:4}
+  Se $A$ é uma matriz simétrica então autovetores associados a
+  autovalores distintos de $A$ são ortogonais.
+\end{teo}
+\begin{proof}
+  Sejam $\lambda_1$ e $\lambda_2$ autovalores distintos com respectivos
+  autovetores $\mathbf{u}$ e $\mathbf{v}$.
+  %Suponha também que $\lambda_1 \ e \ \lambda_2$ são diferentes.Logo teremos como objetivo 
+  Vamos mostrar $\escalar{\mathbf{u}}{\mathbf{v}}= \mathbf{u}^{\mathtt{T}}\mathbf{v}=0$.
+  $$
+  \lambda_1\mathbf{u}^\mathtt{T}\mathbf{v}  =    (\lambda_1\mathbf{u})^\mathtt{T}
+  \mathbf{v}  =    (A\mathbf{u})^\mathtt{T}\mathbf{v}  =
+  \mathbf{u}^\mathtt{T}A\mathbf{v}  =   \mathbf{u}^\mathtt{T}\lambda_2\mathbf{v}  =
+  \lambda_2\mathbf{u}^\mathtt{T}\mathbf{v}.% = 0
+  $$ 
+
+  Logo, temos $( \lambda_1 - \lambda_2 ) \mathbf{u}^T\mathbf{v} = 0$,
+  como $\lambda_1 - \lambda_2 \neq 0$, pois são diferentes, temos
+  $\mathbf{u}^T\mathbf{v} = 0$, portanto $\mathbf{u} \perp \mathbf{v}$.
+\end{proof}
+
+\begin{lema}[Desigualdade de Cauchy-Schwarz]\label{lema:12}
+  {Se $\mathbf{u} \ e \ \mathbf{v}$ são dois vetores quaisquer em um
+    espaço vetorial real $\mathbf{V}$, munido de Produto Interno então:}
+  \begin{equation}
+    \escalar{\mathbf{u}}{\mathbf{v}}^{2} \< \norma{u}^{2} \norma{v}^{2}
+  \end{equation}
+\end{lema}
+
+\begin{proof}[Esboço de uma prova]
+  Sejam $\mathbf{u} \ e \ \mathbf{v}$ l.i., pois se fossem linearmente
+  dependentes vale a igualdade na equação acima.  Para todo $x \in\R$
+  temos:
+  $$
+  \norma{x\mathbf{u}+\mathbf{v}}^{2} =
+  x^{2}\escalar{\mathbf{u}}{\mathbf{u}}+2x\escalar{\mathbf{u}}{\mathbf{v}}+\escalar{\mathbf{v}}{\mathbf{v}}
+  >0.
+  $$
+  Portanto o discriminante $2\escalar{\mathbf{u}}{\mathbf{v}})^{2} -
+  4(\escalar{\mathbf{u}}{\mathbf{u}})(\escalar{\mathbf{v}}{\mathbf{v}}$
+  é $< 0$, donde segue a desigualdade.
+  % =  escalar{\mathbf{u}}{\mathbf{v}}^{2} < \norma{u}^{2} \norma{v}^{2}$$
+\end{proof}
+
+\begin{exemplo}[Aplicação da desigualdade de Cauchy-Schwarz]
+  Seja $G$ um grafo sobre ${V} = \{1,2,\dots,n\}$. Suponha que $G$ não
+  contém triângulos. Logo para vértices $i$ e $j$ que formam uma aresta
+  temos $d(i) + d(j) < n$. 
+  Assim
+  $$n|E(G)|> \sum_{ij\in E((G)} (d(i) + d(j))= \sum_{i} d(i)^{2} .$$
+
+  Pondo $\mathbf{d}=(d(1),d(2),\dots,d(n))^{\mathtt{T}}$ temos pela
+  Desigualdade de Cauchy-Schwarz que
+  $ \norma{d}^{2} \norma{1}^{2} \> \escalar{\mathbf{d}}{\mathbf{1}}^{2}$,
+  onde $\mathbf{1}=(1,1,\dots,1)^{\mathtt{T}}$.  Portanto,
+  \begin{equation*}
+    n|E(G)|> \sum_{i} d(i)^{2} = \norma{d}^2 \> 
+    \frac{1}{\norma{1}^2}  \escalar{\mathbf{d}}{\mathbf{1}}^{2}=
+    \frac{1}{n}\left(\sum_i d(i)\right)^2 = 
+    \frac{1}{n}\left(2|E(G)|\right)^2 ,
+    % (\sum_{i}^{n} d(i))^{2}                                   &\<& \norma{d}^{2} \norma{1}^{2} \\
+    % (2|E|)^{2}                                                                &\<& \norma{d}^{2} \norma{1}^{2} \\     
+    % 4|E|^{2}                                                          &\<& \norma{d}^{2} \norma{1}^{2} \\     
+    % 4|E|^{2}                                                          &\<& n\sum_{i}^{n} d(i)^{2}\\
+    % 4|E|^{2}                                                          &\<& n\sum_{i,j}^{n} (d(i) + d(j))\\
+    % 4|E|^{2}                                                          &\<& n(|E|n)\\
+    % 4|E|^{2}                                                          &\<& |E|n^{2}\\
+    % |E|                                                                               &\<& \frac{n^{2}}{4}
+  \end{equation*}
+  onde a última igualdade segue da soma dos graus ser duas vezes o
+  número de arestas. Tomando os extremos da desigualdade concluímos que
+  para um grafo $G$ com $n$ vértices e sem triângulos temos
+  $$
+  |E(G)|\< \frac{n²}{4}.
+  $$
+\end{exemplo}
+
+\begin{corol}[Desigualdade Triangular]\label{co:Desigualdade Triangular}
+  Segue da desigualdade de Cauchy-Schwarz que 
+  \begin{equation}
+    \norma{\mathbf{u}+\mathbf{v}} \< \norma{\mathbf{u}} + \norma{\mathbf{v}}.
+  \end{equation}\qed
+\end{corol} 
+
+
+Dados dois vetores $\mathbf{u}$ e $\mathbf{v}$, vamos denotar a projeção
+ortogonal de $\mathbf{v}$ sobre $\mathbf{u}$ por $\mathbf{v}^{'}$.
+%\begin{figure}[h]
+%  \centering
+%    \input{vetor.pictex}
+%    \caption{\label{fig:grafo1}Projeção ortogonal de $\mathbf{v}$ em $\mathbf{u}$.}
+%\end{figure}
+Como $\mathbf{v}^{'}$ é um múltiplo escalar do vetor $\mathbf{u}$ temos 
+%
+%Para saber $\mathbf{v}^{'}$ é necessário saber o valor de $\alpha$, sendo alfa um escalar, assim:
+\begin{equation}
+        \mathbf{v}^{'} = \alpha \frac{\mathbf{u}}{\norma{u}}
+\end{equation}
+para algum $\alpha \in \R$.
+
+Para determinar $\alpha$:
+$$
+\frac{\mathbf{v}^{'}}{\norma{v}} = \cos{\theta} = 
+\frac{\escalar{\mathbf{u}}{\mathbf{v}}}{\norma{u}\norma{v}},
+$$
+logo
+$$
+\alpha = \norma{v^{'}} =
+\frac{\escalar{\mathbf{u}}{\mathbf{v}}}{\norma{u}} \therefore
+\mathbf{v}^{'} =
+\frac{\escalar{\mathbf{u}}{\mathbf{v}}}{\escalar{\mathbf{u}}{\mathbf{u}}}\mathbf{u}.
+$$
+
+A partir de uma base qualquer
+$\{\mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_n\}$ do $\R^n$ podemos
+obter, através de projeções ortogonais, uma base ortogonal
+$\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_n\}$ da seguinte maneira
+\begin{eqnarray*}
+  \mathbf{v}_1 &=& \mathbf{u}_1 \\
+  \mathbf{v}_2 &=& \frac{\escalar{\mathbf{u}_1}{\mathbf{u}_2}}{\escalar{\mathbf{u}_1}{\mathbf{u}_1}} \mathbf{u}_1 \\
+  \mathbf{v}_3 &=& \mathbf{u}_3 - \frac{\escalar{\mathbf{u}_1}{\mathbf{u}_3}}{\escalar{\mathbf{u}_1}{\mathbf{u}_1}} \mathbf{u}_1 - 
+  \frac{\escalar{\mathbf{u}_2}{\mathbf{u}_3}}{\escalar{\mathbf{u}_2}{\mathbf{u}_2}} \mathbf{u}_2 \\  
+  \vdots &=& \vdots \\
+  \mathbf{v}_n &=& \mathbf{u}_n - \frac{\escalar{\mathbf{u}_1}{\mathbf{u}_n}}{\escalar{\mathbf{u}_1}{\mathbf{u}_1}} \mathbf{u}_1 - 
+  \frac{\escalar{\mathbf{u}_2}{\mathbf{u}_n}}{\escalar{\mathbf{u}_2}{\mathbf{u}_2}} \mathbf{u}_2 -
+  \dots -
+  \frac{\escalar{\mathbf{u}_{n-1}}{\mathbf{u}_n}}{\escalar{\mathbf{u}_{n-1}}{\mathbf{u}_{n-1}}} \mathbf{u}_{n-1}
+\end{eqnarray*}
+que é conhecido como Processo de Ortogonalização de Gram-Schmidt. Ainda,
+podemos normalizar os vetores $\mathbf{v}_i$'s de modo a formarmos uma
+base ortonormal.
+
+%Em particular matrizes canônicas são ortogonais.
+%
+%Antes de continuarmos definiremos matriz ortogonal:
+
+Uma matriz é dita ortogonal se suas colunas formam um conjunto de
+vetores ortonormais no $\R^n$. Equivalentemente,  ${Q}^{\mathtt{T}}{Q} =
+\mathrm{Id}$, pois se ${Q} = (\mathbf{q}_1, \dots, \mathbf{q}_n)$ temos:
+\begin{eqnarray*}
+  \begin{pmatrix}
+    \mathbf{q}_{1} \!^{\mathtt{T}} \\
+    \mathbf{q}_{2} \!^{\mathtt{T}} \\
+    \vdots \\
+    \mathbf{q}_{n} \!^{\mathtt{T}}
+  \end{pmatrix} 
+  (\mathbf{q}_1, \dots, \mathbf{q}_n)
+  =
+  \begin{pmatrix}
+    {1} & & \mathbf{0} \\
+      & \ddots & \\
+      \mathbf{0} & & {1}
+    \end{pmatrix},
+\end{eqnarray*}
+pois
+$$
+\mathbf{q}_{i} \!^{\mathtt{T}}\mathbf{q}_{i} =
+\escalar{\mathbf{q}_i}{\mathbf{q}_i} = 1 \;\mathrm{\; e\; }\;
+\mathbf{q}_{i} \!^{\mathtt{T}}\mathbf{q}_{j} = \escalar{\mathbf{q}_i}{\mathbf{q}_j} = 0 .
+$$
+
+\begin{observacao}
+  ${Q}^{\mathtt{T}} = {Q}^{-1}$
+\end{observacao}
+
+\begin{exercicio}\label{exerc:matriz_ortogonal} Mostre que 
+  \begin{enumerate}
+  \item $\norma{Qv} = \norma{v}$.
+  \item $\escalar{Q\mathbf{u}}{Q\mathbf{v}} = \escalar{\mathbf{u}}{\mathbf{v}}$.
+  \item Produto de matrizes ortogonais é uma matriz ortogonal.
+  \end{enumerate}
+\end{exercicio}
+
+\begin{observacao}
+  Matriz ortogonal tem somente  autovalores $\{+1,-1\}$.
+\end{observacao}
+
+\begin{teo}[Teorema espectral real]\label{teo:5}
+  Se $A$ é uma matriz simétrica então existe uma base ortonormal do
+  $\R^{n}$ formada por autovetores de $A$.
+\end{teo}
+\begin{proof}
+Este teorema será demonstrado adiante, no teorema equivalente
+\ref{teo:5linha}. Mostre que esses teoremas são equivalentes.
+\end{proof}
+
+\begin{teo}\label{teo:5linha}
+  Se $A$ é uma matriz simétrica então existe ${Q}$ ortogonal tal que
+  $Q^{\mathtt{T}}AQ=\mathrm{diag}(\lambda_1,\lambda_2,\dots,\lambda_n)$,
+  onde $\lambda_1,\lambda_2,\dots,\lambda_n$ são os autovalores de $A$.
+\end{teo}
+\begin{proof}
+  A prova é por indução na dimensão da matriz $A$. O caso $n=1$ é exercício.
+
+  Sejam $\lambda_1, \lambda_2, \dots,\lambda_k$ autovalores distintos de
+  $A$ e $\mathbf{u}_{1}, \mathbf{u}_{2}, \dots , \mathbf{u}_{k}$
+  autovetores linearmente independentes associados aos autovalores.
+  Completamos $\{\mathbf{u}_{1}, \mathbf{u}_{2}, \dots ,
+  \mathbf{u}_{k}\}$ para uma base $\{\mathbf{u}_{1}, \mathbf{u}_{2},
+  \dots , \mathbf{u}_{k}, \mathbf{u}_{k+1},\dots,\mathbf{u}_n\}$ do
+  $\R^n$. 
+
+  Usando Gram-Schmidt, podemos tomar uma base ortonormal 
+  $$
+  \{ \mathbf{v}_{1}, \mathbf{v}_{2},\dots, \mathbf{v}_{k},\mathbf{v}_{k+1}, \dots, \mathbf{v}_{n}\}.
+  $$
+
+  Observamos que $\mathbf{v}_1$ é um autovetor de $A$. Agora tomemos
+  ${Q}_1$ como a matriz 
+  $$
+  {Q}_{1} = (\mathbf{v}_{1}, \dots, \mathbf{v}_{n})
+  $$
+  e seja  $B$ tal que seja igual a:
+  \begin{eqnarray*}
+    {B} &=& {Q}_{1}^{\mathtt{T}}A{Q}_{1} \\
+    &=& \begin{pmatrix}
+      \mathbf{v}_{1} \!^{\mathtt{T}} \\
+      \mathbf{v}_{2} \!^{\mathtt{T}} \\
+      \vdots \\
+      \mathbf{v}_{n} \!^{\mathtt{T}}
+    \end{pmatrix} A (\mathbf{v}_{1}, \mathbf{v}_{2},\dots, \mathbf{v}_{n}) \\
+    &=& \begin{pmatrix}
+      \mathbf{v}_{1} \!^{\mathtt{T}} \\
+      \mathbf{v}_{2} \!^{\mathtt{T}} \\
+      \vdots \\
+      \mathbf{v}_{n} \!^{\mathtt{T}}
+    \end{pmatrix} (A\mathbf{v}_{1}, A\mathbf{v}_{2},\dots, A\mathbf{v}_{n}) \\
+    &=& \begin{pmatrix}
+      \mathbf{v}_{1} \!^{\mathtt{T}} \\
+      \mathbf{v}_{2} \!^{\mathtt{T}} \\
+      \vdots \\
+      \mathbf{v}_{n} \!^{\mathtt{T}}
+    \end{pmatrix} (\lambda_1\mathbf{v}_{1}, A\mathbf{v}_{2},\dots, A\mathbf{v}_{n}) \\
+    &=& \begin{pmatrix}
+      \lambda_1\mathbf{v}_{1} \!^{\mathtt{T}}\mathbf{v}_{1} &
+      \mathbf{v}_{1} \!^{\mathtt{T}}A\mathbf{v}_{2} & \dots &
+      \mathbf{v}_{1} \!^{\mathtt{T}}A\mathbf{v}_{n} \\ 
+      \lambda_1\mathbf{v}_{2} \!^{\mathtt{T}}\mathbf{v}_{1} & \\
+      \vdots & & \mathbf{A}_1\\
+      \lambda_1\mathbf{v}_{n} \!^{\mathtt{T}}\mathbf{v}_{1} &
+    \end{pmatrix} \\
+    &=& \begin{pmatrix}
+      \lambda_1 & {0} & \dots & {0} \\
+      {0} & \\
+      \vdots & & \mathbf{A}_1\\
+      {0} & 
+    \end{pmatrix}.
+  \end{eqnarray*}
+  
+  Como $B$ é simétrica, pois $B^{\mathtt{T}}=
+  (Q_1^{\mathtt{T}}AQ_1)^{\mathtt{T}}= Q_1^{\mathtt{T}}AQ_1$, temos que $A_1$
+  é simétrica e, portanto, existe $Q_2$ ortogonal tal que
+  $Q_2^{\mathtt{T}}A_1Q_2=\mathrm{diag}(\mu_1,\mu_2,\dots,\mu_{n-1})$ com
+  $\mu_i$ autovalor de $A_1$ para todo $i$.
+  
+  Tomemos então $\mathbf{Q}_{3}$ %e $\mathbf{Q}_{3}^{\mathtt{T}}$:
+  \begin{eqnarray*}
+    \mathbf{Q}_3 &=& \begin{pmatrix}
+      \lambda_1 & {0} & \dots & {0} \\
+      {0} & \\
+      \vdots & & \mathbf{Q}_2\\
+      {0} & 
+    \end{pmatrix} ,
+    % \\
+    % \mathbf{Q}_3^{\mathtt{T}} &=& \begin{pmatrix}
+    %   \lambda_1 & \mathbf{0} & \dots & \mathbf{0} \\
+    %   \mathbf{0} & \\
+    %   \vdots & & \mathbf{Q}_2^{\mathtt{T}}\\
+    %   \mathbf{0} & 
+    % \end{pmatrix}
+  \end{eqnarray*}
+  e, finalmente, $\mathbf{Q} = \mathbf{Q}_{1}\mathbf{Q}_{3}$.
+  Claramente, $Q_3$ é ortogonal e $Q$ é ortogonal, pois é produto de
+  matrizes ortogonais.
+
+  Agora,
+  \begin{eqnarray*}
+    \mathbf{Q}^{\mathtt{T}}A\mathbf{Q} &=& (\mathbf{Q}_{1}
+    \mathbf{Q}_{3})^{\mathtt{T}} A (\mathbf{Q}_{1} \mathbf{Q}_{3}) 
+    = \mathbf{Q}_{1}^{\mathtt{T}} \mathbf{Q}_{3}^{\mathtt{T}} A \mathbf{Q}_{1} \mathbf{Q}_{3} \\
+    &=& \begin{pmatrix}
+      1 & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathbf{Q}_2^{\mathtt{T}}\\
+      0         & 
+    \end{pmatrix} 
+    \begin{pmatrix}
+      \lambda_1         & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathbf{A}_1\\
+      0         & 
+    \end{pmatrix} 
+    \begin{pmatrix}
+      1 & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathbf{Q}_2\\
+      0         & 
+    \end{pmatrix} \\
+    &=& \begin{pmatrix}
+      \lambda_1         & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathbf{Q}_2^{\mathtt{T}}\mathbf{A}_1\\
+      0         & 
+    \end{pmatrix} 
+    \begin{pmatrix}
+      1 & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathbf{Q}_2\\
+      0         & 
+    \end{pmatrix} \\
+    &=& \begin{pmatrix}
+      \lambda_1         & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathbf{Q}_2^{\mathtt{T}}\mathbf{A}_1\mathbf{Q}_2\\
+      0         & 
+    \end{pmatrix}  \\
+    &=& \begin{pmatrix}
+      \lambda_1         & 0     & \dots                 & 0 \\
+      0         & \\
+      \vdots            &                               & \mathrm{diag}(\mu_1,\dots,\mu_{n-1})\\
+      0         & 
+    \end{pmatrix}. 
+  \end{eqnarray*}
+  Agora somente falta provar que $\mu_1,\dots,\mu_{n-1}$ são autovalores
+  de $A_1$. 
+  \begin{exercicio}\label{exerc:redutivel} Se 
+    $
+    A = \begin{pmatrix}
+      D & B\\
+      0 & C
+    \end{pmatrix} 
+    $ com $D$ e $C$ matrizes quadradas, então $p_A(x) = p_D(x)p_C(x)$.
+    Conclua que os autovalores de $C$ são autovalores de $A$.
+  \end{exercicio}
+%  
+%  Assim
+%  $    \begin{pmatrix}
+%    \mathbf{X}_1 & & 0 \\
+%    & \ddots & \\
+%    0 & & \mathbf{X}_n
+%  \end{pmatrix} 
+%  $ e $P_A(X) = P_{\mathbf{Q}^{\mathtt{T}}A\mathbf{Q}}(X) = (\lambda_1 - X)P_{D1}(X)$ com 
+%\begin{eqnarray*}
+%       P_{D1}(X) &=& \det(D_1 - X\mathbf{Id})\\
+%       &=& det(
+%               \begin{pmatrix}
+%                     \mathbf{X}_1 & & 0 \\
+%                     & \ddots & \\
+%                     0 & & \mathbf{X}_n
+%           \end{pmatrix}       - 
+%               \begin{pmatrix}
+%                     \mathbf{X} & & 0 \\
+%                     & \ddots & \\
+%                     0 & & \mathbf{X}
+%       \end{pmatrix})\\
+%       &=& det(
+%               \begin{pmatrix}
+%                 \mathbf{X}_1 - \mathbf{X} & & 0 \\
+%                     & \ddots & \\
+%                 0 & & \mathbf{X}_n - \mathbf{X}
+%           \end{pmatrix})\\
+%       &=& (\mathbf{X}_1 - \mathbf{X})(\mathbf{X}_2 - \mathbf{X})\dots(\mathbf{X}_n - \mathbf{X})
+%\end{eqnarray*}Assim os valores de $\mathbf{X}_i$ são os autovalores de $A$.
+\end{proof}
+
+\begin{exercicio}
+Provar que o Teorema \ref{teo:5} e Teorema \ref{teo:5linha} são equivalentes.
+\end{exercicio}
+
+\begin{corol}[Decomposição Espectral de Matrizes Simétricas]\label{co:DecomposicaoEspectral}
+  Se $A$ é simétrica e
+  $\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_n\}$ uma base ortonormal
+  de autovetores, então
+  \begin{equation}
+    % A = \mathbf{Q}D\mathbf{Q}^{\mathtt{T}} \rightarrow
+    A = \lambda_{1}\mathbf{v}_{1}\mathbf{v}_{1}^{\mathtt{T}} + \dots +
+    \lambda_n\mathbf{v}_{n}\mathbf{v}_{n}^{\mathtt{T}} 
+  \end{equation}
+\end{corol}
+
+
+\section{Teorema de Courant-Fischer e Teorema de Perron-Frobenius}
+
+
+\begin{propo}
+  Seja $A$ uma matriz simétrica e $\lambda_1 \> \lambda_2 \> \hdots \>
+  \lambda_n$ os autovalores de $A$. Então
+  $$\lambda_1=\max_{\substack{\norma{x}=1}} \escalar{A\mathbf{x}}{\mathbf{x}}.$$
+\end{propo}
+
+\begin{proof}
+  Por definição $\escalar{A\mathbf{x}}{\mathbf{x}} =
+  \mathbf{x}^{\mathtt{T}}A\mathbf{x}$. Pelo Teorema~\ref{teo:5linha},
+  podemos escrever $A = QDQ^{\mathtt{T}}$. Portanto
+  $\mathbf{x}^{\mathtt{T}}A\mathbf{x} = \mathbf{x}^{\mathtt{T}}QDQ\mathbf{x}
+  = (Q^{\mathtt{T}}\mathbf{x})^{\mathtt{T}}D(Q^{\mathtt{T}}\mathbf{x})$ e
+  fazendo $\mathbf{y} =
+  % \begin{pmatrix}
+  %   \mathbf{y}_{1} \!^{\mathtt{T}} \\
+  %   \mathbf{y}_{2} \!^{\mathtt{T}} \\
+  %   \vdots \\
+  %   \mathbf{y}_{n} \!^{\mathtt{T}}
+  % \end{pmatrix} = 
+  Q^{\mathtt{T}}\mathbf{x}$ 
+  % e substituindo na expressão
+  % $(Q^{\mathtt{T}}\mathbf{x})^{\mathtt{T}}D(Q^{\mathtt{T}}\mathbf{x})$ 
+  temos:
+  \begin{eqnarray*}
+    \mathbf{y}^{\mathtt{T}}D\mathbf{y} &=& ({y}_1,{y}_2, \hdots ,{y}_n) \begin{pmatrix}
+      \lambda_1 & & \mathbf{0} \\
+      & \ddots & \\
+      \mathbf{0} & & \lambda_n
+    \end{pmatrix} \begin{pmatrix}
+      {y}_{1} \\
+      {y}_{2} \\
+      \vdots \\
+      {y}_{n} 
+    \end{pmatrix}\\
+    &=& (\lambda_1{y}_{1},\lambda_2{y}_{2},\hdots,\lambda_n{y}_n )
+    \begin{pmatrix}
+      {y}_{1} \\
+      {y}_{2} \\
+      \vdots \\
+      {y}_{n} 
+    \end{pmatrix}\\
+    &=&\lambda_1{y}_{1}^{2}+\lambda_2{y}_{2}^{2}+\hdots+\lambda_n{y}_n^{2}\\
+    &\<&\lambda_1({y}_{1}^{2}+{y}_{2}^{2}+\hdots+{y}_n^{2})\\
+    &=& \lambda_1,
+  \end{eqnarray*}
+  pois temos $\lambda_1 \> \lambda_2 \> \hdots \> \lambda_n$ e
+  $\norma{y}=1$ (exercício~\ref{exerc:matriz_ortogonal}).
+%
+%  $\lambda_1\mathbf{y}_{1}^{2}+\lambda_2\mathbf{y}_{2}^{2}+\hdots+\lambda_n\mathbf{y}_n^{2}
+%  \<
+%  \lambda_1(1\mathbf{y}_{1}^{2}+1\mathbf{y}_{2}^{2}+\hdots+1\mathbf{y}_{n}^{2})=
+%  \lambda_1\norma{y}^{2}$ ou seja
+%  $\mathbf{x}^{\mathtt{T}}A\mathbf{x}\<\lambda_1\norma{Q^{\mathtt{T}}\mathbf{x}}$\newline
+%  Como $\norma{x}=1\rightarrow\norma{Q^{\mathtt{T}}\mathbf{x}}=1
+%  \max_{\substack{\norma{x}=1}}
+%  \mathbf{x}^{\mathtt{T}}A\mathbf{x}=\lambda_1$
+\end{proof}
+
+\begin{exercicio}\label{exerc:rayl}
+  Mostrar que o máximo de $\escalar{A\mathbf{x}}{\mathbf{x}}$ é atingido
+  se e só se $\mathbf{x}$ for autovetor de A de norma $1$.
+\end{exercicio} 
+
+Seguindo a proposição anterior, temos o seguinte para o segundo maior
+autovalor de uma matriz simétrica.
+
+\begin{propo}
+  Seja $A$ matriz simétrica, $ \lambda_1 \> \lambda_2 \> \hdots \>
+  \lambda_n$ autovalores de $A$ com respectivos autovetores ortonormais
+  $\mathbf{q}_1, \mathbf{q}_2, \hdots, \mathbf{q}_n$. Então
+  $$\lambda_2=\max_{\substack{\norma{x}=1 \\ \mathbf{x} \perp \mathbf{q}_1}} \escalar{A\mathbf{x}}{\mathbf{x}}$$
+\end{propo}
+
+\begin{proof}
+  Partindo do princípio análogo ao da proposição anterior tomamos
+  $\mathbf{y} = Q^{\mathtt{T}}\mathbf{x}$. De $\norma{x} = 1$ temos
+  $\norma{y} = 1$ e, também do exercício~\ref{exerc:matriz_ortogonal},
+  de temos que $\escalar{Q^{\mathtt{T}}\mathbf{x}}{Q^{\mathtt{T}}\mathbf{q}_1}
+  = \escalar{\mathbf{x}}{\mathbf{q}_1} = 0$, ou seja,  % pois $\mathbf{x} \perp
+  % \mathbf{q}_1 \rightarrow
+  $\mathbf{y} \perp Q^{\mathtt{T}}\mathbf{x}$.  
+  Ainda,
+  %e da expressão $(Q^{\mathtt{T}}\mathbf{x})^{\mathtt{T}}D(Q^{\mathtt{T}}\mathbf{x})$ temos que:
+  \begin{equation*}
+    Q^{\mathtt{T}}\mathbf{x} = 
+%    \begin{pmatrix}
+%      \mathbf{q}_1^{\mathtt{T}} \\
+%      \mathbf{q}_2^{\mathtt{T}} \\
+%      \vdots \\
+%      \mathbf{q}_n^{\mathtt{T}} 
+%    \end{pmatrix} \mathbf{x}
+%    = \begin{pmatrix}
+%      \mathbf{q}_1^{\mathtt{T}}\mathbf{x} \\
+%      \mathbf{q}_2^{\mathtt{T}}\mathbf{x} \\
+%      \vdots \\
+%      \mathbf{q}_n^{\mathtt{T}}\mathbf{x}    
+%    \end{pmatrix}
+     \begin{pmatrix}
+      \mathbf{0} \\
+      \escalar{\mathbf{q}_2}{\mathbf{x}}\\
+      \vdots \\
+      \escalar{\mathbf{q}_n}{\mathbf{x}}\\
+    \end{pmatrix}%\ pois\ \mathbf{x}\perp\mathbf{q}_1\\
+  \end{equation*}
+  
+  Após a resolução análoga à proposição anterior, obtemos ao invés de
+  $\lambda_1{y}_1^{2} + \lambda_2{y}_2^{2} + \hdots +
+  \lambda_n{y}_n^{2}$ a expressão $0 + \lambda_2{y}_2^{2} +
+  \lambda_3{y}_3^{2} + \hdots + \lambda_n{y}_n^{2}$ e como $\lambda_2$ é
+  o maior autovalor que aparece na expressão podemos afirmar 
+  $$
+  \max_{\substack{\norma{x}=1 \\ \mathbf{x} \perp \mathbf{q}_1}}
+    \escalar{A\textbf{x}}{\textbf{x}}=
+    \max_{\substack{\norma{y}=1 \\ \mathbf{y} \perp Q^\texttt{T}\mathbf{q}_1}}
+      \escalar{D\textbf{y}}{\textbf{y}}\< \lambda_2.
+  $$
+  % que a expressão anterior é $\< \lambda_2\norma{y}^{2}$. Como
+  % $\norma{y}^2=1$, temos a expressão = $\lambda_2$.
+\end{proof}
+Baseado nas proposições anteriores podemos demonstrar que 
+$$
+\lambda_i=\max_{\substack{\norma{x}=1 \\ \mathbf{x} \perp \mathbf{q}_j
+    (1\< j<i) }}
+\escalar{A\mathbf{x}}{\mathbf{x}}.$$ 
+
+%e ainda:
+%$$\lambda_4=\max_{\substack{\norma{x}=1 \\ \mathbf{x} \perp \mathbf{q}_i | i=1,2,3}} \escalar{A\mathbf{x}}{\mathbf{x}}$$
+%
+%o que nos leva ao seguinte teorema:
+
+
+Vamos mostrar um resultado mais geral.
+
+\begin{teo}[Teorema de Courant-Fischer]\label{teo:courant-fischer}
+  Seja $A$ uma matriz simétrica com autovalores
+  $\lambda_1\>\lambda_2\>\cdots\>\lambda_n$. Então
+  $$
+  \lambda_k = \max_{\substack{U \\ \dim U = k}}\min_{\substack{\mathbf{x}
+      \in U \\ \mathbf{x} \neq \mathbf{0}}}
+  \frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}},$$
+  onde $U$ varia sobre todo subespaço do $\R^{n}$ de dimensão $k$.  
+  % Obs:$\frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}}=\frac{\mathbf{x}^{\mathtt{T}}A\mathbf{x}}{\mathbf{x}^{\mathtt{T}}\mathbf{x}}$
+\end{teo}
+\begin{proof}
+  Seja $U$ um subespaço qualquer  de dimensão $\dim = k$ e
+  $\mathbf{q}_1,\dots,\mathbf{q}_n$ autovetores ortonormais associados a
+  $\lambda_1,\lambda_2,\dots,\lambda_n$, respectivamente.
+
+  Tomamos os subespaços $V_k=[\mathbf{q}_1,\hdots,\mathbf{q}_k]$, e
+  $T_k=[\mathbf{q}_{k+1},\hdots,\mathbf{q}_n]$ e, como $\dim U=k$ temos
+  que existe $\mathbf{x}\in u\cap{T}_{k-1}\neq\{\mathbf{0}\}$ pois
+  $\dim{T}_{k-1}+\dim U  =n+1$.
+
+  Como $\mathbf{x} \in {T}_{k-1}$ podemos escrever $\mathbf{x}$ como a  combinação linear 
+  $$\mathbf{x}=\sum_{i=k}^n\alpha_i\mathbf{q}_i.$$
+
+  Seja $Q=(\mathbf{q}_1,\dots,\mathbf{q}_n)$ a matriz ortogonal de
+  autovetores e façamos $\mathbf{y}=Q^{\mathtt{T}}\mathbf{x}$. Como $Q$
+  preserva produto interno (exerc.~\ref{exerc:matriz_ortogonal}) e
+%  \begin{enumerate}
+%  \item $\mathbf{x}^{\mathtt{T}}A\mathbf{x}=\mathbf{y}^{\mathtt{T}}D\mathbf{y}$
+%  \item $\mathbf{y}^{\mathtt{T}}\mathbf{y}=(Q^{\mathtt{T}}\mathbf{x})^{\mathtt{T}}(Q^{\mathtt{T}}\mathbf{x})=\mathbf{x}^{\mathtt{T}}QQ^{\mathtt{T}}\mathbf{x}=x^{\mathtt{T}}x \Rightarrow \escalar{\mathbf{x}}{\mathbf{x}}=\escalar{Q^{\mathtt{T}}\mathbf{x}}{Q^{\mathtt{T}}\mathbf{x}}$
+%  \end{enumerate}
+%  E análogo a demonstração da proposição anterior, temos:
+  \begin{equation*}
+    Q^{\mathtt{T}}\mathbf{x} %=& \begin{pmatrix}
+    % \mathbf{q}_1^{\mathtt{T}} \\
+    % \mathbf{q}_2^{\mathtt{T}} \\
+    % \vdots \\
+    % \mathbf{q}_n^{\mathtt{T}} 
+    % \end{pmatrix} \mathbf{x}\\
+    = \begin{pmatrix}
+      \escalar{\mathbf{q}_1}{\mathbf{x}} \\
+      \escalar{\mathbf{q}_2}{\mathbf{x}} \\
+      \vdots \\
+      \escalar{\mathbf{q}_n}{\mathbf{x}}    
+    \end{pmatrix}
+    = \begin{pmatrix}
+      {0} \\
+      % \mathbf{0} \\
+      \vdots \\
+      {0}\\     
+      \alpha_k \\
+      % \alpha_{k+1} \\
+      \vdots \\
+      \alpha_n\\
+    \end{pmatrix} = \mathbf{y} = \begin{pmatrix}
+      {y}_1 \\
+      {y}_2 \\
+      \vdots \\
+      {y}_n \\
+    \end{pmatrix}       
+  \end{equation*}
+  temos que
+  $$
+  \frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}
+  }=
+  \frac{\escalar{D\mathbf{y}}{\mathbf{y}}}{\escalar{\mathbf{y}}{\mathbf{y}}}
+  =
+  \frac{\sum_{i=1}^{n}\lambda_i{y}_i^{2}}{\sum_{i=1}^{n}{y}_i^{2}}
+  =
+  \frac{\sum_{i=k}^{n}\lambda_i\alpha_i^{2}}{\sum_{i=k}^{n}\alpha_i^{2}}
+  \<
+  \frac{\lambda_k\sum_{i=k}^{n}\alpha_i^{2}}{\sum_{i=k}^{n}\alpha_i^{2}}
+  = \lambda_k.
+  $$
+
+  Agora, para $U=V_k$ temos, de modo análogo, que
+  $\mathbf{x}=\sum_{i=1}^k\alpha_i\mathbf{q}_i$ e
+  $$
+  \frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}
+  }=
+  \frac{\escalar{D\mathbf{y}}{\mathbf{y}}}{\escalar{\mathbf{y}}{\mathbf{y}}}
+  =
+  %\frac{\sum_{i=1}^{n}\lambda_i{y}_i^{2}}{\sum_{i=1}^{n}{y}_i^{2}}
+  %=
+  \frac{\sum_{i=1}^{k}\lambda_i\alpha_i^{2}}{\sum_{i=1}^{k}\alpha_i^{2}}
+  \>
+%  \frac{\lambda_k\sum_{i=k}^{n}\alpha_i^{2}}{\sum_{i=k}^{n}\alpha_i^{2}}
+  \lambda_k.
+  $$
+
+  Logo, $$\lambda_k=\max_{\substack{U \\ \dim U =
+      k}}\min_{\substack{\mathbf{x} \in U \\ \mathbf{x} \neq
+      \mathbf{0}}}\frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}}.$$
+\end{proof}
+
+\begin{exercicio}[Teorema de Courant-Fischer] \label{exerc:courant-fischer}
+  Mostre que também vale o seguinte
+  $$
+  \lambda_k= \min_{\substack{U \\ \dim U =
+      n-k+1}}\max_{\substack{\mathbf{x} \in U \\ \mathbf{x} \neq
+      \mathbf{0}}}
+  \frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}},$$
+  onde $U$ subespaço de dimensão $n-k+1$ no $\R^n$.
+\end{exercicio}
+
+\begin{propo}[Teorema do Entrelaçamento]\label{teo:entrelacamento}
+  Seja $ A = ( {a}_{i,j} ) $ matriz simétrica com autovalores $\lambda_1
+  \> \lambda_2 \> \hdots \> \lambda_n$ e $ A_k = (a_{i,j})_{i,j \neq k}
+  $ matriz $(n-1) \times (n-1) $ simétrica, com autovalores
+  $\mu_1\>\mu_2\>\hdots\>\mu_{n-1} $. Então
+  $$
+  \lambda_1 \> \mu_1 \> \lambda_2 \> \mu_2 \> \hdots \> \lambda_{n-1} \>
+  \mu_{n-1} \> \lambda_n.$$
+\end{propo}
+\begin{proof} Vamos mostrar que $\lambda_j\>\mu_j\>\lambda_{j+1}$ para
+  $A_1$.  Seja $U$ subespaço no $\R^{n-1}$ de dimensão $\dim U = j$ tal
+  que $$\mu_j = \min_{\substack{\mathbf{x} \in U \\ \mathbf{x} \neq
+      \mathbf{0}}}
+  \frac{\escalar{A_1\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}}$$
+  e seja $\{\mathbf{u}_1, \mathbf{u}_2, \hdots, \mathtt{u}_n\}$ uma base
+  de $U$.  Definimos $$\mathbf{u}_i^{'}=\begin{pmatrix}
+    0 \\
+    \mathbf{u}_i \\
+  \end{pmatrix}\qquad (\forall i = 1,2,\hdots,j)
+  $$ 
+  sendo  $U{'}$ o subespaço
+  $[\mathbf{u}_1{'},\mathbf{u}_2{'},\hdots,\mathbf{u}_j{'}]$ no $R^n$ de
+  dimensão $\dim U = j$
+  $$\mu_j=
+  \min_{\substack{\mathbf{x} \in U \\ \mathbf{x} \neq \mathbf{0}}}
+  \frac{\escalar{A_1\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}}
+  =^{*} \min_{\substack{\mathbf{x} \in U{'} \\ \mathbf{x} \neq
+      \mathbf{0}}}
+  \frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}}
+  \< \max_{\substack{U \\ \dim U = j}}\min_{\substack{\mathbf{x} \in U \\
+      \mathbf{x} \neq \mathbf{0}}}
+  \frac{\escalar{A\mathbf{x}}{\mathbf{x}}}{\escalar{\mathbf{x}}{\mathbf{x}}}=\lambda_j.$$
+  * Pois ao multiplicar, anula-se a linha 1 e a coluna 1 da matriz $A$,
+  resultando na matriz $A_1$.
+
+  Para mostrar $\mu_j\>\lambda_{j+1}$ para $A_1$ usamos o
+  exercício~\ref{exerc:courant-fischer}. Os detalhes ficam como exercício.
+\end{proof}
+
+Seja a matriz $A = (a_{ij})$ e, dada uma permutação $\rho$ de $12\dots
+n$ denotamos por  $A_\rho$ a matriz $(a_{\rho(i)\rho(j)})$. 
+
+\begin{exemplo} 
+Suponha a permutação 3214567, ou seja, $\rho(1)=3,\rho(3)=1,\rho(i)=i
+(\forall_i\neq1,3)$ e considere a matriz 
+$$A = \begin{pmatrix}
+        2 & 0 & 0 & 1 & 3 \\
+        4 & 2 & 1 & 5 & 5 \\
+        1 & 2 & 7 & 3 & 0 \\
+        6 & 0 & 0 & 2 & 1 \\
+        1 & 0 & 0 & 7 & 2 \\
+\end{pmatrix}.$$
+A matriz $A_\rho$ é 
+$$ A_\rho=\begin{pmatrix}
+        7 & 2 & 1 & 3 & 0 \\
+        1 & 2 & 4 & 5 & 5 \\
+        0 & 0 & 2 & 1 & 3 \\
+        0 & 0 & 6 & 2 & 1 \\
+        0 & 0 & 1 & 7 & 2 \\
+\end{pmatrix}.$$
+\end{exemplo}
+        
+\begin{exercicio}
+  Seja $P$ a matriz obtida da matriz identidade permutando-se as linhas
+  de $\mathrm{Id}$ de acordo com $\rho$. Mostre que
+  \begin{enumerate}
+  \item $A_\rho=PAP^{\mathtt{T}}$;
+  \item $A_\rho$ tem os mesmos autovalores de $A$;
+  \item se $\mathbf{v}$ é um autovetor de $A$ então
+    $\mathbf{v}_\rho=P\mathbf{v}$ é um autovetor de $A_\rho$.
+  \end{enumerate}
+\end{exercicio}
+
+Dizemos que a matriz $A$ é \textit{irredutível}  se não existe
+permutação $\rho$ tal que 
+$$A_\rho = \begin{pmatrix} 
+                B & C \\
+                \mathbf{0} & D \\
+\end{pmatrix}$$ com $B$ e $D$ matrizes quadradas.
+
+\begin{teo}[Teorema de Perron-Frobenius]\label{teo:perron-frobenius}
+  Seja $A$, simétrica, não-negativa $(a_{ij} \> 0)$, irredutível e com
+  autovalores $\lambda_1 \> \lambda_2 \> \hdots \> \lambda_n$.  Então
+\begin{enumerate}
+\item $\lambda_1 > 0$ e existe autovetor não-negativo associado  $\mathbf{v}_1$;
+\item $\lambda_1 > \lambda_2$;
+\item $|{\lambda_i}| \< \lambda_1$ para todo $i=2,\hdots,n$;
+\item $\lambda_1 = -\lambda_n$ se, e só se, existe $\rho$ tal que 
+  $  A_\rho= \begin{pmatrix}
+    0 & B \\
+    B^{\mathtt{T}} & 0 \\
+  \end{pmatrix}$.
+\end{enumerate}
+\end{teo}
+
+%\begin{enumerate}
+%\item 
+\begin{proof}
+  \textbf{(1)}: De $A$ não negativa $\mathrm{tr}(A)=\sum_ia_{i,i}\>0$. Pelo
+  exercício~\ref{exerc:1} e Teorema~\ref{teo:5linha} $\mathrm{tr}(A)=\sum_i
+  \lambda_i$, logo $\lambda_1\>0$.
+
+  Seja $\mathbf{u}$ autovetor com norma 1 associado a $\lambda_1$.
+  Assim,
+  $$
+  \lambda_1 = \mathbf{u}^{\mathtt{T}}A\mathbf{u} =
+  \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}u_iu_j \<
+  \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}|{u_i}||{u_j}| \< \lambda_1.
+  $$ 
+  logo
+  $\mathbf{v} =  \begin{pmatrix} 
+    |{u_1}|\\
+    |{u_2}|\\
+    \vdots\\
+    |{u_n}|\\
+  \end{pmatrix}$ é um autovetor (exercício~\ref{exerc:rayl}) associado a
+  $\lambda_1$ não-negativo e tem norma 1.
+
+  Suponha que existam $i$'s tais que $u_i=0$. Seja $\rho$ uma permutação
+  tal que $|U_i|>0$ para todo $i\<m$ e $|u_i|=0$ pra todo
+  $i>m$. Escrevendo $A_\rho = \begin{pmatrix}  B & C \\
+    D & E \\                            \end{pmatrix}$ e
+  $(\mathbf{v}_1)_\rho=\begin{pmatrix}
+    \mathbf{u}{'}\\                     \mathbf{0}\\
+  \end{pmatrix} $ temos então
+  $$ 
+  \begin{pmatrix}
+    B & C \\
+    D & E \\
+  \end{pmatrix} = \begin{pmatrix}
+    \lambda_1\mathbf{u}{'}\\
+    \mathbf{0}\\
+  \end{pmatrix} 
+  $$ 
+  Logo $ D = 0$ e portanto, $A_\rho = \begin{pmatrix} B & C \\ 0 & E \\
+  \end{pmatrix}$, ou seja $A$ é uma matriz redutível, absurdo. Com isso,
+  $ \mathbf{v}_1 > 0.$
+
+  Agora vamos mostrar que $\lambda_1 \neq 0$. Supondo $\lambda_1=0$
+  temos
+  \begin{equation}
+    \label{eq:redutivel}
+    \begin{pmatrix}
+      B & C \\
+      D & E \\
+    \end{pmatrix} = \lambda_1 \begin{pmatrix}
+      \mathbf{0}\\
+      \mathbf{0}\\
+    \end{pmatrix} 
+  \end{equation}
+  que, analogamente, contraria o fato de $A$ ser irredutível.
+
+  \bigskip
+  
+  \textbf{(2)}: 
+  Vamos mostrar que $\lambda_1 > \lambda_2$.
+  
+  Como $\lambda_1 > \lambda_2$, pelo Teorema~\ref{teo:ma-mg}
+  $\textrm{ma}(\lambda_1) = \textrm{mg}(\lambda_1)$ pois A matriz
+  simétrica.
+  
+  Suponha $\mathrm{mg}(\lambda_2) \> 2$ e sejam $u,v$ autovetores
+  ortonormais de $\lambda_1$. Definimos o vetor 
+  $$
+  \mathbf{u}{'} =
+  \begin{pmatrix}
+    {u}_1 + |{u}_1|\\
+    {u}_2 + |{u}_2|\\
+    \vdots\\
+    {u}_n + |{u}_n|
+  \end{pmatrix}
+  $$
+  autovetor de $\lambda_1$. Claramente, ${u}_i + |{{u}_i}| \>
+  0\;(\forall i)$ e, portanto, ${u}_i + |{{u}_i}| > 0\;(\forall i)$, caso
+  contrário a matriz não seria irredutível, como vimos acima
+  (equação~\ref{eq:redutivel}).
+  
+  Idem para 
+  $$
+  \mathbf{v}{'} = 
+  \begin{pmatrix} 
+    v_1 + |v_1|\\ 
+    \vdots\\
+    v_n + |v_n| 
+  \end{pmatrix}.
+  $$
+
+  Por hipótese, $\mathbf{u}^{\mathtt{T}}\mathbf{v} = 0$ e, dessa forma, no
+  podemos ter $u_iv_i>0$ para todo $i$.  Absurdo.  Assim,
+  $\mathrm{mg}(\lambda_1) = 1$ e $\lambda_1>\lambda_2$.
+
+  \bigskip
+
+  \textbf{(3)}: $\norm{\lambda_i} \< \lambda_i (\forall i)$. Se
+  $\mathbf{v}_i$ autovetor unitário de $\lambda_i$ então
+  $$
+%  \lambda_i = \mathbf{v}_i^{\mathtt{T}}A\mathbf{v}_i =
+%  \sum_{k=1}^{n}\sum_{l=1}^{n}a_{k,l}{v}_k {v}_l$\newline Tomando
+ % modulo dos termos temos:\newline $
+  \norm{\lambda_i} =
+  \norm{\mathbf{v}_i^{\mathtt{T}}A\mathbf{v}_i} =
+  \norm{\sum_{k=1}^{n}\sum_{l=1}^{n}a_{k,l}{v}_k{v}_l} \<
+  \sum_{k=1}^{n}\sum_{l=1}^{n}a_{k,l}\norm{{v}_k}\norm{{v}_l}
+  \< \lambda_1$$ 
+  pois $\mathbf{v}_1$ é autovetor unitário.
+
+  \bigskip
+
+  \textbf{(4)}:
+  Sejam $\lambda$ autovalor com autovetor $\mathbf{v}$ e $\rho$ tal que
+  $A_\rho = \begin{pmatrix} \mathbf{0}  & B\\
+    B^{\mathtt{T}} & \mathbf{0}\\ \end{pmatrix}$.
+
+  Escrevemos $\mathbf{v}_\rho = \begin{pmatrix} \mathbf{v}{'}\\
+    \mathbf{v}{''}\\ \end{pmatrix}$. Logo $A_\rho\mathbf{v}_\rho =
+  \lambda\mathbf{v}_\rho$. Isso implica que 
+  $$ 
+  \begin{pmatrix}
+    \mathbf{0} & B\\
+    B^{\mathtt{T}} & \mathbf{0}\\
+  \end{pmatrix}\begin{pmatrix}
+    \mathbf{v}{'}\\
+    \mathbf{v}{''}\\
+  \end{pmatrix} = \lambda \begin{pmatrix}
+    \mathbf{v}{'}\\
+    \mathbf{v}{''}\\
+  \end{pmatrix}\Leftrightarrow
+  \begin{pmatrix}
+    B\mathbf{v}{''}\\
+    B^{\mathtt{T}}\mathbf{v}{'}
+  \end{pmatrix} = \begin{pmatrix} 
+    \lambda\mathbf{v}{'}\\
+    \lambda\mathbf{v}{''}\\
+  \end{pmatrix}
+  \Leftrightarrow
+  $$
+  $$
+  \begin{pmatrix}
+    -B\mathbf{v}{''}\\
+    B^{\mathtt{T}}\mathbf{v}{'}
+  \end{pmatrix} = \begin{pmatrix} 
+    -\lambda\mathbf{v}{'}\\
+    \lambda\mathbf{v}{''}\\
+  \end{pmatrix}
+  \Leftrightarrow
+  \begin{pmatrix} 
+    \mathbf{0} & B\\
+    B^{\mathtt{T}} & \mathbf{0}\\
+  \end{pmatrix}\begin{pmatrix}
+    \mathbf{v}{'}\\
+    -\mathbf{v}{''}\\
+  \end{pmatrix}
+  \Leftrightarrow 
+  \lambda \begin{pmatrix}
+    \mathbf{v}{'}\\
+    -\mathbf{v}{''}\\
+  \end{pmatrix}$$ ou seja, $-\lambda$ autovalor de $A_\rho$ e
+  $\begin{pmatrix} \mathbf{v}{'}\\ -\mathbf{v}{''}\\ \end{pmatrix}$
+  autovetor associado. Portanto $ -\lambda$ é autovalor de $A$.
+
+  Agora nos resta provar a recíproca. Se $-\lambda_1$ é autovalor então seja $\mathbf{v}$ um
+  autovetor unitário de $-\lambda_1$.
+  $$\lambda_1 =
+  \norm{-\lambda_1} = \norm{\mathbf{v}^{\mathtt{T}}A\mathbf{v}} =
+  \norm{\sum_{i=1}^{n}\sum_{j=1}^{n}a_{i,j}{v}_i{v}_j} \<
+  \sum_{i=1}^{n}\sum_{j=1}^{n}a_{i,j}\norm{{v}_i}\norm{{v}_j} \<
+  \lambda_1.$$
+  Dessa forma, $\mathbf{u} = \begin{pmatrix} \norm{{v}_1}\\  \norm{{v}_2}\\
+    \vdots\\ \norm{{v}_n}\\ \end{pmatrix}$ autovetor de $\lambda_1$
+  (com $\norm{{v}_i} \neq 0$). 
+
+
+  Seja $\rho$ uma permutação tal que $\mathbf{v}_\rho = \begin{pmatrix}
+    {v}_{\rho(1)}\\     {v}_{\rho(2)}\\     \vdots\\     {v}_{\rho(n)}\\
+  \end{pmatrix}$ com ${v}_{\rho(i)} > 0$ para todo $i \< m$ e
+  ${v}_\rho(i) < 0$ para todo $i >\ m$ e escrevemos 
+  $$
+  \mathbf{v}_\rho = 
+  \begin{pmatrix}  
+    \mathbf{v}{'}\\
+    -\mathbf{v}{''}\\
+  \end{pmatrix}
+  $$ 
+  com $\mathbf{v}^{'},\mathbf{v}^{''} > 0$ e escrevemos 
+  $$
+  A_\rho = \begin{pmatrix} 
+    B & C\\
+    D & E\\
+  \end{pmatrix}.
+  $$
+  Dessa forma $\begin{pmatrix}
+    B & C\\
+    D & E\\
+  \end{pmatrix} \begin{pmatrix}
+    \mathbf{v}{'}\\
+    \mathbf{v}{''}\\
+  \end{pmatrix} = \lambda_1\begin{pmatrix}
+    \mathbf{v}{'}\\
+    \mathbf{v}{''}\\
+  \end{pmatrix}
+  \Rightarrow \begin{pmatrix}
+    B\mathbf{v}{'} + C\mathbf{v}{''}\\
+    D\mathbf{v}{'} + E\mathbf{v}{''}\\
+  \end{pmatrix} = \begin{pmatrix}
+    \lambda_1\mathbf{v}{'}\\
+    \lambda_1\mathbf{v}{''}\\
+  \end{pmatrix}$ e %\newline
+  $\begin{pmatrix}
+    B & C\\
+    D & E\\
+  \end{pmatrix} \begin{pmatrix}
+    \mathbf{v}{'}\\
+    -\mathbf{v}{''}\\
+  \end{pmatrix} = -\lambda_1\begin{pmatrix}
+    \mathbf{v}{'}\\
+    -\mathbf{v}{''}\\
+  \end{pmatrix}
+  \Rightarrow \begin{pmatrix}
+    B\mathbf{v}{'} - C\mathbf{v}{''}\\
+    D\mathbf{v}{'} - E\mathbf{v}{''}\\
+  \end{pmatrix} = \begin{pmatrix} 
+    -\lambda_1\mathbf{v}{'}\\
+    \lambda_1\mathbf{v}{''}\\
+  \end{pmatrix}$ ou seja, 
+  $$
+  \begin{cases}
+    B\mathbf{v}'+ C\mathbf{v}''= \lambda_1\mathbf{v}'\\
+    B\mathbf{v}'- C\mathbf{v}''= -\lambda_1\mathbf{v}'
+  \end{cases}
+  $$ e como a matriz é não negativa e o vetor positivo temos que
+  $B=\mathbf{0}$. Analogamente, de 
+  $$
+  \begin{cases}
+    D\mathbf{v}'+ E\mathbf{v}''= \lambda_1\mathbf{v}''\\
+    D\mathbf{v}'- E\mathbf{v}''= \lambda_1\mathbf{v}'
+  \end{cases}
+  $$
+  temos que $E = \mathbf{0}$ $\therefore A_\rho=
+\begin{pmatrix}
+        0 & C\\
+        D & 0\\
+\end{pmatrix} $
+
+\begin{exercicio}
+        Concluir que $ D = C^{\mathtt{T}}$
+\end{exercicio}
+\end{proof}
+
+\begin{exercicio}
+  Mostre que se $A = \begin{pmatrix}
+    0 & B\\
+    B^{\mathtt{T}} & 0\\
+                \end{pmatrix}$ então $\lambda_i = \lambda_{n-i+1}$
+\end{exercicio}
+
+
+\section{Teoria Espectral de Grafos}
+
+Seja $G$ um grafo com $V(G) = \{1, 2,\dots, n\}$. Definimos a matriz de
+adjacências $A$ do grafo $G$ como $A(G) = (a_{ij})$, onde
+
+$$
+  a_{ij} =
+  \left\{
+    \begin{array}{l}
+    1, \quad\mathrm{se}\quad ij \in E(G) \\
+    0, \quad\mathrm{se}\quad ij \notin E(G) \\
+    \end{array}
+  \right.
+$$
+
+Definimos, ainda, o \emph{espectro} $\mathrm{Sp}(G) =
+(\lambda_1,\lambda_2,\dots, \lambda_n)$ do grafo $G$, com $\lambda_1 \ge
+\lambda_2 \ge \dots \ge \lambda_n$ os autovalores reais de A.
+
+\begin{exemplo}[Grafo completo $K^n$] O polinômio característico
+  $p_A(x)$ de um grafo completo com $n$ vértices é igual a
+  $$
+    p_{A(K^n)}(x) = (A -x\mathrm{Id}) = (x - (n-1))(x+1)^{n-1},
+  $$
+  e o seu espectro é da forma
+  $$    
+    \mathrm{Sp} (K^n) = (n - 1, -1, -1, \dots, -1).
+  $$
+\end{exemplo}
+
+\begin{exemplo}[Grafo bipartido completo $K_{r,r}$]
+  O polinômio característico de um grafo bipartido completo com classes
+  de tamanho $r$ é
+  $$
+    p_{A(K_{r,r})}(x)=x^{2n-2}(x+r)(x-r).
+  $$
+\end{exemplo}
+
+\begin{exemplo}[Grafo de Petersen] O Grafo de Petersen, cujo diagrama é
+  dado na figura abaixo, tem polinômio
+  característico
+  $$
+    p_A(x) = (x -3)(x+2)^4(x-1)^5.
+  $$
+%  \begin{figure}[h]
+%    \centering
+%      \input{petersen.pictex}
+%      \caption{\label{fig:grafo2}Grafo de Petersen.}
+%  \end{figure}
+\end{exemplo}
+
+\begin{observacao} Dois grafos distintos podem ter o mesmo polinômio
+  característico como mostra o seguinte exemplo
+\begin{exemplo}
+%  \begin{figure}[h]
+%    \centering
+%      \input{mesmo_pc.pictex}
+%      \caption{\label{fig:grafo3}Grafos com mesmo polinômio característico.}
+%  \end{figure}
+
+  Os grafos da figura \ref{fig:grafo3} têm polinômio característico
+  $$
+    p_{A(a)}(x) = P_{A(b)}(x) = 4x^3 - x^5.
+  $$
+\end{exemplo}
+\end{observacao}
+
+\begin{propo}
+  O elemento $d_{ij}$ da matriz $A^k$ é o número de seqüências $(i, x_1,
+  x_2, \dots, x_{k-1}, j)$ com vértices consecutivos adjacentes,
+  conhecidos como passeios de comprimento k (k é o número de arestas no
+  passeio).
+\end{propo}
+\begin{proof}
+  Temos que
+  $$
+    d_{ij} = \sum_{x_1=1}^n \sum_{x_2=1}^n \dots \sum_{x_{k-1}=1}^n 
+      a_{ix_1} a_{x_1x_2} a_{x_2x_3} \dots a_{x_{k-2}x_{k-1}} a_{x_{k-1}j}
+  $$
+
+  Assim, para as seqüências de vértices $(i, x_1, x_2, \dots, x_{k-1},
+  j)$ adjacentes, o termo referente da soma é igual a $1$. Se dois
+  vértices na seqüência não são adjacentes, então o termo da soma é
+  igual a $0$, pois o elemento referente da matriz de adjacências é $0$.
+  Portanto, o elemento $d_{ij}$ da matriz $A^k$ é igual ao número de
+  seqüências de vértices consecutivos adjacentes, ou seja, o número de
+  passeios com $k$ arestas de $i$ até $j$.
+\end{proof}
+
+\begin{exemplo}[$k = 4$]
+  Nesse caso,
+  $$
+    d_{ij} = \sum_{m=1}^n \sum_{l=1}^n \sum_{k=1}^n a_{im} a_{ml} a_{lk} a_{kj}
+  $$
+
+  Na diagonal, $d_{ii}$ é o número de passeios $(i,l,m,k,i)$. Assim,
+  $d_{ii}$ conta duas vezes as seqüências que formam circuitos de
+  tamanho quatro $(i,a,b,c,i)$, $i,a,b,c$ dois-a-dois distintos, mais as
+  seqüências da forma $(i,j,i,j,i)$, mais as seqüências da forma
+  $(i,a,b,a,i)$, $b\neq i$, mais as seqüências da forma 
+  $(i,a,i,b,i)$, $a\neq b$.
+\end{exemplo} 
+
+\begin{exemplo}[$k = 3$] Assim,
+  $$
+    d_{ij} = \sum_{m=1}^n \sum_{l=1}^n a_{im} a_{ml} a_{lj}.
+  $$
+
+  Os elementos da diagonal contam as seqüências $(i, a, b, i)$. Assim,
+  $d_{ii}$ é igual a duas vezes o número de triângulos que contém o
+  vértice $i$, logo 
+  $$ 
+  \mathrm{tr}(A³) = \sum_{i = 1}^n d_{ii} = 6  t,
+  $$
+  onde $t$ é o número de triângulos do grafo.
+  \begin{observacao} Do Teorema espectral 
+    $$
+    A = Q^{\mathtt{T}}DQ %\quad (Q^{\mathtt{T}} = Q^{-1})
+    $$
+    logo
+    $$
+    A² = Q^{\mathtt{T}} D Q Q^{\mathtt{T}} D Q = Q^{\mathtt{T}} D² Q
+    $$
+    Como $A \sim B$ implica que $\mathrm{tr}(A) = \mathrm{tr}(B)$
+    {temos} $\mathrm{tr}(A²) = \mathrm{tr}(D²) = \sum_{i = 1}^n \lambda_i²$.
+    
+    Genericamente,
+    $$
+    A^k = Q^{\mathtt{T}} A^k Q \quad\mathrm{e}\quad \mathrm{tr}(A^k) = \sum_{i=1}^n \lambda_i^k.
+    $$
+    
+    Assim,     
+    $$
+    \mathrm{tr}(A) = \sum_{i = 1}^n \lambda_i = 0,
+    $$
+    $$
+    \mathrm{tr}(A²) = \sum_{i = 1}^n \lambda_i² = 2 |E|,
+    $$
+    $$
+    \mathrm{tr}(A³) = \sum_{i = 1}^n \lambda_i³ = 6t,
+    $$
+  onde t é o número de triângulos no grafo.
+  \end{observacao}
+
+\end{exemplo}
+
+\begin{exercicio} Mostre que $\sum_{i = 1}^n\lambda_i^k$ é inteiro para
+  todo $k \in \N$.
+\end{exercicio}
+\begin{exercicio}
+  Mostre que grafos isomorfos têm matrizes de adjacência semelhantes.
+\end{exercicio}
+
+\subsection{Grau}
+
+\begin{teo}\label{teo:grau}
+  Seja $G$ um grafo e $\lambda_1$o maior autovalor de $A(G)$, então
+  $d(G) \le \lambda_1 \le \Delta(G)$.
+\end{teo}
+\begin{proof}
+  $$ \lambda_1 = \max_{\norma{x} = 1}
+   \mathbf{x}^{\mathtt{T}} A \mathbf{x} \ge \mathbf{u}^{\mathtt{T}} A \mathbf{u}, \qquad
+  \mathrm{onde } \qquad
+      \mathbf{u} = \frac{1}{\sqrt{n}} 
+      \begin{pmatrix}
+       {1} \\
+       {1} \\
+       \vdots \\
+       {1} \\
+      \end{pmatrix}.
+    $$
+
+  Logo,
+     $$
+     \lambda_1 \ge 
+     %\frac{1}{\sqrt{n}} 
+     %\begin{pmatrix}
+     %  {1} \\
+     %  {1} \\
+     %  \vdots \\
+     %  {1} \\
+     %\end{pmatrix}^{\mathtt{T}}
+     %A \frac{1}{\sqrt{n}}
+     %\begin{pmatrix}
+     %  {1} \\
+     %  {1} \\
+     %  \vdots \\
+     %  {1} \\
+     %\end{pmatrix}
+     %=
+     \frac{1}{n}
+     \begin{pmatrix}
+       {1} \\
+       {1} \\
+       \vdots \\
+       {1} \\
+     \end{pmatrix}^{\mathtt{T}}
+     A
+     \begin{pmatrix}
+       {1} \\
+       {1} \\
+       \vdots \\
+       {1} \\
+     \end{pmatrix}
+     = \frac{1}{n}
+     \begin{pmatrix}
+       {1} \\
+       {1} \\
+       \vdots \\
+       {1} \\
+     \end{pmatrix}^{\mathtt{T}}
+     \begin{pmatrix}
+       {d_1} \\
+       {d_2} \\
+       \vdots \\
+       {d_n} \\
+     \end{pmatrix}
+     = \frac {1}{n} \sum_{i = 1}^n d_i = d(G).
+     $$
+     
+     Por outro lado, tome $$ \mathbf{v_1} = \begin{pmatrix} {v_1} \\ {v_2} \\ \vdots \\
+       {v_n}
+  \end{pmatrix} > 0
+  $$ autovetor positivo a $\lambda_1$ e seja  $v_k = \max_i v_i$. Então,
+  $$
+    \lambda_1 v_k = \sum_{i = 1}^n a_{ki} v_i \le \sum_{i = 1}^n a_{ki}v_k
+    = d_k v_k \le \Delta (G) v_k
+  $$ logo, $ \lambda_1 \le \Delta(G). $
+\end{proof}
+
+\begin{corol} Para todo $i\in \{1,2,\dots,n\}$ $$|\lambda_i| \le \Delta(G).$$
+\end{corol}
+\begin{proof} Imediato do Teorema de Perron-Frobenius.
+\end{proof}
+
+\begin{corol} \label{corol:reg1}
+  Se $G$ é k-regular, então $\lambda_1 (G) = k$.
+\end{corol}
+\begin{proof}
+Como $G$ é $k$-regular, então $d(G) = k$ e $\Delta(G) = k$. Pelo
+Teorema \ref{teo:grau}, temos
+  $$
+    k=d(G) \le \lambda_1 \le \Delta(G)=k.
+  $$
+  Logo, $\lambda_1 = k$.
+\end{proof}
+
+\begin{corol} Se $\lambda_1 = d(G)$, então $G$ é $\lambda_1$-regular.
+\end{corol}
+\begin{proof}
+  Temos que $\lambda_1 = d(G)$. Logo,
+  $$
+    \lambda_1 = \frac{\mathbf{1}^{\mathtt{T}} A \mathbf{1}}
+                     {\mathbf{1}^{\mathtt{T}} \mathbf{1}},
+                     \qquad \mathrm{onde} \qquad 
+    \mathbf{1} = \begin{pmatrix} {1} \\ {1} \\ \vdots \\ {1} \end{pmatrix},
+  $$
+  pois
+  $$
+    \mathbf{1}^{\mathtt{T}} \mathbf{1} = n%\sum_{i = 1}^{n} 1 = n
+\qquad \mathrm{e}\qquad
+    \mathbf{1}^{\mathtt{T}} A \mathbf{1}
+%     = \mathbf{1}^{\mathtt{T}}
+%       \begin{pmatrix} {d_1} \\ {d_2} \\ \vdots \\ {d_n} \end{pmatrix}
+     = \sum_{i = 1}^n d_i.
+  $$
+
+  Então, $\mathbf{1}$ é autovetor associado à $\lambda_1$. Logo,
+  $$
+    A \mathbf{1} = \lambda_1 \mathbf{1}
+    \Leftrightarrow 
+     \begin{pmatrix} {d_1} \\ {d_2} \\ \vdots \\ {d_n} \end{pmatrix}
+     = \begin{pmatrix}
+         {\lambda_1} \\ {\lambda_1} \\ \vdots \\ {\lambda_1}
+       \end{pmatrix}.
+  $$
+%  Portando, $d_i = \lambda_1$ para todo $i = 1, 2, \dots, n$ e 
+  ou seja, $G$ é $\lambda_1$-regular.
+\end{proof}
+
+\subsection{Subgrafos}
+
+\begin{teo} Se $\mathrm{Sp}(G) = (\lambda_1, \lambda_2, \dots,
+  \lambda_n)$ e $\mathrm{Sp}(G - v) = (\mu_1, \mu_2, \dots, \mu_{n-1})$,
+  então
+  $$
+    \lambda_1 \ge \mu_1 \ge \lambda_2 \ge \mu_2 \ge \dots \ge \lambda_{n-1}
+     \ge \mu_{n-1} \ge \lambda_n.
+  $$
+\end{teo}
+\begin{proof}
+Imediato do Teorema do Entrelaçamento.
+\end{proof}
+
+\begin{exercicio} O que pode ser dito a respeito do espectro de $G - v - u$?
+\end{exercicio}
+
+\begin{teo} Se $H \subseteq G$, então $\lambda_1(H) \le \lambda_1(G)$.
+\end{teo}
+\begin{proof}
+  Seja $B$ a matriz de adjacências de $H = (V(G), E(H))$, então
+  $\lambda_1(H) = \mathbf{v_1}^{\mathtt{T}}B\mathbf{v_1}$, com
+  $\mathbf{v_1} = \begin{pmatrix} {v_1} \\ {v_2} \\ \vdots \\ {v_n}
+                  \end{pmatrix}$
+  autovetor unitário e  positivo. Então,
+  $$
+    \lambda_1(H) = \mathbf{v_1}^{\mathtt{T}} B \mathbf{v_1}
+      = \sum_i \sum_j b_{ij} v_i v_j
+      \le \sum_i \sum_j a_{ij} v_i v_j
+%  $$
+%  pois as arestas removidas diminuem a soma. Como
+%  $$
+%    \sum_i \sum_j a_{ij} v_i v_j
+      \le \mathbf{v_1}^{\mathtt{T}} A \mathbf{v_1} \le \lambda_1(G).
+  $$
+  Portanto, $\lambda_1(H) \le \lambda_1(G)$.
+\end{proof}
+
+\begin{exercicio} Descubra um exemplo com $H \subseteq G$ e tal que
+  $\lambda_2(H) > \lambda_2(G)$.
+\end{exercicio}
+
+\subsection{Conexidade}
+
+\begin{propo} \label{propo:perm1}
+  Seja $G$ um grafo com componentes conexas 
+  $C_1,C_2,\dots,C_m$, então existe uma permutação $\sigma$ de $1, 2, \dots, n$
+  tal que
+  $$
+    A_\sigma = \begin{pmatrix}
+                 {A_{11}}     & {\mathbf{0}} & \dots  & \mathbf{0} \\
+                 {\mathbf{0}} & {A_{22}}     & \dots  & \mathbf{0} \\
+                 \vdots       & \vdots       & \ddots & \vdots     \\
+                 {\mathbf{0}} & \mathbf{0}   & \dots  &  {A_{mm}}  \\
+               \end{pmatrix},
+  $$
+  onde $A_{ii}$ é matriz de adjacência da componente conexa $C_i$.
+\end{propo}
+
+\begin{exercicio} Prova da Proposição \ref{propo:perm1}.
+\end{exercicio}
+
+\begin{exercicio} Se $G$ é desconexo então a matriz $A(G)$ é redutível.
+\end{exercicio}
+
+\begin{teo} Se $G$ é um grafo conexo, então $\lambda_1 > \lambda_2$.
+\end{teo}
+\begin{proof} Como $G$ é conexo, a matriz de adjacências $A(G)$ é irredutível.
+  Portanto, pelo Teorema de Perron-Frobenius, $\lambda_1 > \lambda_2$.
+\end{proof}
+
+\begin{observacao} Se um grafo $G$ tem $\lambda_1 > \lambda_2$, $G$ não é
+  necessariamente conexo, como mostra o seguinte exemplo
+\begin{exemplo} O grafo da figura \ref{fig:grafo4} tem espectro 
+  $\mathrm{Sp} = (3, 2, -1, -1, -1, -1, -1)$ e é desconexo.
+%  \begin{figure}[h]
+%    \centering
+%      \input{k4_k3.pictex}
+%      \caption{\label{fig:grafo4}Grafo desconexo com $\lambda_1 > \lambda_2$.}
+%  \end{figure}
+\end{exemplo}
+\end{observacao}
+
+\begin{teo} Se $G$ é um grafo $k$-regular então $\mathrm{ma}(\lambda_1)$ é o número
+  de componentes conexas de $G$.
+\end{teo}
+
+\begin{proof} Pelo corolário \ref{corol:reg1}, $\lambda_1 = k$. Seja 
+  $$\mathbf{v_1} = \begin{pmatrix}
+    {v_1} \\ {v_2} \\ \vdots \\ {v_n}
+  \end{pmatrix}$$ autovetor associado a $\lambda_1$, então
+  $$
+    \lambda_1 \mathbf{v_1} = A\mathbf{v_1}
+      \Rightarrow k v_i = \sum_{j = 1}^n a_{ij}v_j.
+  $$ 
+  Suponha, sem perda de generalidade, que 
+  $$
+    v_1 = \max_{1 \le j \le n} v_j.
+  $$
+  Então,
+  $$
+    k v_1 = \sum_{j = 1}^n a_{1j}v_j \le \sum_{j = 1}^n a_{1j}v_1 = k v_1.
+  $$
+  Logo,
+  $$
+    \sum_{j = 1}^n a_{1j}v_j = \sum_{j = 1}^n a_{1j}v_1.
+  $$
+  Portanto, $v_1$ máximo implica que $v_j = v_1$ para todo 
+  $j \in N(1) = \{x \in V : \{x,1\} \in E\}$.
+  
+  Notemos que para $\ell \in N(1)$
+  $$
+  k v_\ell = \sum_{j = 1}^n a_{\ell j}v_j \le \sum_{j = 1}^na_{\ell
+    j}v_\ell = k v_\ell,
+  $$ e da mesma forma, $$ v_j = v_\ell \quad \forall j \in N(\ell). $$
+
+  Indutivamente, $v_j = v_\ell$ para todo vértice $\ell$ pertencente a mesma
+  componente conexa que $1$.
+
+  Agora, seja $$ v_t = \max_{\substack{1 \le j \le n \\ v_j \neq v_1}} v_j, $$
+  e $C(1)$ a componente conexa que contem o vértice $1$. Então
+  $$ k v_t = \sum_{j = 1}^n a_{tj}v_j 
+     = \sum_{j \in C(1)} a_{tj}v_j + \sum_{j \notin C(1)} a_{tj}v_j
+     = \sum_{j \notin C(1)} a_{tj}v_j
+     \le \sum_{j \notin C(1)} a_{tj}v_t
+     \le k v_t.
+  $$ Logo, $v_j = v_t$ para todo $j \in N(t)$. Como antes, temos 
+  $v_j = v_t$ para todo $j \in C(t)$, onde $C(t)$ é a componente conexa
+  que contém o vértice $t$.
+
+  Repetindo esse argumento temos que $\mathbf{v_1}$ é constante em cada
+  componente conexa de $G$. Logo,
+  $\dim V_{\lambda_1} = \mathrm{mg}(\lambda_1) = m = \mathrm{ma}(\lambda_1)$.
+\end{proof}
+
+\subsection{Grafos bipartidos}
+
+
+\begin{exercicio}
+  Usando a técnica da demonstração do último teorema mostre que se $G$ é
+  conexo, $k$-regular e $\lambda_1 = -\lambda_n$ então $G$ é
+  bipartido.(Dica: $\mathrm{sinal}(v_j) = \mathrm{sinal}(N(v_j)) =
+  \mathrm{sinal}(N(N(v_j))) = \dots$.)
+\end{exercicio}
+
+\begin{exercicio}\label{exerc:bipartido2}
+  Mostre que se $G$ é bipartido então existe permutação $\sigma$ tal que
+        $$
+        A_\sigma =
+        \begin{pmatrix}
+                \mathbf{0}&B\\
+                B^{\mathtt{T}}&\mathbf{0}
+        \end{pmatrix}
+        $$
+        onde $B$ é uma matriz quadrada.
+\end{exercicio}
+\begin{exercicio}
+        Mostre que se $G = (A \cup B,E)$ é bipartido e 
+        $$
+        \Delta_x = \max\{d(v) : v \in x\} 
+        $$
+        para $x \in \{A,B\}$, então $\lambda_1 \<
+        \sqrt{\Delta_A\Delta_B}$
+\end{exercicio}
+\begin{exercicio}
+        Mostre que se $G$ é uma floresta então 
+        $$
+        \lambda_1 \< \min\{2\sqrt{\Delta - 1}, \sqrt{n - 1}\}.
+        $$
+        (Dica: $\lambda_1 = -\lambda_n$ e $\mathrm{tr}(A^2) \< 2n - 2$.)
+\end{exercicio}
+\begin{teo}\label{teo:grafo-bipartido}
+  Se G é conexo, são equivalentes
+  \begin{enumerate}\renewcommand{\labelenumi}{(\roman{enumi})}
+  \item $\lambda_1 = -\lambda_n$;
+  \item $\lambda_i = -\lambda_{n+1-i}\quad (\forall i)$; 
+  \item $G$ é bipartido.
+  \end{enumerate}
+\end{teo}
+\begin{proof}
+        Exercício \ref{exerc:bipartido2} e Perron-Frobenius.
+\end{proof}
+
+\section{$\alpha,\chi,\omega,\lambda$}
+
+Relembrando algumas definições temos\newline $\alpha(G)$ --- tamanho de
+um conjunto independente máximo;\newline $\chi(G)$ --- número cromático
+(número mínimo de partes independentes em $V(G)$);\newline $\omega(G)$ ---
+clique  máximo (número  de vértices  do maior  subgrafo  completo). Esses
+números satisfazem as seguintes desigualdades
+\begin{eqnarray*}
+\chi(G)\alpha(G) &\>& |V|\\  
+\chi(G) &\>& \omega(G)\\
+\chi(G) &\<& \Delta(G) + 1. 
+\end{eqnarray*}
+\begin{exercicio}
+  Mostre que $\omega(G) \< \lambda_1(G) + 1,$ onde $\lambda_1(G)$ é o
+  maior autovalor de $A(G)$.
+\end{exercicio}
+
+\begin{teo} Se $\mathrm{Sp}(G)=(\lambda_1,\lambda_2,\dots,\lambda_n)$ então
+  $$
+  1 - \frac{\lambda_1}{\lambda_n} \< \chi(G) \< 1 + \lambda_1
+        $$
+\end{teo}
+\begin{proof} Primeiro, vamo mostrar que $\chi(G) \< 1 + \lambda_1$.
+        Suponha que temos $\lambda_1 + 1$ cores disponíveis. Seja 
+        $$
+        \mathbf{v} =
+        \begin{pmatrix}
+        {v_1} \\ \vdots \\ {v_n}
+        \end{pmatrix} > 0
+        $$
+        um autovetor positivo associado a $\lambda_1$.  Tome $\sigma$
+        uma permutação tal que
+        $$
+        v_\sigma = 
+        \begin{pmatrix}
+        {v_{\sigma(1)}} \\ \vdots \\ {v_{\sigma(n)}}
+        \end{pmatrix} 
+        =
+        \begin{pmatrix}
+        {u_1} \\ \vdots \\ {u_n}
+        \end{pmatrix}
+        $$
+        e $u_1 \> u_2 \> \dots \> u_n$. 
+        
+        Para qualquer vértice $i$ definimos o conjunto $X=X(i) = \{j \in
+        V \: ij \in E \textrm{ e } j < i\}$ e temos que $X\< \lambda_1$
+        pois
+        $$
+        \lambda_1 v_{\sigma(i)} 
+        = \sum_{j}a_{\sigma(i)\sigma(j)}v_{\sigma(j)} 
+        = \sum_{j\in N(i)}v_{\sigma(j)} 
+        \> \sum_{\substack{j\in N(i) \\ j<i}}v_{\sigma(j)}
+        \> \sum_{\substack{j\in N(i) \\ j<i}}v_{\sigma(i)}
+        = |X|v_{\sigma(i)}
+        $$ ou seja
+        $$
+        |X| \< \lambda_1.
+        $$
+        Assim, nos vértices de $X$ usamos no máximo $\lambda_1$
+        cores, logo há cor disponível para pintar o vértice $i$ sem que
+        vértices adjacentes tenham a mesma cor.
+
+        Agora vamos provar a outra desigualdade do teorema
+        $$
+        1 - \frac{\lambda_1}{\lambda_n} \< \chi(G).
+        $$
+        Suponha $\chi(G) = m$ e escreva $V(G) = V_1 \cup V_2 \cup
+        \cdots \cup V_m$ com $E(G[V_i]) = 0$.  Existe uma permutação
+        $\sigma$ tal que
+        $$
+        A_{\sigma} = 
+        \begin{pmatrix}
+        {A_{11}}&&{A_{12}}&&{\cdots}&&{A_{1m}}\\
+        {\vdots}&&{\vdots}&&{\ddots}&&{\vdots}\\
+        {A_{m1}}&&{A_{m2}}&&{\cdots}&&{A_{mm}}\\        
+        \end{pmatrix}
+        $$  com $A_{ii}  = \mathbf{0}$,  quadrada ($\forall  i  \in \{1,
+        \dots,  m\}$) e,  quando $i\neq  j$, com  $A_{ij}  = A(G[V_i\cup
+        V_j])$. 
+
+        O resultado seguirá das seguintes afirmações cujas provas serão adiadas.
+        \begin{claim}\label{fato:fato1}
+          Para a matriz simétrica e não-negativa
+          $$
+          A_{n\times n} =
+          \begin{pmatrix}
+            {A_{11}}&&{A_{12}}\\
+            {A_{21}}&&{A_{22}}
+          \end{pmatrix}
+          $$com $A_{ii}$ quadrada vale que 
+          $$
+          \lambda_1(A) + \lambda_n(A) \< \lambda_1(A_{11}) + \lambda_1(A_{22})
+          $$ onde  $\lambda_1$ e $\lambda_n$  são o maior  e menor
+          autovalor das matrizes, respectivamente.
+        \end{claim}
+        \begin{claim}\label{fato:fato2}
+          Para a matriz simétrica e não-negativa
+          $$        A = 
+          \begin{pmatrix}
+            {A_{11}}&&{A_{12}}&&{\cdots}&&{A_{1m}}\\
+            {\vdots}&&{\vdots}&&{\ddots}&&{\vdots}\\
+            {A_{m1}}&&{A_{m2}}&&{\cdots}&&{A_{mm}}\\        
+          \end{pmatrix}
+          $$                
+          temos
+          $$
+          \lambda_1(A) + (m - 1)\lambda_n(A) \< \sum_{i=1}^{m}\lambda_1(A_{ii}).
+          $$
+        \end{claim}
+        
+        Pela Afirmação \ref{fato:fato2} em $A_\sigma$ temos
+        $$
+        \lambda_1(A_\sigma) + (m - 1)\lambda_n(A_\sigma) \< 0
+        $$como  $\lambda_i(A_\sigma)  =  \lambda_i(A)$  e  $\lambda_n(A)<0$
+        segue que 
+        $$
+        (m - 1)
+        \> \frac{-\lambda_1}{\lambda_n}
+        \Rightarrow m 
+        \> 1 - \frac{\lambda_1}{\lambda_n} 
+        $$
+        e portanto $\chi(G)        \> 1 - {\lambda_1}/{\lambda_n} $.
+\end{proof}
+
+Agora, resta demonstrar os fatos usados na prova do teorema. 
+\begin{proof}[Prova da \textsc{Afirmação} \ref{fato:fato1}]
+Escrevemos
+  $$
+  A=\begin{pmatrix}
+    A_{11} & A_{12} \\
+    {A_{12}}^{\mathtt{T}}&A_{22}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \mathbf{0} & A_{12} \\
+    {A_{12}}^{\mathtt{T}}&\mathbf{0}
+  \end{pmatrix}
+  +
+  \begin{pmatrix}
+    A_{11} & \mathbf{0}\\
+    \mathbf{0} & A_{22}
+  \end{pmatrix}
+  =B+C$$
+  e dessa forma o maior autovalor de $A$ é dado por
+  \begin{eqnarray*}
+    \lambda_1(A) &=&\max_{\norma{u}=1}
+    \mathbf{u}^{\mathtt{T}}A\mathbf{u}=\max_{\norma{u}=1} \left(
+      \mathbf{u}^{\mathtt{T}}B\mathbf{u}+
+      \mathbf{u}^{\mathtt{T}}C\mathbf{u}\right)\\
+    &\<&
+    \max_{\norma{u}=1} 
+    \mathbf{u}^{\mathtt{T}}B\mathbf{u}+
+    \max_{\norma{u}=1} 
+    \mathbf{u}^{\mathtt{T}}C\mathbf{u}
+    =\lambda_1(B)+\lambda_1(C),
+  \end{eqnarray*}
+  pelo exercício~\ref{exerc:redutivel},
+  página~\pageref{exerc:redutivel}, temos que
+  $\lambda_1(C)=\max\{\lambda_1(A_{11}),\lambda_1(A_{22})\}$. Vamos supor, sem perda
+  de generalidade, que  $\lambda_1(C)=\lambda_1(A_{11})$. Agora, para o menor
+  autovalor temos
+  \begin{eqnarray*}
+    \lambda_n(A)&=&\min_{\norma{u}=1}
+    \mathbf{u}^{\mathtt{T}}A\mathbf{u}=\min_{\norma{u}=1} \left(
+      \mathbf{u}^{\mathtt{T}}B\mathbf{u}+
+      \mathbf{u}^{\mathtt{T}}C\mathbf{u}\right)\\
+    &\<&
+    \min_{\norma{u}=1} \left(
+      \mathbf{u}^{\mathtt{T}}B\mathbf{u}+
+      \lambda_1(A_{22})\right)=\lambda_{\mathrm{min}}(B)+\lambda_1(A_{22})
+  \end{eqnarray*}
+  onde $\lambda_{\mathrm{min}}(B)$ é o menor autovalor da matriz $B$. 
+  Pelo item (4) do Teorema de Perron-Frobenius
+  (teorema~\ref{teo:perron-frobenius},
+  página~\pageref{teo:perron-frobenius}) sabemos que
+  $\lambda_{\mathrm{min}}(B)=-\lambda_1(B)$.
+
+  Portanto, $\lambda_1(A)+\lambda_n(A)\<\lambda_1(A_{11})+\lambda_1(A_{22})$.
+\end{proof}
+
+
+\begin{proof}[Prova da \textsc{Afirmação} \ref{fato:fato2}]
+  Vamos provar por indução em $m$.  O caso $m=2$ segue da Afirmação \ref{fato:fato1}. 
+  Por hipótese indutiva em $$
+  A'= 
+  \begin{pmatrix}
+    {A_{1,1}}&&{A_{1,2}}&&{\cdots}&&{A_{1,m-1}}\\
+    {\vdots}&&{\vdots}&&{\ddots}&&{\vdots}\\
+    {A_{m-1,1}}&&{A_{m-1,2}}&&{\cdots}&&{A_{m-1,m-1}}\\        
+  \end{pmatrix}
+  $$temos
+  \begin{equation}
+    \label{eq:passo}
+      \lambda_1(A') + (m-2)\lambda_{\min}(A') \<
+  \sum_{i=1}^{m-1}\lambda_1(A_{ii}).
+  \end{equation}
+
+  Pela Afirmação \ref{fato:fato1} em 
+  $$
+  A=
+  \begin{pmatrix}
+    && && && {A_{1,m}}\\
+    && A' && && \vdots\\
+    &&  && && \vdots\\
+    {A_{m,1}}&& \cdots && \cdots &&{A_{m,m}}
+  \end{pmatrix}
+  $$
+  temos $ \lambda_1(A) + \lambda_n(A) \<
+  \lambda_1(A)'+\lambda_1(A_{mm})$  e usando a  equação (\ref{eq:passo})
+  no lado direito ficamos com 
+  \begin{eqnarray*}
+    \lambda_1(A) + \lambda_n(A) &\<& 
+    - (m-2)\lambda_{\min}(A') + \sum_{i=1}^{m-1}\lambda_1(A_{ii}) +\lambda_1(A_{mm})\\&\<&
+    - (m-2)\lambda_n(A) + \sum_{i=1}^{m}\lambda_1(A_{ii}),
+  \end{eqnarray*}
+  pois  $\lambda_{\min}(A')\>\lambda_n(A)$   por  entrelaçamento.  Assim
+  $\lambda_1(A) + (m-1)\lambda_n(A) \< \sum_{i=1}^{m}\lambda_1(A_{ii})$.
+%
+%
+  % \begin{passoindutivo} Para $m$ valendo $x$ temos:
+  %      $$
+  %      \lambda_1(A) + (x - 1)\lambda_n(A) \< \sum_{i=1}^{x}\lambda_1(A_{ii})
+  %      $$
+  %      Basta provar que quando $m$ é igual a $x + 1$ a hipótese indutiva continua verdadeira. 
+  %      Quando $m$ igual a $x+1$ temos:
+  %      $$
+  %      \lambda_1(A) + (x)\lambda_n(A) \< \sum_{i=1}^{x+1}\lambda_1(A_{ii})
+  %      $$
+  %      Portanto:
+  %      $$
+  %      \lambda_n(A) \< \lambda_1(A_{(m+1)(m+1)})
+  %      $$
+  %      $$
+  %      \lambda_n(A) \< 
+  %      \begin{pmatrix}\mathbf{u_1}\\ \vdots \\-\mathbf{u_{(m+1)}}\end{pmatrix}^T
+  %      \begin{pmatrix}
+  %      {A_{11}}&&{A_{12}}&&{\cdots}&&{A_{(1)(m+1)}}\\
+  %      {\vdots}&&{\vdots}&&{\ddots}&&{\vdots}\\
+  %      {A_{(m+1)(1)}}&&{A_{(m+1)(2)}}&&{\cdots}&&{A_{(m+1)(m+1)}}\\    
+  %      \end{pmatrix}
+  %      \begin{pmatrix}\mathbf{u_1}\\ \vdots \\-\mathbf{u_{(m+1)}}\end{pmatrix} =
+  %      $$
+  %      $$
+  %      = u_1^TA_{11}u_1 + ... + u_i^TA_{ii}u_i + ... + u_{(m+1)}^TA_{(m+1)(m+1)}u_{(m+1)} 
+  %      $$($\forall i \in 1, \dots, m+1$)
+  %      $$
+  %      \lambda_1(A_{(m+1)(m+1)}) \> 
+  %      \frac{u_{(m+1)}^TA_{(m+1)(m+1)}u_{(m+1)}}{\norma{\mathbf{u_{(m+1)}}}^2} \>
+  %      (m+1)u_{(m+1)}^TA_{(m+1)(m+1)}u_{(m+1)}
+  %      $$
+  %      \end{passoindutivo}
+\end{proof}
+
+
+\section{Distribuição das arestas e $\lambda$}
+
+
+Sejam $U, W \subseteq V(G)$, com $U \cap W = \emptyset$.  Podemos formar
+os seguintes vetores $u$ e $w$ (\emph{vetores característicos} dos
+conjuntos $U$ e $W$):
+$$
+\mathbf{u} = \begin{pmatrix}
+  {u_1} \\ {u_2} \\ \vdots \\ {v_n}
+\end{pmatrix}; \quad u_i = \begin{cases}
+  0, &\text{se}\ i \notin U \\
+  1, &\text{se}\ i \in U
+\end{cases} 
+$$
+$$
+\mathbf{w} = \begin{pmatrix}
+  {w_1} \\ {w_2} \\ \vdots \\ {w_n}
+\end{pmatrix}; \quad w_i = \begin{cases}
+  0, &\text{se}\ i \notin W \\
+  1, &\text{se}\ i \in W
+\end{cases}
+$$
+
+Definiremos $e(U)$ como o número de arestas do grafo $G$ induzido por
+$U$ e $e(U, W)$ como o número de arestas que ligam um vértice de $U$ a
+um vértice de $W$:
+$$e(U) = |E(G[U])|\quad \mathrm{e}\quad
+e(U, W) = \left| \lbrace\,e \in E(G):\; e \cap U \ne \emptyset \
+  \text{e}\ e \cap W \ne \emptyset \, \rbrace \right|.
+$$
+
+Dessa forma	
+\begin{equation} \label{eq:uTAu} 
+  \escalar{\mathbf{u}}{A\mathbf{u}} =
+  \mathbf{u}^TA\mathbf{u} = \sum_{i=1}^n\sum_{j=1}^{n}a_{ij}u_iu_j = 2
+  e(U)
+\end{equation}
+e	
+\begin{equation} \label{eq:uTAw} 
+  \escalar{\mathbf{u}}{A\mathbf{w}} =
+  \mathbf{u}^TA\mathbf{w} = \sum_{i=1}^n\sum_{j=1}^{n}a_{ij}u_iw_j =
+  e(U, W)
+\end{equation}
+
+Usando a decomposição espectral de $A$ (corolário
+\ref{co:DecomposicaoEspectral}, pg.~\pageref{co:DecomposicaoEspectral}):
+\begin{equation} \label{eq:matA} A =
+  \underbrace{\lambda_1\mathbf{v_1}\mathbf{v_1}^T}_{A_1} +
+  \underbrace{\lambda_2\mathbf{v_2}\mathbf{v_2}^T + \cdots +
+    \lambda_n\mathbf{v_n}\mathbf{v_n}^T}_{\mathcal{E}}
+\end{equation}
+Assim, substituindo \eqref{eq:matA} em \eqref{eq:uTAu} e \eqref{eq:matA}
+em \eqref{eq:uTAw} obtemos, respectivamente:
+\begin{equation} \label{E: 2eU}
+	2e(U) = \mathbf{u}^TA_1\mathbf{u} +
+        \mathbf{u}^T\varepsilon\mathbf{u}
+        \textrm{, e}
+\end{equation}
+\begin{equation} \label{E: eUW}
+	e(U, W) = \mathbf{u}^TA_1\mathbf{w} + \mathbf{u}^T\mathcal{E}\mathbf{w}.
+\end{equation}
+Substituindo o valor de $A_1$ no primeiro termo da soma das equações
+acima:
+\begin{eqnarray*}
+  \mathbf{u}^{T}A_1\mathbf{u} &=&
+\mathbf{u}^T\lambda_1\mathbf{v_1}\mathbf{v_1}^T\mathbf{u} =
+\lambda_1(\mathbf{v_1}^T\mathbf{u})^T(\mathbf{v_1}^T\mathbf{u})
+\\
+\mathbf{u}^{T}A_1\mathbf{w} &=&
+\lambda_1(\mathbf{u}^T\mathbf{v_1})(\mathbf{v_1}^T\mathbf{w})
+\end{eqnarray*}
+e se escrevemos $\mathbf{u}$ e $\mathbf{w}$ na base
+$\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_n\}$ de autovetores
+ortonormais 
+% tivermos a seguinte
+%configuração para os vetores $u$ e $w$:
+$$
+\mathbf{u} = \alpha_1\mathbf{v_1} + \alpha_2\mathbf{v_2} + \cdots +
+\alpha_n\mathbf{v_n}
+$$
+$$
+	\mathbf{w} = \beta_1\mathbf{v_1} + \beta_2\mathbf{v_2} + \cdots + \beta_n\mathbf{v_n}
+$$
+então
+$$
+	\mathbf{u}^{T}A_1\mathbf{u} = \lambda_1\alpha_{1}^{2}
+\quad \mathrm{e}\quad
+	\mathbf{u}^{T}A_1\mathbf{w} = \lambda_1\alpha_1\beta_1
+$$
+Analogamente, substituindo o valor de $\mathcal{E}$ no segundo termo da
+soma das equações \eqref{E: 2eU} e \eqref{E: eUW}:
+$$
+\begin{aligned}
+  \mathbf{u}^{T}\mathcal{E}\mathbf{u} &
+= \mathbf{u}^T\left(\sum_{i = 2}^{n}\lambda_i\mathbf{v_i}\mathbf{v_i}^{T}\right)\mathbf{u} %\\  &
+= \sum_{i =
+  2}^{n}\lambda_i\mathbf{u}^T\mathbf{v_i}\mathbf{v_i}^T\mathbf{u} 
+%\\  &
+= \sum_{i = 2}^{n}\lambda_i\alpha_{i}^{2} 
+\\
+  \mathbf{u}^T\mathcal{E}\mathbf{w} &
+= \sum_{i = 2}^{n}\lambda_i\alpha_i\beta_i.
+\end{aligned}
+$$
+Portanto:	
+$$
+\left|2e(U) - \mathbf{u}^{T}A_1\mathbf{u}\right| =
+\left|\mathbf{u}^T\mathcal{E}\mathbf{u}\right| \Longleftrightarrow
+\left|2e(U) - \lambda_1\alpha_{1}^{2}\right| = \left|\sum_{i =
+    2}^{n}\lambda_i\alpha_{i}^{2}\right|
+$$
+e fazendo $\lambda = \max{\lbrace|\lambda_2|, |\lambda_3|, \dots,
+  |\lambda_n|\rbrace}$ temos
+$$
+\left|\sum_{i = 2}^{n}\lambda_i\alpha_{i}^{2}\right| \leq \sum_{i =
+  2}^{n}\vert\lambda_i\vert\alpha_{i}^{2} \leq \lambda\sum_{i =
+  2}^{n}\alpha_{i}^{2}.
+$$
+Como
+$$
+\norma{\mathbf{u}} = \sum_{i = 1}^{n}\alpha_{i}^{2} = \sum_{i = 1}^{n}
+u_i = |U| \Rightarrow \sum_{i = 2}^{n}\alpha_{i}^{2} = |U| -\alpha_{1}^{2}
+$$
+temos
+\begin{equation} 
+  \big|2e(U) - \lambda_1\alpha_{1}^{2}\big| \leq \lambda\left|\sum_{i
+      = 2}^{n}\alpha_{i}^{2}\right| \tag{A} = \lambda\left( |U| -\alpha_{1}^{2}\right).
+\end{equation}
+
+De maneira análoga, para subgrafos bipartidos temos
+\begin{equation}
+	\left| e(U, W) - \lambda_1\alpha_1\beta_1\right| = \left|\sum_{i = 2}^{n}\lambda_i\alpha_i\beta_i\right| \leq \lambda\sqrt{\left(|U|- \alpha_{1}^{2}\right)\left(|W| - \beta_{1}^{2}\right)} \tag{B}
+\end{equation}
+A última desigualdade segue de Cauchy-Schwarz:
+$$
+\left|\escalar{\mathbf{a}}{\mathbf{b}}\right| \leq
+\sqrt{\norma{\mathbf{a}}^{2} \norma{\mathbf{b}}^{2}}
+$$
+com os seguintes vetores $\mathbf{a}$ e $\mathbf{b}$,
+$$		
+\mathbf{a} = \begin{pmatrix}
+  {\lambda_2\alpha_2} \\ {\lambda_3\alpha_3} \\ \vdots \\ {\lambda_n\alpha_n}
+\end{pmatrix}; \quad
+\mathbf{b} = \begin{pmatrix}
+  {\beta_2} \\ {\beta_3} \\ \vdots \\ {\beta_n}
+\end{pmatrix}
+$$
+resultando que 
+$$
+\begin{aligned}
+  \left|\sum_{i = 2}^{n}\lambda_i\alpha_i\beta_i\right| &
+\leq \sqrt{\left(\sum_{i = 2}^{n}\lambda_{i}^{2}\alpha_{i}^{2}\right)
+  \left(\sum_{i = 2}^{n}\beta_{i}^{2}\right)}
+%, \quad \lambda_{i}^{2}\leq \lambda^{2} %\\ &
+\leq \lambda\sqrt{\left(\sum_{i =
+      2}^{n}\alpha_{i}^{2}\right)\left(\sum_{i =
+      2}^{n}\beta_{i}^{2}\right)} \\  &
+\leq\lambda\sqrt{\left(\norma{\mathbf{u}}^{2} -
+    \alpha_1^2\right)\left(\norma{\mathbf{w}}^{2} - \beta_1^2\right)} 
+\end{aligned}
+$$
+%\\
+%Resumindo: 
+%$$
+%	\left|2e(U) - \lambda_1\alpha_{1}^{2}\right| \leq \lambda\left(|U| - \alpha_1\right)
+%$$
+%	
+%$$
+%	\left|e(U, W) - \lambda_1\alpha_1\beta_1\right| \leq \lambda\sqrt{\left(|U| - \alpha_1\right) \left(|W| - \beta_1\right)}
+%$$
+%\\
+%\\
+
+\bigskip
+
+
+\subsection{Grafos $d$-regulares}
+
+Para um grafo $G$ $d$-regular temos $\lambda_1 = d$, e
+$$
+\alpha_1 = \escalar{\mathbf{u}}{\mathbf{v}}
+= \frac{1}{\sqrt{n}} \begin{pmatrix}
+  {u_1} \\ {u_2} \\ \vdots \\ {u_n}
+\end{pmatrix}^{T} \begin{pmatrix}
+  {1} \\ {1} \\ \vdots \\ {1}
+\end{pmatrix}
+= \frac{|U|}{\sqrt{n}}		  .
+$$	
+Assim, (A) e (B) ficam
+\begin{eqnarray*}
+\left|2e(U) - \frac{d}{n}|U|^{2}\right| &\leq & \lambda|U|\left(1 - \frac{1}{\sqrt{n}}\right)\\
+\left|e(U, W) - \frac{d}{n}|U||W|\right| &\leq & \lambda\sqrt{|U|\left(1 - \frac{|U|}{{n}}\right)|W|\left(1 - \frac{|W|}{{n}}\right)}
+\end{eqnarray*}
+
+
+\subsection{Grafos não-regulares}
+Nesse caso, e distribuição de arestas não tem um forma fechada
+razoável. Vamos dar somente o resultado final sem mostrar as contas.
+Para um grafo $G$ não-regular definimos
+$$
+	d = d(G) 
+\quad \mathrm{e}\quad 
+	K = \sum_{i = 1}^{n}(d - d_i)^2
+$$
+ou seja, o grau médio de $G$ e a variância dos graus dos vértices, onde
+$d_i=d(i)$ é o grau do vértice $i$.
+
+Nesse caso, temos
+$$
+\left|\lambda_1\alpha_{1}^{2} - \frac{d}{n}|U|^{2}\right| \leq
+\frac{2K|U|d + 2K\sqrt{\frac{K}{n}} + |U|^2(d -
+  \lambda)^2\sqrt{\frac{K}{n}}} {n(d - \lambda)^2}.
+$$ 
+$$
+\left|\lambda_1 - d\right| \< \frac{n(d -
+  \lambda)^2\sqrt{\frac{K}{n}}}{n(d - \lambda)^2 + K}
+$$
+$$
+\left|\alpha_{1}^{2} - \frac{|U|^2}{n}\right| \leq \frac{2K|U|}{n(d -
+  \lambda)^2}
+$$
+	
+\section{Grafos Expansores}
+
+Grafos expansores se caracterizam combinatorialmente por possuir alta
+conexidade e por serem esparsos. Um grafo exparso possui:
+$$
+n < |E| < \alpha n^2, \quad \forall \alpha > 0
+$$
+onde $|E|$ geralmente é $\frac{dn}{2}$ para valores pequenos de $d$ como
+$\sqrt{n}$ ou $\log{n}$.  Idealmente, queremos $d$ constante. Veremos
+exemplos de grafos $d$-regulares, para $d$-fixo, ainda assim altamente conexos.
+
+Equivalentemente, como veremos, grafos expansores se caracterizam
+algebricamente por terem segundo autovalor ($\lambda$) pequeno quando
+comparado a $\lambda_1$.
+
+Seja $G$ um grafo $d$-regular ($\lambda_1 = d$). Para todo $U$ e $W
+\subseteq V(G)$, com $U$ e $V$ disjuntos:
+\begin{equation} \label{E: exp1}
+  \left| e(U, W) - \frac{d|U||W|}{n}
+  \right| \leq \lambda \sqrt{|U|\left(1 - \frac{|U|}{n}\right)|W|\left(1
+      - \frac{|W|}{n}\right)}.
+\end{equation} 
+Notemos que de~\eqref{E: exp1}, temos:
+$$
+e(U, W) \geq \frac{d|U||W|}{n} - \lambda\sqrt{|U|\left(1 -
+    \frac{|U|}{n}\right)|W|\left(1 - \frac{|W|}{n}\right)}
+$$
+e quando $W = \overline{U} = V(G)-U$:
+$$
+%	\begin{aligned}
+e(U, \overline{U}) %&
+\geq \frac{d}{n}|U||\overline{U}| -
+\lambda\sqrt{\frac{|U|^{2}|\overline{U}|^{2}}{n^2}} 
+%\\&
+\geq \frac{d - \lambda}{n}|U||\overline{U}|
+%	\end{aligned}
+$$
+
+\begin{teo}
+  Se $d - \lambda \geq 2$ então $G$ é $d$-aresta-conexo.
+\end{teo}
+\begin{proof}
+  A prova será feita em 3 casos:
+  \begin{enumerate}
+  \item Se $1 \leq |U| \leq d$, então $$ e(U, \overline{U}) \geq
+    |U|\left(d - |U| + 1\right) \geq d$$ 
+  \item Se $d \leq |U|\leq n/2$, então $$e(U, \overline{U}) \geq \frac{d -
+      \lambda}{n}|U||\overline{U}| \geq \frac{2}{n}d|\overline{U}|\geq d$$ 
+  \item Se $|U| > \frac{n}{2}$ a prova é similar aos casos acima
+    substituindo $U$ por $\overline{U}$.
+  \end{enumerate}	
+\end{proof}
+
+Definiremos a \emph{constante isoperimétrica}($h(G)$) de um grafo $G$
+como sendo:
+$$
+h(G) = \min_{\substack{U \ne \emptyset \\ |U| \leq \frac{n}{2}}}
+\frac{e(U, \overline{U})}{|U|}.
+$$
+\begin{observacao}
+  ${e(U, \overline{U})}/{|U|}$ é o número médio de arestas que saem de
+  cada vértice de $U$ para $\overline{U}$ (grau médio de considerarmos
+  grafos bipartidos).
+\end{observacao}
+\begin{exemplo}
+  Os valores de $h(G)$ para o grafo completo de $n$ vértices e o
+  circuito $C$ de tamanho $n$ são:
+$$
+	h(K^{n}) \thicksim \frac{n}{2}, \quad h(C^{n}) \thicksim \frac{4}{n},
+$$onde $f(n)\thicksim g(n)$ significa que $f(n)/g(n)\to 1$ quando $n\to \infty$.
+\end{exemplo}
+
+
+Um grafo G $d$-regular é $\varepsilon$-espansor $(\varepsilon > 0)$ se
+$h(G) \geq \varepsilon$.
+
+\begin{teo} \label{teo: exp1}
+	Se um grafo $G$ é conexo e $d$-regular, então:
+	$$
+		\frac{d - \lambda}{2} \leq h(G) \leq \sqrt{2d(d - 1)}
+	$$
+\end{teo}
+\begin{proof}
+  Apenas $\frac{d - \lambda}{2} \leq h(G)$ será demonstrado.  Dado $U
+  \subseteq V, 0 \leq |U| \leq \frac{n}{2}$ temos:
+  $$
+  \frac{e(U, \overline{U})}{|U|} \geq \frac{d -
+    \lambda}{n}|\overline{U}| \geq \frac{d -
+    \lambda}{n}\frac{n}{2} = \frac{d - \lambda}{2}.
+  $$
+\end{proof}
+
+Pelo Teorema \ref{teo: exp1} vemos que quanto maior o valor de $d -
+\lambda$ melhor. Mas devemos saber o quão pequeno $\lambda$ pode ser.
+Então enunciaremos o seguinte resultado.
+
+\begin{teo} 
+  $\lambda \geq 2\sqrt{d - 1} \left( 1 -
+    O\left(\frac{1}{\log{n}}\right)^2 \right)$.
+\end{teo}
+\begin{proof}
+  Demonstraremos um caso mais simples:
+  $$
+  \lambda \geq \sqrt{d}\left(\sqrt{\frac{n - d}{n - 1}}\right).
+  $$
+  
+  O resultado segue de
+  $$       
+  2|E| = nd = \sum_{i = 1}^{n} \lambda_{i}^{2} \leq \lambda_{1}^{2} + (n
+  - 1)\lambda^2 \Rightarrow
+  $$
+  $$
+  \lambda^2 \geq \frac{nd - \lambda_{1}^{2}}{n - 1} = \frac{d(n - d)}{n - 1}
+  $$
+  Ou seja $\lambda=\Omega(\sqrt{d})$.
+\end{proof}
+
+\begin{exemplo}[Grafos de Paley] 
+  Seja $p$ primo com $p \equiv 1 \pmod{4}$ (existem infinitos primos
+  dessa forma). fixamos o conjunto de vértices como $V = \{0, 1, \dots,
+  p - 1\}$ e o conjunto de arestas é dado por $ij \in E$ se, e
+  somente se, $i - j \equiv x^2 \pmod{p}$ para algum $x \in V -
+  \{0\}$.
+
+  Os grafos assim formados são $\left(\frac{p - 1}{2}\right)$-regular
+  com $\lambda = \frac{\sqrt{p}}{2} + 1$
+\end{exemplo} 
+
+\begin{exemplo}
+  Para $k\in \mathbb{N}$, consideremos o grafo com vértices formados por
+  vetores binário de tamanho $k$ e número ímpar de 1's, excluindo o
+  vetor $(1, 1, \dots, 1)$. As arestas são definidos por $ij \in E
+  \Leftrightarrow \escalar{i}{j} \equiv 1 \pmod{2}$, ou seja, o número
+  de $1$'s em comum entre $i$ e $j$ é ímpar.  Esse grafo tem $2^{k - 1}
+  - 1$ vértices, é $\left(2^{k - 2} - 2 \right)$-regular e $\lambda = 1
+  + 2^{\frac{k - 3}{2}}$.
+\end{exemplo}
+
+\begin{exercicio}
+	Prove que para todo $U, W \subset V$, disjuntos num grafo
+        $d$-regular de $n$ vértices vale:
+	$$
+		e(U,W) \geq \frac{(d - \lambda)|W||U|}{n}.
+	$$
+\end{exercicio}
+
+\begin{exercicio}
+	Prove que para todo $U \subseteq V$, com $|U| \leq \frac{n}{2}$:
+	$$
+		|N(U)| \geq \frac{d - \lambda}{2d}|U|
+	$$
+	onde $N(U) = \left(\bigcup_{v \in U} N(v) \right) - U$.
+\end{exercicio}
+
+
+\section{$\lambda_1$, $\lambda$ típicos}
+
+
+Nessa seção provaremos resultados análogos aos provados na
+seção~\ref{sec:tipicos}  para  $\alpha$  e  $\chi$.  Vamos  mostrar  que
+$99,9\%$  dos  grafos de  $\mathcal{G}(n)$  têm  valores de  $\lambda_1$
+próximos  a  $n/2$ e  de  $\lambda$ menor  que  $\eps  n$ para  qualquer
+$\eps>0$, por menor que seja. 
+
+Para provar esses resultados vamos introduzir algumas notações:
+\begin{itemize}
+\item $r_G (C^4 ; i)$\index{$r_G (C^4 ; i)$} denota o número de triplas
+  $(v_0, v_1, v_2) \in V^3$ tais que $(i, v_0, v_1, v_2,i)$ é um
+  circuito de comprimento $4$ em $G$ e \index{$r_G  (C^4)$}
+  \begin{equation}
+    \label{eq:c4rotulados}
+    r_G(C^4)=\sum_{i=1}^nr_G (C^4 ; i);
+  \end{equation}
+\item $r_G (P^2 ; i)$\index{$r_G (P^2 ; i)$} denota o número de pares
+  $(v_0, v_1)\in V^2$ tais que $(i, v_0, v_1)$ é um caminho de
+  comprimento $2$ em $G$ e \index{$r_G (P^2)$}
+  \begin{equation}
+    \label{eq:p2rotulados}
+    r_G(P^2)=\sum_{i=1}^n r_G(P^2;i).
+  \end{equation}
+\end{itemize}
+
+Com a notação acima temos que
+$$
+tr (A^4) = r_{G} (C^4) + r_{G} (P^{2})+ \sum_{i=1}^n d(i)^{2}
+$$
+pois lembrando que 
+$$ A^{4} = (b_{ij}) \textrm{ e } 
+b_{ii} = \sum_{m=1}^n \sum_{l=1}^n \sum_{k=1}^n a_{im}a_{ml}a_{lk}a_{ki} 
+$$
+e na diagonal de $A^4$ as seguintes configurações contribuem nessa soma:
+%\begin{eqnarray*}
+%b_{ii}   =  \underbrace{\input{b_ii-1.pictex}}_{\textrm{   contado  }2
+%  \textrm{      vezes      em      }r_G      (C^4      ;      i)}      +
+%  \underbrace{\input{b_ii-2.pictex}}_{\textrm{contado 1  vez em }r_G(P^2
+%  ; i)}    +    \underbrace{\input{b_ii-3.pictex}    %\textrm{    ou    }
+%%  \input{b_ii-4.pictex}
+%}_{\textrm{contado em }d(i)^2}
+%\end{eqnarray*}
+
+
+O principal resultado dessa seção  é o seguinte. As hipóteses do teorema
+apresentadas  na equação  \eqref{eq:g_tipicos_a} valem  para  quase todo
+grafo em $\mathcal{G}(n)$ mas essa demonstração será adiada.
+\begin{teo}\label{teo:G_tipicos}
+  Para quase todo $G$ vale o seguinte: por menor que seja $ \delta > 0 $
+  existe $\varepsilon > 0$ tal que, se
+  \begin{equation}\label{eq:g_tipicos_a}
+    e(G) > (1 - \varepsilon)\frac{n^2}{4} \;\textrm{ e }\;
+    r_G (C^4) < (1 + \varepsilon)\frac{n^4}{16} 
+  \end{equation}
+  então
+  \begin{equation}\label{eq:g_tipicos_c}
+    \big| \lambda_{1} - \frac{n}{2}\big| < \delta n \;\textrm{ e }\;
+    \lambda < \delta n 
+  \end{equation}
+  para todo $n$ suficientemente grande.
+\end{teo}
+%
+%Lembremos antes que
+%
+%$$ | \frac{\lambda_{1}}{n} - \frac{1}{2} | < \delta \Leftrightarrow \lim_{n \rightarrow \infty} \frac{\lambda_{1}}{n} = \frac{1}{2}$$
+%
+%e
+%
+%$$ \lambda < \delta n \Leftrightarrow \frac{\lambda}{n} \rightarrow 0 \textrm{ (tende a zero, quando n é grande)}$$
+%
+%Numero de grafos com pelo menos $ m $ arestas: 
+%
+%$$ \frac{    {(\frac{n}{2}) \choose m} 2^{(\frac{n}{2})-m}}      {2^{(\frac{n}{2})}   }  > 99,9 \% $$
+%
+\begin{proof}
+  Dado $\delta > 0 $ tomamos $ \varepsilon = \frac{1}{2} \min \{\delta,
+  \frac{16}{7} \delta^4 \} $. 
+  
+  Um limitante inferior para $\lambda_1$ é
+  \begin{equation}\label{eq:l1-inferior}
+    \lambda_{1}    \>   d(G)    =   \frac{2|E|}{n}    >    \frac{2(1   -
+      \varepsilon)\frac{n^2}{4}}{n} = (1 - \varepsilon)\frac{n}{2}.
+  \end{equation}
+  
+  Para a cota superior, começamos com uma estimativa generosa para
+  $r_G(P^2)$:
+  \begin{equation}
+    r_G(P^2) =  \sum_{i=1}^n r (P^2  ; i)  = \sum_{i} (n  - 1)(n -  2) =
+    O(n^3) . 
+  \end{equation}
+  Ainda, similarmente, $\sum_i d(i)^2=O(n^3)$. Agora,
+  \begin{eqnarray}
+    \lambda_{1}^{4} &\< & \sum_{i = 1}^{n} \lambda_{i}^{4} = r_G (C^4)
+    + r_G (P^2) + \sum_{i} d(i)^2 \nonumber \\
+    &<& (1 + \varepsilon) \frac{n^4}{16} + O(n^3) + O(n^3) 
+    %= (1 + \varepsilon) \frac{n^4}{16} + O(n^3) 
+    \nonumber \\&<& (1  + \varepsilon)
+    \frac{n^4}{16} + \frac{\varepsilon}{16} n^4 \nonumber \\ 
+    &=& (1 + 2\varepsilon)\frac{n^4}{16} \label{eq:l1-superior}\\
+    &<& (1 + 2\varepsilon)^4 \frac{n^4}{16} \nonumber
+  \end{eqnarray}  
+  e $\lambda_{1} < (1 + 2\varepsilon){n}/{2}< (1+\delta)n/2$ que, junto
+  com \eqref{eq:l1-inferior} resulta em
+  $$
+  \left|\lambda_{1} - \frac{n}{2} \right| < \delta n .
+  $$
+  
+  Para o segundo autovalor, supomos que $ \lambda = \delta n $ para
+  algum $\delta$ positivo e, sem perda de generalidade, que $\lambda = |
+  \lambda_2 |)$. Com essas hipóteses temos
+  \begin{eqnarray*}
+    \sum_{i = 1}^{n} \lambda_{1}^{4} 
+    = \lambda_{1}^{4} + \lambda_{2}^{4} + \sum_{i = 3}^{n}\lambda_{i}^{4} 
+    < (1 + 2\varepsilon)\frac{n^4}{16}
+  \end{eqnarray*}
+  onde a última desigualdade vem de \eqref{eq:l1-superior}. Pela escolha
+  de $\eps$ ficamos com
+  \begin{eqnarray*}
+    \sum_{i = 3}^{n} \lambda_{1}^{4} &<& (1 + 2\varepsilon)\frac{n^4}{16} 
+    - \lambda_{1}^{4} - \lambda^4 \\ 
+    &<& (1 + 2\varepsilon)\frac{n^4}{16} - (1 - 
+    \varepsilon)^4\frac{n^4}{16} - \delta^4 n^4 \\ 
+    &=& \left(6\varepsilon - 6\varepsilon^2 + 4\varepsilon^3 - \varepsilon^4 - 
+    \frac{\delta^4}{16}\right)\frac{n^4}{16} \\ 
+    &<& \left(6\varepsilon + 4\varepsilon^3 - 
+    \frac{\delta^4}{16}\right)\frac{n^4}{16} <0
+  \end{eqnarray*} 
+% 
+%lembrando que
+%
+%($\varepsilon < 0,7 \Rightarrow 6\varepsilon + 4\varepsilon^3 < 7\varepsilon$)
+                                %
+%($\varepsilon < \frac{16}{7}\delta^4 \Rightarrow 7\varepsilon < 16\delta^4$)
+%
+%daí
+%
+%\begin{eqnarray*}
+%  \sum_{i = 3}^{n} \lambda_{1}^{4} < (6\varepsilon + 4\varepsilon^3 - \frac{\delta^4}{16})\frac{n^4}{16} < 0
+%\end{eqnarray*}
+%
+  Uma contradição, logo $ \lambda < \delta n $
+\end{proof}
+
+Da modo semelhante prova-se os seguintes resultados.
+\begin{propo}
+  Para quase todo $G\in \mathcal{G}(n)$ o grau médio satisfaz
+  $$
+  \left|d(G) - \frac{n}{2}\right| < \delta n 
+  $$
+  para qualquer $\delta > 0$ se $n$ for suficientemente grande.
+\end{propo}
+\begin{proof}
+Exercício.
+\end{proof}
+\begin{corol}
+   Para quase todo $G\in \mathcal{G}(n)$ 
+   \begin{equation}\label{eq:desvio=grau}
+        \sum_{i = 1}^{n} \left|d(i) - \frac{n}{2}\right| 
+     < \delta n^2 
+   \end{equation}
+   para qualquer $\delta > 0$ se $n$ for suficientemente grande.
+\end{corol}
+Usando Cauchy-Schwarz obtemos o seguinte resultado.
+\begin{corol}  Para quase todo $G\in \mathcal{G}(n)$ vale que: para todo $\gamma > 0$
+  existe $\delta > 0 $ tal que se \eqref{eq:desvio=grau} então
+  $$
+%  \sum_{i = 1}^{n} \left|d(i) - \frac{n}{2}\right| 
+%  < \delta n^2 \Rightarrow 
+  \left|d(i) - \frac{n}{2}\right| < \gamma n
+  $$
+  para pelo menos $ (1 - \alpha) n $ vértices, para qualquer $\alpha
+  > 0$.
+\end{corol}
+
+
+\begin{exercicio}
+Mostre  que para  quase  todo  $G\in \mathcal{G}(n)$  vale  cada um  dos
+seguintes itens.
+\begin{enumerate}
+\item $ |\lambda_1 - \frac{|U|}{\sqrt{n}}| < \varepsilon \sqrt{|U|} $. 
+
+\item $ |e(U) - \frac{|U|^2}{4}| < \varepsilon n^2 $. 
+
+\item $ |e(U,W) - \frac{|U||W|}{2}| < \varepsilon n^2 $.
+\end{enumerate}
+\end{exercicio}
+
+\subsection{$e(G)$ e $r_G(C^4)$ típicos}
+\label{sec:e-r-tipicos}
+
+Foi assumido no teorema \ref{teo:G_tipicos} que para %todo $ \delta > 0$,
+um $\varepsilon > 0$ quase todo $G\in \mathcal{G}(n)$ satisfaz
+\begin{eqnarray*}
+  e(G) &>& (1 - \varepsilon)\frac{n^2}{4} \\
+ r_G (C^4) &<& (1 + \varepsilon)\frac{n^4}{16} 
+\end{eqnarray*}
+
+Vamos mostrar que: 
+$$
+\left| r_G (C^4) - \frac{n^4}{16} \right|< \frac{\varepsilon n^4}{16}
+$$
+vale  para quase  todos os  grafos de  $\mathcal{G}(n)$. O  que  de fato
+mostraremos é que o contrário vale para poucos ($0,1\%$) grafos
+$$
+\frac{\left|\left\{G\in \mathcal{G}(n)\colon
+  |r_G (C^4) - \frac{n^4}{16}| > \varepsilon \frac{n^4}{16}\right\}\right| }{2^N} < 0,001
+$$
+para todo $n$ suficientemente grande, onde $|\mathcal{G}(n)| = 2^{N}$
+e $N = {n \choose 2}$.
+
+Para tal objetivo precisamos de algumas ferramentas. Seja $X\colon
+\mathcal \to \N$ uma função cuja \emph{média} é \index{valor médio}\index{média}
+$$
+\mu_X = \frac{\sum_{G\in \mathcal{G}(n)}X(G)}{2^N}.
+$$
+
+Dessa forma, se considerarmos apenas os  grafos que têm um valor alto de
+$X$, digamos $X(G)\>t_0$, obtemos
+$$
+\frac{1}{2^N}\sum_{\substack{G\in \mathcal{G}(n) \\ X(G) \> t_0}} X(G) \< \mu_X 
+$$
+por um lado e
+$$
+\sum_{\substack{G\in   \mathcal{G}(n)   \\  X(G)   \>   t_0}}  X(G)   \>
+t_0\left|\{G\in \mathcal{G}(n)\colon  X(G) \> t_0 \}\right| 
+$$
+por  outro e,  das duas  equações  ficamos com  a \emph{desigualdade  de
+  Markov}\index{desigualdade! de Markov}
+\begin{equation}
+  \label{eq:markov}
+  \frac{|\{G\in \mathcal{G}(n)\colon X(G) \> t_0 \}|}{2^N} \< \frac{\mu_x}{t_0}. 
+\end{equation}
+
+Como estamos  interessado em quanto o  valor de uma função  desvia de sua
+média passamos a considerar a seguinte função
+$$
+Y(G) = \left(X(G) - \mu_X\right)^2
+$$
+cuja média é
+$$
+\mu_Y = \mu_{X^2} - (\mu_X)^2.
+$$
+
+Substituindo $Y$ e $\mu_Y$  da desigualdade de Markov \eqref{eq:markov}
+obtemos a \emph{desigualdade de Chebyschev}:\index{desigualdade! de Chebyschev}
+$$
+\frac{\left|\left\{G\in\mathcal{G}(n)\colon  \left|X  - \mu_x\right|  \>
+      t_0 \right\}\right|}{2^N} \< \frac{\mu_{X^2} - (\mu_X)^2}{(t_0)^2} .
+$$
+
+Voltando a $r_G(C^4)$, definimos $ (n)_4 = n(n-1)(n-2)(n-3)
+$\index($(n)_k$) o número de sequências $(a, b, c, d)$, todas
+diferentes, tomadas de $n$ letras. Seja e $ C_1, C_2, \dots, C_{(n)_4} $
+uma enumeração das quadruplas $(a,b,c,d)$ e definimos as funções
+indicadoras
+\[
+X_i (G) = 
+\begin{cases}
+  1, &\textrm{se }C_i\textrm{ define um circuito de comprimento 4 em } G\\
+  0, &\textrm{caso contrário}.
+\end{cases}
+\]
+Claramente 
+\begin{eqnarray*}
+  r_G(C^4) &=& \sum_{i=1}^{(n)_4} X_i(G) \;\textrm{ e }\;\\ (r_G(C^4))^2 &=&
+\sum_{i=1}^{(n)_4}\sum_{j=1}^{(n)_4} X_i(G) X_j(G) = \sum_{i=1}^{(n)_4}
+{X_i}^2 + \sum_{\substack{j=1\\j \neq i}}^{(n)_4} X_i(G) X_j (G).
+\end{eqnarray*}
+
+O valor médio de $ r_G(C^4)$ é 
+$$
+\sum_{i=1}^{(n)_4}\mu_{X_i}=\frac{(n)_4}{2^4}. 
+$$
+Observamos que o valor médio de ${X_i}^2$ é o mesmo de $X_i$ e assim
+$$
+\sum_{i=1}^{(n)_4}\mu_{{X_i}^2}=\frac{(n)_1}{2^4}. 
+$$
+Dessa forma resta calcularmos 
+$$
+\mu_{X_i X_j} = \frac{\sum_G X_i (G) X_j (G) }{2^N} .
+$$
+
+Abaixo,  apresentamos uma  tabela aonde  na primeira  coluna  desenhos o
+diagrama dos tipos de isomorfismo possíveis para $C_i$ e $C_j$ fixos, na
+segunda coluna temos a fração de grafos que contém esses $C_i$ e $C_j$ e
+finalmente na  terceira apresentamos o  número de pares $(i,j)$  para os
+quais essa fração contribui na soma.
+
+Dessa forma a média da função $r_G(C^4)$ ao quadrado fica
+$$
+\mu (r_G (C^4)^2 ) = \frac{(n)_4}{2^4} + \frac{(n)_8}{2^8} + \frac{(n)_7}{2^8} + \frac{(n)_6}{2^7} + \frac{(n)_5}{2^6}
+$$
+e aplicando-a em Chebyschev 
+\begin{eqnarray*}
+\frac{\mu     (r_G(C^4)^2)    -     (\mu(r_G(C^4)))^2    }{\varepsilon^2
+  (\mu(r_G(C^4)))^2} 
+&<& \frac{  \frac{(n)_4}{2^4} + \frac{(n)_7}{2^8}  + \frac{(n)_6}{2^7} +
+  \frac{(n)_5}{2^6} }{\varepsilon^2 \left(\frac{(n)_4}{2^4}\right)^2} \\ 
+&=& \frac{1}{\varepsilon^2}  \underbrace{\left(\frac{2^4}{(n)_4} + \frac{(n -
+  4)_3}{(n)_4}   +   \frac{2(n  -   4)_2}{(n)_4}   +   \frac{2^2  (n   -
+  4)}{(n)_4}\right)}_{<     \frac{\varepsilon^2}{1000}    \textrm{    se
+  }n\textrm{ grande}} \\&< &
+0,001 .
+\end{eqnarray*}
+
+Dessa forma provamos que 
+$$
+{\left|\left\{G\in \mathcal{G}(n)\colon
+      \left|r_G (C^4) - \frac{n^4}{16}\right| > 
+  \varepsilon \frac{n^4}{16}\right\}\right| } < 0,001\,{2^N}\qed
+$$
+
+%\begin{tabular}{|c|c|c|}
+%\hline
+%$C_i \quad C_j$ & fração dos grafos com  $ C_i $ e $ C_j $  & número de
+%pares $(i, j)$\\ 
+%\hline
+%\input{c4-1.pictex}     & $\frac {2^{N - 8}}{2^N} $      & $ (n)_8 $ \\
+%\hline
+%\input{c4-2.pictex}     & $\frac {2^{N - 8}}{2^N} $      & $ (n)_7 $\\
+%\hline
+%\input{c4-3.pictex}     & $\frac {2^{N - 7}}{2^N} $      & $ (n)_6 $\\
+%\hline
+%\input{c4-4.pictex}     & $\frac {2^{N - 6}}{2^N} $      & $ (n)_5 $\\
+%\hline
+%\end{tabular}
+
+
+\subsection{Número de arestas típico.} 
+
+
+Esta  seção estabelece  o número  típico de  arestas para  $99,99\%$ dos
+grafos de $\mathcal{G}(n)$.
+
+
+Se denotamos por $\mu = \mu(e(G))$ o número médio de arestas de um grafo
+então a desigualdade de Chebyschev fica
+$$
+\frac{\big|\left\{G\in\mathcal{G}(n)\colon  \left|e(G)  - \mu\right| >
+\varepsilon \mu \right\}\big|}{2^N} < \frac{\mu(e(G)^2) -
+\mu^2}{\varepsilon \mu^2}.
+$$
+
+\begin{propo}
+  Para  quase  todo  grafo  $G\in  \mathcal{G}(n)$, o  seguinte  fato  é
+  verdadeiro:
+  $$
+  \left|e(G) - \frac{n^2}{4}\right| < \delta n^2
+  $$
+  por menor que seja $\delta$, se $n$ é suficientemente grande.
+\end{propo}
+\begin{proof}
+  Definimos  $e_1, e_2,  \cdots ,  e_N$ como  a enumeração  de  pares de
+  vértices, sendo $N = \binom{n}{2}.$ Definimos
+  \[
+  e_i(G)=
+  \begin{cases}
+    1, &\textrm{se }e_i \in E(G)\\
+    0, &\textrm{caso contrario}.
+  \end{cases}
+  \]
+  
+  Claramente
+  \begin{eqnarray*}
+    e(G) &=& \sum_{i=1}^{N} e_i(G)
+    \qquad\textrm{ e }\qquad
+    e(G)^2 =
+    \sum_{i=1}^{N} e_i(G) + \sum_{i=1}^{N}\sum_{\substack{j=1\\j \neq i}}^{N}
+    e_i(G)e_j(G).
+  \end{eqnarray*} 
+  Dessa forma, 
+  $$
+  \mu = \sum_{i=1}^{N}\mu(e_i(G)) = \frac{N}{2}
+  $$
+  pois
+  $$
+  \mu(e_i) = \frac{\sum_{G} e_i(G)}{2^N} = \frac{\left|\left\{G : e_i \in
+        E(G)\right\}\right|}{2^N}=\frac{1}{2}.
+  $$
+  
+  Fixados $i$ e $j$ distintos 
+  $$
+  \mu(e_ie_j) = \frac{\sum_{G}e_i(G)e_j(G)}{2^N} = \frac{2^{N-2}}{2^N} =
+  \frac{1}{4}
+  $$
+  portanto
+  $$
+  \mu=\frac N2 \qquad\mathrm{e}\qquad
+  \mu(e(G)^2)=\frac{N}{2} + \frac{1}{4}N(N-1)=\frac{N²}{4}+\frac N2
+  $$
+  e o lado esquerdo da desiguladade de Chebyschev fica
+  \begin{eqnarray*}
+    \frac{\mu(e(G)^2) - \mu^2}{\varepsilon^2 \mu^2} =
+    \frac{\frac{N}{2}}{\varepsilon^2\frac{N^2}{4}}
+%    &=& \frac{1}{\varepsilon^2}\left(\frac{1}{\frac{N}{2}} +
+%      \frac{4N\left(N-1\right)}{N^2\left(N-1\right)^2}\right)\\
+%    &=& \frac{1}{\varepsilon^2}\left(\frac{2}{N} + \frac{4}{N\left(N-1\right)}\right)\\
+%    & \therefore & \frac{2}{N} + \frac{4}{N(N-1)}
+    < \varepsilon^2(0,001),\\
+  \end{eqnarray*}
+  para todo $n$ é suficientemente grande.
+\end{proof}
+
+
+\section{Laplaciano}
+
+A  fim de  definirmos a  matriz laplaciana,  é  conveniente relembrarmos
+alguns conceitos:
+\begin{itemize}
+\item  A matriz de adjacências $A(G) = (a_{ij})$ para um grafo $G$ com
+vértices $V(G) = \{1, 2,\dots, n\}$, é definida como:
+$$
+a_{ij} = 
+\left\{
+  \begin{array}{l}
+    1, \quad\mathrm{se}\quad ij \in E(G) \\
+    0, \quad\mathrm{se}\quad ij \notin E(G) \\
+  \end{array}
+\right.
+$$
+
+\item A matriz diagonal é definida como:
+  $$
+  \mathrm{diag} (a_1,a_2,\dots,a_n)=
+  \begin{pmatrix}
+    a_1 & 0 & \cdots & 0 \\
+    0 & a_2 & \cdots & 0\\
+    {\vdots} & {\vdots} & \ddots & {\vdots } \\
+    0 & 0 & \cdots & a_n \\
+  \end{pmatrix}
+  $$
+  
+\item $d(i)$ é o grau do vértice $i$.
+\end{itemize}
+
+Se     definirmos    a     matriz     $D(G)$    como     $    D(G)     =
+\mathrm{diag}(d(1),d(2),\dots,d(n))  $ a  matriz laplaciana  $L(G)$  é a
+matriz :
+\begin{equation}\label{eq:def-laplaciana}
+  L(G) = D(G) - A(G)
+\end{equation}
+e se $l_{ij}$ é o elemento da matriz $L(G)$ na linha $i$ e coluna $j$, então
+\[
+l_{ij}=
+\begin{cases}
+  -1, &\textrm{se }i,j \in E\\
+  d(i), &\textrm{se }i = j\\
+  0, &\textrm{caso contrário}.
+\end{cases}
+\]
+
+A matriz Laplaciana de $G$ também pode ser obtida através da multiplicação
+da matriz $Q$ pela sua transposta
+$$
+L = QQ^T 
+$$
+onde $Q$ é a matriz $|V(G)| \times |E(G)|$ cuja definição é:
+\[
+q_{ie}=
+\begin{cases}
+	1, &\textrm{se }i = \min(e)\\
+	-1, &\textrm{se }i = \max(e)\\
+	0, &\textrm{caso contrário}.
+\end{cases}
+\]
+
+Cada elemento da matriz laplaciana, portanto, pode ser obtida através de:
+$$
+(QQ^T)_{ij} = \sum_{e \in E } q_{ie}q_{je}
+$$ 
+de  forma que  cada  um dos  dois  elementos do  somatório pode  assumir
+valores $0,$  $ 1 $  ou $-1$. Tomando-se  as linhas da matriz  $Q$, duas
+situações podem ocorrer. Se as linhas multiplicadas forem coincidentes, isto é, $i=j$:
+\begin{equation*}
+\sum_{e \in E}(q_{ie})^2 = d(i).
+\end{equation*}
+Por outro lado, se as linhas forem diferentes, isto é, $i \neq j$:
+\begin{equation}
+\sum_{e \in E}q_{ie}q_{je} = 
+\begin{cases}
+	q_{ie}q_{je} = -1, &\textrm{se } \{i,j\} \in E \\
+	0, &\textrm{se } \{i,j\} \notin E \\
+\end{cases}.
+\end{equation}
+
+Esses dois valores ocorrem devido ao fato de não termos uma coluna em $Q$
+que possua dois valores $-1$ ou dois valores $1$.
+
+Para  um vetor  $\mathbf{v}$ qualquer,  $\mathbf{v}= (v_1  ,  v_2 ,\dots
+,v_n)^{\mathtt{T}}$ temos
+\begin{eqnarray*}
+\mathbf{v}^TL\mathbf{v}
+= \left(\mathbf{v}^TQ\right)\left(Q^T\mathbf{v}\right)
+= \left(Q^T\mathbf{v}\right)^T\left(Q^T\mathbf{v}\right).
+\end{eqnarray*}
+Considerando que $e=\{i,j\}$ e $i < j$
+\begin{eqnarray*}
+{(Q^T\mathbf{v})}_e 
+ = \sum_{k=1}^{n} {(q_{ek})}^{T} {v}_{k} = \sum_{k=1}^{n} q_{ke} {v}_{k}
+= \left(v_i - v_j\right)
+\end{eqnarray*}
+logo
+\begin{equation}
+\left(Q^T\mathbf{v}\right)^T\left(Q^T\mathbf{v}\right)=
+\sum_{ij \in E}\left(v_i-v_j\right)\left(v_i-v_j\right)
+= \sum_{ij \in E}\left(v_i-v_j\right)^2
+\end{equation}
+
+ou seja, $\mathbf{v}^TL\mathbf{v} \> \mathbf{0}$, $ \forall \mathbf{v}$,
+e por definição temos:
+\begin{propo}
+$L$ é positiva e semidefinida.
+\end{propo}
+\begin{corol}
+Autovalores de $L$ são não-negativos.
+\end{corol}
+
+\begin{exercicio}
+Mostre que $0$ é autovalor com autovetor
+$$
+\mathbf{1} = 
+\begin{pmatrix}
+1 \\ 1 \\ \vdots \\1
+\end{pmatrix}.
+$$
+\end{exercicio}
+
+O espectro de $L(G)$ é a seqüência de seus autovalores em ordem não-decrescente
+\begin{eqnarray}
+\mathrm{Sp}_L = \left(\mu_1, \mu_2, \dots, \mu_n\right).
+\end{eqnarray}
+com $0 = \mu_1 \> \mu_2 \> \dots \> \mu_n$.
+
+\begin{exercicio}
+  Prove que  se $\Delta(G) = d(v_1)\>  d(v_2) \> \dots  \> d(v_k)$ então
+  $\mu_n \le d(v_1) + d(v_2)$.
+\end{exercicio}
+
+\begin{lema}
+{A multiplicidade algébrica de $\mu_1$ é igual ao número de componentes
+conexas de $G$.}
+\end{lema}
+\begin{proof}
+  Sejam $C$ uma componente conexa de $G$, e
+  $$
+  \mathbf{c}=
+  \begin{pmatrix}
+    c_1 \\ c_2 \\ \vdots \\c_n
+  \end{pmatrix}
+  $$
+  seu vetor característico, ou seja,
+  $$
+  c_i=
+  \begin{cases}
+    1, &\textrm{se }i \in C\\
+    0, &\textrm{caso contrário}.
+  \end{cases}
+  $$
+  
+  Da definição temos
+  \begin{eqnarray*}
+    (L\mathbf{c})_i = \sum_{j}l_{ij}c_j
+    =  l_{ii}c_i + \sum_{j \neq i}l_{ij}c_j = 0 \;(\forall i\in[n])
+  \end{eqnarray*}
+  % pois %$L.c$ é um vetor nulo segundo dois casos:
+  % \[
+  % \begin{cases}
+  %   \mathrm{se } i \in C, &\textrm{então }d(i) + (-d(i)) = 0\\
+  %   \mathrm{se } i \notin C, &\textrm{então } 0 + 0 = 0.
+  % \end{cases}
+  % \]
+  
+  Isso implica que $0$ é uma autovalor de $L$ com $\mathbf{c}$ autovetor
+  associado.   Se  $G$  tem  $t$  componentes  conexas  os  $t$  vetores
+  característicos são  autovetores de $0$  e são ortogonais,  portanto a
+  dimensão do autoespaço $V_{\mu_1}$ é pelo menos $t$.
+  
+  Por outro lado, se $\mathbf{x}$ é um autovetor de $0$ então
+  $$
+  0 = \mathbf{x}^TL\mathbf{x} = \sum_{ij \in E}(x_i - x_j)^2
+  $$
+  que implica em $\mathbf{x}$ constante  em cada componente conexa de $G$,
+  ou   seja,   $\mathbf{x}$   é   uma  combinação   linear   dos   vetores
+  característicos das componentes e, portanto, $ \dim V_{\mu_1} \< t$.
+  
+  Como  $\mathrm{ma}(\mu_1)  = \mathrm{mg}(\mu_1)$  temos  que  $t$ é  a
+  multiplicidade algébrica de $\mu_1$.
+\end{proof}
+
+
+\subsection{Autovalores da matriz laplaciana}
+
+\begin{observacao}
+  Para  grafos  $d$-regulares,  se  $L(G)$  é a  matriz  laplaciana  com
+  autovalores  $\{\mu_1,  \ldots,  \mu_n\}$  e  $A(G)$  é  a  matriz  de
+  adjacência com  autovalores $\{\lambda_1, \ldots,  \lambda_n\}$ então,
+  por definição
+  \begin{displaymath}
+    L(G) = D - A(G) = d \cdot \mathrm{Id} - A(G)
+  \end{displaymath}
+  portanto o polinômio característico de $L(G)$ é
+  \begin{displaymath}
+    p_L(x) = \det(L - x\mathrm{Id}) = \det((d-x)\mathrm{Id} - A)
+    = \det(A-(d-x)\mathrm{Id})
+  \end{displaymath}
+  e como  $p_A(x) = \det(A-xI)$  podemos concluir as  seguintes relações
+  entre os autovalores de $A(G)$ e $L(G)$
+  $$
+  \mu_i = d - \lambda_i .
+  $$
+\end{observacao}
+
+\begin{propo}
+  Tome  $G$ um  grafo e  $\mu_1 \<  \mu_2 \<  \ldots \<  \mu_n$ os
+  autovalores de $L(G)$ em ordem não-decrescente.  Então
+  \begin{equation}
+    \label{eq:lap:mu2:1}
+    \mu_2 = 2n \min _{\mathbf{x} \bot \mathbf{1}}
+    \frac{\sum_{ij \in E}(x_i - x_j)^2}
+    {\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)²}.
+  \end{equation}
+  Ainda, para qualquer constante $c\in \R$,
+  \begin{equation}
+    \label{eq:lap:mu2:2}
+    \mu_2 = 2n \min _{\mathbf{x} \not= c\cdot\mathbf{1}}
+                   \frac{\sum_{ij \in E}(x_i - x_j)^2}
+                   {\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)²}.
+  \end{equation}
+\end{propo}
+\begin{proof}
+  Para provar a equação \eqref{eq:lap:mu2:1}, observe que
+  \begin{eqnarray*}
+    \lefteqn{\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)^2 }  \\
+    & = & \sum_i^n\sum_j^n x_i^2 - 2\sum_i^n\sum_j^n x_i x_j
+        + \sum_i^n\sum_j^n x_j^2 \\
+    & = & \sum_j^n\sum_i^n x_i^2 - 2\sum_i^n\sum_j^n x_i x_j
+        + \sum_i^n\sum_j^n x_j^2 \\
+    & = & n \escalar{\mathbf{x}}{ \mathbf{x}} - 2\sum_i^n x_i \sum_j^n x_j
+        + n \escalar{\mathbf{x}}{ \mathbf{x}} \\
+    &      =      &      2n\escalar{\mathbf{x}}{      \mathbf{x}}      -
+    2\escalar{\mathbf{x}}{\mathbf{1}}^2
+    =       2n\escalar{\mathbf{x}}{      \mathbf{x}}      
+  \end{eqnarray*}
+  pois $\mathbf{x}$ é ortogonal a $\mathbf{1}$.
+%  $<\mathbf{x},\mathbf{1}> = 0$ e
+%  \begin{eqnarray*}
+%    \lefteqn{\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)^2 }  \\
+%    & = & 2n<\mathbf{x}, \mathbf{x}> - 0 \\
+%    & = & 2n\mathbf{x}^T\mathbf{x}
+%  \end{eqnarray*}
+  Então
+  \begin{displaymath}
+    \mu_2 = \min _{\mathbf{x} \bot \mathbf{1}}
+            \frac{\mathbf{x}^TL\mathbf{x}}{\mathbf{x}^T\mathbf{x}}  %
+          = 2n \min _{\mathbf{x} \bot \mathbf{1}}
+            \frac{\sum_{ij \in E}(x_i - x_j)^2}
+                 {\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)^2 }.
+  \end{displaymath}
+
+  Para a equação \eqref{eq:lap:mu2:2}, observe que
+  \begin{displaymath}
+    \frac{\sum_{ij \in E}((x_i + c) - (x_2 + c))^2}
+         {\sum_i \sum_j ((x_i + c) - (x_j + c))^2}
+    =
+    \frac{\sum_{ij \in E} (x_i - x_j)^2}
+         {\sum_i \sum_j (x_i - x_j)^2}.
+  \end{displaymath}
+\end{proof}
+
+
+\begin{propo}
+  Se $\delta(G)$ é o grau mínimo de G e $\mu_1 \< \mu_2 \<
+  \ldots \< \mu_n$ os autovalores de $L(G)$, então
+  \begin{displaymath}
+    \mu_2 \< \frac{n}{n-1}\delta(G).
+  \end{displaymath}
+\end{propo}
+\begin{proof}
+  Tome $\mathbf{e}_i$ o vetor característico do conjunto unitário
+  $\{i\}$.  Por \eqref{eq:lap:mu2:2}
+  \begin{displaymath}
+    \mu_2 \< 2n \frac{\sum_{ij \in E}(x_i - x_j)^2}
+                   {\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)²}
+    = 2n \frac{d(k)}{2(n-1)} = \frac{n}{n-1} d(k), 
+  \end{displaymath}
+  para todo $k\in V$.  Em particular, a desigualdade é válida para o $k$
+  tal que $d(k) = \delta(G)$.
+\end{proof}
+
+\begin{exercicio}
+  Mostre que
+  \begin{displaymath}
+    \mu_n = 2n \max _{\mathbf{x} \bot c\cdot\mathbf{1}} % isso tá certo? 
+                   \frac{\sum_{ij \in E}(x_i - x_j)^2}
+                   {\sum_{i=1}^n\sum_{j=1}^n(x_i - x_j)²}.
+  \end{displaymath}
+\end{exercicio}
+\begin{exercicio}
+  Sendo $\Delta(G)$ o grau máximo de G, mostre que
+  \begin{displaymath}
+    2\Delta(G)\> \mu_n \> \frac{n}{n-1} \Delta(G) .
+  \end{displaymath}
+\end{exercicio}
+%\begin{exercicio}
+%  Mostre que
+%  \begin{displaymath}
+%    \mu_n \< 2\Delta(G)
+%  \end{displaymath}
+%\end{exercicio}
+
+\begin{propo}
+  Se $U \subseteq V$ e $|U| \< \frac{|V|}{2}$, então
+  \begin{displaymath}
+    e(U, \overline U) \> \mu_2\frac{|U|}{2}.
+  \end{displaymath}
+\end{propo}
+\begin{proof}
+  Se  $\mathbf{u}$ é o vetor
+  $$
+    u_i = 
+    \begin{cases}
+      \frac{1}{|U|} & \textrm{se $i \in U$} \\
+      -\frac{1}{|\overline U|} & \textrm{se $i \notin U$}
+    \end{cases} 
+    $$
+  então
+  \begin{displaymath}
+    \escalar{\mathbf{u}}{\mathbf{1}} = \sum_{i=1}^n{u_i}
+    = \frac{1}{|U|} |U| + \frac{-1}{|\overline{U}|} |\overline{U}|
+    = 0
+  \end{displaymath}
+  Como $\mathbf{u}$ é ortogonal a $\mathbf{1}$,
+  \begin{displaymath}
+  \mu_2 \<
+      \frac{\mathbf{u}^T L \mathbf{u}}
+           {\mathbf{u}^T\mathbf{u}}
+    = \frac{\sum_{ij \in E} (u_i - u_j)^2}
+           {\sum_i^n u_i^2}
+    = \frac{(\frac{1}{|U|} + \frac{1}{|U|})^2 \cdot e(U, \overline U)}
+           {\frac{|U|}{|U|^2} + \frac{|\overline U|}{|\overline U|^2}}
+  \end{displaymath}
+  \begin{displaymath}
+    = (\frac{1}{|U|} + \frac{1}{|\overline U|}) e(U, \overline U)
+    \< \frac{2}{|U|}e(U, \overline U)
+    \Rightarrow e(U, \overline U) \> \mu_2\frac{|U|}{2}
+  \end{displaymath}
+\end{proof}
+
+
+\bibliographystyle{amsplain}
+\providecommand{\bysame}{\leavevmode\hboxto3em{\hrulefill}\thinspace}
+\begin{thebibliography}{2}
+\bibitem{1}
+M.~Aigner, G.~Ziegler, \emph{As provas estão n'O livro}, Editora Edgar
+Bl\"ucher, 2002. (Seções 1 e 2)
+\bibitem{3} 
+P.~Feofiloff, Y.~Kohayakawa, Y.~Wakabayashi, \emph{Uma
+    Introdução Sucinta à Teoria dos Grafo}, II Bienal da SBM,
+  2004. (Seções 3 e 4)
+\bibitem{4} 
+D.~Poole, \emph{Álgebra Linear}, Thompson, 2004.
+(Seções 5, 6,  e 7)
+\bibitem{5}K.Y. Lin, \emph{An elementary proof of the Perron-Frobenius theorem for
+  non-negative symmetric matrices}, Chinese Journal of Physics
+\textbf{4}(15), 1977. (Seção 8) 
+\bibitem{2}
+L.~ Babai, \emph{Linear Algebra and applications to graphs},  Discrete
+Mathematics REU, Summer 2002. Disponível em novembro de 2005 no sítio 
+\texttt{http://people.cs.uchicago.edu/\~{}laci/reu02/}. (Seções 9 e 10)
+\bibitem{6} M. Krivelevich and B. Sudakov, \emph{Pseudo-random
+    graphs}. Disponível em novembro de 2005 no sítio
+  \texttt{http://www.math.princeton.edu/\~{}bsudakov/papers.html}. (Seção 11)
+\bibitem{7} Nati Linial and Avi Wigderson, \emph{Expander Graphs and
+    their Applications - Lecture notes}, Spring 2002.  Disponível em
+  novembro de 2005 no sítio
+  \texttt{http://www.math.ias.edu/\~{}avi/TALKS/}. (Seção 12)
+\bibitem{9}
+N. Alon and J. Spencer, \emph{Probabilistic Methods}, Wiley, 2nd. ed.,
+2000. (Seção 13)
+\bibitem{8}
+Bojan Mohar, \emph{Some Applications of Laplace Eigenvalues fo Graphs},
+in Graph Symmetry: Algebraic Methods and Applications, Eds. G.~Hahn and
+G.~Sabidussi, Kluwer, 1977, pp.~225--275. (Seção 14)
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plano de aula:Matemática Discreta-profmat</title>
+
+<style type="text/css" >
+
+  body { font-family:  sans-serif; }
+  
+  div.my_wrapper{
+  width: 930px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 908px;
+  height: 1s0px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+
+  li.my_nav_link2{
+#  text-align: left;
+#  float: right;
+  list-style: none;
+  padding-right: 10px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 330px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 10px;
+  width: 510px;
+  border: 1px solid gray;
+    background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 908px;
+  border: 1px solid gray;
+  }
+
+  ol#page_one {margin-left:0; padding-left:0; counter-reset:item} ol>li
+  {margin-left:0; padding-left:0; counter-increment:item;
+  list-style:none inside} ol>li:before {content: "[" counter(item)
+  "]" ; padding-right:0.5em; font-weight: bold;}
+
+  ol#page_two {margin-left:0; padding-left:0; counter-reset:item 4} ol>li
+  {margin-left:0; padding-left:0; counter-increment:item;
+  list-style:none inside} ol>li:before {content: "[" counter(item)
+  "]" ; padding-right:0.5em; font-weight: bold;}
+
+
+
+</style>
+
+<script language="javascript">
+
+  function showorhide(enla , id){
+            var ele  = document.getElementById(id);    
+
+            
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+		enla.innerHTML = "[+info]";
+            }
+	    else {
+		ele.style.display = "block";
+		enla.innerHTML = "[-]";
+            }
+  }
+
+  
+</script>
+</head>
+
+<body bgcolor="white">
+  
+  <div class="my_wrapper">
+    <!----------------------------------------------------------------------------------------------------------->    
+    <!----------------------------------------------------------------------------------------------------------->    
+    <div class="my_header">
+      <center>
+	<font size="+3" color="blue">MA12 - Matemática Discreta </font> 
+	<font size="+3"> 
+	  <font size="+2">(
+	    <a href="http://www.profmat-sbm.org.br/">Profmat</a>
+	    <a href="http://profmat.ufabc.edu.br/">Ufabc</a>
+)	  </font>
+	</font><br/>
+	<font size="+2">
+	  Prof.: <a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair Donadelli</a>
+	</font>
+      </center>
+      <ul>
+	<font size="+1">
+	  <li class="my_nav_link"><font color="black"><a href="https://docs.google.com/spreadsheets/d/1PWaZ2Jn-gpXyGxH_VdxQTHVKLGI9Z-2eEd0b6aDpwJA/edit?usp=sharing"><i>Notas/Conceitos</i></a></font> </li>
+	  <li class="my_nav_link"><font color="black"><a href="#foot"><i>Notícias</i></a></font> </li>
+	</font>
+      </ul>
+      <b>Atendimento</b>: <font size=-1> nas sextas após a aula. Em
+      outro horário, agende por email.</font>
+      <div style="display:block;text-align:left">Contato: <img src="../images/emailufabc2.png" border="0"></a></div>    </div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+
+    <!----------------------------------------------------------------------------------------------------------->    	    
+    <div class="my_left_box">
+	      
+      <p align="justify">
+	<b style= "color: black">Onde</b>
+	Sala S-205-0.  
+	<b style= "color: black">Quando</b>
+	6ªs 
+	13h30--16h30
+
+	<b style= "color: black">Ementa</b> Números
+	naturais. Indução. Progressões aritmética e
+	geométrica. Recorrências. Matemática
+	financeira. Combinatória. Probabilidade.  Médias.
+      </p>
+  <!----------------------------------------------------------------------------------------------------------->      
+  <!----------------------------------------------------------------------------------------------------------->    
+  <font>
+    <p> 
+      <b style= "color:black">Referências </b>
+    </p>
+  </font>
+
+  <ol id="page_one">
+
+
+    <li> PROFMAT, MA12 – Aritmética. Disponível
+      gem: <a href="http://www.profmat-sbm.org.br/ma12">http://www.profmat-sbm.org.br/ma12</a>. Acesso:
+      1 fev. 2018.</li>
+
+
+        <li> CARVALHO, P.C.P; MORGADO, A. C.  <i>Matemática discreta</i>.  SBM, 2013
+      (Coleção PROFMAT).  </li>
+
+    <font>
+      <p> 
+	<b style= "color:black"> Referências complementares </b>
+      </p>
+    </font>
+    
+    <li><a name="velleman"></a> VELLEMAN, Daniel J 
+      <i>How to prove it : a structured approach</i> 2. ed.
+      <b><font size=-1>[511.3 VELh2]</font></b>
+    </li>
+    
+    <li> GRIMALDI, Ralph Peter, <i>Discrete and combinatorial
+	mathematics : an applied introduction</i>.
+      <b>
+	<font size=-2>
+	  <u>
+	    <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=8910">[510 GRIMdi5]
+	    </a>
+	  </u>
+	</font>
+      </b>.
+    </li>
+
+
+    
+    <li>ROSEN, Kenneth H.  <i>Matemática discreta e suas
+	aplicações</i>. 6ªEdição
+      <b>
+	<font size=-2>
+	  <u>
+	    <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=13171">[510 ROSEma6]
+	    </a>
+	  </u>;
+	</font>
+      </b>
+    </li>
+    
+
+    
+    <li> SCHEINERMAN, Edward <i>Matemática discreta : uma
+    introdução</i>. 3ªEdição
+      <b>
+	<font size=-2>
+	  <u>
+	    <a href="http://biblioteca.ufabc.edu.br/index.php?codigo_sophia=103615">[511.1 SCHEma3]
+	    </a>
+	  </u>;
+	</font>
+      </b>
+    </li>
+
+    <font>
+      <p> 
+	<b style= "color:black"> Referências legais </b>
+      </p>
+    </font>
+
+<li><a name="Matosek"></a> Matosek, J. e Nesetril, J.I.
+	  <i>An Invitation to Discrete Mathematics</i>
+	  <b><font size=-1>[510 MATOin2]</font></b>
+	</li>
+	<li><a name="lovasz"></a> Lovász, László.
+	  <i>Matemática discreta : Elementar e além</i>
+	  <b><font size=-1>[510 LOVÁma]</font></b>
+	</li>
+	<li> Mitchel T. Keller e  William  T. Trotter 
+	  <i>Applied Combinatorics</i> 
+	  <b><font size=-1>[<a href="https://people.math.gatech.edu/~trotter/book.pdf">aqui</a>]</font></b>
+	</li>
+
+  </ol>
+  
+  
+  <font size="+1"><b style=
+  "color:black">Avaliação</b> </font><a name="provas"></a> 3 provas
+  valendo 9 pontos e listas valendo 1 ponto
+      <p><b>DATAS:</b> (essas datas serão confirmadas ou alteradas na 2ª semana de aula, 16/3)  <br/>
+	<b>P1 - 20/04</b> Números naturais, Indução e Progressões. <a href="prova1.pdf">prova<a/></p>
+      <p> <b>P2 - 08/06</b> Recorrências, matemática financeira e combinatória.	 <a href="prova2.pdf">prova<a/></p>
+      <p> <b>P3 - 29/06</b> Probabilidade e médias <a href="prova3.pdf"> prova<a/></p>
+      <p><a name="listas">
+	  Listas valendo nota:
+	  <ul>
+	    <li>
+	      lista 1 [<a href="lista1.html">html</a> /  
+	      <a href="lista1.pdf">pdf]</a> para 06/04
+	    </li>
+	    <li>
+	      lista 2 [<a href="lista2.html">html</a> /  
+	      <a href="lista2.pdf">pdf]</a> para 13/04 
+	    </li>
+	    <font size=-1>
+	    (<a href="Scanned-image-3.pdf">soluções da Mariana</a>)
+	    </font>
+	    <li>
+	      lista 3 [enunciado na P2/<a href="lista3.html">html</a>] para 15/06.
+	    </li>
+	    <li>
+	      lista 4 [enunciado na P2/<a href="lista4.html">html</a>] para 22/06. 
+	    </li>
+	    <li>
+	      lista 5 [<a href="lista5.html">html</a>] para o dia da P3.
+	    </li>
+	     <li>
+	      lista 6 [<a href="lista6.html">html</a>] para o dia da P3.
+	    </li>
+	</ul></a>
+      </p>
+		  
+  <p>
+    <ul>
+      <li class="my_nav_link2"><b>Conceito Final</b>
+	<a onclick="showorhide(this,'NOTA'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+info]
+	</a>
+	<table>
+	  <th>Nota -
+	  </th>
+	  <th> - Conceito
+	  </th>
+	<tr>
+	  <td>[9,10]
+	  </td>
+	  <td align="center">A
+	  </td>
+	</tr>
+	<tr>
+	  <td>[7.5,9)
+	  </td>
+	  <td align="center">B
+	  </td>
+	</tr>
+	<tr>
+	  <td>[5,7.5)
+	  </td>
+	  <td align="center">C
+	  </td>
+	</tr>
+	  <tr>
+	    <td>[0,5)
+	    </td>
+	    <td align="center">R
+	    </td>
+	  </tr>
+      </table>
+      </li>
+    </ul>
+  </p>
+
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="NOTA" style="display: none">
+    <p style="padding:6px; background-color: white; border: gray 2px
+	      solid" >
+
+      O conceito final da disciplina poderá
+      ser:<br />
+      <br />
+	  <b>R</b> - Reprovado. 
+      <br />
+
+      <br />
+	  <b>C</b> - Desempenho mínimo satisfatório, demonstrando
+	  capacidade de uso adequado dos conceitos da disciplina,
+	  habilidade para enfrentar problemas relativamente simples e
+	  prosseguir em estudos avançados.
+      <br />
+      <br />
+	  <b>B</b> - Bom desempenho, demonstrando boa capacidade de uso
+	  dos conceitos da disciplina.
+      <br />
+      <br />
+	  <b>A</b> - Desempenho excepcional, demonstrando excelente
+	  compreensão da disciplina e do uso da matéria.
+    </p>
+    </div>
+ 
+
+<h4><i>Links</i></h4>
+<a name="links"></a>
+<ul>
+  
+   <li>
+     <a href="http://www.sbm.org.br/coloquio-sul-4/wp-content/uploads/sites/4/2016/04/Minicurso_Belos_Problemas.pdf">Belos
+     problemas de matemática</a>(sobre indução, contagem e princípio das gavetas)
+   </li>
+  <li>
+    Fernando Q. Gouvêa e Shai
+    Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+      to Read Mathematics</a> ( uma tradução "rápida e grosseira",
+    segundo o
+    tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+  </li>
+  <li>
+    <a href="exames-quali.pdf">Exames de qualificação</a> (num único pdf;
+    5.1MB)
+  </li>
+  <li>
+    <a href="https://www.youtube.com/watch?v=s86-Z-CbaHA">The
+    Banach–Tarski Paradox</a>
+    (video). <a href="http://www.spm.uem.br/bspm/pdf/vol22-2/art10.pdf">aqui</a>
+    tem uma demonstração que promete ser acessível a estudantes de
+    graduação.
+  </li>
+  <li>
+    Recorrências lineares do ponto de vista da álgebra linear
+    (<a href="https://en.wikibooks.org/wiki/Linear_Algebra/Topic:_Linear_Recurrences">aqui</a>, em inglês)
+  </li>
+</ul>
+    </div>
+    
+
+
+<!----------------------------------------------------------------------------------------------------------->    	    
+<div class="my_right_box">
+  
+  <center><b>Programação das aulas</b> (tentativa) </center>
+  <center> <a href="http://profmat.ufabc.edu.br/images/programacao/horarios-2018.1.pdf">[Calendário]</a> </center>
+  
+  <ol>
+    <li> 09/03 -> Administrativia. Um pouco sobre demonstrações. <br/>
+      <font size=-1>
+	leitura sugerida ->
+	[<a href="https://anotacoesdeaula.wordpress.com/2017/02/06/semana-1-elementos-de-logica-de-1a-ordem">notas
+	de aula da graduação, parte 1</a>],
+	[<a href="https://anotacoesdeaula.wordpress.com/2017/02/10/mctb019-17-2-tecnicas-de-demonstracao/">notas
+	de aula da graduação, parte 2</a>],
+	[<a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como
+	ler e estudar matemática?</a>] <br/> As referências
+	complementares [3],[4] e [5] tratam desse assunto.<br/>  A
+	referência [8] tem um ótimo capítulo (cap 3) sobre
+	demonstrações.
+      </font> 
+    </li> 
+
+    <li> 16/03 -> Cardinalidade de conjuntos. [Axioma da] Indução <font size=-2></font> . <br/>
+      <font size=-1>
+	Referências: cap 1 do livro texto.<br/>  Exercícios sugeridos:
+      1.3 e 1.4 da seção 1.4; 1.5 a 1.9 da seção 1.6. <br/> Leitura
+      complementar:
+      (1) <a href="https://anotacoesdeaula.wordpress.com/2014/06/28/tan-bc1405-2/">axiomas
+      de Peano e propriedades aritméticas elementares</a>;
+      (2) <a href="https://anotacoesdeaula.wordpress.com/2017/03/29/mctb019-17-%c2%a7-7-principios-de-contagem/">cardinalidade</a>.<br/>
+      <b>Para a próxima aula:</b> estudo prévio do cap 2.
+      </font> 
+    </li>
+
+
+      
+<li> 16/03 -> Princípios de indução. Provas por indução. O método da
+indução: definições por indução ou recorrência. Resolução de problemas
+com o método da indução.<br/>
+      <font size=-1>
+	Referências: cap 2 do livro texto.<br/>
+	Exercícios sugeridos:  <br/>
+
+	Leitura complementar:
+	<a href="https://anotacoesdeaula.wordpress.com/2017/02/18/mctb019-17-3-o-principio-de-inducao-e-provas-por-inducao/">notas de aula da graduação</a>;
+	<br/>
+	<b>Para a próxima aula (daqui 2 semanas):</b> Entregar
+	a <a href="#listas">lista 1</a><br/> estudar as seções 3.1, 3.2,
+	3.3, 3.7, 3.8, 3.9, e o lema 3.10 e o exemplo 3.28 da seção
+	3.10. <br/> Exercícios sugeridos referentes ao estudo: 3.10,
+	3.12, 3.14, 3.20, 3.23, 3.26, 3.27, 3.56, 3.59, 3.64, 3.71, 3.73,
+	3.79, 3.80, 3.78(a), 3.84(a e b).
+      </font>
+    </li>
+
+
+  
+    <li> 06/04 -> Progressões aritméticas: termo geral, soma dos termos,
+      de ordem superior. Somas polinomiais.
+      
+      Progressões geométricas: Termo geral, Taxas equivalentes, soma dos
+      termos
+      <font size=-1>
+	Referências: cap 3 do livro texto.<br/>
+	Exercícios sugeridos:  os exercícios do cap 3 do livro texto<br/>
+      </font>
+    </li>
+    
+    
+    <li> 13/04 -> Exercícios.  Recorrências lineares de 1a ordem.
+      <font size=-1>
+	Referências: seções 4.1 e 4.3 do livro texto.<br/>
+	Exercícios sugeridos: seções 4.2 e 4.4 do livro texto.
+      </font>
+    </li>
+     
+    <li>20/04 -> <b>Avaliação</b> <i>conteúdo</i>: caps 1, 2 e 3 do
+      livro texto.
+    </li>
+
+      
+    <li> 27/04 -> Recorrências lineares de 2a ordem.<br/>
+      <font size=-1>
+	Referências: cap 4  do livro texto.<br/>
+	Exercícios sugeridos: todos os do cap 4 do livro texto.
+      </font>
+    </li>
+  
+
+    <li> 04/05 -> Matemática Financeira: Juros compostos. A fórmula das
+      taxas equivalentes.  séries uniformes. Sistemas de amortização
+      <font size=-1>
+	Referências: <br/> Exercícios sugeridos: 5.2 a 5.5, 5.8 a 5.12, 5.15, 5.18 a 5.23, 5.26 a 5.28. 5.33, 5.34, 5.36, 5.37 
+      </font><br/>
+      <font size=-2>
+	<a href="https://www.youtube.com/watch?v=PUvKt3zR6D0">Isto é
+	Matemática T01E10 Juras & Juros</a> (~7min.)
+      </font>
+    </li>
+    
+      
+    <li> 11/05 -> Análise combinatória: o princípio fundamental da
+  contagem, permutações e combinações, outras fórmulas combinatórias. O
+  binômio de Newton.
+    <font size=-1>
+	Referências: cap 6 do livro texto <br/> Exercícios sugeridos:
+	6.5 a 6.7, 6.10 a 6.18, 6.21, 6.24, 6.32, 6.34, 6.37, 6.42,
+	6.46, 6.53 a 6.56, 6.59 a 6.6, 6.70 a 6.84.<br/>
+	Leitura complementar:
+	<a href="https://anotacoesdeaula.wordpress.com/2014/09/22/bc0405-principios-da-analise-combinatoria/">notas de aula da graduação</a>;
+	<br/>
+    </font>
+    </li>
+    
+  <li> 18/05 ->  Aula de exercícios </li>
+    
+  <li> 25/05 -> Aula de exercícios </li>
+    
+  <li> 01/06 ->  Feriado  </li>
+
+  <li>  08/06 -> <b> Avaliação</b> <i>conteúdo</i>: caps 4, 5 e 6 do livro texto.</li>
+    
+  <li>  15/06 -> Probabilidade: conceitos básicos; probabilidade condicional
+     <font size=-1>
+	Referências: cap 7 do livro texto <br/> Exercícios sugeridos:
+	7.1 a 7.6, 7.9, 7.12, 7.16, 7.17, 7.23-7.31, 7.35, 7.36, 7.41,
+	7.45-7.46.<br/>  Leitura complementar: Notas
+	das aulas para a
+	graduação: <a href="https://anotacoesdeaula.wordpress.com/2014/10/08/bc0406-espaco-amostral-evento-e-probabilidade-classica/">1</a>, <a href="https://anotacoesdeaula.wordpress.com/2014/10/18/bc0406-axiomas-de-probabilidade-e-modelo-probabilistico/">2</a>, <a href="https://anotacoesdeaula.wordpress.com/2014/10/25/bc0406-probabilidade-condicional-e-independencia/">3</a>
+    </font><br/>
+      <font size=-2>Isto é Matemática
+	<a href="https://www.youtube.com/watch?v=LOS9ACZ4E5w">T01E08 Sorte, Azar ou Matemática</a> (~7min.)
+	<a href="https://www.youtube.com/watch?v=r4X-bAxLQJ8">T03E05 O Homem que fez a sua própria sorte</a> (~7min.)
+	<a href="https://www.youtube.com/watch?v=YxQ3HyNpsgw">T02E03 A Matemática do Euromilhões</a> (~7min.)
+	<a href="https://www.youtube.com/watch?v=7YljjS6bpJA&t=289s">T03E09 Hoje Lavas Tu a Louça</a> (~7min.)
+	<a href="https://www.youtube.com/watch?v=K0zrUomGGHY">T05E13 Monty Hall</a> (~7min.)
+	<a href="https://www.youtube.com/watch?v=fJuOYmEgWNs">T06E10 A Confiança Nas Sondagens</a> (~7min.)
+      </font>
+    </li>
+
+    
+  <li> 22/06 -> Médias e princípio das gavetas: a desigualdade das
+  médias
+    <font size=-1>
+	Referências: cap 7 do livro texto <br/> Exercícios sugeridos:
+	8.1 a 8.10, 8.14 a 8.19, 8.34 a 8.36, 8.37 a 8.58
+	<br/>
+    </font>
+  </li>
+  <li>  29/06 -> <b> Avaliação</b> <i>conteúdo</i>: caps 7 e 8  do livro texto.
+    
+</ol>
+</div>
+<!----------------------------------------------------------------------------------------------------------->    	    
+<!----------------------------------------------------------------------------------------------------------->    	        
+<div class="my_footer">
+  <a name="foot">
+    <h2>Notícias</h2>
+  </a>
+  <ol>
+    <li>
+      <i>fique ligado neste espaço</i> ou
+      acompanhe <a href="http://twitter.com/QuadroDeAvisos">por aqui</a>
+    </li>
+    <li>soluções das questões da P1 <a href="http://professor.ufabc.edu.br/~jair.donadelli/MA12/P1/">http://professor.ufabc.edu.br/~jair.donadelli/MA12/P1/</a>
+    </li>
+    <li>10/05 Notas da P1 disponiveis
+    </li>
+    <li>soluções das questões da
+    P2 <a href="http://professor.ufabc.edu.br/~jair.donadelli/MA12/P2.html">http://professor.ufabc.edu.br/~jair.donadelli/MA12/P2.html</a>
+    </li>
+    <li>20/06 Notas da P2 disponiveis
+    </li>
+    <li>Não haverá substitutiva. O conceito final -->  <a href="https://docs.google.com/spreadsheets/d/1PWaZ2Jn-gpXyGxH_VdxQTHVKLGI9Z-2eEd0b6aDpwJA/edit?usp=sharing"><i>Notas/Conceitos</i></a> 
+    </li>
+  </div>
+  <!----------------------------------------------------------------------------------------------------------->
+  <!----------------------------------------------------------------------------------------------------------->    	          
+    </body>
+  </html>

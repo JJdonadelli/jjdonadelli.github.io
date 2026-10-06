@@ -1,0 +1,3293 @@
+%Time-stamp: <Sat Feb 20 17:54:18 2010 jair@asterix>
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\hypersetup{backref=true,pdfpagemode=UseOutlines,colorlinks=true,
+breaklinks=true,hyperindex=true,linkcolor=blue,pagebackref=true,
+anchorcolor=yellow,citecolor=red,filecolor=magenta,
+menucolor=red,pagecolor=red,urlcolor=blue,bookmarks=true,
+bookmarksopen=true,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
+
+\usepackage{url} 
+\usepackage{html}
+\usepackage{hyperref} 
+\hypersetup{backref=true,pdfpagemode=UseOutlines,colorlinks=true,
+breaklinks=true,hyperindex=true,linkcolor=blue,pagebackref=true,
+anchorcolor=yellow,citecolor=red,filecolor=magenta,
+menucolor=red,pagecolor=red,urlcolor=blue,bookmarks=true,
+bookmarksopen=true,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
+\usepackage{amssymb,amsfonts,amsmath,amsthm}                                         
+
+\usepackage{color}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+
+%\setlength{\oddsidemargin}{0pt}
+%\setlength{\evensidemargin}{0pt}
+%\setlength{\textwidth}{6.0in}
+%\setlength{\topmargin}{0in}
+%\setlength{\textheight}{8.5in}
+%
+%\setlength{\parindent}{0in}
+%\setlength{\parskip}{5px}
+%
+%\input{macrosblog}
+
+%%%%%%%%% For wordpress conversion
+
+\newenvironment{red}{\color{red}}{}
+\newenvironment{green}{\color{green}}{}
+\newenvironment{blue}{\color{blue}}{}
+
+%%%%%%%%% Typesetting shortcuts
+\newenvironment{btabular}[1]{\begin{tabular} {#1}}{\end{tabular}}
+\def\image#1#2#3{\includegraphics[#1pt]{#3}}
+
+\def\B{\{0,1\}}
+\def\xor{\oplus}
+\def\<{\leq}
+\def\>{\geq}
+
+\def\P{{\mathbb P}}
+\def\E{{\mathbb E}}
+\def\ee{~{\operatorname e}~}
+\def\ou{~{\operatorname{ou}}~}
+\def\existe{{\operatorname{existe}}~}
+\def\paratodo{{\operatorname{para~todo}}~}
+\def\var{{\bf Var}}
+\def\nao{\operatorname{n\tilde{a}o}}
+
+\def\N{{\mathbb N}}
+\def\Z{{\mathbb Z}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\eps{{\epsilon}}
+
+\def\bz{{\bf z}}
+
+\def\true{{\tt verdadeiro}}
+\def\false{{\tt falso}}
+
+%%%%%%%%% Theorems and proofs
+
+\newtheorem{exercicio}{Exerc\'{i}cio}
+\newtheorem{theorem}{Theorem}
+\newtheorem{teorema}{Teorema}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{definicao}{Defini\c c\~ao}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{example}{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\qedsymbol}{$\blacklozenge$}
+
+\begin{document}
+
+
+
+
+
+\title{Resumo das aulas de discreta}
+\author{Jair Donadelli}
+\date{dezembro de 2009}
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 1 }\addcontentsline{toc}{section}{Aula 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \href{http://www.inf.ufpr.br/jair/md.html}{página da disciplina}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 2}\addcontentsline{toc}{section}{Aula 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{definicao}
+  Uma
+  \begin{red}
+    proposição
+  \end{red}
+  é uma sentença que pode assumir exatamente um de dois valores:
+  \begin{red}
+    VERDADEIRO
+  \end{red}
+   \emph{(V)} ou
+   \begin{red}
+     FALSO
+   \end{red}
+   \emph{(F)}. O valor é chamado de
+  \begin{red}
+    VALOR-VERDADE
+  \end{red}
+da proposição.
+\end{definicao}
+
+\begin{definicao}
+  Seja $A$ uma proposição. A
+  \begin{red}
+    negação
+  \end{red}
+  de $A$ é a proposição $\nao(A)$ cujo
+  valor-verdade é\\
+    \begin{tabular}{cc}
+      $A$ & $\nao(A)$\\
+      $V$ & $F$\\
+      $F$ & $V$\\
+    \end{tabular}
+\end{definicao}
+
+
+\begin{definicao}
+  Sejam $A$ e $B$ proposições, então a
+  \begin{red}
+    disjunção
+  \end{red}
+  é a proposição $A \ou B$
+  cujo   valor-verdade é\\
+    \begin{tabular}{ccc}
+      $A$ & $B$ & $A \ou B$\\
+      $V$ & $V$ & $V$ \\
+      $V$ & $F$ & $V$ \\
+      $F$ & $V$ & $V$ \\
+      $F$ & $F$ & $F$ \\
+    \end{tabular}
+    a
+    \begin{red}
+      conjunção
+    \end{red}
+    é a proposição $A\ee B$ cujo valor-verdade é
+    \begin{tabular}{ccc}
+      $A$ & $B$ & $A\ee B$\\
+      $V$ & $V$ & $V$ \\
+      $V$ & $F$ & $F$ \\
+      $F$ & $V$ & $F$ \\
+      $F$ & $F$ & $F$ \\
+    \end{tabular}
+\end{definicao}
+
+\begin{definicao}
+  Sejam $A$ e $B$ proposições. 
+  A
+  \begin{red}
+    condicional
+  \end{red}
+  é a proposição $A\Rightarrow B$ cujo valor-verdade é\\
+    \begin{tabular}{ccc}
+      $A$ & $B$ & $A \Rightarrow B$\\
+      $V$ & $V$ & $V$ \\
+      $V$ & $F$ & $F$ \\
+      $F$ & $V$ & $V$ \\
+      $F$ & $F$ & $V$ \\
+    \end{tabular}
+\end{definicao}
+
+\begin{definicao}
+  Sejam A e B proposições. 
+  A
+  \begin{red}
+    bicondicional
+  \end{red}
+  é a proposição $A\Leftrightarrow B$ cujo valor-verdade é\\
+    \begin{tabular}{ccc}
+      $A$ & $B$ & $A \Leftrightarrow B$\\
+      $V$ & $V$ & $V$ \\
+      $V$ & $F$ & $F$ \\
+      $F$ & $V$ & $F$ \\
+      $F$ & $F$ & $V$ \\
+    \end{tabular}
+\end{definicao}
+
+
+\begin{definicao}
+  Duas proposições $A$ e $B$ são
+  \begin{red}
+    logicamente equivalentes
+  \end{red}
+  se assumem o mesmo valor-verdade. A notação é $A\equiv B$.
+\end{definicao}
+
+
+
+\textbf{Obs} $A\equiv B$ é o mesmo que dizer que $A\Leftrightarrow B$ é verdadeiro
+
+
+
+\begin{teorema}\label{teo:1}
+  $A \ou \nao (A)$.
+\end{teorema}
+
+\begin{teorema}[identidade]\label{teo:2}
+  \begin{equation}
+    A\ee V \equiv A
+  \end{equation}
+  \begin{equation}
+    A\ou F \equiv A    
+  \end{equation}
+\end{teorema}
+
+\begin{teorema}[dominação]\label{teo:3}
+  \begin{equation}
+    A\ou V \equiv V
+  \end{equation}
+  \begin{equation}
+    A\ee F \equiv F    
+  \end{equation}
+\end{teorema}
+
+
+\begin{teorema}[idempotência]\label{teo:4}
+  \begin{equation}
+    A\ee A \equiv A
+  \end{equation}
+  \begin{equation}
+    A\ou A \equiv A    
+  \end{equation}
+\end{teorema}
+
+\begin{teorema}[dupla negação]\label{teo:5}
+  \begin{equation}
+    \nao(\nao(A)) \equiv A
+  \end{equation}
+\end{teorema}
+
+\begin{teorema}[distributiva]\label{teo:6}
+  \begin{equation}
+        A \ee (B \ou C) \equiv (A \ee B) \ou (A \ee C)
+  \end{equation}
+    \begin{equation}
+          A \ou (B \ee C) \equiv (A \ou B) \ee (A \ou C)
+    \end{equation}
+\end{teorema}
+
+\begin{teorema}[comutativa]\label{teo:7}
+  \begin{equation}
+    A \ou B  \equiv (B \ou A)
+  \end{equation}
+  \begin{equation}
+    A \ee B  \equiv (B \ee A)
+  \end{equation}
+\end{teorema}
+
+\begin{teorema}[associativa]\label{teo:8}
+  \begin{equation}
+    A \ou (B \ou C) \equiv (A \ou B) \ou C
+  \end{equation}
+  \begin{equation}
+    A \ee (B \ee C) \equiv (A \ee B) \ee C
+  \end{equation}
+\end{teorema}
+
+\begin{teorema}[De Morgan]\label{teo:9}
+  \begin{equation}
+    \nao(A \ou B)\equiv     \nao(A) \ee \nao(B)
+  \end{equation}
+  \begin{equation}
+        \nao(A \ee B)\equiv     \nao(A) \ou \nao(B)
+  \end{equation}
+\end{teorema}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 3}\addcontentsline{toc}{section}{Aula 3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{teorema}\label{teo:10}
+  $
+    A\Rightarrow B \equiv \nao(A) \ou B
+  $.
+\end{teorema}
+
+
+Um
+\begin{red}
+  argumento
+\end{red}
+com premissas $P_1,P_2,\dots,P_n$ e conclusão $Q$ é
+\begin{red}
+  válido
+\end{red}
+quando
+\begin{center}
+  $Q$ é verdadeiro sempre que $P_1 \ee P_2 \ee \cdots \ee P_n$ é verdadeiro,
+\end{center}
+ ou seja
+\begin{equation}
+(  P_1 \ee P_2 \ee \cdots \ee P_n \Rightarrow Q ) \equiv V
+\end{equation}
+
+\begin{teorema}[Modus Ponens]\label{eq:modusponens}
+  $ A \ee (A\Rightarrow B) \Rightarrow B $ é um argumento válido.
+\end{teorema}
+
+
+\begin{teorema}\label{teo:12}
+  $ A\Rightarrow A \ou B $ é um argumento valido.
+\end{teorema}
+
+
+\begin{teorema}\label{teo:13}
+  $ A \ee B \Rightarrow A $ é um argumento válido.
+\end{teorema}
+
+\begin{teorema}\label{teo:14}
+  $ \nao(A\Rightarrow B) \equiv A \ee \nao(B) $.
+\end{teorema}
+
+\begin{teorema}\label{teo:vacuous}
+  $F\Rightarrow A$.
+\end{teorema}
+
+\begin{teorema}\label{teo:16}
+  $ \big( (A\Rightarrow B) \ee (A\Rightarrow C)\big) \Rightarrow
+  (A\Rightarrow (B \ee C)) $ é um argumento válido.
+\end{teorema}
+
+\begin{teorema}\label{teo:17}
+  $ (A\Rightarrow B) \ee (A\Rightarrow\nao(B)) \equiv (A=F)  $.
+\end{teorema}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 4}\addcontentsline{toc}{section}{Aula 4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Uma
+\begin{red}
+  sentença aberta
+\end{red}
+é uma sentença parametrizada por uma ou mais variáveis. Uma sentença
+aberta não tem valor lógico. O domínio da(s) variável(is) é chamado
+\begin{red}
+  universo do discurso
+\end{red}.
+
+
+O
+\begin{red}
+  conjunto verdade
+\end{red}
+de uma sentença aberta $P(x)$ sobre o universo $U$ é o conjunto
+\begin{equation}
+  \{ a\in U\colon P(a)\},
+\end{equation}
+ou seja, o conjunto formado pelos elementos de $U$ que tornam $P(x)$
+verdadeira.
+
+\textbf{Quantificador Universal} é a proposição
+\begin{equation}
+  \paratodo x,~P(x)
+\end{equation}
+significa que $P(x)$ é verdadeiro para todos os valores de $x$ no
+universo do discurso.
+
+
+\textbf{Quantificador Existencial} é a proposição
+\begin{equation}
+  \existe x,~P(x)
+\end{equation}
+significa que $P(x)$ é verdadeiro para algum valor de $x$ no universo
+do discurso.
+
+
+\begin{tabular}{ccc}
+  proposição & verdadeira & falsa \\
+  $\paratodo x,~P(x)$ & $P(x)=V$ para todo $x$ no universo do discurso&
+  existe um $x$ no universo do discurso para o qual $P(x)$ é falso\\
+  $\existe x,~P(x)$ & existe um $x$ no universo do discurso para o
+  qual $P(x)$ é verdadeiro& $P(x)=F$ para todo $x$
+\end{tabular}
+
+
+Podemos caracterizar os quantificadores com proposições a cerca do
+conjunto-verdade, 
+
+\begin{definicao} Usaremos como definição as senguintes equivalências.
+  
+\begin{teorema}\label{teo:18}
+  $
+  \paratodo x,~P(x) \equiv \Big( \big\{x\in U\colon  P(x)\big\}=U\Big).
+  $
+\end{teorema}
+
+\begin{teorema}\label{teo:19}
+  $
+  \existe x,~P(x) \equiv \Big( \big\{x\in U\colon  P(x)\big\}\neq \emptyset \Big).
+  $
+\end{teorema}
+\end{definicao}
+
+
+Com isso é fácil deduzir a negação das proposições quantificadas
+\begin{teorema}\label{teo:20}
+  $ \nao \Big( \paratodo x,~P(x)\Big) \equiv \existe x,~\nao(P(x)) $.
+\end{teorema}
+
+\begin{teorema}\label{teo:21}
+  $ \nao\Big( \existe x,~P(x)\Big) \equiv \paratodo x,~\nao(P(x))$.
+\end{teorema}
+
+
+Em proposições com mais de uma variável
+\begin{red}
+  a ordem em que os quantificadores aparece é importante.
+\end{red}
+Por exemplo, se $x$ e $y$ são inteiros
+\begin{equation}\label{eq:divide1}
+  \paratodo x,~\existe y,~(x+y=0)
+\end{equation}\begin{red}
+  não é logicamente equivalente a 
+\end{red}\begin{equation}\label{eq:divide2}
+  \existe y,~\paratodo~x,~(x+y=0)
+\end{equation}
+pois \eqref{eq:divide1} é verdadeiro enquanto que \eqref{eq:divide2} é
+falso.  Entretanto, em alguns casos vale a equivalência.  Por exemplo,
+se $x$ e $y$ são números naturais
+\begin{equation}
+  \paratodo x,~\existe y,(x~\mathrm{divide}~y)
+\end{equation}
+é verdadeira, assim como
+\begin{equation}
+  \existe y,~\paratodo x,~(x~\mathrm{divide}~y)
+\end{equation}
+pois todo $x\in\N$ divide o $0$.
+
+
+Se $X\subseteq U$ ou para explicitar o universo, escrevemos $\paratodo
+x\in X,~P(x)$ que significa
+\begin{equation}
+  \paratodo x\in X,~P(x) \equiv \paratodo x,~(x\in X\Rightarrow P(x)).
+\end{equation}
+
+
+
+\begin{teorema}\label{teo:22}
+  São argumento válidos:
+  \begin{description}
+  \item[instanciação universal:] Se $\paratodo x,~P(x)$ então $P(c)$
+    sempre que $c\in U$;
+  \item[generalização universal:] Se $P(c)$ para $c\in U$ arbitrário,
+    então $\paratodo x,~P(x)$;
+  \item[instanciação existencial:] Se $\existe x,~P(x)$ então $P(c)$
+    para algum elemento $c\in U$;
+  \item[generalização existencial:] Se $P(c)$ para algum $c\in U$
+    específico, então $\existe x,~P(x)$.
+  \end{description}
+\end{teorema}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 5}\addcontentsline{toc}{section}{Aula 5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \textbf{Aula de exercícios}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 6}\addcontentsline{toc}{section}{Aula 6}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$A$ e $B$ agora denotam conjuntos.
+
+$x\in A$ denota a proposição $x$ \textit{é elemento de} $A$.
+
+$x\not\in A$ denota a proposição $\nao(x\in A)$.
+
+$\emptyset$ denota o conjunto vazio.
+
+$|A|$ denota a cardinalidade de $A$, isto é, o número de elementos quando $A$ é finito.
+
+
+\begin{definicao}
+  \begin{equation}\label{eq:contido}
+    A\subseteq B \equiv \paratodo a(a\in A \Rightarrow a\in B).
+  \end{equation}
+  \begin{equation}
+    A =  B \equiv     A\subseteq B \ee B\subseteq A.
+  \end{equation}
+  \begin{equation}
+    x\in A \cup  B \equiv     (x\in A) \ou (x\in B).
+  \end{equation}
+  \begin{equation}
+    x\in A \cap  B \equiv     (x\in A) \ee (x\in B).
+  \end{equation}
+  \begin{equation}
+    x\in A - B \equiv     (x\in A) \ee (x\not\in B).
+  \end{equation}
+\end{definicao}
+
+\begin{teorema}\label{teo:23}
+  $A\subseteq A\cup B$.
+\end{teorema}
+
+\begin{teorema}\label{teo:24}
+  $A\cap B \subseteq A$.
+\end{teorema}
+
+\begin{teorema}\label{teo:25}
+  \begin{equation}
+    A\cap (B\cap C) = (A\cap B)\cap C.
+  \end{equation}
+  \begin{equation}
+    A\cup (B\cup C) = (A\cup B)\cup C    .
+  \end{equation}
+\end{teorema}
+
+\begin{definicao}
+  $A$ e $B$ são
+  \begin{red}
+    disjuntos
+  \end{red}
+  se $A\cap B=\emptyset$.
+\end{definicao}
+
+
+\begin{definicao}Sejam $A_1,A_2,\dots,A_n$ conjuntos e $n$ um natural
+  positivo
+  \begin{equation}
+    x\in \bigcup_{i=1}^n A_i \equiv \existe i,~x\in A_i.
+  \end{equation}
+\end{definicao}
+
+\begin{definicao}Sejam $A_1,A_2,\dots,A_n$ conjuntos e $n$ um natural positivo
+  \begin{equation}
+    x\in \bigcap_{i=1}^n A_i \equiv \paratodo i,~x\in A_i.
+  \end{equation}
+\end{definicao}
+
+
+\begin{definicao}Sejam $A_1,A_2,\dots,A_n$ conjuntos e $n$ um natural positivo
+  \begin{equation}
+    \prod_{i=1}^n A_i = 
+    \big\{ (a_1,a_2,\dots,a_n)\colon \paratodo i,~a_i\in A_i\big\}.
+  \end{equation}
+\end{definicao}
+
+\textbf{Convenções}
+Se $n=0$
+\begin{equation}
+  \bigcup_{i=1}^n A_i = \emptyset
+  \quad \ee \quad
+  \bigcap_{i=1}^n A_i = \emptyset.
+\end{equation}
+Se $A_i=A$ para todo $i$
+\begin{equation}
+  \prod_{i=1}^n A_i = A^n
+\end{equation}
+
+
+
+\begin{definicao}
+$\{A_1,A_2,\dots,A_n\}$ é uma
+\begin{red}
+  partição
+\end{red}
+de $A$ se
+\begin{enumerate}
+\item $\paratodo i,~A_i\subseteq A$
+\item $\paratodo i, \paratodo j,~(j\neq i\Rightarrow A_i\cap A_j =\emptyset)$
+\item $\bigcup_{i=1}^n A_i = A$.
+\end{enumerate}
+\end{definicao}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 7}\addcontentsline{toc}{section}{Aula 7}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercicio}\label{exerc:1}
+  Seja $C$ um conjunto. Prove o teorema: $\emptyset \subseteq C$.
+\end{exercicio}
+\begin{proof}
+  Seja $C$ um conjunto. Vamos provar que $\emptyset \subseteq C$ é
+  verdadeiro.  Pela definição (\ref{eq:contido}) $\emptyset \subseteq
+  C$ é equivalente a $\paratodo a,~a\in \emptyset \Rightarrow a\in C$.
+
+  $a\in \emptyset$ é falso e pelo teorema \ref{teo:vacuous}
+  $F\Rightarrow A$ é uma proposição verdadeira, então $a\in \emptyset
+  \Rightarrow a\in C$ é sempre uma proposição verdadeira, portanto
+  também é $\emptyset \subseteq C$.
+\end{proof}
+
+\textbf{Notação} $[a..b]=\{z\in\Z\colon a\leq z\leq b\}$.
+
+\textbf{Somatórios}
+
+Seja $X\subseteq \R$ um
+\href{http://en.wikipedia.org/wiki/Finite_set#Definition_and_terminology}{conjunto
+  finito}. Denotamos por
+\begin{equation}
+  \sum_{a\in X} a
+\end{equation}
+a soma de todos os elementos de $X$. Como $X$ é um conjunto finito os
+seus elementos podem ser enumerados
+\begin{equation}
+  a_1,a_2,\dots,a_n
+\end{equation}
+e também escrevemos
+\begin{equation}
+  \sum_{i=1}^n a_i \textrm{ para denotar } \sum_{a\in X} a.
+\end{equation}
+
+\begin{teorema}\label{teo:26}
+  Sejam $c,a_1,a_2,\dots,a_n$ números reais e $X$  um conjunto
+  finito. Prove
+  \begin{enumerate}
+  \item $\sum_{x\in X} c = c|X|$.
+  \item $\sum_{i=1}^n(a_i+b_i) = 
+    \sum_{i=1}^n a_i + \sum_{i=1}^n b_i $.
+  \item $\sum_{i=1}^n c a_i = c \sum_{i=1}^n  a_i$. 
+  \end{enumerate}
+\end{teorema}
+
+
+Um tipo particular de soma será bastante utilizado mais tarde, a soma
+dos elementos de uma progressão aritmética e a soma dos elementos de
+uma progressão geométrica. Seja
+$$%\begin{equation}
+  A = \{a_i\colon i\in [0..n-1]\}
+$$%\end{equation}
+onde $a_i\neq 0$ é um número real para todo $i\in[0..n-1]$.
+
+$A$ é uma progressão aritmética de razão $r\in\R$ se
+$$
+a_i - a_{i-1} = r
+$$
+para todo $i\in [1..n-1]$.  
+
+$A$ é uma progressão geométrica de razão $r\in\R$ se
+\begin{equation}
+  \label{eq:PG}
+  {a_i} = r{a_{i-1}}
+\end{equation}
+
+para todo $i\in [1..n-1]$.  
+
+
+\begin{teorema}\label{teo:27}
+  Seja $A = \{a_i\colon i\in [0..n-1]\}$ uma progressão aritmética de
+  razão $r$. Então
+  \begin{equation}
+    \sum_{a\in A} a = a_0n + \frac{n-1}2rn = \frac{(a_0 +a_{n-1})n}2.
+  \end{equation}
+\end{teorema}
+
+
+\begin{teorema}\label{teo:28}
+  Seja $A = \{a_i\colon i\in [0..n-1]\}$ uma progressão geométrica de
+  razão $r\neq 1$. Então
+  \begin{equation}
+    \sum_{a\in A} a = a_0\frac{r^n-1}{r-1}.
+  \end{equation}
+\end{teorema}
+\begin{proof}
+  Seja $A = \{a_i\colon i\in [0..n-1]\}$ uma progressão geométrica de
+  razão $r\neq 1$. Vamos provar que $\sum_{a\in A} a =
+  a_0\frac{r^n-1}{r-1}$.
+
+  Da equação \eqref{eq:PG} temos que $a_i = a_0 r^i$ portanto
+  \[
+    (r-1)\sum_{a\in A} a=
+    (r-1)\sum_{i=0}^{n-1} a_i =
+    (r-1)\sum_{i=0}^{n-1} a_0r^i 
+  \]
+  e usando o item 3 do teorema \ref{teo:26}
+  \[
+    (r-1)\sum_{i=0}^{n-1} a_0r^i =
+    \sum_{i=0}^{n-1} (r-1)a_0r^i =
+    \sum_{i=0}^{n-1} (a_0r^{i+1} - a_0r^i )
+  \]
+  e essa soma é
+  \href{http://pt.wikipedia.org/wiki/Soma_telescópica}{telescópica},
+  portanto 
+  \[
+    (r-1)\sum_{a\in A} a= a_0r^n - a_0
+  \]
+  fatorando o $a_0$ no lado direito e dividindo tudo por $r-1$ (o que
+  podemos fazer pois $r\neq 1$), resulta em
+   \[
+    \sum_{a\in A} a= a_0\frac{r^n -1}{r-1}.
+  \]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 8}\addcontentsline{toc}{section}{Aula 8}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Um
+\begin{red}
+  teorema
+\end{red}
+é uma sentença que pode ser demonstrado ser verdadeira. Demonstramos
+que um teorema é verdadeiro exibindo uma sequência de proposições, que
+chamamos de
+\begin{red}
+  prova
+\end{red}
+de modo que em cada passo usamos um argumento válido para ter um
+conclusão verdadeira a partir de uma premissa verdadeira.
+
+
+
+Vejamos algumas técnicas para construir provas de teoremas da forma
+$A\Rightarrow B$.
+
+
+\begin{red}
+  \textbf{Prova direta}.
+\end{red}
+Pela definição de implicação $A=V$ é o único caso que precisamos
+considerar para mostrar que a implicação $A\Rightarrow B$ é
+verdadeira. Assumimos $A$ verdadeiro e usamos argumentos válidos para
+concluir que $B$ é verdadeiro, usualmente, com várias concicionais
+intermediarias e uma conclusão obtida por \textit{silogismo hipotético} (veja a
+\href{http://www.inf.ufpr.br/jair/lista1.pdf}{lista 1}).
+
+Por exemplo, se $n$ é um número natural então a \textit{implicação}
+\begin{equation}
+  \label{eq:ex1}
+  3\mathrm{~divide~}n \Rightarrow
+  9\mathrm{~divide~} n^2
+\end{equation}
+é verdadeira:
+\begin{itemize}
+\item Se $3\mathrm{~divide~}n $ é verdadeiro, então $n=3q$ é
+  verdadeiro, por definição de \emph{divide};
+\item se $n=3q$ é verdadeiro, então $n^2=(3q)^2$ é verdadeiro,
+  elevando ao quadrado os dois lados da igualdade;
+\item se $n^2=(3q)^2$ então $n^2 = 9q^2$;
+\item se $n^2=9q^2$ então $9\mathrm{~divide~} n^2$ é verdadeiro, por
+  definição de \textit{divide}.
+\end{itemize}
+Pelo silogismo hipotético: \textit{se $3\mathrm{~divide~}n $ então $
+  9\mathrm{~divide~} n^2$}.
+
+
+Como a variável $n$ acima pode assumir qualquer valor natural, ou
+seja, $n$ é um elemento genérico de $\N$, o que provamos de fato foi,
+pelo teorema \ref{teo:22} (generalização universal), que \[ \paratodo
+n~( 3\mathrm{~divide~}n \Rightarrow 9\mathrm{~divide~} n^2).\]
+
+
+Mais um exemplo:\\
+\textbf{Teorema A}. \textit{Para todo $n\in\N$, se $n$ é ímpar, então
+  $n^2$ é ímpar.}
+
+\begin{proof}
+  Seja $n$ um número natural (/*com isso podemos usar generalização
+  universal*/).  Vamos provar que a implicação $n$ ímpar $\Rightarrow$
+  $n^2$ ímpar é verdadeira.
+
+  Suponha que $n$ é ímpar (/*se fosse par, a premissa da implicação
+  seria falsa, portanto a implicação verdadeira*/).  Se $n$ é ímpar
+  então $n=2k+1$ para algum $k\in \N$ pela definição de número ímpar.
+
+  Se $n=2k+1$ então $n^2=(2k+1)^2$. Se $(2k+1)^2 = 2(2k^2+2k)+1$ então
+  $n^2= 2(2k^2+2k)+1$, finalmente, se $n^2= 2(2k^2+2k)+1$ então $n^2$
+  é ímpar.
+\end{proof}
+
+
+\begin{red}
+  \textbf{Prova indireta}.  
+\end{red}
+Nesse tipo de prova, demonstramos que uma proposição logicamente
+equivalente a $A\Rightarrow B$ é verdadeira.
+\begin{description}
+\item[ prova da contrapositiva: ] Provamos que \[\nao(B)\Rightarrow
+  \nao(A)\] é verdadeira e concluímos que $A\Rightarrow B$ é
+  verdadeira pela equivalência lógica
+  \begin{equation}
+    \label{eq:contrapositiva}
+    A\Rightarrow B\equiv \nao(B)\Rightarrow   \nao(A).
+  \end{equation}
+  Por exemplo, a implicação
+  \begin{equation}
+    \label{eq:ex2}
+    n^2 \mathrm{~par}
+    \Rightarrow
+    n \mathrm{~par}
+  \end{equation}
+  é verdadeira para todo número natural (tente uma prova direta). 
+
+  Vamos provar a contrapositiva de \eqref{eq:ex2} \[n \mathrm{~impar}\Rightarrow n^2
+  \mathrm{~impar}\]
+  \begin{itemize}
+  \item Suponha que $n$ é ímpar, então pelo \textbf{teorema A} acima
+    $n^2$ é ímpar.
+  \end{itemize}
+  Por \eqref{eq:contrapositiva} temos \eqref{eq:ex2} verdadeira.
+
+\item[ prova por vacuidade: ] A proposição $A\Rightarrow B$ é
+  verdadeira porque conseguimos provar que $A$ é falso. Veja o
+  exercício \ref{exerc:1} na aula 7.
+
+
+\item[ prova por contradição: ] Na prova por contradição assumimos que
+  a \textit{negação} da proposição a ser provada é verdadeira e
+  derivamos disso uma
+  \begin{red}
+    contradição
+  \end{red}, ou seja, uma proposição falsa.  De fato, se soubermos
+  provar que $\nao(C)\Rightarrow F$ é verdadeiro, então concluiremos a
+  partir de definição de condicional que $C$ é verdadeiro.
+
+  No caso de provar que $A\Rightarrow B$ por contradição, provamos que
+  $\nao(A\Rightarrow B) \Rightarrow F$ e verdadeiro, que equivale a $A
+  \ee \nao(B) \Rightarrow F$ ser uma proposição verdadeira.
+
+  O exercício \ref{exerc:2} mostra algumas equivalências usadas nessa
+  técnica.  
+
+  Vamos provar por contradição:\\
+  \textbf{Teorema B}. \textit{Se $a$ e $b$ são números naturais
+    coprimos, então não são ambos par.}\\
+
+  \begin{proof}
+    Vamos provar que
+    \begin{eqnarray*}
+      \paratodo a,~\paratodo b,~\big(
+      \mathrm{mdc}(a,b)=1\Rightarrow \nao (a~\mathrm{par}\ee b~\mathrm{par}) \big)
+    \end{eqnarray*}
+    por contradição. 
+
+    Sejam $a$ e $b$ números naturais, vamos provar que é verdade a
+    proposição
+    \begin{eqnarray*}
+      \mathrm{mdc}(a,b)=1\ee 
+      \nao\big(\nao (a~\mathrm{par}\ee b~\mathrm{par} ) \big)
+      \Rightarrow 
+      F.
+    \end{eqnarray*}
+    Suponha que $\mathrm{mdc}(a,b)=1\ee \big(a~\mathrm{par}\ee
+    b~\mathrm{par} \big)$ é verdadeiro.
+
+    Se $\mathrm{mdc}(a,b)=1\ee \big(a~\mathrm{par}\ee b~\mathrm{par}
+    \big)$ então $\big(a~\mathrm{par}\ee b~\mathrm{par}
+    \big)$.
+    
+    Se $(a~\mathrm{par}\ee b~\mathrm{par})$ então
+    $\mathrm{mdc}(a,b)\geq 2$. Se $\mathrm{mdc}(a,b)\geq 2$ então
+    $\mathrm{mdc}(a,b)\neq 1$ portanto, por silogismos hipotético \[
+    \mathrm{mdc}(a,b)=1\ee \big(a~\mathrm{par}\ee b~\mathrm{par} \big)
+    \Rightarrow \mathrm{mdc(a,b)\neq 1}\] cuja conclusão é uma contradição,
+    ou seja, $\mathrm{mdc(a,b)\neq 1}$ é falso.
+  \end{proof}
+
+ \fbox{ \begin{minipage}[c]{0.8 \linewidth} 
+
+Essa demonstração não foi feita em aula. 
+Vamos provar por contradição:\\
+  \textbf{Teorema B'}. \textit{Se $d$ e $e$ são números naturais,
+    então}\\ \[ \mathrm{mdc} \left( \frac d{\mathrm{mdc}(d,e)},
+      \frac e{\mathrm{mdc}(d,e)} \right)=1.\]
+
+  \begin{proof}
+    Sejam $d$ e $e$ números naturais, vamos provar que é verdade a
+    proposição
+    \begin{eqnarray*}
+      \mathrm{mdc} \left( \frac d{\mathrm{mdc}(d,e)},
+        \frac e{\mathrm{mdc}(d,e)} \right) > 1
+      \Rightarrow 
+      F.
+    \end{eqnarray*}
+    Suponha que $\mathrm{mdc}\big(d/{\mathrm{mdc}(d,e)},
+    e/{\mathrm{mdc}(d,e)}\big) =k\ee k>1 $ é verdadeiro.
+
+    Se $\mathrm{mdc}\big(d/{\mathrm{mdc}(d,e)},
+    e/{\mathrm{mdc}(d,e)}\big) =k$ então $k$ divide
+    $d/{\mathrm{mdc}(d,e)}$ e $k$ divide $e/{\mathrm{mdc}(d,e)}$,
+    portanto $k{\mathrm{mdc}(d,e)}$ divide $d$ e
+    $k{\mathrm{mdc}(d,e)}$ divide $e$.
+
+    Se $k>1$ então $k{\mathrm{mdc}(d,e)} > {\mathrm{mdc}(d,e)}$, uma
+    contradição.
+  \end{proof}
+\end{minipage}
+ } 
+
+
+
+Vamos provar por contradição:\\
+\textbf{Teorema C}. $\sqrt{2}$ é irracional.
+
+\begin{proof}
+  Vamos provar que \[ \sqrt{2} \not\in \Q \] por contradição, ou seja, vamos
+  provar que \[ \sqrt{2} \in \Q \Rightarrow F.\]
+  Suponha que $\sqrt{2} \in \Q $.
+
+  Se $\sqrt{2} \in \Q $ então, por definição de $\Q$, existem naturais
+  positivos $d$ e $e$ tais que $\sqrt{2}=\frac{d}{e}$.  
+
+  Façamos $$a=\frac d{\mathrm{mdc(d,e)}} \textrm{~e~}b=\frac
+  e{\mathrm{mdc(d,e)}}$$ e temos $\mathrm{mdc}(a,b)=1$ pelo teorema
+  B', portanto, até aqui provamos \[ \sqrt{2} \in \Q \Rightarrow
+  \existe a,~\existe b, \left( \sqrt{2}=\frac{a}{b}\ee
+    \mathrm{mdc}(a,b)=1\right).\]
+
+  Se $\sqrt{2} =\frac ab$ então $2 = a^2 / b^2$. \\
+  Se $2 = a^2 / b^2$ então $a^2=2 b^2$.\\
+  Se $a^2=2 b^2$ então $a^2$ é par.  \\
+  Se $a^2$ é par então $a$ é par, pelo teorema A acima.\\
+  Se $a$ é par então existe $k\in\N$, $a=2k$.\\
+  Se $a=2k$ então $2b^2 = 4k^2$.\\
+  Se $2b^2 = 4k^2$ então $b^2 = 2k^2$.\\
+  Se $b^2 = 2k^2$ então $b^2$ é par. \\
+  Se $b^2$ então $b$ é par. 
+
+  Se $a$ é par e $b$ é par, então $\mathrm{mdc}(a,b)\geq 2$, que é uma
+  contradição.
+\end{proof}
+\end{description}
+
+
+\begin{exercicio}\label{exerc:2}
+  Prove as equivalências lógicas, onde $P,Q,R$ são proposições quaisquer.
+  \begin{enumerate}
+  \item $(P\Rightarrow Q) \equiv ((P\ee \nao Q)\Rightarrow (R\ee\nao R))$.
+  \item $(P\Rightarrow Q) \equiv ((P\ee \nao Q)\Rightarrow \nao P)$.
+  \item $(P\Rightarrow Q) \equiv ((P\ee \nao Q)\Rightarrow Q)$. 
+  \end{enumerate}
+\end{exercicio}
+
+
+\textbf{Mais exemplos}
+
+
+\begin{proof}[ \textit{Outra prova do teorema C} ]
+  Seja $x=\sqrt{2}$. Vamos provar que \[ x=\sqrt{2}\Rightarrow
+  x\not\in\Q\] por contradição. De fato, provaremos que existem
+  naturais positivos $a$ e $b$ tais que
+  \begin{equation}
+    \label{eq:q3}
+    x=\sqrt{2} \ee  x\in\Q \Rightarrow x=\frac{a}{b}\ee \mathrm{mdc}(a,b)=1 \\
+  \end{equation}  \begin{equation}
+    \label{eq:q4}
+    x=\sqrt{2} \ee  x\in\Q \Rightarrow x=\frac{a}{b}\ee \mathrm{mdc}(a,b)\neq 1
+  \end{equation}
+  e derivaremos daí uma contradição.
+
+  Vamos provar \eqref{eq:q3}.  Suponha que $x\in \Q$. Então existem
+  naturais positivos $d$ e $e$ tais que $x=\frac{d}{e}$. Tomemos
+  $a=\frac d{\mathrm{mdc(d,e)}}$ e $b=\frac e{\mathrm{mdc(d,e)}}$,
+  logo $\mathrm{mdc}(a,b)=1$.
+
+  Agora, vamos provar \eqref{eq:q4}.  Se $x =\frac ab$ então $x^2 =
+  a^2 / b^2$, ou seja, $2 = a^2 / b^2$. Multiplicando ambos os lados
+  por $b^2$ temos $2b^2 = a^2$, logo $a^2$ é par.  Se $a^2$ é par então
+  $a$ é par, pelo teorema A acima. Se $a$ é par então $a=2k$ e
+  substituindo em $2b^2 = a^2$ deduzimos $2b^2 = 4k^2$, logo $b^2 =
+  2k^2$, ou seja $b^2$ é par. Pelo mesmo argumento dado anteriormente,
+  $b$ é par. Portanto, $\mathrm{mdc}(a,b)\geq 2$.
+
+  Usamos o teorema \ref{teo:16} e a partir de \eqref{eq:q3} e
+  \eqref{eq:q4} obtemos
+  \begin{equation}\label{eq:q1}
+    x=\sqrt{2} \ee  x\in\Q \Rightarrow 
+    \Big(x=\frac{a}{b}\ee \mathrm{mdc}(a,b)=1 \ee \mathrm{mdc}(a,b)\neq 1\Big) 
+  \end{equation} e simplificando o lado direito (teorema \ref{teo:13})
+  \[
+    \Big(x=\frac{a}{b}\ee \mathrm{mdc}(a,b)=1 \ee \mathrm{mdc}(a,b)\neq 1 \Big)
+    \Rightarrow
+  \]  \begin{equation}\label{eq:q2}
+    \Big(\mathrm{mdc}(a,b)=1 \ee \mathrm{mdc}(a,b)\neq 1 \Big)
+  \end{equation}
+  finalmente, pelo \textit{silogismo hipotético} (veja (16) na lista
+  1) de \eqref{eq:q1} e \eqref{eq:q2}
+  \begin{eqnarray*}
+    x=\sqrt{2} \ee  x\in\Q \Rightarrow  
+    \Big(\mathrm{mdc}(a,b)=1 \ee \mathrm{mdc}(a,b)\neq 1 \Big)
+  \end{eqnarray*}
+  e a conclusão é uma contradição.
+\end{proof}
+
+
+\begin{proof}[ \textit{Outra prova do teorema B} ]
+    Sejam    $a$ e $b$ números naturais. Vamos provar que
+    \begin{eqnarray*}
+      \mathrm{mdc}(a,b)=1\Rightarrow 
+      \nao\big(a~\mathrm{par}\ee b~\mathrm{par} \big).
+    \end{eqnarray*}
+    Por \eqref{eq:contrapositiva} basta provarmos a contrapositiva
+    \begin{eqnarray*}
+      \big(a~\mathrm{par}\ee b~\mathrm{par} \big) 
+      \Rightarrow \nao(\mathrm{mdc}(a,b)=1).
+    \end{eqnarray*}
+    
+    Suponha $a$ par e $b$ par. Então $2$ divide $a$ e $2$ divide $b$,
+    por definição de \textit{par}, portanto, $\mathrm{mdc}(a,b)\geq
+    2$, ou seja, $\nao(\mathrm{mdc}(a,b)=1)$ é verdadeiro.
+  \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 9}\addcontentsline{toc}{section}{Aula 9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Demonstrações} de proposições quantificadas existencialmente:
+Para demonstrar uma proposição da forma $\existe x,~P(x)$, usualmente,
+ou
+\begin{itemize}
+\item
+  \begin{red}
+    (prova construtiva)
+  \end{red}
+exibimos um elemento $c$ do universo tal que $P(c)$ seja verdade, ou
+\item
+  \begin{red}
+    (prova não-construtiva)
+  \end{red}
+  ou inferimos indiretamente a existência desse objeto que torna $P$
+  verdadeira, por exemplo, através de uma prova por contradição:
+  assumimos que tal objeto não existe e derivamos uma contradição.
+\end{itemize}
+
+
+Exemplos:
+
+
+\textbf{Teorema D}. Existe um inteiro positivo que pode ser escrito como
+a soma de dois cubos de duas maneiras diferentes.
+
+\begin{proof}[Prova construtiva]
+ É suficiente verificar que $1729 = 10^3 + 9^3 = 12^3 + 1^3$.
+\end{proof}
+
+
+\textbf{Teorema E}. Existem $x$, $y$ irracionais tais que $x^y\in\Q$.
+
+\begin{proof}[Prova não-construtiva]
+  Vimos na aula anterior que $\sqrt{2}$ é irracional. Se
+  $\sqrt{2}^{\sqrt{2}}$ é racional então tomamos $x=y=\sqrt 2$, senão
+  tomamos $x=\sqrt{2}^{\sqrt{2}}$ e $y=\sqrt{2}$ e temos $x^y =
+  {\sqrt{2}^{\sqrt{2}}}^{\sqrt{2}} = \sqrt{2}^2 =2$ que é racional.
+\end{proof}
+
+
+\textbf{Teorema F}. Existe uma partição $\{A,B\}$ de $\Z$ com $A$ e $B$ infinitos.
+
+\begin{proof}[Prova construtiva]
+  Defina $A = \{2k \colon k\in\Z\}$ e $B = \{2k+1 \colon
+  k\in\Z\}$. Nenhum desses conjuntos é finito (dê uma prova por
+  contradição) e definem  uma partição dos inteiros (prove).
+\end{proof}
+
+
+\textbf{Teorema G}. Se $\frac pq \in \Q$ então existe $n\in\Z$, $\frac pq < n$.
+
+\begin{proof}[Prova construtiva]
+  Se $p=0$ então tomamos $n=1$, senão tomamos $n=|p|+1$. No segundo
+  caso $\frac pq \leq |\frac pq | <  |p|+1$ pois $|q|\geq 1$.
+\end{proof}
+
+\textbf{Teorema H}. O poninômio $p(x)=x^3+x-1$ tem exatamente uma raiz real.
+
+\begin{proof}[Prova não-construtiva, precisa de cáculo 1]
+  Pelo
+  \href{http://pt.wikipedia.org/wiki/Teorema_do_Valor_Intermediário}{Teorema
+    do Valor Intermediário} para todo $b\in [p(0),p(1)]$, existe $a\in
+  [0,1]$ tal que $p(a)=b$.
+
+  Mas $p(0)=-1$ e $p(1)=1$ então podemos tomar $b=0$ e concluir que existe $a\in
+  [0,1]$ tal que $p(a)=0$.
+  
+  Resta provar que a raiz é única. (Exercício. Dica: use o 
+  \href{http://pt.wikipedia.org/wiki/Teorema_do_valor_médio}{Teorema
+    do Valor Médio} e prove por contradição.)
+\end{proof}
+
+
+\textbf{Aula de EXERCÍCIOS E DÚVIDAS}
+
+\section*{Aula 10} \addcontentsline{toc}{section}{Aula 10}
+\begin{center} \textbf{Prova} \end{center}
+
+\textbf{questão 1 - 10 pts} Sejam $a,b,c$ naturais. Dê uma prova
+direta para:
+  se $a$ divide $b$ e $a$ divide $c$ então $a$ divide $b+c$.
+
+
+ \fbox{ \begin{minipage}[c]{0.8 \linewidth} 
+
+    Sejam $a,b,c$ naturais. \\
+    Se $a$ divide $b$ então existe $q$, $aq=b$.\\
+    Se $a$ divide $c$ então existe $r$, $ar=c$.\\
+    Se $aq=b$ e $ar=c$ então $aq + ar = b+c$.\\
+    Se $aq + ar = b+c$ então $a(q + r) = b+c$.\\
+    Se $a(q + r) = b+c$ então $a$ divide $b+c$.\\
+    Portanto, se $a$ divide $b$ e $a$ divide $c$ então  $a$ divide $b+c$.
+\end{minipage}
+ } 
+
+
+
+\textbf{questão 2 - 10 pts} Prove pela contrapositiva: se $x\in B-A$
+então $x\not\in A\cap B$.
+
+
+ 
+\fbox{
+  \begin{minipage}[c]{1.0 \linewidth}
+
+
+    Sejam $A,B$ conjuntos, vamos provar a contrapositiva\[ \nao(x\not\in A\cap
+    B) \Rightarrow \nao(x\in B-A).\]
+
+
+      \begin{eqnarray*}
+      \nao(x\not\in A\cap B) \Rightarrow \nao(x\in B-A)
+      &\equiv&
+      \nao\nao(x\not\in A\cap B) \ou \nao(x\in B-A)\\
+      \textrm{(usando De Morgan)} 
+      &\equiv& 
+      \nao\Big(\nao(x\not\in A\cap B) \ee (x\in B-A)\Big)\\
+      \textrm{(definicao de nao pertence)}  
+      &\equiv&
+      \nao\Big((x\in A\cap B) \ee (x\in B-A)\Big)\\
+      \textrm{(definicao de intersecao e diferenca)}
+&\equiv&
+      \nao\Big((x\in A \ee x\in  B) \ee (x\in B \ee x\not\in A)\Big)\\
+      \textrm{(associatividade e comutatividade)}
+&\equiv&
+      \nao\Big((x\in A \ee x\not\in  A) \ee x\in B \Big)\\
+      \textrm{(teorema 1)}
+&\equiv&
+      \nao\Big( F  \ee x\in B \Big)\\
+      \textrm{(dominacao)}
+&\equiv&
+      \nao\Big( F \Big)\\
+      \textrm{(definicao de nao)}
+&\equiv&
+      V\\
+    \end{eqnarray*}
+
+
+
+%\textbf{OU pode ser escrito como}
+%    
+%    $\nao(x\not\in A\cap B)$ é equivalente a
+%    $x\in A\cap B$. Suponha $x\in A\cap B$.\\
+%    Se $x\in A\cap B$, então $x\in A$ e $x\in B$.\\
+%    Se $x\in A$ e $x\in B$ então $x\in A$\\
+%    mas, $x\in A \equiv x\in A \textrm{ ou } F$ pela lei de
+%    identidade, \\ logo
+%    $x\in A \equiv x\in A \textrm{ ou } x\not\in B$.\\
+%    Portanto, \\
+%    se $x\in A$ e $x\in B$ então $x\in A$\\ implica \\
+%    se $x\in A$ e $x\in B$ então $x\in A\textrm{ ou } x\not\in B$.\\
+%    Se $x\in A\textrm{ ou } x\not\in B$ então
+%    $\nao(x\not\in A\textrm{ e } x\in B)$.\\
+%    Se $\nao(x\not\in A\textrm{ e } x\in B)$ então
+%    $\nao(x\in B-A).$
+\end{minipage}
+ } 
+
+
+
+\textbf{questão 3 - 10 pts} Prove por contradição: $(A-B) \cap B=\emptyset$.
+
+ 
+\fbox{
+\begin{minipage}[c]{0.8 \linewidth}
+
+
+    Vamos provar  $(A-B) \cap B\neq \emptyset\Rightarrow F$.\\
+    Suponha $(A-B) \cap B\neq \emptyset$.\\
+    Se $(A-B) \cap B\neq \emptyset$ então existe $x$, $x\in (A-B) \cap B$.\\
+    Se $x\in (A-B) \cap B$ então $x\in A-B$ e $x\in B$.\\
+    Se $x\in A-B$ e $x\in B$ então 
+    $(x\in A \textrm{ e } x\not\in B) \textrm{ e }x\in B$.\\
+    Se $(x\in A \textrm{ e } x\not\in B) \textrm{ e }x\in B$,  então
+    $x\in A \textrm{ e } (x\not\in B \textrm{ e }x\in B)$.\\
+    Se $x\in A \textrm{ e } (x\not\in B \textrm{ e }x\in B)$, então 
+    $x\in A \textrm{ e } F$, \\
+    mas  $x\in A \textrm{ e } F \equiv F$.\\
+    Portanto, $(A-B) \cap B\neq \emptyset\Rightarrow F$.    
+\end{minipage}
+ } 
+
+
+\textbf{questão 4 - 10 pts} Prove: Se $A\cap B = \emptyset$ então
+$\emptyset\subseteq A$.
+
+ \fbox{ \begin{minipage}[c]{0.8 \linewidth} 
+
+    Como $\emptyset\subseteq A$ é verdadeiro (provamos em sala), a
+    implicação é verdadeira.
+\end{minipage}
+ } 
+
+
+\textbf{questão 5 - 20 pts} Leia com atenção o seguinte teorema e uma
+suposta demonstração.
+
+
+      \textbf{Teorema} \emph{Sejam $a$, $b$, $c$, $d$ números naturais.  Se
+      $c$ divide $a$ e $c$ divide $b$ e $d$ divide $a$ e $d$ divide $b$
+      e $c$ não divide $d$, então $dc$ divide $a$ e $dc$ divide $b$.}
+ \hrule 
+
+      \begin{proof}
+        Se $d$ divide $a$ e $b$, então existem $x$ e $y$ tais que $a=xd$
+        e $b=yd$.
+        
+        Se $c$ divide $a$ então $c$ divide $xd$.\\
+        Se $c$ divide $xd$ e não divide $d$, então $c$ divide $x$.
+        
+        Analogamente, se $c$ divide $b$ então $c$ divide $yd$.\\
+        Se $c$ divide $yd$ e não divide $d$, então $c$ divide $y$.
+        
+        Se $c$ divide $x$ e $y$, então existem $z$ e $w$ tais que $x=cz$
+        e $y=cw$.
+        
+        Das conclusões acima temos $a=xd = (cz)d = (dc)z$ e $b= yd =
+        (cw)d = (dc)w$, portanto, $dc$ divide $a$ e $dc$ divide $b$.      
+      \end{proof}
+ \hrule 
+
+  \begin{description}
+  \item[(10 pts)] Dê um contraexemplo para a afirmação feita no teorema.
+
+ 
+\fbox{
+\begin{minipage}[c]{0.8 \linewidth}
+
+
+      $a=6,~b=12,~c=6,~d=3$.
+\end{minipage}
+ } 
+
+
+
+  \item[(10 pts)] Indique o(s) erro(s) na demonstração.
+
+ 
+\fbox{ \begin{minipage}[c]{0.8 \linewidth} 
+
+      Estão erradas as implicações:
+      \begin{center}
+      Se $c$ divide $xd$ e não divide $d$, então $c$ divide $x$.\\
+      Se $c$ divide $yd$ e não divide $d$, então $c$ divide $y$.        
+      \end{center}
+
+      No contraexemplo acima $6$ divide $2\cdot 3$ mas não divide $2$ e não divide $3$.
+
+      Um natural $n$ pode dividir um produto de naturais $pq$ mesmo
+      que $n$ não divida $p$ e $n$ não divida $q$.
+\end{minipage}
+
+ } 
+
+
+  \end{description}
+  
+
+  \textbf{questão 6 - 30 pts} Determine uma fórmula em função de $r$ e
+  $n$, com $r\neq 1$, para
+  \[
+   \sum_{i=1}^{n-1}ir^{i-1}.
+  \]
+  (Dica: use o truque da derivada explicado na lista. Pode usar que $
+  \sum_{i=0}^{n}r^{i} = \frac{r^{n+1}-1}{r-1}$.)
+
+ \fbox{ \begin{minipage}[c]{1.0 \linewidth}  
+
+      Considere a soma dos $n$ primeiros termos de uma PG que começa
+      em $1$ e tem razão $r$, onde $n\in\N$ e $r\in\N\setminus\{1\}
+      $. Então
+      \[
+        1+r+r^2+\cdots+r^{n-1} = \frac{r^n - 1}{r-1}.
+      \]
+      Podemos olhar para as duas expressões em cada lado da igualdade
+      acima como uma função em $r$ e derivá-las com respeito a $r$. No
+      lado esquerdo temos
+      \begin{equation}
+        \label{eq:soma_pg}
+        f\colon\R \to\R ,\qquad
+        f(x) = \sum_{i=0}^{n-1} x^{i} \qquad\mathrm{e}\qquad 
+        \frac{\mathrm{d}}{\mathrm{d}x}f(x) =  \sum_{i=1}^{n-1}ix^{i-1}
+      \end{equation}
+      e no lado direito
+      \begin{eqnarray*}
+        g\colon\R \setminus\{1\}\to\R ,\qquad
+        g(x) =  \frac{x^n - 1}{x-1}\qquad\mathrm{e}\qquad 
+        \frac{\mathrm{d}}{\mathrm{d}x}g(x) = \frac{nx^n - x^n - nx^{n-1}+1}{(x-1)^2}.
+      \end{eqnarray*}
+      Se $f(r)=g(r)$, então $\frac{\mathrm{d}}{\mathrm{d}r}f (r) =
+      \frac{\mathrm{d}}{\mathrm{d}r}g (r)$, ou seja,
+      \begin{equation}
+        \label{eq:papg}
+        \sum_{i=1}^{n-1}ir^{i-1}=  \frac{nr^n - r^n - nr^{n-1}+1}{(r-1)^2}.
+      \end{equation}
+    \end{minipage}
+
+ } 
+
+
+\textbf{questão 7 - 30 pts} Provamos em aula que \emph{o polinômio
+  $p(x)=x^3+x-1$ tem uma raiz real} usando o Teorema do Valor
+Intermediário.  Agora, usando contradição e o Teorema do Valor Médio
+prove que essa raiz é única.
+
+ \fbox{ \begin{minipage}[c]{0.8 \linewidth}  
+
+    Suponha que $p(x)$ tem duas raízes e vamos deduzir uma
+    contradição. Sejam $r_1$ e $r_2$ raízes distintas de $p(x)$, de
+    modo que $r_1 < r_2$. Como $p(x)$ é contínua em $[r_1,r_2]$ e
+    derivável em $(r_1,r_2)$ então podemos usar o teorema do valor
+    médio para concluir que existe um ponto $c\in [r_1,r_2]$ tal que
+    \[
+      p'(c) = \frac{p(r_2)-p(r_1)}{r_2-r_1}
+    \]
+    mas $p(r_2)-p(r_1)=0$, portanto $p'(c)=0$ que é uma contradição
+    pois o $p'(x) = 3x^2 +1 >0$ qualquer que seja $x$.
+    \end{minipage}
+ } 
+
+
+ \noindent% 
+\textbf{Teorema do Valor Médio}. Se $f$ é contínua em $[a,b]$ e
+derivável em $(a,b)$ então existe $c\in (a,b)$ tal que
+$$f'(c) = \frac{f(b)-f(a)}{(b-a)}$$ onde $f'$ é a derivada de $f$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 11}\addcontentsline{toc}{section}{Aula 11}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+correção da prova
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 12}\addcontentsline{toc}{section}{Aula 12}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A prova de invariantes ficará pra depois de indução.
+
+Um programa está
+\begin{red}
+  correto
+\end{red}
+se a saída está correta para toda entrada. A
+prova da \emph{correção do programa} tem duas partes: provar que a
+resposta está correta se o programa terminar (
+\begin{red}
+  correção parcial
+\end{red}
+), provar que o programa termina.
+
+
+
+A seguir, $p$ e $q$ são proposições.
+
+\begin{definicao}
+  Um programa, ou trecho de programa, $S$ está
+  \begin{red}
+    parcialmente correto
+  \end{red}
+  com respeito a \textbf{pré-condição} $p$ e a \textbf{pós-condição}
+  $q$ se sempre que $p$ for verdadeiro para os valores de entrada de
+  $S$ e $S$ terminar, então $q$ é verdadeiro para os valores de saída de $S$.
+\end{definicao}
+
+
+\textbf{Notação} $p\{S\}q$ significa \emph{$S$ está parcialmente
+  correto com respeito a pré-condição $p$ e a pós-condição $q$}.
+
+
+\textbf{Exemplo} Por exemplo, se $p$ é $x=1$ e $q$ é $z=3$ e $S$ é o
+trecho de programa 
+\begin{verbatim}
+    y:=2; 
+    z:= x + y;
+\end{verbatim}
+
+então, $p\{S\}q$.  De fato, suponha $p$. Após a execução de $S$, $y=2$
+e $z=1+2$ pois de $p$ temos $x=1$. Portanto, $z=3$.
+
+\textbf{Argumentos válidos} para correção
+\begin{red}
+  parcial
+\end{red}
+de programas:
+
+1.~\textbf{Composição}
+\begin{eqnarray*}
+  p\{S_1\}q \ee q\{S_2\}r \Rightarrow p\{S_1;S_2\}r
+\end{eqnarray*}
+
+2.~\textbf{Condicional}
+
+2.1.~No caso 
+
+\begin{verbatim}
+    Se (condição) então S;
+\end{verbatim}
+
+
+o argumento é
+\begin{eqnarray*}
+&  \big(  ( p\ee \textrm{condi\c c\~ao}) \{S\}q \ee 
+  ( p\ee \nao(\textrm{condi\c c\~ao})) \Rightarrow 
+  q \big)& \\
+  &\Longrightarrow& \\
+  &p\{ \texttt{Se (condi\c c\~ao) ent\~ao S}\}q&
+\end{eqnarray*}
+
+2.2.~No caso 
+
+\begin{verbatim}
+    Se (condição) então S_1;
+       senão S_2;
+\end{verbatim}
+
+
+o argumento é
+\begin{eqnarray*}
+  &\big(  ( p\ee \textrm{condi\c c\~ao}) \{S_1\}q \ee 
+  ( p\ee \nao(\textrm{condi\c c\~ao})) \{S_2\}q \big)&\\
+  &\Longrightarrow&\\
+&  p\{ \texttt{Se (condi\c c\~ao) ent\~ao }S_1;\texttt{ sen\~ao }S_2\}q&
+\end{eqnarray*}
+
+
+3.~\textbf{Laços}
+
+No caso
+
+\begin{verbatim}
+    Enquanto (condição) 
+           S;
+\end{verbatim}
+
+o argumento é
+\begin{eqnarray*}
+  &( p\ee \textrm{condi\c c\~ao}) \{S\}p &\\
+  &  \Longrightarrow&\\
+  &p\{ \texttt{Enquanto (condi\c c\~ao) S}\}(\nao(\textrm{condi\c c\~ao})\ee p)&
+\end{eqnarray*}
+
+A proposição $(p\ee \textrm{condi\c c\~ao}) \{S\}p $ é o
+\begin{red}
+  invariante do laço
+\end{red}
+que por enquanto vamos assumir que é dado e é verdadeiro. Provar que
+uma proposição é invariante de laço precisa de indução, que veremos mais tarde.
+
+\textbf{Exemplo.} Seja $S$ o programa
+
+
+\begin{verbatim}
+multiplica(m,n:inteiros)
+   /* Dados  : m e n inteiros */
+   /* Devolve: m n */
+
+/* p:  m e n inteiros */
+
+   se (n<0) então a:=-n;
+     senão a:=n;
+   
+/* q:  p e a=|n| */
+
+   k:=0;
+   x:=0;
+
+/* r:  q e k=0 e x=0 */
+
+   enquanto (k<a)
+
+       /* (invariante do laço)  x=mk e k <= a */
+
+     {  x:=x+m;
+        k:=k+1; }
+
+/* s:  x=ma e a=|n| */
+
+   se (n<0) então produto:=-x;
+     senão produto:=x.
+
+/* t:  produto=mn */
+
+\end{verbatim}
+
+
+
+Sejam $p\colon m\in\Z \ee n\in\Z$ e $q\colon p \ee a=|n|$ as
+proposições dadas no algoritmo, seja $R$ o trecho de programa
+\[
+  R\colon \texttt{se (n<0) ent\~ao a:=-n; sen\~ao a:=n}. 
+\]
+Vamos provar
+\begin{equation}
+  \label{eq:hoare1}
+  p \{R\} (a=|n|).
+\end{equation}
+Assuma $m\in\Z$ e $n\in\Z$.
+
+Se $m\in\Z$ e $n\in\Z$ e $n<0$ então após $R$ terminar temos
+$a=-n$. Se $n<0$ então $|n|=-n$ portanto $a=|n|$, portanto
+\begin{equation}
+  \label{eq:entao}
+  (m\in\Z \ee n\in\Z \ee n<0)\{R\}(a=|n|).
+\end{equation}
+Agora, se $m\in\Z$ e $n\in\Z$ e $\nao(n<0)$ então após $R$ terminar
+temos $a=n$. Se $\nao(n<0)$ então $|n|=n$ portanto $a=|n|$. Portanto,
+\begin{equation}
+  \label{eq:senao}
+  (m\in\Z \ee n\in\Z \ee \nao(n<0))\{R\}(a=|n|).
+\end{equation}
+
+Portanto, de \eqref{eq:entao}, \eqref{eq:senao} e do argumento 2.2
+temos \eqref{eq:hoare1}, 
+%\[
+%( m\in\Z\ee n\in\Z \ee n<0 ) 
+%\{\texttt{se (n<0) ent\~ao a:=-n; sen\~ao a:=n}\} (a=|n|) 
+%\]
+%\[\ee\]
+%\[
+% (m\in\Z\ee n\in\Z \ee \nao(n<0)) \Rightarrow (a=|n|)
+%\]
+%então pelo argumento válido para condicional
+%\[
+%( m\in\Z\ee n\in\Z ) 
+%\{\texttt{se (n<0) ent\~ao a:=-n; sen\~ao a:=n}\}
+%(a=|n|)
+%\]
+e, portanto, $p\{R\}q$.
+%\[
+%( m\in\Z\ee n\in\Z ) 
+%\{R\}
+%( m\in\Z\ee n\in\Z \ee a=|n|)
+%\]
+
+%........................................................................
+
+Agora, considere o trecho
+\[
+  T\colon \texttt{k:=0;x:=0}
+\]
+e vamos provar $(p \ee a=|n|)\{T\}(q \ee k=0 \ee x=0)$.
+
+
+Se $V$ então após $\{\texttt{k:=0;x:=0}\}$ vale $k=0\ee x=0$, portanto
+\begin{equation}
+  \label{eq:hoare2}
+  q
+  \{\texttt{k:=0;x:=0}\}
+  (q \ee k=0\ee x=0)
+\end{equation}
+para qualquer proposição verdadeira $q$, em particular quando \[q\colon m\in\Z\ee
+n\in\Z \ee a=|n|\] é verdadeira.
+
+%........................................................................
+
+Assuma $r\colon q \ee k=0\ee x=0$. Se $k<a$ (a condição do laço) então
+o \hypertarget{aula12}{invariante}
+\[ 
+x=mk \ee k\leq a
+\] 
+é verdadeiro antes da primeira rodada do laço pois $0=m0 \ee 0\leq
+|n|$. Assuma \[x=mk \ee k\leq a \ee k<a\] antes de uma execução do
+trecho \[U\colon \texttt{x:=x+m; k:=k+1;}\] Considere uma execução de
+$U$ e denote por $x'$ e $k'$ os valores das variáveis $x$ e $k$
+\emph{antes dessa execução}. Então, por hipótese \[x'=mk' \ee k'\leq
+a\] e (condição) $k'<a$; após a execução de $U$ teremos $x=x'+m$ e
+$k=k'+1$.
+
+Se $x=x'+m$ e $x'=mk'$, então $x=(mk')+m = m(k'+1)$. \\
+Se $k=k'+1$ $x= m(k'+1)$ então $x=mk$. \\
+Se $k' < a $ então $k'+1 \leq a$.\\
+Portanto, após a execução de $U$ o invariante é verdadeiro, ou seja,
+``provamos''
+\[
+( x=mk \ee k\leq a \ee k<a)
+\{U\}
+( x=mk \ee k\leq a)
+\]
+e do argumento para laços, temos
+\[
+( x=mk \ee k\leq a)
+\{\texttt{enquanto (k<a)  U }\}
+( x=mk )
+\]
+ainda, $(\nao(k<a)\ee x=mk \ee k\leq a )\equiv( x=ma)$. Portanto,
+\[
+r
+\{\texttt{enquanto (k<a) U}\} (x=ma) 
+\]
+logo $r \{\texttt{enquanto (k<a) U}\}s$, onde $s\colon x=ma \ee a=|n|$.
+
+%........................................................................
+
+Finalmente, assuma $s$, denote por $Q$ o trecho de programa
+$$\texttt{se (n<0) ent\~ao produto:=-x; sen\~ao produto:=x}$$ e vamos provar 
+$t\colon  produto=mn$.
+
+Se $s$, então $x=m|n|$.\\
+Se $x=m|n|$ e $n<0$ então após $Q$, $produto=-x$.\\
+Se $produto=-x$ e $x=m|n|$ e $n<0$ então $produto = -m|n| = -m(-n) =
+mn$. Portanto $t$.
+
+Agora, se $x=ma$ e $a=|n|$, então $x=m|n|$.\\
+Se $x=m|n|$ e $\nao(n<0)$ então após $Q$, $produto=x$.\\
+Se $produto=x$ e $x=m|n|$ e $\nao(n<0)$ então $produto = m|n| = mn$.
+Portanto, pelo argumento 2.2 para condicionais 
+\[
+(x=ma \ee a=|n|)\{Q\}(produto=mn).
+\]
+
+%........................................................................
+
+Resumindo, provamos
+\begin{enumerate}
+\item $p\{\texttt{se (n<0) ent\~ao a:=-n; sen\~ao a:=n}\}q$;
+\item $q\{\texttt{k:=0; x:=0}\}r$;
+\item $r\{\texttt{enquanto (k<a)\{ c:=x+m; k:=k+1; \}}\}s$;
+\item $s\{\texttt{se (n<0) ent\~ao produto:=-x;sen\~ao produto:=x}\}t$;
+\end{enumerate}
+De 1 e 2 temos
+\begin{equation}
+  \label{eq:parcial1}
+  p
+  \{\texttt{se (n<0) ent\~ao a:=-n; sen\~ao a:=n};\texttt{ k:=0; x:=0}\}
+  r.
+\end{equation}
+pela regra da composição. De 3 e 4 temos, por composição novamente
+\begin{eqnarray*}
+  &r \{ \texttt{enquanto (k<a)\{c:=x+m; k:=k+1\}};\\
+  &     \texttt{se (n<0) ent\~ao produto:=-x;} \\ 
+  &     \texttt{sen\~ao produto:=x}\}  t. 
+\end{eqnarray*}
+que junto com \eqref{eq:parcial1}, mais a regra da composição 
+%e$p\colon m\in\Z\ee n\in\Z$, $t\colon produto=mn$ 
+resulta que
+\[
+(m\in \Z \ee n\in\Z)
+\{S\}
+(produto=mn).
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 13}\addcontentsline{toc}{section}{Aula 13}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ 
+
+Um dos \href{http://mathworld.wolfram.com/PeanosAxioms.html}{axiomas
+  de Peano} para os números naturais diz que para $X\subseteq \N$
+
+\begin{equation}
+  \label{eq:peano}
+  0\in X \ee \big( \paratodo n,~(n\in X\Rightarrow n+1\in X)\big) 
+\Longrightarrow
+X=\N.
+\end{equation}
+
+
+Com isso temos o seguintes argumentos válidos: seja $P(n)$ uma sentença aberta.
+
+\begin{teorema}\label{teo:PIF1}
+  Se \[P(0)\ee \paratodo n\in \N,~\big(P(n) \Rightarrow P(n+1)\big)\]
+  então \[\paratodo n\in \N,~P(n).\]
+\end{teorema}
+
+Provaremos:
+
+\begin{teorema}\label{teo:PIF2} Seja $a\in\N$.
+  Se \[P(a)\ee \paratodo n\geq a,~\big(P(n) \Rightarrow P(n+1)\big)\]
+  então \[\paratodo n\geq a,~P(n).\]
+\end{teorema}
+\begin{proof}
+  Para
+  \[
+  X=\{m \in\N \colon P(m+a)\}.
+  \]
+  se $P(a)$ então $0\in X$. Seja $n\geq a$ e defina $m=n-a$. Se $P(n)
+  \Rightarrow P(n+1)$ então $m\in X \Rightarrow m+1 \in X$. Por
+  \eqref{eq:peano} $X=\N$, portanto, $P(n)$ para todo $n\geq a$.
+\end{proof}
+
+
+Indução matemática é uma técnica de prova para proposições da forma
+$\paratodo n\geq a,~P(n)$. Numa prova por indução provamos $P(a)$ que é
+dito a \textbf{base} da indução, e provamos $\paratodo n\geq a,~\big(P(n)
+\Rightarrow P(n+1)\big)$ que é dito o \textbf{passo} da indução. 
+
+\textbf{Exemplo} Para todo $n\in\N$, $\sum_{i=0}^n i = n(n+1)/2$.
+
+\textbf{Exemplo} Para todo $n \geq  5$, $2^n > n^2$.
+
+\textbf{A base é importante}, sem ela poderíamos pensar que sabemos
+provar
+\begin{center}
+  $n(n+1)$ é ímpar para todo $n\geq1$  
+\end{center}
+que obviamente não vale, pois conseguimos provar a implicação do passo
+da indução para essa sentença. Vamos provar que
+\begin{center}
+  para todo $n\geq1$, $n(n+1)$ ímpar $\Rightarrow (n+1)(n+2)$ ímpar.
+\end{center}
+Seja $n>1$ um natural e suponha que $n(n+1)$ é ímpar. Então
+\begin{eqnarray*}
+  (t+1)(t+2) = (t+1)t + (t+1)2
+\end{eqnarray*}
+que é da forma ímpar $+$ par, portanto ímpar.
+
+
+\textbf{A passo é importante}, uma prova descuidada pode por tudo a
+perder. Por exemplo, seja $P(t)$ a sentença
+\[
+\paratodo a\in\N,~\paratodo b\in\N, (\max\{a,b\}=t \Rightarrow a=b).
+\]
+
+Se $\max\{a,b\}=0$ então $a=b=0$, portanto a base é verdadeira.
+
+Seja $t\in\N$,  suponha que 
+\[
+\paratodo a,~\paratodo b, (\max\{a,b\}=t-1 \Rightarrow a=b)
+\]
+e vamos provar que $\paratodo a,$ $\paratodo b,$ $(\max\{a,b\}=t
+\Rightarrow a=b)$. Se $\max\{a,b\}=t$ então $\max\{a-1,b-1\}=t-1$,
+portanto pela hipótese acima $a-1=b-1$, logo $a=b$.
+
+Claramente, $P(t)$ é falso (determine um contraexemplo). O problema
+com o passo é que $P(0) \not\Rightarrow P(1)$ quando $a$ ou $b$ vale
+$0$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
+\section*{Aula 14}\addcontentsline{toc}{section}{Aula 14}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+
+\textbf{Exemplo.} \emph{Todo natural $n \geq 2$ pode ser escrito como
+  produto de primos.}
+
+
+
+Numa tentativa de prova usando o teorema \ref{teo:PIF2} temos:
+
+-a base é fácil, $n=2$ é primo;\\
+-no passo temos que provar que se $n$ é produto de primos então $n+1$
+é produto de primos. Se $n+1$ é primo a implicação é verdadeira
+(vacuidade), se $n+1$ é composto então, por
+\href{http://en.wikipedia.org/wiki/Composite_number}{definição de
+  número composto} $n+1 = ab$ onde $1 \leq a , b \leq n$ são números
+naturais.
+
+Se soubéssemos que $a$ e $b$ são produtos de primos então $n+1$
+seria produto de primos, mas só o que sabemos é que $n$ é produto de
+primos.
+
+
+\begin{teorema}\label{teo:PIF3}
+  Sejam $a\in\N$ e $P(n)$ uma sentença aberta. Se \[ P(a) \quad \ee\quad
+  \paratodo n\geq a,~\Big( \big( \paratodo k\in [a..n],~P(k) \big)
+  \Rightarrow P(n+1)\Big)\] então \[ \paratodo n\geq a,~P(n).\]
+\end{teorema}
+Ou seja, $\paratodo n\geq a,~P(n)$ é verdadeiro sempre que $P(a)$ é
+verdadeiro e $\paratodo n\geq a$ é verdadeiro que \[ \big(P(a)\ee
+P(a+1)\ee\cdots\ee P(n)\big) \Rightarrow P(n+1) .\]
+\begin{proof}
+  Exercício.
+\end{proof}
+
+
+\textbf{Exemplo.} Todo natural $n \geq 2$ é primo ou pode ser escrito
+como produto de primos.
+
+\textbf{Exemplo.} Todo inteiro $n\geq 7$ poder ser escrito como
+múltiplo de 2 mais múltiplo de 5.
+
+
+ \fbox{ \begin{minipage}[c]{0.8 \linewidth}  
+\textbf{Exemplo.} Seja $P(n)$ a sentença: $\paratodo n\in\N,~6n=0$.
+    
+    Vamos provar $P(n)$ por indução. 
+    
+    $P(0)$ é verdadeiro. Seja $n$ um natural arbitrário e vamos
+    provar que para todo $n$, $P(0) \ee P(1) \ee \cdots \ee P(n)
+    \Rightarrow P(n+1)$.  Suponhamos $P(0) \ee P(1) \ee \cdots \ee
+    P(n)$. Então
+    \begin{eqnarray*}
+      6(n+1) = 6\cdot n + 6\cdot 1 = 0+0 =0
+    \end{eqnarray*}
+    pois de $P(n)$ temos $6n=0$ e de $P(1)$ temos $6\cdot 1 = 0$; qual
+    é o erro ?
+\end{minipage}
+ } 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 15}\addcontentsline{toc}{section}{Aula 15}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ \textbf{Boa-Ordenação}
+
+Seja $A\subset \R$. O
+\begin{red}
+  menor elemento
+\end{red} 
+de $A$, quando existe, é o elemento $m \in A$ tal que $\paratodo a\in
+A$, $m \leq  a$.
+
+\textbf{Notação.} $\min A$ denota o menor elemento de $A$, se ele existe.
+
+\textbf{Exemplo.} $A=(0,1)\subset \R$ não tem menor elemento. (prove)
+
+\textbf{Exemplo.} $A=[0,1)\subset \R$ tem menor elemento, $\min A =0$. (prove)
+
+
+\begin{teorema}
+  \label{teo:min}
+  Se $A\subset \N$ e 
+  \[\big( \paratodo x\in [0..n], ~ x\not\in A \big)
+  \ee \big(\existe y\in [0..n+1], ~y\in A\big).\]
+  então $n+1$ é o menor elemento de $A$.
+\end{teorema}
+\begin{proof}
+  Se $\paratodo x\in [0..n], ~ x\not\in A \ee \existe x\in [0..n+1],
+  ~x\in A$ então $n+1 \in A$.
+
+  Agora, precisamos provar que $\paratodo a\in A$, $n+1 \leq  a$.
+
+  Por contradição. Suponha que $\nao(\paratodo a\in A$, $n+1 \leq  a)$,
+  ou seja, \[\existe a\in A,~ a < n+1.\] 
+
+  Seja $c\in A$ tal que $c < n+1$ (instanciação existencial, teorema
+  \ref{teo:22}). Se $c < n+1$ então $c\in [0..n]$ portanto $c\not\in
+  A$, portanto
+  \[\existe a\in A,~ a < n+1 \Rightarrow c\in A \ee c\not\in   A \]
+  essa última proposição é uma contradição.
+\end{proof}
+
+\begin{teorema}
+  \label{teo:BO}
+    Seja $A\subset \N$. Se $A\neq \emptyset$ então $A$ tem um menor elemento.
+\end{teorema}
+\begin{proof}
+  Seja $A$ um subconjunto não-vazio dos naturais. Vamos provar que $A$
+  tem menor elemento em dois casos: $0\in A$ e $0\not\in A$.
+
+  No caso $0\in A$, o $0$ é o menor elemento de $A$.
+
+  Assumimos que $0 \not\in A$ e definimos
+  \[
+  X= \{ n\in \N \colon [0..n] \subset \N - A \}.
+  \]
+  $0\in X$, pois se $0 \not\in A$ então $0 \in \N - A$, logo $\{0\}
+  \subset \N - A$. Notemos que $\{0\} = [0..0]$.
+
+  Se $A\neq \emptyset$ então $X\neq \N$. 
+
+  Se $0\in X$ e $X\neq \N$ então pela a contrapositiva do axioma de
+  Peano \eqref{eq:peano}
+  \[
+  X\neq \N
+  \Longrightarrow
+  0\not\in X \ou \nao \big( \paratodo n,~(n\in X\Rightarrow n+1\in X)\big) 
+  \]
+  concluímos que 
+  \[
+  \nao \big( \paratodo n,~(n\in X\Rightarrow n+1\in X)\big)
+  \]
+%
+  \begin{eqnarray*}
+%  \nao \big( \paratodo n,~(n\in X\Rightarrow n+1\in X)\big)
+    & \equiv & \existe n, \nao \big( n\in X\Rightarrow n+1\in X \big)\\
+    & \equiv & \existe n, \nao \big( \nao(n\in X)\ou  (n+1\in X) \big)\\
+    & \equiv & \existe n, \big( (n\in X)\ee \nao(n+1\in X) \big)
+  \end{eqnarray*}
+
+  Seja $m$ tal que $m\in X$ e $m+1\not\in X$.\\
+  Agora, usando a definição de $X$, \\
+  se $m\in X$ então $[0..m]\subset \N -A$.\\
+  $[0..m]\subset \N -A \equiv \paratodo x\in [0..m], ~ x\not\in A $;\\
+  se $m+1\not\in X$ então $[0..m+1]\not\subset \N -A$;\\
+  $[0..m+1]\not\subset \N -A \equiv \existe y\in [0..m+1],~y\in A$;\\
+  portanto
+  \[
+  ( \paratodo x\in [0..m], ~ x\not\in A )\ee
+  ( \existe y\in [0..m+1],~y\in A )
+  \]
+  e pelo teorema \ref{teo:min}, $m+1$ é o menor elemento de $A$.
+\end{proof}
+
+
+\textbf{Exemplo.} para todo inteiro $n\geq 5$, existem naturais $a$ e
+$b$ tais que $n=2a+5b$.
+\begin{proof}
+  Vamos provar por contradição. Suponha que a afirmação seja falsa e
+  seja $A$ o conjunto de todos os naturais maiores ou iguais a 5 que
+  não podem ser escritos na forma $2a + 5b$. Como $A\neq \emptyset$
+  podemos tomar $m$ o menor elemento de $A$. De $m\in A$ temos $m \geq
+  5$, portanto $m-1 \geq 4$. Da minimalidade de $m$ temos que $m-1 =
+  2a+5b$.
+
+  Se $a \leq 1 $ e $b \leq 0$ então $m-1 = 2a+5b \leq 2 + 0 = 2$,
+  portanto, $a > 1 $ ou $b > 0$.
+
+  Se $a > 1$ então $m = 2a + 5b +1 = 2(a-2) + 5(b+1)$.\\ 
+  Se $b > 0$ então $m = 2a + 5b +1 = 2(a+3) + 5(b-1)$.
+
+  Em ambos os casos, temos uma contradição.
+
+\end{proof}
+
+\begin{red}
+  Observação importante
+\end{red}: os teoremas \ref{teo:PIF1}, \ref{teo:PIF2}, \ref{teo:PIF3}
+e \ref{teo:BO} são equivalentes. Prove esse fato.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 16}\addcontentsline{toc}{section}{Aula 16}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Invariante de laço}.
+
+Consideremos o seguinte algoritmo:
+
+\begin{verbatim}
+fat(n)
+/* Dados  : n natural */
+/* Devolve: n !*/
+
+   i:=1;
+   f:=1; 
+   enquanto (i < n)
+    {
+      f := f*(i+1);
+      i := i + 1;
+    }
+   devolva f.
+\end{verbatim}
+
+
+Vamos provar que a seguinte proposição é um invariante do laço na
+terceira linha do algoritmo
+\begin{equation}
+  \label{eq:invariante1}
+  i \geq 1 \ee i \leq n \ee f = i! 
+\end{equation}
+Antes, porém, notemos que o invariante e a negação da condição do laço
+resulta que quando o laço termina temos $i \geq 1$ e $i \leq n$ e $f =
+i!$ e $\nao(i<n)$, ou seja, $i=n$ e $f = n!$, provando a correção
+parcial do algoritmo.
+
+Vamos provar que a proposição \eqref{eq:invariante1} é verdadeira
+independente do número de vezes que o laço é executado. A prova é por
+indução no número de iterações do $\texttt{enquanto}$.
+
+Suponhamos que a condição do laço vale, ou seja, $i<n$. Antes da
+primeira iteração \eqref{eq:invariante1} é verdadeiro pois $i=f=1!=1$.
+
+Suponhamos que $i<n$ e que $ i \geq 1 \ee i \leq n \ee f = i! $. Após
+a execução de $\texttt{\{ f := f*(i+1);}$ e após a execução de
+$\texttt{\{ i := i+1;\}}$ temos que para o novo valor de $i$, $i\geq  1$ e
+$i \leq n$ e $f = i!$.
+
+
+Voltemos ao exemplo da {aula 12}.
+
+\begin{verbatim}
+/* m e n inteiros e a=|n| e k=0 e x=0 */
+
+   enquanto (k<a)
+
+       /* invariante:  x=mk e k <= a */
+
+     {  x:=x+m;
+        k:=k+1; }
+\end{verbatim}
+
+Suponha que a condição do laço, $k<a$, é verdadeira.  Antes da
+primeira iteração o invariante é verdadeiro.
+
+Suponha que a condição do laço, $k<a$, é verdadeira e que vale o
+invariante. Considere uma execução de $\texttt{\{ x:=x+m; k:=k+1; \}}$ e
+denote por $x'$ e $k'$ os valores das variáveis $x$ e $k$ \emph{antes
+  dessa execução}.  Então, por hipótese \[x'=mk' \ee k'\leq a\] e
+(condição) $k'<a$; após a execução temos $x=x'+m$ e $k=k'+1$.
+
+Se $x=x'+m$ e $x'=mk'$, então $x=(mk')+m = m(k'+1)$. \\
+Se $k=k'+1$ $x= m(k'+1)$ então $x=mk$. \\
+Se $k' < a $ então $k'+1 \leq a$.\\
+Portanto, após a execução o invariante é verdadeiro
+
+
+\textbf{Algoritmos recursivos}.
+
+\textbf{Exemplo 1}.
+
+\begin{verbatim}
+fat(n)
+
+   /* Dados  : n natural */
+   /* Devolve: n !*/
+
+1.   se (n=0) devolva 1;
+2.   devolva n*fat(n-1).
+\end{verbatim}
+
+
+A prova da correção é fácil usando indução.
+
+\begin{proof}
+  Vamos provar que fat$(n)=n!$ usando indução em $n\in\N$. Se $n=0$
+  então o algoritmo devolve $1$ na linha 1, ou seja, então fat$(n) =1$
+
+  Seja $n \in \N$. Assuma que fat$(n)=n!$ e vamos provar que
+  fat$(n+1)=(n+1)!$.  Como $n+1\geq 1$, pelo algoritmo fat$(n+1)=
+  (n+1)*$fat$(n)$ e por hipótese fat$(n)=n!$, portanto, fat$(n+1)=
+  (n+1)*n! = (n+1)!$. Pelo teorema \ref{teo:PIF1} temos fat$(n)=n!$
+  para todo $n\in \N$.
+\end{proof}
+
+
+\textbf{Exemplo 2}.
+
+\begin{verbatim}
+pot(a,n)
+
+   /* Dados  : a real positivo e n natural */
+   /* Devolve: a^n */
+
+1.   se (n=0) devolva 1;
+2.   devolva a*pot(a,n-1).
+\end{verbatim}
+
+
+\begin{proof}
+  Se $n=0$ então o algoritmo devolve 1, ou seja pot$(a,n)=1=a^n$.
+
+  Seja $n\in\N$ um natural arbitrário e suponha que pot$(a,n)=a^n$.
+  Então $n+1\geq 1$ portanto, pelo algoritmo, pot$(n+1) = a*$pot$(a,n)
+  = a*a^n = a^{n+1}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 17}\addcontentsline{toc}{section}{Aula 17}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+semana academica
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 18}\addcontentsline{toc}{section}{Aula 18}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \textbf{aula de exercícios}
+\end{center}
+
+Duas resoluções propostas pelo Leandro.
+
+\textbf{Exercício 18.}
+  Prove que o seguinte programa está parcialmente correto.
+
+
+
+\begin{verbatim}
+Divisão_inteira(a,d)
+
+  /* Dados  : a natural  e  d natural positivo */
+  /* Devove : inteiros q  e r tais que a=dq+r e 0 <= r < d */
+
+1.  r := a;
+2.  q := 0;
+3.  enquanto (r >=  d)
+4.  { r := r-d;
+5.    q := q+1; }
+6.  devolva q,r.
+\end{verbatim}
+
+
+\begin{proof}
+  Sejam $R$ o trecho de programa definido pelas linhas 1 e 2, $S$ o
+  trecho de programa definido pelas linhas 3 -- 5, $T$
+  todo o programa, e $p$ e $t$ as proposições:
+  \begin{eqnarray*}
+      p&\colon& a\in\N\ee d\in\N\setminus\{0\};\\
+      t&\colon& q\in\Z \ee r\in\Z \ee a=dq+r \ee 0\leq r<d.
+  \end{eqnarray*}
+  É imediato que
+  \begin{equation}\label{basind}
+    p\{R\}(q\in\Z\ee r\in\Z\ee r=a\ee q=0).
+  \end{equation}
+  Portanto,
+  \[
+    p\{R\}(q\in\Z \ee r\in\Z \ee a=dq+r\ee 0\leq r).
+  \]
+  Assumindo
+  \[
+    u\colon q\in\Z \ee r\in\Z \ee r\geq 0\ee a=dq+r
+  \]
+  como invariante do laço de $S$, temos, já que $(r\not\geq d)$ é a
+  condição de parada do laço, que
+  \[
+    (q\in\Z \ee r\in\Z \ee a=dq+r\ee 0\leq r)\{S\}
+    (q\in\Z \ee r\in\Z \ee r\geq 0\ee a=dq+r\ee r\not\geq d).
+  \]
+  Logo,
+  \[
+    p\{R;S\}(q\in\Z \ee r\in\Z \ee a=dq+r\ee 0\leq r<d).
+  \]
+  e, dessarte, $p\{T\}t$.
+
+  Resta-nos ainda mostrar $u$ serve como invariante do laço definido
+  por $S$.  Como $r\geq 0\ee a=dq+r$ se $r=a$ e $q=0$, temos, da
+  asserção~\ref{basind}, que $p\{R\}u$. Analisemos agora o que
+  acontece quando executamos $\mathtt{\{r := r-d; q := q+1\}}$
+  assumindo as linhas
+  4 e 5: sendo $r'$ e $q'$ os novos valores de,
+  respectivamente, $r$ e $q$, verificamos que $q'=q+1$ e
+  $r'=r-d$. Consequentemente, já que $r\geq d$, $r'\geq 0$,
+  \[
+    dq'+r' = d(q+1)+(r-d) = dq+r = a,
+  \]
+  e, finalmente,
+  \[
+  p\{R\}(u\ee r\geq d)\mathtt{\{r := r-d; q:= q+1\}}(q\in\Z \ee
+  r\in\Z \ee r\geq 0\ee a=dq+r).
+  \]
+  o que prova que $u$ é de fato um invariante para o laço definido por
+  $S$.
+\end{proof}
+
+Antes do próximo exercício, vamos provar que: \emph{Para quaisquer
+  naturais não nulos $a$ e $b$,}
+  \begin{equation}\label{lempascal}
+    \binom ab = \binom{a-1}b + \binom{a-1}{b-1}.
+  \end{equation}
+
+\begin{proof}
+  Como $a$ e $b$ são diferentes de $0$,
+  \[
+    b!\big( (a-1)-b \big)! = \frac{b!(a-b)!}{a-b}~\mathrm{~e~}~
+    (b-1)!\big( (a-1)-(b-1) \big)! = \frac{b!(a-b)!}{b}.
+  \]
+  Logo,
+  \begin{eqnarray*}
+      \binom{a-1}b + \binom{a-1}{b-1}
+        &=& \frac{(a-1)!}{b!\big( (a-1)-b \big)!} +
+           \frac{(a-1)!}{(b-1)!\big((a-1)-(b-1)\big)!}\\
+        &=& \frac{b(a-1)! + (a-b)(a-1)!}{b!(a-b)!}\\
+        &=& \binom ab ,
+  \end{eqnarray*}
+  como queríamos mostrar.
+\end{proof}
+
+\textbf{Exercício 6.h} Prove usando indução que para todo $n\geq 0$,
+$\sum_{j=0}^n\binom nj = 2^n$.
+
+\begin{proof}
+  Sabemos que
+  \[
+    \sum_{j=0}^0\binom 0j = \binom 00 = 1 = 2^0 .
+  \]
+  Seja $k$ um número natural qualquer. Por indução, suponhamos então
+  que, para todo $t\in [1..k]$, valha que
+  \[
+    \sum_{j=0}^t\binom tj = 2^t .
+  \]
+  Como, de \eqref{lempascal},
+  \[
+      \sum_{j=0}^{k+1}\binom{k+1}j
+      = \binom{k+1}0 +
+         \sum_{j=1}^k\left(\binom kj +\binom k{j-1}\right) +
+         \binom{k+1}{k+1},
+  \]
+  e, como
+  \[
+    \sum_{j=1}^k\binom kj =
+      \left(\sum_{j=0}^k\binom kj\right) - \binom k0
+    ~\mathrm{~e~}~
+    \sum_{j=1}^k\binom k{j-1} =
+      \left(\sum_{j=0}^k\binom kj\right) - \binom kk ,
+  \]
+  temos, da hipótese da indução, que
+  \[
+      \sum_{j=0}^{k+1}\binom{k+1}j
+      = 1 + 2^k - 1 + 2^k - 1 + 1 = 2^{k+1},
+  \]
+  como queríamos mostrar.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 19}\addcontentsline{toc}{section}{Aula 19}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \textbf{Funções}
+\end{center}
+
+
+
+\[
+f\colon A \to B
+\]
+denota uma \href{http://en.wikipedia.org/wiki/Relation_(mathematics)}{relação} $f\subseteq A \times B$ que associada a todo $a\in
+A$ um único $b\in B$, esse denotado por $f(a)$, ou seja, $b=f(a)$.
+
+$A$ é o
+\begin{red}
+  domínio
+\end{red}
+da função, $B$ é o
+\begin{red}
+  contradomínio
+\end{red}
+da função, $b$ é a
+\begin{red}
+  imagem de
+\end{red}
+$a$ por $f$. A
+\begin{red}
+  imagem
+\end{red}
+de $f$ é o conjunto
+\[
+\mathrm{Im} f = \bigcup_{x\in A} \big\{f(x)\big\}.
+\]
+
+%\begin{definicao}
+%  Para todo $X\subseteq A$ \[ f(X) = \bigcup_{u\in U}
+%  \big\{f(u)\big\}.\] Em particular, $\mathrm{Im} f = f(A)$.
+%\end{definicao}
+
+
+\begin{definicao}
+  Sejam $f\colon A\to B$ uma fução com $A\subseteq \R$, $B\subseteq
+  \R$, e $X \subseteq A$. Então
+  \begin{enumerate}
+  \item $f$ é
+    \begin{red}
+      crescente em $X$
+    \end{red}
+    se \[
+    \paratodo x,~ \paratodo y,~( x < y \Rightarrow f(x) < f(y) )\]
+  \item $f$ é
+    \begin{red}
+      decrescente em $X$
+    \end{red}
+    se \[
+    \paratodo x,~ \paratodo y,~( x < y \Rightarrow f(y) < f(x) )\]
+  \item $f$ é
+    \begin{red}
+      não-crescente em $X$
+    \end{red}
+    se \[
+    \paratodo x,~ \paratodo y,~( x < y \Rightarrow f(x) \geq  f(y) )\]
+  \item $f$ é
+    \begin{red}
+      não-decrescente em $X$
+    \end{red}
+    se \[
+    \paratodo x,~ \paratodo y,~( x < y \Rightarrow f(y) \geq  f(x) ).\]
+  \end{enumerate}
+\end{definicao}
+
+\begin{center}
+  \textbf{Funções chão e teto}
+\end{center}
+
+\textbf{Função teto} $\lceil \; \rceil \colon \R \to \Z$ dada por \[
+\lceil x \rceil  = \min \{ z\in \Z \colon z\geq x \}.\]
+
+
+\textbf{Função chão} $\lfloor \; \rfloor \colon \R \to \Z$ dada por \[
+\lfloor x \rfloor  = \min \{ z\in \Z \colon z\leq x \}.\]
+
+
+\begin{teorema}\label{teo:teto}
+  Sejam $x \in \R$ e $t\in \Z$.\\
+  $\lceil \; \rceil \colon \R \to \Z$ satisfaz
+  \begin{enumerate}
+  \item $\lceil x \rceil = x \Leftrightarrow x\in \Z$.
+  \item $\lceil x \rceil = t \Leftrightarrow t-1 < x \leq t$,
+  \item $\lceil x \rceil = t \Leftrightarrow x \leq t < x+1$,
+  \item $\lceil \; \rceil$ é não-decrescente em $\R$,
+  \item $\lceil x+t \rceil = \lceil x \rceil + t$.
+  \end{enumerate}
+\end{teorema}
+\begin{proof}
+  \begin{itemize}%$\lceil \rceil$
+  \item Vamos provar 1. Primeiro suponhamos que $\lceil x \rceil =
+    x$. Então $\lceil x \rceil \in \Z$ por definição de $\lceil \;
+    \rceil$. Agora, suponhamos que $x \in \Z$. Então $x \in \{ z\in \Z
+    \colon z\geq x \}$ e como $\lceil x \rceil = \min \{ z\in \Z
+    \colon z\geq x \}$ temos
+    \[
+    x \geq \lceil x \rceil.
+    \]
+    Por outro lado, $\lceil x \rceil \in \{ z\in \Z \colon z\geq x \}$
+    por definição de \emph{menor elemento} (aula 15), portanto
+    \begin{equation}
+            \label{eq:teto}
+      x \leq \lceil x \rceil
+    \end{equation}
+    donde concluímos que $\lceil x \rceil = x$.
+
+  \item Vamos provar 2. Suponhamos que $\lceil x \rceil = t$. Se
+    $\lceil x \rceil = t$ então $t-1 < x$ pois, caso contrário, isto é
+    se $t-1 \geq x$ então $t -1 \in \{ z\in \Z \colon z\geq x \}$ e $t
+    -1 <t $ em que $t = \min \{ z\in \Z \colon z\geq x \}$, uma
+    contradição. Por \eqref{eq:teto} $x \leq t$. Logo \[ t-1 < x \ee x
+    \leq t .\] Agora, suponhamos $t-1 < x \ee x \leq t .$ Então, $ x
+    \leq t$ e $\lceil x \rceil = \min \{ z\in \Z \colon z\geq x \}$
+    implica em $\lceil x \rceil \leq t$, e de $t-1 < x$ e
+    \eqref{eq:teto} temos $t-1 \leq \lceil x \rceil $, ou seja, $t
+    \leq \lceil x \rceil $ pois  $ t,\lceil x \rceil \in \Z$.
+% Achei que a 2a. parte do parágrafo acima ficou meio nebulosa... a
+% partir do "Agora, suponhamos..."...
+%   Zeh
+
+  \item Vamos provar 3. Suponhamos que $\lceil x \rceil = t$. Se
+    $\lceil x \rceil = t$ então $t \geq x$. Do item 2 temos $t-1 < x$,
+    ou seja, $t < x +1$. Portanto, \[ x \leq t \ee t < x+1.\] Agora,
+    suponhamos que $x \leq t \ee t < x+1.$ De $t < x+1$ e $x+1 \leq
+    \lceil x \rceil +1$ temos $t\leq \lceil x \rceil$. Por outro lado,
+    se $x \leq t$ então $t\in \{ z\in \Z \colon z\geq x \}$, portanto
+    $t\geq \lceil x \rceil$, logo $t =\lceil x \rceil $.
+
+  \item Vamos provar 4, ou seja, vamos provar que para $x,y \in \R$
+    \[ x < y \Rightarrow \lceil x \rceil \leq \lceil y \rceil.\] Se $x
+    < y$ e $ y \leq \lceil y \rceil$ então $ x \leq \lceil y \rceil$,
+    portanto $\lceil y \rceil \in \{ z\in \Z \colon z\geq x \}$,
+    portanto, $\lceil x \rceil \leq \lceil y \rceil$.
+
+  \item Finalmente, vamos provar 5.  Usando o item 3 temos 
+    \[ x \leq \lceil x \rceil  < x+1\] portanto
+    \[ x + t \leq \lceil x \rceil + t  < x+t+1\] e pelo item 3, novamente,
+    \[ \lceil x \rceil + t  = \lceil x  + t \rceil.\]
+  \end{itemize}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 20}\addcontentsline{toc}{section}{Aula 20}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{teorema}\label{teo:35}
+  Se $f\colon \R \to \R$ é contínua, crescente e tal que \[ f(x) \in
+  \Z \Rightarrow x \in \Z\] então \[ \big\lceil f ( \lceil x \rceil )
+  \big\rceil = \lceil f ( x ) \rceil .\]
+\end{teorema}
+\begin{proof}
+  Seja $f\colon \R \to \R$ contínua, crescente e tal que $f(x) \in \Z
+  \Rightarrow x \in \Z$, vamos provar que $\big\lceil f ( \lceil x
+  \rceil ) \big\rceil = \lceil f ( x ) \rceil$ em dois casos. Sabemos
+  por \eqref{eq:teto} que $x \leq \lceil x \rceil$.
+
+  Se $x = \lceil x \rceil$ então $\big\lceil f ( \lceil x \rceil )
+  \big\rceil = \lceil f ( x ) \rceil$. Resta provar o caso $x < \lceil
+  x \rceil$.
+
+  Seja $x$ um real tal que $x < \lceil x \rceil$. Se $f$ é crescente,
+  então $f(x) < f \big(\lceil x \rceil\big)$.  Tomemos o intervalo $[
+  f(x), f \big(\lceil x \rceil\big) ]$. Como $f$ é contínua, para todo
+  $y \in [ f(x), f \big(\lceil x \rceil\big)]$ existe $a \in [x,
+  \lceil x \rceil ]$ tal que $f(a)=y$. 
+
+  Se $f(x) < f \big(\lceil x \rceil\big)$ então $\lceil f(x) \rceil
+  \leq \lceil f \big(\lceil x \rceil\big)\rceil$ pelo item 4 do
+  teorema \ref{teo:teto}. 
+
+  Suponhamos que $\lceil f(x) \rceil < \lceil f \big( \lceil x
+  \rceil \big) \rceil$.  Se $\lceil f(x) \rceil > f \big( \lceil x
+  \rceil \big)$ então $\lceil f(x) \rceil$ é um inteiro entre $f(
+  \lceil x \rceil )$ e $ \lceil f( \lceil x \rceil )\rceil$.
+
+  Então $\lceil f(x) \rceil \in \big[ f(x), f \big(\lceil x
+  \rceil\big)\big)$, portanto, existe $a \in [x, \lceil x \rceil)$ tal
+  que $f(a)= \lceil f(x) \rceil$. Logo $f(a)\in \Z$ e, por hipótese,
+  $a\in \Z$, portanto $a \not\in [x, \lceil x \rceil)$, uma
+  contradição.
+
+  Com isso temos $\lceil f(x) \rceil \leq \lceil f \big(\lceil x
+  \rceil\big)\rceil$ e $\nao(\lceil f(x) \rceil < \lceil f \big(\lceil
+  x \rceil\big)\rceil)$, ou seja, $\lceil f(x) \rceil = \lceil f
+  \big(\lceil x \rceil\big)\rceil$.
+\end{proof}
+
+
+\textbf{Exemplo.}\\
+A função definida nos reais $f(x) = \frac xk$, com $k\in\Z$ é contínua
+(pois é uma função linear) crescente e tal que $ f(x) \in \Z
+\Rightarrow x \in \Z$ (pois $f(x) = t$ implica $x=kt$), portanto
+\[ \left\lceil \frac {\lceil x/k \rceil}{k} \right\rceil =
+ \left\lceil \frac x{k^2} \right\rceil .\] 
+
+
+ \textbf{Exercício.} Prove que \[ \left\lceil \frac{\lceil
+     x\rceil+m}{n} \right\rceil = \left\lceil \frac{x +m}{n}
+ \right\rceil.\]
+
+\begin{teorema}\label{teo:chao}
+  Sejam $x \in \R$ e $t\in \Z$.\\
+  $\lfloor \; \rfloor \colon \R \to \Z$ satisfaz
+  \begin{enumerate}
+  \item $\lfloor x \rfloor = x \Leftrightarrow x\in \Z$.
+  \item $\lfloor x \rfloor = t \Leftrightarrow t \leq  x < t+1$,
+  \item $\lfloor x \rfloor = t \Leftrightarrow x - 1 < t \leq  x$,
+  \item $\lfloor \; \rfloor$ é não-decrescente em $\R$,
+  \item $\lfloor x+t \rfloor = \lfloor x \rfloor + t$.
+  \item Se $f\colon \R \to \R$ é contínua, crescente e tal que \[ f(x)
+    \in \Z \Rightarrow x \in \Z\] então \[ \big\lfloor f ( \lfloor x
+    \rfloor ) \big\rfloor = \lfloor f ( x ) \rfloor .\]
+  \end{enumerate}
+\end{teorema}
+
+\textbf{Exemplo.} \\
+A função definida nos reais $f(x) = \frac xk$, com $k\in\Z$ é contínua
+(pois é uma função linear) crescente e tal que $ f(x) \in \Z
+\Rightarrow x \in \Z$ (pois $f(x) = t$ implica $x=kt$), portanto
+\[ \left\lfloor \frac {\lfloor x/k \rfloor}{k} \right\rfloor =
+ \left\lfloor \frac x{k^2} \right\rfloor .\] 
+
+
+
+\begin{teorema}
+  Se $x \in \R$ então
+  \begin{eqnarray*}
+    \lfloor -x \rfloor &=& - \lceil x \rceil ~\mathrm{~e}\\
+    \lceil - x \rceil &=&   - \lfloor x \rfloor.
+  \end{eqnarray*}
+\end{teorema}
+\begin{proof}
+  Seja $x \in \R$ e vamos provar que $\lfloor -x \rfloor = - \lceil x
+  \rceil$. Sabemos do teorema \ref{teo:teto} item 3 que 
+  \[x \leq \lceil x \rceil < x+1\]
+  portanto
+  \[-x \geq -\lceil x \rceil > -x-1\]
+  e  do teorema \ref{teo:chao} item 3 temos que 
+  \[  -\lceil x \rceil = \lfloor -x \rfloor .\]
+  
+  A prova de $\lceil - x \rceil =   - \lfloor x \rfloor$ é exercício.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 21}\addcontentsline{toc}{section}{Aula 21}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{red}
+  Definição indutiva
+\end{red}. 
+Seja $n_0\in\N$ e $A = \{n\in\N\colon n \geq n_0\}$. Podemos definir
+uma função com domínio $A$ usando indução da seguinte maneira:
+\begin{itemize}
+\item (base) especificamos o valor de $f(n_0)$,
+\item (passo) especificamos para todo $n \geq n_0$ como determinar $f(n+1)$
+  a partir de todos ou alguns elementos de $\{f(n_0), f(n_0+1),\dots,
+  f(n-1),f(n)\}.$
+\end{itemize}
+Se $X\subseteq A$ é o conjunto dos pontos para os quais $f$ está definida
+então pelo Princípio da Indução, teorema \ref{teo:PIF3}, $X=A$.
+
+\textbf{Exemplos}
+\begin{description}
+\item[(1)] $f(0)=3$ e $\paratodo n\geq 0,~f(n+1)=2f(n)+3$.
+\item[(2)] $F(0)=1$ e $\paratodo n\geq 0,~F(n+1)=(n+1)F(n)$.
+\item[(3)] $S(0)=0$ e $\paratodo n\geq 0,~S(n+1)=S(n)+g(n+1)$, em que
+  $g$ é uma função
+\item[(4)] $p(0)=1$ e $\paratodo n\geq 0, ~ p(n+1)=ap(n)$, em que $a\in
+  \R\setminus\{0\}$.
+\item[(5)] $b(1)=1$ e $\paratodo n\geq 1, ~ b(n+1)=b\left( \left\lfloor
+      \frac{n+1}2 \right\rfloor \right) +1$.
+\item[(6)] $H(1)=1$ e $\paratodo n\geq 1, ~ H(n+1) = H (n) + \frac 1{n+1}$.
+\end{description}
+
+Notemos que nos exemplos acima a função $F$ é $F(n)=n!$, a função $S$
+é $S(n) = \sum_{i=1}^n g(i)$ e a função $p$ é a função $p(n)= a^n$. O
+que podemos dizer a respeito das outras funções? Vamos provar que
+$f(n) = 3(2^{n+1}-1)$ e que $b(n) = \lfloor \log_2 (n) \rfloor + 1$.
+
+Seja $g\colon \N \to \N$ definida por $g(n) = 3(2^{n+1}-1)$. Vamos
+provar por indução que para $f$ definida indutivamente no exemplo 1
+acima vale $\paratodo n, ~f(n)=g(n)$.
+
+Se $n = 0$ então $f(0)=3$ e $g(0) = 3(2-1) =3$, portanto $f(0) =
+g(0)$. 
+
+Agora, vamos provar que para todo $n\in \N$, se $f(n)=g(n)$ então
+$f(n+1) = g(n+1)$. Seja $n$ um natural e assuma que $f(n) = g(n)$.
+Então
+
+\begin{eqnarray*}
+  f(n+1) &=& 2f(n) +3 \textrm{ por definição}\\
+  &=& 2g(n) +3 \textrm{ por hipótese}\\
+  &=& 2(3(2^{n+1}-1)) +3 \textrm{ por definição}\\
+  &=& 3(2^{n+2}-1)\\
+  &=& g(n+1).
+\end{eqnarray*}
+a primeira igualdade é a definição de $f$, na segunda foi usada a
+hipótese da indução, nas terceira e na última a definição de $g$. 
+
+Portanto, pelo teorema \ref{teo:PIF1} $\paratodo n, ~f(n)=g(n)$.
+
+
+No caso do exemplo 5, seja $\ell\colon \N \to \N$ definida por
+$\ell(n) = \lfloor \log_2(n)\rfloor +1 $. Vamos provar por indução que
+para $b$ definida indutivamente no exemplo acima vale $\paratodo n,
+~b(n)=\ell(n)$.
+
+Se $n = 1$ então $b(1)=1$ e $\ell(1) = \lfloor \log_2(1) \rfloor +1 =
+1$, portanto $b(1) = \ell(1)$.
+
+Agora, vamos provar que para todo $n\in \N$, se $\paratodo k\in [1..n],
+~ b(k) = \ell(k)$ então $b(n+1) = \ell(n+1)$. Seja $n$ um natural e
+assuma que $\paratodo k\in [1..n], ~b(k) = \ell(k)$.  Então
+
+\begin{eqnarray*}
+  b(n+1) &=& b  \left( \left\lfloor \frac{n+1}2 \right\rfloor \right) +1  ~\textrm{~por~definição}\\\\
+  &=& \ell(\left\lfloor \frac{n+1}2 \right\rfloor ) +1 ~\textrm{~por~hipótese}\\
+  &=& \lfloor \log_2(\left\lfloor \frac{n+1}2 \right\rfloor)\rfloor +2  ~\textrm{~por~definição}\\
+  &=& \lfloor \log_2(  \frac{n+1}2 )\rfloor +2  ~\textrm{~pelo~teorema~\ref{teo:chao} item 6}\\
+  &=& \lfloor \log_2(  {n+1} ) - 1\rfloor +2  \\
+  &=& \lfloor \log_2(  {n+1} )\rfloor -1+2  ~\textrm{~pelo~teorema~\ref{teo:chao} item 5}\\
+  &=& \lfloor \log_2(n+1)\rfloor +1\\
+  &=& \ell(n+1).
+\end{eqnarray*}
+a primeira igualdade é a definição de $b$, a segunda hipótese de
+indução,a terceira definição de $\ell$, a quarta teorema~\ref{teo:chao}
+item 6, a sexta teorema~\ref{teo:chao} item 5, e na última a definição
+de $\ell$. 
+
+Portanto, pelo teorema \ref{teo:PIF1} $\paratodo n\geq 1,
+~b(n)=\ell(n)$.
+
+
+Agora, o que podemos dizer da função $H$ do exemplo 6? Podemos dizer
+muita coisa, menos uma fórmula aritmética simples para computar
+$H(n)$, que é conhecido como $n$-ésimo
+\href{http://en.wikipedia.org/wiki/Harmonic_number}{número harmônico}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 22}\addcontentsline{toc}{section}{Aula 22}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Relembrando dois conceitos do cálculo: seja $f\colon \N \to \R$
+
+$\lim_{n \to\infty} f(n)=0$ se e somente se 
+\[
+\paratodo \varepsilon > 0,~\existe n_0, 
+( n\geq n_0 \Rightarrow |f(n)| < \varepsilon )
+\]
+
+$\lim_{n \to\infty} f(n)=\infty$ se e somente se 
+\[
+\paratodo m,~\existe n_0, 
+( n\geq n_0 \Rightarrow f(n) > m )
+\]
+
+
+\textbf{Exercício.} Suponha $f(x) > 0 $ para todo $n\in \N$. Prove que
+se $\lim_{n\to\infty} f(n) = 0$ então $\lim_{n\to\infty} \frac 1{f(n)}
+= \infty $.
+
+Nessa aula $f$ e $g$ são funções de $\N$ em $\R$. 
+
+\begin{definicao}
+Dizemos que $f$ é
+  \begin{red}
+    muito menor 
+  \end{red}
+  que $g$ se \[ \lim_{n\to\infty} \frac{f(n)}{g(n)} = 0.\]
+  Denotamos esse fato por $ f \ll g$.
+\end{definicao}
+
+\textbf{Exemplos.}\\
+(1)~$1 \ll \log(\log (n))$.\\
+(2)~$\log(\log(n)) \ll \log (n)$.\\
+(3)~$\log(\log(n)) \ll \log (n)$.\\
+(4)~$\log(n) \ll n^{\varepsilon}$ para todo $\varepsilon >0$.\\
+(5)~$n^{\varepsilon} \ll n^c$ para quaisquer $0< \varepsilon < 1 \leq c$.\\
+(6)~$n^c \ll n^{\log n}$ para todo $1 \leq c$.\\
+(7)~$n^{\log n} \ll \exp(n)$.\\
+(8)~$\exp(n) \ll n^{n}$.\\
+(9)~$n^{n} \ll \exp(\exp(n))$.
+
+
+\begin{definicao}
+  \[ f(n) = O(g(n)) \] se existe $n_0 \> 0$ e existe $c>0$ tais que \[
+  n\geq n_0 \Rightarrow |f(n)| \leq c |g(n)|\] e nesse caso dizemos que
+  $g$ é um limitante superior assintótico para $f$.
+\end{definicao}
+
+\textbf{Exemplos}\\
+(1)~$n^2+2n+1 = O(n^2)$.\\
+(2)~$5\sin(n) = O(1)$
+
+
+\begin{red}
+  Atenção
+\end{red}
+o símbolo de $=$ na definição não é a igualdade no sentido usual. Notemos que
+\begin{eqnarray*}
+  n &=& O(n^2)\\
+  n^2+2n+1 &=& O(n^2)
+\end{eqnarray*}
+entretanto
+\begin{red}
+  $n \neq n^2+2n+1$.
+\end{red}
+$O(g(n))$ é um conjunto de funções, a saber, aquelas que são
+``iguais'' a $O(g(n))$.
+
+\begin{teorema}\label{teo:O0}
+  $f(n) \ll g(n) \Rightarrow f(n)= O(g(n))$.
+\end{teorema}
+
+\textbf{Observação.} A recíproca não vale.
+
+\begin{teorema}\label{teo:O1}
+  Se $\lim_{n\to\infty} \frac {f(n)}{g(n)} = c,$ em que $g>0$ e $c>0$,
+  então $f(n)= O(g(n))$.
+\end{teorema}
+
+
+\begin{teorema}\label{teo:O2}
+  $f_1(n) = O(g_1(n)) \ee f_2 = O(g_2(n)) \Rightarrow f_1(n) + g_2(n)
+  = O(\max\{|g_1(n)|, |g_2(n)|\})$.
+\end{teorema}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Aula 23}\addcontentsline{toc}{section}{Aula 23}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Exemplos.}\\
+(3)~$a n^2 + bn + c = O(n^2)$.\\
+
+De \[\lim_{n\to\infty} \frac{bn + c}{n^2} = \lim_{n\to\infty}
+\frac{b}n + \lim_{n\to\infty} \frac{c}{n^2} = 0 \] temos $ bn + c \ll
+n^2$ e pelo teorema \ref{teo:O0}, $ bn + c = O(n^2)$. Certamente,
+$an^2 = O(n^2)$. Portanto, pelo teorema \ref{teo:O2} ~$a n^2 + bn + c
+= O(n^2)$.
+
+De uma maneira geral podemos provar que 
+
+(4)~para $k\in\N$ constante, $\sum_{i=0}^k a_in^i = O(n^k)$.\\
+
+De fato, $\sum_{i=0}^k a_in^i = a_k n^k + \sum_{i=0}^{k-1} a_in^i$ e
+para o somatório temos \[ \lim_{n\to\infty}
+\frac{\sum_{i=0}^{k-1} a_in^i}{n^k} = \lim_{n\to\infty}
+\sum_{i=0}^{k-1} \frac{a_i}{n^{k-i}} = 0\] pois $k-i >0$. Portanto,
+$\sum_{i=0}^{k-1} a_in^i \ll n^k$ e pelo teorema \ref{teo:O0}
+$\sum_{i=0}^{k-1} a_in^i =O(n^k)$. Como $a_kn^K = O(n^k)$, pelo
+teorema \ref{teo:O2} $ a_k n^k + \sum_{i=0}^{k-1} a_in^i = O(n^k)$
+
+\begin{teorema}\label{teo:O3}
+  Se $f(n) = O(g(n)) \ee g(n) = O(h(n))$ então $f(n) = O(h(n))$.
+\end{teorema}
+
+\begin{teorema}\label{teo:O4}
+  Se $f(n) = O(g(n)) \ee h(n) = O(\ell(n))$ então $f(n)g(n) = O(g(n)\ell(n))$.
+\end{teorema}
+
+\textbf{Exemplos.}\\
+(5)~$n\log(n!) = O(n^2 \log n)$.\\
+Primeiro, temos $n=O(n)$. Depois, $n! = \prod{i=1}^n i < \prod{i=1}^n
+n =n^n$. Como log é crescente $\log(n!) < \log(n^n) = n\log (n)$,
+portanto $\log(n!) = O( n\log (n))$. Pelo teorema \ref{teo:O4}, 
+$n\log(n!) = O(n^2 \log n)$.
+
+(6)~para todo $a>0$, $\log_a (n) = O(\log_2 (n))$.\\
+De fato, \[\log_a (n) = \frac 1{\log_2 a} \log_2 n\] porém $ \frac
+1{\log_2 a} =O(1)$ e $\log_2 n = O(\log_2 n)$ e pelo teorema
+\ref{teo:O4}, $\log_a (n) = O(\log_2 (n))$.
+
+\bigskip
+
+\begin{red}
+  Não é verdade
+\end{red}
+\begin{enumerate}
+\item se $f_1(n)= O(g(n))$ e $f_2(n)=O(g(n))$, então $f_1(n)=f_2(n)$;
+\item se $f(n)= O(g(n))$  então $g(n)= O^{-1}(f(n))$;
+\item se $f_1(n)= O(g_1(n))$ e $f_2(n)=O(g_2(n))$ e para todo $n$,
+  $g_1(n) < g_2(n)$, então para todo $n$, $f_1(n) < f_2(n)$;
+\item para quaisquer $f$ e $g$, $f(n) = O(g(n))$ ou $g(n) = O(f(n))$.
+\end{enumerate}
+
+\textbf{Convenções.}
+\begin{itemize}
+\item desconsiderar os coeficientes, por exemplo, usar $O(n^2)$ ao
+  invés de $O(a n^2)$, $O(1)$ ao invés de $O(1024)$;
+\item escrever no argumento de $O(\cdot)$ somente o termo mais
+  significativo, por exemplo, usar $O(n^2)$ ao invés de $O(a n^2 + bn
+  + c)$.
+\end{itemize}
+
+
+\begin{definicao}
+  \[ f(n)= \Omega(g(n)) \Leftrightarrow g(n) = O(f(n))\] e nesse caso
+  dizemos que $f$ é assintoticamente limitada inferiormente por $g$.
+\end{definicao}
+
+\begin{teorema}\label{teo:O5}
+  $f(n) = \Omega(g(n))$ se e somente se \[ \existe n_0 \> 0, ~\existe C>0,
+  ~|f(n)| \geq C |g(n)|.\]
+\end{teorema}
+
+
+\begin{definicao}\label{def:teta}
+  \[ f(n) = \Theta ( g(n) ) \Leftrightarrow f(n) = O(g(n)) \ee g(n) =
+  O(f(n)).\]
+\end{definicao}
+
+
+\begin{teorema}\label{teo:O6}
+  \[ f(n) = \Theta ( g(n) ) \Leftrightarrow f(n) = O(g(n)) \ee f(n) =
+  \Omega (g(n)).\]
+\end{teorema}
+
+\begin{teorema}
+  $f(n) = \Theta (g(n))$ se e somente se \[ \existe n_0>0, ~\existe c>0, ~\existe C>0,
+  ~c |g(n)| \leq |f(n)| \leq C |g(n)|.\]
+\end{teorema}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Últimas aulas}\addcontentsline{toc}{section}{Últimas aulas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{teorema}
+  Se  $f(n) = \Theta (g(n))$ e $g(n) = \Theta (h(n))$ então 
+  $f(n) = \Theta (h(n))$.
+\end{teorema}
+
+\textbf{Exemplos.}\\ 
+(7)~$\log_2 \left\lceil \frac n2 \right\rceil = \Theta (\log_2 (n))$.\\
+\[ \log_2 \left\lceil \frac n2 \right\rceil \leq \left\lceil \log_2
+  \left\lceil \frac n2 \right\rceil \right\rceil = \left\lceil \log_2
+  \frac n2 \right\rceil < \log_2 \left(\frac n2\right) +1 = \log_2
+n \] em que a igualdade segue do teorema 35 e a última desigualdade do
+teorema \ref{teo:teto}, item 3. Logo $\log_2 \lceil n \rceil =
+O(\log_2 n)$. Agora, \[ \left\lceil \frac n2
+\right\rceil \geq \frac n2 \Rightarrow  \log_2
+\left\lceil \frac n2 \right\rceil \geq \log_2 \left( \frac n2 \right) = 
+%\lceil \log_2 (n) - 1\rceil =
+%\lceil \log_2 (n) \rceil - 1 \] e 
+%\[ \lceil \log_2 (n) \rceil - 1 \geq  
+\log_2 (n) - 1 \geq \frac 12 \log_2 (n)\] para todo $n\geq 4$,
+portanto $\log_2 n = \Omega( \log_2 (\lceil n \rceil))$. Pelo teorema
+\ref{teo:O6} $\log_2 \lceil n \rceil = \Theta (\log_2 (n))$.
+
+
+(8)~$\left\lceil \log_2\left( \frac n2 \right) \right\rceil = \Theta (\log n)$.
+
+
+(9)~se $a_k \neq 0$ então $\sum_{i=0}^k a_in^i = \Theta(n^k)$.\\
+Vimos que $\sum_{i=0}^k a_in^i = O(n^k)$. Vamos provar que
+$\sum_{i=0}^k a_in^i = \Omega(n^k)$.
+\[ \left| \sum_{i=0}^k a_in^i  \right| \geq
+   \left| a_k n^k  -\sum_{i=0}^{k-1} |a_i| n^i  \right| \geq
+   \left| |a_k n^k| - \bigg|\sum_{i=0}^{k-1} |a_i|n^i\bigg|  \right| \]
+porém
+\[
+   \left| |a_k n^k| - \bigg|\sum_{i=0}^{k-1} |a_i|n^i\bigg|  \right| =
+   \left| |a_k| n^k - \bigg|\sum_{i=0}^{k-1} |a_i|n^i\bigg|  \right| \geq
+   \left| |a_k| n^k - \bigg|\sum_{i=0}^{k-1} |a_i|\bigg| n^k  \right| \]
+ainda
+\[
+   \left| |a_k| n^k - \bigg|\sum_{i=0}^{k-1} |a_i|\bigg| n^k  \right| =
+   \left| \left( |a_k|  - \bigg|\sum_{i=0}^{k-1} |a_i|\bigg|\right)n^k  \right| =
+   \left| \left( |a_k|  - \bigg|\sum_{i=0}^{k-1} |a_i|\bigg|\right)  \right|n^k \]
+portanto 
+\[\sum_{i=0}^k a_in^i = \Omega(n^k).\]
+
+\begin{definicao}
+  $f(n) = o(g(n))$ se e somente se $f(n) \ll g(n)$.
+\end{definicao}
+\begin{definicao}
+  $f(n) = \omega(g(n))$ se e somente se $g(n) = o(f(n))$.
+\end{definicao}
+
+%\begin{teorema}\label{teo:O7}
+%  $f(n) = o(g(n)) \Rightarrow f(n) = O(g(n))$.
+%\end{teorema}
+%
+%
+%\begin{teorema}\label{teo:O9}
+%$  O(f(n)) + o(f(n)) = O(f(n))$.
+%\end{teorema}
+%
+%
+
+\begin{center}
+  \textbf{Notação assintótica em equações}\\
+\end{center}
+\begin{center}
+    \textsc{expressão 1} = \textsc{expressão 2}
+    %%% \textsc não tá funcionando... Zeh
+\end{center}
+onde \textsc{expressão} são expressões algébricas que envolvem notação
+assintótica. 
+
+Nesses casos, os termos assintóticos em \textsc{expressão 1} são
+quantificados universalmente, enquanto que os termos assintóticos em
+\textsc{expressão 2} são quantificados existencialmente.
+
+\textbf{Exemplos.}\\
+(1)~ $n^3 + O(n^2) = O(n^3) + n^2+ n$ entende-se
+como \[ \paratodo f(n)= O(n^2) , ~\existe g(n) = O(n^3), ~ n^3 + f(n)
+= g(n) + n^2 + n\] para todo $n$.
+
+Dado $f(n)= O(n^2)$, tome $g(n)= n^3 +f(n) -n^2- n$, então
+$g(n)=O(n^3)$ e $n^3 + f(n) = g(n) + n^2 + n$.
+
+(2)~O número de comparações do \emph{Merge-Sort} pode ser escrito como
+\begin{equation}
+  \label{eq:merge}
+  T(n)=
+  \begin{cases}
+    \Theta (1),~\textrm{ se }&n=1\\
+    T \left( \left\lceil \frac n2 \right\rceil \right) + 
+    T \left( \left\lfloor \frac n2 \right\rfloor \right) + \Theta (n), 
+    ~\textrm{ se } & n > 1
+  \end{cases}
+\end{equation}
+que significa que existe $f(n) = \Theta (n)$ tal que $T(n) = T \left(
+  \left\lceil \frac n2 \right\rceil \right) + T \left( \left\lfloor
+    \frac n2 \right\rfloor \right) + f(n)$, para todo $n$. É sabido
+que $T(n) = \Theta( n\log n)$.
+
+Veremos técnicas para solução assintótica de recorrências.  Quando
+procuramos por soluções assintóticas não há motivo para especificar
+exatamente as condições iniciais, no caso \eqref{eq:merge}, por
+exemplo, basta escrever $T(n) = T \left( \left\lceil \frac n2
+  \right\rceil \right) + T \left( \left\lfloor \frac n2 \right\rfloor
+\right) + \Theta (n)$
+
+Vimos que $f$ dada por $f(0)=3$ e $f(n+1)=2f(n)+3$, se $n\geq 0$, é
+dada por $f(n) = 3(2^{n+1}-1)$. Isso pode ser descoberto iterando a
+definição indutiva. Assuma que $n$ é grande
+\begin{eqnarray*}
+  f(n) &=& 2f(n-1)+3 \\
+       &=& 2\big(2f(n-2)+3 \big)+3  = 2^2f(n-2) + 2\cdot 3 +3\\
+       &=& 2^2\big( 2f(n-3)+3\big) + 2\cdot 3 +3 = 
+       2^3 f(n-3)  + 2^2 \cdot 3 + 2\cdot 3 +3 = \\
+       &=&  2^3\big( 2f(n-4)+3\big)  + 2^2 \cdot 3 + 2\cdot 3 +3 
+       2^4f(n-4) + 2^3\cdot 3 + 2^2 \cdot 3 + 2\cdot 3 +3  \\
+       &\vdots& \cdots \\
+       &=& 2^if(n-i) +2^{i-1}\cdot 3+\cdots + 2^3\cdot 3 + 2^2 \cdot 3 + 2\cdot 3 +3  \\
+\end{eqnarray*}
+a iteração termina quando $i=n$ e temos $f(n) = 2^nf(0)+ 2^{n-1} \cdot
+3 + \cdots + + 2^3\cdot 3 + 2^2 \cdot 3 + 2\cdot 3 +3$, ou seja \[
+f(n) = \sum_{i=0}^n 2^i\cdot 3 = 3(2^{n+1}-1).\]
+Resta provar por indução que $f(n) = 3(2^{n+1}-1).$
+
+
+Da mesma forma, iterando $b(1)=1$, $b(n+1)= b(\lfloor (n+1)/2 \rfloor
+) +1$, temos (usaremos o exerc.~3 da lista 3)
+\begin{eqnarray*}
+  b(n) &=& b\left(\left\lfloor \frac n2 \right\rfloor\right) + 1\\
+  &=& \left( b\left( \left\lfloor \frac{\left\lfloor \frac n2 \right\rfloor}{2} \right\rfloor \right) + 1 \right)+1 = 
+  b\left( \left\lfloor \frac{n}{2^2} \right\rfloor \right) + 2  \\
+  &=& \left( b\left( \left\lfloor \frac{\left\lfloor \frac n{2^2} \right\rfloor}{2} \right\rfloor \right) + 1 \right)+2 = 
+  b\left( \left\lfloor \frac{n}{2^3} \right\rfloor \right) + 3  \\
+  &=& \left( b\left( \left\lfloor \frac{\left\lfloor \frac n{2^3} \right\rfloor}{2} \right\rfloor \right) + 1 \right)+3 = 
+  b\left( \left\lfloor \frac{n}{2^4} \right\rfloor \right) + 4  \\
+  &\vdots& \cdots \\
+  &=& b\left( \left\lfloor \frac{n}{2^i} \right\rfloor \right) + i 
+\end{eqnarray*}
+e pelo teorema \ref{teo:chao}
+\begin{eqnarray*}
+  \left\lfloor \frac n{2^i} \right\rfloor = 1 \Leftrightarrow 1 \leq \frac n{2^i} < 2 
+  \Leftrightarrow i \leq \log_2 n < i+1 \Leftrightarrow i = \lfloor \log_2 n \rfloor
+\end{eqnarray*}
+portanto, após $\lfloor \log_2 n \rfloor$ iterações $b(n) = b(1) +
+\lfloor \log_2 n \rfloor = 1+ \lfloor \log_2 n \rfloor$.
+Resta provar por indução que $b(n) = 1+ \lfloor \log_2 n \rfloor$.
+
+Nem sempre funciona, ou as vezes é muito difícil chegar em algum
+lugar, por exemplo, tente o mesmo com \[ F(1)=F(2)=1 \ee F(n+1) = F(n)
++ F(n-1),~\mathrm{se}~ n>1.\] Por outro lado, em análise de algoritmos
+muitas vezes é suficiente uma solução assintótica, isto é, basta saber
+a ordem de grandeza da solução. Por exemplo, no caso da função $F$
+definida acima, podemos provar que $F(n) = \Theta ( \varphi^n)$, onde
+$\varphi = \frac{1+\sqrt{5}}2$ por indução em $n$.
+
+De fato, defina $c=1/2$, $C=1$, e temos que verificar a base da
+indução $n=1$ e $n=2$ (exercício) que nesses casos \[ \paratodo k\in \{1,2\}, ~c
+\varphi^k \leq F(k) \leq C \varphi^k \]
+
+Seja $n>1$ um natural e assuma que \[ \paratodo k\in [1..n], ~c
+\varphi^k \leq F(k) \leq C \varphi^k \] Então
+\begin{eqnarray*}
+  F(n+1) &=& F(n) + F(n-1)\\
+  &\geq& c \varphi^n +  c \varphi^{n-1} 
+  =  c \varphi^{n-1}(\varphi  +  1) 
+  =  c \varphi^{n-1}(\varphi^2)  
+  =  c \varphi^{n+1} 
+\end{eqnarray*}e 
+\begin{eqnarray*}
+  F(n+1) &=& F(n) + F(n-1)\\
+  &\leq& C \varphi^n +  C\varphi^{n-1} 
+  =  C \varphi^{n-1}(\varphi  +  1) 
+  =  C \varphi^{n-1}(\varphi^2)  
+  =  C \varphi^{n+1} 
+\end{eqnarray*}
+
+Considere a seguinte função definida indutivamente (recorrência)
+\begin{eqnarray*}
+   T(1) &=& 0,\\ 
+   T(2) &=& 1,\\ 
+   T(n) &=& T \left(\left\lceil \frac n2 \right\rceil \right) +
+   T \left(\left\lfloor \frac n2 \right\rfloor \right) + 2n -1  
+   ~\textrm{ se } ~n>2.
+\end{eqnarray*}
+Vamos provar a seguinte solução assintótica $T(n) = O(n^2)$. Para tal,
+vamos provar por indução em $n$ que existe $c,n_0>0$ tais que \[ T(n)
+\leq c n^2 ~\paratodo n\geq n_0.\]
+
+Tomemos $c=1$ e $n_0=6$. 
+
+Para $n\in [2..6]$ temos 
+\begin{eqnarray*}
+  T(1)  =  0 ~ &\textrm{ e }&~ c{1}^2 = 1\\
+  T(2)  =  2 ~ &\textrm{ e }&~ c{2}^2 = 4\\
+  T(3)  =  6 ~ &\textrm{ e }&~ c{3}^2 = 9\\
+  T(4)  =  11~ &\textrm{ e }&~ c{4}^2 = 16\\
+  T(5)  =  17~ &\textrm{ e }&~ c{5}^2 = 25\\
+  T(6)  =  25~ &\textrm{ e }&~ c{6}^2 = 36\\
+\end{eqnarray*}
+portanto, $T(n) \leq c n^2 ~\paratodo n\in[2..6]$. Esses são o caso
+base. Seja $n>6$ um inteiro e assuma que para todo $k\in [n_0..n-1]$,
+$T(k) \leq c k^2$. Vamos provar que $T(n) \leq c n^2$. Por definição
+$T(n) = T \left(\left\lceil \frac n2 \right\rceil \right) + T
+\left(\left\lfloor \frac n2 \right\rfloor \right) + 2n -1$ e usando a
+hipótese da indução
+\begin{eqnarray*}
+  T(n) & \leq & c \left\lceil \frac n2 \right\rceil^2 + 
+  c \left\lfloor \frac n2 \right\rfloor^2 + 2n -1 \\
+  & \leq & c \left( \frac n2 +1 \right)^2 + 
+  c \left( \frac n2 \right)^2 + 2n -1\\
+  & =& \frac c2 n^2 + (c+2)n
+\end{eqnarray*}
+portanto, $T(n) \leq cn^2$ para todo $n\geq 6$.
+
+Essa solução está superestimada, de fato é possível provar uma
+\begin{red}
+  solução justa
+\end{red}
+ou seja, uma solução que limita assintoticamente superiormente e
+inferiormente a função $T(n)$.
+
+Vamos provar que $T(n) = \Theta(n\log_2 n)$.
+
+Primeiro vamos provar que $T(n) = O ( n \lceil \log_2(n)
+\rceil)$. Para tal, tomemos $c=2$ e $n_0=1$ e vamos provar que \[ T(n)
+\leq c  n \lceil \log_2(n)\rceil ~\paratodo n\geq n_0.\]
+
+Para $n=1$ temos $T(1)=0$ e $c 1 \lceil \log_2(1)\rceil =0$ e
+para $n=2$ temos $T(2)=1$ e $c 2 \lceil \log_2(2)\rceil =2$,
+portanto, $T(n) \leq c n \lceil \log_2(n)\rceil$ nesses casos.
+
+Seja $n>2$ inteiro e assumamos que \[ T(k) \leq c k \lceil
+\log_2(k)\rceil ~\paratodo k\in[n_0..n-1].\] Por definição \[ T(n) = T
+\left(\left\lceil \frac n2 \right\rceil \right) + T \left(\left\lfloor
+    \frac n2 \right\rfloor \right) + 2n -1 \]
+e por hipótese
+\[ T(n) \leq c \left\lceil \frac n2 \right\rceil \left\lceil \log_2
+  \left( \left\lceil \frac n2 \right\rceil \right)\right\rceil + c
+\left\lfloor \frac n2 \right\rfloor \left\lceil \log_2 \left(
+    \left\lfloor \frac n2 \right\lfloor \right)\right\rceil +2n -1
+\]
+ainda, pelo teorema \ref{teo:35}
+\[ \left\lceil \log_2
+  \left( \left\lceil \frac n2 \right\rceil \right)\right\rceil = 
+\left\lceil \log_2
+  \left( \frac n2  \right)\right\rceil
+\]
+e como $\lfloor x \rfloor \leq x$ e $\log_2$ é crescente
+\[ 
+\left\lceil \log_2 \left(
+    \left\lfloor \frac n2 \right\lfloor \right)\right\rceil \leq
+\left\lceil \log_2 \left(
+    \frac n2  \right)\right\rceil
+\]
+portanto
+\begin{eqnarray*}
+  T(n) &\leq& c \left\lceil \frac n2 \right\rceil \left\lceil \log_2
+    \left(   \frac n2 \right)\right\rceil + c
+  \left\lfloor \frac n2 \right\rfloor \left\lceil \log_2 \left(
+      \frac n2  \right)\right\rceil +2n -1\\
+  & = &  c \left( \left\lceil \frac n2 \right\rceil + 
+    \left\lfloor \frac n2 \right\rfloor  \right) \left\lceil \log_2 \left(
+      \frac n2  \right)\right\rceil +2n -1\\
+  & = &  c  n \left\lceil \log_2 \left(
+      (n) -1 \right)\right\rceil +2n -1\\
+  & = &  c  n \left\lceil \log_2   n  \right\rceil -(c-2) n -1\\
+  & \leq & c  n \left\lceil \log_2  n\right\rceil .
+\end{eqnarray*}
+
+Com isso provamos que $T(n) = O ( n \lceil \log_2(n) \rceil)$. Ainda
+temos que $n= O(n)$ e $\lceil \log_2(n) \rceil = O( \log_2 (n) )$,
+portanto, pelo teorema \ref{teo:O4}, $n \lceil \log_2(n) \rceil =
+O(n\log_2 (n) )$, e pelo teorema \ref{teo:O3} temos, finalmente, que
+$T(n) = O ( n \log_2(n))$.
+
+Agora, vamos provar que $T(n) = \Omega ( n \log_2(n) )$ e com isso
+teremos que $T(n) = \Theta(n\log_2 n)$. Para tal, tomemos $c=1/2$ e
+$n_0=1$ e vamos provar que \[ T(n) \geq c n \lfloor \log_2(n)\rfloor
+~\paratodo n\geq n_0.\]
+
+Para $n=1$ temos $T(1)=0$ e $c 1 \lfloor \log_2(1)\rfloor =0$ e para
+$n=2$ temos $T(2)=1$ e $c 2 \lfloor \log_2(2)\rfloor = 1$, portanto,
+$T(n) \geq c n \lfloor \log_2(n)\rfloor$ nesses casos.
+
+Seja $n>2$ inteiro e assumamos que \[ T(k) \geq c k \lfloor
+\log_2(k)\rfloor ~\paratodo k\in[n_0..n-1].\] Por definição \[ T(n) = T
+\left(\left\lceil \frac n2 \right\rceil \right) + T \left(\left\lfloor
+    \frac n2 \right\rfloor \right) + 2n -1 \]
+e por hipótese
+\[ T(n) \geq c \left\lceil \frac n2 \right\rceil \left\lfloor \log_2
+  \left( \left\lceil \frac n2 \right\rceil \right)\right\rfloor + c
+\left\lfloor \frac n2 \right\rfloor \left\lfloor \log_2 \left(
+    \left\lfloor \frac n2 \right\rfloor \right)\right\rfloor +2n -1
+\]
+ainda, pelo teorema \ref{teo:chao}
+\[ \left\lfloor \log_2 \left( \left\lfloor \frac n2 \right\rfloor
+  \right)\right\rfloor = \left\lfloor \log_2 \left( \frac n2
+  \right)\right\rfloor
+\]
+e como $\lceil  x \rceil \geq x$ e $\log_2$ é crescente
+\[ 
+\left\lfloor \log_2 \left(
+    \left\lceil \frac n2 \right\lceil  \right)\right\rfloor \geq
+\left\lfloor \log_2 \left(
+    \frac n2  \right)\right\rfloor
+\]
+portanto
+\begin{eqnarray*}
+  T(n) &\geq& c \left\lceil \frac n2 \right\rceil \left\lfloor \log_2
+    \left(   \frac n2 \right)\right\rfloor + c
+  \left\lfloor \frac n2 \right\rfloor \left\lfloor \log_2 \left(
+      \frac n2  \right)\right\rfloor +2n -1\\
+  & = &  c \left( \left\lceil \frac n2 \right\rceil + 
+    \left\lfloor \frac n2 \right\rfloor  \right) \left\lfloor \log_2 \left(
+      \frac n2  \right)\right\rfloor +2n -1\\
+  & = &  c  n \left\lfloor \log_2 
+      (n) -1  \right\rfloor +2n -1\\
+  & = &  c  n \left\lfloor \log_2   n  \right\rfloor -(c-2) n -1\\
+  & \geq & c  n \left\lfloor \log_2  n\right\rfloor .
+\end{eqnarray*}
+
+Com isso provamos que $T(n) = \Omega ( n \lfloor \log_2(n)
+\rfloor)$. Ainda temos que $n= \Omega (n)$ e $\lfloor \log_2(n)
+\rfloor = O( \log_2 (n) )$ (prove), portanto, $n \lfloor \log_2(n)
+\rfloor = \Omega (n\log_2 (n) )$ (prove), finalmente, temos que $T(n)
+= \Omega ( n \log_2(n))$ (prove).
+
+Notemos que de $T(n) = \Omega ( n \log_2(n))$ não vale que $T(n) =
+O(n)$. Onde está o erro da seguinte prova.
+
+Vamos provar que existem $c,n_0>0$ tais que $T(n) \leq cn$ para todo
+$n\geq n_0$. Tomemos $c=1/2$ e $n_0=1$.
+
+Para $n=1,2$ a desigualdade vale (verifique). Seja $n>2$ inteiro e
+assumamos que para todo $k\in [n_0..n-1]$, $T(k) \leq c k$. Vamos
+mostrar que $T(n) \leq cn$.
+\begin{eqnarray*}
+  T(n) &=& T \left(\left\lceil \frac n2 \right\rceil \right) +
+   T \left(\left\lfloor \frac n2 \right\rfloor \right) + 2n -1  \\
+   & \leq & c \left\lceil \frac n2 \right\rceil +
+            c \left\lfloor \frac n2 \right\rfloor + 2n -1\\
+       &=& c n + 2n -1\\
+       &=& (c+2) n -1
+\end{eqnarray*}
+e como $c$ é constante, também $c+2$ é constante, portanto $T(n) = O(n)$.
+
+Vamos usar a mesma técnica para mostrar que $b(1)=1$, $b(n+1)=
+b(\lfloor (n+1)/2 \rfloor ) +1$ tem solução assintótica $b(n) = \Theta
+(\log_2 n)$ (claramente, essa prova é desnecessária pois sabemos que
+$b(n) = \lfloor \log_2 n \rfloor +1$ e é fácil provar que $\lfloor
+\log_2 n \rfloor +1 = \Theta (\log_2 n)$, a idéia é dar mais um
+exemplo de demonstração de solução assintótica).
+
+Primeiro, vamos mostrar que $b(n) = O(\lfloor \log_2 n \rfloor)$.
+
+Vamos mostrar que para $c=3$ e $n_0 = 2$, $b(n) \leq c \lfloor \log_2
+n \rfloor$ para todo $n \geq n_0$.
+
+Para $n=2,3$ temos $b(2) = b(3) = 2$ e $ c \lfloor \log_2 2 \rfloor =
+c \lfloor \log_2 3 \rfloor = c$, portanto, $b(n) \leq c \lfloor \log_2
+n \rfloor$ nesses casos. Seja $n>3$ e assuma que para todo $k\in
+[n_0..n-1]$, $b(k) \leq c \lfloor \log_2 k \rfloor$. Então
+\begin{eqnarray*}
+  b(n) &=& b(\lfloor n/2 \rfloor) +1 \\
+  & \leq & c \lfloor \log_2 \lfloor n/2 \rfloor \rfloor +1\\
+  & = & c \lfloor \log_2 ( n/2)  \rfloor +1\\
+  & = & c \lfloor \log_2(n) -\log_2(2) \rfloor +1\\
+  & = & c \lfloor \log_2(n) \rfloor -1 +1\\
+  & = & c \lfloor \log_2(n) \rfloor 
+\end{eqnarray*}
+portanto $b(n) \leq c \lfloor \log_2 n \rfloor$ para todo $n \geq
+n_0$, logo, por definição $b(n) = O(\lfloor \log_2 n \rfloor)$. Como
+$\lfloor \log_2 n \rfloor = O(\log_2 n )$, usando o teorema 41 temos
+$b(n) = O(\log_2 n )$.
+
+Agora, vamos mostrar que $b(n) = \Omega (\lfloor \log_2 n \rfloor)$.
+
+Vamos mostrar que para $c=1$ e $n_0 = 2$, $b(n) \geq c \lfloor \log_2
+n \rfloor$ para todo $n \geq n_0$.
+
+Para $n=2,3$ temos $b(2) = b(3) = 2$ e $ c \lfloor \log_2 2 \rfloor =
+c \lfloor \log_2 3 \rfloor = c$, portanto, $b(n) \geq c \lfloor \log_2
+n \rfloor$ nesses casos. Seja $n>3$ e assuma que para todo $k\in
+[n_0..n-1]$, $b(k) \geq c \lfloor \log_2 k \rfloor$. Então
+\begin{eqnarray*}
+  b(n) &=& b(\lfloor n/2 \rfloor) +1 \\
+  & \geq & c \lfloor \log_2 \lfloor n/2 \rfloor \rfloor +1\\
+  & = & c \lfloor \log_2 ( n/2)  \rfloor +1\\
+  & = & c \lfloor \log_2(n) -\log_2(2) \rfloor +1\\
+  & = & c \lfloor \log_2(n) \rfloor -1 +1\\
+  & = & c \lfloor \log_2(n) \rfloor 
+\end{eqnarray*}
+portanto $b(n) \geq c \lfloor \log_2 n \rfloor$ para todo $n \geq
+n_0$, logo, por definição $b(n) = \Omega (\lfloor \log_2 n
+\rfloor)$. Como $\lfloor \log_2 n \rfloor = \Omega (\log_2 n )$,
+concluímos que $b(n) = \Omega (\log_2 n )$.
+
+Vimos que $f$ dada por $f(0)=3$ e $f(n+1)=2f(n)+3$, se $n\geq 0$, é
+dada por $f(n) = 3(2^{n+1}-1)$. Vamos usar a mesma técnica dos
+exemplos anteriores para provar que $f(n) = O(2^{n+1})$.
+
+Vamos mostrar que existem constantes positivas $c,n_0$ tais que \[f(n)
+\leq c 2^{n+1} - 3 ~\paratodo n \geq n_0.\]
+
+Tomemos $c=3$ e $n_0=0$.
+
+Para $n=0$ temos $f(0) = 3$ e $ c 2^{n+1} - 3 = 3$, portanto $f(0) \
+\leq c  2^{0+1}-3$.
+
+Seja $n>0$ natural e assuma que $f(n-1) \leq c 2^n - 3$. Vamos provar
+que $f(n) \leq c 2^{n+1}-3$.
+\begin{eqnarray*}
+  f(n) & = & 2f(n-1)+3\\
+       & \<& 2 (c 2^n - 3) +3\\
+       & = &  c 2^{n+1}  - 3\\
+\end{eqnarray*}
+Logo $f(n) = O(2^{n+1} - 3 )$ e como $2^{n+1} - 3 = O(2^{n+1})$ temos
+pelo teorema 41 que $f(n) = O(2^{n+1})$.
+
+\textbf{Exercício.} Prove que $f(n) = \Omega (2^{n+1})$ (não vale usar
+que$f(n) = 3(2^{n+1}-1)$).
+
+\textbf{Exemplo.}
+Considere a recorrência $T(1)=T(2)=1$ e $T(n) = 3T \left(
+  \left\lfloor \frac n3 \right\rfloor \right) + n$ se $n>1$.
+
+Iterando a recorrência e usando o teorema \ref{teo:35} para $f(x) =
+x/3$, donde $\left\lfloor \lfloor n/3^k \rfloor /3 \right\rfloor =
+\lfloor n/3^{k+1} \rfloor$ temos
+ \begin{eqnarray*}
+      T(n) & = & T(n) = 3T \left(
+        \left\lfloor \frac n3 \right\rfloor \right) + n\\ 
+      &=&
+      3^2 T \left( \left\lfloor \frac n{3^2} \right\rfloor \right) + 3\left\lfloor \frac n3\right\rfloor + n
+      \\       &=&
+      3^3 T \left(\left\lfloor \frac n{3^3} \right\rfloor \right) +3^2 \left\lfloor\frac n{3^2}\right\rfloor +3\left\lfloor{\frac n3}\right\rfloor + n
+      \\ &\vdots&
+      \\&=&
+      3^k T \left(\left\lfloor \frac n{3^k} \right\rfloor \right) + 3^{k-1}\left\lfloor{\frac n{3^{k-1}}}\right\rfloor +\cdots+3\left\lfloor{\frac n3}\right\rfloor+ n
+    \end{eqnarray*}
+    tomando $k=\lfloor{\log_3 n}\rfloor$ temos $$ T(n) = 3^{\lfloor{\log_3
+        n}\rfloor} T(1) + \sum_{i=0}^{\lfloor{\log_3 n}\rfloor-1} 3^i\left\lfloor{\frac
+      n{3^i}}\right\rfloor.$$
+
+    Sabemos que ${\log_3 n} - 1\leq  \lfloor{\log_3 n}\rfloor \leq  {\log_3 n}$, como
+    exponencial é função crescente $3^{\log_3 n - 1}\leq  3^{\lfloor{\log_3
+        n}\rfloor} \leq  3^{\log_3 n}$, protanto, $$\frac 13 n\leq  3^{\lfloor{\log_3
+        n}\rfloor} \leq  n$$ logo $3^{\lfloor{\log_3 n}\rfloor}= \Theta(n)$.
+
+
+    Para todo $i\in [0..\lfloor{\log_3 n}\rfloor-1]$,
+    $3^i\lfloor{\frac n{3^i}}\rfloor \leq  n$, portanto $$
+    \sum_{i=0}^{\lfloor{\log_3 n}\rfloor-1} 3^i\lfloor{\frac
+      n{3^i}}\rfloor \leq  \sum_{i=0}^{\lfloor{\log_3 n}\rfloor-1} n = n
+    \lfloor{\log_3 n}\rfloor = O(n\log n).$$ Por outro lado, para todo
+    $i\in [0..\lfloor{\log_3 n}\rfloor-1]$, $3^i\lfloor{\frac
+      n{3^i}}\rfloor \> n-3^i$, portanto $$ \sum_{i=0}^{\lfloor{\log_3
+        n}\rfloor -1} 3^i\lfloor{\frac n{3^i}}\rfloor \>
+    \sum_{i=0}^{\lfloor{\log_3 n}\rfloor-1} n-3^i = n\lfloor{\log_3
+      n}\rfloor - \frac{1-(1/3)^{\lfloor{\log_3 n}\rfloor}}{1 - (1/3)}
+    = n\lfloor{\log_3 n}\rfloor - \frac{1-(1/n)}{2/3}$$$$=
+    n\lfloor{\log_3 n}\rfloor - \frac 23 + \frac 2{3n} =\Omega (n\log
+    n)$$ Portanto o somatório é $\Theta(n\log n)$ e com isso temos a
+    hipótese de que $$T(n) = \Theta (n\log n).$$
+
+
+    Vamos provar que $T(n)  = \Theta (n\log n)$.
+
+    Primeiro, vamos provar que existem cosntantes $c,n_0$ tais que
+    $T(n) \leq  cn {\log_3 n}$ para todo $n\geq  n_0$.
+
+    Tome $c=2$ e $n_0=3$. Usando indução
+
+    Base:
+    \begin{eqnarray*}
+          T(3)=  6 &\leq & c\cdot 3 \cdot {\log_3 3} \\
+          T(4)=  7 &\leq & c\cdot 4 \cdot {\log_3 4} \\
+          T(5)=  8 &\leq & c\cdot 5 \cdot {\log_3 5} \\
+          T(6)=  9 &\leq & c\cdot 6 \cdot {\log_3 6} \\
+          T(7)=  10&\leq & c\cdot 7 \cdot {\log_3 7} \\
+          T(8)=  11&\leq & c\cdot 8 \cdot {\log_3 8} \\
+    \end{eqnarray*}
+
+    Passo:\\
+    Seja $n\geq  9$ inteiro e assuma que para todo $k\in[n_0..n-1]$,
+    $T(k) \leq  ck {\log_3 k}$.
+    \begin{eqnarray*}
+      T(n) & = &  3T \left( \left\lfloor \frac n3 \right\rfloor \right) + n\\
+      &\leq & 3c\left\lceil n/3 \right\rceil \log_3 \left\lceil n/3 \right\rceil + n\\
+      & \leq & 3c(n/3)\log_3 (n/3) + n\\
+      & =& cn{\log_3 n} -cn + n\\
+      & < & cn{\log_3 n}.
+    \end{eqnarray*}
+    Logo $T(n) = O(n\log n)$.
+
+    Agora, vamos provar que existem constantes $c,n_0$ tais que
+    $T(n) \geq  cn \lfloor{\log_3 n}\rfloor$ para todo $n\geq  n_0$.
+
+    Tome $c=1$ e $n_0=3$. Usando indução
+
+    Base:
+    \begin{eqnarray*}
+          T(3)=  6 &\geq & c\cdot 3 \cdot \left\lfloor\log_3 3\right\rfloor \\
+          T(4)=  7 &\geq & c\cdot 4 \cdot \left\lfloor\log_3 4\right\rfloor \\
+          T(5)=  8 &\geq & c\cdot 5 \cdot \left\lfloor\log_3 5\right\rfloor \\
+          T(6)=  9 &\geq & c\cdot 6 \cdot \left\lfloor\log_3 6\right\rfloor \\
+          T(7)=  10&\geq & c\cdot 7 \cdot \left\lfloor\log_3 7\right\rfloor \\
+          T(8)=  11&\geq & c\cdot 8 \cdot \left\lfloor\log_3 8\right\rfloor \\
+    \end{eqnarray*}
+
+    Passo:\\
+    Seja $n\geq  9$ inteiro e assuma que para todo $k\in[n_0..n-1]$,
+    $T(k) \geq  ck \left\lfloor\log_3 k\right\rfloor$.
+
+
+    \begin{eqnarray*}
+      T(n) & = &  3T \left(\left\lfloor \frac n3 \right\rfloor \right) + n\\
+      & \geq & 3c \left\lfloor n/3 \right\rfloor \left\lfloor \log_3 \left\lfloor n/3 \right\rfloor \right\rfloor + n\\
+      & > & 3c(n/3 + 1)\left\lfloor\log_3 ( n/3 )\right\rfloor + n\\
+      & =& cn\left\lfloor\log_3 (n/3)\right\rfloor + 3c\left\lfloor\log_3 (n/3)\right\rfloor  + n\\
+      & =& cn\left\lfloor\log_3 n\right\rfloor  -cn + 3c\left\lfloor\log_3 n\right\rfloor -3c  + n\\
+      & > & cn\left\lfloor\log_3 n\right\rfloor.
+    \end{eqnarray*}
+    Logo $T(n) = \Omega(n\log n)$.
+
+\end{document}
+
+
+
+
+
+
+
+
+

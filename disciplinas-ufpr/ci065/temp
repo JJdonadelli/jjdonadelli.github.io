@@ -1,0 +1,64 @@
+O <a 
+ id="dx1-4009"></a><span 
+class="cmbx-10x-x-109">complemento </span>de um grafo <span 
+class="cmmi-10x-x-109">G</span>, denotado por <span class="overline"><span 
+class="cmmi-10x-x-109">G</span></span>, é o grafo que tem o
+                                                                     
+
+                                                                     
+       mesmo conjunto de vértices de <span 
+class="cmmi-10x-x-109">G </span>e dois vértices formam uma
+       aresta em <span class="overline"><span 
+class="cmmi-10x-x-109">G</span></span> se e somente se esse par <span 
+class="cmbx-10x-x-109">n</span><span 
+class="cmbx-10x-x-109">ão </span>é uma aresta de <span 
+class="cmmi-10x-x-109">G</span>:
+       <div class="eqnarray">
+         <center class="math-display" >
+       <img 
+src="ci0653x.png" alt="V(G)   =  V (G),
+  --      {                            }
+E(G)   =   {u,v} &#x2282; V (G) : {u,v} &#x2044;&#x2208; E(G) .
+       " class="math-display" ></center>
+       </div>Dê o complemento dos seguintes grafos
+           <ol  class="enumerate2" >
+           <li class="enumerate" value="1" 
+><a 
+ id="x1-4012x1"></a><span 
+class="cmmi-10x-x-109">G </span>dado por <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="ci0654x.png" alt="V (G)  =  {1,2,3,4,5},
+E(G)   =  {{1, 2},{1,3},{1,4},{1,5},{2,3},{2,4},{2,5},{3,4},{3,5},{4,5}}.
+           " class="math-display" ></center>
+           </div>
+           </li>
+           <li class="enumerate" value="2" 
+><a 
+ id="x1-4015x2"></a><span 
+class="cmmi-10x-x-109">H </span>dado por <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="ci0655x.png" alt="V (H)  =   {1,2,3,4,5,6,7},
+
+E(H)   =   {{1,2},{1,3},{2,4},{2,5},{3,6},{3,7}}.
+           " class="math-display" ></center>
+           </div>
+                                                                     
+
+                                                                     
+           </li>
+           <li class="enumerate" value="3" 
+><a 
+ id="x1-4018x3"></a><span 
+class="cmmi-10x-x-109">B </span>dado por <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="ci0656x.png" alt="V(B)  =   {a,b,c,1,2,3},
+E(B)  =   {{a,1},{a,2},{a,3},{b,1},{b,2},{b,3},{c,1},{c,2},{c,3}}.
+           " class="math-display" ></center>
+           </div></li></ol>
+         </li>
+       <li class="enumerate" value="5" 
+><a 
+ id="x1-4021x5"></a><a 

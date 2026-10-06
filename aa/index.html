@@ -1,0 +1,547 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>análise de algoritmos</title>
+
+<style type="text/css" >
+
+  body { font-family: Ubuntu, sans-serif; }
+  
+  div.my_wrapper{
+  width: 930px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 908px;
+  height: 1s0px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+
+  li.my_nav_link2{
+#  text-align: left;
+#  float: right;
+  list-style: none;
+  padding-right: 10px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 410px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 10px;
+  width: 440px;
+  border: 1px solid gray;
+    background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 908px;
+  border: 1px solid gray;
+  }
+  
+</style>
+
+<script language="javascript">
+
+  function showorhide(enla , id){
+            var ele  = document.getElementById(id);    
+
+            
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+		enla.innerHTML = "[+]";
+            }
+	    else {
+		ele.style.display = "block";
+		enla.innerHTML = "[-]";
+            }
+  }
+
+  
+</script>
+</head>
+
+<body bgcolor="#fffff">
+  <div class="my_wrapper">
+    <!----------------------------------------------------------------------------------------------------------->        
+    <!----------------------------------------------------------------------------------------------------------->        
+    <div class="my_header">
+      <center>
+	<font size="+3" color="blue">Sauna com Análise de algoritmos </font> 
+	<font size="3">/
+	</font>
+	<font size="+2">
+	  Prof.: <a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair Donadelli</a>
+	</font>
+	<p>	 <b style= "color: blue">Objetivo</b> Aprender e ensinar análise de algoritmos em condições extremas de temperatura ambiente.</p>
+      </center>
+      <ul>
+	<font size="+1">
+	  <li class="my_nav_link"><font color="blue"><a href="#links"><i>links</i></a></font> </li>
+	  <li class="my_nav_link"><font color="blue"><a href="Conceitos.html"><i>Conceitos</i></a></font> </li>
+	  <li class="my_nav_link"><font color="blue"><a href="#foot"><i>Notícias</i></a></font> </li>
+	</font>
+      </ul>
+      <b>Atendimento</b>: <font size=-1>3ª feira depois da aula ou 2ª
+	feira 14h-15h na sala 546, torre 2, bloco A. Para outro
+	horário, agende por email</font>
+    </div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+<div style="display:block;text-align:left"><img src="../images/emailufabc.png" border="0"></a></div>
+    <!----------------------------------------------------------------------------------------------------------->    	    
+    <div class="my_left_box">
+	    
+      <p align="justify">
+		<b style= "color: blue">Código</b> MCTA003-13(BC1435).
+	<b style= "color: blue">TPI</b> 4-0-4.
+	<b style= "color: blue">Recomendações</b> Algoritmos e Estruturas de Dados; Matemática Discreta.
+	<b style= "color: blue">Horário</b> 3ª as 19hs e 5ª as 21hs na 301-3.
+	<b style= "color: blue">Ementa</b> Conceitos básicos. Análise de
+	Complexidade: melhor caso, caso médio e pior caso, estudo de caso.
+	Relações de recorrência. Complexidade de Problemas: limitantes para
+	a Complexidade de um problema, classes de problemas,
+	intratabilidade.
+      </p>  
+	<font>
+	  <p> 
+	    <b style= "color:blue">Referências
+	      <a onclick="showorhide(this,'REFS'); return false" href="#"
+		 style="font-family:monospace;text-decoration:none">[+]
+	      </a>
+	    </b>
+	  </p>
+	</font>
+
+	<ol>
+
+	  <font size=-1>
+	    <p><b style= "color: blue">Bibliografia básica</b></p>
+	  </font>
+        
+	  <li>
+	    DASGUPTA, Sanjoy; PAPADIMITRIOU, Christos; VAZIRANI,  Umesh. <i>Algoritmos.</i>  [518.1 DASa]
+	  </li>
+	  <li>   
+	    MANBER, Udi. <i>Introduction to algorithms: a creative approach.</i>  [005.73 MANBin]
+	  </li>
+	  
+	  <li>CORMEN, Thomas H et al. <i>Algoritmos : Teoria e prática</i>
+	    [005.1 CORa]
+	  </li>
+	    
+	  <!----------------------------------------------------------------------------------------------------------->    
+	  
+	  <DIV id="REFS" style="display: none">
+	    
+	    <font size=-1>
+	      <p><b style= "color: blue">Meu livro preferido</b></p>
+	    </font>
+	    
+	    <li>
+	      BRASSARD, Gilles; BRATLEY, Paul. <i>Fundamentals of
+		Algorithmics</i>[não tem na biblioteca, uma busca acha
+		o pdf na web]
+	    </li>
+	    
+	    <font size=-1>
+	      <p><b style= "color: blue">Bibliografia complementar</b></p>
+	    </font>
+	    
+	    <li>SEDGEWICK, R. <i>Algorithms in C++ : Parts 1 - 4:
+		fundamentals, data structures, sorting, searching</i> [005.133
+	      SEDa]
+	    </li>
+	  
+	    <li>SEDGEWICK, R. <i>Algorithms in C, vol. 1-4 : part 1-4:
+		fundamentals, data structures, sorting, searching / 3. ed.</i>
+	      [005.133 SEDGal3]
+	    </li>
+	    
+	    <font size=-1>
+	      <p><b style= "color: blue">Livros bacanas para os mais 	empolgados</b></p>
+	    </font>
+	    
+	    <li> KNUTH, Donald Ervin. <i>The art of computer programming. Vol
+		3.</i>  3rd ed. Reading, Mass: Addison-Wesley, c1997. [005.1
+	      KNUa]
+	    </li>
+
+	    <li> GREENE, Daniel H.; KNUTH, Donald E. <i>Mathematics for the
+		analysis of algorithms.</i> 3rd ed. Boston: Birkhäuser,
+	      1990. [005.1 GREEma3]
+	    </li>
+
+	    <li>Robert SEDGEWICK and Philippe FLAJOLET. <i> An Introduction
+		to the Analysis of Algorithms</i>. Addison-Wesley, 1996.
+	    </li>
+	    
+	    <font size="-1">
+	      <h4><i>Material Complementar</i></h4>
+	      <a name="mc"></a>
+	      <ol>
+		<li> R. Bianconi,
+		  <a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como
+		    ler e estudar matemática?</a>  
+		</li>
+		<li>
+		  Fernando Q. Gouvêa e Shai
+		  Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+		  to Read Mathematics</a> ( uma tradução "rápida e
+		  grosseira", segundo o
+		  tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+		</li>
+	      </ol>
+	    </font>
+	  </DIV>
+	  <!----------------------------------------------------------------------------------------------------------->    
+	</ol>
+
+
+
+<!---------------------->
+  <font size="+1"><b style= "color:blue">Avaliação</b> </font><a name="provas"></a> 
+
+  <p align="justify"><b>TRÊS PROVAS</b>. Confira as datas na programação ao lado. 
+  </p>
+		  
+  <p>
+    <ul>
+      <li class="my_nav_link2"><b>Substitutiva</b>
+	<a onclick="showorhide(this,'SUB'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </li>   
+      <li class="my_nav_link2"><b>Exame de Recuperação</b>
+	<a onclick="showorhide(this,'REC'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </li>
+      <li class="my_nav_link2"><b>Conceito Final</b>
+	<a onclick="showorhide(this,'NOTA'); return false" href="#"
+	   style="font-family:monospace;text-decoration:none">[+]
+	</a>
+      </li>
+    </ul>
+  </p>
+
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="SUB" style="display: none" >
+    <p style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Sub</u>: Para o aluno que <b>faltou em dia de prova</b> com
+      uma <b><a href="http://www.ufabc.edu.br/index.php?option=com_content&view=article&id=8901:resolucao-consepe-nd-181-regulamenta-a-aplicacao-de-mecanismos-de-avaliacao-substitutivos-nos-cursos-de-graduacao-da-ufabc&catid=427:consepe-resolucoes">justificativa
+      válida</a></b> a ser realizada  em <b>05/05</b>.
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="REC" style="display: none">
+    <p  style="padding:6px;  background-color: white; border: gray 2px solid" align="justify">
+      <u>Exame</u>: <i>Qualquer aluno que não reprovou por falta</i>
+      pode fazer o exame de recuperação. Nesse caso, o conceito final
+      será o conceito obtido no exame. O exame será realizada em 12/05.
+    </p>
+  </DIV>
+  <!----------------------------------------------------------------------------------------------------------->
+  <DIV id="NOTA" style="display: none">
+    <p style="padding:6px; background-color: white; border: gray 2px
+      solid" > A avaliação final de cada aluno <u>não</u> será o
+      resultado de alguma média feita a partir das avaliações.  O
+      resultado de cada avaliação reflete o desempenho do aluno <u>em
+      todo o curso até aquele instante</u>. Isso significa que a cada
+      conceito atribuído durante o curso leva em conta o resultado das
+      avaliações até o momento. O conceito final da disciplina poderá
+      ser:<br />
+      <br />
+	  <b>F</b> - Reprovado. O aluno deve cursar novamente a disciplina.
+      <br />
+      <br />
+	  <b>D</b> - Aproveitamento mínimo não satisfatório dos conceitos
+	  da disciplina, com familiaridade parcial do assunto e alguma
+	  capacidade para resolver problemas simples, mas demonstrando
+	  deficiências que exigem trabalho adicional para prosseguir em
+	  estudos avançados. Nesse caso, o aluno é aprovado na
+	  expectativa de que obtenha um conceito melhor em outra
+	  disciplina, para compensar o conceito D no cálculo do CR.
+      <br />
+      <br />
+	  <b>C</b> - Desempenho mínimo satisfatório, demonstrando
+	  capacidade de uso adequado dos conceitos da disciplina,
+	  habilidade para enfrentar problemas relativamente simples e
+	  prosseguir em estudos avançados.
+      <br />
+      <br />
+	  <b>B</b> - Bom desempenho, demonstrando boa capacidade de uso
+	  dos conceitos da disciplina.
+      <br />
+      <br />
+	  <b>A</b> - Desempenho excepcional, demonstrando excelente
+	  compreensão da disciplina e do uso da matéria.
+    </p>
+  </DIV>
+ <!----------------------------------------------------------------------------------------------------------->
+
+      <h4><i>Links</i></h4>
+      <a name="links"></a>
+      <ul>
+	<LI><a href="http://jeffe.cs.illinois.edu/teaching/algorithms/">Jeff Erickson, <i>Algorithms, Etc.</i></a>
+	</LI>
+	<li><a href="http://www.youtube.com/watch?v=kPRA0W1kECg">15 Sorting Algorithms in 6 Minutes</a>
+	</li>
+	<li><a href="http://professor.ufabc.edu.br/~jair.donadelli/disciplinas-ufpr/ProvasDeAA/">Provas antigas</a>
+	</li>
+	<li><a href="http://www.cs.princeton.edu/%7Echazelle/pubs/algorithm.html"
+	       rel="nofollow">The Algorithm: Idiom of Modern
+	    Science</a> by Bernard Chazelle
+	</li>
+	<li><a href="http://www.sorting-algorithms.com" rel="nofollow">Animações de algoritmos de ordenação</a>
+	</li>
+	<li><a href="http://aofa.cs.purdue.edu/"
+	       rel="nofollow">Analysis of Algorithms Home Page</a>,
+	  maintained by Philippe Flajolet and Helmut Prodinger.
+	</li>
+	<li><a href="http://www-cs-staff.stanford.edu/%7Eknuth/taocp.html"
+	       rel="nofollow">The Art of Computer Programming</a></li>
+	<li><a href="http://en.wikibooks.org/wiki/Algorithms"
+	       rel="nofollow"><i>Algorithms</i></a> is
+	  a <a href="http://en.wikibooks.org/wiki/Wikibooks:Featured_books"
+	       title="Wikibooks:Featured books" rel="nofollow">featured
+	    book</a> on Wikibooks
+	</li>
+	<li><a href="http://www.ansatt.hig.no/frodeh/algmet/animate.html"
+	       rel="nofollow">Relevant Algorithm
+	    Animations/Visualizations</a> (in Java) based on the
+	  textbook "Algorithms in C++" by Robert Sedgewick
+	</li>
+	<li> Soluções de exercícios do livro do Cormen 
+	  <a href="http://mitpress.mit.edu/sites/default/files/titles/content/9780262033848_Solutions_to_Exercises_and_Problems.pdf">aqui</a>
+	</li>
+	<li><a href="http://www.ime.usp.br/~pf/analise_de_algoritmos/stolfi/broder86pessimal.pdf">Pessimal algorithms and Simplexity analysis</a>, Broder e Stolfi.
+	</li>
+	<li>
+	 <a href="http://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/NPcompleto.html">sobre o problema P=NP</a>, email do prof. Jorge
+	 Stolfi (UNICAMP).
+	</li>
+      </ul>
+    </div>
+    <!----------------------------------------------------------------------------------------------------------->    
+    <!----------------------------------------------------------------------------------------------------------->          
+   <!-- <div style="display:inline;float:center; margin:55px">
+      <img src="http://bigocheatsheet.com/img/big-o-complexity.png"  height="250" border="0" width="340"></img>
+    </div>-->
+      <!----------------------------------------------------------------------------------------------------------->          
+      <!----------------------------------------------------------------------------------------------------------->          
+      <div class="my_right_box">
+	
+	<center><b>Programação das aulas</b> (tentativa)</center>
+	
+	<center>
+	  <font color="blue"><a href="http://prograd.ufabc.edu.br/doc/calendario_academico_2016.pdf">
+	      <i>Calendário acadêmico</i></a></font> 
+	</center>
+
+	<ul>
+	  <li><b>16/02</b> -- comparação assintótica de funções:
+	  notação o e O. 
+	    
+	  </li>
+
+	  <br />
+	  
+	  <li><b>18/02</b> -- comparação assintótica de funções:
+	  notação Omega Theta; funções chão e
+	  teto.  <a href="http://anotacoesdeaula.wordpress.com/2013/04/22/aa-bc1435-1">Notas de aula</a>
+	  </li>
+
+
+ <p>	  -----------------------<b><a href="lista1.pdf">Lista 1</a></b>----------------------- </p> 
+
+	  
+	  <li><b>23/02</b> -- Equações de recorrência.  Soluções
+	    assintóticas de recorrências. notas
+	      de aula 
+	    [<a href="http://anotacoesdeaula.wordpress.com/2013/04/27/aa-bc1435-2/">html</a>]
+	    [<a href="AA-semana2.pdf">pdf</a>]
+	  </li>
+
+	  <br />
+
+	  <li><b>25/02</b> -- número de comparações na busca binária e
+	    no Merge-Sort
+	    <a href="http://anotacoesdeaula.wordpress.com/2013/05/03/aa-bc1435-3/">notas
+	      de aula</a>
+	  </li>
+
+ <p>	  -----------------------<b><a href="lista2.pdf">Lista 2</a></b>----------------------- </p> 
+	  
+	  <li><b>01/03</b> -- Exercícios
+	  </li>
+
+	  <br />
+
+	  <li><b>03/03</b> -- <b><a href="prova1.pdf">prova</a></b>   
+	  </li>
+
+	  <br />
+	  
+	  <li><b>08/03</b> -- Problema computacional, solução,
+	    instâncias, complexidade de tempo e de espaço, pior caso,
+	    melhor caso, caso médio. Exemplos com busca em lista
+	    linear e busca binária. <a href="http://anotacoesdeaula.wordpress.com/2013/05/11/aa-bc1435-4/">notas
+	    de aula</a>
+	  </li>
+
+	  <br />
+
+	  <li><b>10/03</b> -- Exemplos análise de pior caso e caso
+	  médio.
+	  </li>
+
+<br />
+
+	  <li><b>15/03</b> -- Pior caso do Quicksort
+	    <a href="http://anotacoesdeaula.wordpress.com/2013/05/19/aa-bc1435-5">notas
+	    de aula</a>
+	  </li>
+
+	  <br />
+
+	  <li><b>17/03</b> -- Caso médio do Quicksort
+	     <a href="http://anotacoesdeaula.wordpress.com/2013/05/19/aa-bc1435-5/#qs-medio">notas
+	    de aula</a>
+	  </li>
+
+	  <br />
+
+	  <li><b>22/05</b> -- Ordenação: limitante inferior para
+	  ordenação por
+	  comparação <a href="http://anotacoesdeaula.wordpress.com/2013/05/20/aa-bc1435-limitante-inferior-para-o-problema-de-ordenacao/">notas
+	  de aula</a>. Counting-Sort.
+	  </li>
+	  
+ <p>	  -----------------------<b><a href="lista3.pdf">Lista 3</a></b>----------------------- </p> 
+
+	  <li><b>24/03</b> --
+	    Seleção <a href="http://anotacoesdeaula.wordpress.com/2013/05/28/aa-bc1435-mediana/">notas
+	    de aula</a>
+	  </li>
+
+ <p>	  -----------------------<b><a href="lista4.pdf">Lista 4</a></b>----------------------- </p> 
+	  
+
+
+	  <li><b>29/03</b> -- III Semana do CMCC.
+	  </li>
+
+	  <br />
+
+	  <li><b>31/03</b> --
+	    Heap <a href="http://anotacoesdeaula.wordpress.com/2013/05/30/heap/">notas
+	    de aula</a>
+	  </li>
+
+ <p>	  -----------------------<b><a href="lista5.pdf">Lista 5</a></b>----------------------- </p> 
+
+	      
+	  <li><b>05/04</b> --   aula de exercícios
+	  </li>
+
+	  <br />
+
+	  <li><b>07/04</b> -- <b><a href="prova2.pdf">prova</a></b>   
+	  </li>
+
+	  <br />
+	  
+	  <li><b>12/04</b> --  P e NP.
+	  </li>
+
+	  <br />
+
+	  <li><b>14/04</b> -- Redução de problema de busca para
+	  problema de decisão; redução polinomial entre problemas de
+	  decisão. <a href="http://anotacoesdeaula.wordpress.com/2016/04/22/penp">notas
+	  de aula</a>
+	  </li>
+
+	  <HR WIDTH="89%", color="yellow">  
+<!--<br />-->
+
+	  <li><b>19/04</b> -- Exemplos de redução polinomial.
+	  </li>
+
+	  <br />
+
+	  <li><b>21/04</b> -- feriado
+	  </li>
+
+ <p>	  -----------------------<b><a href="lista6.pdf">Lista 6</a></b>----------------------- </p> <!--	  <br />-->
+
+	  <li><b>26/04</b> -- NP-completude. <a href=" https://anotacoesdeaula.wordpress.com/2016/04/22/np-completude/">notas
+	  de aula</a>
+	  </li>
+
+	  <br />
+
+	  <li><b>28/04</b> --  Aula de exercícios
+	  </li>
+
+	  <br />
+
+	  <li><b>03/05</b> -- <b><a href="prova3.pdf">prova</a></b>   
+	  </li>
+
+	  <br />
+	  
+	  <li><b>05/05</b> -- <b>prova sub</b>
+	  </li>
+	</ul>
+
+      </div>
+
+    <div class="my_footer">
+      <a name="foot">
+       <h2>Notícias</h2>
+      </a>
+<ol>
+<li>
+  A partir da P1 vou passar lista de presença
+</li>
+<li>
+  conceitos da P1 de análise de algoritmos disponível no link.
+  Combinaremos a vista na prox quinta. Lembro qe 3a não tem
+  aula. [postado em 28/03]
+</li>
+<li>
+  conceitos da P2 disponíveis no link.
+  Vista na prox quinta  antes da aula.  [postado em 27/04]
+</li>
+	<li>
+	  Quem for fazer a sub deve me enviar um email até a véspera e
+  dizer em qual prova faltou (P1,P2,P3).
+	</li>
+	<li>Quem for fazer o exame deve me enviar um email até a
+	véspera.
+	</li></ol>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,548 @@
+htfcss: cmtt font-family: monospace;
+htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmti  font-style: italic;
+htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+htfcss: cmtt font-family: monospace;
+File: ttg.html
+File: ttg.css
+File: ttg.tmp
+File: ttg2.html
+Font_Class(1,"1"): <img  src="" alt="" class="%s-%dx-x-%x" />
+Font_Class(4,"4"): <span  class="small-caps"></span>
+Css: p.noindent { text-indent: 0em }
+Css: td p.noindent { text-indent: 0em; margin-top:0em; }
+Css: p.nopar { text-indent: 0em; }
+Css: p.indent{ text-indent: 1.5em }
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: img.math{vertical-align:middle;}
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 1px; margin:0px; }
+Css: .tabbing-right {text-align:right;}
+Css: span.TEX {letter-spacing: -0.125em; }
+Css: span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+Css: a span.TEX span.E {text-decoration: none; }
+Css: span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+Css: span.LATEX span.TEX{ position:relative; left: -0.4em; }
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: table.equation {width:100%;}
+Css: .equation td{text-align:center; }
+Css: td.equation { margin-top:1em; margin-bottom:1em; } 
+Css: td.equation-label { width:5%; text-align:center; }
+Css: td.eqnarray4 { width:5%; white-space: normal; }
+Css: td.eqnarray2 { width:5%; }
+Css: table.eqnarray-star, table.eqnarray {width:100%;}
+Css: div.eqnarray{text-align:center;}
+Css: div.array {text-align:center;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.pmatrix img{vertical-align:middle;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.bar-css {text-decoration:overline;}
+Css: img.cdots{vertical-align:middle;}
+Css: .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+Css: .index-item, .index-subitem, .index-subsubitem {display:block}
+Css: div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+Css: div.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: h1.partHead{text-align: center}
+Css: p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+Css: .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+Css: .quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
+Css: .verse{white-space:nowrap; margin-left:2em}
+Css: div.maketitle {text-align:center;}
+Css: h2.titleHead{text-align:center;}
+Css: div.maketitle{ margin-bottom: 2em; }
+Css: div.author, div.date {text-align:center;}
+Css: div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+Css: div.author{white-space: nowrap;}
+Font_Size: 11
+Css: .quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
+Css: .abstract p {margin-left:5%; margin-right:5%;}
+Css: div.abstract {width:100%;}
+Css: .equation td{text-align:center; }
+Css: .equation-star td{text-align:center; }
+Css: table.equation-star { width:100%; }
+Css: table.equation { width:100%; }
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+Css: td.align-label { width:5%; text-align:center; }
+Css: td.align-odd { text-align:right; padding-right:0.3em;}
+Css: td.align-even { text-align:left; padding-right:0.6em;}
+Css: table.multline, table.multline-star {width:100%;}
+Css: td.gather {text-align:center; }
+Css: table.gather {width:100%;}
+Css: div.gather-star {text-align:center;}
+--- needs --- ttg.idv[2] ==> ttg0x.png ---
+--- needs --- ttg.idv[4] ==> ttg1x.png ---
+--- needs --- ttg.idv[6] ==> ttg2x.png ---
+--- needs --- ttg.idv[8] ==> ttg3x.png ---
+--- needs --- ttg.idv[10] ==> ttg4x.png ---
+--- needs --- ttg.idv[12] ==> ttg5x.png ---
+--- needs --- ttg.idv[13] ==> ttg6x.png ---
+--- needs --- ttg.idv[15] ==> ttg7x.png ---
+--- needs --- ttg.idv[16] ==> ttg8x.png ---
+--- needs --- ttg.idv[17] ==> ttg9x.png ---
+--- needs --- ttg.idv[18] ==> ttg10x.png ---
+--- needs --- ttg.idv[20] ==> ttg11x.png ---
+--- needs --- ttg.idv[21] ==> ttg12x.png ---
+--- needs --- ttg.idv[22] ==> ttg13x.png ---
+--- needs --- ttg.idv[24] ==> ttg14x.png ---
+--- needs --- ttg.idv[25] ==> ttg15x.png ---
+--- needs --- ttg.idv[27] ==> ttg16x.png ---
+--- needs --- ttg.idv[28] ==> ttg17x.png ---
+--- needs --- ttg.idv[30] ==> ttg18x.png ---
+--- needs --- ttg.idv[32] ==> ttg19x.png ---
+--- needs --- ttg.idv[33] ==> ttg20x.png ---
+--- needs --- ttg.idv[35] ==> ttg21x.png ---
+--- needs --- ttg.idv[36] ==> ttg22x.png ---
+--- needs --- ttg.idv[37] ==> ttg23x.png ---
+--- needs --- ttg.idv[38] ==> ttg24x.png ---
+--- needs --- ttg.idv[40] ==> ttg25x.png ---
+--- needs --- ttg.idv[41] ==> ttg26x.png ---
+--- needs --- ttg.idv[43] ==> ttg27x.png ---
+--- needs --- ttg.idv[44] ==> ttg28x.png ---
+--- needs --- ttg.idv[46] ==> ttg29x.png ---
+--- needs --- ttg.idv[47] ==> ttg30x.png ---
+--- needs --- ttg.idv[48] ==> ttg31x.png ---
+--- needs --- ttg.idv[50] ==> ttg32x.png ---
+--- needs --- ttg.idv[51] ==> ttg33x.png ---
+--- needs --- ttg.idv[53] ==> ttg34x.png ---
+--- needs --- ttg.idv[54] ==> ttg35x.png ---
+--- needs --- ttg.idv[55] ==> ttg36x.png ---
+--- needs --- ttg.idv[57] ==> ttg37x.png ---
+--- needs --- ttg.idv[59] ==> ttg38x.png ---
+--- needs --- ttg.idv[61] ==> ttg39x.png ---
+--- needs --- ttg.idv[62] ==> ttg40x.png ---
+--- needs --- ttg.idv[64] ==> ttg41x.png ---
+--- needs --- ttg.idv[66] ==> ttg42x.png ---
+--- needs --- ttg.idv[67] ==> ttg43x.png ---
+--- needs --- ttg.idv[69] ==> ttg44x.png ---
+--- needs --- ttg.idv[71] ==> ttg45x.png ---
+--- needs --- ttg.idv[73] ==> ttg46x.png ---
+--- needs --- ttg.idv[74] ==> ttg47x.png ---
+--- needs --- ttg.idv[76] ==> ttg48x.png ---
+--- needs --- ttg.idv[77] ==> ttg49x.png ---
+--- needs --- ttg.idv[78] ==> ttg50x.png ---
+--- needs --- ttg.idv[80] ==> ttg51x.png ---
+--- needs --- ttg.idv[81] ==> ttg52x.png ---
+--- needs --- ttg.idv[82] ==> ttg53x.png ---
+--- needs --- ttg.idv[83] ==> ttg54x.png ---
+--- needs --- ttg.idv[85] ==> ttg55x.png ---
+--- needs --- ttg.idv[86] ==> ttg56x.png ---
+--- needs --- ttg.idv[87] ==> ttg57x.png ---
+--- needs --- ttg.idv[89] ==> ttg58x.png ---
+--- needs --- ttg.idv[90] ==> ttg59x.png ---
+--- needs --- ttg.idv[92] ==> ttg60x.png ---
+--- needs --- ttg.idv[93] ==> ttg61x.png ---
+--- needs --- ttg.idv[94] ==> ttg62x.png ---
+--- needs --- ttg.idv[96] ==> ttg63x.png ---
+--- needs --- ttg.idv[97] ==> ttg64x.png ---
+--- needs --- ttg.idv[99] ==> ttg65x.png ---
+--- needs --- ttg.idv[100] ==> ttg66x.png ---
+--- needs --- ttg.idv[101] ==> ttg67x.png ---
+--- needs --- ttg.idv[103] ==> ttg68x.png ---
+--- needs --- ttg.idv[104] ==> ttg69x.png ---
+--- needs --- ttg.idv[106] ==> ttg70x.png ---
+--- needs --- ttg.idv[107] ==> ttg71x.png ---
+--- needs --- ttg.idv[109] ==> ttg72x.png ---
+--- needs --- ttg.idv[110] ==> ttg73x.png ---
+--- needs --- ttg.idv[111] ==> ttg74x.png ---
+--- needs --- ttg.idv[113] ==> ttg75x.png ---
+--- needs --- ttg.idv[114] ==> ttg76x.png ---
+--- needs --- ttg.idv[116] ==> ttg77x.png ---
+--- needs --- ttg.idv[117] ==> ttg78x.png ---
+--- needs --- ttg.idv[119] ==> ttg79x.png ---
+--- needs --- ttg.idv[121] ==> ttg80x.png ---
+--- needs --- ttg.idv[122] ==> ttg81x.png ---
+--- needs --- ttg.idv[124] ==> ttg82x.png ---
+--- needs --- ttg.idv[126] ==> ttg83x.png ---
+--- needs --- ttg.idv[128] ==> ttg84x.png ---
+--- needs --- ttg.idv[130] ==> ttg85x.png ---
+--- needs --- ttg.idv[132] ==> ttg86x.png ---
+--- needs --- ttg.idv[133] ==> ttg87x.png ---
+--- needs --- ttg.idv[135] ==> ttg88x.png ---
+--- needs --- ttg.idv[137] ==> ttg89x.png ---
+--- needs --- ttg.idv[138] ==> ttg90x.png ---
+--- needs --- ttg.idv[139] ==> ttg91x.png ---
+--- needs --- ttg.idv[141] ==> ttg92x.png ---
+--- needs --- ttg.idv[143] ==> ttg93x.png ---
+--- needs --- ttg.idv[145] ==> ttg94x.png ---
+--- needs --- ttg.idv[146] ==> ttg95x.png ---
+--- needs --- ttg.idv[148] ==> ttg96x.png ---
+--- needs --- ttg.idv[149] ==> ttg97x.png ---
+--- needs --- ttg.idv[151] ==> ttg98x.png ---
+--- needs --- ttg.idv[153] ==> ttg99x.png ---
+--- needs --- ttg.idv[154] ==> ttg100x.png ---
+--- needs --- ttg.idv[156] ==> ttg101x.png ---
+--- needs --- ttg.idv[158] ==> ttg102x.png ---
+--- needs --- ttg.idv[159] ==> ttg103x.png ---
+--- needs --- ttg.idv[161] ==> ttg104x.png ---
+--- needs --- ttg.idv[162] ==> ttg105x.png ---
+--- needs --- ttg.idv[164] ==> ttg106x.png ---
+--- needs --- ttg.idv[166] ==> ttg107x.png ---
+--- needs --- ttg.idv[168] ==> ttg108x.png ---
+--- needs --- ttg.idv[169] ==> ttg109x.png ---
+--- needs --- ttg.idv[171] ==> ttg110x.png ---
+--- needs --- ttg.idv[172] ==> ttg111x.png ---
+--- needs --- ttg.idv[173] ==> ttg112x.png ---
+--- needs --- ttg.idv[175] ==> ttg113x.png ---
+--- needs --- ttg.idv[176] ==> ttg114x.png ---
+--- needs --- ttg.idv[178] ==> ttg115x.png ---
+--- needs --- ttg.idv[179] ==> ttg116x.png ---
+--- needs --- ttg.idv[180] ==> ttg117x.png ---
+--- needs --- ttg.idv[182] ==> ttg118x.png ---
+--- needs --- ttg.idv[183] ==> ttg119x.png ---
+--- needs --- ttg.idv[185] ==> ttg120x.png ---
+--- needs --- ttg.idv[186] ==> ttg121x.png ---
+--- needs --- ttg.idv[188] ==> ttg122x.png ---
+--- needs --- ttg.idv[189] ==> ttg123x.png ---
+--- needs --- ttg.idv[191] ==> ttg124x.png ---
+--- needs --- ttg.idv[192] ==> ttg125x.png ---
+--- needs --- ttg.idv[194] ==> ttg126x.png ---
+--- needs --- ttg.idv[195] ==> ttg127x.png ---
+--- needs --- ttg.idv[197] ==> ttg128x.png ---
+--- needs --- ttg.idv[198] ==> ttg129x.png ---
+--- needs --- ttg.idv[199] ==> ttg130x.png ---
+--- needs --- ttg.idv[200] ==> ttg131x.png ---
+--- needs --- ttg.idv[201] ==> ttg132x.png ---
+--- needs --- ttg.idv[203] ==> ttg133x.png ---
+--- needs --- ttg.idv[204] ==> ttg134x.png ---
+--- needs --- ttg.idv[206] ==> ttg135x.png ---
+--- needs --- ttg.idv[208] ==> ttg136x.png ---
+--- needs --- ttg.idv[209] ==> ttg137x.png ---
+--- needs --- ttg.idv[210] ==> ttg138x.png ---
+--- needs --- ttg.idv[211] ==> ttg139x.png ---
+--- needs --- ttg.idv[212] ==> ttg140x.png ---
+--- needs --- ttg.idv[214] ==> ttg141x.png ---
+--- needs --- ttg.idv[215] ==> ttg142x.png ---
+--- needs --- ttg.idv[216] ==> ttg143x.png ---
+--- needs --- ttg.idv[218] ==> ttg144x.png ---
+--- needs --- ttg.idv[219] ==> ttg145x.png ---
+--- needs --- ttg.idv[220] ==> ttg146x.png ---
+--- needs --- ttg.idv[221] ==> ttg147x.png ---
+--- needs --- ttg.idv[222] ==> ttg148x.png ---
+--- needs --- ttg.idv[224] ==> ttg149x.png ---
+--- needs --- ttg.idv[225] ==> ttg150x.png ---
+--- needs --- ttg.idv[226] ==> ttg151x.png ---
+--- needs --- ttg.idv[227] ==> ttg152x.png ---
+--- needs --- ttg.idv[228] ==> ttg153x.png ---
+--- needs --- ttg.idv[229] ==> ttg154x.png ---
+--- needs --- ttg.idv[230] ==> ttg155x.png ---
+--- needs --- ttg.idv[231] ==> ttg156x.png ---
+--- needs --- ttg.idv[232] ==> ttg157x.png ---
+--- needs --- ttg.idv[233] ==> ttg158x.png ---
+--- needs --- ttg.idv[234] ==> ttg159x.png ---
+--- needs --- ttg.idv[235] ==> ttg160x.png ---
+--- needs --- ttg.idv[236] ==> ttg161x.png ---
+--- needs --- ttg.idv[237] ==> ttg162x.png ---
+--- needs --- ttg.idv[239] ==> ttg163x.png ---
+--- needs --- ttg.idv[240] ==> ttg164x.png ---
+--- needs --- ttg.idv[241] ==> ttg165x.png ---
+--- needs --- ttg.idv[243] ==> ttg166x.png ---
+--- needs --- ttg.idv[244] ==> ttg167x.png ---
+--- needs --- ttg.idv[246] ==> ttg168x.png ---
+--- needs --- ttg.idv[247] ==> ttg169x.png ---
+--- needs --- ttg.idv[249] ==> ttg170x.png ---
+--- needs --- ttg.idv[250] ==> ttg171x.png ---
+--- needs --- ttg.idv[252] ==> ttg172x.png ---
+--- needs --- ttg.idv[254] ==> ttg173x.png ---
+--- needs --- ttg.idv[255] ==> ttg174x.png ---
+--- needs --- ttg.idv[256] ==> ttg175x.png ---
+--- needs --- ttg.idv[258] ==> ttg176x.png ---
+--- needs --- ttg.idv[259] ==> ttg177x.png ---
+--- needs --- ttg.idv[260] ==> ttg178x.png ---
+--- needs --- ttg.idv[262] ==> ttg179x.png ---
+--- needs --- ttg.idv[263] ==> ttg180x.png ---
+--- needs --- ttg.idv[265] ==> ttg181x.png ---
+--- needs --- ttg.idv[267] ==> ttg182x.png ---
+--- needs --- ttg.idv[268] ==> ttg183x.png ---
+--- needs --- ttg.idv[269] ==> ttg184x.png ---
+--- needs --- ttg.idv[271] ==> ttg185x.png ---
+--- needs --- ttg.idv[273] ==> ttg186x.png ---
+--- needs --- ttg.idv[274] ==> ttg187x.png ---
+--- needs --- ttg.idv[276] ==> ttg188x.png ---
+--- needs --- ttg.idv[277] ==> ttg189x.png ---
+--- needs --- ttg.idv[279] ==> ttg190x.png ---
+--- needs --- ttg.idv[281] ==> ttg191x.png ---
+--- needs --- ttg.idv[282] ==> ttg192x.png ---
+--- needs --- ttg.idv[284] ==> ttg193x.png ---
+--- needs --- ttg.idv[286] ==> ttg194x.png ---
+--- needs --- ttg.idv[287] ==> ttg195x.png ---
+--- needs --- ttg.idv[288] ==> ttg196x.png ---
+--- needs --- ttg.idv[290] ==> ttg197x.png ---
+--- needs --- ttg.idv[291] ==> ttg198x.png ---
+--- needs --- ttg.idv[292] ==> ttg199x.png ---
+--- needs --- ttg.idv[294] ==> ttg200x.png ---
+--- needs --- ttg.idv[295] ==> ttg201x.png ---
+--- needs --- ttg.idv[296] ==> ttg202x.png ---
+--- needs --- ttg.idv[298] ==> ttg203x.png ---
+--- needs --- ttg.idv[300] ==> ttg204x.png ---
+--- needs --- ttg.idv[301] ==> ttg205x.png ---
+--- needs --- ttg.idv[302] ==> ttg206x.png ---
+--- needs --- ttg.idv[304] ==> ttg207x.png ---
+--- needs --- ttg.idv[305] ==> ttg208x.png ---
+--- needs --- ttg.idv[307] ==> ttg209x.png ---
+--- needs --- ttg.idv[308] ==> ttg210x.png ---
+--- needs --- ttg.idv[310] ==> ttg211x.png ---
+--- needs --- ttg.idv[311] ==> ttg212x.png ---
+--- needs --- ttg.idv[312] ==> ttg213x.png ---
+--- needs --- ttg.idv[313] ==> ttg214x.png ---
+--- needs --- ttg.idv[315] ==> ttg215x.png ---
+--- needs --- ttg.idv[316] ==> ttg216x.png ---
+--- needs --- ttg.idv[317] ==> ttg217x.png ---
+--- needs --- ttg.idv[319] ==> ttg218x.png ---
+--- needs --- ttg.idv[320] ==> ttg219x.png ---
+--- needs --- ttg.idv[322] ==> ttg220x.png ---
+--- needs --- ttg.idv[323] ==> ttg221x.png ---
+--- needs --- ttg.idv[324] ==> ttg222x.png ---
+--- needs --- ttg.idv[326] ==> ttg223x.png ---
+--- needs --- ttg.idv[327] ==> ttg224x.png ---
+--- needs --- ttg.idv[329] ==> ttg225x.png ---
+--- needs --- ttg.idv[330] ==> ttg226x.png ---
+--- needs --- ttg.idv[332] ==> ttg227x.png ---
+--- needs --- ttg.idv[333] ==> ttg228x.png ---
+--- needs --- ttg.idv[335] ==> ttg229x.png ---
+--- needs --- ttg.idv[336] ==> ttg230x.png ---
+--- needs --- ttg.idv[337] ==> ttg231x.png ---
+--- needs --- ttg.idv[339] ==> ttg232x.png ---
+--- needs --- ttg.idv[341] ==> ttg233x.png ---
+--- needs --- ttg.idv[343] ==> ttg234x.png ---
+--- needs --- ttg.idv[345] ==> ttg235x.png ---
+--- needs --- ttg.idv[347] ==> ttg236x.png ---
+--- needs --- ttg.idv[349] ==> ttg237x.png ---
+--- needs --- ttg.idv[350] ==> ttg238x.png ---
+--- needs --- ttg.idv[351] ==> ttg239x.png ---
+--- needs --- ttg.idv[352] ==> ttg240x.png ---
+--- needs --- ttg.idv[354] ==> ttg241x.png ---
+--- needs --- ttg.idv[355] ==> ttg242x.png ---
+--- needs --- ttg.idv[356] ==> ttg243x.png ---
+--- needs --- ttg.idv[358] ==> ttg244x.png ---
+--- needs --- ttg.idv[359] ==> ttg245x.png ---
+--- needs --- ttg.idv[360] ==> ttg246x.png ---
+--- needs --- ttg.idv[362] ==> ttg247x.png ---
+--- needs --- ttg.idv[363] ==> ttg248x.png ---
+--- needs --- ttg.idv[365] ==> ttg249x.png ---
+--- needs --- ttg.idv[366] ==> ttg250x.png ---
+--- needs --- ttg.idv[368] ==> ttg251x.png ---
+--- needs --- ttg.idv[369] ==> ttg252x.png ---
+--- needs --- ttg.idv[371] ==> ttg253x.png ---
+--- needs --- ttg.idv[372] ==> ttg254x.png ---
+--- needs --- ttg.idv[373] ==> ttg255x.png ---
+--- needs --- ttg.idv[375] ==> ttg256x.png ---
+--- needs --- ttg.idv[376] ==> ttg257x.png ---
+--- needs --- ttg.idv[377] ==> ttg258x.png ---
+--- needs --- ttg.idv[378] ==> ttg259x.png ---
+--- needs --- ttg.idv[380] ==> ttg260x.png ---
+--- needs --- ttg.idv[382] ==> ttg261x.png ---
+--- needs --- ttg.idv[383] ==> ttg262x.png ---
+--- needs --- ttg.idv[385] ==> ttg263x.png ---
+--- needs --- ttg.idv[386] ==> ttg264x.png ---
+--- needs --- ttg.idv[387] ==> ttg265x.png ---
+--- needs --- ttg.idv[389] ==> ttg266x.png ---
+--- needs --- ttg.idv[390] ==> ttg267x.png ---
+--- needs --- ttg.idv[392] ==> ttg268x.png ---
+--- needs --- ttg.idv[393] ==> ttg269x.png ---
+--- needs --- ttg.idv[394] ==> ttg270x.png ---
+--- needs --- ttg.idv[395] ==> ttg271x.png ---
+--- needs --- ttg.idv[396] ==> ttg272x.png ---
+--- needs --- ttg.idv[398] ==> ttg273x.png ---
+--- needs --- ttg.idv[399] ==> ttg274x.png ---
+--- needs --- ttg.idv[400] ==> ttg275x.png ---
+--- needs --- ttg.idv[401] ==> ttg276x.png ---
+--- needs --- ttg.idv[403] ==> ttg277x.png ---
+--- needs --- ttg.idv[404] ==> ttg278x.png ---
+--- needs --- ttg.idv[405] ==> ttg279x.png ---
+--- needs --- ttg.idv[406] ==> ttg280x.png ---
+--- needs --- ttg.idv[407] ==> ttg281x.png ---
+--- needs --- ttg.idv[409] ==> ttg282x.png ---
+--- needs --- ttg.idv[410] ==> ttg283x.png ---
+--- needs --- ttg.idv[411] ==> ttg284x.png ---
+--- needs --- ttg.idv[412] ==> ttg285x.png ---
+--- needs --- ttg.idv[414] ==> ttg286x.png ---
+--- needs --- ttg.idv[416] ==> ttg287x.png ---
+--- needs --- ttg.idv[418] ==> ttg288x.png ---
+--- needs --- ttg.idv[419] ==> ttg289x.png ---
+--- needs --- ttg.idv[421] ==> ttg290x.png ---
+--- needs --- ttg.idv[423] ==> ttg291x.png ---
+--- needs --- ttg.idv[424] ==> ttg292x.png ---
+--- needs --- ttg.idv[425] ==> ttg293x.png ---
+--- needs --- ttg.idv[427] ==> ttg294x.png ---
+--- needs --- ttg.idv[429] ==> ttg295x.png ---
+--- needs --- ttg.idv[431] ==> ttg296x.png ---
+--- needs --- ttg.idv[432] ==> ttg297x.png ---
+--- needs --- ttg.idv[434] ==> ttg298x.png ---
+--- needs --- ttg.idv[435] ==> ttg299x.png ---
+--- needs --- ttg.idv[437] ==> ttg300x.png ---
+--- needs --- ttg.idv[439] ==> ttg301x.png ---
+--- needs --- ttg.idv[440] ==> ttg302x.png ---
+--- needs --- ttg.idv[441] ==> ttg303x.png ---
+--- needs --- ttg.idv[442] ==> ttg304x.png ---
+--- needs --- ttg.idv[443] ==> ttg305x.png ---
+--- needs --- ttg.idv[445] ==> ttg306x.png ---
+--- needs --- ttg.idv[446] ==> ttg307x.png ---
+--- needs --- ttg.idv[447] ==> ttg308x.png ---
+--- needs --- ttg.idv[449] ==> ttg309x.png ---
+--- needs --- ttg.idv[450] ==> ttg310x.png ---
+--- needs --- ttg.idv[451] ==> ttg311x.png ---
+--- needs --- ttg.idv[453] ==> ttg312x.png ---
+--- needs --- ttg.idv[455] ==> ttg313x.png ---
+--- needs --- ttg.idv[456] ==> ttg314x.png ---
+--- needs --- ttg.idv[458] ==> ttg315x.png ---
+--- needs --- ttg.idv[459] ==> ttg316x.png ---
+--- needs --- ttg.idv[460] ==> ttg317x.png ---
+--- needs --- ttg.idv[462] ==> ttg318x.png ---
+--- needs --- ttg.idv[463] ==> ttg319x.png ---
+--- needs --- ttg.idv[464] ==> ttg320x.png ---
+--- needs --- ttg.idv[466] ==> ttg321x.png ---
+--- needs --- ttg.idv[467] ==> ttg322x.png ---
+--- needs --- ttg.idv[468] ==> ttg323x.png ---
+--- needs --- ttg.idv[470] ==> ttg324x.png ---
+--- needs --- ttg.idv[471] ==> ttg325x.png ---
+--- needs --- ttg.idv[473] ==> ttg326x.png ---
+--- needs --- ttg.idv[474] ==> ttg327x.png ---
+--- needs --- ttg.idv[475] ==> ttg328x.png ---
+--- needs --- ttg.idv[476] ==> ttg329x.png ---
+--- needs --- ttg.idv[478] ==> ttg330x.png ---
+--- needs --- ttg.idv[479] ==> ttg331x.png ---
+--- needs --- ttg.idv[480] ==> ttg332x.png ---
+--- needs --- ttg.idv[481] ==> ttg333x.png ---
+--- needs --- ttg.idv[483] ==> ttg334x.png ---
+--- needs --- ttg.idv[484] ==> ttg335x.png ---
+--- needs --- ttg.idv[486] ==> ttg336x.png ---
+--- needs --- ttg.idv[487] ==> ttg337x.png ---
+--- needs --- ttg.idv[489] ==> ttg338x.png ---
+--- needs --- ttg.idv[491] ==> ttg339x.png ---
+--- needs --- ttg.idv[492] ==> ttg340x.png ---
+--- needs --- ttg.idv[493] ==> ttg341x.png ---
+--- needs --- ttg.idv[495] ==> ttg342x.png ---
+--- needs --- ttg.idv[496] ==> ttg343x.png ---
+--- needs --- ttg.idv[498] ==> ttg344x.png ---
+--- needs --- ttg.idv[499] ==> ttg345x.png ---
+--- needs --- ttg.idv[500] ==> ttg346x.png ---
+--- needs --- ttg.idv[502] ==> ttg347x.png ---
+--- needs --- ttg.idv[504] ==> ttg348x.png ---
+--- needs --- ttg.idv[506] ==> ttg349x.png ---
+--- needs --- ttg.idv[507] ==> ttg350x.png ---
+--- needs --- ttg.idv[508] ==> ttg351x.png ---
+--- needs --- ttg.idv[510] ==> ttg352x.png ---
+--- needs --- ttg.idv[511] ==> ttg353x.png ---
+--- needs --- ttg.idv[512] ==> ttg354x.png ---
+--- needs --- ttg.idv[514] ==> ttg355x.png ---
+--- needs --- ttg.idv[515] ==> ttg356x.png ---
+--- needs --- ttg.idv[517] ==> ttg357x.png ---
+--- needs --- ttg.idv[519] ==> ttg358x.png ---
+--- needs --- ttg.idv[520] ==> ttg359x.png ---
+--- needs --- ttg.idv[521] ==> ttg360x.png ---
+--- needs --- ttg.idv[523] ==> ttg361x.png ---
+--- needs --- ttg.idv[524] ==> ttg362x.png ---
+--- needs --- ttg.idv[525] ==> ttg363x.png ---
+--- needs --- ttg.idv[527] ==> ttg364x.png ---
+--- needs --- ttg.idv[528] ==> ttg365x.png ---
+--- needs --- ttg.idv[529] ==> ttg366x.png ---
+--- needs --- ttg.idv[531] ==> ttg367x.png ---
+--- needs --- ttg.idv[532] ==> ttg368x.png ---
+--- needs --- ttg.idv[533] ==> ttg369x.png ---
+--- needs --- ttg.idv[534] ==> ttg370x.png ---
+--- characters ---
+Font("cmr","10","10","100")
+Font("cmr","10","10","109")
+Font("cmr","17","17","100")
+Font("cmr","12","12","100")
+Font("cmr","8","8","100")
+Font("cmr","6","6","100")
+Font("cmmi","8","8","100")
+Font("cmmi","6","6","100")
+Font("cmsy","8","8","100")
+Font("cmsy","6","6","100")
+Font("msam","8","8","100")
+Font("cmtt","10","10","109")
+Font("cmmi","10","10","109")
+Font("cmsy","10","10","109")
+--- needs --- ttg.idv[536] ==> cmsy10-51.png ---
+--- needs --- ttg.idv[537] ==> cmsy10-50.png ---
+--- needs --- ttg.idv[538] ==> cmsy10-47.png ---
+--- needs --- ttg.idv[539] ==> cmsy10-45.png ---
+Font("cmex","10","10","109")
+Font("msam","10","10","109")
+Font("msbm","10","10","109")
+Font("cmbx","10","10","100")
+Font("cmtt","10","10","100")
+Font("cmti","10","10","109")
+Font("cmbx","10","10","109")
+Font("cmr","9","9","100")
+Font("cmbx","8","8","100")
+Font("cmtt","8","8","100")
+Font("cmtt","8","8","75")
+Font("cmcsc","10","10","109")

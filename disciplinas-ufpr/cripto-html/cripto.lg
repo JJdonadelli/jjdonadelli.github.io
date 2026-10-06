@@ -1,0 +1,912 @@
+htfcss: cmtt font-family: monospace;
+htfcss: cmitt font-family: monospace; font-style: italic;
+htfcss: cmtt font-family: monospace;
+htfcss: cmti  font-style: italic;
+htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+File: cripto.html
+File: cripto.css
+File: cripto.tmp
+Font_Class(4,"4"): <span  class="small-caps"></span>
+File: cripto2.html
+File: cripto3.html
+File: cripto4.html
+File: cripto5.html
+File: cripto6.html
+File: cripto7.html
+File: cripto8.html
+Font_Class(1,"1"): <img  src="" alt="" class="%s-%dx-x-%x" />
+File: cripto.tmp
+File: cripto9.html
+File: cripto10.html
+File: cripto11.html
+File: cripto12.html
+File: cripto13.html
+File: cripto14.html
+File: cripto15.html
+File: cripto16.html
+File: cripto17.html
+File: cripto18.html
+File: cripto19.html
+File: cripto20.html
+File: cripto.tmp
+File: cripto21.html
+File: cripto22.html
+File: cripto23.html
+File: cripto24.html
+File: cripto25.html
+File: cripto26.html
+File: cripto27.html
+File: cripto28.html
+File: cripto29.html
+File: cripto30.html
+File: cripto31.html
+File: cripto32.html
+File: cripto33.html
+File: cripto34.html
+File: cripto35.html
+Css: p.noindent { text-indent: 0em }
+Css: td p.noindent { text-indent: 0em; margin-top:0em; }
+Css: p.nopar { text-indent: 0em; }
+Css: p.indent{ text-indent: 1.5em }
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: img.math{vertical-align:middle;}
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 1px; margin:0px; }
+Css: .tabbing-right {text-align:right;}
+Css: span.TEX {letter-spacing: -0.125em; }
+Css: span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+Css: a span.TEX span.E {text-decoration: none; }
+Css: span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+Css: span.LATEX span.TEX{ position:relative; left: -0.4em; }
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: table.equation {width:100%;}
+Css: .equation td{text-align:center; }
+Css: td.equation { margin-top:1em; margin-bottom:1em; } 
+Css: td.equation-label { width:5%; text-align:center; }
+Css: td.eqnarray4 { width:5%; white-space: normal; }
+Css: td.eqnarray2 { width:5%; }
+Css: table.eqnarray-star, table.eqnarray {width:100%;}
+Css: div.eqnarray{text-align:center;}
+Css: div.array {text-align:center;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.pmatrix img{vertical-align:middle;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.bar-css {text-decoration:overline;}
+Css: img.cdots{vertical-align:middle;}
+Css: span.footnote-mark{ vertical-align: super; font-size:80%; }
+Css: div.submaketitle{ text-align:left; margin-top:2em; border-top: 1px solid black; border-bottom: 1px solid black; margin-left:5%; margin-right:5%; font-size:85%; line-height: 95%;}
+Css: div.submaketitle div {margin-top:0.5em; margin-bottom:0.5em; }
+Css: div.submaketitle p { margin-top:0em; margin-bottom:0em; }
+Css: div.abstract{ margin-top: 2em; text-align:left; margin-right:15pt; margin-left:15pt; }
+Css: div.addresses p {margin-top:0em; margin-bottom:0em; }
+Css: h2.titleHead{text-align:center;}
+Css: div.maketitle{ margin-bottom: 2em; text-align:center; }
+Css: div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+Css: div.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: .qed {width:2ex; float:right; text-align:right;}
+Css: .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+Css: div.translators {text-align:right; margin-bottom:0.7em;}
+Css: .sectionHead{text-align:center;}
+Css: .equation td{text-align:center; }
+Css: .equation-star td{text-align:center; }
+Css: table.equation-star { width:100%; }
+Css: table.equation { width:100%; }
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+Css: td.align-label { width:5%; text-align:center; }
+Css: td.align-odd { text-align:right; padding-right:0.3em;}
+Css: td.align-even { text-align:left; padding-right:0.6em;}
+Css: table.multline, table.multline-star {width:100%;}
+Css: td.gather {text-align:center; }
+Css: table.gather {width:100%;}
+Css: div.gather-star {text-align:center;}
+Css: .figure img.graphics {margin-left:10%;}
+Css: table.multicols { width:100%; margin-left:1em; margin-top:1em; margin-bottom:1em; }
+Css: .alltt P { margin-bottom : 0em; margin-top : 0em; }
+Css: .alltt { margin-bottom : 1em; margin-top : 1em; }
+--- needs --- cripto.idv[2] ==> cripto0x.png ---
+--- needs --- cripto.idv[4] ==> cripto1x.png ---
+--- needs --- cripto.idv[5] ==> cripto2x.png ---
+--- needs --- cripto.idv[6] ==> cripto3x.png ---
+--- needs --- cripto.idv[7] ==> cripto4x.png ---
+--- needs --- cripto.idv[9] ==> cripto5x.png ---
+--- needs --- cripto.idv[11] ==> cripto6x.png ---
+--- needs --- cripto.idv[12] ==> cripto7x.png ---
+--- needs --- cripto.idv[13] ==> cripto8x.png ---
+--- needs --- cripto.idv[14] ==> cripto9x.png ---
+--- needs --- cripto.idv[15] ==> cripto10x.png ---
+--- needs --- cripto.idv[16] ==> cripto11x.png ---
+--- needs --- cripto.idv[17] ==> cripto12x.png ---
+--- needs --- cripto.idv[18] ==> cripto13x.png ---
+--- needs --- cripto.idv[19] ==> cripto14x.png ---
+--- needs --- cripto.idv[20] ==> cripto15x.png ---
+--- needs --- cripto.idv[21] ==> cripto16x.png ---
+--- needs --- cripto.idv[22] ==> cripto17x.png ---
+--- needs --- cripto.idv[24] ==> cripto18x.png ---
+--- needs --- cripto.idv[25] ==> cripto19x.png ---
+--- needs --- cripto.idv[26] ==> cripto20x.png ---
+--- needs --- cripto.idv[27] ==> cripto21x.png ---
+--- needs --- cripto.idv[28] ==> cripto22x.png ---
+--- needs --- cripto.idv[30] ==> cripto23x.png ---
+--- needs --- cripto.idv[32] ==> cripto24x.png ---
+--- needs --- cripto.idv[33] ==> cripto25x.png ---
+--- needs --- cripto.idv[35] ==> cripto26x.png ---
+--- needs --- cripto.idv[37] ==> cripto27x.png ---
+--- needs --- cripto.idv[39] ==> cripto28x.png ---
+--- needs --- cripto.idv[41] ==> cripto29x.png ---
+--- needs --- cripto.idv[43] ==> cripto30x.png ---
+--- needs --- cripto.idv[45] ==> cripto31x.png ---
+--- needs --- cripto.idv[47] ==> cripto32x.png ---
+--- needs --- cripto.idv[49] ==> cripto33x.png ---
+--- needs --- cripto.idv[50] ==> cripto34x.png ---
+--- needs --- cripto.idv[52] ==> cripto35x.png ---
+--- needs --- cripto.idv[54] ==> cripto36x.png ---
+--- needs --- cripto.idv[56] ==> cripto37x.png ---
+--- needs --- cripto.idv[57] ==> cripto38x.png ---
+--- needs --- cripto.idv[59] ==> cripto39x.png ---
+--- needs --- cripto.idv[60] ==> cripto40x.png ---
+--- needs --- cripto.idv[61] ==> cripto41x.png ---
+--- needs --- cripto.idv[62] ==> cripto42x.png ---
+--- needs --- cripto.idv[63] ==> cripto43x.png ---
+--- needs --- cripto.idv[64] ==> cripto44x.png ---
+--- needs --- cripto.idv[65] ==> cripto45x.png ---
+--- needs --- cripto.idv[67] ==> cripto46x.png ---
+--- needs --- cripto.idv[68] ==> cripto47x.png ---
+--- needs --- cripto.idv[69] ==> cripto48x.png ---
+--- needs --- cripto.idv[70] ==> cripto49x.png ---
+--- needs --- cripto.idv[71] ==> cripto50x.png ---
+--- needs --- cripto.idv[72] ==> cripto51x.png ---
+--- needs --- cripto.idv[73] ==> cripto52x.png ---
+--- needs --- cripto.idv[75] ==> cripto53x.png ---
+--- needs --- cripto.idv[77] ==> cripto54x.png ---
+--- needs --- cripto.idv[78] ==> cripto55x.png ---
+--- needs --- cripto.idv[79] ==> cripto56x.png ---
+--- needs --- cripto.idv[80] ==> cripto57x.png ---
+--- needs --- cripto.idv[81] ==> cripto58x.png ---
+--- needs --- cripto.idv[82] ==> cripto59x.png ---
+--- needs --- cripto.idv[83] ==> cripto60x.png ---
+--- needs --- cripto.idv[84] ==> cripto61x.png ---
+--- needs --- cripto.idv[85] ==> cripto62x.png ---
+--- needs --- cripto.idv[86] ==> cripto63x.png ---
+--- needs --- cripto.idv[87] ==> cripto64x.png ---
+--- needs --- cripto.idv[88] ==> cripto65x.png ---
+--- needs --- cripto.idv[89] ==> cripto66x.png ---
+--- needs --- cripto.idv[90] ==> cripto67x.png ---
+--- needs --- cripto.idv[91] ==> cripto68x.png ---
+--- needs --- cripto.idv[92] ==> cripto69x.png ---
+--- needs --- cripto.idv[94] ==> cripto70x.png ---
+--- needs --- cripto.idv[95] ==> cripto71x.png ---
+--- needs --- cripto.idv[96] ==> cripto72x.png ---
+--- needs --- cripto.idv[97] ==> cripto73x.png ---
+--- needs --- cripto.idv[99] ==> cripto74x.png ---
+--- needs --- cripto.idv[101] ==> cripto75x.png ---
+--- needs --- cripto.idv[102] ==> cripto76x.png ---
+--- needs --- cripto.idv[103] ==> cripto77x.png ---
+--- needs --- cripto.idv[105] ==> cripto78x.png ---
+--- needs --- cripto.idv[106] ==> cripto79x.png ---
+--- needs --- cripto.idv[107] ==> cripto80x.png ---
+--- needs --- cripto.idv[108] ==> cripto81x.png ---
+--- needs --- cripto.idv[109] ==> cripto82x.png ---
+--- needs --- cripto.idv[110] ==> cripto83x.png ---
+--- needs --- cripto.idv[111] ==> cripto84x.png ---
+--- needs --- cripto.idv[112] ==> cripto85x.png ---
+--- needs --- cripto.idv[114] ==> cripto86x.png ---
+--- needs --- cripto.idv[115] ==> cripto87x.png ---
+--- needs --- cripto.idv[117] ==> cripto88x.png ---
+--- needs --- cripto.idv[118] ==> cripto89x.png ---
+--- needs --- cripto.idv[120] ==> cripto90x.png ---
+--- needs --- cripto.idv[122] ==> cripto91x.png ---
+--- needs --- cripto.idv[123] ==> cripto92x.png ---
+--- needs --- cripto.idv[124] ==> cripto93x.png ---
+--- needs --- cripto.idv[125] ==> cripto94x.png ---
+--- needs --- cripto.idv[126] ==> cripto95x.png ---
+--- needs --- cripto.idv[127] ==> cripto96x.png ---
+--- needs --- cripto.idv[128] ==> cripto97x.png ---
+--- needs --- cripto.idv[130] ==> cripto98x.png ---
+--- needs --- cripto.idv[131] ==> cripto99x.png ---
+--- needs --- cripto.idv[133] ==> cripto100x.png ---
+--- needs --- cripto.idv[134] ==> cripto101x.png ---
+--- needs --- cripto.idv[135] ==> cripto102x.png ---
+--- needs --- cripto.idv[137] ==> cripto103x.png ---
+--- needs --- cripto.idv[139] ==> cripto104x.png ---
+--- needs --- cripto.idv[141] ==> cripto105x.png ---
+--- needs --- cripto.idv[143] ==> cripto106x.png ---
+--- needs --- cripto.idv[144] ==> cripto107x.png ---
+--- needs --- cripto.idv[146] ==> cripto108x.png ---
+--- needs --- cripto.idv[147] ==> cripto109x.png ---
+--- needs --- cripto.idv[148] ==> cripto110x.png ---
+--- needs --- cripto.idv[149] ==> cripto111x.png ---
+--- needs --- cripto.idv[150] ==> cripto112x.png ---
+--- needs --- cripto.idv[151] ==> cripto113x.png ---
+--- needs --- cripto.idv[152] ==> cripto114x.png ---
+--- needs --- cripto.idv[153] ==> cripto115x.png ---
+--- needs --- cripto.idv[154] ==> cripto116x.png ---
+--- needs --- cripto.idv[156] ==> cripto117x.png ---
+--- needs --- cripto.idv[158] ==> cripto118x.png ---
+--- needs --- cripto.idv[160] ==> cripto119x.png ---
+--- needs --- cripto.idv[162] ==> cripto120x.png ---
+--- needs --- cripto.idv[164] ==> cripto121x.png ---
+--- needs --- cripto.idv[166] ==> cripto122x.png ---
+--- needs --- cripto.idv[168] ==> cripto123x.png ---
+--- needs --- cripto.idv[169] ==> cripto124x.png ---
+--- needs --- cripto.idv[171] ==> cripto125x.png ---
+--- needs --- cripto.idv[173] ==> cripto126x.png ---
+--- needs --- cripto.idv[174] ==> cripto127x.png ---
+--- needs --- cripto.idv[176] ==> cripto128x.png ---
+--- needs --- cripto.idv[177] ==> cripto129x.png ---
+--- needs --- cripto.idv[178] ==> cripto130x.png ---
+--- needs --- cripto.idv[179] ==> cripto131x.png ---
+--- needs --- cripto.idv[180] ==> cripto132x.png ---
+--- needs --- cripto.idv[182] ==> cripto133x.png ---
+--- needs --- cripto.idv[184] ==> cripto134x.png ---
+--- needs --- cripto.idv[186] ==> cripto135x.png ---
+--- needs --- cripto.idv[188] ==> cripto136x.png ---
+--- needs --- cripto.idv[190] ==> cripto137x.png ---
+--- needs --- cripto.idv[192] ==> cripto138x.png ---
+--- needs --- cripto.idv[193] ==> cripto139x.png ---
+--- needs --- cripto.idv[195] ==> cripto140x.png ---
+--- needs --- cripto.idv[196] ==> cripto141x.png ---
+--- needs --- cripto.idv[197] ==> cripto142x.png ---
+--- needs --- cripto.idv[198] ==> cripto143x.png ---
+--- needs --- cripto.idv[200] ==> cripto144x.png ---
+--- needs --- cripto.idv[201] ==> cripto145x.png ---
+--- needs --- cripto.idv[202] ==> cripto146x.png ---
+--- needs --- cripto.idv[204] ==> cripto147x.png ---
+--- needs --- cripto.idv[205] ==> cripto148x.png ---
+--- needs --- cripto.idv[206] ==> cripto149x.png ---
+--- needs --- cripto.idv[207] ==> cripto150x.png ---
+--- needs --- cripto.idv[208] ==> cripto151x.png ---
+--- needs --- cripto.idv[209] ==> cripto152x.png ---
+--- needs --- cripto.idv[210] ==> cripto153x.png ---
+--- needs --- cripto.idv[212] ==> cripto154x.png ---
+--- needs --- cripto.idv[213] ==> cripto155x.png ---
+--- needs --- cripto.idv[215] ==> cripto156x.png ---
+--- needs --- cripto.idv[216] ==> cripto157x.png ---
+--- needs --- cripto.idv[217] ==> cripto158x.png ---
+--- needs --- cripto.idv[218] ==> cripto159x.png ---
+--- needs --- cripto.idv[219] ==> cripto160x.png ---
+--- needs --- cripto.idv[220] ==> cripto161x.png ---
+--- needs --- cripto.idv[221] ==> cripto162x.png ---
+--- needs --- cripto.idv[222] ==> cripto163x.png ---
+--- needs --- cripto.idv[223] ==> cripto164x.png ---
+--- needs --- cripto.idv[224] ==> cripto165x.png ---
+--- needs --- cripto.idv[225] ==> cripto166x.png ---
+--- needs --- cripto.idv[226] ==> cripto167x.png ---
+--- needs --- cripto.idv[227] ==> cripto168x.png ---
+--- needs --- cripto.idv[228] ==> cripto169x.png ---
+--- needs --- cripto.idv[229] ==> cripto170x.png ---
+--- needs --- cripto.idv[230] ==> cripto171x.png ---
+--- needs --- cripto.idv[231] ==> cripto172x.png ---
+--- needs --- cripto.idv[232] ==> cripto173x.png ---
+--- needs --- cripto.idv[234] ==> cripto174x.png ---
+--- needs --- cripto.idv[236] ==> cripto175x.png ---
+--- needs --- cripto.idv[237] ==> cripto176x.png ---
+--- needs --- cripto.idv[238] ==> cripto177x.png ---
+--- needs --- cripto.idv[239] ==> cripto178x.png ---
+--- needs --- cripto.idv[241] ==> cripto179x.png ---
+--- needs --- cripto.idv[243] ==> cripto180x.png ---
+--- needs --- cripto.idv[244] ==> cripto181x.png ---
+--- needs --- cripto.idv[245] ==> cripto182x.png ---
+--- needs --- cripto.idv[247] ==> cripto183x.png ---
+--- needs --- cripto.idv[249] ==> cripto184x.png ---
+--- needs --- cripto.idv[251] ==> cripto185x.png ---
+--- needs --- cripto.idv[253] ==> cripto186x.png ---
+--- needs --- cripto.idv[254] ==> cripto187x.png ---
+--- needs --- cripto.idv[255] ==> cripto188x.png ---
+--- needs --- cripto.idv[257] ==> cripto189x.png ---
+--- needs --- cripto.idv[258] ==> cripto190x.png ---
+--- needs --- cripto.idv[260] ==> cripto191x.png ---
+--- needs --- cripto.idv[261] ==> cripto192x.png ---
+--- needs --- cripto.idv[262] ==> cripto193x.png ---
+--- needs --- cripto.idv[263] ==> cripto194x.png ---
+--- needs --- cripto.idv[264] ==> cripto195x.png ---
+--- needs --- cripto.idv[265] ==> cripto196x.png ---
+--- needs --- cripto.idv[266] ==> cripto197x.png ---
+--- needs --- cripto.idv[267] ==> cripto198x.png ---
+--- needs --- cripto.idv[268] ==> cripto199x.png ---
+--- needs --- cripto.idv[269] ==> cripto200x.png ---
+--- needs --- cripto.idv[270] ==> cripto201x.png ---
+--- needs --- cripto.idv[272] ==> cripto202x.png ---
+--- needs --- cripto.idv[274] ==> cripto203x.png ---
+--- needs --- cripto.idv[276] ==> cripto204x.png ---
+--- needs --- cripto.idv[277] ==> cripto205x.png ---
+--- needs --- cripto.idv[278] ==> cripto206x.png ---
+--- needs --- cripto.idv[280] ==> cripto207x.png ---
+--- needs --- cripto.idv[281] ==> cripto208x.png ---
+--- needs --- cripto.idv[283] ==> cripto209x.png ---
+--- needs --- cripto.idv[284] ==> cripto210x.png ---
+--- needs --- cripto.idv[286] ==> cripto211x.png ---
+--- needs --- cripto.idv[288] ==> cripto212x.png ---
+--- needs --- cripto.idv[289] ==> cripto213x.png ---
+--- needs --- cripto.idv[291] ==> cripto214x.png ---
+--- needs --- cripto.idv[293] ==> cripto215x.png ---
+--- needs --- cripto.idv[294] ==> cripto216x.png ---
+--- needs --- cripto.idv[295] ==> cripto217x.png ---
+--- needs --- cripto.idv[297] ==> cripto218x.png ---
+--- needs --- cripto.idv[298] ==> cripto219x.png ---
+--- needs --- cripto.idv[299] ==> cripto220x.png ---
+--- needs --- cripto.idv[300] ==> cripto221x.png ---
+--- needs --- cripto.idv[301] ==> cripto222x.png ---
+--- needs --- cripto.idv[303] ==> cripto223x.png ---
+--- needs --- cripto.idv[305] ==> cripto224x.png ---
+--- needs --- cripto.idv[307] ==> cripto225x.png ---
+--- needs --- cripto.idv[309] ==> cripto226x.png ---
+--- needs --- cripto.idv[311] ==> cripto227x.png ---
+--- needs --- cripto.idv[313] ==> cripto228x.png ---
+--- needs --- cripto.idv[315] ==> cripto229x.png ---
+--- needs --- cripto.idv[317] ==> cripto230x.png ---
+--- needs --- cripto.idv[318] ==> cripto231x.png ---
+--- needs --- cripto.idv[320] ==> cripto232x.png ---
+--- needs --- cripto.idv[322] ==> cripto233x.png ---
+--- needs --- cripto.idv[324] ==> cripto234x.png ---
+--- needs --- cripto.idv[326] ==> cripto235x.png ---
+--- needs --- cripto.idv[327] ==> cripto236x.png ---
+--- needs --- cripto.idv[329] ==> cripto237x.png ---
+--- needs --- cripto.idv[331] ==> cripto238x.png ---
+--- needs --- cripto.idv[333] ==> cripto239x.png ---
+--- needs --- cripto.idv[334] ==> cripto240x.png ---
+--- needs --- cripto.idv[336] ==> cripto241x.png ---
+--- needs --- cripto.idv[338] ==> cripto242x.png ---
+--- needs --- cripto.idv[340] ==> cripto243x.png ---
+--- needs --- cripto.idv[342] ==> cripto244x.png ---
+--- needs --- cripto.idv[343] ==> cripto245x.png ---
+--- needs --- cripto.idv[345] ==> cripto246x.png ---
+--- needs --- cripto.idv[346] ==> cripto247x.png ---
+--- needs --- cripto.idv[347] ==> cripto248x.png ---
+--- needs --- cripto.idv[348] ==> cripto249x.png ---
+--- needs --- cripto.idv[349] ==> cripto250x.png ---
+--- needs --- cripto.idv[350] ==> cripto251x.png ---
+--- needs --- cripto.idv[351] ==> cripto252x.png ---
+--- needs --- cripto.idv[353] ==> cripto253x.png ---
+--- needs --- cripto.idv[355] ==> cripto254x.png ---
+--- needs --- cripto.idv[356] ==> cripto255x.png ---
+--- needs --- cripto.idv[357] ==> cripto256x.png ---
+--- needs --- cripto.idv[359] ==> cripto257x.png ---
+--- needs --- cripto.idv[360] ==> cripto258x.png ---
+--- needs --- cripto.idv[362] ==> cripto259x.png ---
+--- needs --- cripto.idv[364] ==> cripto260x.png ---
+--- needs --- cripto.idv[366] ==> cripto261x.png ---
+--- needs --- cripto.idv[368] ==> cripto262x.png ---
+--- needs --- cripto.idv[370] ==> cripto263x.png ---
+--- needs --- cripto.idv[372] ==> cripto264x.png ---
+--- needs --- cripto.idv[374] ==> cripto265x.png ---
+--- needs --- cripto.idv[376] ==> cripto266x.png ---
+--- needs --- cripto.idv[377] ==> cripto267x.png ---
+--- needs --- cripto.idv[379] ==> cripto268x.png ---
+--- needs --- cripto.idv[381] ==> cripto269x.png ---
+--- needs --- cripto.idv[383] ==> cripto270x.png ---
+--- needs --- cripto.idv[385] ==> cripto271x.png ---
+--- needs --- cripto.idv[386] ==> cripto272x.png ---
+--- needs --- cripto.idv[387] ==> cripto273x.png ---
+--- needs --- cripto.idv[388] ==> cripto274x.png ---
+--- needs --- cripto.idv[389] ==> cripto275x.png ---
+--- needs --- cripto.idv[391] ==> cripto276x.png ---
+--- needs --- cripto.idv[392] ==> cripto277x.png ---
+--- needs --- cripto.idv[394] ==> cripto278x.png ---
+--- needs --- cripto.idv[396] ==> cripto279x.png ---
+--- needs --- cripto.idv[398] ==> cripto280x.png ---
+--- needs --- cripto.idv[400] ==> cripto281x.png ---
+--- needs --- cripto.idv[402] ==> cripto282x.png ---
+--- needs --- cripto.idv[404] ==> cripto283x.png ---
+--- needs --- cripto.idv[406] ==> cripto284x.png ---
+--- needs --- cripto.idv[407] ==> cripto285x.png ---
+--- needs --- cripto.idv[409] ==> cripto286x.png ---
+--- needs --- cripto.idv[410] ==> cripto287x.png ---
+--- needs --- cripto.idv[412] ==> cripto288x.png ---
+--- needs --- cripto.idv[413] ==> cripto289x.png ---
+--- needs --- cripto.idv[414] ==> cripto290x.png ---
+--- needs --- cripto.idv[415] ==> cripto291x.png ---
+--- needs --- cripto.idv[416] ==> cripto292x.png ---
+--- needs --- cripto.idv[418] ==> cripto293x.png ---
+--- needs --- cripto.idv[419] ==> cripto294x.png ---
+--- needs --- cripto.idv[420] ==> cripto295x.png ---
+--- needs --- cripto.idv[421] ==> cripto296x.png ---
+--- needs --- cripto.idv[423] ==> cripto297x.png ---
+--- needs --- cripto.idv[424] ==> cripto298x.png ---
+--- needs --- cripto.idv[426] ==> cripto299x.png ---
+--- needs --- cripto.idv[428] ==> cripto300x.png ---
+--- needs --- cripto.idv[429] ==> cripto301x.png ---
+--- needs --- cripto.idv[431] ==> cripto302x.png ---
+--- needs --- cripto.idv[433] ==> cripto303x.png ---
+--- needs --- cripto.idv[435] ==> cripto304x.png ---
+--- needs --- cripto.idv[436] ==> cripto305x.png ---
+--- needs --- cripto.idv[438] ==> cripto306x.png ---
+--- needs --- cripto.idv[439] ==> cripto307x.png ---
+--- needs --- cripto.idv[440] ==> cripto308x.png ---
+--- needs --- cripto.idv[441] ==> cripto309x.png ---
+--- needs --- cripto.idv[442] ==> cripto310x.png ---
+--- needs --- cripto.idv[443] ==> cripto311x.png ---
+--- needs --- cripto.idv[444] ==> cripto312x.png ---
+--- needs --- cripto.idv[445] ==> cripto313x.png ---
+--- needs --- cripto.idv[446] ==> cripto314x.png ---
+--- needs --- cripto.idv[447] ==> cripto315x.png ---
+--- needs --- cripto.idv[449] ==> cripto316x.png ---
+--- needs --- cripto.idv[450] ==> cripto317x.png ---
+--- needs --- cripto.idv[451] ==> cripto318x.png ---
+--- needs --- cripto.idv[452] ==> cripto319x.png ---
+--- needs --- cripto.idv[453] ==> cripto320x.png ---
+--- needs --- cripto.idv[454] ==> cripto321x.png ---
+--- needs --- cripto.idv[455] ==> cripto322x.png ---
+--- needs --- cripto.idv[456] ==> cripto323x.png ---
+--- needs --- cripto.idv[457] ==> cripto324x.png ---
+--- needs --- cripto.idv[459] ==> cripto325x.png ---
+--- needs --- cripto.idv[460] ==> cripto326x.png ---
+--- needs --- cripto.idv[461] ==> cripto327x.png ---
+--- needs --- cripto.idv[462] ==> cripto328x.png ---
+--- needs --- cripto.idv[464] ==> cripto329x.png ---
+--- needs --- cripto.idv[466] ==> cripto330x.png ---
+--- needs --- cripto.idv[468] ==> cripto331x.png ---
+--- needs --- cripto.idv[469] ==> cripto332x.png ---
+--- needs --- cripto.idv[471] ==> cripto333x.png ---
+--- needs --- cripto.idv[472] ==> cripto334x.png ---
+--- needs --- cripto.idv[474] ==> cripto335x.png ---
+--- needs --- cripto.idv[476] ==> cripto336x.png ---
+--- needs --- cripto.idv[478] ==> cripto337x.png ---
+--- needs --- cripto.idv[479] ==> cripto338x.png ---
+--- needs --- cripto.idv[480] ==> cripto339x.png ---
+--- needs --- cripto.idv[481] ==> cripto340x.png ---
+--- needs --- cripto.idv[482] ==> cripto341x.png ---
+--- needs --- cripto.idv[483] ==> cripto342x.png ---
+--- needs --- cripto.idv[485] ==> cripto343x.png ---
+--- needs --- cripto.idv[486] ==> cripto344x.png ---
+--- needs --- cripto.idv[487] ==> cripto345x.png ---
+--- needs --- cripto.idv[488] ==> cripto346x.png ---
+--- needs --- cripto.idv[489] ==> cripto347x.png ---
+--- needs --- cripto.idv[490] ==> cripto348x.png ---
+--- needs --- cripto.idv[491] ==> cripto349x.png ---
+--- needs --- cripto.idv[492] ==> cripto350x.png ---
+--- needs --- cripto.idv[493] ==> cripto351x.png ---
+--- needs --- cripto.idv[494] ==> cripto352x.png ---
+--- needs --- cripto.idv[495] ==> cripto353x.png ---
+--- needs --- cripto.idv[496] ==> cripto354x.png ---
+--- needs --- cripto.idv[497] ==> cripto355x.png ---
+--- needs --- cripto.idv[499] ==> cripto356x.png ---
+--- needs --- cripto.idv[501] ==> cripto357x.png ---
+--- needs --- cripto.idv[503] ==> cripto358x.png ---
+--- needs --- cripto.idv[505] ==> cripto359x.png ---
+--- needs --- cripto.idv[506] ==> cripto360x.png ---
+--- needs --- cripto.idv[508] ==> cripto361x.png ---
+--- needs --- cripto.idv[510] ==> cripto362x.png ---
+--- needs --- cripto.idv[512] ==> cripto363x.png ---
+--- needs --- cripto.idv[514] ==> cripto364x.png ---
+--- needs --- cripto.idv[515] ==> cripto365x.png ---
+--- needs --- cripto.idv[516] ==> cripto366x.png ---
+--- needs --- cripto.idv[517] ==> cripto367x.png ---
+--- needs --- cripto.idv[518] ==> cripto368x.png ---
+--- needs --- cripto.idv[519] ==> cripto369x.png ---
+--- needs --- cripto.idv[520] ==> cripto370x.png ---
+--- needs --- cripto.idv[521] ==> cripto371x.png ---
+--- needs --- cripto.idv[523] ==> cripto372x.png ---
+--- needs --- cripto.idv[525] ==> cripto373x.png ---
+--- needs --- cripto.idv[527] ==> cripto374x.png ---
+--- needs --- cripto.idv[529] ==> cripto375x.png ---
+--- needs --- cripto.idv[530] ==> cripto376x.png ---
+--- needs --- cripto.idv[532] ==> cripto377x.png ---
+--- needs --- cripto.idv[533] ==> cripto378x.png ---
+--- needs --- cripto.idv[535] ==> cripto379x.png ---
+--- needs --- cripto.idv[537] ==> cripto380x.png ---
+--- needs --- cripto.idv[538] ==> cripto381x.png ---
+--- needs --- cripto.idv[539] ==> cripto382x.png ---
+--- needs --- cripto.idv[540] ==> cripto383x.png ---
+--- needs --- cripto.idv[542] ==> cripto384x.png ---
+--- needs --- cripto.idv[544] ==> cripto385x.png ---
+--- needs --- cripto.idv[546] ==> cripto386x.png ---
+--- needs --- cripto.idv[548] ==> cripto387x.png ---
+--- needs --- cripto.idv[550] ==> cripto388x.png ---
+--- needs --- cripto.idv[552] ==> cripto389x.png ---
+--- needs --- cripto.idv[553] ==> cripto390x.png ---
+--- needs --- cripto.idv[554] ==> cripto391x.png ---
+--- needs --- cripto.idv[555] ==> cripto392x.png ---
+--- needs --- cripto.idv[556] ==> cripto393x.png ---
+--- needs --- cripto.idv[557] ==> cripto394x.png ---
+--- needs --- cripto.idv[558] ==> cripto395x.png ---
+--- needs --- cripto.idv[559] ==> cripto396x.png ---
+--- needs --- cripto.idv[560] ==> cripto397x.png ---
+--- needs --- cripto.idv[561] ==> cripto398x.png ---
+--- needs --- cripto.idv[562] ==> cripto399x.png ---
+--- needs --- cripto.idv[563] ==> cripto400x.png ---
+--- needs --- cripto.idv[565] ==> cripto401x.png ---
+--- needs --- cripto.idv[566] ==> cripto402x.png ---
+--- needs --- cripto.idv[567] ==> cripto403x.png ---
+--- needs --- cripto.idv[568] ==> cripto404x.png ---
+--- needs --- cripto.idv[569] ==> cripto405x.png ---
+--- needs --- cripto.idv[571] ==> cripto406x.png ---
+--- needs --- cripto.idv[573] ==> cripto407x.png ---
+--- needs --- cripto.idv[575] ==> cripto408x.png ---
+--- needs --- cripto.idv[577] ==> cripto409x.png ---
+--- needs --- cripto.idv[579] ==> cripto410x.png ---
+--- needs --- cripto.idv[580] ==> cripto411x.png ---
+--- needs --- cripto.idv[581] ==> cripto412x.png ---
+--- needs --- cripto.idv[582] ==> cripto413x.png ---
+--- needs --- cripto.idv[583] ==> cripto414x.png ---
+--- needs --- cripto.idv[584] ==> cripto415x.png ---
+--- needs --- cripto.idv[586] ==> cripto416x.png ---
+--- needs --- cripto.idv[587] ==> cripto417x.png ---
+--- needs --- cripto.idv[589] ==> cripto418x.png ---
+--- needs --- cripto.idv[591] ==> cripto419x.png ---
+--- needs --- cripto.idv[592] ==> cripto420x.png ---
+--- needs --- cripto.idv[594] ==> cripto421x.png ---
+--- needs --- cripto.idv[596] ==> cripto422x.png ---
+--- needs --- cripto.idv[597] ==> cripto423x.png ---
+--- needs --- cripto.idv[598] ==> cripto424x.png ---
+--- needs --- cripto.idv[599] ==> cripto425x.png ---
+--- needs --- cripto.idv[600] ==> cripto426x.png ---
+--- needs --- cripto.idv[601] ==> cripto427x.png ---
+--- needs --- cripto.idv[603] ==> cripto428x.png ---
+--- needs --- cripto.idv[605] ==> cripto429x.png ---
+--- needs --- cripto.idv[607] ==> cripto430x.png ---
+--- needs --- cripto.idv[609] ==> cripto431x.png ---
+--- needs --- cripto.idv[610] ==> cripto432x.png ---
+--- needs --- cripto.idv[611] ==> cripto433x.png ---
+--- needs --- cripto.idv[612] ==> cripto434x.png ---
+--- needs --- cripto.idv[613] ==> cripto435x.png ---
+--- needs --- cripto.idv[614] ==> cripto436x.png ---
+--- needs --- cripto.idv[615] ==> cripto437x.png ---
+--- needs --- cripto.idv[616] ==> cripto438x.png ---
+--- needs --- cripto.idv[617] ==> cripto439x.png ---
+--- needs --- cripto.idv[618] ==> cripto440x.png ---
+--- needs --- cripto.idv[619] ==> cripto441x.png ---
+--- needs --- cripto.idv[620] ==> cripto442x.png ---
+--- needs --- cripto.idv[621] ==> cripto443x.png ---
+--- needs --- cripto.idv[622] ==> cripto444x.png ---
+--- needs --- cripto.idv[623] ==> cripto445x.png ---
+--- needs --- cripto.idv[624] ==> cripto446x.png ---
+--- needs --- cripto.idv[625] ==> cripto447x.png ---
+--- needs --- cripto.idv[627] ==> cripto448x.png ---
+--- needs --- cripto.idv[628] ==> cripto449x.png ---
+--- needs --- cripto.idv[629] ==> cripto450x.png ---
+--- needs --- cripto.idv[631] ==> cripto451x.png ---
+--- needs --- cripto.idv[633] ==> cripto452x.png ---
+--- needs --- cripto.idv[634] ==> cripto453x.png ---
+--- needs --- cripto.idv[636] ==> cripto454x.png ---
+--- needs --- cripto.idv[638] ==> cripto455x.png ---
+--- needs --- cripto.idv[640] ==> cripto456x.png ---
+--- needs --- cripto.idv[642] ==> cripto457x.png ---
+--- needs --- cripto.idv[643] ==> cripto458x.png ---
+--- needs --- cripto.idv[645] ==> cripto459x.png ---
+--- needs --- cripto.idv[646] ==> cripto460x.png ---
+--- needs --- cripto.idv[648] ==> cripto461x.png ---
+--- needs --- cripto.idv[650] ==> cripto462x.png ---
+--- needs --- cripto.idv[651] ==> cripto463x.png ---
+--- needs --- cripto.idv[652] ==> cripto464x.png ---
+--- needs --- cripto.idv[653] ==> cripto465x.png ---
+--- needs --- cripto.idv[654] ==> cripto466x.png ---
+--- needs --- cripto.idv[655] ==> cripto467x.png ---
+--- needs --- cripto.idv[656] ==> cripto468x.png ---
+--- needs --- cripto.idv[657] ==> cripto469x.png ---
+--- needs --- cripto.idv[658] ==> cripto470x.png ---
+--- needs --- cripto.idv[659] ==> cripto471x.png ---
+--- needs --- cripto.idv[660] ==> cripto472x.png ---
+--- needs --- cripto.idv[661] ==> cripto473x.png ---
+--- needs --- cripto.idv[662] ==> cripto474x.png ---
+--- needs --- cripto.idv[663] ==> cripto475x.png ---
+--- needs --- cripto.idv[664] ==> cripto476x.png ---
+--- needs --- cripto.idv[665] ==> cripto477x.png ---
+--- needs --- cripto.idv[667] ==> cripto478x.png ---
+--- needs --- cripto.idv[668] ==> cripto479x.png ---
+--- needs --- cripto.idv[669] ==> cripto480x.png ---
+--- needs --- cripto.idv[670] ==> cripto481x.png ---
+--- needs --- cripto.idv[671] ==> cripto482x.png ---
+--- needs --- cripto.idv[672] ==> cripto483x.png ---
+--- needs --- cripto.idv[673] ==> cripto484x.png ---
+--- needs --- cripto.idv[674] ==> cripto485x.png ---
+--- needs --- cripto.idv[675] ==> cripto486x.png ---
+--- needs --- cripto.idv[676] ==> cripto487x.png ---
+--- needs --- cripto.idv[678] ==> cripto488x.png ---
+--- needs --- cripto.idv[680] ==> cripto489x.png ---
+--- needs --- cripto.idv[682] ==> cripto490x.png ---
+--- needs --- cripto.idv[684] ==> cripto491x.png ---
+--- needs --- cripto.idv[685] ==> cripto492x.png ---
+--- needs --- cripto.idv[686] ==> cripto493x.png ---
+--- needs --- cripto.idv[688] ==> cripto494x.png ---
+--- needs --- cripto.idv[689] ==> cripto495x.png ---
+--- needs --- cripto.idv[690] ==> cripto496x.png ---
+--- needs --- cripto.idv[691] ==> cripto497x.png ---
+--- needs --- cripto.idv[692] ==> cripto498x.png ---
+--- needs --- cripto.idv[693] ==> cripto499x.png ---
+--- needs --- cripto.idv[695] ==> cripto500x.png ---
+--- needs --- cripto.idv[696] ==> cripto501x.png ---
+--- needs --- cripto.idv[697] ==> cripto502x.png ---
+--- needs --- cripto.idv[699] ==> cripto503x.png ---
+--- needs --- cripto.idv[700] ==> cripto504x.png ---
+--- needs --- cripto.idv[702] ==> cripto505x.png ---
+--- needs --- cripto.idv[703] ==> cripto506x.png ---
+--- needs --- cripto.idv[704] ==> cripto507x.png ---
+--- needs --- cripto.idv[705] ==> cripto508x.png ---
+--- needs --- cripto.idv[706] ==> cripto509x.png ---
+--- needs --- cripto.idv[707] ==> cripto510x.png ---
+--- needs --- cripto.idv[708] ==> cripto511x.png ---
+--- needs --- cripto.idv[709] ==> cripto512x.png ---
+--- needs --- cripto.idv[710] ==> cripto513x.png ---
+--- needs --- cripto.idv[711] ==> cripto514x.png ---
+--- needs --- cripto.idv[712] ==> cripto515x.png ---
+--- needs --- cripto.idv[713] ==> cripto516x.png ---
+--- needs --- cripto.idv[714] ==> cripto517x.png ---
+--- needs --- cripto.idv[716] ==> cripto518x.png ---
+--- needs --- cripto.idv[717] ==> cripto519x.png ---
+--- needs --- cripto.idv[718] ==> cripto520x.png ---
+--- needs --- cripto.idv[719] ==> cripto521x.png ---
+--- needs --- cripto.idv[720] ==> cripto522x.png ---
+--- needs --- cripto.idv[722] ==> cripto523x.png ---
+--- needs --- cripto.idv[724] ==> cripto524x.png ---
+--- needs --- cripto.idv[726] ==> cripto525x.png ---
+--- needs --- cripto.idv[727] ==> cripto526x.png ---
+--- needs --- cripto.idv[728] ==> cripto527x.png ---
+--- needs --- cripto.idv[729] ==> cripto528x.png ---
+--- needs --- cripto.idv[730] ==> cripto529x.png ---
+--- needs --- cripto.idv[731] ==> cripto530x.png ---
+--- needs --- cripto.idv[732] ==> cripto531x.png ---
+--- needs --- cripto.idv[733] ==> cripto532x.png ---
+--- needs --- cripto.idv[734] ==> cripto533x.png ---
+--- needs --- cripto.idv[735] ==> cripto534x.png ---
+--- needs --- cripto.idv[737] ==> cripto535x.png ---
+--- needs --- cripto.idv[738] ==> cripto536x.png ---
+--- needs --- cripto.idv[739] ==> cripto537x.png ---
+--- needs --- cripto.idv[740] ==> cripto538x.png ---
+--- needs --- cripto.idv[742] ==> cripto539x.png ---
+--- needs --- cripto.idv[743] ==> cripto540x.png ---
+--- needs --- cripto.idv[744] ==> cripto541x.png ---
+--- needs --- cripto.idv[745] ==> cripto542x.png ---
+--- needs --- cripto.idv[746] ==> cripto543x.png ---
+--- needs --- cripto.idv[747] ==> cripto544x.png ---
+--- needs --- cripto.idv[748] ==> cripto545x.png ---
+--- needs --- cripto.idv[750] ==> cripto546x.png ---
+--- needs --- cripto.idv[751] ==> cripto547x.png ---
+--- needs --- cripto.idv[752] ==> cripto548x.png ---
+--- needs --- cripto.idv[753] ==> cripto549x.png ---
+--- needs --- cripto.idv[754] ==> cripto550x.png ---
+--- needs --- cripto.idv[755] ==> cripto551x.png ---
+--- needs --- cripto.idv[757] ==> cripto552x.png ---
+--- needs --- cripto.idv[758] ==> cripto553x.png ---
+--- needs --- cripto.idv[760] ==> cripto554x.png ---
+--- needs --- cripto.idv[761] ==> cripto555x.png ---
+--- needs --- cripto.idv[763] ==> cripto556x.png ---
+--- needs --- cripto.idv[765] ==> cripto557x.png ---
+--- needs --- cripto.idv[767] ==> cripto558x.png ---
+--- needs --- cripto.idv[769] ==> cripto559x.png ---
+--- needs --- cripto.idv[771] ==> cripto560x.png ---
+--- needs --- cripto.idv[773] ==> cripto561x.png ---
+--- needs --- cripto.idv[775] ==> cripto562x.png ---
+--- needs --- cripto.idv[776] ==> cripto563x.png ---
+--- needs --- cripto.idv[777] ==> cripto564x.png ---
+--- needs --- cripto.idv[778] ==> cripto565x.png ---
+--- needs --- cripto.idv[779] ==> cripto566x.png ---
+--- needs --- cripto.idv[780] ==> cripto567x.png ---
+--- needs --- cripto.idv[781] ==> cripto568x.png ---
+--- needs --- cripto.idv[782] ==> cripto569x.png ---
+--- needs --- cripto.idv[783] ==> cripto570x.png ---
+--- needs --- cripto.idv[785] ==> cripto571x.png ---
+--- needs --- cripto.idv[786] ==> cripto572x.png ---
+--- needs --- cripto.idv[788] ==> cripto573x.png ---
+--- needs --- cripto.idv[789] ==> cripto574x.png ---
+--- needs --- cripto.idv[790] ==> cripto575x.png ---
+--- needs --- cripto.idv[792] ==> cripto576x.png ---
+--- needs --- cripto.idv[794] ==> cripto577x.png ---
+--- needs --- cripto.idv[795] ==> cripto578x.png ---
+--- needs --- cripto.idv[797] ==> cripto579x.png ---
+--- needs --- cripto.idv[799] ==> cripto580x.png ---
+--- needs --- cripto.idv[800] ==> cripto581x.png ---
+--- needs --- cripto.idv[802] ==> cripto582x.png ---
+--- needs --- cripto.idv[803] ==> cripto583x.png ---
+--- needs --- cripto.idv[804] ==> cripto584x.png ---
+--- needs --- cripto.idv[806] ==> cripto585x.png ---
+--- needs --- cripto.idv[808] ==> cripto586x.png ---
+--- needs --- cripto.idv[810] ==> cripto587x.png ---
+--- needs --- cripto.idv[812] ==> cripto588x.png ---
+--- needs --- cripto.idv[814] ==> cripto589x.png ---
+--- needs --- cripto.idv[815] ==> cripto590x.png ---
+--- needs --- cripto.idv[817] ==> cripto591x.png ---
+--- needs --- cripto.idv[818] ==> cripto592x.png ---
+--- needs --- cripto.idv[819] ==> cripto593x.png ---
+--- needs --- cripto.idv[821] ==> cripto594x.png ---
+--- needs --- cripto.idv[822] ==> cripto595x.png ---
+--- needs --- cripto.idv[823] ==> cripto596x.png ---
+--- needs --- cripto.idv[824] ==> cripto597x.png ---
+--- needs --- cripto.idv[825] ==> cripto598x.png ---
+--- needs --- cripto.idv[826] ==> cripto599x.png ---
+--- needs --- cripto.idv[827] ==> cripto600x.png ---
+--- needs --- cripto.idv[828] ==> cripto601x.png ---
+--- needs --- cripto.idv[829] ==> cripto602x.png ---
+--- needs --- cripto.idv[831] ==> cripto603x.png ---
+--- needs --- cripto.idv[833] ==> cripto604x.png ---
+--- needs --- cripto.idv[834] ==> cripto605x.png ---
+--- needs --- cripto.idv[835] ==> cripto606x.png ---
+--- needs --- cripto.idv[836] ==> cripto607x.png ---
+--- needs --- cripto.idv[837] ==> cripto608x.png ---
+--- needs --- cripto.idv[838] ==> cripto609x.png ---
+--- needs --- cripto.idv[839] ==> cripto610x.png ---
+--- needs --- cripto.idv[840] ==> cripto611x.png ---
+--- needs --- cripto.idv[841] ==> cripto612x.png ---
+--- needs --- cripto.idv[842] ==> cripto613x.png ---
+--- needs --- cripto.idv[843] ==> cripto614x.png ---
+--- needs --- cripto.idv[844] ==> cripto615x.png ---
+--- needs --- cripto.idv[845] ==> cripto616x.png ---
+--- needs --- cripto.idv[847] ==> cripto617x.png ---
+--- needs --- cripto.idv[848] ==> cripto618x.png ---
+--- needs --- cripto.idv[850] ==> cripto619x.png ---
+--- needs --- cripto.idv[851] ==> cripto620x.png ---
+--- needs --- cripto.idv[852] ==> cripto621x.png ---
+--- needs --- cripto.idv[853] ==> cripto622x.png ---
+--- needs --- cripto.idv[854] ==> cripto623x.png ---
+--- needs --- cripto.idv[856] ==> cripto624x.png ---
+--- needs --- cripto.idv[857] ==> cripto625x.png ---
+--- needs --- cripto.idv[858] ==> cripto626x.png ---
+--- needs --- cripto.idv[859] ==> cripto627x.png ---
+--- needs --- cripto.idv[860] ==> cripto628x.png ---
+--- needs --- cripto.idv[862] ==> cripto629x.png ---
+--- needs --- cripto.idv[863] ==> cripto630x.png ---
+--- needs --- cripto.idv[864] ==> cripto631x.png ---
+--- needs --- cripto.idv[865] ==> cripto632x.png ---
+--- needs --- cripto.idv[866] ==> cripto633x.png ---
+--- needs --- cripto.idv[867] ==> cripto634x.png ---
+--- needs --- cripto.idv[868] ==> cripto635x.png ---
+--- needs --- cripto.idv[869] ==> cripto636x.png ---
+--- needs --- cripto.idv[871] ==> cripto637x.png ---
+--- needs --- cripto.idv[873] ==> cripto638x.png ---
+--- needs --- cripto.idv[874] ==> cripto639x.png ---
+--- needs --- cripto.idv[875] ==> cripto640x.png ---
+--- needs --- cripto.idv[877] ==> cripto641x.png ---
+--- needs --- cripto.idv[878] ==> cripto642x.png ---
+--- needs --- cripto.idv[879] ==> cripto643x.png ---
+--- needs --- cripto.idv[880] ==> cripto644x.png ---
+--- needs --- cripto.idv[881] ==> cripto645x.png ---
+--- needs --- cripto.idv[882] ==> cripto646x.png ---
+--- needs --- cripto.idv[883] ==> cripto647x.png ---
+--- needs --- cripto.idv[884] ==> cripto648x.png ---
+--- needs --- cripto.idv[885] ==> cripto649x.png ---
+--- needs --- cripto.idv[886] ==> cripto650x.png ---
+--- needs --- cripto.idv[888] ==> cripto651x.png ---
+--- needs --- cripto.idv[889] ==> cripto652x.png ---
+--- needs --- cripto.idv[890] ==> cripto653x.png ---
+--- needs --- cripto.idv[891] ==> cripto654x.png ---
+--- needs --- cripto.idv[893] ==> cripto655x.png ---
+--- needs --- cripto.idv[894] ==> cripto656x.png ---
+--- needs --- cripto.idv[895] ==> cripto657x.png ---
+--- needs --- cripto.idv[896] ==> cripto658x.png ---
+--- needs --- cripto.idv[897] ==> cripto659x.png ---
+--- needs --- cripto.idv[898] ==> cripto660x.png ---
+--- needs --- cripto.idv[899] ==> cripto661x.png ---
+--- needs --- cripto.idv[900] ==> cripto662x.png ---
+--- needs --- cripto.idv[901] ==> cripto663x.png ---
+--- needs --- cripto.idv[902] ==> cripto664x.png ---
+--- needs --- cripto.idv[903] ==> cripto665x.png ---
+--- needs --- cripto.idv[904] ==> cripto666x.png ---
+--- needs --- cripto.idv[905] ==> cripto667x.png ---
+--- needs --- cripto.idv[906] ==> cripto668x.png ---
+--- needs --- cripto.idv[907] ==> cripto669x.png ---
+--- needs --- cripto.idv[908] ==> cripto670x.png ---
+--- needs --- cripto.idv[909] ==> cripto671x.png ---
+--- needs --- cripto.idv[910] ==> cripto672x.png ---
+--- needs --- cripto.idv[911] ==> cripto673x.png ---
+--- needs --- cripto.idv[912] ==> cripto674x.png ---
+--- needs --- cripto.idv[914] ==> cripto675x.png ---
+--- needs --- cripto.idv[915] ==> cripto676x.png ---
+--- needs --- cripto.idv[916] ==> cripto677x.png ---
+--- needs --- cripto.idv[917] ==> cripto678x.png ---
+--- needs --- cripto.idv[918] ==> cripto679x.png ---
+--- needs --- cripto.idv[920] ==> cripto680x.png ---
+--- needs --- cripto.idv[921] ==> cripto681x.png ---
+--- needs --- cripto.idv[922] ==> cripto682x.png ---
+--- needs --- cripto.idv[923] ==> cripto683x.png ---
+--- needs --- cripto.idv[924] ==> cripto684x.png ---
+--- needs --- cripto.idv[925] ==> cripto685x.png ---
+--- needs --- cripto.idv[926] ==> cripto686x.png ---
+--- needs --- cripto.idv[927] ==> cripto687x.png ---
+--- needs --- cripto.idv[928] ==> cripto688x.png ---
+--- needs --- cripto.idv[929] ==> cripto689x.png ---
+--- needs --- cripto.idv[930] ==> cripto690x.png ---
+--- needs --- cripto.idv[931] ==> cripto691x.png ---
+--- needs --- cripto.idv[933] ==> cripto692x.png ---
+--- needs --- cripto.idv[935] ==> cripto693x.png ---
+--- needs --- cripto.idv[937] ==> cripto694x.png ---
+--- needs --- cripto.idv[938] ==> cripto695x.png ---
+--- needs --- cripto.idv[939] ==> cripto696x.png ---
+--- needs --- cripto.idv[940] ==> cripto697x.png ---
+--- needs --- cripto.idv[942] ==> cripto698x.png ---
+--- characters ---
+Font("cmex","10","10","100")
+Font("cmr","5","5","100")
+Font("cmr","7","7","100")
+Font("cmr","10","10","100")
+Font("cmmi","5","5","100")
+Font("cmmi","7","7","100")
+Font("cmmi","10","10","100")
+Font("cmsy","5","5","100")
+Font("cmsy","7","7","100")
+--- needs --- cripto.idv[944] ==> cmsy7-50.png ---
+--- needs --- cripto.idv[945] ==> cmsy7-4b.png ---
+Font("cmsy","10","10","100")
+--- needs --- cripto.idv[946] ==> cmsy10-50.png ---
+--- needs --- cripto.idv[947] ==> cmsy10-4b.png ---
+--- needs --- cripto.idv[948] ==> cmsy10-45.png ---
+--- needs --- cripto.idv[949] ==> cmsy10-44.png ---
+--- needs --- cripto.idv[950] ==> cmsy10-43.png ---
+Font("cmr","8","8","100")
+Font("cmr","6","6","100")
+Font("cmmi","8","8","100")
+Font("cmmi","6","6","100")
+Font("cmsy","8","8","100")
+Font("cmsy","6","6","100")
+Font("msbm","8","8","100")
+Font("cmbx","10","10","100")
+Font("cmti","10","10","100")
+Font("cmtt","10","10","100")
+Font("msam","10","10","100")
+Font("msam","7","7","100")
+Font("msbm","10","10","100")
+Font("msbm","7","7","100")
+Font("cmcsc","10","10","144")
+Font("cmti","8","8","100")
+Font("cmitt","10","10","100")
+Font("cmtt","8","8","100")
+Font("cmr","9","9","100")

@@ -1,0 +1,61 @@
+====================================================
+22. Computação ou informática?, artigo de Daltro José Nunes
+
+"Todos os alunos das universidades deveriam aprender uma introdução à Ciência da Computação"
+Daltro José Nunes é professor titular do Instituto de Informática da Universidade Federal do Rio Grande do Sul (UFRGS). Artigo enviado pelo autor ao "JC e-mail":
+ 
+Computação e informática são termos que tem causado alguma confusão. Nos países de língua inglesa usa-se a palavra computação (do latim computare) e nos demais países, normalmente, usa-se a palavra informática, de origem francesa (informatique).
+ 
+Entretanto, o significado das palavras é o mesmo. Computação para os americanos, por exemplo, tem o mesmo significado que informática para os alemães. Atualmente, tem-se usado também a expressão Tecnologia da Informação. Já à palavra computador correspondem diferentes termos, conforme a língua: nos Estados Unidos, computer; na Alemanha, rechner (mesma palavra para calculadora); e na França, ordinateur (ordenador). Do ponto de vista cientifico, os americanos chamam a ciência que aborda os algoritmos de "Computer Science (1)" (Ciência do Computador), que foi traduzida para o português como Ciência da Computação.
+ 
+No Brasil, a partir da década de 60, o termo passou de processamento eletrônico de dados para informática e computação. Mas, com o passar do tempo, ao invés do país adotar uma das duas palavras, passou a usar ambas, com significados diferentes.
+ 
+A palavra informática é usada em referência ao processo de aplicação das tecnologias de computação aos processos de automação. Assim, é frequente dizer-se que uma organização está sendo informatizada, significando que seus processos (manuais) estão sendo automatizados com a introdução de computadores, redes, banco de dados, softwares etc. Seria estranho dizer que a organização está sendo computadorizada.
+ 
+Por outro lado, pode-se dizer que uma função (matemática) está sendo computada e é estranho dizer que a função está sendo informatizada.
+ 
+Da mesma forma, usa-se o termo tomografia computadorizada para referir-se ao processo computacional e seria estranho chamar este processo de tomografia informatizada.
+ 
+Assim, a função do computador é a de "computar" termos, não importando seu tipo: números, textos, imagens, sons etc. A computação de termos, como dados de entrada, fornece termos, como dados de saída. O conceito de Tecnologia da Informação, abrangendo as aplicações e os recursos da computação, se aproxima muito do conceito brasileiro de Informática.
+ 
+A falta de uma semântica correta para os termos computação e informática tem refletido também nas universidades. Algumas criaram os Institutos de Computação (por exemplo, Unicamp, UFF e Ufal) e outras os Institutos de Informática (por exemplo, UFRGS e UFG), mas com as mesmas finalidades: o ensino, a pesquisa e a extensão em Ciência da Computação e suas aplicações.
+ 
+A computação, como ciência, pode ser considerada nova ou uma das mais antigas do mundo, dependendo do ponto de vista. A humanidade sempre se preocupou com a construção de máquinas para calcular, principalmente, operações aritméticas. Aproximadamente no ano 100 d. C., Herão de Alexandria descreveu suas ideias de vincular rodas dentadas de maneira a realizar a operação de "vai um" e de usar cilindros rotatórios, com pinos e cordas, para controlar seqüências de ações.
+ 
+Ao longo da historia várias máquinas foram construídas com o objetivo de realizar operações matemáticas. Um dos primeiros computadores de propósito geral completamente eletrônico, o Eniac, foi construído em 1945, na Universidade de Pensilvânia. Mas, se considerarmos que a Ciência da Computação começou com a descrição (matemática) de como as máquinas funcionam, então, a Ciência da Computação começou em torno de 1936, com Alan Mathison Turing quando descreveu, logicamente, como sua máquina, a máquina de Turing, funciona.
+ 
+Os dados são colocados na memória da máquina para serem computados. A máquina de Turing é uma máquina abstrata, pois abstrai aspectos físicos (elétricos, mecânicos etc.) de como ela é construída. Ou seja, ela independe dos materiais de como é implementada. Até hoje não foi definida uma máquina mais poderosa que a máquina de Turing (uma máquina que, matematicamente, pode provar que tem a capacidade de resolver problemas que a máquina de Turing não resolve).
+ 
+Em 1944, John von Neumann desenvolveu o conceito de "programa armazenado" que foi usado no computador EDVAC - um dos primeiros computadores binários - construído em 1951. Programa e dados são colocados na memória da máquina (o leitor é convidado, aqui, a usar um navegador - Google, por exemplo - e buscar informações sobre Alan Turing e John von Neumann).
+ 
+A arquitetura de Von Neuman, apesar de constituir a organização moderna dos computadores, corresponde à máquina de Turing, abstraindo-se os aspectos elétricos. A partir da máquina de Turing, máquinas mais abstratas ainda, como Fortran, Prolog, Pascal, Java, Haskell, ML, C etc. foram construídas. Entretanto, todos os programas escritos para estas máquinas são decompostos em programas para a máquina de Turing. Portanto, todas essas máquinas não diferem das máquinas de Turing.
+ 
+No final, quem executa o programa é uma máquina no máximo equivalente à de Turing, implementada, atualmente, com tecnologia de semi-condutores (mas existem promessas que outras tecnologias, como quântica, nanotecnologia, óptica etc., possam, no futuro, implementar também a máquina de Turing).
+ 
+Algoritmos
+ 
+Um algoritmo é uma descrição precisa, passo a passo, da solução de um problema. Muitos problemas não têm uma solução algorítmica (computacional). A teoria da computação estuda os limites da computação (2).
+ 
+Um professor de Letras que estudava "Os Lusíadas" suspeitou que certas repetições percorriam todo o livro (como ondas). Construiu então um procedimento (processo) através da numeração das palavras. Observou que, quando um certo número de palavras ou um determinado assunto surgia, uma determinada palavra com certa tonicidade se repetia.
+ 
+Considerando o número de combinações, e o volume do livro, o professor estava prestes a desistir de investigar o fenômeno, quando comentou com um profissional de computação. O profissional reconheceu tratar-se de um problema de computação que poderia ser resolvido através do computador. Encurtando a historia, o profissional traduziu o procedimento em um programa de computador, digitou o livro e aplicou o programa sobre o texto do livro.
+ 
+Esta história revela um fato interessante. Certamente existem inúmeros problemas das áreas das ciências exatas, humanas, das artes e da realidade cotidiana que poderiam ser resolvidos com o auxílio da área de computação.
+ 
+Conclui-se que todos os alunos das universidades deveriam aprender uma introdução à Ciência da Computação, que os capacitasse a identificar os problemas da área que poderiam ser solucionados por métodos desenvolvidos pela computação, bem como a descrever as soluções, usando uma linguagem científica apropriada e simples.
+ 
+Noções como as de Algoritmos, Complexidade Computacional, Organização de Computadores, Linguagens de Programação, Redes de Computadores, Banco de Dados, Sistemas Operacionais são fundamentais para que os futuros sociólogos, economistas, músicos possam interagir com profissionais de computação, desenvolvendo um pensamento interdisciplinar (3) além de, como cidadãos, adquirir conhecimentos sobre este importante e novo ramo da ciência.
+ 
+Ao contrário, o ensino de aplicativos/ferramentas como Word, Excel, Access, CAD/CAM, incluindo linguagens de programação como Java, C etc. não deve fazer parte do programa regular das universidades. Essas ferramentas podem ser trabalhadas através, por exemplo, de cursos de extensão. Ferramentas como essas não são necessárias para aprender ciências.
+ 
+Assim como, por exemplo, para aprender português, não é necessário aprender datilografia ou o programa Word; ou para aprender matemática, não é necessário o uso de calculadoras ou o programa Excel.
+ 
+No futuro, quando a ciência da computação for efetivamente introduzida na educação básica, os alunos vão chegar à universidade com esses conhecimentos. Os cursos de Licenciatura em Computação têm uma enorme responsabilidade de formar professores para introduzir ciência da computação na educação básica e disseminar o chamado "pensamento computacional (3)".
+ 
+(1) Embora a terminologia Computing Science seja amplamente utilizada no Reino Unido, Canadá e várias universidades norte-americanas.
+ 
+(2) H. David. Computers Ltd. What they really can´t do. Oxford University Press Inc. New   York. 2000.
+ 
+(3) Wing J.M. Computational Thinking. COMMUNICATIONS OF THE ACM. March 2006/Vol. 49, No. 13
+ 
+==========================================

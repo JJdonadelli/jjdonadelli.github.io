@@ -1,0 +1,69 @@
+\select@language {brazil}
+\contentsline {section}{\tocsection {}{}{Aviso}}{2}{section*.2}
+\contentsline {section}{\tocsection {}{}{S\IeC {\'\i }mbolos}}{2}{section*.3}
+\contentsline {section}{\tocsection {}{1}{Grafos---defini\c c\~oes iniciais}}{3}{section.1}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{4}{section*.4}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Grau}}{5}{subsection.1.1}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{6}{section*.5}
+\contentsline {section}{\tocsection {}{2}{Subgrafos}}{6}{section.2}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Subgrafo induzido por um subconjunto de v\'ertices}}{7}{subsection.2.1}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Subgrafo induzido por um subconjunto de arestas}}{7}{subsection.2.2}
+\contentsline {subsection}{\tocsubsection {}{2.3}{Exerc\IeC {\'\i }cios}}{7}{subsection.2.3}
+\contentsline {section}{\tocsection {}{3}{Clique, conjunto independente, grafo bipartido e corte}}{8}{section.3}
+\contentsline {subsection}{\tocsubsection {}{3.1}{Exerc\IeC {\'\i }cios}}{8}{subsection.3.1}
+\contentsline {section}{\tocsection {}{4}{Isomorfismo}}{9}{section.4}
+\contentsline {subsection}{\tocsubsection {}{4.1}{Exerc\IeC {\'\i }cios}}{11}{subsection.4.1}
+\contentsline {section}{\tocsection {}{5}{Outras no\c c\~oes de grafos}}{12}{section.5}
+\contentsline {subsection}{\tocsubsection {}{5.1}{Exerc\IeC {\'\i }cios}}{13}{subsection.5.1}
+\contentsline {section}{\tocsection {}{6}{Representa\c c\~ao computacional}}{13}{section.6}
+\contentsline {subsection}{\tocsubsection {}{6.1}{Matriz de adjac\^encias de $G$}}{13}{subsection.6.1}
+\contentsline {subsection}{\tocsubsection {}{6.2}{Lista de adjac\^encias de $G$}}{14}{subsection.6.2}
+\contentsline {subsection}{\tocsubsection {}{6.3}{Complexidade de algoritmos em grafos}}{14}{subsection.6.3}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{16}{section*.6}
+\contentsline {section}{\tocsection {}{7}{Percursos em grafos}}{17}{section.7}
+\contentsline {subsection}{\tocsubsection {}{7.1}{Percurso gen\'erico}}{17}{subsection.7.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{}{An\'alise e corre\c c\~ao do algoritmo Visite(G,v)}}{18}{section*.7}
+\contentsline {subsection}{\tocsubsection {}{7.2}{Exerc\IeC {\'\i }cios}}{19}{subsection.7.2}
+\contentsline {section}{\tocsection {}{8}{Algoritmos de busca}}{20}{section.8}
+\contentsline {subsection}{\tocsubsection {}{8.1}{Busca em Largura}}{20}{subsection.8.1}
+\contentsline {subsection}{\tocsubsection {}{8.2}{Busca em Profundidade}}{20}{subsection.8.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{8.2.1}{Busca em profundidade rotulada}}{21}{subsubsection.8.2.1}
+\contentsline {subsection}{\tocsubsection {}{8.3}{Exerc\IeC {\'\i }cios}}{22}{subsection.8.3}
+\contentsline {section}{\tocsection {}{9}{Caminhos e Circuitos}}{22}{section.9}
+\contentsline {subsection}{\tocsubsection {}{9.1}{Exerc\IeC {\'\i }cios}}{24}{subsection.9.1}
+\contentsline {section}{\tocsection {}{10}{Caminhos m\IeC {\'\i }nimos em grafos com pesos nas arestas}}{25}{section.10}
+\contentsline {subsection}{\tocsubsection {}{10.1}{Exerc\IeC {\'\i }cios}}{27}{subsection.10.1}
+\contentsline {section}{\tocsection {}{11}{Algoritmo de Dijkstra para caminhos m\IeC {\'\i }nimos}}{27}{section.11}
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Corre\c c\~ao do algoritmo}}{29}{section*.8}
+\contentsline {subsubsection}{\tocsubsubsection {}{}{An\'alise de complexidade}}{29}{section*.9}
+\contentsline {subsection}{\tocsubsection {}{11.1}{Exerc\IeC {\'\i }cios}}{30}{subsection.11.1}
+\contentsline {section}{\tocsection {}{12}{Conexidade}}{33}{section.12}
+\contentsline {subsection}{\tocsubsection {}{12.1}{Exerc\IeC {\'\i }cios}}{34}{subsection.12.1}
+\contentsline {section}{\tocsection {}{13}{\'Arvores e Florestas}}{35}{section.13}
+\contentsline {subsection}{\tocsubsection {}{13.1}{\'Arvores geradoras}}{36}{subsection.13.1}
+\contentsline {subsection}{\tocsubsection {}{13.2}{Exerc\IeC {\'\i }cios}}{37}{subsection.13.2}
+\contentsline {section}{\tocsection {}{14}{\'Arvores geradoras de custo m\IeC {\'\i }nimo em grafos com peso nas arestas}}{37}{section.14}
+\contentsline {subsection}{\tocsubsection {}{14.1}{Exerc\IeC {\'\i }cios}}{38}{subsection.14.1}
+\contentsline {section}{\tocsection {}{15}{Algoritmo de Kruskal para \'arvore geradora m\IeC {\'\i }nima}}{39}{section.15}
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Corre\c c\~ao do algoritmo de Kruskal}}{39}{section*.10}
+\contentsline {subsubsection}{\tocsubsubsection {}{}{An\'alise de complexidade}}{40}{section*.11}
+\contentsline {subsection}{\tocsubsection {}{}{Exerc\IeC {\'\i }cios}}{40}{section*.12}
+\contentsline {section}{\tocsection {}{16}{Algoritmo de Prim para \'arvore geradora m\IeC {\'\i }nima}}{40}{section.16}
+\contentsline {section}{\tocsection {}{17}{Emparelhamento}}{41}{section.17}
+\contentsline {subsection}{\tocsubsection {}{}{Exerc\IeC {\'\i }cios}}{42}{section*.13}
+\contentsline {section}{\tocsection {}{18}{Emparelhamentos em grafos bipartidos}}{43}{section.18}
+\contentsline {subsection}{\tocsubsection {}{}{Exerc\IeC {\'\i }cios}}{44}{section*.14}
+\contentsline {subsection}{\tocsubsection {}{18.1}{Algoritmo de Edmonds}}{45}{subsection.18.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{}{An\'alise da complexidade}}{46}{section*.15}
+\contentsline {subsection}{\tocsubsection {}{}{Exerc\IeC {\'\i }cios}}{46}{section*.16}
+\contentsline {section}{\tocsection {}{19}{Cobertura}}{47}{section.19}
+\contentsline {subsection}{\tocsubsection {}{}{Exerc\IeC {\'\i }cios}}{48}{section*.17}
+\contentsline {section}{\tocsection {}{20}{Circuitos hamiltonianos}}{48}{section.20}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{49}{section*.18}
+\contentsline {section}{\tocsection {}{21}{Trilhas eulerianas}}{49}{section.21}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{50}{section*.19}
+\contentsline {section}{\tocsection {}{22}{Grafos Dirigidos}}{50}{section.22}
+\contentsline {subsection}{\tocsubsection {}{22.1}{Representa\c c\~ao computacional}}{51}{subsection.22.1}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{51}{section*.20}
+\contentsline {subsection}{\tocsubsection {}{22.2}{Fluxo em redes}}{51}{subsection.22.2}
+\contentsline {section}{\tocsection {}{}{Exerc\IeC {\'\i }cios}}{61}{section*.21}

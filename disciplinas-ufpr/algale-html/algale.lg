@@ -1,0 +1,1059 @@
+htfcss: cmtt font-family: monospace;
+htfcss: ccti font-style: italic;
+htfcss: cmtt font-family: monospace;
+htfcss: ccti font-style: italic;
+htfcss: cmbxti  font-weight: bold; font-style: italic;
+htfcss: cmti  font-style: italic;
+htfcss: cmbxti  font-weight: bold; font-style: italic;
+htfcss: cmitt font-family: monospace; font-style: italic;
+htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+htfcss: ccti font-style: italic;
+htfcss: cmtt font-family: monospace;
+htfcss: ccti font-style: italic;
+File: algale.html
+File: algale.css
+File: algale.tmp
+Font_Class(1,"1"): <img  src="" alt="" class="%s-%dx-x-%x" />
+File: algale.tmp
+File: algale.tmp
+File: algale.tmp
+File: algale2.html
+File: algale.tmp
+File: algale.tmp
+File: algale.tmp
+File: algale.tmp
+File: algale.tmp
+File: algale.tmp
+File: algale3.html
+File: algale.tmp
+File: algale.tmp
+File: algale4.html
+File: algale.tmp
+File: algale5.html
+File: algale.tmp
+File: algale.tmp
+File: algale.tmp
+File: algale6.html
+File: algale7.html
+File: algale8.html
+File: algale9.html
+Css: p.noindent { text-indent: 0em }
+Css: td p.noindent { text-indent: 0em; margin-top:0em; }
+Css: p.nopar { text-indent: 0em; }
+Css: p.indent{ text-indent: 1.5em }
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: img.math{vertical-align:middle;}
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 1px; margin:0px; }
+Css: .tabbing-right {text-align:right;}
+Css: span.TEX {letter-spacing: -0.125em; }
+Css: span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+Css: a span.TEX span.E {text-decoration: none; }
+Css: span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+Css: span.LATEX span.TEX{ position:relative; left: -0.4em; }
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: table.equation {width:100%;}
+Css: .equation td{text-align:center; }
+Css: td.equation { margin-top:1em; margin-bottom:1em; } 
+Css: td.equation-label { width:5%; text-align:center; }
+Css: td.eqnarray4 { width:5%; white-space: normal; }
+Css: td.eqnarray2 { width:5%; }
+Css: table.eqnarray-star, table.eqnarray {width:100%;}
+Css: div.eqnarray{text-align:center;}
+Css: div.array {text-align:center;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.pmatrix img{vertical-align:middle;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.bar-css {text-decoration:overline;}
+Css: img.cdots{vertical-align:middle;}
+Css: .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+Css: .index-item, .index-subitem, .index-subsubitem {display:block}
+Css: div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+Css: div.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: h1.partHead{text-align: center}
+Css: p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+Css: .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+Css: .quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
+Css: .verse{white-space:nowrap; margin-left:2em}
+Css: div.maketitle {text-align:center;}
+Css: h2.titleHead{text-align:center;}
+Css: div.maketitle{ margin-bottom: 2em; }
+Css: div.author, div.date {text-align:center;}
+Css: div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+Css: div.author{white-space: nowrap;}
+Css: .quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
+Css: .abstract p {margin-left:5%; margin-right:5%;}
+Css: div.abstract {width:100%;}
+Css: .equation td{text-align:center; }
+Css: .equation-star td{text-align:center; }
+Css: table.equation-star { width:100%; }
+Css: table.equation { width:100%; }
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+Css: td.align-label { width:5%; text-align:center; }
+Css: td.align-odd { text-align:right; padding-right:0.3em;}
+Css: td.align-even { text-align:left; padding-right:0.6em;}
+Css: table.multline, table.multline-star {width:100%;}
+Css: td.gather {text-align:center; }
+Css: table.gather {width:100%;}
+Css: div.gather-star {text-align:center;}
+Css: .figure img.graphics {margin-left:10%;}
+Css: table.multicols { width:100%; margin-left:1em; margin-top:1em; margin-bottom:1em; }
+Css: .alltt P { margin-bottom : 0em; margin-top : 0em; }
+Css: .alltt { margin-bottom : 1em; margin-top : 1em; }
+--- needs --- algale.idv[2] ==> algale0x.png ---
+--- needs --- algale.idv[3] ==> algale1x.png ---
+--- needs --- algale.idv[4] ==> algale2x.png ---
+--- needs --- algale.idv[6] ==> algale3x.png ---
+--- needs --- algale.idv[7] ==> algale4x.png ---
+--- needs --- algale.idv[8] ==> algale5x.png ---
+--- needs --- algale.idv[10] ==> algale6x.png ---
+--- needs --- algale.idv[12] ==> algale7x.png ---
+--- needs --- algale.idv[13] ==> algale8x.png ---
+--- needs --- algale.idv[14] ==> algale9x.png ---
+--- needs --- algale.idv[16] ==> algale10x.png ---
+--- needs --- algale.idv[17] ==> algale11x.png ---
+--- needs --- algale.idv[18] ==> algale12x.png ---
+--- needs --- algale.idv[20] ==> algale13x.png ---
+--- needs --- algale.idv[22] ==> algale14x.png ---
+--- needs --- algale.idv[23] ==> algale15x.png ---
+--- needs --- algale.idv[24] ==> algale16x.png ---
+--- needs --- algale.idv[25] ==> algale17x.png ---
+--- needs --- algale.idv[26] ==> algale18x.png ---
+--- needs --- algale.idv[27] ==> algale19x.png ---
+--- needs --- algale.idv[28] ==> algale20x.png ---
+--- needs --- algale.idv[29] ==> algale21x.png ---
+--- needs --- algale.idv[31] ==> algale22x.png ---
+--- needs --- algale.idv[32] ==> algale23x.png ---
+--- needs --- algale.idv[33] ==> algale24x.png ---
+--- needs --- algale.idv[35] ==> algale25x.png ---
+--- needs --- algale.idv[36] ==> algale26x.png ---
+--- needs --- algale.idv[38] ==> algale27x.png ---
+--- needs --- algale.idv[40] ==> algale28x.png ---
+--- needs --- algale.idv[41] ==> algale29x.png ---
+--- needs --- algale.idv[42] ==> algale30x.png ---
+--- needs --- algale.idv[44] ==> algale31x.png ---
+--- needs --- algale.idv[46] ==> algale32x.png ---
+--- needs --- algale.idv[48] ==> algale33x.png ---
+--- needs --- algale.idv[50] ==> algale34x.png ---
+--- needs --- algale.idv[52] ==> algale35x.png ---
+--- needs --- algale.idv[54] ==> algale36x.png ---
+--- needs --- algale.idv[55] ==> algale37x.png ---
+--- needs --- algale.idv[57] ==> algale38x.png ---
+--- needs --- algale.idv[59] ==> algale39x.png ---
+--- needs --- algale.idv[61] ==> algale40x.png ---
+--- needs --- algale.idv[62] ==> algale41x.png ---
+--- needs --- algale.idv[63] ==> algale42x.png ---
+--- needs --- algale.idv[65] ==> algale43x.png ---
+--- needs --- algale.idv[66] ==> algale44x.png ---
+--- needs --- algale.idv[67] ==> algale45x.png ---
+--- needs --- algale.idv[68] ==> algale46x.png ---
+--- needs --- algale.idv[69] ==> algale47x.png ---
+--- needs --- algale.idv[70] ==> algale48x.png ---
+--- needs --- algale.idv[71] ==> algale49x.png ---
+--- needs --- algale.idv[72] ==> algale50x.png ---
+--- needs --- algale.idv[73] ==> algale51x.png ---
+--- needs --- algale.idv[74] ==> algale52x.png ---
+--- needs --- algale.idv[75] ==> algale53x.png ---
+--- needs --- algale.idv[76] ==> algale54x.png ---
+--- needs --- algale.idv[77] ==> algale55x.png ---
+--- needs --- algale.idv[78] ==> algale56x.png ---
+--- needs --- algale.idv[79] ==> algale57x.png ---
+--- needs --- algale.idv[81] ==> algale58x.png ---
+--- needs --- algale.idv[82] ==> algale59x.png ---
+--- needs --- algale.idv[84] ==> algale60x.png ---
+--- needs --- algale.idv[85] ==> algale61x.png ---
+--- needs --- algale.idv[86] ==> algale62x.png ---
+--- needs --- algale.idv[87] ==> algale63x.png ---
+--- needs --- algale.idv[89] ==> algale64x.png ---
+--- needs --- algale.idv[90] ==> algale65x.png ---
+--- needs --- algale.idv[92] ==> algale66x.png ---
+--- needs --- algale.idv[93] ==> algale67x.png ---
+--- needs --- algale.idv[95] ==> algale68x.png ---
+--- needs --- algale.idv[96] ==> algale69x.png ---
+--- needs --- algale.idv[97] ==> algale70x.png ---
+--- needs --- algale.idv[98] ==> algale71x.png ---
+--- needs --- algale.idv[99] ==> algale72x.png ---
+--- needs --- algale.idv[100] ==> algale73x.png ---
+--- needs --- algale.idv[101] ==> algale74x.png ---
+--- needs --- algale.idv[102] ==> algale75x.png ---
+--- needs --- algale.idv[103] ==> algale76x.png ---
+--- needs --- algale.idv[104] ==> algale77x.png ---
+--- needs --- algale.idv[106] ==> algale78x.png ---
+--- needs --- algale.idv[108] ==> algale79x.png ---
+--- needs --- algale.idv[110] ==> algale80x.png ---
+--- needs --- algale.idv[112] ==> algale81x.png ---
+--- needs --- algale.idv[113] ==> algale82x.png ---
+--- needs --- algale.idv[114] ==> algale83x.png ---
+--- needs --- algale.idv[116] ==> algale84x.png ---
+--- needs --- algale.idv[117] ==> algale85x.png ---
+--- needs --- algale.idv[119] ==> algale86x.png ---
+--- needs --- algale.idv[121] ==> algale87x.png ---
+--- needs --- algale.idv[123] ==> algale88x.png ---
+--- needs --- algale.idv[125] ==> algale89x.png ---
+--- needs --- algale.idv[126] ==> algale90x.png ---
+--- needs --- algale.idv[127] ==> algale91x.png ---
+--- needs --- algale.idv[128] ==> algale92x.png ---
+--- needs --- algale.idv[129] ==> algale93x.png ---
+--- needs --- algale.idv[131] ==> algale94x.png ---
+--- needs --- algale.idv[133] ==> algale95x.png ---
+--- needs --- algale.idv[134] ==> algale96x.png ---
+--- needs --- algale.idv[135] ==> algale97x.png ---
+--- needs --- algale.idv[136] ==> algale98x.png ---
+--- needs --- algale.idv[137] ==> algale99x.png ---
+--- needs --- algale.idv[138] ==> algale100x.png ---
+--- needs --- algale.idv[139] ==> algale101x.png ---
+--- needs --- algale.idv[140] ==> algale102x.png ---
+--- needs --- algale.idv[141] ==> algale103x.png ---
+--- needs --- algale.idv[142] ==> algale104x.png ---
+--- needs --- algale.idv[143] ==> algale105x.png ---
+--- needs --- algale.idv[144] ==> algale106x.png ---
+--- needs --- algale.idv[145] ==> algale107x.png ---
+--- needs --- algale.idv[147] ==> algale108x.png ---
+--- needs --- algale.idv[148] ==> algale109x.png ---
+--- needs --- algale.idv[150] ==> algale110x.png ---
+--- needs --- algale.idv[151] ==> algale111x.png ---
+--- needs --- algale.idv[152] ==> algale112x.png ---
+--- needs --- algale.idv[153] ==> algale113x.png ---
+--- needs --- algale.idv[154] ==> algale114x.png ---
+--- needs --- algale.idv[155] ==> algale115x.png ---
+--- needs --- algale.idv[156] ==> algale116x.png ---
+--- needs --- algale.idv[157] ==> algale117x.png ---
+--- needs --- algale.idv[159] ==> algale118x.png ---
+--- needs --- algale.idv[160] ==> algale119x.png ---
+--- needs --- algale.idv[162] ==> algale120x.png ---
+--- needs --- algale.idv[164] ==> algale121x.png ---
+--- needs --- algale.idv[165] ==> algale122x.png ---
+--- needs --- algale.idv[166] ==> algale123x.png ---
+--- needs --- algale.idv[168] ==> algale124x.png ---
+--- needs --- algale.idv[169] ==> algale125x.png ---
+--- needs --- algale.idv[171] ==> algale126x.png ---
+--- needs --- algale.idv[172] ==> algale127x.png ---
+--- needs --- algale.idv[174] ==> algale128x.png ---
+--- needs --- algale.idv[176] ==> algale129x.png ---
+--- needs --- algale.idv[177] ==> algale130x.png ---
+--- needs --- algale.idv[178] ==> algale131x.png ---
+--- needs --- algale.idv[180] ==> algale132x.png ---
+--- needs --- algale.idv[182] ==> algale133x.png ---
+--- needs --- algale.idv[183] ==> algale134x.png ---
+--- needs --- algale.idv[184] ==> algale135x.png ---
+--- needs --- algale.idv[185] ==> algale136x.png ---
+--- needs --- algale.idv[187] ==> algale137x.png ---
+--- needs --- algale.idv[188] ==> algale138x.png ---
+--- needs --- algale.idv[189] ==> algale139x.png ---
+--- needs --- algale.idv[190] ==> algale140x.png ---
+--- needs --- algale.idv[192] ==> algale141x.png ---
+--- needs --- algale.idv[194] ==> algale142x.png ---
+--- needs --- algale.idv[196] ==> algale143x.png ---
+--- needs --- algale.idv[197] ==> algale144x.png ---
+--- needs --- algale.idv[199] ==> algale145x.png ---
+--- needs --- algale.idv[200] ==> algale146x.png ---
+--- needs --- algale.idv[202] ==> algale147x.png ---
+--- needs --- algale.idv[203] ==> algale148x.png ---
+--- needs --- algale.idv[205] ==> algale149x.png ---
+--- needs --- algale.idv[206] ==> algale150x.png ---
+--- needs --- algale.idv[208] ==> algale151x.png ---
+--- needs --- algale.idv[210] ==> algale152x.png ---
+--- needs --- algale.idv[212] ==> algale153x.png ---
+--- needs --- algale.idv[214] ==> algale154x.png ---
+--- needs --- algale.idv[215] ==> algale155x.png ---
+--- needs --- algale.idv[216] ==> algale156x.png ---
+--- needs --- algale.idv[218] ==> algale157x.png ---
+--- needs --- algale.idv[219] ==> algale158x.png ---
+--- needs --- algale.idv[221] ==> algale159x.png ---
+--- needs --- algale.idv[223] ==> algale160x.png ---
+--- needs --- algale.idv[225] ==> algale161x.png ---
+--- needs --- algale.idv[227] ==> algale162x.png ---
+--- needs --- algale.idv[229] ==> algale163x.png ---
+--- needs --- algale.idv[231] ==> algale164x.png ---
+--- needs --- algale.idv[232] ==> algale165x.png ---
+--- needs --- algale.idv[233] ==> algale166x.png ---
+--- needs --- algale.idv[235] ==> algale167x.png ---
+--- needs --- algale.idv[236] ==> algale168x.png ---
+--- needs --- algale.idv[237] ==> algale169x.png ---
+--- needs --- algale.idv[238] ==> algale170x.png ---
+--- needs --- algale.idv[239] ==> algale171x.png ---
+--- needs --- algale.idv[241] ==> algale172x.png ---
+--- needs --- algale.idv[243] ==> algale173x.png ---
+--- needs --- algale.idv[245] ==> algale174x.png ---
+--- needs --- algale.idv[246] ==> algale175x.png ---
+--- needs --- algale.idv[247] ==> algale176x.png ---
+--- needs --- algale.idv[249] ==> algale177x.png ---
+--- needs --- algale.idv[250] ==> algale178x.png ---
+--- needs --- algale.idv[251] ==> algale179x.png ---
+--- needs --- algale.idv[252] ==> algale180x.png ---
+--- needs --- algale.idv[254] ==> algale181x.png ---
+--- needs --- algale.idv[256] ==> algale182x.png ---
+--- needs --- algale.idv[257] ==> algale183x.png ---
+--- needs --- algale.idv[259] ==> algale184x.png ---
+--- needs --- algale.idv[261] ==> algale185x.png ---
+--- needs --- algale.idv[262] ==> algale186x.png ---
+--- needs --- algale.idv[263] ==> algale187x.png ---
+--- needs --- algale.idv[264] ==> algale188x.png ---
+--- needs --- algale.idv[265] ==> algale189x.png ---
+--- needs --- algale.idv[266] ==> algale190x.png ---
+--- needs --- algale.idv[267] ==> algale191x.png ---
+--- needs --- algale.idv[268] ==> algale192x.png ---
+--- needs --- algale.idv[270] ==> algale193x.png ---
+--- needs --- algale.idv[271] ==> algale194x.png ---
+--- needs --- algale.idv[272] ==> algale195x.png ---
+--- needs --- algale.idv[273] ==> algale196x.png ---
+--- needs --- algale.idv[275] ==> algale197x.png ---
+--- needs --- algale.idv[276] ==> algale198x.png ---
+--- needs --- algale.idv[277] ==> algale199x.png ---
+--- needs --- algale.idv[279] ==> algale200x.png ---
+--- needs --- algale.idv[280] ==> algale201x.png ---
+--- needs --- algale.idv[281] ==> algale202x.png ---
+--- needs --- algale.idv[283] ==> algale203x.png ---
+--- needs --- algale.idv[284] ==> algale204x.png ---
+--- needs --- algale.idv[286] ==> algale205x.png ---
+--- needs --- algale.idv[287] ==> algale206x.png ---
+--- needs --- algale.idv[288] ==> algale207x.png ---
+--- needs --- algale.idv[289] ==> algale208x.png ---
+--- needs --- algale.idv[290] ==> algale209x.png ---
+--- needs --- algale.idv[291] ==> algale210x.png ---
+--- needs --- algale.idv[292] ==> algale211x.png ---
+--- needs --- algale.idv[293] ==> algale212x.png ---
+--- needs --- algale.idv[295] ==> algale213x.png ---
+--- needs --- algale.idv[296] ==> algale214x.png ---
+--- needs --- algale.idv[297] ==> algale215x.png ---
+--- needs --- algale.idv[299] ==> algale216x.png ---
+--- needs --- algale.idv[300] ==> algale217x.png ---
+--- needs --- algale.idv[301] ==> algale218x.png ---
+--- needs --- algale.idv[302] ==> algale219x.png ---
+--- needs --- algale.idv[304] ==> algale220x.png ---
+--- needs --- algale.idv[306] ==> algale221x.png ---
+--- needs --- algale.idv[308] ==> algale222x.png ---
+--- needs --- algale.idv[309] ==> algale223x.png ---
+--- needs --- algale.idv[310] ==> algale224x.png ---
+--- needs --- algale.idv[311] ==> algale225x.png ---
+--- needs --- algale.idv[312] ==> algale226x.png ---
+--- needs --- algale.idv[314] ==> algale227x.png ---
+--- needs --- algale.idv[315] ==> algale228x.png ---
+--- needs --- algale.idv[317] ==> algale229x.png ---
+--- needs --- algale.idv[319] ==> algale230x.png ---
+--- needs --- algale.idv[321] ==> algale231x.png ---
+--- needs --- algale.idv[322] ==> algale232x.png ---
+--- needs --- algale.idv[324] ==> algale233x.png ---
+--- needs --- algale.idv[325] ==> algale234x.png ---
+--- needs --- algale.idv[326] ==> algale235x.png ---
+--- needs --- algale.idv[328] ==> algale236x.png ---
+--- needs --- algale.idv[330] ==> algale237x.png ---
+--- needs --- algale.idv[332] ==> algale238x.png ---
+--- needs --- algale.idv[333] ==> algale239x.png ---
+--- needs --- algale.idv[334] ==> algale240x.png ---
+--- needs --- algale.idv[335] ==> algale241x.png ---
+--- needs --- algale.idv[336] ==> algale242x.png ---
+--- needs --- algale.idv[337] ==> algale243x.png ---
+--- needs --- algale.idv[338] ==> algale244x.png ---
+--- needs --- algale.idv[339] ==> algale245x.png ---
+--- needs --- algale.idv[340] ==> algale246x.png ---
+--- needs --- algale.idv[341] ==> algale247x.png ---
+--- needs --- algale.idv[342] ==> algale248x.png ---
+--- needs --- algale.idv[343] ==> algale249x.png ---
+--- needs --- algale.idv[344] ==> algale250x.png ---
+--- needs --- algale.idv[345] ==> algale251x.png ---
+--- needs --- algale.idv[346] ==> algale252x.png ---
+--- needs --- algale.idv[348] ==> algale253x.png ---
+--- needs --- algale.idv[349] ==> algale254x.png ---
+--- needs --- algale.idv[350] ==> algale255x.png ---
+--- needs --- algale.idv[352] ==> algale256x.png ---
+--- needs --- algale.idv[353] ==> algale257x.png ---
+--- needs --- algale.idv[354] ==> algale258x.png ---
+--- needs --- algale.idv[355] ==> algale259x.png ---
+--- needs --- algale.idv[356] ==> algale260x.png ---
+--- needs --- algale.idv[358] ==> algale261x.png ---
+--- needs --- algale.idv[359] ==> algale262x.png ---
+--- needs --- algale.idv[360] ==> algale263x.png ---
+--- needs --- algale.idv[361] ==> algale264x.png ---
+--- needs --- algale.idv[362] ==> algale265x.png ---
+--- needs --- algale.idv[363] ==> algale266x.png ---
+--- needs --- algale.idv[364] ==> algale267x.png ---
+--- needs --- algale.idv[365] ==> algale268x.png ---
+--- needs --- algale.idv[367] ==> algale269x.png ---
+--- needs --- algale.idv[368] ==> algale270x.png ---
+--- needs --- algale.idv[369] ==> algale271x.png ---
+--- needs --- algale.idv[370] ==> algale272x.png ---
+--- needs --- algale.idv[371] ==> algale273x.png ---
+--- needs --- algale.idv[372] ==> algale274x.png ---
+--- needs --- algale.idv[374] ==> algale275x.png ---
+--- needs --- algale.idv[375] ==> algale276x.png ---
+--- needs --- algale.idv[377] ==> algale277x.png ---
+--- needs --- algale.idv[379] ==> algale278x.png ---
+--- needs --- algale.idv[381] ==> algale279x.png ---
+--- needs --- algale.idv[382] ==> algale280x.png ---
+--- needs --- algale.idv[384] ==> algale281x.png ---
+--- needs --- algale.idv[386] ==> algale282x.png ---
+--- needs --- algale.idv[388] ==> algale283x.png ---
+--- needs --- algale.idv[389] ==> algale284x.png ---
+--- needs --- algale.idv[391] ==> algale285x.png ---
+--- needs --- algale.idv[393] ==> algale286x.png ---
+--- needs --- algale.idv[394] ==> algale287x.png ---
+--- needs --- algale.idv[396] ==> algale288x.png ---
+--- needs --- algale.idv[398] ==> algale289x.png ---
+--- needs --- algale.idv[399] ==> algale290x.png ---
+--- needs --- algale.idv[400] ==> algale291x.png ---
+--- needs --- algale.idv[402] ==> algale292x.png ---
+--- needs --- algale.idv[403] ==> algale293x.png ---
+--- needs --- algale.idv[404] ==> algale294x.png ---
+--- needs --- algale.idv[405] ==> algale295x.png ---
+--- needs --- algale.idv[406] ==> algale296x.png ---
+--- needs --- algale.idv[408] ==> algale297x.png ---
+--- needs --- algale.idv[410] ==> algale298x.png ---
+--- needs --- algale.idv[411] ==> algale299x.png ---
+--- needs --- algale.idv[412] ==> algale300x.png ---
+--- needs --- algale.idv[413] ==> algale301x.png ---
+--- needs --- algale.idv[415] ==> algale302x.png ---
+--- needs --- algale.idv[417] ==> algale303x.png ---
+--- needs --- algale.idv[418] ==> algale304x.png ---
+--- needs --- algale.idv[419] ==> algale305x.png ---
+--- needs --- algale.idv[420] ==> algale306x.png ---
+--- needs --- algale.idv[421] ==> algale307x.png ---
+--- needs --- algale.idv[423] ==> algale308x.png ---
+--- needs --- algale.idv[425] ==> algale309x.png ---
+--- needs --- algale.idv[426] ==> algale310x.png ---
+--- needs --- algale.idv[428] ==> algale311x.png ---
+--- needs --- algale.idv[429] ==> algale312x.png ---
+--- needs --- algale.idv[431] ==> algale313x.png ---
+--- needs --- algale.idv[433] ==> algale314x.png ---
+--- needs --- algale.idv[435] ==> algale315x.png ---
+--- needs --- algale.idv[437] ==> algale316x.png ---
+--- needs --- algale.idv[438] ==> algale317x.png ---
+--- needs --- algale.idv[439] ==> algale318x.png ---
+--- needs --- algale.idv[441] ==> algale319x.png ---
+--- needs --- algale.idv[442] ==> algale320x.png ---
+--- needs --- algale.idv[443] ==> algale321x.png ---
+--- needs --- algale.idv[445] ==> algale322x.png ---
+--- needs --- algale.idv[446] ==> algale323x.png ---
+--- needs --- algale.idv[448] ==> algale324x.png ---
+--- needs --- algale.idv[449] ==> algale325x.png ---
+--- needs --- algale.idv[450] ==> algale326x.png ---
+--- needs --- algale.idv[452] ==> algale327x.png ---
+--- needs --- algale.idv[454] ==> algale328x.png ---
+--- needs --- algale.idv[456] ==> algale329x.png ---
+--- needs --- algale.idv[457] ==> algale330x.png ---
+--- needs --- algale.idv[459] ==> algale331x.png ---
+--- needs --- algale.idv[460] ==> algale332x.png ---
+--- needs --- algale.idv[462] ==> algale333x.png ---
+--- needs --- algale.idv[464] ==> algale334x.png ---
+--- needs --- algale.idv[466] ==> algale335x.png ---
+--- needs --- algale.idv[467] ==> algale336x.png ---
+--- needs --- algale.idv[468] ==> algale337x.png ---
+--- needs --- algale.idv[470] ==> algale338x.png ---
+--- needs --- algale.idv[471] ==> algale339x.png ---
+--- needs --- algale.idv[472] ==> algale340x.png ---
+--- needs --- algale.idv[474] ==> algale341x.png ---
+--- needs --- algale.idv[475] ==> algale342x.png ---
+--- needs --- algale.idv[477] ==> algale343x.png ---
+--- needs --- algale.idv[478] ==> algale344x.png ---
+--- needs --- algale.idv[479] ==> algale345x.png ---
+--- needs --- algale.idv[480] ==> algale346x.png ---
+--- needs --- algale.idv[482] ==> algale347x.png ---
+--- needs --- algale.idv[483] ==> algale348x.png ---
+--- needs --- algale.idv[484] ==> algale349x.png ---
+--- needs --- algale.idv[485] ==> algale350x.png ---
+--- needs --- algale.idv[487] ==> algale351x.png ---
+--- needs --- algale.idv[488] ==> algale352x.png ---
+--- needs --- algale.idv[489] ==> algale353x.png ---
+--- needs --- algale.idv[490] ==> algale354x.png ---
+--- needs --- algale.idv[491] ==> algale355x.png ---
+--- needs --- algale.idv[493] ==> algale356x.png ---
+--- needs --- algale.idv[494] ==> algale357x.png ---
+--- needs --- algale.idv[496] ==> algale358x.png ---
+--- needs --- algale.idv[497] ==> algale359x.png ---
+--- needs --- algale.idv[498] ==> algale360x.png ---
+--- needs --- algale.idv[500] ==> algale361x.png ---
+--- needs --- algale.idv[502] ==> algale362x.png ---
+--- needs --- algale.idv[503] ==> algale363x.png ---
+--- needs --- algale.idv[504] ==> algale364x.png ---
+--- needs --- algale.idv[506] ==> algale365x.png ---
+--- needs --- algale.idv[508] ==> algale366x.png ---
+--- needs --- algale.idv[510] ==> algale367x.png ---
+--- needs --- algale.idv[511] ==> algale368x.png ---
+--- needs --- algale.idv[512] ==> algale369x.png ---
+--- needs --- algale.idv[513] ==> algale370x.png ---
+--- needs --- algale.idv[515] ==> algale371x.png ---
+--- needs --- algale.idv[516] ==> algale372x.png ---
+--- needs --- algale.idv[517] ==> algale373x.png ---
+--- needs --- algale.idv[519] ==> algale374x.png ---
+--- needs --- algale.idv[521] ==> algale375x.png ---
+--- needs --- algale.idv[523] ==> algale376x.png ---
+--- needs --- algale.idv[524] ==> algale377x.png ---
+--- needs --- algale.idv[526] ==> algale378x.png ---
+--- needs --- algale.idv[527] ==> algale379x.png ---
+--- needs --- algale.idv[528] ==> algale380x.png ---
+--- needs --- algale.idv[530] ==> algale381x.png ---
+--- needs --- algale.idv[532] ==> algale382x.png ---
+--- needs --- algale.idv[534] ==> algale383x.png ---
+--- needs --- algale.idv[535] ==> algale384x.png ---
+--- needs --- algale.idv[537] ==> algale385x.png ---
+--- needs --- algale.idv[539] ==> algale386x.png ---
+--- needs --- algale.idv[541] ==> algale387x.png ---
+--- needs --- algale.idv[542] ==> algale388x.png ---
+--- needs --- algale.idv[543] ==> algale389x.png ---
+--- needs --- algale.idv[544] ==> algale390x.png ---
+--- needs --- algale.idv[545] ==> algale391x.png ---
+--- needs --- algale.idv[547] ==> algale392x.png ---
+--- needs --- algale.idv[549] ==> algale393x.png ---
+--- needs --- algale.idv[551] ==> algale394x.png ---
+--- needs --- algale.idv[553] ==> algale395x.png ---
+--- needs --- algale.idv[555] ==> algale396x.png ---
+--- needs --- algale.idv[557] ==> algale397x.png ---
+--- needs --- algale.idv[558] ==> algale398x.png ---
+--- needs --- algale.idv[560] ==> algale399x.png ---
+--- needs --- algale.idv[561] ==> algale400x.png ---
+--- needs --- algale.idv[563] ==> algale401x.png ---
+--- needs --- algale.idv[565] ==> algale402x.png ---
+--- needs --- algale.idv[566] ==> algale403x.png ---
+--- needs --- algale.idv[568] ==> algale404x.png ---
+--- needs --- algale.idv[569] ==> algale405x.png ---
+--- needs --- algale.idv[571] ==> algale406x.png ---
+--- needs --- algale.idv[572] ==> algale407x.png ---
+--- needs --- algale.idv[573] ==> algale408x.png ---
+--- needs --- algale.idv[574] ==> algale409x.png ---
+--- needs --- algale.idv[575] ==> algale410x.png ---
+--- needs --- algale.idv[576] ==> algale411x.png ---
+--- needs --- algale.idv[577] ==> algale412x.png ---
+--- needs --- algale.idv[579] ==> algale413x.png ---
+--- needs --- algale.idv[580] ==> algale414x.png ---
+--- needs --- algale.idv[581] ==> algale415x.png ---
+--- needs --- algale.idv[583] ==> algale416x.png ---
+--- needs --- algale.idv[584] ==> algale417x.png ---
+--- needs --- algale.idv[585] ==> algale418x.png ---
+--- needs --- algale.idv[586] ==> algale419x.png ---
+--- needs --- algale.idv[588] ==> algale420x.png ---
+--- needs --- algale.idv[589] ==> algale421x.png ---
+--- needs --- algale.idv[590] ==> algale422x.png ---
+--- needs --- algale.idv[591] ==> algale423x.png ---
+--- needs --- algale.idv[593] ==> algale424x.png ---
+--- needs --- algale.idv[595] ==> algale425x.png ---
+--- needs --- algale.idv[597] ==> algale426x.png ---
+--- needs --- algale.idv[598] ==> algale427x.png ---
+--- needs --- algale.idv[599] ==> algale428x.png ---
+--- needs --- algale.idv[600] ==> algale429x.png ---
+--- needs --- algale.idv[601] ==> algale430x.png ---
+--- needs --- algale.idv[603] ==> algale431x.png ---
+--- needs --- algale.idv[604] ==> algale432x.png ---
+--- needs --- algale.idv[605] ==> algale433x.png ---
+--- needs --- algale.idv[606] ==> algale434x.png ---
+--- needs --- algale.idv[608] ==> algale435x.png ---
+--- needs --- algale.idv[610] ==> algale436x.png ---
+--- needs --- algale.idv[612] ==> algale437x.png ---
+--- needs --- algale.idv[614] ==> algale438x.png ---
+--- needs --- algale.idv[616] ==> algale439x.png ---
+--- needs --- algale.idv[617] ==> algale440x.png ---
+--- needs --- algale.idv[618] ==> algale441x.png ---
+--- needs --- algale.idv[619] ==> algale442x.png ---
+--- needs --- algale.idv[620] ==> algale443x.png ---
+--- needs --- algale.idv[621] ==> algale444x.png ---
+--- needs --- algale.idv[622] ==> algale445x.png ---
+--- needs --- algale.idv[623] ==> algale446x.png ---
+--- needs --- algale.idv[624] ==> algale447x.png ---
+--- needs --- algale.idv[625] ==> algale448x.png ---
+--- needs --- algale.idv[627] ==> algale449x.png ---
+--- needs --- algale.idv[628] ==> algale450x.png ---
+--- needs --- algale.idv[629] ==> algale451x.png ---
+--- needs --- algale.idv[630] ==> algale452x.png ---
+--- needs --- algale.idv[631] ==> algale453x.png ---
+--- needs --- algale.idv[632] ==> algale454x.png ---
+--- needs --- algale.idv[633] ==> algale455x.png ---
+--- needs --- algale.idv[634] ==> algale456x.png ---
+--- needs --- algale.idv[636] ==> algale457x.png ---
+--- needs --- algale.idv[637] ==> algale458x.png ---
+--- needs --- algale.idv[638] ==> algale459x.png ---
+--- needs --- algale.idv[640] ==> algale460x.png ---
+--- needs --- algale.idv[641] ==> algale461x.png ---
+--- needs --- algale.idv[642] ==> algale462x.png ---
+--- needs --- algale.idv[643] ==> algale463x.png ---
+--- needs --- algale.idv[644] ==> algale464x.png ---
+--- needs --- algale.idv[645] ==> algale465x.png ---
+--- needs --- algale.idv[646] ==> algale466x.png ---
+--- needs --- algale.idv[647] ==> algale467x.png ---
+--- needs --- algale.idv[648] ==> algale468x.png ---
+--- needs --- algale.idv[649] ==> algale469x.png ---
+--- needs --- algale.idv[651] ==> algale470x.png ---
+--- needs --- algale.idv[652] ==> algale471x.png ---
+--- needs --- algale.idv[653] ==> algale472x.png ---
+--- needs --- algale.idv[654] ==> algale473x.png ---
+--- needs --- algale.idv[655] ==> algale474x.png ---
+--- needs --- algale.idv[656] ==> algale475x.png ---
+--- needs --- algale.idv[657] ==> algale476x.png ---
+--- needs --- algale.idv[658] ==> algale477x.png ---
+--- needs --- algale.idv[659] ==> algale478x.png ---
+--- needs --- algale.idv[660] ==> algale479x.png ---
+--- needs --- algale.idv[661] ==> algale480x.png ---
+--- needs --- algale.idv[662] ==> algale481x.png ---
+--- needs --- algale.idv[663] ==> algale482x.png ---
+--- needs --- algale.idv[664] ==> algale483x.png ---
+--- needs --- algale.idv[665] ==> algale484x.png ---
+--- needs --- algale.idv[666] ==> algale485x.png ---
+--- needs --- algale.idv[667] ==> algale486x.png ---
+--- needs --- algale.idv[668] ==> algale487x.png ---
+--- needs --- algale.idv[669] ==> algale488x.png ---
+--- needs --- algale.idv[670] ==> algale489x.png ---
+--- needs --- algale.idv[671] ==> algale490x.png ---
+--- needs --- algale.idv[673] ==> algale491x.png ---
+--- needs --- algale.idv[675] ==> algale492x.png ---
+--- needs --- algale.idv[677] ==> algale493x.png ---
+--- needs --- algale.idv[679] ==> algale494x.png ---
+--- needs --- algale.idv[681] ==> algale495x.png ---
+--- needs --- algale.idv[683] ==> algale496x.png ---
+--- needs --- algale.idv[685] ==> algale497x.png ---
+--- needs --- algale.idv[686] ==> algale498x.png ---
+--- needs --- algale.idv[688] ==> algale499x.png ---
+--- needs --- algale.idv[690] ==> algale500x.png ---
+--- needs --- algale.idv[692] ==> algale501x.png ---
+--- needs --- algale.idv[693] ==> algale502x.png ---
+--- needs --- algale.idv[694] ==> algale503x.png ---
+--- needs --- algale.idv[695] ==> algale504x.png ---
+--- needs --- algale.idv[697] ==> algale505x.png ---
+--- needs --- algale.idv[698] ==> algale506x.png ---
+--- needs --- algale.idv[699] ==> algale507x.png ---
+--- needs --- algale.idv[700] ==> algale508x.png ---
+--- needs --- algale.idv[702] ==> algale509x.png ---
+--- needs --- algale.idv[703] ==> algale510x.png ---
+--- needs --- algale.idv[704] ==> algale511x.png ---
+--- needs --- algale.idv[706] ==> algale512x.png ---
+--- needs --- algale.idv[707] ==> algale513x.png ---
+--- needs --- algale.idv[709] ==> algale514x.png ---
+--- needs --- algale.idv[711] ==> algale515x.png ---
+--- needs --- algale.idv[712] ==> algale516x.png ---
+--- needs --- algale.idv[713] ==> algale517x.png ---
+--- needs --- algale.idv[714] ==> algale518x.png ---
+--- needs --- algale.idv[716] ==> algale519x.png ---
+--- needs --- algale.idv[718] ==> algale520x.png ---
+--- needs --- algale.idv[719] ==> algale521x.png ---
+--- needs --- algale.idv[720] ==> algale522x.png ---
+--- needs --- algale.idv[722] ==> algale523x.png ---
+--- needs --- algale.idv[723] ==> algale524x.png ---
+--- needs --- algale.idv[725] ==> algale525x.png ---
+--- needs --- algale.idv[726] ==> algale526x.png ---
+--- needs --- algale.idv[727] ==> algale527x.png ---
+--- needs --- algale.idv[729] ==> algale528x.png ---
+--- needs --- algale.idv[730] ==> algale529x.png ---
+--- needs --- algale.idv[731] ==> algale530x.png ---
+--- needs --- algale.idv[733] ==> algale531x.png ---
+--- needs --- algale.idv[735] ==> algale532x.png ---
+--- needs --- algale.idv[737] ==> algale533x.png ---
+--- needs --- algale.idv[738] ==> algale534x.png ---
+--- needs --- algale.idv[739] ==> algale535x.png ---
+--- needs --- algale.idv[741] ==> algale536x.png ---
+--- needs --- algale.idv[743] ==> algale537x.png ---
+--- needs --- algale.idv[744] ==> algale538x.png ---
+--- needs --- algale.idv[745] ==> algale539x.png ---
+--- needs --- algale.idv[746] ==> algale540x.png ---
+--- needs --- algale.idv[747] ==> algale541x.png ---
+--- needs --- algale.idv[748] ==> algale542x.png ---
+--- needs --- algale.idv[749] ==> algale543x.png ---
+--- needs --- algale.idv[750] ==> algale544x.png ---
+--- needs --- algale.idv[751] ==> algale545x.png ---
+--- needs --- algale.idv[752] ==> algale546x.png ---
+--- needs --- algale.idv[753] ==> algale547x.png ---
+--- needs --- algale.idv[754] ==> algale548x.png ---
+--- needs --- algale.idv[755] ==> algale549x.png ---
+--- needs --- algale.idv[756] ==> algale550x.png ---
+--- needs --- algale.idv[757] ==> algale551x.png ---
+--- needs --- algale.idv[759] ==> algale552x.png ---
+--- needs --- algale.idv[760] ==> algale553x.png ---
+--- needs --- algale.idv[762] ==> algale554x.png ---
+--- needs --- algale.idv[763] ==> algale555x.png ---
+--- needs --- algale.idv[765] ==> algale556x.png ---
+--- needs --- algale.idv[766] ==> algale557x.png ---
+--- needs --- algale.idv[768] ==> algale558x.png ---
+--- needs --- algale.idv[769] ==> algale559x.png ---
+--- needs --- algale.idv[770] ==> algale560x.png ---
+--- needs --- algale.idv[772] ==> algale561x.png ---
+--- needs --- algale.idv[773] ==> algale562x.png ---
+--- needs --- algale.idv[775] ==> algale563x.png ---
+--- needs --- algale.idv[777] ==> algale564x.png ---
+--- needs --- algale.idv[779] ==> algale565x.png ---
+--- needs --- algale.idv[781] ==> algale566x.png ---
+--- needs --- algale.idv[783] ==> algale567x.png ---
+--- needs --- algale.idv[784] ==> algale568x.png ---
+--- needs --- algale.idv[786] ==> algale569x.png ---
+--- needs --- algale.idv[787] ==> algale570x.png ---
+--- needs --- algale.idv[788] ==> algale571x.png ---
+--- needs --- algale.idv[789] ==> algale572x.png ---
+--- needs --- algale.idv[791] ==> algale573x.png ---
+--- needs --- algale.idv[792] ==> algale574x.png ---
+--- needs --- algale.idv[794] ==> algale575x.png ---
+--- needs --- algale.idv[796] ==> algale576x.png ---
+--- needs --- algale.idv[798] ==> algale577x.png ---
+--- needs --- algale.idv[799] ==> algale578x.png ---
+--- needs --- algale.idv[800] ==> algale579x.png ---
+--- needs --- algale.idv[802] ==> algale580x.png ---
+--- needs --- algale.idv[803] ==> algale581x.png ---
+--- needs --- algale.idv[804] ==> algale582x.png ---
+--- needs --- algale.idv[806] ==> algale583x.png ---
+--- needs --- algale.idv[807] ==> algale584x.png ---
+--- needs --- algale.idv[808] ==> algale585x.png ---
+--- needs --- algale.idv[810] ==> algale586x.png ---
+--- needs --- algale.idv[811] ==> algale587x.png ---
+--- needs --- algale.idv[813] ==> algale588x.png ---
+--- needs --- algale.idv[814] ==> algale589x.png ---
+--- needs --- algale.idv[815] ==> algale590x.png ---
+--- needs --- algale.idv[816] ==> algale591x.png ---
+--- needs --- algale.idv[817] ==> algale592x.png ---
+--- needs --- algale.idv[819] ==> algale593x.png ---
+--- needs --- algale.idv[820] ==> algale594x.png ---
+--- needs --- algale.idv[822] ==> algale595x.png ---
+--- needs --- algale.idv[823] ==> algale596x.png ---
+--- needs --- algale.idv[825] ==> algale597x.png ---
+--- needs --- algale.idv[826] ==> algale598x.png ---
+--- needs --- algale.idv[827] ==> algale599x.png ---
+--- needs --- algale.idv[829] ==> algale600x.png ---
+--- needs --- algale.idv[830] ==> algale601x.png ---
+--- needs --- algale.idv[831] ==> algale602x.png ---
+--- needs --- algale.idv[833] ==> algale603x.png ---
+--- needs --- algale.idv[834] ==> algale604x.png ---
+--- needs --- algale.idv[835] ==> algale605x.png ---
+--- needs --- algale.idv[837] ==> algale606x.png ---
+--- needs --- algale.idv[838] ==> algale607x.png ---
+--- needs --- algale.idv[839] ==> algale608x.png ---
+--- needs --- algale.idv[841] ==> algale609x.png ---
+--- needs --- algale.idv[843] ==> algale610x.png ---
+--- needs --- algale.idv[845] ==> algale611x.png ---
+--- needs --- algale.idv[846] ==> algale612x.png ---
+--- needs --- algale.idv[848] ==> algale613x.png ---
+--- needs --- algale.idv[849] ==> algale614x.png ---
+--- needs --- algale.idv[851] ==> algale615x.png ---
+--- needs --- algale.idv[852] ==> algale616x.png ---
+--- needs --- algale.idv[853] ==> algale617x.png ---
+--- needs --- algale.idv[854] ==> algale618x.png ---
+--- needs --- algale.idv[855] ==> algale619x.png ---
+--- needs --- algale.idv[856] ==> algale620x.png ---
+--- needs --- algale.idv[857] ==> algale621x.png ---
+--- needs --- algale.idv[858] ==> algale622x.png ---
+--- needs --- algale.idv[859] ==> algale623x.png ---
+--- needs --- algale.idv[860] ==> algale624x.png ---
+--- needs --- algale.idv[861] ==> algale625x.png ---
+--- needs --- algale.idv[863] ==> algale626x.png ---
+--- needs --- algale.idv[865] ==> algale627x.png ---
+--- needs --- algale.idv[866] ==> algale628x.png ---
+--- needs --- algale.idv[867] ==> algale629x.png ---
+--- needs --- algale.idv[868] ==> algale630x.png ---
+--- needs --- algale.idv[870] ==> algale631x.png ---
+--- needs --- algale.idv[872] ==> algale632x.png ---
+--- needs --- algale.idv[874] ==> algale633x.png ---
+--- needs --- algale.idv[875] ==> algale634x.png ---
+--- needs --- algale.idv[876] ==> algale635x.png ---
+--- needs --- algale.idv[878] ==> algale636x.png ---
+--- needs --- algale.idv[879] ==> algale637x.png ---
+--- needs --- algale.idv[880] ==> algale638x.png ---
+--- needs --- algale.idv[881] ==> algale639x.png ---
+--- needs --- algale.idv[882] ==> algale640x.png ---
+--- needs --- algale.idv[883] ==> algale641x.png ---
+--- needs --- algale.idv[885] ==> algale642x.png ---
+--- needs --- algale.idv[886] ==> algale643x.png ---
+--- needs --- algale.idv[887] ==> algale644x.png ---
+--- needs --- algale.idv[889] ==> algale645x.png ---
+--- needs --- algale.idv[890] ==> algale646x.png ---
+--- needs --- algale.idv[892] ==> algale647x.png ---
+--- needs --- algale.idv[893] ==> algale648x.png ---
+--- needs --- algale.idv[894] ==> algale649x.png ---
+--- needs --- algale.idv[895] ==> algale650x.png ---
+--- needs --- algale.idv[896] ==> algale651x.png ---
+--- needs --- algale.idv[898] ==> algale652x.png ---
+--- needs --- algale.idv[899] ==> algale653x.png ---
+--- needs --- algale.idv[901] ==> algale654x.png ---
+--- needs --- algale.idv[902] ==> algale655x.png ---
+--- needs --- algale.idv[904] ==> algale656x.png ---
+--- needs --- algale.idv[906] ==> algale657x.png ---
+--- needs --- algale.idv[908] ==> algale658x.png ---
+--- needs --- algale.idv[910] ==> algale659x.png ---
+--- needs --- algale.idv[912] ==> algale660x.png ---
+--- needs --- algale.idv[914] ==> algale661x.png ---
+--- needs --- algale.idv[916] ==> algale662x.png ---
+--- needs --- algale.idv[917] ==> algale663x.png ---
+--- needs --- algale.idv[919] ==> algale664x.png ---
+--- needs --- algale.idv[921] ==> algale665x.png ---
+--- needs --- algale.idv[923] ==> algale666x.png ---
+--- needs --- algale.idv[925] ==> algale667x.png ---
+--- needs --- algale.idv[927] ==> algale668x.png ---
+--- needs --- algale.idv[928] ==> algale669x.png ---
+--- needs --- algale.idv[930] ==> algale670x.png ---
+--- needs --- algale.idv[932] ==> algale671x.png ---
+--- needs --- algale.idv[934] ==> algale672x.png ---
+--- needs --- algale.idv[936] ==> algale673x.png ---
+--- needs --- algale.idv[938] ==> algale674x.png ---
+--- needs --- algale.idv[939] ==> algale675x.png ---
+--- needs --- algale.idv[941] ==> algale676x.png ---
+--- needs --- algale.idv[943] ==> algale677x.png ---
+--- needs --- algale.idv[944] ==> algale678x.png ---
+--- needs --- algale.idv[945] ==> algale679x.png ---
+--- needs --- algale.idv[947] ==> algale680x.png ---
+--- needs --- algale.idv[949] ==> algale681x.png ---
+--- needs --- algale.idv[951] ==> algale682x.png ---
+--- needs --- algale.idv[952] ==> algale683x.png ---
+--- needs --- algale.idv[953] ==> algale684x.png ---
+--- needs --- algale.idv[954] ==> algale685x.png ---
+--- needs --- algale.idv[955] ==> algale686x.png ---
+--- needs --- algale.idv[956] ==> algale687x.png ---
+--- needs --- algale.idv[957] ==> algale688x.png ---
+--- needs --- algale.idv[958] ==> algale689x.png ---
+--- needs --- algale.idv[960] ==> algale690x.png ---
+--- needs --- algale.idv[961] ==> algale691x.png ---
+--- needs --- algale.idv[962] ==> algale692x.png ---
+--- needs --- algale.idv[963] ==> algale693x.png ---
+--- needs --- algale.idv[965] ==> algale694x.png ---
+--- needs --- algale.idv[967] ==> algale695x.png ---
+--- needs --- algale.idv[968] ==> algale696x.png ---
+--- needs --- algale.idv[970] ==> algale697x.png ---
+--- needs --- algale.idv[971] ==> algale698x.png ---
+--- needs --- algale.idv[973] ==> algale699x.png ---
+--- needs --- algale.idv[974] ==> algale700x.png ---
+--- needs --- algale.idv[976] ==> algale701x.png ---
+--- needs --- algale.idv[978] ==> algale702x.png ---
+--- needs --- algale.idv[979] ==> algale703x.png ---
+--- needs --- algale.idv[980] ==> algale704x.png ---
+--- needs --- algale.idv[981] ==> algale705x.png ---
+--- needs --- algale.idv[983] ==> algale706x.png ---
+--- needs --- algale.idv[984] ==> algale707x.png ---
+--- needs --- algale.idv[985] ==> algale708x.png ---
+--- needs --- algale.idv[986] ==> algale709x.png ---
+--- needs --- algale.idv[988] ==> algale710x.png ---
+--- needs --- algale.idv[989] ==> algale711x.png ---
+--- needs --- algale.idv[990] ==> algale712x.png ---
+--- needs --- algale.idv[991] ==> algale713x.png ---
+--- needs --- algale.idv[992] ==> algale714x.png ---
+--- needs --- algale.idv[994] ==> algale715x.png ---
+--- needs --- algale.idv[995] ==> algale716x.png ---
+--- needs --- algale.idv[996] ==> algale717x.png ---
+--- needs --- algale.idv[997] ==> algale718x.png ---
+--- needs --- algale.idv[998] ==> algale719x.png ---
+--- needs --- algale.idv[999] ==> algale720x.png ---
+--- needs --- algale.idv[1000] ==> algale721x.png ---
+--- needs --- algale.idv[1001] ==> algale722x.png ---
+--- needs --- algale.idv[1002] ==> algale723x.png ---
+--- needs --- algale.idv[1003] ==> algale724x.png ---
+--- needs --- algale.idv[1004] ==> algale725x.png ---
+--- needs --- algale.idv[1005] ==> algale726x.png ---
+--- needs --- algale.idv[1006] ==> algale727x.png ---
+--- needs --- algale.idv[1008] ==> algale728x.png ---
+--- needs --- algale.idv[1010] ==> algale729x.png ---
+--- needs --- algale.idv[1011] ==> algale730x.png ---
+--- needs --- algale.idv[1012] ==> algale731x.png ---
+--- needs --- algale.idv[1013] ==> algale732x.png ---
+--- needs --- algale.idv[1014] ==> algale733x.png ---
+--- needs --- algale.idv[1015] ==> algale734x.png ---
+--- needs --- algale.idv[1016] ==> algale735x.png ---
+--- needs --- algale.idv[1017] ==> algale736x.png ---
+--- needs --- algale.idv[1018] ==> algale737x.png ---
+--- needs --- algale.idv[1019] ==> algale738x.png ---
+--- needs --- algale.idv[1020] ==> algale739x.png ---
+--- needs --- algale.idv[1021] ==> algale740x.png ---
+--- needs --- algale.idv[1022] ==> algale741x.png ---
+--- needs --- algale.idv[1024] ==> algale742x.png ---
+--- needs --- algale.idv[1026] ==> algale743x.png ---
+--- needs --- algale.idv[1027] ==> algale744x.png ---
+--- needs --- algale.idv[1028] ==> algale745x.png ---
+--- needs --- algale.idv[1030] ==> algale746x.png ---
+--- needs --- algale.idv[1031] ==> algale747x.png ---
+--- needs --- algale.idv[1032] ==> algale748x.png ---
+--- needs --- algale.idv[1034] ==> algale749x.png ---
+--- needs --- algale.idv[1035] ==> algale750x.png ---
+--- needs --- algale.idv[1036] ==> algale751x.png ---
+--- needs --- algale.idv[1038] ==> algale752x.png ---
+--- needs --- algale.idv[1039] ==> algale753x.png ---
+--- needs --- algale.idv[1040] ==> algale754x.png ---
+--- needs --- algale.idv[1041] ==> algale755x.png ---
+--- needs --- algale.idv[1043] ==> algale756x.png ---
+--- needs --- algale.idv[1045] ==> algale757x.png ---
+--- needs --- algale.idv[1047] ==> algale758x.png ---
+--- needs --- algale.idv[1048] ==> algale759x.png ---
+--- needs --- algale.idv[1050] ==> algale760x.png ---
+--- needs --- algale.idv[1052] ==> algale761x.png ---
+--- needs --- algale.idv[1054] ==> algale762x.png ---
+--- needs --- algale.idv[1055] ==> algale763x.png ---
+--- needs --- algale.idv[1056] ==> algale764x.png ---
+--- needs --- algale.idv[1057] ==> algale765x.png ---
+--- needs --- algale.idv[1058] ==> algale766x.png ---
+--- needs --- algale.idv[1059] ==> algale767x.png ---
+--- needs --- algale.idv[1060] ==> algale768x.png ---
+--- needs --- algale.idv[1061] ==> algale769x.png ---
+--- needs --- algale.idv[1063] ==> algale770x.png ---
+--- needs --- algale.idv[1064] ==> algale771x.png ---
+--- needs --- algale.idv[1066] ==> algale772x.png ---
+--- needs --- algale.idv[1067] ==> algale773x.png ---
+--- needs --- algale.idv[1068] ==> algale774x.png ---
+--- needs --- algale.idv[1069] ==> algale775x.png ---
+--- needs --- algale.idv[1071] ==> algale776x.png ---
+--- needs --- algale.idv[1072] ==> algale777x.png ---
+--- needs --- algale.idv[1073] ==> algale778x.png ---
+--- needs --- algale.idv[1075] ==> algale779x.png ---
+--- needs --- algale.idv[1077] ==> algale780x.png ---
+--- needs --- algale.idv[1078] ==> algale781x.png ---
+--- needs --- algale.idv[1079] ==> algale782x.png ---
+--- needs --- algale.idv[1081] ==> algale783x.png ---
+--- needs --- algale.idv[1082] ==> algale784x.png ---
+--- needs --- algale.idv[1083] ==> algale785x.png ---
+--- needs --- algale.idv[1085] ==> algale786x.png ---
+--- needs --- algale.idv[1086] ==> algale787x.png ---
+--- needs --- algale.idv[1087] ==> algale788x.png ---
+--- needs --- algale.idv[1089] ==> algale789x.png ---
+--- needs --- algale.idv[1090] ==> algale790x.png ---
+--- needs --- algale.idv[1091] ==> algale791x.png ---
+--- needs --- algale.idv[1092] ==> algale792x.png ---
+--- needs --- algale.idv[1093] ==> algale793x.png ---
+--- needs --- algale.idv[1094] ==> algale794x.png ---
+--- needs --- algale.idv[1095] ==> algale795x.png ---
+--- needs --- algale.idv[1096] ==> algale796x.png ---
+--- needs --- algale.idv[1097] ==> algale797x.png ---
+--- needs --- algale.idv[1099] ==> algale798x.png ---
+--- needs --- algale.idv[1100] ==> algale799x.png ---
+--- needs --- algale.idv[1102] ==> algale800x.png ---
+--- needs --- algale.idv[1104] ==> algale801x.png ---
+--- needs --- algale.idv[1106] ==> algale802x.png ---
+--- needs --- algale.idv[1108] ==> algale803x.png ---
+--- needs --- algale.idv[1109] ==> algale804x.png ---
+--- needs --- algale.idv[1110] ==> algale805x.png ---
+--- needs --- algale.idv[1111] ==> algale806x.png ---
+--- needs --- algale.idv[1112] ==> algale807x.png ---
+--- needs --- algale.idv[1113] ==> algale808x.png ---
+--- needs --- algale.idv[1115] ==> algale809x.png ---
+--- needs --- algale.idv[1117] ==> algale810x.png ---
+--- needs --- algale.idv[1119] ==> algale811x.png ---
+--- needs --- algale.idv[1120] ==> algale812x.png ---
+--- needs --- algale.idv[1121] ==> algale813x.png ---
+--- needs --- algale.idv[1123] ==> algale814x.png ---
+--- needs --- algale.idv[1124] ==> algale815x.png ---
+--- needs --- algale.idv[1125] ==> algale816x.png ---
+--- needs --- algale.idv[1126] ==> algale817x.png ---
+--- needs --- algale.idv[1128] ==> algale818x.png ---
+tex4ht.c error: 21
+--- characters ---
+Font("cmex","10","10","100")
+Font("cmsy","5","5","100")
+Font("cmsy","7","7","100")
+--- needs --- algale.idv[1130] ==> cmsy7-50.png ---
+--- needs --- algale.idv[1131] ==> cmsy7-4b.png ---
+--- needs --- algale.idv[1132] ==> cmsy7-48.png ---
+Font("cmsy","10","10","100")
+--- needs --- algale.idv[1133] ==> cmsy10-50.png ---
+--- needs --- algale.idv[1134] ==> cmsy10-4f.png ---
+--- needs --- algale.idv[1135] ==> cmsy10-4b.png ---
+--- needs --- algale.idv[1136] ==> cmsy10-49.png ---
+--- needs --- algale.idv[1137] ==> cmsy10-48.png ---
+--- needs --- algale.idv[1138] ==> cmsy10-45.png ---
+--- needs --- algale.idv[1139] ==> cmsy10-44.png ---
+--- needs --- algale.idv[1140] ==> cmsy10-43.png ---
+Font("ccr","10","10","100")
+Font("ccr","10","10","172")
+Font("ccr","10","10","120")
+Font("ccr","8","8","100")
+Font("ccr","6","6","100")
+Font("eurm","8","8","100")
+Font("eurm","6","6","100")
+Font("cmsy","8","8","100")
+Font("cmsy","6","6","100")
+Font("msbm","8","8","100")
+Font("msbm","6","6","100")
+Font("eufm","8","8","100")
+Font("eufm","6","6","100")
+Font("eusm","8","8","100")
+Font("euex","8","8","100")
+Font("euex","7","7","100")
+Font("ccr","9","9","100")
+Font("ccti","10","10","90")
+Font("cmtt","10","10","100")
+Font("ccti","10","10","100")
+Font("ccr","7","7","100")
+Font("ccr","5","5","100")
+Font("eurm","10","10","100")
+Font("eurm","7","7","100")
+Font("eurm","5","5","100")
+Font("cmex","7","7","100")
+Font("msam","10","10","100")
+Font("msam","7","7","100")
+Font("msbm","10","10","100")
+Font("msbm","7","7","100")
+Font("eufm","10","10","100")
+Font("eufm","7","7","100")
+Font("eufm","5","5","100")
+Font("eusm","10","10","100")
+Font("eusm","7","7","100")
+Font("eusm","5","5","100")
+Font("euex","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmbx","7","7","100")
+Font("cmitt","10","10","100")
+Font("cmbxti","10","10","100")
+Font("cmbxti","10","10","70")
+Font("ccti","10","10","50")
+Font("torm","10","10","100")
+Font("cmtt","8","8","87")
+Font("ccti","10","10","80")
+Font("cmtt","8","8","100")
+Font("xccsy","10","10","100")

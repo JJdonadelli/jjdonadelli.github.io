@@ -1,0 +1,309 @@
+<!-- Time-stamp: <qua abr 27 17:06:26 2022 yair@asterix> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<body text="black" LINK="blue" VLINK="red" bgcolor="#ffffcc">
+<html>
+<head>
+<title>CI811 Plano de Aula, algoritmos probabilísticos - randômicos - aleatorizados</title>
+</head>
+
+<BODY text="black" LINK="blue" VLINK="red" bgcolor="PapayaWhip">
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="40%" align="center">
+     <font size=+1>2º semestre de 2008</font>
+</td>
+<td width="30%" align="center">
+     <b>sala: </b>PC07 
+</td>
+<td width="30%" align="center"> 
+     <b>Horário</b>: 3ª 13:30  e 6ª 15:30
+</td>
+</tr>
+</table>
+
+<center> 
+<h1>Algoritmos e Probabilidade</h1>
+<img src="../Cartoons/cartoon003.gif">
+</center>
+
+<b>Sumário</b>: 
+      <a href="#ementa">Conteúdo</a>,  
+      <a href="#biblio">Bibliografia</a>, 
+      <a href="#provas">Avaliação</a>, 
+      <a href="#listas">Listas</a>,  
+      <a href="#aula">Programa</a>, 
+      <a href="#freq">Calendário</a>, 
+      <a href="">notas</a>, 
+      <a href="#links">Diversão</a>.
+
+<hr>
+<a href="http://www.inf.ufpr.br/jair/algale-html/"class="linkum">notas de aula</a>
+<hr>
+<table>
+<td>
+<B><font size=+2>Objetivos:</font></B> Apresentar os fundamentos das
+técnicas probabilísticas usadas em projetos de algoritmos e teoria da
+computação.
+</td>
+<td>
+<img src="../Cartoons/cartoon017.gif" halign="left"> 
+</td>
+</table>
+
+<hr>
+
+ <a name=ementa>
+   <B><font size=+2>Conteúdo:</font></B> 
+Probabilidade discreta; Projeto e análise de algoritmos aleatorizados 
+<a href="http://en.wikipedia.org/wiki/Randomized_algorithm"><img style="width:15px;
+    height:15px;" border="0" src="../FIGURES/wp.jpeg"></a>;
+ Classes de complexidade de algoritmos aleatorizados. 
+<a href="http://en.wikipedia.org/wiki/Probabilistic_Turing_machine"><img style="width:15px;
+    height:15px;" border="0" src="../FIGURES/wp.jpeg"></a><br>
+
+<table>
+<td>
+<img style="width: 450px; height:155px;" src="../Cartoons/cartoon018.gif"><!-- align="center">-->
+</td>
+<td>
+ Para uma <b>resenha</b> do assunto da
+ disciplina: <a href="http://www.wisdom.weizmann.ac.il/~oded/rnd-taste.html">
+ <i>A Taste of Randomized Computations</i></a>, Oded Goldreich. 
+</td>
+</table>
+
+<hr>
+
+<p><b><font size=+1>Carga horária:</font></b> 60.
+<b><font size=+1>Créditos:</font></b> 4.
+<b><font size=+1>Responsável:</font></b> Jair Donadelli.<p>
+
+<p><a name=biblio>
+<h3>Bibliografia:</h3>
+<ol>
+<li> <i>Probablility and Computing</i>, 
+     <a href="http://www.eecs.harvard.edu/~michaelm/">M. Mitzenmacher</a>, 
+     <a  href="http://www.cs.brown.edu/~eli/">E.  Upfal</a>. Cambridge
+     University Press, 2005 (<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=upfal&scanu1=1003&u1=2000&t1=@731817&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>).</li>
+<li> <i>Randomized Algorithms</i>, R. Motwani e P. Raghavan. Cambridge
+University Press, 1995 (<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Randomized%20algorithms%20%2f%20Rajeev%20Motwani,%20Prabhakar%20Raghavan.%20-&scanu1=4&u1=2000&t1=@731855&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>).</li>
+
+<h3>Bibliografia complementar:</h3>
+
+      <li><i>Matemática concreta: fundamentos para a ciência da computação</i>, Ronald L. Graham, Donald E. Knuth, Oren Patashnik 
+	(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Graham,%20Ronald%20L.,%201935-&scanu1=1003&u1=2000&t1=@111648&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>) - Capítulo 8.
+      </li>
+      <li><i>Concrete mathematics: a foundation for computer science</i>, Ronald L. Graham, Donald E. Knuth, Oren Patashnik.
+	(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Concrete%20mathematics%3a%20a%20foundation%20for%20computer%20science%20%2f%20Ronald%20L.%20Graham,%20Donald%20E.%20Knuth,%20Oren%20Patashnik.%20-&scanu1=4&u1=2000&t1=@111649&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>) - Capítulo 8.
+      </li>
+
+
+<h3>Material na web:</h3> 
+
+<table>
+<td>
+<img style="width:305px;height:115px;" src="../Cartoons/cartoon005.gif">
+</td>
+<td>
+<img style="width:305px;height:115px;"  src="../Cartoons/cartoon006.gif">
+</td>
+</table>
+
+
+<li><a href="http://portal.acm.org/citation.cfm?id=148082&dl=GUIDE&coll=GUIDE&CFID=78842772&CFTOKEN=15417979">Randomized
+algorithms in "primitive" cultures or what is the oracle complexity
+of a dead chicken?</a> Jeffrey Shallit, ACM SIGACT News, Volume 23,
+Issue 4, Pages: 77 - 80</li>
+
+<li><a href="www.math.tau.ac.il/~nogaa/PDFS/skill4.pdf">Poker, chance and skill</a> Noga Alon</li>
+
+<li>MIT OpenCourseWare, 
+<a href="http://ocw.mit.edu/OcwWeb/Electrical-Engineering-and-Computer-Science/6-856JRandomized-AlgorithmsFall2002/LectureNotes/index.htm">Notas de aula</a>, 
+<a href="http://ocw.mit.edu/OcwWeb/Electrical-Engineering-and-Computer-Science/6-856JRandomized-AlgorithmsFall2002/Assignments/index.htm">Exercícios</a>. 
+</li>
+
+
+<li> <a 
+href="http://www.uni-paderborn.de/fachbereich/AG/agmadh/Scripts/GENERAL/naor.notes.ps.gz">
+<i>Lecture notes on Probabilistic Methods in Computer Science</i></a>,
+S. Naor
+</li> 
+
+<li> <a href="http://www.cs.sunysb.edu/~sas/papers/ProbAlgs.ps"> 
+        <i>On randomization in sequential and distributed algorithms</i></a>,
+	R. Gupta, S. Smolka, and S. Bhaskar.</li>    
+   <li> <a href="http://www.wisdom.weizmann.ac.il/~oded/rnd.html">
+        <i>Randomized Methods in Computation</i></a>, O. Goldreich </li>
+<!--   <li> <a href="http://www.lirmm.fr/w3dif/Randschool/reed/reed.html">
+        <i>Some elements of probability theory</i></a>, B. Reed</li>
+-->   
+   <li> <a href="ftp://ftp.cs.washington.edu/tr/1991/07/UW-CSE-91-07-05.PS.Z">
+     <i>Probabilistic Algorithms and Pseudorandom Generators</i></a>, 
+     <a href="http://www.cs.washington.edu/homes/tompa/">M. Tompa</a>
+   <li> <a href="http://www.math.tau.ac.il/~krivelev/col_rg.ps">
+     <i>Coloring random graphs - an algorithmic perspective</i></a>,
+     M. Krivelevich.</li>
+<li><a href="http://arxiv.org/abs/math.PR/0001057"> 
+Random walks and electrical networks</a>
+Doyle e Snell. 
+(freely  redistributable under  the terms  of the  GNU  General Public
+License)
+</li> 
+
+<li> <a 
+href="http://www.cs.ubc.ca/labs/theory/thread/papers/DubhashiSen.ps.gz">
+Concentration  of measure  for randomized  algorithms:  techniques and
+analysis</a>, D.  Dubhashi e S.  Sen. 
+</li> 
+
+<!-- 
+<li> <a 
+href="ftp://theory.lcs.mit.edu/pub/classes/18.415/notes-random.ps">
+        <i>Randomized    algorithms</i></a>     -    Lecture    notes,
+        M. Goemans. 
+</li>
+-->
+
+<!--   <li><a
+   href="http://www.cs.cmu.edu/afs/cs/academic/class/15859-f04/www/">
+   15-859(M):  Randomized  Algorithms</a>,  Anupam  Gupta  and  Shuchi
+   Chawla</li>
+-->
+ </ol>
+
+<p><a name=provas>
+<h3>Sistema de avaliação:</h3>
+
+<table>
+<td>
+<i>trabalhos + seminarios</i>
+</td>
+<td>
+<img src="../Cartoons/menimalu.gif" align="center"><br>
+</td>
+</table>
+
+<p><a name=freq>
+<h3>Calendário:</h3>
+
+<table>
+<td>
+<ul>
+      <li> - Início das aulas: 28/06</li>
+      <li> - Último dia letivo: 22/11</li>
+      <li> - Não haverá aula durante a semana acadêmica.</li>
+</ul> 
+</td>
+<td>
+<img style="height:250px" src="../Cartoons/cartoon002.gif">
+</td>
+</table>
+<pre>
+     February 2008              March 2008               April 2008     
+     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa 
+                     1  2                        1            1  2  3  4  5 
+      3  4  5  6  7  8  9      2  3  4  5  6  7  8      6  7  8  9 10 11 12 
+     10 11 12 13 14 15 16      9 10 11 12 13 14 15     13 14 15 16 17 18 19 
+     17 18 19 20 21 22 23     16 17 18 19 20 21 22     20 21 22 23 24 25 26 
+     24 25 26 27 28 29        23 24 25 26 27 28 29     27 28 29 30 
+                              30 31 
+
+           May 2008                June 2008                July 2008      
+     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa     Su Mo Tu We Th Fr Sa 
+                  1  2  3      1  2  3  4  5  6  7            1  2  3  4  5 
+      4  5  6  7  8  9 10      8  9 10 11 12 13 14      6  7  8  9 10 11 12 
+     11 12 13 14 15 16 17     15 16 17 18 19 20 21     13 14 15 16 17 18 19 
+     18 19 20 21 22 23 24     22 23 24 25 26 27 28     20 21 22 23 24 25 26 
+     25 26 27 28 29 30 31     29 30                    27 28 29 30 31 
+
+</pre>
+
+<hr><a name=aula> Programação das aulas: (tentativa)
+<pre>
+   
+ 1 Probabilidade discreta
+ 2 Identidade polinomial
+ 3 Probabilidade condicional e Independência
+ 4 Espaço produto
+ 5 Identidade polinomial revisitada
+ 6 Igualdade do produto de matrizes
+ 7 Teorema de Bayes
+ 8          Sigilo perfeito
+ 9          Filtros anti-Spam
+10 Variáveis aleatórias discretas
+11 Distribuições de Bernoulli, binomial, geométrica e uniforme
+12 MAX 3-SAT
+13 Quicksort aleatorizado e Análise de caso médio
+14 Gerador de prováveis primos
+   Modelos de Computação. 
+15          Máquinas de Turing; Circuitos booleanos; RAM; Algoritmos aleatorizados. M.T. probabilística off-line
+16 Classes de complexidade
+17 BPP está na Hierarquia Polinomial
+18 Desaleatorização de BPP usando geradores pseudoaleatórios
+19 Construções de sequencias k-a-k independentes
+20 Hash Universal
+21 Grafos expansores e redução eficiente de erro
+22 Desigualdades, desvios e momentos
+23 Grandes desvios
+24          Existência de PRGs
+25          Cupon Collector, Balls and bins
+26 Estruturas de dados. Treap e Skip lists
+27 Hashing
+   Algortimos distribuídos aleatorizados
+28          O Jantar dos Filósofos
+29          Eleição de Líder
+30          Generais Bizantinos
+    
+</pre>
+
+<hr>
+<a name=links>
+<b>Diversão</b>:
+<center>
+<a href="http://math.ucsd.edu/~crypto/Monty/monty.html"><i>
+Let's make a deal</i></a><br>
+<a href="http://www.math.uah.edu/stat/applets/BuffonNeedleExperiment.xhtml">
+Buffon's Nededle experiment</a><br>
+<a href="http://www.mathpages.com/home/kmath018.htm">Optimizing Your Wife</a><br>
+<a href="http://www.wisdom.weizmann.ac.il/%7Enaor/PUZZLES/nuts.html">Matching Nuts and Bolts</a><br>
+<a href="http://www.betweenwaters.com/probab/probab.html">http://www.betweenwaters.com/probab/probab.html</a><br>
+</center><hr>
+
+
+<hr>
+Numbers that fool  the Fermat test are called  Carmichael numbers, and
+	  little  is  known  about  them  other  than  that  they  are
+	  extremely  rare.  There  are  255 Carmichael  numbers  below
+	  100,000,000.  The smallest  few are  561, 1105,  1729, 2465,
+	  2821, and  6601. In testing primality of  very large numbers
+	  chosen at random, the chance  of stumbling upon a value that
+	  fools the  Fermat test is  less than the chance  that cosmic
+	  radiation  will  cause the  computer  to  make  an error  in
+	  carrying out a "correct" algorithm. Considering an algorithm
+	  to be inadequate for the first reason but not for the second
+	  illustrates   the   difference   between   mathematics   and
+	  engineering. 
+
+<a
+	    href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_idx_910">Abelson
+	    & Sussman</a> 
+
+<hr>
+<center>
+<img src="../Cartoons/cartoon013.gif" align="center"><b>FIM</b>
+</center>
+<hr>
+  </body>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5933890-2");
+pageTracker._trackPageview();
+</script>
+</html>
+ 

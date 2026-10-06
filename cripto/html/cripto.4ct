@@ -1,0 +1,83 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Sum\'ario}}{1}\relax 
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-20001}{QQ2-1-2}{Inteiros}}{1}\relax 
+\doTocEntry\tocsubsection{1.1}{\csname a:TocLink\endcsname{1}{x1-30001.1}{QQ2-1-3}{Divisibilidade}}{4}\relax 
+\doTocEntry\tocsubsection{1.2}{\csname a:TocLink\endcsname{1}{x1-40001.2}{QQ2-1-4}{MDC}}{10}\relax 
+\doTocEntry\tocsubsection{1.3}{\csname a:TocLink\endcsname{1}{x1-50001.3}{QQ2-1-5}{Algoritmo de Euclides}}{15}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-50011}{}{\ignorespaces Euclides($a,b$).}}{figure}\relax 
+\doTocEntry\tocsubsubsection{1.3.1}{\csname a:TocLink\endcsname{1}{x1-60001.3.1}{QQ2-1-7}{Algoritmo de Euclides Estendido}}{22}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-60012}{}{\ignorespaces Euclides\_estendido($a,b$).}}{figure}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-70002}{QQ2-1-9}{N\'umeros primos e fatora\c c\~ao}}{26}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-70053}{}{\ignorespaces Problema da Primalidade.}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-70174}{}{\ignorespaces Problema da Fatora\c c\~ao.}}{figure}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-70215}{}{\ignorespaces Crivo de Erat\'ostenes.}}{figure}\relax 
+\doTocEntry\tocsubsection{2.1}{\csname a:TocLink\endcsname{1}{x1-80002.1}{QQ2-1-13}{N\'umeros de Fermat}}{37}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-90003}{QQ2-1-14}{Inteiros m\'odulo n}}{38}\relax 
+\doTocEntry\tocsubsection{3.1}{\csname a:TocLink\endcsname{1}{x1-100003.1}{QQ2-1-15}{Pequeno Teorema de Fermat}}{44}\relax 
+\doTocEntry\tocsubsection{3.2}{\csname a:TocLink\endcsname{1}{x1-110003.2}{QQ2-1-16}{Exponencia\c c\~ao modular}}{46}\relax 
+\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-110026}{}{\ignorespaces ExpModRec($a,b,n$)}}{figure}\relax 
+\doTocEntry\toclof{7}{\csname a:TocLink\endcsname{1}{x1-110067}{}{\ignorespaces ExpMod($a,b,n$)}}{figure}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-120004}{QQ2-1-19}{Sistemas de congru\^encias}}{53}\relax 
+\doTocEntry\toclof{8}{\csname a:TocLink\endcsname{1}{x1-120148}{}{\ignorespaces Solu\c c\~oes de equa\c c\~ao modular.}}{figure}\relax 
+\doTocEntry\tocsubsection{4.1}{\csname a:TocLink\endcsname{1}{x1-130004.1}{QQ2-1-21}{Inteiros m\'odulo $n$}}{67}\relax 
+\doTocEntry\tocsubsection{4.2}{\csname a:TocLink\endcsname{1}{x1-140004.2}{QQ2-1-22}{Invert\IeC {\'\i }veis m\'odulo $n$}}{75}\relax 
+\doTocEntry\tocsubsection{4.3}{\csname a:TocLink\endcsname{1}{x1-150004.3}{QQ2-1-23}{Computa\c c\~ao com inteiros m\'odulo $n$}}{79}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-160005}{QQ2-1-24}{Uma hierarquia de estruturas alg\'ebricas}}{80}\relax 
+\doTocEntry\tocsection{6}{\csname a:TocLink\endcsname{1}{x1-170006}{QQ2-1-25}{Polin\^omios}}{82}\relax 
+\doTocEntry\tocsection{7}{\csname a:TocLink\endcsname{1}{x1-180007}{QQ2-1-26}{Grupos e subgrupos}}{87}\relax 
+\doTocEntry\tocsubsection{7.1}{\csname a:TocLink\endcsname{1}{x1-190007.1}{QQ2-1-27}{Considera\c c\~oes computacionais a respeito de ordem em $\mathbb  Z_n$ e $\mathbb  Z_n^*$}}{96}\relax 
+\doTocEntry\toclof{9}{\csname a:TocLink\endcsname{1}{x1-190019}{}{\ignorespaces Problema da ordem do $\mathbb  Z_n^*$.}}{figure}\relax 
+\doTocEntry\tocsection{8}{\csname a:TocLink\endcsname{1}{x1-200008}{QQ2-1-29}{Ra\IeC {\'\i }zes primitivas}}{102}\relax 
+\doTocEntry\toclof{10}{\csname a:TocLink\endcsname{1}{x1-2000810}{}{\ignorespaces Problema da Raiz Primitiva mod $p$.}}{figure}\relax 
+\doTocEntry\toclof{11}{\csname a:TocLink\endcsname{1}{x1-2000911}{}{\ignorespaces Raiz primitiva de $\mathbb  Z_p^*$.}}{figure}\relax 
+\doTocEntry\toclof{12}{\csname a:TocLink\endcsname{1}{x1-2002112}{}{\ignorespaces Raiz primitiva de $\mathbb  Z_p^*$.}}{figure}\relax 
+\doTocEntry\tocsection{9}{\csname a:TocLink\endcsname{1}{x1-210009}{QQ2-1-33}{Logaritmo discreto}}{112}\relax 
+\doTocEntry\toclof{13}{\csname a:TocLink\endcsname{1}{x1-2100313}{}{\ignorespaces Problema do Logaritmo Discreto.}}{figure}\relax 
+\doTocEntry\tocsection{10}{\csname a:TocLink\endcsname{1}{x1-2200010}{QQ2-1-35}{Sistemas criptogr\'aficos}}{117}\relax 
+\doTocEntry\tocsubsubsection{10.0.1}{\csname a:TocLink\endcsname{1}{x1-2300010.0.1}{QQ2-1-36}{Cifras afim}}{121}\relax 
+\doTocEntry\tocsubsection{10.1}{\csname a:TocLink\endcsname{1}{x1-2400010.1}{QQ2-1-37}{One-time pad}}{123}\relax 
+\doTocEntry\tocsubsubsection{10.1.1}{\csname a:TocLink\endcsname{1}{x1-2500010.1.1}{QQ2-1-38}{Sigilo Perfeito}}{124}\relax 
+\doTocEntry\tocsection{11}{\csname a:TocLink\endcsname{1}{x1-2600011}{QQ2-1-39}{RSA}}{130}\relax 
+\doTocEntry\toclof{14}{\csname a:TocLink\endcsname{1}{x1-2601314}{}{\ignorespaces Problema RSA.}}{figure}\relax 
+\doTocEntry\tocsection{12}{\csname a:TocLink\endcsname{1}{x1-2700012}{QQ2-1-41}{Rabin}}{142}\relax 
+\doTocEntry\toclof{15}{\csname a:TocLink\endcsname{1}{x1-2700215}{}{\ignorespaces Raiz quadrada de $c$ m\'odulo $n$.}}{figure}\relax 
+\doTocEntry\toclof{16}{\csname a:TocLink\endcsname{1}{x1-2700416}{}{\ignorespaces Problema da raiz quadrada m\'odulo $n$.}}{figure}\relax 
+\doTocEntry\tocsection{13}{\csname a:TocLink\endcsname{1}{x1-2800013}{QQ2-1-44}{Elgamal}}{148}\relax 
+\doTocEntry\toclof{17}{\csname a:TocLink\endcsname{1}{x1-2800617}{}{\ignorespaces Problema de Diffie--Hellman.}}{figure}\relax 
+\doTocEntry\tocsection{14}{\csname a:TocLink\endcsname{1}{x1-2900014}{QQ2-1-46}{Assinaturas digitais}}{153}\relax 
+\doTocEntry\tocsubsubsection{14.0.2}{\csname a:TocLink\endcsname{1}{x1-3000014.0.2}{QQ2-1-47}{RSA}}{153}\relax 
+\doTocEntry\tocsubsection{14.1}{\csname a:TocLink\endcsname{1}{x1-3100014.1}{QQ2-1-48}{Rabin}}{154}\relax 
+\doTocEntry\tocsubsection{14.2}{\csname a:TocLink\endcsname{1}{x1-3200014.2}{QQ2-1-49}{Elgamal}}{155}\relax 
+\doTocEntry\tocsubsection{14.3}{\csname a:TocLink\endcsname{1}{x1-3300014.3}{QQ2-1-50}{DSA}}{155}\relax 
+\doTocEntry\tocsection{15}{\csname a:TocLink\endcsname{1}{x1-3400015}{QQ2-1-51}{Primalidade revisitada}}{157}\relax 
+\doTocEntry\toclof{18}{\csname a:TocLink\endcsname{1}{x1-3400118}{}{\ignorespaces Gerador gen\'erico de n\'umeros primos.}}{figure}\relax 
+\doTocEntry\tocsection{16}{\csname a:TocLink\endcsname{1}{x1-3500016}{QQ2-1-53}{Teste de Fermat}}{161}\relax 
+\doTocEntry\toclof{19}{\csname a:TocLink\endcsname{1}{x1-3500519}{}{\ignorespaces Teste de Fermat.}}{figure}\relax 
+\doTocEntry\tocsubsection{16.1}{\csname a:TocLink\endcsname{1}{x1-3600016.1}{QQ2-1-55}{N\'umeros de Carmichael}}{165}\relax 
+\doTocEntry\tocsection{17}{\csname a:TocLink\endcsname{1}{x1-3700017}{QQ2-1-56}{Teste de Miller--Rabin}}{170}\relax 
+\doTocEntry\toclof{20}{\csname a:TocLink\endcsname{1}{x1-3700920}{}{\ignorespaces Testemunha($n,a,r,s$)}}{figure}\relax 
+\doTocEntry\toclof{21}{\csname a:TocLink\endcsname{1}{x1-3701021}{}{\ignorespaces Teste de Miller--Rabin.}}{figure}\relax 
+\doTocEntry\tocsection{18}{\csname a:TocLink\endcsname{1}{x1-3800018}{QQ2-1-59}{Primos de Mersenne}}{183}\relax 
+\doTocEntry\toclof{22}{\csname a:TocLink\endcsname{1}{x1-3800722}{}{\ignorespaces Teste de Lucas--\href  {http://en.wikipedia.org/wiki/Derrick_Henry_Lehmer}{Lehmer}.}}{figure}\relax 
+\doTocEntry\tocsubsection{18.1}{\csname a:TocLink\endcsname{1}{x1-3900018.1}{QQ2-1-61}{Teste baseado em fatora\c c\~ao}}{188}\relax 
+\doTocEntry\toclof{23}{\csname a:TocLink\endcsname{1}{x1-3900623}{}{\ignorespaces Teste de Lucas.}}{figure}\relax 
+\doTocEntry\tocsection{19}{\csname a:TocLink\endcsname{1}{x1-4000019}{QQ2-1-63}{Como gerar de n\'umeros primos}}{193}\relax 
+\doTocEntry\tocsubsection{19.1}{\csname a:TocLink\endcsname{1}{x1-4100019.1}{QQ2-1-64}{Gerar n\'umeros pequenos}}{193}\relax 
+\doTocEntry\tocsubsection{19.2}{\csname a:TocLink\endcsname{1}{x1-4200019.2}{QQ2-1-65}{Gerar prov\'aveis primos}}{194}\relax 
+\doTocEntry\toclof{24}{\csname a:TocLink\endcsname{1}{x1-4200224}{}{\ignorespaces Gerador de n\'umeros aleat\'orios.}}{figure}\relax 
+\doTocEntry\toclof{25}{\csname a:TocLink\endcsname{1}{x1-4200625}{}{\ignorespaces Gerador de n\'umeros primos aleat\'orios.}}{figure}\relax 
+\doTocEntry\tocsubsection{19.3}{\csname a:TocLink\endcsname{1}{x1-4300019.3}{QQ2-1-68}{N\'umeros primos com $k$ bits}}{203}\relax 
+\doTocEntry\tocsubsection{19.4}{\csname a:TocLink\endcsname{1}{x1-4400019.4}{QQ2-1-69}{Usando o teste de Miller--Rabin}}{204}\relax 
+\doTocEntry\toclof{26}{\csname a:TocLink\endcsname{1}{x1-4400326}{}{\ignorespaces Gerador de prov\'aveis primos.}}{figure}\relax 
+\doTocEntry\tocsubsection{19.5}{\csname a:TocLink\endcsname{1}{x1-4500019.5}{QQ2-1-71}{Usando o teste de Fermat}}{208}\relax 
+\doTocEntry\tocsection{20}{\csname a:TocLink\endcsname{1}{x1-4600020}{QQ2-1-72}{AKS}}{209}\relax 
+\doTocEntry\tocsubsection{20.1}{\csname a:TocLink\endcsname{1}{x1-4700020.1}{QQ2-1-73}{Ideal e Anel quociente}}{209}\relax 
+\doTocEntry\tocsubsection{20.2}{\csname a:TocLink\endcsname{1}{x1-4800020.2}{QQ2-1-74}{Algoritmo AKS}}{214}\relax 
+\doTocEntry\toclof{27}{\csname a:TocLink\endcsname{1}{x1-4800627}{}{\ignorespaces Teste de primalidade AKS.}}{figure}\relax 
+\doTocEntry\tocsubsection{20.3}{\csname a:TocLink\endcsname{1}{x1-4900020.3}{QQ2-1-76}{An\'alise da complexidade }}{221}\relax 
+\doTocEntry\toclof{28}{\csname a:TocLink\endcsname{1}{x1-4900328}{}{\ignorespaces Testa se $n=a^b$.}}{figure}\relax 
+\doTocEntry\toclof{29}{\csname a:TocLink\endcsname{1}{x1-4900429}{}{\ignorespaces M\'etodo de Newton para $\o:left: \delimiter "4262304 n^{1/b} \o:right: \delimiter "5263305 $;}}{figure}\relax 
+\doTocEntry\toclof{30}{\csname a:TocLink\endcsname{1}{x1-4900730}{}{\ignorespaces Teste de primalidade AKS.}}{figure}\relax 
+\doTocEntry\toclof{31}{\csname a:TocLink\endcsname{1}{x1-4900931}{}{\ignorespaces Teste de Agrawal--Biswas.}}{figure}\relax 
+\doTocEntry\tocsection{A}{\csname a:TocLink\endcsname{1}{x1-50000A}{QQ2-1-81}{Exerc\IeC {\'\i }cios}}{233}\relax 
+\par 

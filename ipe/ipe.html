@@ -1,0 +1,606 @@
+<!-- Time-stamp: <seg jan 11 10:01:57 2016 jair@borel> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BC0406 Introdução à Probabilidade e à Estatística</title>
+
+<style type="text/css" >
+
+  body { font-family: Ubuntu, sans-serif; }
+  
+  div.my_wrapper{
+  width: 930px;
+  }
+  
+  div.my_header{
+  padding: 10px;
+  width: 908px;
+  height: 141px;
+  overflow: hidden;
+  border: 1px solid gray;
+  background:#ffa500; 
+  }
+  
+  li.my_nav_link{
+  text-align: right;
+  float: right;
+  list-style: none;
+  padding-left: 25px;
+  }
+  
+  div.my_left_box{
+  float: left;
+  padding: 10px;
+  width: 510px;
+#  border: 1px solid gray;
+  }
+  
+  div.my_right_box{
+  float: right;
+  padding: 10px;
+  width: 320px;
+  border: 1px solid gray;
+    background:#ffa500; 
+}
+  
+  div.my_footer{
+  clear:both;
+  padding: 10px;
+  width: 908px;
+  border: 1px solid gray;
+  }
+
+  
+</style>
+
+</head>
+
+<body>
+  
+  <div class="my_wrapper">
+    
+    <div class="my_header">
+<center>      <font size="+3" color="blue">BC0406 Introdução à Probabilidade e a Estatística</font> </center>
+<center>	<font size="+2"
+		      ><a href="http://professor.ufabc.edu.br/~jair.donadelli">Jair  Donadelli</a></font></center>
+	      <ul>
+		<font size="+1">
+		  <li class="my_nav_link"><font color="blue"><a href="#links"><i>links</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="http://prograd.ufabc.edu.br/doc/calendario_academico_2015.pdf"><i>Calendário acadêmico</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="conceitos-ipe.html"><i>Conceitos</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="#foot"><i>Notícias</i></a> / 
+		  <font color="blue"><a href="http://twitter.com/QuadroDeAvisos"><i>Twitter</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/listas/"><i>Listas de exercícios</i></a></font> </li>
+		  <li class="my_nav_link"><font color="blue"><a href="#avaliacao"><i>Avaliação</i></a></font> </li>
+		</font>
+	      </ul><br><br>
+<b>Horário de atendimento</b>: sala 546-2, bloco A em
+ horário agendado por email<br>
+</div>
+
+<div style="display:block;text-align:left"><img src="images/emailufabc.png" border="0"></a></div>
+
+	    
+	    <div class="my_left_box">
+	      
+<p align="justify">
+  <b style= "color: blue">Horários</b> 
+  <TABLE BORDER=1> 
+      <TR> 
+	<TD>4ª (semanal)</TD> 
+	<TD>(A) 19h-21h na S-208-0</TD>
+	<TD>(B) 21h-23h na S-205-0</TD>
+      </TR> 
+      <TR>
+	<TD>6ª (quinzenal)</TD>
+	<TD>(A) 21h-23h na S-208-0</TD>
+	<TD>(B) 19h-21h na S-205-0</TD>
+      <TR> </font>
+      </TABLE> 
+</p>      
+  <!-- <b style= "color: blue">Código: </b> BC 0406 -->
+  <b style= "color: blue">TPI: </b> 3-0-<blink><b style= "color: red","text-decoration: blink">4</b></blink>
+  <!--<b style= "color: blue">Carga Horária: </b> 48 horas -->
+<b style= "color: blue">Recomendações: </b> BM e FUV<p>
+<b style= "color: blue"> Objetivos: </b> Introduzir os conceitos
+essenciais da teoria de probabilidade  e suas implicações na estatística.
+<!--<b style= "color: blue">Competências: </b> Capacidade de resolver
+ problemas simples de Probabilidade.  Compreender o teorema do limite
+ central e ser capaz de utilizá-lo nas aplicações estatísticas.
+ Adquirir conceitos básicos em estatística para análise e interpretação
+ de conjuntos de dados experimentais. --><p align="justify">
+<b style= "color: blue">Ementa:</b> Introdução à
+Estatística. Estatística descritiva. Probabilidade. Variável aleatória
+discreta e contínua: binomial, Poisson, normal e exponencial. Teorema
+do limite central e intervalos de confiança.
+</p>
+
+<font size=+1>
+<p align="justify"><b style= "color: blue">Bibliografia</b>
+<ol>
+<li><a name="ross"></a> ROSS, Sheldon <i>Probabilidade: um curso moderno com
+aplicações</i>
+<b><font size=-1>[519.2 ROSSpr8]</font></b>
+</li>
+<li>
+  BUSSAB, W. e MORETTIN, P. <i>Estatística básica.</i>
+<b><font size=-1>[519.5  BUSSes]</font></b>
+</li>
+<li>
+MEYER, Paul. <i>Probabilidade : aplicações à estatística</i> <b><font size=-1>[519.5  MEYEpr2]</font></b>
+</li>
+</ol></p>
+<p align="justify">
+Há outros livros interessantes que
+contemplam a ementa, confira a bibliografia
+completa <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/">aqui</a>.
+</p>
+
+<font size=+1>
+<p align="justify"><b style= "color: blue">Material de apoio</b>
+<ol>
+<li> Notas de aula
+  [<a href="https://dl.dropboxusercontent.com/u/20766192/ipe.pdf">pdf</a>]
+  [<a href="https://anotacoesdeaula.wordpress.com/category/ipe/">html</a>]
+</li>
+<li>
+  <a href="https://dl.dropboxusercontent.com/u/20766192/aulas.pdf">slides</a>
+</li>
+<li>
+<a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/listas/">Listas de exercícios</a>
+</li>
+<li>
+<a href="http://static1.squarespace.com/static/54bf3241e4b0f0d81bf7ff36/t/55e9494fe4b011aed10e48e5/1441352015658/probability_cheatsheet.pdf">Cheatsheet</a>
+</li>
+</ol>
+
+
+</font>
+
+<a name="avaliacao"></a>
+<font size="+1" style= "color: blue"><b>Avaliação:</b> </font><a name="provas"></a> 
+
+<p align="justify">A availação consiste de <b>duas
+    provas</b>. Entregar exercícios ajuda, não
+  entregar não atrapalha.<br>
+    <b>P1 em 04/11 e P2 em <del>09/12</del> 11/12</b>
+  </p>
+  
+<p align="justify">
+  <b><u>SUB</u></b> para o aluno que <b>faltou em dia de
+    prova</b> com uma<b>
+  <a href="http://www.ufabc.edu.br/index.php?option=com_content&view=article&id=8901:resolucao-consepe-nd-181-regulamenta-a-aplicacao-de-mecanismos-de-avaliacao-substitutivos-nos-cursos-de-graduacao-da-ufabc&catid=427:consepe-resolucoes">justificativa
+    válida</a></b> em <b>12/12</b> S 304-2 das 14h às
+    16h. <del>11/12</del>.
+</p>
+
+
+<p align="justify">
+  <b><u>Exame</u>:</b> Qualquer que não reprovou por falta pode fazer o
+  exame de recuperação <b> na 1ª semana de 2016-1</b>. Nesse caso, o
+  conceito final será o conceito obtido no exame. o <b>ALUNOS QUE FOREM
+  FAZER EXAME <u>DEVEM ENVIAR EMAIL PARA O PROFESSOR ATÉ
+  31/01/16</u></b>.
+</p>
+
+
+<a name="entrega"></a>
+
+<font size="+0"><b>Entrega de exercícios:</b> </font>
+<p align="justify">
+  Participação e entrega de exercícios serão
+  considerados no conceito final, não são
+  obrigatório.</p>
+
+	  <p align="justify"> Quaisquer exercícios das listas ou das
+	    referências podem ser entregues.  Espera-se uma conduta
+	    honesta nessa parte da avaliação,
+	    <a href="http://www.ime.usp.br/~am/2166/plagio.html">clique
+	      aqui</a> para uma referência de conduta. </p>
+	</p>
+	
+	<p align="justify">
+	  Todo
+	  <u>aluno que entregar exercícios pode,
+	    eventualmente, ser arguido</u> sobre a resolução.
+	  
+	<p align="justify">A avaliação final de cada
+	  aluno <u>não</u> será o resultado de alguma média
+	  feita a partir das avaliações.  O resultado de cada
+	  avaliação é um conceito que leva em conta o
+	  resultado das avaliações e dos exercícios entregues
+	  até o momento.  
+	</p>
+	
+	<p>
+	  O conceito final da disciplina poderá ser:
+	</p>
+	
+	<ul>
+	  <li> <p align="justify"><b>F</b> Reprovado. O
+	      aluno deve cursar novamente a disciplina.
+	      <li>
+		<p align="justify"><b>D</b> Aproveitamento
+		  mínimo não satisfatório dos conceitos da
+		  disciplina, com familiaridade parcial do assunto
+		  e alguma capacidade para resolver problemas
+		  simples, mas demonstrando deficiências que exigem
+		  trabalho adicional para prosseguir em estudos
+		  avançados. Nesse caso, o aluno é aprovado na
+		  expectativa de que obtenha um conceito melhor em
+		  outra disciplina, para compensar o conceito D no
+		  cálculo do CR.
+		</li>
+		
+	      <li> <p align="justify"><b>C</b> Desempenho
+		  mínimo satisfatório, demonstrando capacidade de
+		  uso adequado dos conceitos da disciplina,
+		  habilidade para enfrentar problemas relativamente
+		  simples e prosseguir em estudos avançados.
+		  <li> <p align="justify"><b>B</b> Bom desempenho,
+		      demonstrando boa capacidade de uso dos conceitos
+		      da disciplina.
+		      <li> <p align="justify"><b>A</b> Desempenho
+			  excepcional, demonstrando excelente compreensão
+			  da disciplina e do uso da matéria.
+			</ul>  
+			
+			
+			
+			
+			<hr size=8 width=50% noshade align=right> <h4 style= "color: blue"><i>Links</i> </h4>
+
+      <a name="links"></a>
+<ol>
+  <li><a href="ProvasAntigas/">Provas antigas</a>
+  </li>
+  <li> R. Bianconi,
+    <a href="http://www.ime.usp.br/~bianconi/recursos/mat.pdf">Como
+      ler e estudar matemática?</a>
+  </li>
+  <li>
+    Fernando Q. Gouvêa e Shai
+    Simonson, <a href="http://web.stonehill.edu/compsci/history_math/math-read.htm">How
+      to Read Mathematics</a> ( uma tradução rápida e grosseira,
+    segundo o
+    tradutor, <a href="http://hostel.ufabc.edu.br/~daniel.miranda/?p=628">aqui</a>).
+  </li>
+  
+  <li> <a href="http://setosa.io/conditional/">Uma explicação gráfica de probabilidade condicional</a> 
+  </li>
+  <li><a href="http://simplystatistics.org/2014/10/17/bayes-rule-in-a-gif/">Uma explicação gráfica para o Teorema de Bayes</a> 
+  </li>
+  <li><a href="http://www.stat.tamu.edu/~west/applets/Venn1.html">Conditional probability applet</a>
+  </li>
+  <li>
+    <a href="http://www.math.uah.edu/stat/">Virtual Laboratories in Probability and Statistics</a>
+  </li>
+  <li>
+    <a href="http://www.statlect.com/">The digital textbook on probability and statistics</a>
+  </li>
+  <li>
+    <a href="http://web2.uwindsor.ca/math/hlynka/stochOnline.html">Página web com material em vários níveis sobre probabilidade e aplicações</a>
+  </li>
+  <li><a href="http://mathoverflow.net/questions/37151/what-are-the-big-problems-in-probability-theory">What are the big problems in probability?</a>
+  </li>
+  <li>
+    <a href="http://understandinguncertainty.org/">Understanding Uncertainty</a>
+  </li>
+  <li>
+    <a href="http://www.dartmouth.edu/~chance/">Chance</a> (Chance is a
+    quantitative literacy course developed cooperatively by the Chance
+    Team)
+  </li>
+  <li>
+    <a href="http://normaldeviate.wordpress.com/2013/06/30/lost-causes-in-statistics-i-finite-additivity/">Lost
+      causes in statistics I: Finite Additivity</a>, Larry Wasserman
+  </li>
+</ol>
+
+
+
+    </div>
+
+
+<div style="display:inline;float:right;margin:0px
+0px;padding:10px"><a href="http://en.wikipedia.org/wiki/Infinite_monkey_theorem"> <img src="images/monkey.jpg"
+width="330" height="250" border="2" ></a></div>
+
+
+
+
+ <div class="my_right_box"> 
+
+      <center><b>Programação das aulas</b> (tentativa)</center><br>
+
+<ul>
+<li><b>semana 01 </b>(1 aula)<br> 
+
+    <font face="Verdana" size ="3pt">
+      23/09 - Administrativia. Conjuntos. Modelos determinístico e
+      probabilístico. Espaço amostral. Eventos.<br></font>
+	<font face="Monospace" size="2pt">
+	  Ref. conjuntos: caps 2 e 4 do  <a href="http://gradmat.ufabc.edu.br/disciplinas/bm/livro/">livro de B.M.</a>.
+	  <a href="https://anotacoesdeaula.wordpress.com/2014/09/19/bc0405-generalidades-sobre-conjuntos/#exercicios">Exercícios</a>.
+	    Ref. modelos, experimentos, espaço amostral, eventos:
+	    seções 1.1 a 1.5 de MEYER; seções 2.1, 2.2 do
+	    ROSS. Exercícios: exercícios 1 ao 12, exceto 4, da
+	    <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_2_IPE1.pdf">Lista
+	      2</a> 
+	  </font>
+	  </font>
+	
+	
+</li>
+<li><b>semana 02 </b>(2 aulas)<br> 
+
+    <font face="Verdana" size ="3pt">
+    30/09 - Probabilidade clássica em espaços finitos. Propriedades da
+    probabilidades clássica. Probabilidade condicional (classica)
+
+    <br>
+  
+    02/10 - Probabilidade condicional (classica); experimentos
+    compostos, diagrama de árvore.
+    <font face="Monospace" size="2pt">
+  Ref. seções 1.7, 2.1 e 2.2 de MEYER; seções 2.4, 2.5 do ROSS, atente
+  para os exemplos 2b,2c,2d. Notas de aula págs. 27 -- 34 e 49 -- 55.
+  Exercícios: 2,3,4,6,9,10,11,13
+  da <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_3_IPE.pdf">Lista
+  3</a>; 1--5, 12, 22, 23
+  da <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_4_IPE.pdf">Lista
+  4</a>
+	  </font>
+	  </font>
+</li>
+<li><b>semana 03 </b>(1 aula)<br> 
+    <font face="Verdana" size ="3pt">
+    07/10 - Princípios básicos de análise
+    combinatória. Permutação. Arranjos.  Combinações. Teorema Binomial
+    e Multinomial. Solução inteira de equação linear.
+    <font face="Monospace" size="2pt">
+      Ref.: cap. 1 do ROSS. Exemplos 5a ,5b, 5d, 5e, 5f, 5i, 5l, 5m, 5n
+    do capitulo 2 do Ross.
+    Cap. do <a href="http://gradmat.ufabc.edu.br/disciplinas/bm/livro/">livro
+    de B.M.</a>  Notas de aula (pdf)  págs. 35 --- 47.  Notas de aula <a href="https://anotacoesdeaula.wordpress.com/2014/09/22/bc0405-principios-da-analise-combinatoria/">html</a>.  Exercícios:
+    <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_1_IPE.pdf"> 
+    Lista 1</a>; <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_3_IPE.pdf">Lista
+    3</a> Exercícios 1,5,7,8,12,14--22.
+</font>
+	  </font>
+</li>
+
+
+
+<br>
+
+<li><b>semana 04 </b>(2 aulas)<br>
+    <font face="Verdana" size ="3pt">
+    14/10 - não teve aula
+    </font>
+
+    <br>
+  
+      <font face="Verdana" size ="3pt">
+    16/10 - Modelo probabilístico: Axiomas de probabilidade. Propriedades  de uma probabilidade. Probabilidade Condicional.
+     </font><font face="Monospace" size="2pt">
+      Ref. sec. 2.3,2.4,3.2 do ROSS.  Notas de aula págs.  págs. 69 –
+      73, 76 – 77, 84 – 85 Exercícios 4 e a partir do 13 da
+    <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_2_IPE.pdf"> 
+    Lista 2</a> </font>
+</li>
+
+
+<br>
+
+<li><b>semana 05 </b>(1 aula)<br>
+  <font face="Verdana" size ="3pt">
+    21/10 - Teorema da Probabilidade Total. Teorema de Bayes e suas
+    consequências. Independência.
+</font> </font><font face="Monospace" size="2pt"> Refs.: cap. 3 do
+Meyer; cap. 3 do ROSS, estude os exemplos 2a até 2e, 3a até 3f,3j,3m;
+estude a demonstração da proposição 4.1, e os exemplos 4f, 4g, 4j.
+Notas de
+aula (<a href="https://anotacoesdeaula.wordpress.com/2014/10/25/bc0406-probabilidade-condicional-e-independencia/">html</a>) (<a href="https://dl.dropboxusercontent.com/u/20766192/ipe.pdf">pdf</a>
+págs. 84--90 e 92--95; pags opcionais 90 e 91, 96 e 97. Exemplos
+119--122 (pgs 103--105)).  Exercícios:  <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_4_IPE.pdf">
+    Lista 4</a>. </font>
+</li>
+<br>
+
+ <li> <b>semana 06 </b>(2 aulas)<br>
+<font face="Verdana" size ="3pt">
+     28/10 - não teve aula <br>   
+     30/10 - Feriado
+</font>
+   </li>       
+<br>
+
+<li><b>semana 07 </b>(1 aula)<br>
+ <font  face="Verdana" size ="3pt">
+    04/11 - Aula de exercícios</font>
+</li>
+
+
+<br>
+
+<li><b>semana 08 </b>(2 aulas)<br> 
+<font face="Verdana" size ="3pt">
+    11/11 - <b>P1</b> <a href="prova1A.pdf">P1-A</a>
+    e <a href="prova1B.pdf">P1-B</a> <br>
+</font>
+<font face="Verdana" size ="3pt">
+    13/11 - Variáveis aleatórias discretas. Esperança. Variância.
+    Função de distribuição acumulada.  <br>
+</font><font face="Monospace" size="2pt"> Refs. seções 4.1 a 4.5 do
+ROSS. Estudar a proposição 4.1 e sua demonstração (pg 164) e do
+corolário 4.1 (pg 167) e os exemplos 2a, 3d, 4a, 4b. Notas de aula <a href="https://anotacoesdeaula.wordpress.com/2014/11/06/bc0406-variaveis-aleatorias-discretas">html</a>. Exercícios  1,2,3,5, 10,12,13 da <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_5_IPE.pdf">Lista 5</a> 
+</font>
+</li>
+
+
+
+
+<br>
+
+<li><b>semana 09 </b>(1 aula)<br>
+    <font face="Verdana" size ="3pt">
+    18/11 - Distribuições discretas: Bernoulli, Binomial, Geométrica,
+    Poisson. Variáveis aleatórias contínuas: fda, fdp, esperança,
+    variância. Esperança da soma de v.a.</font><font face="Monospace"
+    size="2pt"> Refs. seções 4.6, 4.7, 4.8.1 e 4.9 do ROSS. Estudar
+    todos os exemplos, exceto 7d e 7e, e estudar a proposição 9.1 e o
+    corolário 9.2. Seções 5.1 e 5.2 do ROSS. Atente para a proposição
+    2.1 e o corolário 2.1 (não precisa estudar as demonstrações) 
+
+Notas de aula
+(<a href="https://anotacoesdeaula.wordpress.com/2014/11/06/bc0406-variaveis-aleatorias-discretas/">html</a>, mesmo da aula anterior) + (<a href="https://anotacoesdeaula.wordpress.com/2014/11/19/bc0406-funcao-de-distribuicao-acumulada-e-variaveis-aleatorias-continuas/\#vac">html</a>, v.a. cont.)
+   
+      Exercícios: <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_5_IPE.pdf">Lista
+      5</a>: exercícios 4,6,7,8,9,11--24 e
+      <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_6_IPE.pdf">Lista
+     6</a>: exercícios 1 a 7
+      </font>
+</li>
+
+<br>
+
+ 
+
+<li><b>semana 10 </b>(2 aulas)<br> 
+    <font face="Verdana" size ="3pt">
+    25/11 - Modelos de distribuições contínuas: Uniforme,
+       Exponencial e Normal 
+    </font>
+    <font face="Monospace" size="2pt"> Refs.  Seções 5.3, 5.4 (exceto
+     5.4.1), 5.5 do ROSS. Estude os exemplos: 3a, 3c, 3d, 4a, 4b, 4c,
+     4d, 5a, 5b, 5c 5d.  Notas de aula
+     (<a \href+"https://anotacoesdeaula.wordpress.com/2014/11/28/modelos-continuos/">html</a>).
+     Exercícios: <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_6_IPE.pdf">Lista
+     6</a></font>
+    <br>
+<font face="Verdana" size ="3pt">
+    27/11 - Estatística Descritiva: Medidas de posição e de dispersão, histograma, box-plot.
+    </font>
+    <font face="Monospace" size="2pt">
+      Refs.: seções 2.1, 2.2, 2.3, 3.1, 3.2, 3.3, 3.4 do Morettin e Bussab.  Capitulo 2 do  Larson e Farber.  Exercícios: <a href="http://gradmat.ufabc.edu.br/disciplinas/listas/ipe/Lista_8_IPE.pdf">Lista 8</a></font>
+</li>
+
+<br>
+
+
+<li><b>semana 11 </b>(1 aula)<br>
+<font face="Verdana" size ="3pt">
+    02/12 - Teorema Central do Limite.   Intervalos de confiança.</font>
+    <font face="Monospace" size="2pt">
+Refs: seção 8.3 do Ross e 6.1 do Larson e Farber.  Notas de aula:
+(<a href="https://anotacoesdeaula.wordpress.com/2014/12/01/bc0406-normal/">html</a>).
+Exercs.:  7 ao 11, 14, 15 da <a href="http://gradmat.ufabc.edu.br/disciplinas/ipe/wp-content/uploads/sites/2/2013/01/Lista_9_IPE.pdf">Lista 9</a> 
+</font><br>
+<font face="Verdana" size ="3pt">
+  03/12 - Vista de provas
+</font>
+</li>
+
+<br>
+
+<li><b>semana 12 </b>(2 aulas)<br>
+<font face="Verdana" size ="3pt">
+       09/12 - Plantão de dúvidas
+       <br>       
+	 11/12 - <b>P2</b> 
+	 <br>
+	   12/12 - <b>SUB</b> sala 304-2 das 14h às 16h. 
+</font>
+       </ul>
+
+       
+</div>
+
+    <div class="my_footer">
+      <a name="foot">
+       <h2>Notícias</h2>
+      </a>
+<ol>
+  <li>
+    <i>fique ligado neste espaço</i> ou
+    acompanhe as notícias <a href="http://twitter.com/QuadroDeAvisos">por
+      aqui</a>
+  </li>
+      <li> usarei o seu end. eletrônico @aluno.ufabc para eventuais comunicações + urgentes</li>
+<li>
+A P1 ficou adiada para 11/11
+</li>
+<li> As datas da P2 e da SUB mudaram [em 25/11]
+</li>
+<li>
+  Frequência: <a href="freqA.html">turma A</a> e <a href="freqB.html">turma B</a> [em 08/12]
+</li>
+<li>
+SUB na sala 304-2 em 12/12 das 14h às 16h.  [em 08/12]
+</li>
+<li>
+O resultado final da disciplina está disponível [em 14/12]
+</li>
+<li>lembrete sobre o exame: (a data do exame é negociável dentro do período de atualização dos conceitos no sistema)<br>
+<p align="justify">
+  <b><u>Exame</u>:</b> Qualquer que <u>não reprovou por falta</u> (conceito final diferente de O) pode fazer o
+  exame de recuperação <b> na 1ª semana de 2016-1</b>. Nesse caso, o
+  conceito final será o conceito obtido no exame. o <b>ALUNOS QUE FOREM
+  FAZER EXAME <u>DEVEM ENVIAR EMAIL PARA O PROFESSOR ATÉ
+  31/01/16</u></b>.
+</p>
+<p>
+A prova será nos moldes das provas subs disponíveis no link <i>Provas
+antigas</i> e abrange todo o conteúdo dado.
+</p>
+Alunos confirmados:
+<ul>
+<li>Elton Tavares
+</li>
+<li>Raquel  Basile
+</li>
+<li>Filipe Baradelli
+</li>
+<li>Danilo Belmont
+</li>
+<li>Wesley Bochi
+</li>
+<li>Fabio De Melo
+</li>
+<li>Rodrigo  Cassimiro
+</li>
+<li>Renato Avila
+</li>
+<li>Humberto França
+</li>
+<li>Fabio Barbosa
+</li>
+<li>Lucas di Fonzo
+</li>
+<li>David Pedro
+</li>
+<li>Wagner Roberto
+</li>
+<li>Mayara Campos
+</li>
+<li>Denis Alves Dias
+</li>
+<li>Ingrid Noffs
+</li>
+<li>Igor Sawaki
+</li>
+<li>João Henrique Muniz de Souza
+</li>
+<li>Veronica Higa
+</li>
+</ul>
+
+</li>
+
+</ol>
+    
+  </body>
+</html>
+

@@ -1,0 +1,284 @@
+<!-- Time-stamp: <seg out 31 10:19:41 2016 jair@benjamin> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<style type="text/css">
+a.linkum:link {
+color:#FF0000;
+text-decoration:underline;
+}
+a.linkum:visited {
+color:#999999;
+text-decoration:none;
+}
+a.linkum:hover {
+color:#000000;
+text-decoration:underline;
+}
+a.linkum:active {
+color:#00FF00;
+text-decoration:underline;
+background-color:#000000;
+}
+</style>
+<html>
+  <head>
+    <title>CI095 - Plano de Aula</title>
+  </head>
+  
+  <body text="black" LINK="blue" VLINK="red" bgcolor="#ffffcc">
+    <center>
+      <h2> 	  CI095      </h2>
+    </center>
+    <hr>
+    <center>
+      <h1>Introdução a Criptografia</h1>
+      <h1>fundamentos e algoritmos</h1>
+    </center>
+    <center>
+      <h3>2º semestre de 2007</h3> 
+      <h4>salas:</h4> PG12 na 4ª 13:30-15:10 <br> PD04 na 6ª 13:30-15:10
+    </center>
+    <p><hr>
+
+<a href="http://www.inf.ufpr.br/jair/cripto">notas de aula</a>
+<hr>
+
+    <a  name=objetivo>  O   <font  size=+1><b>objetivo</b>  </font>  é
+    mostrar os fundamentos da criptografia de chave pública. Espera-se
+    que  o  aluno  entenda  os  princípios matemáticos  que  tornam  a
+    criptografia possível do ponto de vista computacional. <br> Esse é
+    um curso sobre <i>algoritmos</i>, <i>teoria dos números</i> e <i>teoria de computação</i> com
+    ênfase em definições formais e provas.  <hr> 
+
+    <center>
+    Sumário: &nbsp;&nbsp;&nbsp;&nbsp; 
+    <a href=#ementa>Conteúdo</a> -- 
+    <a href=#biblio>Bibliografia</a> -- 
+    <a href=#provas>Avaliação</a> --
+    <a href="exercicios2.html">Listas de exercícios</a> -- 
+    <a href=#aula>Programa</a> -- 
+    <a href=#freq>Calendário</a> -- 
+    <a href="notas-095.html">notas</a> -- 
+    <a href=#links>Links</a>
+</center>
+
+ <hr>
+    <p>
+      <a name=ementa> 
+    <h3>Conteúdo:</h3>
+    <ol>
+      <li>Teoria dos números e algoritmos em teoria dos números.<!--:</li>
+    <ol TYPE=a>
+      <li>Divisibilidade, mdc, fatoração em primos.</li>
+      <li>Aritmética modular e algoritmos.</li>
+      <li>Grupos, anéis e corpos. Polinômios.</li>
+      <li>Teorema chinês dos restos.</li>
+      <li>Geração de números primos.</li>
+    </ol>
+
+    <li>Noções de Probalidade.</li>
+    <li>Noções de complexidade.</li>
+    <ol TYPE=a>
+      <li>As classes P e  NP.</li>
+      <li>NP-completeza.</li>
+    </ol>
+-->
+    <li>Criptografias simétrica <a
+    href="http://en.wikipedia.org/wiki/Symmetric_key_algorithm"><img
+    style="width:15px;             height:15px;"            border="0"
+    src="FIGURES/wp.jpeg"></a> e, principalmente, assimétrica<a
+href="http://en.wikipedia.org/wiki/Asymmetric_key_algorithm"><img
+    style="width:15px;             height:15px;"            border="0"
+    src="FIGURES/wp.jpeg"></a> e  Assinaturas digitais.</li>
+<!--
+    <ol TYPE=a>
+      <li>Sigilo perfeito e <i>one-time pad</i><a href="http://en.wikipedia.org/wiki/One-time_pad"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>.</li>
+      <li>RSA<a href="http://en.wikipedia.org/wiki/RSA"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>.</li>
+      <li>
+	Fatoração<a href="http://en.wikipedia.org/wiki/Integer_factorization"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a> e logaritmo discreto<a href="http://en.wikipedia.org/wiki/Discrete_logarithm"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>.
+      </li>
+      <li>Curvas elípticas<a href="http://en.wikipedia.org/wiki/Elliptic_curves"> <img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a> e criptografia<a href="http://en.wikipedia.org/wiki/Elliptic_curve_cryptography"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>.</li>
+    </ol>
+
+    <li>Noções avançadas: funções <i>one-way</i><a href="http://en.wikipedia.org/wiki/One-way_function"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>, pseudoaleatoriedade<a href="http://en.wikipedia.org/wiki/Pseudorandomness"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>, Conhecimento-zero<a href="http://en.wikipedia.org/wiki/Zero-knowledge"><img style="width:15px; height:15px;" border="0" src="FIGURES/wp.jpeg"></a>.</li>
+--></ol> 
+
+<p>
+<font size=+1><b>Pré-requisito:</b> </font> <a href="http://www.inf.ufpr.br/bcc/programas/CI065.html">CI065</a>,<a href="http://www.inf.ufpr.br/bcc/programas/CI059.html">CI059</a><br>
+
+
+<p>
+<font size=+1><b>Carga horária:</b></font> 60 
+<font size=+1><b>Créditos:</b></font> 4 
+<font size=+1><b>Responsável:</b></font> Jair. 
+<p> 
+      <a name=biblio>
+    <h3>Bibliografia</h3>
+    <ol>
+      <li><i>Introduction to Algorithms</i>, Cormen,   Leiserson, Rivest e Stein.
+	(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=cormen&scanu1=1003&u1=2000&t1=@376329&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>) - Capítulo 31.
+      </li>
+      <li><a href="http://www-cse.ucsd.edu/~mihir/papers/gb.html"><i>Lecture Notes in Cryptography</i></a>, 
+	Goldwasser e Bellare. </li>
+	<li>Números inteiros e criptografia RSA, S.C.  Coutinho. <a href="http://www.impa.br/opencms/pt/publicacoes/serie_computacao_e_matematica/livro_numeros_inteiros_e_criptografia_rsa/index.html">Série computação e matemática IMPA/SBM</a>.</li>
+<li><a  href="http://shoup.net/ntb/">A  Computational Introduction  to
+      Number Theory and Algebra</a>, Victor Shoup.</li>
+    <h3>Bibliografia complementar</h3>
+      <li><i>Números : uma introdução a matemática</i>,  César Polcino Milies, Sonia P. Coelho.
+	(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=NEXTPAGE&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=n%c3%bameros&scanu1=4&u1=2000&t1=@139251&lng=pt&pos=1&prevpos=-9&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>).
+      </li>
+<li><a  href="http://www.mat.puc-rio.br/~nicolau/papers/mersenne/mersenne.html">Primos
+      de Mersenne (e outros  primos muito grandes)</a>, Carlos Gustavo
+      T. A. Moreira, Nicolau C. Saldanha. Texto do 22º Colóquio Brasileiro de Matemática, IMPA, 1999.</li>
+      <li><i>Matemática concreta: fundamentos para a ciência da computação</i>, Ronald L. Graham, Donald E. Knuth, Oren Patashnik 
+	(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Graham,%20Ronald%20L.,%201935-&scanu1=1003&u1=2000&t1=@111648&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>) - Capítulos 3, 4 e 8.
+      </li>
+      <li><i>Concrete mathematics: a foundation for computer science</i>, Ronald L. Graham, Donald E. Knuth, Oren Patashnik.
+	(<a href="http://200.17.209.5:8000/cgi-bin/gw_42_13/chameleon.42.13a?host=localhost%201111%20DEFAULT&search=KEYWORD&function=INITREQ&SourceScreen=INITREQ&sessionid=2005051213231217969&skin=ufpr&conf=.%2fchameleon.conf&itemu1=2000&scant1=Concrete%20mathematics%3a%20a%20foundation%20for%20computer%20science%20%2f%20Ronald%20L.%20Graham,%20Donald%20E.%20Knuth,%20Oren%20Patashnik.%20-&scanu1=4&u1=2000&t1=@111649&lng=pt&pos=1&prevpos=1&EnhancedFilters=1&flocb=1&ffrmtb=1&flangb=1&fpdb=1&fplaceb=1&floc=500000&">Biblioteca</a>) - Capítulos 3, 4 e 8.
+      </li>
+</ol>
+<h4>Documentos na <i>web</i></h4>
+<ul>
+
+      <li><a href="http://www.cacr.math.uwaterloo.ca/hac/"><i>Handbook of Cryptography</i></a>,  
+	Alfred J. Menezes,  Paul C. van Oorschot  and  Scott A. Vanstone. </li>
+<li><a href="http://arxiv.org/abs/cs.CC/0111056">Some Facets of Complexity Theory and Cryptography: A Five-Lectures Tutorial</a>, Jorg Rothe.</li> 
+<li><a href="http://www.math.upenn.edu/%7Ewilf/AlgComp3.html"> Algorithms and Complexity</a> Herbert S. Wilf </li>
+<li><a href="http://web.cs.wpi.edu/~gsarkozy/talk.ps">
+ Prime numbers, graphs and cryptography</a> G. Sarkozy</li>
+<li><a href="http://en.wikipedia.org/wiki/Binary_GCD_algorithm">Binary
+      GCD algorithm</a> Wikipedia</li>
+<li><a
+      href="http://en.wikipedia.org/wiki/Multiplication_algorithm">Multiplication
+      algorithm</a> Wikipedia</li>
+<li><a
+      href="http://www.cse.iitk.ac.in/users/manindra/CS681/index.html">CS
+      681:  Computational  Number  Theory  and  Algebra</a>,  Manindra
+      Agrawal.</li>
+<li>
+<a href="http://people.csail.mit.edu/rivest/RivestKaliski-RSAProblem.pdf">RSA problem</a>Ronald Riveste Burt kaliski. 
+</li>
+<li> <a href="http://eprint.iacr.org/2006/086.pdf">Analysis of the
+	Linux Random Number Generator</a></li>
+<li><a href="http://modular.fas.harvard.edu/edu/Fall2001/124/misc/arjen_lenstra_factoring.pdf">A survey of
+integer factorization algorithms by Arjen Lenstra</a></li>
+</ul>
+<p>
+<a name=provas>
+<h3>Avaliação</h3>
+    São  2  provas e  1 prova  final.  A  média final  para
+    aprovação é 50 porém alunos com desempenho <i>muito</i> superior a
+    média  (leia-se média  ponderada das  provas e dos trabalhos deve ser  pelo  menos 70)  são 
+    dispensados da prova final.
+<ul>
+      <li>Média  das provas regulares dá a média parcial.</li>
+      <li>Tendo 75% de freqüência, o aluno com média parcial maior ou igual
+	a 70 estará aprovado.</li> 
+      <li>Tendo 75% de freqüência, o aluno com média parcial maior ou igual a
+	40  e  menor do  que  70 estará  habilitado  a  fazer a  prova
+      final. A média final é a média aritmética da média parcial com a
+      nota da prova final, o aluno com média final maior ou igual
+	a 50 estará aprovado.</li> 
+      <li>Em qualquer outro caso o aluno estará reprovado e será
+	indicado se houve ou não freqüência mínima.</li> 
+</ul> 
+
+<a name=listas> 
+<h3>Listas de exercícios</h3>
+
+
+<a name=freq> 
+<h3>Calendário</h3>
+<ul>
+      <li> 30/07 - Início das aulas</li>
+      <li> 07/09 - Feriado</li>
+      <li> 08/09 - Feriado</li>
+      <li> 12/09 - <b>Prova 1</b> </li>
+      <li> 21/09 - Prazo  final para  cancelamento  de matrícula  em
+      disciplinas semetrais</li> 
+      <li> 12/10 - Feriado</li>
+      <li> 13/10 - Feriado</li>
+      <li> 02/11 - Feriado</li>
+      <li> 23/11 - <b>Prova 2</b></li>
+      <li> 01/12 - Último dia letivo e encerramento da monitoria</li>
+      <li> 12/12 - <b>Prova final</b> todo conteúdo </li>
+</ul> 
+<pre> 
+
+</pre>
+
+<hr><a name=aula> Programação das aulas: 
+<pre>
+aula 01 - Apresentação. Inteiros, representação e custo logaritmico. 
+aula 02 - Divisibilidade. 
+aula 03 - MDC. 
+aula 04 - Algoritmo de Euclides e Algoritmo de Euclides estendido. 
+aula 05 - Nos. primos, fatoração em primos. 
+aula 06 - Aritmética Modular. 
+aula 07 - Exponenciação Modular
+aula 08 - Equações modulares.
+aula 09 - Teorema chinês do resto. 
+aula 10 - prova 1.
+aula 11 - Inteiros módulo n.
+aula 12 - Invertíveis módulo n.
+aula 13 - Polinômios. 
+aula 14 - Grupos. 
+aula 15 - Grupos-computação de ordem de elementos. 
+aula 16 - Raízes primitivas. 
+aula 17 - Logaritmo discreto. 
+aula 18 - Codificação criptografica. Cifras afim.
+aula 19 - one-time-pad, cifras de Vernam. Sigilo perfeito.
+aula 20 - RSA.
+aula 21 - Rabin.  
+aula 22 - El Gamal.
+aula 23 - Assinaturas Digitais. 
+aula 24 - Teste de Fermat.
+aula 25 - Teste de Miller-Rabin. 
+aula 26 - Teste de Lucas-Lehmer e de Lucas. 
+aula 27 - Geradores de números aleatórios.
+aula 28 - AKS
+aula 29 - AKS
+aula 30 - prova 2.
+
+</pre>
+<hr> 
+
+<a name=links>
+<h3>links:</h3>
+<ul>
+<li><a href="http://primes.utm.edu/">The prime pages</a></li>
+<li><a href="http://www.prothsearch.net/fermat.html">Números de Fermat</a></li>
+<li><a href="http://www.mersenne.org/">www.mersenne.org</a></li>
+<li>"<a   href="http://www.cypherspace.org/adam/">Adam   Back</a>  has
+created an  <a href="http://www.cryer.co.uk/glossary/r/rsa/mathematical_guts_of_rsa_encryption.html">implementation  of RSA in  just 2  lines of
+Perl</a>"
+<pre>
+print pack"C*",split/\D+/,`echo "16iII*o\U@{$/=$z;[(pop,pop,unpack"H*",&lt;&gt;
+)]}\EsMsKsN0[lN*1lK[d2%Sa2/d0&lt;X+d*lMLa^*lN%0]dsXx++lMlN/dsM0&lt;J]dsJxp"|dc`
+</pre>
+</li>
+<li><a href="prova2.ps">prova 2</a>    </li>
+<li><a href="cripto.dvi.gz">notas de aula</a>. última atualização:
+   <del>18/8</del>;         <del>26/08</del>;        <del>04/09</del>;
+   <del>09/09</del>; <del>12/09</del>;  <del>28/09 (pequenas correções
+   na  aula de  polinômios)</del>;  <del>2/10</del>; <del>06/10</del>;
+   <del>12/10</del>;        <del>21/10</del>;        <del>26/10</del>;
+   29/11 (última versão)
+   </li>
+</ul>
+<hr>
+
+<!-- Created: Thu Aug  5 10:35:42 BRT 2004 -->
+<!-- hhmts start -->
+<!-- hhmts end -->
+  </body>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5933890-2");
+pageTracker._trackPageview();
+</script>
+</html>
+ 

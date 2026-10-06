@@ -1,0 +1,66 @@
+<head>
+
+   <style>
+.MathJax nobr>span.math>span{border-left-width:0 !important};
+   </style>   
+
+  
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+<!--    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>       
+</head>
+<p>
+
+
+
+
+
+<p>
+
+
+
+<h2>   Sobre convergência </h2> 
+
+<p>
+
+ $ {A(x)=\sum_{n\geq 0}a_nx^n =a_0 +a_1x+a_2x^2+\cdots }$ é uma <i>série de potências formal</i>, isto é, é um elemento de uma estrutura algébrica chamada <i>anel das séries formais</i>, onde podemos somar e multiplicar séries formais. Ainda, foi dito que tal série <i>não</i> é uma função, como a notação $ {A(x)=\cdots}$ pode sugerir. Também foi dito que as vezes tal série é uma função! Como é isso então?
+<p>
+ Considere a seguinte soma de $ {n}$ termos (que é uma soma de P.G.) <p align=center>$ \displaystyle  \mathcal{S}_n= 1 + \frac{1}{2}+\frac{1}{4}+\cdots + \frac{1}{2^{n-1}}= 2 -\frac{1}{2^{n-1}}. $</p>
+ Recorde-se da definição de limite vista em Cálculo e <p align=center>$ \displaystyle  \lim_{n \rightarrow \infty} \mathcal{S}_n = 2.$</p>
+
+<p>
+ Uma soma com infinitas parcelas, como em $ {1 + \frac{1}{2}+\frac{1}{4}+\cdots }$ não faz sentido se levarmos em conta a definição usual de soma. Essa soma é chamada de <i>série</i> e é definida usando limite: Dada uma sequência numérica $ {(a_n)_{n\in{\mathbb N}}}$ formamos a sequência numérica $ {(S_n)_{n\in{\mathbb N}} }$ <p align=center>$ \displaystyle S_n= a_0+a_1+\cdots+a_{n-1},$</p>
+ e dessa forma <p align=center>$ \displaystyle  \sum_{n\geq 0}a_n= \lim_{n\rightarrow \infty} S_n.$</p>
+ Quando o limite acima existe então dizemos que a série $ {\sum_{n\geq 0}a_n}$ é <i>convergente</i>, caso contrário, isto é, se o limite não existe, então a série e dita <i>divergente</i>. Por exemplo, <p align=center>$ \displaystyle  \begin{array}{rcl}  1 + \frac{1}{2}+\frac{1}{4}+\cdots &=&\sum_{n\geq 0} \left( \frac{1}{2}\right)^n \textrm{ é convergente,}\\ 1+\frac{1}{2}+\frac{1}{3}+\cdots &=&\sum_{n\geq 0}\frac{1}{n} \textrm{ é divergente}. \end{array} $</p>
+ As séries de funções mais importantes são as do tipo <p align=center>$ \displaystyle  \sum_{n\geq 0}a_n(x-c)^n$</p>
+ chamadas <i>série de potências em torno do ponto $ {c}$</i>. Fazendo a transformação de variáveis $ {y=x-c}$, o caso geral das séries de potências se reduz ao estudo das séries para $ {c=0}$, ou seja em torno do $ {0}$, <p align=center>$ \displaystyle  \sum_{n\geq 0}a_n x^n.$</p>
+
+<p>
+ Um dos principais resultados sobre convergência de séries de potências é o seguinte: 
+<blockquote><b>Teorema 1</b> <em> A série de potências $ {\sum_{n\geq 0}a_nx^n}$ ou <b>(1)</b> converge apenas para $ {x=0}$ ou <b>(2)</b> converge absolutamente  para todo $x$ ou <b>(3)</b> existe um número real $ {r>0}$ tal que $ {\sum_{n\geq 0}a_nx^n}$ converge absolutamente no intervalo $ {(-r,+r)}$ da reta e diverge fora do intervalo $ {[-r,+r]}$, e nos pontos $ {+r}$ e $ {-r}$ a série pode divergir ou convergir. </em></blockquote>
+
+<p>
+<b><i>convergência absoluta</i></b> no enunciado acima significa que $ {\sum_{n\geq 0}|a_nx^n|}$ converge, o que implica que $ {\sum_{n\geq 0}a_nx^n}$ converge. A reciproca não é verdadeira. A convergência absoluta <i>garante</i> que o valor-limite não muda se permutarmos os termos da série. Uma série conhecida pela propriedade de convergir não-absolutamente é a
+série harmônica alternada
+\[
+1-\frac 12 + \frac 13 - \cdots + \frac{(-1)^{n+1}}n + \cdots = \ln 2
+\]
+cuja convergência decorre da série de Taylor para o logaritmo natural. A série formada pelos valores absolutos $\sum_{n\geq 0}\frac{1}{n}$ é a série harmônica, que diverge. O seguinte rearranjo dessa série devido ao matemático Pierre Alphonse Laurent converge para um valor diferente
+\[1 - {\frac {1} {2}} - {\frac {1} {4}} + {\frac {1} {3}} - {\frac {1}
+    {6}} - { \frac {1} {8}} + \cdots + {\frac {1} {2k-1}} - {\frac {1}
+    {2 (2k-1)}} - {\frac {1} {4k}} + \cdots = \frac {\ln 2}2.\]
+<p>
+
+
+<p>
+ A série de Taylor da função (analítica) $ {f(x)}$ em torno de $ {c\in I}$ é a série de potências<p align=center>$ \displaystyle  \sum_{n\geq 0}\frac{f^{(n)}(c)}{n!}(x)^n,$</p>
+ e pode acontecer de: (1) a série divergir, ou (2) a série convergir para $ {f(c+x)}$, ou (3)  a série convergir para algum outro número.
+<p>
+ Na maioria das funções que estudamos no curso de Cálculo acontece o segundo fato, felizmente. Aí temos, por exemplo, as seguintes séries de Taylor em torno do $ {0}$: <p align=center>$ \displaystyle  \begin{array}{rcl}  \frac{1}{1-x} &=& \sum_{n\geq 0} x^n,, \text{ se } |x|<1 \\ \log \frac{1}{1-x} &=& \sum_{n\geq 1}\frac{x^n}{n},, \text{ se } |x|<1\\ \mathrm{e}^x &=& \sum_{n\geq 0} \frac{x^n}{n!},\text{ para todo }x\\ \mathrm{sen}(x) &=& \sum_{n\geq 0}(-1)^n \frac{x^{2n+1}}{2n+1\,!},\text{ para todo }x\\ \cos (x) &=& \sum_{n\geq 0} (-1)^n \frac{x^{2n}}{2n\, !}, \text{ para todo }x\end{array} $</p>
+ e, agora, são <i>igualdades entre funções</i> e não definição de objetos formais. 

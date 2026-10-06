@@ -1,0 +1,556 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>index</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><h1><a name="introdução-à-álgebra-linear---jair-donadellihttphostelufabcedubrjairdonadelli" class="md-header-anchor"></a><span>Introdução à Álgebra Linear - </span><a href='http://hostel.ufabc.edu.br/~jair.donadelli'><span>Jair Donadelli</span></a></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#introdução-à-álgebra-linear---jair-donadellihttphostelufabcedubrjairdonadelli">Introdução à Álgebra Linear - Jair Donadelli</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n3"><a class="md-toc-inner" href="#programação"><strong>Programação</strong></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n76"><a class="md-toc-inner" href="#referências-bibliográficas"><strong>Referências bibliográficas</strong></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n83"><a class="md-toc-inner" href="#videos"><strong>Videos</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n91"><a class="md-toc-inner" href="#avaliação"><strong>Avaliação</strong></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n114"><a class="md-toc-inner" href="#lista-de-temas-para-os-trabalhos">Lista de temas para os trabalhos </a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n158"><a class="md-toc-inner" href="#listas-para-entrega"><strong>Listas para entrega</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n161"><a class="md-toc-inner" href="#links"><strong>Links</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n172"><a class="md-toc-inner" href="#slidesapresentacaopdf"><strong>Slides</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n173"><a class="md-toc-inner" href="#exercícioslistapdf"><strong>Exercícios</strong></a></span></p></div><h3><a name="programação" class="md-header-anchor"></a><strong><span>Programação</span></strong></h3><figure><table><thead><tr><th><span>Semana</span></th><th><span>Tema</span></th><th><span>Subtema</span></th><th><span>Atividades Teórico/Práticas (links para as atividades no </span><a href='https://moodle.ufabc.edu.br/course/view.php?id=657'><span>moodle</span></a><span>)</span></th></tr></thead><tbody><tr><td><span>21-25/9</span></td><td><span>Sistemas  lineares e  matrizes</span></td><td><span>Sistemas de Equações Lineares; Matrizes; Operações com Matrizes e suas propriedades.                                                 Ref.Bib.: Cap 2 de [</span><a href='https://www.labma.ufrj.br/~mcabral/livros/livro-alglin/alglin-material/CursoAlgLin-livro.pdf'><span>1</span></a><span>]</span></td><td><li><span>Videoaulas</span></li><li><span>Leitura da referência bibliográfica</span></li><li><a href='https://www.youtube.com/watch?v=r1o7RryS8WM&amp;list=PLxI8Can9yAHdUtWDKtTA9AmuICNyX9EIr&amp;index=2'><span>Video 1</span></a><span> (matrizes, 21 min);</span></li><span>  </span><li><a href='https://www.youtube.com/watch?v=u4xKswRO4bQ&amp;list=PLxI8Can9yAHdUtWDKtTA9AmuICNyX9EIr&amp;index=3'><span>Video 2</span></a><span> (matrizes, até os 15:40 min);</span></li><span>  </span><li><span>Padlet (matrizes) </span></li><span> </span><li><a href='https://www.wolframalpha.com/examples/mathematics/algebra/matrices/'><span>Matrizes no Wolphram</span></a></li><span> </span><li><a href='exercicios_semana_01-02.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos das semanas 1 e 2, com respostas;</span></li><li><span>Problemas no LatexBase</span><a href="https://latexbase.com/d/b04559e4-ed5a-46e1-aa30-440af2d64f07"><span>.</span></a></li></td></tr><tr><td><span>28/9-2/10</span></td><td><span>Sistemas  lineares e  matrizes</span></td><td><span>Matriz escalonada. Matrizes elementares. Resolução de Sistemas Lineares.                                          Ref.Bib.: Cap 2 de [</span><a href='https://www.labma.ufrj.br/~mcabral/livros/livro-alglin/alglin-material/CursoAlgLin-livro.pdf'><span>1</span></a><span>]</span></td><td><li><span>  videoaulas;</span></li><span> </span><li><span>Leitura da referência bibliográfica;</span></li><span> </span><li><a href='https://pt.khanacademy.org/math/linear-algebra/vectors-and-spaces/matrices-elimination/v/matrices-reduced-row-echelon-form-1'><span>Videos da Khan Academy</span></a><span> (método de Gauss);</span></li><span> </span><li><span>Problemas no LatexBase</span><a href="https://latexbase.com/d/0de8b52d-9558-4163-8a63-feb42b1e93f3"><span>.</span></a><span> </span></li><li><a href='exercicios_semana_01-02.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>5-9/10</span></td><td><span>Espaços vetoriais</span></td><td><span>Vetores. Espaços e   Subespaços vetoriais.Ref.Bib.: Caps 1 e 2 de [2]</span></td><td><li><span>videoaulas</span></li><li><span>videos: </span><a href='https://www.youtube.com/watch?v=FAJ5DFY6d0k&amp;list=PLxI8Can9yAHdUtWDKtTA9AmuICNyX9EIr&amp;index=6'><span>Vetores e espaço vetorial</span></a><span> (20 min), </span><a href='https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab'><span>Vetores, o que são eles afinal?</span></a><span> (10 min)</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><span>Problemas no LatexBase</span><a href="https://latexbase.com/d/680b49a2-e3a0-4f91-9363-f0d2dec39245"><span>.</span></a><span> </span></li><li><a href='exercicios_semana_03.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>12-16/10</span></td><td><span>Espaços vetoriais</span></td><td><span>Combinação Linear. Dependência e independência linear; Bases e dimensão. Ref.Bib.: Caps 3, 4 e 5 de [2]</span></td><td><li><span>videoaulas</span></li><li><span>video 3brown1blue: </span><a href='https://www.youtube.com/watch?v=k7RM-ot2NWY'><span>Combinações lineares, subespaços gerados, e bases</span></a><span> (10 min)</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><span>Problemas no LatexBase</span><a href="https://latexbase.com/d/d8225d69-3b1e-48a2-bbdf-165e1737d7f3"><span>.</span></a><span> </span></li><li><a href='exercicios_semana_04.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>19-23/10</span></td><td><span>Espaços vetoriais</span></td><td><span>Coordenadas; Mudança de base; Espaço linha de uma matriz. Ref.Bib.: Caps 5 e 6 de [2]; seção 3.8, 3.11 e 3.12 de [4]</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><a href='exercicios_semana_05.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>26-30/10</span></td><td><span>Produto interno</span></td><td><span>comprimento e ângulo; ortogonalidade; bases ortogonais. Cap 12 de [2].</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><a href='exercicios_semana_06.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li><li><span>Problemas no LatexBase</span><a href='https://latexbase.com/d/fba4190d-7eef-4c12-88b0-b861a5cb68a9'><span>.</span></a><span> </span></li></td></tr><tr><td><span>02-06/11</span></td><td><span>Transformações Lineares</span></td><td><span>Transformações lineares; Imagem e Núcleo; Isomorfismo. Seções 8.1, 8.3 e 8.4 de [2]</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica; </span></li><li><a href='exercicios_semana_07.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li><span> </span><li><span>Avaliação.</span></li></td></tr><tr><td><span>09-13/11</span></td><td><span>Transformações Lineares</span></td><td><span>Matriz de transformação  lineares.  Espaço vetorial de TLs. Seções 8.2, 8.5  8.6 de [2]</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><a href='exercicios_semana_08.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>16-20/11</span></td><td><span>Determinantes</span></td><td><span>Definição axiomática, propriedades, existência, unicidade. Seção 6.2 de [1]</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><a href='exercicios_semana_09.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>23-27/11</span></td><td><span>Autovalores e autovetores</span></td><td><span>Representação de transfomações por matrizes diagonais. Subespaços invariantes. Autovalor e autovetor. Polinômio Característico. Cap 9 de [2].</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><a href='exercicios_semana_10.pdf'><span>Exercícios</span></a><span> para fixação dos conteúdos</span></li></td></tr><tr><td><span>30/11-4/12</span></td><td><span>Diagonalização</span></td><td><span>Diagonalização de operadores.Cap 10 de [2], seção 12.9 de [2].</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><span>Exercícios para fixação dos conteúdos</span></li></td></tr><tr><td><span>07-11/12</span></td><td><span>Diagonalização</span></td><td><span>Diagonalização de operadores simétricos,  operadores autoadjuntos e diagonalização ortogonal. Cap 10 de [2],  seções 12.7 a 12.9 de [2]  seção 7.2 de [1].</span></td><td><li><span>videoaulas</span></li><li><span>Leitura da referência bibliográfica;  </span></li><li><span>Problemas no LatexBase. </span></li><li><span>Avaliação</span></li></td></tr><tr><td><span>14-18/12</span></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name="referências-bibliográficas" class="md-header-anchor"></a><strong><span>Referências bibliográficas</span></strong></h4><p><span>[1] </span><a href='https://www.labma.ufrj.br/~mcabral/livros/livro-alglin/al-livro.html'><span>Curso Álgebra Linear</span></a><span>, Marco Cabral e Paulo Goldfeld, UFRJ, 2013 (</span><a href='https://www.labma.ufrj.br/~mcabral/livros/livro-alglin/alglin-material/CursoAlgLin-livro.pdf'><span>link direto para pdf</span></a><span>)</span></p><p><span>[2] </span><a href='https://web.icmc.usp.br/SMA/Portal%20SMA/Material%20Didatico/SMA_88_apostila_algebra_linear.pdf'><span>Álgebra Linear</span></a><span>, Sérgio Luís Zani, USP 2010.</span></p><p><span>[3] </span><a href='https://labma.ufrj.br/~gregorio/livro/al2.pdf'><span>Álgebra Linear</span></a><span>, Gregorio Malajovich, UFRJ 2010.</span></p><p><span>[4] </span><a href='https://b03caf55-a-62cb3a1a-s-sites.googlegroups.com/site/professorfaleiros/UFABCDocsAlgLin/AlgebraLinearProfessorFaleiros.pdf?attachauth=ANoY7cqAZwlw0fyevpAB7X4_J0tzmdpmYG4uKBkLFPmkCibSfHI_ug3yNBR8n_p1jRoNMW4jMsWclmyiwYBM7Ghcr-luhs6T0LdWvy6sf7ZSB1kJmFMphb91elbQdPpJfkP11JtQztGs5i1lUdMePUDHUecA2cHXJcd7F1d5CMrDpm_8JJvvsTX5O2bheSwkuMEUGi7ZX1UbZeN9BzAN9epz2YSVixvxNtQx1stXWeJoMFoCT-FJlhQ0MgPjwt4jKCTnX1nC6AKo8hPkfBPBHgAf2eiVcU27mw%3D%3D&amp;attredirects=1'><span>Álgebra Linear</span></a><span>, Antonio Cândido Faleiros, UFABC 2016</span></p><p><span>[5] </span><a href='https://hefferon.net/linearalgebra/'><span>Linear Algebra</span></a><span>, Jim Hefferon</span></p><p><span>[6] </span><a href='https://www.ufrgs.br/reamat/AlgebraLinear/livro/main.html'><span>Álgebra Linear  Um Livro Colaborativo</span></a></p><h4><a name="videos" class="md-header-anchor"></a><strong><span>Videos</span></strong></h4><p><span>[A] </span><a href='https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab'><span>3Blue1Brown</span></a><span>, A essência da álgebra linear</span></p><p><span>[B]  </span><a href='https://www.youtube.com/playlist?list=PL7PW7YXa8HO3vata0DUsMPrzgOuXvoDSI'><span>Álgebra Linear e Geometria</span></a><span>, Matemática Universitária,Renan Lima,ITA.</span></p><p><span>[C] Univesp: </span><a href='https://www.youtube.com/playlist?list=PLxI8Can9yAHdUtWDKtTA9AmuICNyX9EIr'><span>Licenciatura em Matemática</span></a><span>, </span><a href='https://www.youtube.com/playlist?list=PL5hsAGBEFEEVcmgtCZgAUOSLs8m8XUgjt'><span>Engenharia</span></a><span> </span></p><p><span>[D] </span><a href='https://pt.khanacademy.org/math/linear-algebra'><span>Khan Academy</span></a><span>, Álgebra Linear</span></p><p><span>[E] </span><a href='https://www.youtube.com/watch?v=ucI8QiwDqSg&amp;list=PLsVKfJEcnnr1VjFhhD4btJip_dQ5pI81n'><span>Álgebra Linear UFRJ 2018 - aulas completas</span></a></p><p><span>[F] </span><a href='https://www.youtube.com/watch?v=-JcQJFNVjaA&amp;list=PLIEzh1OveCVczEZAjhVIVd7Qs-X8ILgnI'><span>Álgebra Linear 1, Escola Politécnica da USP</span></a></p><p><span>[G] </span><a href='https://www.youtube.com/playlist?list=PLo4jXE-LdDTSE0DFoq4es_iMvjlCeG8pP'><span>IMPA</span></a><span>, Programa de Iniciação Científica: Introdução à Álgebra Linear (2018)</span></p><h3><a name="avaliação" class="md-header-anchor"></a><strong><span>Avaliação</span></strong></h3><p><span>50% Provas + 30% Listas + 15% Trabalhos + 5% Participações</span></p><p><span>Não haverá avaliação síncrona. É esperado uma conduta ética por parte do aluno. </span><a href='http://professor.ufabc.edu.br/~e.francesquini/codigodehonra/'><span>Aqui</span></a><span> e </span><a href='https://www.ime.usp.br/~coelho/mac0323-2018/plagio.html'><span>aqui</span></a><span> se tem uma boa referência do que é esperado.</span></p><p><strong><span>Conceito final</span></strong><span>:</span></p><figure><table><thead><tr><th><span>Nota</span></th><th><span>Conceito</span></th></tr></thead><tbody><tr><td><span>(85,100]</span></td><td><span>A</span></td></tr><tr><td><span>(65, 85]</span></td><td><span>B</span></td></tr><tr><td><span>[45,65]</span></td><td><span>C</span></td></tr><tr><td><span>[0,45)</span></td><td><span>R</span></td></tr></tbody></table></figure><p><span>As </span><strong><span>provas</span></strong><span> serão 3 e individuais.</span></p><p><span>As </span><strong><span>listas</span></strong><span> serão feitas em grupo de 2 alunos e com correção por pares. Na avaliação das listas cada grupo será avaliado pelas resoluções submetidas e pela correção realizada.</span></p><p><span>O </span><strong><span>trabalho</span></strong><span>, em grupo de 2 alunos, será a produção de material sobre alguma aplicação ou resultado bacana de AL.  Consiste de um texto introdutório (latex é obrigatório) + video de 10-15 mins.</span></p><h5><a name="lista-de-temas-para-os-trabalhos" class="md-header-anchor"></a><span>Lista de temas para os trabalhos </span></h5><p><span>(em inglês significa referência em inglês, me disponho a ajudar na tradução):</span></p><ol start='' ><li><a href='genetica.pdf'><span>Genética</span></a><span> </span>–<span> a propagação de uma característica herdada em sucessivas</span>
+<span>gerações calculando potências de uma matriz.</span></li><li><a href='caos.pdf'><span>Caos</span></a><span> </span>–<span> uma transformação do quadrado unitário do plano xy sobre si mesmo</span>
+<span>para descrever o conceito de aplicação caótica.</span></li><li><a href='cripto.pdf'><span>Criptografia</span></a><span> </span>–<span> um método para codificar e decodificar mensagens e como a eliminação gaussiana pode ser</span>
+<span>utilizada para quebrar o código de um oponente.</span></li><li><a href='populacao.pdf'><span>Crescimento populacional</span></a><span> </span>–<span> o crescimento ao longo</span>
+<span>do tempo de uma população dividida em faixas etárias. </span></li><li><a href='MMQ-audição.pdf'><span>Modelo de mínimos quadrados para a</span>
+<span>audição humana</span></a><span> </span>–<span> aplica o método de mínimos quadrados a um modelo para a  audição humana. </span></li><li><a href='singulares.pdf'><span>Aplicações lineares e valores singulares</span></a><span> - a decomposição em valores singulares, plicações à mineração de dados e pseudo-inversa.</span></li><li><a href='grafos.pdf'><span>Grafos</span></a><span> - Equação do calor em grafos,  Digrafos e o Google</span></li><li><a href='quadraticas.pdf'><span>Formas</span></a><span> quadráticas e otimização restrita</span></li><li><a href='equiangular.pdf'><span>Equiangular lines</span></a><span> - Qual é o maior número de linhas em </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.73ex" height="2.461ex" viewBox="0 -956.9 1175.6 1059.4" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E1-MJAMS-52" d="M17 665Q17 672 28 683H221Q415 681 439 677Q461 673 481 667T516 654T544 639T566 623T584 607T597 592T607 578T614 565T618 554L621 548Q626 530 626 497Q626 447 613 419Q578 348 473 326L455 321Q462 310 473 292T517 226T578 141T637 72T686 35Q705 30 705 16Q705 7 693 -1H510Q503 6 404 159L306 310H268V183Q270 67 271 59Q274 42 291 38Q295 37 319 35Q344 35 353 28Q362 17 353 3L346 -1H28Q16 5 16 16Q16 35 55 35Q96 38 101 52Q106 60 106 341T101 632Q95 645 55 648Q17 648 17 665ZM241 35Q238 42 237 45T235 78T233 163T233 337V621L237 635L244 648H133Q136 641 137 638T139 603T141 517T141 341Q141 131 140 89T134 37Q133 36 133 35H241ZM457 496Q457 540 449 570T425 615T400 634T377 643Q374 643 339 648Q300 648 281 635Q271 628 270 610T268 481V346H284Q327 346 375 352Q421 364 439 392T457 496ZM492 537T492 496T488 427T478 389T469 371T464 361Q464 360 465 360Q469 360 497 370Q593 400 593 495Q593 592 477 630L457 637L461 626Q474 611 488 561Q492 537 492 496ZM464 243Q411 317 410 317Q404 317 401 315Q384 315 370 312H346L526 35H619L606 50Q553 109 464 243Z"></path><path stroke-width="0" id="E1-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E1-MJAMS-52" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E1-MJMAIN-33" x="1021" y="579"></use></g></svg></span><script type="math/tex">\mathbb {R} ^ 3</script><span> de modo que o ângulo entre cada duas delas seja o mesmo?</span></li><li><a href='coins.pdf'><span>The End of the Small Coins</span></a><span> - Uma loja processava pedidos, de repente todas as moedas com valores abaixo de 1 Euro foram retiradas de circulação e os preços tiveram que ser arredondados, para cima ou para baixo,</span>
+<span>para inteiros.</span>
+<span>Como a loja pode arredondar os preços para que o preço total de cada</span>
+<span>ordem não é afetada por muito? </span></li><li><span>How Google Converted Language Translation Into a Problem of Vector Space Mathematics (</span><a href='https://arxiv.org/pdf/1309.4168.pdf'><span>artigo</span></a><span>, esse tema é mais complicado e pode ser feito por um grupo maior)</span></li></ol><p><span>Contam como </span><strong><span>participação</span></strong><span> as interações nos canais eletrônicos de acordo com o seguinte critério</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>critério</span></th><th><span>nota</span></th></tr></thead><tbody><tr><td><span>Participação reativa</span></td><td><span>Apenas participa dos fóruns respondendo sem muito aprofundamento, coerência teórica,  sem autoria, sem trocas de ideias e diálogos, não traz questões para o debate, não compartilha material.</span></td><td><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.161ex" height="1.877ex" viewBox="0 -755.9 500 808.1" role="img" focusable="false" style="vertical-align: -0.121ex;"><defs><path stroke-width="0" id="E2-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E2-MJMAIN-31" x="0" y="0"></use></g></svg></span><script type="math/tex">1</script></td></tr><tr><td><span>Participação colaborativa</span></td><td><span>Participa dos fóruns respondendo perguntas com coerência, autoria, diálogo com os pares (coautoria), traz poucas questões para o debate e material compartilhado.</span></td><td><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.161ex" height="1.994ex" viewBox="0 -755.9 500 858.4" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E3-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMAIN-33" x="0" y="0"></use></g></svg></span><script type="math/tex">3</script></td></tr><tr><td><span>Participação  interativa</span></td><td><span>O aluno participa dos fóruns com aprofundamento, coerência, autoria, diálogo como os pares (coautoria), traz questões para o debate e compartulha material com os pares.</span></td><td><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.161ex" height="1.994ex" viewBox="0 -755.9 500 858.4" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E4-MJMAIN-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E4-MJMAIN-35" x="0" y="0"></use></g></svg></span><script type="math/tex">5</script></td></tr></tbody></table></figure><p>&nbsp;</p><h5><a name="listas-para-entrega" class="md-header-anchor"></a><strong><span>Listas para entrega</span></strong></h5><p><a href='https://moodle.ufabc.edu.br/pluginfile.php/149821/mod_assign/introattachment/0/Entrega1.pdf?forcedownload=1'><span>Lista 1</span></a><span> para 26/10</span></p><p><a href='Lista2.pdf'><span>Lista 2</span></a><span> para 26/11</span></p><h3><a name="links" class="md-header-anchor"></a><strong><span>Links</span></strong></h3><p><span>[i] </span><a href='https://docs.google.com/document/d/1St2GniLrGAuDBJgnb1oFfAlJiLwAJPucC3t0c_Vbza4/edit'><span>Plataformas digitais</span></a><span>, Biblioteca UFABC</span></p><p><span>[ii] </span><a href='http://www.immersivemath.com/ila/index.html'><span>immersive linear algebra</span></a><span>, J. Ström, K. Åström, and T. Akenine-Möller</span></p><p><span>[iii] </span><a href='https://textbooks.math.gatech.edu/ila/'><span>Interactive Linear Algebra</span></a><span>,Dan Margalit, Joseph Rabinoff</span></p><p><span>[iv] </span><a href='http://www.ime.usp.br/~bianconi/recursos/mat.pdf'><span>Como ler e estudar matemática?</span></a><span>,Ricardo Bianconi</span></p><p><span>[v] </span><a href='http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=5459511&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5459511'><span>A Linear Algebraic Approach to Kalman Filtering</span></a><span>(precisa de IP autorizado)</span></p><p><span>[vi] </span><a href='http://teamat.oxfordjournals.org/content/27/2/53.abstract'><span>Motivating the concept of eigenvectors via cryptography</span></a></p><p><span>[vii] </span><a href='http://www.rose-hulman.edu/~bryan/googleFinalVersionFixed.pdf'><span>The </span><span>$</span><span>25,000,000,000 eigenvector. The linear algebra behind Google</span></a></p><p><span>[viii] Thomas Yuster [</span><a href='https://www.maa.org/sites/default/files/Yuster19807.pdf'><span>pdf</span></a><span>, em inglês], Uma demonstração simples de que a forma reduzida escalonada por      linhas de uma matrix é única</span></p><p><span>[ix] </span><a href='http://www.wolframalpha.com/examples/Matrices.html'><span>Matrizes no Wolfram alpha</span></a></p><p><span>[x] </span><a href='https://www.dpmms.cam.ac.uk/~wtg10/vspaces.html'><span>Why study finite-dimensional vector spaces in the abstract if they are all isomorphic to Rn?</span></a></p><h3><a name="slidesapresentacaopdf" class="md-header-anchor"></a><strong><a href='apresentacao.pdf'><span>Slides</span></a></strong></h3><h3><a name="exercícioslistapdf" class="md-header-anchor"></a><strong><a href='Lista.pdf'><span>Exercícios</span></a></strong></h3></div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<head><meta charset="UTF-8">
+
+   <style>
+.MathJax nobr>span.math>span{border-left-width:0 !important};
+   </style>   
+
+  
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+            tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+            TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+            messageStyle: "none"
+        });
+    </script>    
+<!--    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML"></script>       -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>       
+</head>
+
+
+<p>
+  Euclides sem Bézout:  (Dem. de p|ab => p|a ou p|b.)
+</p>
+
+
+
+
+
+<p>
+
+Sejam
+<p>
+  (1) $p$ o menor primo tal que  <br/>   <br/>  
+  &emsp; &emsp; &emsp;  (*)  &ensp; $p | ab$ e $p{\not\!|} a$ e $p{\not\!|} b$   
+  
+<p>
+  (2) $a$ e $b$ tais que $ab$ é mínimo dentre todos os produtos tais que
+  (*) [desempata tomando o que tem menor $a$]
+  
+<p>
+  (&sect;) $ a,b < p $:<br/>
+	     
+  &emsp;&emsp; Se $a>p$ então $a=pq+r$ ($0 < r < p$), donde $ab=bpq+br$ e
+  de $p|ab$ temos $p|br$ e $ p\!\not\!| b$ e $ p\!\not\!| r$, contrariando (2).  <br/>
+
+  &emsp;&emsp; Analogamente, $b < p$.
+    
+<p>
+ $a\cdot b = (p_1p_2\cdots p_n)( q_1 q_2\cdots q_m)$ [fatoração  em primos]  e por (&sect;) $p>a,b>p_i,q_j$,  i.e.<br/> <br/>  
+
+      &emsp; &emsp; &emsp;   <b>(**)</b>  &ensp; $p_i,q_j < p$ $(\forall i,j)$ 
+      
+<p>
+ $p|ab$ logo para algum $k$, $ab=pk$ i.e. <br/> <br/>  
+  &emsp; &emsp; &emsp;   <b>(+)</b>  &ensp; $ab = pk = p_1p_2\cdots p_n q_1 q_2\cdots q_m$
+
+<p>
+  $p_i|pk$ e $q_j|pk$ logo por (1) e (**) $p_i|p$ ou $p_i|k$ e o análogo pra $q_j$ $(\forall i,j)$ <br/><br/>
+
+  Porém $p_i|p \Rightarrow p_i=p \Rightarrow  ~p|a$, contradição. 
+  Analogamente, $q_j{\not\!|}p$.  Portanto <br/> <br/>  
+
+     &emsp; &emsp; &emsp;    (***) &ensp; $p_i|k$ e $q_j|k$ &emsp; $(\forall i,j)$<br/> 
+
+
+   <p>
+     De (***) e (+) tem-se, para algum $N$, que  $ k = N p_1p_2\cdots p_n q_1 q_2\cdots q_m = N ab =N
+    pk$ e, então $Np=1$, contradição.
+
+ 

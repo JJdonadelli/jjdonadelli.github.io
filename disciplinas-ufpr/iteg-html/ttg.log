@@ -1,0 +1,1257 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2009.12.13)  20 FEB 2010 16:42
+entering extended mode
+ %&-line parsing enabled.
+**\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCo
+de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
+{\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
+documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
+ tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  ttg.tex
+(./ttg.tex (/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/generic/tex4ht/tex4ht.sty
+version 2008-10-27-17:23
+Package: tex4ht 
+--------------------------------------
+--- Note --- for _ at preamble, use the command line option `early_'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ at preamble, use the command line option `early^'
+--------------------------------------
+\tmp:toks=\toks14
+)
+(/usr/share/texmf/tex/generic/tex4ht/usepackage.4ht
+version 2009-05-21-09:32
+)
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2005/11/23 v3.8h The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/portuges.ldf
+Language: portuges 2005/03/31 v1.2p Portuguese support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2005/11/23 v3.8h Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2006/05/05 v1.1b Input encoding file
+))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+(/usr/share/texmf/tex/latex/html/html.sty
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count88
+\c@lchapter=\count89
+\c@chapter=\count90
+\c@lsection=\count91
+\c@lsubsection=\count92
+\c@lsubsubsection=\count93
+\c@lparagraph=\count94
+\c@lsubparagraph=\count95
+\c@lsubsubparagraph=\count96
+\ptrfile=\write3
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2007/02/07 v6.75r Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\@linkdim=\dimen104
+\Hy@linkcounter=\count97
+\Hy@pagecounter=\count98
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2007/02/07 v6.75r Hyperref: PDFDocEncoding definition (HO)
+)
+(/etc/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (
+HO)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 2238.
+Package hyperref Info: Hyper figures OFF on input line 2288.
+Package hyperref Info: Link nesting OFF on input line 2293.
+Package hyperref Info: Hyper index ON on input line 2296.
+Package hyperref Info: Plain pages OFF on input line 2303.
+Package hyperref Info: Backreferencing OFF on input line 2308.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2444.
+LaTeX Info: Redefining \url on input line 2599.
+LaTeX Info: Redefining \hyperref on input line 2610.
+\Fld@menulength=\count99
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+\Choice@toks=\toks18
+\Field@toks=\toks19
+Package hyperref Info: Hyper figures OFF on input line 3102.
+Package hyperref Info: Link nesting OFF on input line 3107.
+Package hyperref Info: Hyper index ON on input line 3110.
+Package hyperref Info: backreferencing OFF on input line 3117.
+Package hyperref Info: Link coloring ON on input line 3120.
+\Hy@abspage=\count100
+Hyperref stopped early
+)
+*hyperref using driver htex4ht*
+(/usr/share/texmf-texlive/tex/latex/hyperref/htex4ht.def
+File: htex4ht.def 2007/02/07 v6.75r Hyperref driver for TeX4ht
+
+hyperref tex4ht: tex4ht already loaded
+)
+
+Package hyperref Warning: Option `backref' has already been used,
+(hyperref)                setting the option has no effect on input line 15.
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 15.
+Package hyperref Info: Option `breaklinks' set `true' on input line 15.
+Package hyperref Info: Option `hyperindex' set `true' on input line 15.
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 15.
+
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 15.
+
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 15.
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks20
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen107
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count101
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count102
+\leftroot@=\count103
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count104
+\DOTSCASE@=\count105
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
+\dotsspace@=\muskip11
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
+\tag@help=\toks22
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
+\andhelp@=\toks23
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks24
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks31
+)
+\c@teo=\count113
+\c@corol=\count114
+
+(/usr/share/texmf/tex/generic/tex4ht/tex4ht.4ht
+version 2009-01-07-07:11
+--------------------------------------
+--- Note --- for additional information, use the command line option `info'
+--------------------------------------
+
+::::::::::::::::::::::::::::::::::::::::::
+ TeX4ht info is available in the log file 
+::::::::::::::::::::::::::::::::::::::::::
+) (/usr/share/texmf/tex/generic/tex4ht/tex4ht.sty
+version 2008-10-27-17:23
+
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+--- needs --- tex4ht ttg ---
+\tmp:cnt=\count115
+\openout15 = `ttg.tmp'.
+
+(./ttg.tmp)
+\tmp:dim=\skip49
+--------------------------------------
+--- Note --- for XML code, use the command line option `xml' or `xhtml'
+--------------------------------------
+ (./ttg.xref)
+\:refout=\write4
+\openout4 = `ttg.xref'.
+
+ (/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- to remove the <?xml version=...?> processing instruction use the c
+ommand line option `no-VERSION'
+--------------------------------------
+--------------------------------------
+--- Note --- to remove the DOCTYPE declaration use the command line option `no-
+DOCTYPE'
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)
+--------------------------------------
+--- Note --- for marking of the base font, use the command line option `fonts+'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for non active _, use the command line option `no_'
+--------------------------------------
+--------------------------------------
+--- Note --- for _ of catcode 13, use the command line option `_13'
+--------------------------------------
+--------------------------------------
+--- Note --- for non active ^, use the command line option `no^'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ of catcode 13, use the command line option `^13'
+--------------------------------------
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for alternative charset, use the command line option `charset=...'
+
+--------------------------------------
+--------------------------------------
+--- Note --- to ignore CSS font decoration, use the `NoFonts' command line opti
+on
+--------------------------------------
+--------------------------------------
+--- Note --- for jpg bitmaps of pictures, use the `jpg' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for gif bitmaps of pictures, use the `gif' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for content and toc in 2 frames, use the command line option `fram
+es'
+--------------------------------------
+--------------------------------------
+--- Note --- for content, toc, and footnotes in 3 frames, use the command line 
+option `frames-fn'
+--------------------------------------
+--------------------------------------
+--- Note --- for file extension name xht, use the command line option `xht'
+--------------------------------------
+TeX4ht package options: html
+--------------------------------------
+--- Note --- to ignore CSS code, use the command line option `-css
+--------------------------------------
+--------------------------------------
+--- Note --- for inline CSS code, use the command line option `css-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for pop ups on mouse over, use the command line option `mouseover'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for addressing images in a subdirectory, use the command line opti
+on `imgdir:.../'
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)
+\:tokwrite=\toks32
+\:tokpage=\toks33
+--------------------------------------
+--- Note --- for back links to toc, use the command line option `sections+'
+--------------------------------------
+--------------------------------------
+--- Note --- for linear crosslinks of pages, use the command line option `next'
+
+--------------------------------------
+\openout15 = `ttg.4ct'.
+
+\:tocout=\write5
+\openout5 = `ttg.4tc'.
+
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/latex.4ht
+version 2009-05-21-09:32
+--------------------------------------
+--- Note --- for links into captions, instead of float heads, use the command l
+ine option `refcaption'
+--------------------------------------
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- For mini tocs immediately aftter the header use the command line o
+ption `minitoc<'
+--------------------------------------
+--------------------------------------
+--- Note --- for enumerated list elements with valued data, use the command lin
+e option `enumerate+'
+--------------------------------------
+--------------------------------------
+--- Note --- for enumerated list elements li's with value attributes, use the c
+ommand line option `enumerate-'
+--------------------------------------
+--------------------------------------
+--- Note --- for CSS2 code, use the command line option `css2'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial tabular, use the command line option `pic-tabular'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap fbox'es, use the command line option `pic-fbox'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap framebox'es, use the command line option `pic-framebox'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for inline footnotes use command line option `fn-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for tracing of latex font commands, use the command line option `f
+onts'
+--------------------------------------
+--------------------------------------
+--- Note --- for width specifications of tabular p entries, use the `p-width' c
+ommand line option or a configuration similar to \Configure{HColWidth}{\HCode{ 
+style="width:\HColWidth"}}
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for pictorial eqnarray, use the command line option `pic-eqnarray'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ environments, use the command line option `pic
+-m' (not recommended!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ and $$...$$ environments with latex alt, use t
+he command line option `pic-m+' (not safe!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+))
+(/usr/share/texmf/tex/generic/tex4ht/fontmath.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/article.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for automatic sectioning pagination, use the command line option `
+1', `2', `3', '4', '5', '6', or '7'
+--------------------------------------
+--------------------------------------
+--- Note --- for files named derived from section titles, use the command line 
+option `sec-filename'
+--------------------------------------
+--------------------------------------
+--- Note --- for i-columns index, use the command line option `index=i' (e.g., 
+index=2)
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/babel.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/portuges.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/inputenc.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/latin1.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/url.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for URL encoding within href use the command line option `url-enc'
+
+--------------------------------------
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/hyperref.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count116
+)
+(/usr/share/texmf/tex/generic/tex4ht/nameref.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+LaTeX Info: Redefining \autoref on input line 99.
+
+l.382 --- TeX4ht warning --- \href of hyperref.sty introduces the prefix `file:
+' to prefix-free references. The command \hyperlinkfileprefix{...} may be used 
+for changing the prefix (probably \hyperlinkfileprefix{}). ---
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/pd1enc.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amssymb.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsfonts.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsmath.4ht
+version 2009-05-21-09:32
+\tmp:muskip=\muskip12
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amstext.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsbsy.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsopn.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/amsthm.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/color.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/dvips.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/dvipsnam.4ht
+version 2009-05-21-09:32
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def)
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/share/texmf/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/share/texmf/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)) (./ttg.aux)
+\openout1 = `ttg.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+Package hyperref Info: Link coloring ON on input line 65.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
+--- file ttg.css ---
+Missing character: There is no ó in font cmr10!
+Missing character: There is no é in font cmr10!
+ [1
+
+] [2]
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+) (./ttg.4ct [3]) [4]
+l. 119 Writing ttg.idv[1] (ttg0x.png)
+l. 126 Writing ttg.idv[2] (ttg1x.png)
+
+[5]
+l. 132 Writing ttg.idv[3] (ttg2x.png)
+l. 139 Writing ttg.idv[4] (ttg3x.png)
+--- file ttg2.html ---
+ [6]
+l. 165 Writing ttg.idv[5] (ttg4x.png)
+ [7]
+l. 206 Writing ttg.idv[6] (ttg5x.png)
+l. 206 Writing ttg.idv[7] (ttg6x.png)
+l. 216 Writing ttg.idv[8] (ttg7x.png)
+ [8]
+l. 224 Writing ttg.idv[9] (ttg8x.png)
+l. 229 Writing ttg.idv[10] (ttg9x.png)
+l. 234 Writing ttg.idv[11] (ttg10x.png)
+ [9]
+l. 245 Writing ttg.idv[12] (ttg11x.png)
+l. 249 Writing ttg.idv[13] (ttg12x.png)
+l. 255 Writing ttg.idv[14] (ttg13x.png)
+ [10]
+l. 259 Writing ttg.idv[15] (ttg14x.png)
+l. 263 Writing ttg.idv[16] (ttg15x.png)
+ [11]
+l. 268 Writing ttg.idv[17] (ttg16x.png)
+l. 273 Writing ttg.idv[18] (ttg17x.png)
+ [12]
+l. 279 Writing ttg.idv[19] (ttg18x.png)
+ [13]
+l. 319 Writing ttg.idv[20] (ttg19x.png)
+l. 328 Writing ttg.idv[21] (ttg20x.png)
+l. 332 Writing ttg.idv[22] (ttg21x.png)
+ [14]
+l. 337 Writing ttg.idv[23] (ttg22x.png)
+l. 342 Writing ttg.idv[24] (ttg23x.png)
+l. 343 Writing ttg.idv[25] (ttg24x.png)
+l. 351 Writing ttg.idv[26] (ttg25x.png)
+ [15]
+l. 356 Writing ttg.idv[27] (ttg26x.png)
+ [16]
+l. 369 Writing ttg.idv[28] (ttg27x.png)
+l. 380 Writing ttg.idv[29] (ttg28x.png)
+l. 387 Writing ttg.idv[30] (ttg29x.png)
+ [17]
+l. 397 Writing ttg.idv[31] (ttg30x.png)
+l. 410 Writing ttg.idv[32] (ttg31x.png)
+ [18]
+l. 423 Writing ttg.idv[33] (ttg32x.png)
+l. 435 Writing ttg.idv[34] (ttg33x.png)
+l. 446 Writing ttg.idv[35] (ttg34x.png)
+ [19]
+l. 450 Writing ttg.idv[36] (ttg35x.png)
+l. 456 Writing ttg.idv[37] (ttg36x.png)
+ [20]
+l. 470 Writing ttg.idv[38] (ttg37x.png)
+
+[21]
+l. 502 Writing ttg.idv[39] (ttg38x.png)
+l. 507 Writing ttg.idv[40] (ttg39x.png)
+ [22]
+l. 515 Writing ttg.idv[41] (ttg40x.png)
+l. 530 Writing ttg.idv[42] (ttg41x.png)
+ [23]
+l. 539 Writing ttg.idv[43] (ttg42x.png)
+l. 545 Writing ttg.idv[44] (ttg43x.png)
+l. 551 Writing ttg.idv[45] (ttg44x.png)
+ [24]
+l. 558 Writing ttg.idv[46] (ttg45x.png)
+l. 572 Writing ttg.idv[47] (ttg46x.png)
+ [25]
+l. 578 Writing ttg.idv[48] (ttg47x.png)
+l. 600 Writing ttg.idv[49] (ttg48x.png)
+ [26]
+l. 611 Writing ttg.idv[50] (ttg49x.png)
+l. 628 Writing ttg.idv[51] (ttg50x.png)
+l. 634 Writing ttg.idv[52] (ttg51x.png)
+ [27]
+l. 644 Writing ttg.idv[53] (ttg52x.png)
+l. 651 Writing ttg.idv[54] (ttg53x.png)
+l. 652 Writing ttg.idv[55] (ttg54x.png)
+l. 657 Writing ttg.idv[56] (ttg55x.png)
+ [28]
+l. 670 Writing ttg.idv[57] (ttg56x.png)
+l. 689 Writing ttg.idv[58] (ttg57x.png)
+ [29]
+l. 695 Writing ttg.idv[59] (ttg58x.png)
+l. 701 Writing ttg.idv[60] (ttg59x.png)
+l. 713 Writing ttg.idv[61] (ttg60x.png)
+ [30]
+l. 718 Writing ttg.idv[62] (ttg61x.png)
+l. 729 Writing ttg.idv[63] (ttg62x.png)
+l. 736 Writing ttg.idv[64] (ttg63x.png)
+ [31]
+l. 763 Writing ttg.idv[65] (ttg64x.png)
+ [32]
+l. 773 Writing ttg.idv[66] (ttg65x.png)
+l. 777 Writing ttg.idv[67] (ttg66x.png)
+l. 781 Writing ttg.idv[68] (ttg67x.png)
+ [33]
+l. 798 Writing ttg.idv[69] (ttg68x.png)
+l. 818 Writing ttg.idv[70] (ttg69x.png)
+l. 837 Writing ttg.idv[71] (ttg70x.png)
+ [34]
+l. 862 Writing ttg.idv[72] (ttg71x.png)
+l. 866 Writing ttg.idv[73] (ttg72x.png)
+ [35]
+l. 871 Writing ttg.idv[74] (ttg73x.png)
+l. 877 Writing ttg.idv[75] (ttg74x.png)
+l. 881 Writing ttg.idv[76] (ttg75x.png)
+
+[36]
+l. 888 Writing ttg.idv[77] (ttg76x.png)
+ [37]
+l. 901 Writing ttg.idv[78] (ttg77x.png)
+l. 914 Writing ttg.idv[79] (ttg78x.png)
+l. 926 Writing ttg.idv[80] (ttg79x.png)
+ [38] [39]
+l. 971 Writing ttg.idv[81] (ttg80x.png)
+l. 992 Writing ttg.idv[82] (ttg81x.png)
+ [40]
+l. 997 Writing ttg.idv[83] (ttg82x.png)
+l. 1043 Writing ttg.idv[84] (ttg83x.png)
+ [41]
+l. 1052 Writing ttg.idv[85] (ttg84x.png)
+ [42]
+l. 1081 Writing ttg.idv[86] (ttg85x.png)
+ [43]
+l. 1100 Writing ttg.idv[87] (ttg86x.png)
+l. 1115 Writing ttg.idv[88] (ttg87x.png)
+ [44]
+l. 1124 Writing ttg.idv[89] (ttg88x.png)
+l. 1140 Writing ttg.idv[90] (ttg89x.png)
+ [45]
+l. 1146 Writing ttg.idv[91] (ttg90x.png)
+l. 1163 Writing ttg.idv[92] (ttg91x.png)
+ [46]
+l. 1170 Writing ttg.idv[93] (ttg92x.png)
+l. 1186 Writing ttg.idv[94] (ttg93x.png)
+l. 1192 Writing ttg.idv[95] (ttg94x.png)
+ [47]
+l. 1197 Writing ttg.idv[96] (ttg95x.png)
+l. 1208 Writing ttg.idv[97] (ttg96x.png)
+ [48]
+l. 1230 Writing ttg.idv[98] (ttg97x.png)
+l. 1246 Writing ttg.idv[99] (ttg98x.png)
+ [49] [50]
+l. 1294 Writing ttg.idv[100] (ttg99x.png)
+
+[51]
+l. 1300 Writing ttg.idv[101] (ttg100x.png)
+l. 1304 Writing ttg.idv[102] (ttg101x.png)
+ [52]
+l. 1347 Writing ttg.idv[103] (ttg102x.png)
+ [53]
+l. 1367 Writing ttg.idv[104] (ttg103x.png)
+ [54]
+l. 1418 Writing ttg.idv[105] (ttg104x.png)
+l. 1464 Writing ttg.idv[106] (ttg105x.png)
+ [55]
+l. 1478 Writing ttg.idv[107] (ttg106x.png)
+l. 1498 Writing ttg.idv[108] (ttg107x.png)
+ [56] [57]
+l. 1545 Writing ttg.idv[109] (ttg108x.png)
+l. 1558 Writing ttg.idv[110] (ttg109x.png)
+ [58]
+l. 1585 Writing ttg.idv[111] (ttg110x.png)
+l. 1595 Writing ttg.idv[112] (ttg111x.png)
+l. 1610 Writing ttg.idv[113] (ttg112x.png)
+l. 1611 Writing ttg.idv[114] (ttg113x.png)
+ [59]
+l. 1629 Writing ttg.idv[115] (ttg114x.png)
+l. 1639 Writing ttg.idv[116] (ttg115x.png)
+ [60]
+l. 1669 Writing ttg.idv[117] (ttg116x.png)
+l. 1684 Writing ttg.idv[118] (ttg117x.png)
+ [61]
+l. 1697 Writing ttg.idv[119] (ttg118x.png)
+l. 1704 Writing ttg.idv[120] (ttg119x.png)
+ [62]
+l. 1717 Writing ttg.idv[121] (ttg120x.png)
+l. 1723 Writing ttg.idv[122] (ttg121x.png)
+l. 1727 Writing ttg.idv[123] (ttg122x.png)
+ [63]
+l. 1735 Writing ttg.idv[124] (ttg123x.png)
+l. 1757 Writing ttg.idv[125] (ttg124x.png)
+ [64]
+l. 1765 Writing ttg.idv[126] (ttg125x.png)
+ [65]
+l. 1787 Writing ttg.idv[127] (ttg126x.png)
+l. 1800 Writing ttg.idv[128] (ttg127x.png)
+
+[66]
+l. 1816 Writing ttg.idv[129] (ttg128x.png)
+l. 1822 Writing ttg.idv[130] (ttg129x.png)
+l. 1832 Writing ttg.idv[131] (ttg130x.png)
+l. 1834 Writing ttg.idv[132] (ttg131x.png)
+l. 1837 Writing ttg.idv[133] (ttg132x.png)
+l. 1846 Writing ttg.idv[134] (ttg133x.png)
+ [67]
+l. 1852 Writing ttg.idv[135] (ttg134x.png)
+l. 1875 Writing ttg.idv[136] (ttg135x.png)
+ [68]
+l. 1890 Writing ttg.idv[137] (ttg136x.png)
+l. 1905 Writing ttg.idv[138] (ttg137x.png)
+l. 1907 Writing ttg.idv[139] (ttg138x.png)
+l. 1922 Writing ttg.idv[140] (ttg139x.png)
+l. 1925 Writing ttg.idv[141] (ttg140x.png)
+ [69]
+l. 1928 Writing ttg.idv[142] (ttg141x.png)
+l. 1948 Writing ttg.idv[143] (ttg142x.png)
+l. 1969 Writing ttg.idv[144] (ttg143x.png)
+l. 1974 Writing ttg.idv[145] (ttg144x.png)
+l. 1979 Writing ttg.idv[146] (ttg145x.png)
+l. 1981 Writing ttg.idv[147] (ttg146x.png)
+ [70]
+l. 1984 Writing ttg.idv[148] (ttg147x.png)
+l. 1988 Writing ttg.idv[149] (ttg148x.png)
+l. 1996 Writing ttg.idv[150] (ttg149x.png)
+l. 2002 Writing ttg.idv[151] (ttg150x.png)
+l. 2005 Writing ttg.idv[152] (ttg151x.png)
+l. 2008 Writing ttg.idv[153] (ttg152x.png)
+l. 2012 Writing ttg.idv[154] (ttg153x.png)
+l. 2015 Writing ttg.idv[155] (ttg154x.png)
+l. 2019 Writing ttg.idv[156] (ttg155x.png)
+l. 2022 Writing ttg.idv[157] (ttg156x.png)
+l. 2025 Writing ttg.idv[158] (ttg157x.png)
+l. 2029 Writing ttg.idv[159] (ttg158x.png)
+l. 2032 Writing ttg.idv[160] (ttg159x.png)
+ [71]
+l. 2036 Writing ttg.idv[161] (ttg160x.png)
+l. 2043 Writing ttg.idv[162] (ttg161x.png)
+l. 2050 Writing ttg.idv[163] (ttg162x.png)
+ [72]
+l. 2061 Writing ttg.idv[164] (ttg163x.png)
+l. 2073 Writing ttg.idv[165] (ttg164x.png)
+l. 2085 Writing ttg.idv[166] (ttg165x.png)
+ [73]
+l. 2089 Writing ttg.idv[167] (ttg166x.png)
+l. 2093 Writing ttg.idv[168] (ttg167x.png)
+l. 2101 Writing ttg.idv[169] (ttg168x.png)
+ [74]
+l. 2109 Writing ttg.idv[170] (ttg169x.png)
+
+
+LaTeX Warning: Reference `fig:grafo3' on page 75 undefined on input line 2128.
+
+l. 2129 Writing ttg.idv[171] (ttg170x.png)
+[75]
+l. 2143 Writing ttg.idv[172] (ttg171x.png)
+ [76]
+l. 2159 Writing ttg.idv[173] (ttg172x.png)
+l. 2172 Writing ttg.idv[174] (ttg173x.png)
+ [77]
+l. 2179 Writing ttg.idv[175] (ttg174x.png)
+l. 2184 Writing ttg.idv[176] (ttg175x.png)
+ [78]
+l. 2188 Writing ttg.idv[177] (ttg176x.png)
+l. 2195 Writing ttg.idv[178] (ttg177x.png)
+l. 2200 Writing ttg.idv[179] (ttg178x.png)
+l. 2203 Writing ttg.idv[180] (ttg179x.png)
+ [79]
+l. 2206 Writing ttg.idv[181] (ttg180x.png)
+ [80]
+l. 2228 Writing ttg.idv[182] (ttg181x.png)
+l. 2241 Writing ttg.idv[183] (ttg182x.png)
+ [81]
+l. 2288 Writing ttg.idv[184] (ttg183x.png)
+l. 2292 Writing ttg.idv[185] (ttg184x.png)
+ [82]
+l. 2298 Writing ttg.idv[186] (ttg185x.png)
+l. 2309 Writing ttg.idv[187] (ttg186x.png)
+ [83]
+l. 2319 Writing ttg.idv[188] (ttg187x.png)
+ [84]
+l. 2326 Writing ttg.idv[189] (ttg188x.png)
+l. 2336 Writing ttg.idv[190] (ttg189x.png)
+l. 2353 Writing ttg.idv[191] (ttg190x.png)
+ [85]
+l. 2370 Writing ttg.idv[192] (ttg191x.png)
+ [86]
+l. 2373 Writing ttg.idv[193] (ttg192x.png)
+ [87]
+l. 2396 Writing ttg.idv[194] (ttg193x.png)
+ [88]
+
+LaTeX Warning: Reference `fig:grafo4' on page 89 undefined on input line 2421.
+
+l. 2436 Writing ttg.idv[195] (ttg194x.png)
+[89]
+l. 2439 Writing ttg.idv[196] (ttg195x.png)
+l. 2444 Writing ttg.idv[197] (ttg196x.png)
+l. 2448 Writing ttg.idv[198] (ttg197x.png)
+ [90]
+l. 2452 Writing ttg.idv[199] (ttg198x.png)
+l. 2459 Writing ttg.idv[200] (ttg199x.png)
+l. 2462 Writing ttg.idv[201] (ttg200x.png)
+ [91]
+l. 2467 Writing ttg.idv[202] (ttg201x.png)
+l. 2469 Writing ttg.idv[203] (ttg202x.png)
+ [92]
+l. 2495 Writing ttg.idv[204] (ttg203x.png)
+ [93]
+l. 2506 Writing ttg.idv[205] (ttg204x.png)
+l. 2510 Writing ttg.idv[206] (ttg205x.png)
+l. 2514 Writing ttg.idv[207] (ttg206x.png)
+ [94]
+l. 2538 Writing ttg.idv[208] (ttg207x.png)
+ [95]
+l. 2549 Writing ttg.idv[209] (ttg208x.png)
+ [96]
+l. 2555 Writing ttg.idv[210] (ttg209x.png)
+l. 2563 Writing ttg.idv[211] (ttg210x.png)
+l. 2578 Writing ttg.idv[212] (ttg211x.png)
+ [97]
+l. 2586 Writing ttg.idv[213] (ttg212x.png)
+l. 2594 Writing ttg.idv[214] (ttg213x.png)
+l. 2598 Writing ttg.idv[215] (ttg214x.png)
+l. 2600 Writing ttg.idv[216] (ttg215x.png)
+ [98]
+l. 2614 Writing ttg.idv[217] (ttg216x.png)
+l. 2621 Writing ttg.idv[218] (ttg217x.png)
+ [99]
+l. 2628 Writing ttg.idv[219] (ttg218x.png)
+l. 2636 Writing ttg.idv[220] (ttg219x.png)
+l. 2642 Writing ttg.idv[221] (ttg220x.png)
+ [100]
+l. 2646 Writing ttg.idv[222] (ttg221x.png)
+l. 2658 Writing ttg.idv[223] (ttg222x.png)
+l. 2675 Writing ttg.idv[224] (ttg223x.png)
+ [101]
+l. 2692 Writing ttg.idv[225] (ttg224x.png)
+ [102]
+l. 2714 Writing ttg.idv[226] (ttg225x.png)
+l. 2722 Writing ttg.idv[227] (ttg226x.png)
+l. 2729 Writing ttg.idv[228] (ttg227x.png)
+
+[103]
+l. 2741 Writing ttg.idv[229] (ttg228x.png)
+l. 2791 Writing ttg.idv[230] (ttg229x.png)
+ [104]
+l. 2799 Writing ttg.idv[231] (ttg230x.png)
+l. 2811 Writing ttg.idv[232] (ttg231x.png)
+l. 2817 Writing ttg.idv[233] (ttg232x.png)
+ [105]
+l. 2823 Writing ttg.idv[234] (ttg233x.png)
+l. 2831 Writing ttg.idv[235] (ttg234x.png)
+ [106]
+l. 2838 Writing ttg.idv[236] (ttg235x.png)
+l. 2843 Writing ttg.idv[237] (ttg236x.png)
+l. 2848 Writing ttg.idv[238] (ttg237x.png)
+ [107]
+l. 2861 Writing ttg.idv[239] (ttg238x.png)
+l. 2865 Writing ttg.idv[240] (ttg239x.png)
+l. 2869 Writing ttg.idv[241] (ttg240x.png)
+ [108]
+l. 2876 Writing ttg.idv[242] (ttg241x.png)
+l. 2890 Writing ttg.idv[243] (ttg242x.png)
+l. 2898 Writing ttg.idv[244] (ttg243x.png)
+ [109]
+l. 2904 Writing ttg.idv[245] (ttg244x.png)
+l. 2909 Writing ttg.idv[246] (ttg245x.png)
+l. 2915 Writing ttg.idv[247] (ttg246x.png)
+ [110]
+l. 2919 Writing ttg.idv[248] (ttg247x.png)
+l. 2924 Writing ttg.idv[249] (ttg248x.png)
+l. 2933 Writing ttg.idv[250] (ttg249x.png)
+ [111]
+l. 2964 Writing ttg.idv[251] (ttg250x.png)
+l. 2974 Writing ttg.idv[252] (ttg251x.png)
+ [112]
+l. 2984 Writing ttg.idv[253] (ttg252x.png)
+l. 2993 Writing ttg.idv[254] (ttg253x.png)
+ [113]
+l. 2998 Writing ttg.idv[255] (ttg254x.png)
+l. 3002 Writing ttg.idv[256] (ttg255x.png)
+l. 3011 Writing ttg.idv[257] (ttg256x.png)
+l. 3014 Writing ttg.idv[258] (ttg257x.png)
+l. 3015 Writing ttg.idv[259] (ttg258x.png)
+ [114]
+l. 3024 Writing ttg.idv[260] (ttg259x.png)
+l. 3030 Writing ttg.idv[261] (ttg260x.png)
+
+[115]
+l. 3035 Writing ttg.idv[262] (ttg261x.png)
+l. 3051 Writing ttg.idv[263] (ttg262x.png)
+ [116]
+l. 3053 Writing ttg.idv[264] (ttg263x.png)
+l. 3055 Writing ttg.idv[265] (ttg264x.png)
+l. 3062 Writing ttg.idv[266] (ttg265x.png)
+ [117]
+l. 3074 Writing ttg.idv[267] (ttg266x.png)
+l. 3085 Writing ttg.idv[268] (ttg267x.png)
+l. 3090 Writing ttg.idv[269] (ttg268x.png)
+l. 3091 Writing ttg.idv[270] (ttg269x.png)
+ [118]
+l. 3092 Writing ttg.idv[271] (ttg270x.png)
+l. 3104 Writing ttg.idv[272] (ttg271x.png)
+l. 3104 Writing ttg.idv[273] (ttg272x.png)
+l. 3109 Writing ttg.idv[274] (ttg273x.png)
+ [119]
+l. 3114 Writing ttg.idv[275] (ttg274x.png)
+l. 3118 Writing ttg.idv[276] (ttg275x.png)
+l. 3121 Writing ttg.idv[277] (ttg276x.png)
+l. 3131 Writing ttg.idv[278] (ttg277x.png)
+l. 3132 Writing ttg.idv[279] (ttg278x.png)
+ [120]
+l. 3141 Writing ttg.idv[280] (ttg279x.png)
+l. 3142 Writing ttg.idv[281] (ttg280x.png)
+l. 3148 Writing ttg.idv[282] (ttg281x.png)
+l. 3154 Writing ttg.idv[283] (ttg282x.png)
+ [121]
+l. 3155 Writing ttg.idv[284] (ttg283x.png)
+l. 3158 Writing ttg.idv[285] (ttg284x.png)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3173
+.
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3173.
+
+l. 3176 Writing ttg.idv[286] (ttg285x.png)
+ [122]
+l. 3183 Writing ttg.idv[287] (ttg286x.png)
+l. 3190 Writing ttg.idv[288] (ttg287x.png)
+l. 3194 Writing ttg.idv[289] (ttg288x.png)
+ [123]
+l. 3214 Writing ttg.idv[290] (ttg289x.png)
+l. 3219 Writing ttg.idv[291] (ttg290x.png)
+ [124]
+l. 3239 Writing ttg.idv[292] (ttg291x.png)
+l. 3240 Writing ttg.idv[293] (ttg292x.png)
+l. 3243 Writing ttg.idv[294] (ttg293x.png)
+ [125]
+l. 3250 Writing ttg.idv[295] (ttg294x.png)
+l. 3255 Writing ttg.idv[296] (ttg295x.png)
+l. 3267 Writing ttg.idv[297] (ttg296x.png)
+
+[126]
+l. 3274 Writing ttg.idv[298] (ttg297x.png)
+l. 3281 Writing ttg.idv[299] (ttg298x.png)
+ [127]
+l. 3310 Writing ttg.idv[300] (ttg299x.png)
+ [128]
+l. 3320 Writing ttg.idv[301] (ttg300x.png)
+l. 3329 Writing ttg.idv[302] (ttg301x.png)
+ [129]
+l. 3343 Writing ttg.idv[303] (ttg302x.png)
+l. 3343 Writing ttg.idv[304] (ttg303x.png)
+l. 3345 Writing ttg.idv[305] (ttg304x.png)
+l. 3347 Writing ttg.idv[306] (ttg305x.png)
+l. 3356 Writing ttg.idv[307] (ttg306x.png)
+ [130]
+l. 3362 Writing ttg.idv[308] (ttg307x.png)
+l. 3367 Writing ttg.idv[309] (ttg308x.png)
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 3372.
+
+l. 3376 Writing ttg.idv[310] (ttg309x.png)
+[131]
+l. 3382 Writing ttg.idv[311] (ttg310x.png)
+l. 3386 Writing ttg.idv[312] (ttg311x.png)
+l. 3392 Writing ttg.idv[313] (ttg312x.png)
+ [132]
+l. 3399 Writing ttg.idv[314] (ttg313x.png)
+l. 3403 Writing ttg.idv[315] (ttg314x.png)
+l. 3409 Writing ttg.idv[316] (ttg315x.png)
+ [133]
+l. 3419 Writing ttg.idv[317] (ttg316x.png)
+l. 3427 Writing ttg.idv[318] (ttg317x.png)
+ [134]
+l. 3434 Writing ttg.idv[319] (ttg318x.png)
+l. 3438 Writing ttg.idv[320] (ttg319x.png)
+l. 3442 Writing ttg.idv[321] (ttg320x.png)
+ [135]
+l. 3453 Writing ttg.idv[322] (ttg321x.png)
+l. 3457 Writing ttg.idv[323] (ttg322x.png)
+l. 3470 Writing ttg.idv[324] (ttg323x.png)
+ [136]
+l. 3501 Writing ttg.idv[325] (ttg324x.png)
+l. 3510 Writing ttg.idv[326] (ttg325x.png)
+ [137]
+l. 3516 Writing ttg.idv[327] (ttg326x.png)
+l. 3517 Writing ttg.idv[328] (ttg327x.png)
+l. 3518 Writing ttg.idv[329] (ttg328x.png)
+l. 3527 Writing ttg.idv[330] (ttg329x.png)
+l. 3535 Writing ttg.idv[331] (ttg330x.png)
+ [138]
+l. 3539 Writing ttg.idv[332] (ttg331x.png)
+l. 3545 Writing ttg.idv[333] (ttg332x.png)
+l. 3550 Writing ttg.idv[334] (ttg333x.png)
+ [139]
+l. 3555 Writing ttg.idv[335] (ttg334x.png)
+l. 3575 Writing ttg.idv[336] (ttg335x.png)
+ [140]
+l. 3586 Writing ttg.idv[337] (ttg336x.png)
+l. 3602 Writing ttg.idv[338] (ttg337x.png)
+l. 3606 Writing ttg.idv[339] (ttg338x.png)
+ [141]
+l. 3617 Writing ttg.idv[340] (ttg339x.png)
+l. 3621 Writing ttg.idv[341] (ttg340x.png)
+l. 3631 Writing ttg.idv[342] (ttg341x.png)
+ [142]
+l. 3637 Writing ttg.idv[343] (ttg342x.png)
+l. 3641 Writing ttg.idv[344] (ttg343x.png)
+l. 3654 Writing ttg.idv[345] (ttg344x.png)
+
+[143]
+l. 3660 Writing ttg.idv[346] (ttg345x.png)
+l. 3666 Writing ttg.idv[347] (ttg346x.png)
+ [144]
+l. 3683 Writing ttg.idv[348] (ttg347x.png)
+l. 3692 Writing ttg.idv[349] (ttg348x.png)
+ [145]
+l. 3708 Writing ttg.idv[350] (ttg349x.png)
+ [146]
+l. 3715 Writing ttg.idv[351] (ttg350x.png)
+l. 3724 Writing ttg.idv[352] (ttg351x.png)
+ [147]
+l. 3742 Writing ttg.idv[353] (ttg352x.png)
+l. 3761 Writing ttg.idv[354] (ttg353x.png)
+l. 3765 Writing ttg.idv[355] (ttg354x.png)
+ [148]
+l. 3771 Writing ttg.idv[356] (ttg355x.png)
+l. 3779 Writing ttg.idv[357] (ttg356x.png)
+l. 3786 Writing ttg.idv[358] (ttg357x.png)
+ [149]
+l. 3795 Writing ttg.idv[359] (ttg358x.png)
+ [150]
+l. 3815 Writing ttg.idv[360] (ttg359x.png)
+l. 3824 Writing ttg.idv[361] (ttg360x.png)
+ [151]
+l. 3837 Writing ttg.idv[362] (ttg361x.png)
+l. 3844 Writing ttg.idv[363] (ttg362x.png)
+l. 3855 Writing ttg.idv[364] (ttg363x.png)
+ [152]
+l. 3863 Writing ttg.idv[365] (ttg364x.png)
+l. 3875 Writing ttg.idv[366] (ttg365x.png)
+l. 3876 Writing ttg.idv[367] (ttg366x.png)
+ [153]
+l. 3882 Writing ttg.idv[368] (ttg367x.png)
+l. 3890 Writing ttg.idv[369] (ttg368x.png)
+l. 3896 Writing ttg.idv[370] (ttg369x.png)
+l. 3905 Writing ttg.idv[371] (ttg370x.png)
+ [154]
+[155] [156] (./ttg.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 8513 strings out of 95078
+ 107135 string characters out of 1183085
+ 293099 words of memory out of 1500000
+ 11476 multiletter control sequences out of 10000+50000
+ 17299 words of font info for 67 fonts, out of 1200000 for 2000
+ 30 hyphenation exceptions out of 8191
+ 32i,19n,30p,1205b,535s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on ttg.dvi (156 pages, 423632 bytes).
