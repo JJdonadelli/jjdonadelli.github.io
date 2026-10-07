@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algoritmo de Conway — Tradução (Winning odds)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height: 1.6; margin: 2rem; color: #111; }
+    header { margin-bottom: 1.5rem; }
+    h1 { font-size: 1.6rem; margin: 0 0 .3rem 0; }
+    h2 { margin-top: 1.2rem; }
+    pre { background:#f5f5f5; padding: .8rem; border-radius:6px; overflow:auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; }
+    .source { margin-top: 1.2rem; font-size: .95rem; color: #444; }
+    .math { font-style: italic; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Algoritmo de Conway</h1>
+  </header>
+
+    
+
+    <p>
+      Primeiro, escreva as duas ternas B e A uma acima da outra com os dígitos alinhados, como fizemos abaixo para as ternas <code>ccc</code> e <code>kcc</code>. Agora compare os primeiros dígitos as duas ternas: se forem iguais, coloque um <code>1</code> acima do primeiro dígito da sequência de cima; caso contrário coloque um <code>0</code>.
+    </p>
+
+    <pre><code>
+	0
+B	k c c
+A	c c c
+    </code></pre>
+
+    <p>
+      Em seguida, remova o dígito inicial da terna superior e desloque-o para a esquerda, alinhando os elementos iniciais. Depois, compare os dois primeiros dígitos da sequência superior com os dois primeiros dígitos da sequência inferior: se forem iguais, coloque um <code>1</code> acima do elemento inicial da sequência superior, caso contrário um <code>0</code>.
+    </p>
+
+    <pre><code>
+1
+c c
+c c c
+    </code></pre>
+
+    <p>
+      Repita esse procedimento até o último elemento da sequência superior.
+    </p>
+
+    <pre><code>
+1
+c
+c c c
+    </code></pre>
+
+    <p>
+      O resultado é uma sequência binária que mede a sobreposição entre as duas sequências. Essa sequência pode ser vista como um número natural base 2, no nosso exemplo equivale ao número decimal n(BA)=<strong>3</strong>.
+    </p>
+
+    <p>
+      Dadas duas ternas A e B, podemos calcular as probabilidades do Jogador B ganhar do jogador A:
+    <code>(n(AA) - n(AB)) / (n(BB) - n(BA))</code></p>
+
+    <p> Note que precisamos calcular n( ), como acima, para jogos AA,
+    AB, BB, BA com o primeiro digito simbolizando a terna superior e o
+    segundo a inferior.
+      No nosso exemplo com A = <code>ccc</code> e B = <code>kcc</code>, obtemos as quatro leituras (conforme o procedimento acima):
+    </p>
+
+    <pre><code>
+1 1 1
+A: c c c
+A: c c c
+
+0 0 0
+A: c c c
+B: k c c
+
+1 0 0
+B: k c c
+B: k c c
+
+0 1 1
+B: k c c
+A: c c c
+    </code></pre>
+
+    <p>
+      Convertendo esses quatro valores para números decimais, <code>111</code> = 7, <code>000</code> =
+      0, <code>100</code> = 4 e <code>011</code> = 3, e substituindo na
+      fórmula, obtemos:
+    </p>
+
+    <p class="math"><code>(n(AA) - n(AB)) / (n(BB) - n(BA)) = (7 - 0) / (4 - 3) = 7</code></p>
+
+    <p>
+      que interpretamos como uma chance de 7:1 de B sobre A, ou seja, 
+    </p>
+
+    <p> Probabilidade de vitária de A<code> = 1 / (1 + 7) = 1/8</code>,  e  probabilidade de vitária de B<code> = 7 / (1 + 7) = 7/8</code>.</p>
+
+    
+</body>
+</html>
+

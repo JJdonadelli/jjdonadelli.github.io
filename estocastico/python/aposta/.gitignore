@@ -1,0 +1,43 @@
+# Arquivos de backup e temporários (gerados por editores)
+*~
+#*#
+*.swp
+*.swo
+
+# Arquivos do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Arquivos Python temporários e caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos gerados por Jupyter
+.ipynb_checkpoints/
+
+# Diretórios do VSCode ou outros IDEs
+.vscode/
+.idea/
+
+
+# Arquivos ocultos do sistema
+.DS_Store
+Thumbs.db
+
+# outros arquivos particulares
+D-BMZ-BDZ.tar.bz2
+eleicoes-2009-Waldman
+ma37git*
+interior*jpg
+index*.pdf

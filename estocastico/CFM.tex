@@ -1,0 +1,147 @@
+\documentclass[12pt,letterpaper]{article}
+
+% Pacotes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+
+% Estilo de teorema
+\newtheorem{theorem}{Teorema}
+
+% Espaçamento
+\usepackage{setspace}
+\onehalfspacing
+
+% Margens
+%\usepackage[margin=1in]{geometry}
+\usepackage{fullpage}
+\usepackage{enumitem}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE Propriedade Forte de Markov}
+\end{center}
+
+\bigskip
+
+\begin{theorem}[Propriedade Forte de Markov]
+  Seja $(X_n)_{n \geq 0}$ uma cadeia de Markov com espaço de estados
+  $S$, distribuição inicial $\lambda$ e matriz de transição $P$.  Seja
+  $T$ um tempo de parada para $(X_n)_{n \geq 0}$.  Então, condicionado
+  em $T < \infty$ e $X_T = i$, o processo \( (X_{T+n})_{n \geq 0}\) é
+  uma cadeia de Markov com estado inicial $i$ e matriz de transição
+  $P$.  Além disso, $(X_{T+n})_{n \geq 0}$ é independente de
+  $(X_0, X_1, \dots, X_T)$.
+\end{theorem}
+
+
+
+Sejam $A$ um evento que depende apenas do futuro
+$(X_{T+1},X_{T+2},\dots)$ e $B$ um evento que depende apenas do passado
+$(X_0,\dots,X_T)$. Pela definição de probabilidade condicional, temos
+\[
+\frac{\mathbb{P}(A \cap B \mid T<\infty, X_T=i)}{\mathbb{P}(B \mid T<\infty, X_T=i)}
+= \mathbb{P}(A \mid B, T<\infty, X_T=i).
+\]
+A Propriedade (``fraca'') de Markov em tempo fixo garante que, dado
+$X_T=i$, o futuro é independente do passado. Assim,
+\[
+\mathbb{P}(A \mid B, T<\infty, X_T=i) 
+= \mathbb{P}(A \mid T<\infty, X_T=i).
+\]
+Por fim, a Propriedade Forte de Markov afirma que, condicionado em
+$X_T=i$, o futuro $(X_{T+1},X_{T+2},\dots)$ tem a mesma lei que uma
+cadeia de Markov iniciada em $i$. Ou seja,
+\[
+\mathbb{P}(A \mid T<\infty, X_T=i) = \mathbb{P} (A \mid X_0=i).
+\]
+Isso mostra que o futuro é independente do passado, e que o processo
+reinicia como uma nova cadeia de Markov em $i$.
+
+O Teorema~1 diz que, se \(T < \infty\), então, dado que \(X_T = i\):
+\begin{enumerate}[label=(\roman*), noitemsep]
+\item \((X_{T+1}, \ldots, X_{T+n})\) é independente de
+  \((X_0, \ldots, X_{T-1})\); e
+\item tem a mesma distribuição que \((X_1, \ldots, X_n)\) sob
+  $\mathbb P(\cdot\mid X_0=i)$.
+\end{enumerate}
+
+
+\begin{proof}
+  Sejam $i,j_1,\dots,j_n \in S$ e seja $B$ um evento determinado por
+  $(X_0,\dots,X_T)$.  Nosso objetivo é mostrar que
+  \begin{align*}
+    \mathbb{P} ( & X_{T+1}=j_1,\dots,X_{T+n}=j_n,\, B \,\mid \,
+                   T<\infty, X_T=i )\\ & = \mathbb{P}  (   X_{1}=j_1,\dots,X_n=j_n \mid  X_0=i)\cdot 
+                                         \mathbb{P}(B \mid T<\infty, X_T=i).
+  \end{align*}
+
+
+\noindent\textbf{1.~Redução ao caso $T=m$.}  
+Se $T=m$, o evento $B \cap [T=m]$ depende apenas de $(X_0,\dots,X_m)$.
+No evento $[T=m]$ temos $X_T = X_m$, logo para cada $m$
+\[
+  \big[ X_T=i, X_{T+1}=j_1,\dots,X_{T+n}=j_n,\, B,\, T=m \big] \;=\;
+  [ X_m=i ] \cap A_m  \cap B \cap [T=m]
+\]
+onde $A_m=[X_{m+1}=j_1,\dots,X_{m+n}=j_n]$.
+
+Como $B \cap [T=m]$ depende apenas do passado até $m$, a propriedade de
+Markov em $m$ implica em
+\( \mathbb{P}(A_m \mid X_m=i, B, T=m) = \mathbb{P}(A_m \mid X_m=i) \),
+ou seja, a probabilidade do futuro partindo do estado $i$, logo pela
+definição de probabilidade condicional
+\begin{align*}
+\mathbb{P}(X_m=i, A_m, B, T=m) 
+&\;=\; \mathbb{P}(B, T=m, X_m=i)\cdot \mathbb{P}(A_m \mid X_m=i, B, T=m). \\
+&\;=\; \mathbb{P}(B, T=m, X_m=i)\cdot  \mathbb{P}(A_m \mid X_m=i).
+\end{align*}
+Portanto,
+\begin{align}\notag
+\mathbb{P}(X_T=i,\dots,X_{T+n}=j_n, B, T=m)
+\;=\;\mathbb{P}(X_m=i, A_m, B, T=m) 
+\\=
+\label{eq:1}
+  \mathbb{P}(B, T=m, X_m=i)\cdot
+  \underbrace{\mathbb{P}(X_m=i,\dots,X_{m+n}=j_n \mid X_m=i)}_{=\mathbb{P}(X_0=i,\dots,X_{n}=j_n \mid X_0=i)}.
+\end{align}
+
+\medskip
+
+\noindent\textbf{2.~Soma sobre os valores possíveis de $T$.}  
+Os eventos $[T=m]$, para $m=0,1,2,\dots$, são disjuntos e cobrem
+$[T<\infty]$.  Logo,
+\begin{align*}
+&\mathbb{P}(X_T=i,\dots,X_{T+n}=j_n, B, T<\infty) \\
+&= \sum_{m=0}^\infty \mathbb{P}(X_T=i,\dots,X_{T+n}=j_n, B, T=m).
+\end{align*}
+Substituindo  no resultado acima
+\begin{align*}
+\mathbb{P}&(X_T=i,\dots,X_{T+n}=j_n, B, T<\infty) \\
+&=\mathbb{P}(X_0=i,\dots,X_n=j_n \mid X_0=i)\cdot \sum_{m=0}^\infty \mathbb{P}(B, T=m, X_m=i) \\
+&=\mathbb{P}(X_0=i,\dots,X_n=j_n \mid X_0=i)\cdot\mathbb{P}(B, T<\infty, X_T=i).
+\end{align*}
+
+\medskip
+
+\noindent\textbf{3.~Condicionamento final.}  
+Dividindo por $\mathbb{P}(T<\infty, X_T=i)$ concluímos:
+\begin{align*}
+\mathbb{P} & (X_T=i,\dots,X_{T+n}=j_n, B \mid T<\infty, X_T=i) 
+\\  & = \mathbb{P}(X_0=i,\dots,X_n=j_n\mid X_0=i)\cdot \mathbb{P}(B \mid T<\infty, X_T=i).
+\end{align*}
+
+
+Isto prova que, condicionado em $T < \infty$ e $X_T = i$, o futuro
+$(X_{T+n})_{n \geq 0}$ tem a mesma lei que uma cadeia de Markov
+iniciada em $i$ e é independente do passado $(X_0,\dots,X_T)$.
+\end{proof}
+
+
+
+
+
+
+\end{document}

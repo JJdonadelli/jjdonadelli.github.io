@@ -1,0 +1,126 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Tema simples e limpo
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title[Anatomia do Google]{Anatomia de um Mecanismo de Busca Web Hipertextual em Grande Escala}
+\subtitle{O Protótipo do Google (Brin \& Page, 1998)}
+\author{Sergey Brin e Lawrence Page \\ \small Apresentador: Manus AI}
+\date{\today}
+
+\begin{document}
+
+% Slide 1: Título
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slide 2: Introdução e Contexto
+\begin{frame}{Introdução: O Desafio da Busca Web}
+    \begin{itemize}
+        \item \textbf{Contexto:} O crescimento exponencial da Web (milhões de páginas em 1997).
+        \item \textbf{Problema:} Mecanismos de busca existentes (Ex: Yahoo!, Lycos) dependiam de contagem de termos e eram ineficientes para a escala e complexidade do hipertexto.
+        \item \textbf{Solução Proposta:} Um novo protótipo de mecanismo de busca (Google) que utiliza a estrutura de links da Web para melhorar a qualidade dos resultados.
+    \end{itemize}
+\end{frame}
+
+% Slide 3: O Conceito Chave: PageRank
+\begin{frame}{PageRank: A Métrica de Importância}
+    \begin{itemize}
+        \item \textbf{Definição:} Uma medida numérica da "importância" de uma página web.
+        \item \textbf{Princípio:} Uma página é importante se for referenciada por outras páginas importantes.
+        \item \textbf{Cálculo (Simplificado):} Baseado na contagem e qualidade dos links de entrada.
+        \begin{equation*}
+            PR(A) = (1-d) + d \sum_{T \in B_A} \frac{PR(T)}{C(T)}
+        \end{equation*}
+        \small Onde $B_A$ é o conjunto de páginas que apontam para $A$, $C(T)$ é o número de links de saída da página $T$, e $d$ é o fator de amortecimento (damping factor).
+        \item \textbf{Justificativa:} Intuitivamente, um link de uma página importante é mais valioso.
+    \end{itemize}
+\end{frame}
+
+% Slide 4: Recurso Adicional: Texto Âncora (Anchor Text)
+\begin{frame}{Recurso Adicional: Texto Âncora (Anchor Text)}
+    \begin{itemize}
+        \item \textbf{Conceito:} O texto de um link (âncora) é associado à página para a qual ele aponta.
+        \item \textbf{Vantagem:} Permite indexar páginas com base no texto de links externos, mesmo que a página em si não contenha essas palavras.
+        \item \textbf{Exemplo:} Um link com o texto "melhor motor de busca" apontando para a página do Google. A página do Google é indexada para "melhor motor de busca".
+        \item \textbf{Benefício:} Melhora a precisão da busca e a cobertura de páginas.
+    \end{itemize}
+\end{frame}
+
+% Slide 5: Anatomia do Sistema (Visão Geral)
+\begin{frame}{Anatomia do Sistema: Arquitetura de Alto Nível}
+    \begin{itemize}
+        \item \textbf{Componentes Principais:}
+        \begin{enumerate}
+            \item \textbf{URL Server:} Fornece URLs para o Crawler.
+            \item \textbf{Crawler (Rastreador):} Busca e baixa páginas da Web.
+            \item \textbf{Store Server:} Comprime e armazena as páginas no Repository.
+            \item \textbf{Indexer:} Processa o Repository para criar o índice.
+            \item \textbf{Repository:} Armazenamento das páginas HTML.
+            \item \textbf{Sorter:} Ordena o índice para otimizar a busca.
+            \item \textbf{Searcher:} Recebe consultas e retorna resultados.
+        \end{enumerate}
+        \item \textbf{Fluxo:} URL Server $\rightarrow$ Crawler $\rightarrow$ Store Server $\rightarrow$ Repository $\rightarrow$ Indexer $\rightarrow$ Sorter $\rightarrow$ Searcher.
+    \end{itemize}
+\end{frame}
+
+% Slide 6: Detalhes da Indexação
+\begin{frame}{Detalhes da Indexação}
+    \begin{itemize}
+        \item \textbf{Função do Indexer:}
+        \begin{itemize}
+            \item Analisa e processa o texto das páginas.
+            \item Cria o índice de palavras (\textit{barrel}) e o índice de links (\textit{links database}).
+            \item Calcula o PageRank inicial.
+        \end{itemize}
+        \item \textbf{Barrel (Índice Invertido):} Armazena a lista de documentos que contêm cada palavra, junto com a posição, fonte (título, corpo, âncora), e tamanho da fonte.
+        \item \textbf{Links Database:} Armazena informações sobre os links (origem, destino, texto âncora).
+    \end{itemize}
+\end{frame}
+
+% Slide 7: Execução da Busca
+\begin{frame}{Execução da Consulta (Searcher)}
+    \begin{itemize}
+        \item \textbf{Passos:}
+        \begin{enumerate}
+            \item \textbf{Consulta:} Recebe a consulta do usuário.
+            \item \textbf{Busca no Índice:} Encontra as páginas que contêm os termos da consulta.
+            \item \textbf{Cálculo de Relevância:} Combina a pontuação de relevância baseada em texto com o PageRank da página.
+            \item \textbf{Ordenação:} Ordena os resultados com base na pontuação combinada.
+            \item \textbf{Resultado:} Retorna os resultados mais relevantes.
+        \end{enumerate}
+        \item \textbf{Foco:} A combinação de relevância textual e PageRank é crucial para a qualidade dos resultados.
+    \end{itemize}
+\end{frame}
+
+% Slide 8: Conclusão
+\begin{frame}{Conclusão e Impacto}
+    \begin{itemize}
+        \item \textbf{Inovação:} O Google introduziu o uso de hipertexto (PageRank e Anchor Text) para melhorar significativamente a qualidade dos resultados de busca.
+        \item \textbf{Escalabilidade:} A arquitetura modular foi projetada para lidar com a escala crescente da Web.
+        \item \textbf{Legado:} Este trabalho estabeleceu as bases para os mecanismos de busca modernos e transformou a forma como as pessoas acessam informações na Web.
+        \item \textbf{Citação:} \textit{"O Google é projetado para rastrear e indexar a Web eficientemente e produzir resultados de busca muito mais satisfatórios do que os sistemas existentes."}
+    \end{itemize}
+\end{frame}
+
+% Slide 9: Perguntas
+\begin{frame}{Perguntas?}
+    \centering
+    \Huge Obrigado!
+    \vspace{1cm}
+    \normalsize
+    \textbf{Contato:} [Seu Email]
+\end{frame}
+
+\end{document}

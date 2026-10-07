@@ -1,0 +1,701 @@
+\documentclass[12pt,letterpaper]{article}
+
+% Pacotes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\usepackage{dsfont} % para \mathds{1}
+\def\mathbbm#1{\mathds{#1}}
+
+
+% Estilo de teorema
+\newtheorem{theorem}{Teorema}
+
+% Espaçamento
+\usepackage{setspace}
+\onehalfspacing
+
+% Margens
+%\usepackage[margin=1in]{geometry}
+\usepackage{fullpage}
+\newtheorem{teorema} {Teorema}
+\newtheorem{corolario} [teorema] {Corolário}
+\newtheorem{proposicao}[teorema] {Proposição}
+\newtheorem{lema}      [teorema] {Lema}
+\newtheorem{conjectura}[teorema] {Conjectura}
+\newtheorem{claim}     [teorema] {Afirmação}
+\NewDocumentCommand\eqdef{}{\coloneqq}
+
+\NewDocumentCommand\vareps{}{\ensuremath \varepsilon}
+\DeclarePairedDelimiter\paren{\lparen}{\rparen}
+\DeclarePairedDelimiterX\conj[1]{\lbrace}{\rbrace}{\,#1\,}
+\RenewDocumentCommand\:{}{\colon}
+\NewDocumentCommand\<{}{\leqslant}
+\RenewDocumentCommand\>{}{\geqslant}
+
+\def\E{\mathbb E}
+\def\Z{\mathbb Z}
+\def\N{\mathbb N}
+
+\begin{document}
+
+Demostrações dos resultados de convergência e estacionariedade para
+cadeias finitas ($|S|$ finito).
+
+\section{Convergência $P^n\to\Pi$ para $P>0$}
+
+Vamos demonstrar de modo elementar
+\begin{teorema}
+  Se $P$ é matriz estocástico positiva, isto é $p_{ij}>0$
+  ($\forall i,j$), então $\lim_{n\to\infty} P^n$ existe e é uma matriz
+  estocástica com linhas iguais a um vetor-linha invariante
+  $\mathsf{\pi}$
+  $$
+  \lim_{n\to\infty} P^n = \mathbf{1}\mathsf{\pi}
+  $$
+  onde $\mathbf{1}$ é o vetor-coluna de uns e $\pi$ é a única
+  distribuição invariante (posto geométrico $1$).
+\end{teorema}
+
+Para a demonstração usaremos o seguinte resultado:
+
+\begin{proposicao}
+Seja $P=(p_{i,j})$ uma matriz estocástica com todas as entradas
+positivas e defina
+\[
+  \vareps \eqdef \min_{i,j}\conj{p_{i,j}}>0.
+\]
+$\vareps \< 1/|S| \< 1/2$.
+Seja $\mathsf{c}=(c_i)$ um vetor \emph{coluna} qualquer e defina
+\[
+  m_0 = \min_i c_i, \qquad M_0 = \max_i c_i,
+\]
+\[
+  m_1 = \min P\mathsf{c}, \qquad M_1 = \max P\mathsf{c}.
+\]
+Então valem
+\[
+  m_1 > m_0, \quad M_1 < M_0, \quad\text{e}\quad
+  M_1 - m_1 \le (1 - 2\vareps)(M_0 - m_0).
+\]
+\end{proposicao}
+\begin{proof}
+  Se $M_0=m_0$ então $\mathsf{c}$ é constante $P\mathsf{c}=\mathsf{c}$,
+  de modo que $m_1= m_0$, $M_1 = M_0$ e todas as desigualdades
+  desejadas são triviais. Assim suponha $M_0 > m_0$.
+ 
+  Escolha um índice $j_0$ tal que $c_{j_0} = M_0$ e um índice $j_1$ tal
+  que $c_{j_1} = m_0$. Defina os vetores auxiliares
+  \[
+    c' \coloneqq (c_i'), \quad 
+    c_i' =
+    \begin{cases}
+      M_0, & i = j_0,\\
+      m_0, & i \neq j_0,
+    \end{cases}
+    \qquad
+    c'' \coloneqq (c_i''), \quad
+    c_i'' =
+    \begin{cases}
+      m_0, & i = j_1,\\
+      M_0, & i \neq j_1.
+    \end{cases}
+  \]
+  Pelo modo como foram construídos, tem-se, coordenada a coordenada,
+  \[
+    c' \le c \le c''.
+  \]
+  Como $P$ tem entradas não-negativas, a multiplicação por $P$ preserva
+  a ordem coordenada a coordenada, logo
+  \[
+    Pc' \le Pc \le Pc''.
+  \]
+  
+  Para $i$ fixo, calculamos
+  \[
+    (Pc')_i = \sum_j p_{i,j} c_j'
+    = m_0 \sum_{j \ne j_0} p_{i,j} + M_0\, p_{i,j_0}
+    = m_0 + p_{i,j_0}(M_0 - m_0).
+  \]
+  Como $p_{i,j_0} \ge \varepsilon$ para todo $i$, obtemos
+  \[
+    (Pc')_i \ge m_0 + \varepsilon (M_0 - m_0),
+  \]
+  para todo $i$. Portanto,
+  \[
+    m_1 = \min_i (Pc)_i \ge \min_i (Pc')_i 
+    \ge m_0 + \varepsilon (M_0 - m_0).
+  \]
+  
+  Analogamente,
+  \[
+    (Pc'')_i = M_0 - p_{i,j_1}(M_0 - m_0)
+    \le M_0 - \varepsilon (M_0 - m_0),
+  \]
+  para todo $i$, e daí
+  \[
+    M_1 = \max_i (Pc)_i \le \max_i (Pc'')_i 
+    \le M_0 - \varepsilon (M_0 - m_0).
+  \]
+  
+  Subtraindo as duas estimativas, segue
+  \[
+    M_1 - m_1 
+    \le \big(M_0 - \varepsilon (M_0 - m_0)\big)
+    - \big(m_0 + \varepsilon (M_0 - m_0)\big)
+    = (1 - 2\varepsilon)(M_0 - m_0),
+  \]
+  concluindo a prova.
+\end{proof}
+
+
+\paragraph{Demonstração do teorema}
+Seja $\varepsilon=\min_{i,j}p_{ij}>0$. Fixe uma coluna
+$j\in\{1,\dots,n\}$ e ponha $\mathsf e_j$ o vetor canônico. Defina
+o maior e menor elemento da coluna $j$ de $P^k$
+\[
+a_k \coloneqq \min_i (P^k\mathsf e_j)_i,\qquad
+b_k \coloneqq \max_i (P^k\mathsf e_j)_i.
+\]
+Pela proposição anterior temos, para todo $k$,
+\[
+a_{k+1}\ge a_k,\qquad b_{k+1}\le b_k,\qquad
+b_{k+1}-a_{k+1}\le (1-2\varepsilon)(b_k-a_k).
+\]
+Como $b_0-a_0=1$ segue $b_k-a_k\le (1-2\varepsilon)^k\to0$, e portanto
+$a_k$ e $b_k$ convergem para o mesmo limite $\pi_j$. Para $k\ge1$, a
+positividade de $P$ implica $(P^k\mathsf e_j)_i>0$ para todo $i$, logo
+$0<\pi_j<1$.
+
+Isso mostra que a $j$-ésima coluna de $P^k$ converge para o vetor
+constante $\pi_j\mathbf1$. Como isso vale para todo $j$, existe a matriz
+limite
+\[
+\lim_{k\to\infty}P^k = Q = \mathbf1\,\pi,
+\]
+onde $\pi=(\pi_1,\dots,\pi_n)$ é a linha formada pelos limites das
+colunas. Cada linha de $Q$ soma $1$ (passando ao limite das linhas de
+$P^k$), portanto $\sum_j\pi_j=1$.
+
+Passando ao limite em $P^{k+1}=P^kP$ obtemos $Q=QP$. Escrevendo
+$Q=\mathbf1\pi$ obtemos $\mathbf1(\pi P)=\mathbf1\pi$, isto é,
+$\mathbf1(\pi P-\pi)=0$, o que implica $\pi P=\pi$. Assim $\pi$ é uma
+distribuição invariante. Se $\nu$ fosse outra distribuição invariante,
+então $\nu=\nu P^k\to\nu Q=\nu(\mathbf1\pi)=(\nu\mathbf1)\pi=\pi$, logo
+$\nu=\pi$ e a invariante é única. Isto conclui a prova.  \qed
+
+\begin{lema}\label{lema:aperiodico}
+  Seja $P$ a matriz de transição de uma passeio aleatório
+  aperiódico. Existe um natural $t_0$ tal que para todo $i$, vale
+  $p_{i,i}^{(t)}>0$ para todo $t\> t_0$.
+\end{lema}
+\begin{proof}
+  Observemos que para cada vértice $i$ o conjunto $\mathcal T(i)$ é
+  fechado para a adição pois, como vimos acima, na prova da proposição,
+  se $a,b\in \mathcal T(i)$ então $p_{i,i}^{(a+b)}>0$.
+
+  Sejam $m_1,m_2,\dots,m_k \in R_i$ tais que
+  $\mathrm{mdc}( m_1,m_2,\dots,m_k)=1$, os quais existem pela hipótese
+  de aperiodicidade e definição de mdc.  Pelo 
+  \href{https://en.wikipedia.org/wiki/B\%C3\%A9zout\%27s\_identity}{teorema de Bézout} existem inteiros positivos $x_1,\dots,x_{k^+}$,
+  $y_1,\dots,y_{k^-}$, onde $k^+ + k^- = k$ e tais que
+  \[
+    1= (m_1x_1+m_2x_2+\cdots+m_{k^+}x_{k^+}) -
+     (m_1y_1+m_2y_2+\cdots+m_{k^-}y_{k^-})
+  \]
+  que reescrevemos como $1 = M - N$ onde $M = \sum_j m_jx_j$ e
+  $N = \sum_j m_jy_j$.
+
+  Pelo fechamento para a soma em $ \mathcal T(i)$, temos
+  $M,N\in \mathcal T(i)$.
+
+  Consideremos um inteiro $m$ grande, $m\> N M$ basta. A divisão
+  inteira de $m$ por $N$ deixa resto $r\in \conj{0,1,\dots,N-1}$, donde
+  $m = qN+r$. Ainda,  
+  $$
+  0, M, 2M, 3M, \dots, (N-1)M
+  $$
+  é uma sequência de $N$ números cujos restos da divisão por $N$ devem
+  ser todos distintos, portanto, um deles deixa resto $r$, ou seja,
+  $aM = q'N +r$ para algum $a\in \conj{0, 1, 2, \dots, N-1}$. De
+  $aM = q'N +r$ tiramos $r= aM - q'N$ e substituindo na divisão de $m$
+  por $N$, obtemos
+  $$
+  m = (q-q')N +aM.
+  $$
+
+  Como $M,N\in \mathcal T(i)$, por fechamento para a soma
+  $(q-q')N, aM\in \mathcal T(i)$ e $(q-q')N +aM\in \mathcal T(i)$. Note
+  que de $m > aM$ (pois $a\in \conj{0, \dots, N-1}$) temos $q>q´$ de
+  modo que $q-q'>0$. Com isso concluímos que todo $m\in\Z_+$
+  suficientemente grande pertence a $\mathcal T(i)$.
+
+  
+  Podemos, então, garantir que para todo vértice $i$, existe
+  $m(i)\in\Z_+$ tal que $m\in \mathcal T(i)$ para todo $m\>m(i)$. Para
+  fechar a prova do lema basta tomar $t_0 = \max_i\conj{m(i)}$, pois o
+  conjunto de vértices é finito.
+\end{proof}
+
+\begin{corolario}\label{corol:aperiodicoirred}
+  Seja $P$ a matriz de transição de uma passeio aleatório irredutível e
+  aperiódico. Existe um inteiro positivo $t_0$ tal que para todos $i$,
+  $j$ vale $p_{i,j}^{(t)}>0$ para todo $t\> t_0$.
+\end{corolario}
+\begin{proof}
+  Do lema acima, podemos garantir que para todo vértice $v$, existe
+  $m(v)\in\Z_+$ tal que $m\in \mathcal T(v)$ para todo $m \> m(v)$.
+  
+  Sejam $j\neq i$ vértices e $m(i,j)\in\Z_+$ tal que
+  $p_{i,j}^{(m(i,j))}>0$, que existe pela irredutibilidade.  Fazendo
+  $M(i,j) \coloneqq m(i)+m(i,j)$ temos para todo $t\> M(i,j)$
+  \[
+    p_{i,j}^{(t)}
+    %=\sum_k  p_{i,k}^{(t-m(i,j))}  p_{k,j}^{(m(i,j))}
+    \>
+    p_{i,i}^{(t-m(i,j))}  p_{i,j}^{(m(i,j))} > 0
+  \]
+  pois $t-m(i,j) \>  m(i)$. Finalmente, basta tomar
+  $t_0 = \max_i\conj{m(i) + \max_{j} M(i,j)}$.
+\end{proof}
+\begin{corolario}
+  Para toda cadeia de Markov $(X_n)_n$ finita, irredutível e
+  aperiódica, com matriz de transição $P$ e distribuição inicial
+  $\lambda$, a distribuição $\lambda P^n$ converge para uma única
+  distribuição estacionária.
+\end{corolario}
+\begin{proof}
+  Seja $k\in\N$ tal que $P^k>0$.
+  $$
+  \lim_{n\to \infty} P^n=
+  \lim_{n\to \infty} P^{k+n}= \mathbf{1}\mathsf{\pi}.
+  $$
+  portanto
+  $$\lim_{n\to \infty} \lambda P^n= \lambda \mathbf{1}\mathsf{\pi} =
+  \mathsf{\pi}.$$
+\end{proof}
+
+\section{Fórmula de Kac para cadeias finitas}
+
+Abaixo $ \mathbb{E}_i[T_j] =  \mathbb{E}[T_j\mid X_0=i]$.
+
+
+\begin{teorema}
+\label{teo:kac-finita}
+Seja $(X_n)_{n \ge 0}$ uma cadeia de Markov irredutível em um espaço de
+estados finito $S = \{1,2,\dots,n\}$, com matriz de transição
+$P = (p_{ij})$ e vetor invariante $\mathsf{\pi} = (\pi_1,\dots,\pi_n)$.
+
+Para cada estado $j \in S$, sejam 
+\[
+  T_j^+ = \inf\{n \ge 1 : X_n = j\}\qquad   T_j = \inf\{n \ge 0 : X_n = j\}
+\]
+tempos de \emph{primeiro retorno} a $j$.
+Então o tempo médio de retorno a $j$ satisfaz 
+\[
+  \mathbb{E}_j[T_j^+] = \frac{1}{\pi_j}.
+\]
+\end{teorema}
+
+
+\begin{proof}
+  Seja $P = (p_{i,k})_{i,k \in S}$ a matriz de transição e
+  $\pi = (\pi_i)_{i \in S}$ uma distribuição invariante (assumimos
+  $\pi_j > 0$; vale automaticamente se a cadeia for finita e
+  irredutível). Para $i \ne j$, condicionando no primeiro passo
+  \[
+    m_{i,j} = \mathbb{E}_i[T_j]
+%    = 1 + \sum_{k \in S} p_{i,k} \, \mathbb{E}_k[T_j]
+    = 1 + \sum_{k \in S} p_{i,k} \, m_{k,j}.
+  \]
+
+  Para $i = j$, usamos $T_j^+$ (primeiro retorno) e obtemos, de modo
+  análogo,
+  \[
+    m_j = \mathbb{E}_j[T_j^+] = 1 + \sum_{k \in S} p_{j,k} \,
+    m_{k,j}.
+  \]
+
+Unificando ambas as fórmulas com o delta de Kronecker $\delta_{i,j}$
+(lembrando que $m_{j,j} = 0$), temos, para todo $i \in S$,
+\begin{equation}\label{eq:mu_equacao}
+m_{i,j} + \delta_{i,j} \, m_j
+= 1 + \sum_{k \in S} p_{i,k} \, m_{k,j}.
+\tag{$*$}
+\end{equation}
+
+Multiplicando \eqref{eq:mu_equacao} por $\pi_i$ e somando em $i$,
+obtemos:
+\[
+\sum_{i \in S} \pi_i m_{i,j} + \pi_j m_j
+= \sum_{i \in S} \pi_i
++ \sum_{i \in S} \sum_{k \in S} \pi_i p_{i,k} \, m_{k,j}.
+\]
+
+Como $\sum_i \pi_i = 1$ e, pela invariância, 
+$\sum_i \pi_i p_{i,k} = \pi_k$, a última soma fica
+\[
+\sum_{k \in S} \pi_k \, m_{k,j}.
+\]
+Assim,
+\[
+\sum_{i \in S} \pi_i m_{i,j} + \pi_j m_j
+= 1 + \sum_{k \in S} \pi_k m_{k,j}.
+\]
+
+Os termos $\sum_i \pi_i m_{i,j}$ e $\sum_k \pi_k m_{k,j}$ são idênticos e cancelam-se, restando
+\[
+\pi_j m_j = 1.
+\]
+Portanto,
+\[
+m_j = \mathbb{E}_j[T_j^+] = \frac{1}{\pi_j},
+\]
+que é exatamente a fórmula desejada.
+\end{proof}
+
+\begin{proof}[\textbf{Outra demonstração}]
+
+  Seja \( \pi = (\pi_j)_{j \in S} \) uma distribuição estacionária, de
+  modo que, se \( X_0 \) tem distribuição \( \pi \), então cada
+  \( X_t \) também tem distribuição \( \pi \).
+
+  Para \( S' \subset S \), definimos \( \pi_{S'} \) por
+  \[
+    \pi_{S'}(x) =
+    \begin{cases}
+      \frac{\pi(x)}{\pi(S')} \quad \text{para } x \in S',\\
+      0  \quad \text{para } x \in S \setminus S'.
+    \end{cases}
+  \]
+  Em outras palavras, \( \pi_{S'} \) é a distribuição \( \pi \)
+  condicionada ao fato de a cadeia estar em \( S' \).
+
+  Então temos a fórmula de Kac:
+  \( \mathbb{E}_{\pi_S}[\tau_{S'}^+] = \frac{1}{\pi({S'})}, \) onde
+  \( \mathbb{E}_{\pi_{S'}} \) denota a esperança quando a cadeia é
+  iniciada a partir da distribuição inicial \( \pi_{S'} \).
+
+  Com respeito a $\mathbb{P}_\pi$ \textit{a medida de probabilidade
+    associada à cadeia de Markov quando ela é iniciada com distribuição
+    inicial $\pi$}
+  \[
+    \begin{aligned}
+      \mathbb{P}_\pi(T_{S'}^+ = k)
+      &= \mathbb{P}_\pi(X_1 \notin {S'}, \ldots, X_{k-1} \notin {S'}, X_k \in {S'}) \\
+      &= \mathbb{P}_\pi(X_1 \notin {S'}, \ldots, X_{k-1} \notin {S'}) 
+      - \mathbb{P}_\pi(X_1 \notin {S'}, \ldots, X_k \notin {S'})\\
+      &= \mathbb{P}_\pi(X_1 \notin {S'}, \ldots, X_{k-1} \notin {S'})
+      - \mathbb{P}_\pi(X_0 \notin {S'}, X_1 \notin {S'}, \ldots, X_{k-1} \notin {S'})
+    \end{aligned}
+  \]
+  Como $\pi$ é a distribuição inicial e $\pi=\pi P$, o último passo vem
+  do seguinte
+  \[
+    \begin{aligned}
+      \mathbb{P}_\pi(X_1 \notin {S'}, \ldots, X_{k} \notin {S'})
+      = \sum_{x_1, \ldots, x_{k}}
+      \pi(x_1)\, p(x_1, x_2) \cdots p(x_{k-1}, x_{k})
+      \,\mathbbm{1}_{{S'}^C}(x_1) \cdots \mathbbm{1}_{{S'}^C}(x_{k}) \\[6pt]
+      = \sum_{x_1, \ldots, x_{k}}
+      \Biggl(\sum_{x_0} \pi(x_0) p(x_0, x_1)\Biggr)
+      p(x_1, x_2) \cdots p(x_{k-1}, x_k)
+      \,\mathbbm{1}_{{S'}^C}(x_1) \cdots \mathbbm{1}_{{S'}^C}(x_k) \\[6pt]
+      = \sum_{y_{0}, \ldots, y_{k-1}}
+      \Biggl(\sum_{y_{-1}} \pi(y_{-1}) p(y_{-1}, y_0)\Biggr)
+      p(y_{0}, y_{1}) \cdots p(y_{k-2}, y_{k-1})
+      \,\mathbbm{1}_{{S'}^C}(y_0) \cdots \mathbbm{1}_{{S'}^C}(y_{k-1}) \\[6pt]
+      = \sum_{y_{0}, \ldots, y_{k-1}}
+      \pi(y_0)\, p(y_{0}, y_{1}) \cdots p(y_{k-2}, y_{k-1})
+      \,\mathbbm{1}_{{S'}^C}(y_0) \cdots \mathbbm{1}_{{S'}^C}(y_{k-1}) \\[6pt]
+      = \mathbb{P}_\pi(X_0 \notin {S'}, \ldots, X_{k-1} \notin {S'}).
+    \end{aligned}
+  \]
+
+  Voltando para $\mathbb{P}_\pi(T_{S'}^+ = k)$
+  \[
+    \begin{aligned}
+      &= \mathbb{P}_\pi(X_1 \notin {S'}, \ldots, X_{k-1} \notin {S'})
+      - \mathbb{P}_\pi(X_0 \notin {S'}, X_1 \notin {S'}, \ldots, X_{k-1} \notin {S'})\\
+      &= \mathbb{P}_\pi(X_0 \in {S'},X_1 \notin {S'}, \ldots, X_{k-1} \notin
+      {S'})\\
+      &=\pi({S'})\, \mathbb{P}_{\pi_{S'}}(T_{S'}^+ \ge k).
+  \end{aligned}
+  \]
+
+  Somando para todo $k$
+  
+\[
+1 = \sum_{k=1}^{\infty} \mathbb{P}_\pi(T_{S'}^+ = k)
+= \pi({S'}) \sum_{k=1}^{\infty} \mathbb{P}_{\pi_{S'}}(T_{S'}^+ \ge k)
+= \pi({S'})\, \mathbb{E}_{\pi_{S'}}(T_{S'}^+),
+\]
+
+Fazendo ${S'}=\{j\}$ temos $1=\pi_j \mathbb{E}_{j}(T_j^+) = \pi_j m_j$.
+\end{proof}
+
+
+
+\begin{corolario}
+  Se $(X_n)_{n \ge 0}$ é uma cadeia de Markov irredutível e aperiódica
+  em um espaço de estados finito com matriz de transição $P = (p_{ij})$
+  então
+  $$
+  p_{ij}^n \xlongrightarrow[n\to\infty]{} \pi_j = \frac 1{m_j}
+  $$
+  para todo estado $j$. Ademais, o vetor
+  $\mathsf{\pi} = (\pi_1,\dots,\pi_n)$ é invariante. 
+\end{corolario}
+
+\textbf{Resumindo} A cadeia ``esquece'' o ponto de partida; o
+comportamento a longo prazo é governado por $\pi$; a fração do tempo em
+que o processo está em cada estado tende a $\pi_i$.
+
+\section{Teorema ergódico}
+
+O termo \emph{ergodicidade} vem da mecânica estatística (Boltzmann,
+finais do século XIX). A \emph{hipótese ergódica} afirmava,
+informalmente, que: \emph{ao longo do tempo, um sistema físico isolado
+  passa por todos os estados compatíveis com sua energia com igual
+  frequência.}  Matematicamente, isso significa que:
+\[
+\text{Médias temporais} \;=\; \text{Médias espaciais (ou de ensemble)}
+\]
+ou seja, para uma função \( f \) que mede alguma grandeza do sistema
+\[
+  \underbrace{\lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} f(X_k)}_{\text{média temporal observada}}
+\quad  = \quad
+\underbrace{\sum_{i \in S} \pi_i f(i)}_{\text{média teórica estacionária}}.
+\]
+Esse é exatamente o conteúdo do \textbf{Teorema Ergódico}: a média ao
+longo do tempo (na trajetória) coincide com a média segundo a
+distribuição estacionária (no espaço de estados).  Um processo é
+{ergódico} se, observando-o por tempo suficientemente longo, obtém-se a
+mesma estatística que se veria olhando a distribuição estacionária.  Em
+outras palavras:
+\begin{itemize}[noitemsep]
+  \item \emph{Mistura}: perde a memória do início;
+  \item \emph{Estabiliza}: tem uma distribuição limite;
+  \item \emph{Representatividade}: uma trajetória longa contém
+    informação sobre todo o sistema.
+\end{itemize}
+
+Em linguagem de cadeias de Markov o \emph{ensemble} corresponde à
+distribuição estacionária \(\pi\); a média temporal
+\( \frac{1}{n}\sum_{k=0}^{n-1} f(X_k) \) converge quase certamente para
+\( \mathbb{E}_\pi[f(X)] = \sum_x f(x)\,\pi(x), \) que é a média de
+ensemble.
+
+Imagine um gás em uma caixa.  Você pode:
+\begin{itemize}[noitemsep]
+\item seguir uma única molécula por muito tempo (\emph{média
+    temporal}), ou
+\item tirar uma ``foto'' instantânea de milhares de moléculas
+  (\emph{média de ensemble}).
+\end{itemize}
+Se o sistema é ergódico, as duas descrições dão o mesmo resultado
+estatístico.
+
+
+
+
+\subsection*{Teorema Ergódico para cadeias finitas, irredutíveis e aperiódicas}
+
+Seja $(X_n)_{n \geq 0}$ uma cadeia de Markov com matriz de transição
+$P = (p_{ij})$ em um espaço de estados finito $S$.  Suponha que a
+cadeia é irredutível e aperiódica. Então:
+
+\paragraph{(1) Existência e unicidade da distribuição estacionária}
+Existe uma única distribuição de probabilidade 
+$\pi = (\pi_i)_{i \in S}$ tal que
+\[
+\pi P = \pi, 
+\qquad
+\sum_{i \in S} \pi_i = 1.
+\]
+
+\paragraph{(2) Convergência em distribuição}
+Para todo estado inicial $i \in S$, tem-se que a distribuição do estado
+$X_n$ converge para a distribuição estacionária, independentemente do
+estado inicial:
+\[
+\lim_{n \to \infty} p_{i,j}^n = \pi_j =\frac 1{m_j},
+\qquad \forall j \in S
+\]
+onde $m_j$ é o tempo médio de retorno ao estado $j$.
+
+\paragraph{(3) Lei dos Grandes Números ergódica}
+Para qualquer função limitada $f : S \to \mathbb{R}$, o tempo médio
+gasto em cada estado converge quase certamente para a média com
+respeito à distribuição estacionária:
+\[
+\frac{1}{n} \sum_{k=0}^{n-1} f(X_k)
+\;\xrightarrow[n \to \infty]{}\;
+\sum_{i \in S} \pi_i f(i)
+\]
+com probabilidade 1.
+
+\bigskip
+
+
+\paragraph{Exemplo.}
+Suponha uma cadeia de Markov em dois estados \(S = \{0,1\}\), com matriz de transição
+\[
+P = 
+\begin{pmatrix}
+0.9 & 0.1 \\
+0.5 & 0.5
+\end{pmatrix}.
+\]
+
+A distribuição estacionária \(\pi\) é a solução de \(\pi = \pi P\), isto é,
+\[
+\pi = \left( \tfrac{5}{6}, \, \tfrac{1}{6} \right).
+\]
+
+Então, independentemente do estado inicial \(X_0\),
+\[
+\mathbb{P}(X_n = 0) \to \tfrac{5}{6}, 
+\quad 
+\mathbb{P}(X_n = 1) \to \tfrac{1}{6}.
+\]
+
+Além disso, para qualquer função \(f\),
+\[
+\frac{1}{n} \sum_{t=0}^{n-1} f(X_t)
+\;\longrightarrow\;
+\frac{5}{6} f(0) + \frac{1}{6} f(1),
+\]
+ou seja, a média temporal converge para a média espacial sob a
+distribuição estacionária \(\pi\).
+
+
+\paragraph{Exemplo.} 
+Considere uma cadeia de Markov simples, irredutível e aperiódica sobre
+o conjunto de estados \(\{1,2,3\}\).  Suponha que sua distribuição
+estacionária seja
+\[
+\pi = (0.2,\, 0.5,\, 0.3).
+\]
+Então, ao observar uma trajetória longa da cadeia, teremos
+aproximadamente:
+\begin{itemize}
+    \item \(20\%\) do tempo no estado \(1\);
+    \item \(50\%\) do tempo no estado \(2\);
+    \item \(30\%\) do tempo no estado \(3\).
+\end{itemize}
+
+A média temporal da função \(f(X_n)\) converge para
+\[
+  0.2\,f(1) + 0.5\,f(2) + 0.3\,f(3),
+\]
+que é justamente a média espacial (esperança de \(f\) sob a
+distribuição estacionária \(\pi\)).
+
+
+\bigskip
+
+\begin{proof}[\textbf{Demonstração da LGN}]
+  Escolha um estado fixo $r\in S$.  Como a cadeia é irredutível em
+  conjunto finito, o estado $r$ tem tempo de retorno com esperança
+  finita; seja
+  \[
+    T^+_r=\inf\{n\ge1:\, X_n=r\},\qquad 
+    m_r=\mathbb E[T^+_r\mid X_0=r]<\infty.
+  \]
+  (Pela fórmula de Kac, $m_r=1/\pi_r$.)
+
+  Defina as épocas de retorno sucessivas (épocas de regeneração)
+  \[
+    \tau_0=0,\qquad 
+    \tau_1=T^+_r,\qquad 
+    \tau_{k+1}=\inf\{n>\tau_k:\, X_n=r\}\quad(k\ge1).
+  \]
+  Para cada $k\ge1$ considere o $k$-ésimo ciclo
+  \[
+    \mathcal C_k = \big(X_{\tau_{k-1}}, X_{\tau_{k-1}+1},\dots,
+    X_{\tau_k-1}\big)
+  \]
+  e defina a duração e a soma de $f$ nesse ciclo por
+  \[
+    \xi_k:=\tau_k-\tau_{k-1},\qquad S_k:=\sum_{n=\tau_{k-1}}^{\tau_k-1}
+    f(X_n).
+  \]
+  Pela Propriedade Forte de Markov, os pares $(\xi_k,S_k)_k$ são
+  i.i.d.~quando a cadeia é iniciada em $r$.  Como $f$ é limitada, temos
+  $$
+  \mathbb E[|S_1|\mid X_0=r]\le
+  \|f\|_\infty\,\mathbb E[\xi_1 \mid X_0=r]<\infty.
+  $$
+
+Para $n\ge1$ seja 
+\[
+N(n)=\max\{k:\,\tau_k\le n\}
+\]
+o número de ciclos completos até tempo $n$. Então
+\[
+\sum_{k=0}^{n-1} f(X_k)=\sum_{j=1}^{N(n)} S_j + R_n,
+\]
+onde $R_n$ é o resto (a soma de $f$ sobre a porção incompleta entre $\tau_{N(n)}$ e $n-1$). 
+Temos a cota trivial 
+\[
+|R_n|\le \|f\|_\infty(\tau_{N(n)+1}-\tau_{N(n)})=\|f\|_\infty\,\xi_{N(n)+1}.
+\]
+
+Aplicando a Lei Forte dos Grandes Números às sequências i.i.d.~$(S_j)$
+e $(\xi_j)$, obtemos quase certamente:
+\[
+\frac{1}{N(n)}\sum_{j=1}^{N(n)} S_j 
+\xrightarrow[N(n)\to\infty]{} \mathbb E[S_1\mid X_0=r],
+\qquad
+\frac{1}{N(n)}\sum_{j=1}^{N(n)} \xi_j 
+= \frac{\tau_{N(n)}}{N(n)} 
+\xrightarrow[N(n)\to\infty]{} \mathbb E[\xi_1\mid X_0=r]=m_r.
+\]
+Dividindo as duas convergências (e lembrando que $N(n)\to\infty$ quase certamente quando $n\to\infty$) segue
+\[
+\frac{\sum_{j=1}^{N(n)} S_j}{\tau_{N(n)}} 
+\xrightarrow[n\to\infty]{\mathrm{a.s.}} 
+\frac{\mathbb E[S_1\mid X_0=r]}{m_r}.
+\]
+Como $\tau_{N(n)}\le n<\tau_{N(n)+1}$, tem-se $\tau_{N(n)}/n\to1$, e portanto
+\[
+\frac{1}{n}\sum_{j=1}^{N(n)} S_j 
+= \frac{\sum_{j=1}^{N(n)} S_j}{\tau_{N(n)}}\cdot\frac{\tau_{N(n)}}{n} 
+\xrightarrow[n\to\infty]{\mathrm{a.s.}} 
+\frac{\mathbb E[S_1]\mid X_0=r}{m_r}.
+\]
+O resto satisfaz
+\[
+\frac{|R_n|}{n} 
+\le \|f\|_\infty\frac{\xi_{N(n)+1}}{n} 
+\le \|f\|_\infty\frac{\xi_{N(n)+1}}{\tau_{N(n)}}\cdot\frac{\tau_{N(n)}}{n} 
+\xrightarrow[n\to\infty]{\mathrm{a.s.}} 0,
+\]
+pois $\tau_{N(n)}\to\infty$ a.s. e $\xi_{N(n)+1}$ tem distribuição fixa com esperança finita. Assim
+\[
+\frac{1}{n}\sum_{k=0}^{n-1} f(X_k) 
+\xrightarrow[n\to\infty]{\mathrm{a.s.}} 
+\frac{\mathbb E[S_1\mid X_0=r]}{m_r}.
+\]
+
+Finalmente, identificamos a razão com a média estacionária: escrevendo
+\[
+\mathbb E[S_1\mid X_0=r]
+= \sum_{i\in S} f(i)\,\mathbb E\!\left[\sum_{n=0}^{\tau_1-1} 
+\mathbf 1_{\{X_n=i\}} \mid X_0=r \right],
+\]
+a quantidade $\mathbb E[\sum_{n=0}^{\tau_1-1} \mathbf1_{\{X_n=i\}}\mid X_0=r]$ é o número médio de visitas a $i$ em um ciclo, e dividida pela duração média do ciclo $m_r$ fornece a fração de tempo média gasta em $i$, que por Kac é exatamente $\pi_i$. Portanto
+\[
+\frac{\mathbb E[S_1\mid X_0=r]}{m_r}
+=\sum_{i\in S} f(i)\,\pi_i,
+\]
+concluindo a prova.
+\end{proof}
+
+
+\end{document}

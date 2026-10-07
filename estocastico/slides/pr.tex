@@ -1,0 +1,159 @@
+\documentclass[10pt]{beamer}
+
+% Tema e pacotes essenciais
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{bm}
+
+% Comandos usuais
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Rif}{\mathrm{Rif}}
+\newcommand{\TV}{\mathrm{TV}}
+
+% Título e metadados
+\title[Riffle Shuffle]{Mistura de cartas e o modelo \emph{Riffle Shuffle}}
+\author{Jair Donadelli}
+\institute{Universidade Federal}
+\date{}
+
+\begin{document}
+
+%==================================================
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%==================================================
+\begin{frame}{Modelo e distribuição do \emph{riffle shuffle}}
+  Seja \(S_n\) o grupo de permutações de \(\{1,\dots,n\}\). 
+  No modelo de \emph{riffle shuffle invertido} (\emph{inverse riffle}), 
+  atribuímos a cada carta um rótulo \(b_i\in\{0,1\}\), i.i.d. com probabilidade \(1/2\),
+  e então ordenamos o baralho por ordem não-decrescente dos rótulos, 
+  preservando a ordem relativa das cartas com o mesmo rótulo (ordenamento estável).
+
+  Assim, para cada \(\sigma\in S_n\),
+  \[
+    \Rif(\sigma) 
+    = \frac{1}{2^n}\#\bigl\{ b\in\{0,1\}^n : 
+      \text{a ordenação estável de }b\text{ produz }\sigma \bigr\}.
+  \]
+  Essa é a medida de probabilidade de um \emph{riffle shuffle}.
+
+  \vspace{0.5em}
+  O suporte da medida \(\Rif\) é o conjunto \(R\subset S_n\) das permutações
+  obtidas intercalando duas subsequências crescentes.
+  O número de tais permutações é
+  \[
+    |R| = 2^n - n.
+  \]
+\end{frame}
+
+%==================================================
+\begin{frame}{Contagem dos \emph{riffle shuffles}}
+  \textbf{Proposição.} 
+  O número de permutações em \(S_n\) que podem ser obtidas
+  como interleavings de duas subsequências crescentes é \(2^n - n\).
+
+  \vspace{0.5em}
+  \textbf{Esboço de prova.} 
+  Cada vetor binário \(b\in\{0,1\}^n\) define uma permutação \(f(b)\)
+  ao intercalar, de modo estável, as cartas com rótulo \(0\) e as com rótulo \(1\).
+  Duas sequências binárias distintas produzem a mesma permutação
+  se e somente se todos os zeros aparecem antes de todos os uns,
+  isto é, quando \(b=0^k1^{n-k}\) para algum \(k\in\{0,\dots,n\}\).
+  Há \(n+1\) dessas sequências redundantes,
+  e portanto
+  \[
+    |R| = 2^n - (n+1) + 1 = 2^n - n.
+  \]
+  \(\square\)
+\end{frame}
+
+%==================================================
+\begin{frame}{Distribuição de um passo}
+  Para \(n\ge1\), temos
+  \[
+    \Rif(\sigma)
+    = \frac{1}{2^n}\#\{b\in\{0,1\}^n : \text{ordenação estável}(b)=\sigma\}.
+  \]
+
+  Em particular:
+  \[
+    \Rif(\mathrm{id}) = \frac{n+1}{2^n},
+  \]
+  pois a identidade é obtida pelas \(n+1\) sequências \(0^k1^{n-k}\),
+  \(k=0,\dots,n\).
+  
+  \vspace{0.5em}
+  As demais permutações \(\sigma\in R\setminus\{\mathrm{id}\}\)
+  têm probabilidade \(\Rif(\sigma) = m_\sigma/2^n\),
+  onde \(m_\sigma\ge1\) é o número de rótulos binários que as geram.
+\end{frame}
+
+%==================================================
+\begin{frame}{Tempo de mistura e lema do tempo de parada forte}
+  Seja \((X_k)_{k\ge0}\) a cadeia de Markov gerada por \(\Rif\),
+  e \(U\) a distribuição uniforme sobre \(S_n\).
+  Se \(T\) é um tempo de parada forte tal que,
+  condicionalmente a \(T=j\),
+  \(X_j\) é uniforme e independente de \(T\),
+  então
+  \[
+    \|Q^{(k)}-U\|_{\TV} \le \Prb[T>k].
+  \]
+  (Prova: argumento clássico do lema do tempo de parada forte.)
+\end{frame}
+
+%==================================================
+\begin{frame}{Distribuição do tempo de parada}
+  Em cada embaralhamento, cada carta recebe um rótulo uniforme
+  em \(\{0,1,\dots,2^k-1\}\).
+  O evento \(\{T\le k\}\) ocorre quando todos os \(n\) rótulos são distintos,
+  de modo que
+  \[
+    \Prb[T>k]
+      = 1 - \prod_{i=1}^{n-1}\left(1-\frac{i}{2^k}\right).
+  \]
+  Assim,
+  \[
+    \|Q^{(k)} - U\|_{\TV} 
+       \le 1 - \prod_{i=1}^{n-1}\left(1-\frac{i}{2^k}\right).
+  \]
+\end{frame}
+
+%==================================================
+\begin{frame}{Aproximação pelo paradoxo do aniversário}
+  Para \(m\ll 2^{k/2}\),
+  \[
+    \prod_{i=1}^{m-1}\left(1-\frac{i}{2^k}\right)
+      \approx \exp\!\left(-\frac{m(m-1)}{2^{k+1}}\right).
+  \]
+  Assim, o tempo \(k\) necessário para que 
+  \(\|Q^{(k)} - U\|_{\TV}\) seja pequeno
+  satisfaz aproximadamente
+  \[
+    2^k \approx n^2,
+    \quad\text{ou seja,}\quad
+    k \approx \tfrac{3}{2}\log_2 n.
+  \]
+  Para \(n=52\), isso corresponde a cerca de \(7\) embaralhamentos.
+\end{frame}
+
+%==================================================
+\begin{frame}{Referência clássica}
+  \begin{thebibliography}{9}
+    \bibitem{BayerDiaconis}
+      D.~Bayer e P.~Diaconis,
+      \emph{Trailing the Dovetail Shuffle to Its Lair},
+      Annals of Applied Probability, vol.~2, no.~2 (1992), pp.~294–313.
+  \end{thebibliography}
+\end{frame}
+
+\end{document}

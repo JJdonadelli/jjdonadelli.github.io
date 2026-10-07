@@ -1,0 +1,495 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title[Anatomia do Google]{A Anatomia de um Motor de Busca Web de Larga Escala Hipertextual}
+\subtitle{Google: Um Protótipo Revolucionário}
+\author{Sergey Brin \and Lawrence Page}
+\institute{Departamento de Ciência da Computação\\Stanford University}
+\date{1998}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Sumário}
+\tableofcontents
+\end{frame}
+
+\section{Introdução}
+
+\begin{frame}{Contexto e Motivação}
+\begin{itemize}
+\item A Web cria novos desafios para recuperação de informação
+\item Crescimento rápido: de 110.000 páginas (1994) para 100+ milhões (1997)
+\item Motores de busca tradicionais retornam muitos resultados de baixa qualidade
+\item Problema: usuários só conseguem avaliar os primeiros resultados
+\end{itemize}
+
+\vspace{0.5cm}
+\begin{block}{Por que "Google"?}
+Comum ortografia de \textit{googol} ($10^{100}$), refletindo o objetivo de construir motores de busca de escala muito grande
+\end{block}
+\end{frame}
+
+\begin{frame}{Problemas dos Motores de Busca Existentes}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Desafios Técnicos:}
+\begin{itemize}
+\item Escalabilidade
+\item Velocidade de indexação
+\item Processamento eficiente
+\item Milhões de consultas/dia
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Desafios de Qualidade:}
+\begin{itemize}
+\item "Resultados lixo"
+\item Manipulação por anunciantes
+\item Falta de precisão
+\item Necessidade de alta relevância
+\end{itemize}
+\end{columns}
+
+\vspace{0.5cm}
+\begin{alertblock}{Exemplo Real}
+Em 1997, apenas 1 dos 4 principais motores comerciais encontrava a si mesmo ao buscar seu próprio nome!
+\end{alertblock}
+\end{frame}
+
+\section{Objetivos de Design}
+
+\begin{frame}{Objetivos Principais do Google}
+\begin{enumerate}
+\item \textbf{Qualidade de Busca Melhorada}
+\begin{itemize}
+\item Alta precisão (relevância dos resultados)
+\item Uso de estrutura hipertextual
+\item Exploração de links e texto âncora
+\end{itemize}
+
+\item \textbf{Pesquisa Acadêmica}
+\begin{itemize}
+\item Publicação aberta de detalhes técnicos
+\item Ambiente para experimentos em larga escala
+\item Acesso a dados de uso reais
+\end{itemize}
+
+\item \textbf{Escalabilidade}
+\begin{itemize}
+\item Sistema utilizável por números razoáveis de pessoas
+\item Suporte a pesquisas inovadoras
+\item Processamento eficiente de grandes volumes
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{PageRank}
+
+\begin{frame}{PageRank: Trazendo Ordem à Web}
+\begin{block}{Conceito Fundamental}
+Medida objetiva da importância de citação de uma página que corresponde bem com a ideia subjetiva de importância das pessoas
+\end{block}
+
+\vspace{0.3cm}
+\textbf{Princípios:}
+\begin{itemize}
+\item Utiliza o grafo de citações (links) da Web
+\item Não conta todos os links igualmente
+\item Normaliza pelo número de links em uma página
+\item Propagação recursiva de pesos através da estrutura de links
+\end{itemize}
+
+\vspace{0.3cm}
+\begin{exampleblock}{Analogia}
+Páginas bem citadas de muitos lugares na Web valem a pena olhar. Páginas com apenas uma citação do Yahoo! também valem a pena!
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Fórmula do PageRank}
+\begin{block}{Definição Matemática}
+Assumindo que a página $A$ tem páginas $T_1...T_n$ que apontam para ela:
+
+$$PR(A) = (1-d) + d\left(\frac{PR(T_1)}{C(T_1)} + ... + \frac{PR(T_n)}{C(T_n)}\right)$$
+
+onde:
+\begin{itemize}
+\item $d$ = fator de amortecimento (geralmente 0.85)
+\item $C(A)$ = número de links saindo da página $A$
+\item PageRanks formam uma distribuição de probabilidade
+\end{itemize}
+\end{block}
+
+\vspace{0.3cm}
+\textbf{Propriedades:}
+\begin{itemize}
+\item Calculável por algoritmo iterativo simples
+\item Corresponde ao autovetor principal da matriz de links normalizada
+\item 26 milhões de páginas processadas em poucas horas
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Justificativa Intuitiva do PageRank}
+\begin{block}{Modelo do "Surfista Aleatório"}
+\begin{itemize}
+\item Usuário recebe uma página aleatória
+\item Continua clicando em links
+\item Nunca usa o botão "voltar"
+\item Eventualmente se entedia e começa em outra página aleatória
+\item \textbf{PageRank = probabilidade do surfista visitar a página}
+\end{itemize}
+\end{block}
+
+\vspace{0.3cm}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Vantagens:}
+\begin{itemize}
+\item Difícil de manipular
+\item Personalização possível
+\item Reflexo do comportamento real
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Fator de Amortecimento ($d$):}
+\begin{itemize}
+\item Probabilidade de continuar clicando
+\item Pode ser aplicado seletivamente
+\item Permite personalização
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\section{Texto Âncora}
+
+\begin{frame}{Texto Âncora (Anchor Text)}
+\begin{block}{Inovação Importante}
+Associar o texto dos links com a página para a qual o link aponta, não apenas com a página que contém o link
+\end{block}
+
+\vspace{0.3cm}
+\textbf{Vantagens:}
+\begin{enumerate}
+\item \textbf{Descrições mais precisas} - âncoras frequentemente descrevem melhor as páginas do que as próprias páginas
+\item \textbf{Busca de conteúdo não-textual} - permite buscar imagens, programas e bancos de dados
+\item \textbf{Expansão de cobertura} - páginas não rastreadas podem ser retornadas
+\end{enumerate}
+
+\vspace{0.3cm}
+\begin{exampleblock}{Dados do Sistema}
+No rastreamento de 24 milhões de páginas: \textbf{259 milhões de âncoras} indexadas
+\end{exampleblock}
+\end{frame}
+
+\section{Arquitetura do Sistema}
+
+\begin{frame}{Arquitetura de Alto Nível}
+\begin{center}
+\textbf{Fluxo Principal de Dados:}
+\end{center}
+
+\begin{enumerate}
+\item \textbf{URLserver} $\rightarrow$ envia listas de URLs para rastreadores
+\item \textbf{Crawlers} (rastreadores) $\rightarrow$ baixam páginas Web
+\item \textbf{StoreServer} $\rightarrow$ comprime e armazena páginas (repositório)
+\item \textbf{Indexer} $\rightarrow$ processa documentos, cria hits e arquivo de âncoras
+\item \textbf{URLResolver} $\rightarrow$ converte URLs e cria banco de links
+\item \textbf{Sorter} $\rightarrow$ reorganiza dados por wordID (índice invertido)
+\item \textbf{Searcher} $\rightarrow$ responde consultas usando índice e PageRank
+\end{enumerate}
+
+\vspace{0.3cm}
+\begin{block}{Linguagens de Implementação}
+C/C++ (eficiência) e Python (rastreadores) - executável em Solaris ou Linux
+\end{block}
+\end{frame}
+
+\begin{frame}{Estruturas de Dados Principais}\footnotesize
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Bigfiles:}
+\begin{itemize}\itemsep=0cm
+\item Arquivos virtuais
+\item Múltiplos sistemas de arquivo
+\item Suporte a compressão
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Repositório:}
+\begin{itemize}\itemsep=0cm
+\item HTML comprimido
+\item ~50\% do armazenamento
+\item Concatenação com cabeçalhos
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Índice de Documentos:}
+\begin{itemize}\itemsep=0cm
+\item Largura fixa (ISAM)
+\item Ordenado por docID
+\item Status, ponteiros, checksums
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Hit Lists:}
+\begin{itemize}\itemsep=0cm
+\item Ocorrências de palavras
+\item Posição, fonte, capitalização
+\item Codificação compacta (2 bytes/hit)
+\item Maior parte do espaço usado
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Índices:}
+\begin{itemize}\itemsep=0cm
+\item Forward: parcialmente ordenado
+\item 64 barris por wordID
+\item Inverted: processado pelo sorter
+\item Doclist para cada palavra
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Otimização:}
+\begin{itemize}\itemsep=0cm
+\item Evitar disk seeks (10ms)
+\item Estruturas eficientes
+\item Processamento in-place
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Sistema de Rastreamento}
+\begin{block}{Desafios}
+\begin{itemize}
+\item Interação com centenas de milhares de servidores
+\item Questões de desempenho e confiabilidade
+\item Aspectos sociais e éticos
+\end{itemize}
+\end{block}
+
+\vspace{0.3cm}
+\textbf{Implementação:}
+\begin{itemize}
+\item Sistema distribuído em Python
+\item Tipicamente 3 rastreadores paralelos
+\item ~300 conexões abertas simultaneamente por rastreador
+\item Cache DNS em cada rastreador
+\item I/O assíncrono para gerenciar eventos
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sistema de Rastreamento}
+
+\vspace{0.3cm}
+\begin{exampleblock}{Performance}
+Pico: \textbf{100+ páginas/segundo} (4 rastreadores)\\
+Últimos 11 milhões: \textbf{63 horas} = 4 milhões páginas/dia
+\end{exampleblock}
+\end{frame}
+
+\section{Resultados}
+
+\begin{frame}{Estatísticas do Sistema}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Armazenamento:}
+\begin{itemize}
+\item Páginas baixadas: 147.8 GB
+\item Repositório comprimido: 53.5 GB
+\item Índice invertido curto: 4.1 GB
+\item Índice invertido completo: 37.2 GB
+\item Léxico: 293 MB
+\item Índice de documentos: 9.7 GB
+\item Base de links: 3.9 GB
+\item \textbf{Total: 55.2 GB (sem repo)}
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Páginas Web:}
+\begin{itemize}
+\item Páginas baixadas: 24 milhões
+\item URLs vistas: 76.5 milhões
+\item Endereços email: 1.7 milhões
+\item Erros 404: 1.6 milhões
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Performance:}
+\begin{itemize}
+\item Download: 9 dias (total)
+\item Indexação: 54 páginas/seg
+\item Ordenação: 24 horas (4 máquinas)
+\item Consultas: 1-10 segundos
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo de Resultados: "bill clinton"}
+\begin{block}{Qualidade dos Resultados}
+\textbf{Características demonstradas:}
+\begin{itemize}
+\item Agrupamento por servidor (whitehouse.gov)
+\item Uso de texto âncora (primeiro resultado sem título)
+\item Endereços de email retornados (5º resultado)
+\item Todos os resultados de alta qualidade
+\item PageRanks altos (percentagens mostradas)
+\item Nenhum link quebrado
+\item Proximidade de palavras respeitada
+\end{itemize}
+\end{block}
+
+\vspace{0.3cm}
+\begin{alertblock}{Comparação com Concorrentes}
+Motores comerciais não retornavam resultados de whitehouse.gov, muito menos os corretos!
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Comparação de Qualidade}
+\begin{exampleblock}{Problema Real Observado}
+Um motor de busca importante retornou "Bill Clinton Joke of the Day" como primeiro resultado para busca "Bill Clinton"
+\end{exampleblock}
+
+\vspace{0.3cm}
+\textbf{Diferenciais do Google:}
+\begin{enumerate}
+\item \textbf{PageRank} - avaliação de qualidade das páginas
+\item \textbf{Texto âncora} - descrição do que o link aponta
+\item \textbf{Informação de proximidade} - relevância aumentada
+\item \textbf{Informação de fonte} - tamanho e capitalização
+\end{enumerate}
+
+\vspace{0.3cm}
+\begin{block}{Processo de Ranking}
+Sistema de contagens $\rightarrow$ tabelas de lookup $\rightarrow$ rank final\\
+Muitos parâmetros ajustáveis + sistema de feedback
+\end{block}
+\end{frame}
+
+\section{Conclusões}
+
+\begin{frame}{Contribuições Principais}
+\begin{enumerate}
+\item \textbf{PageRank} - algoritmo revolucionário de ranking baseado em links
+\item \textbf{Uso extensivo de texto âncora} - melhora relevância e cobertura
+\item \textbf{Arquitetura escalável} - design eficiente para crescimento da Web
+\item \textbf{Sistema completo} - rastreamento, indexação e busca integrados
+\item \textbf{Pesquisa acadêmica aberta} - publicação de detalhes técnicos
+\end{enumerate}
+
+\vspace{0.5cm}
+\begin{block}{Resultados Alcançados}
+\begin{itemize}
+\item Protótipo com 24 milhões de páginas
+\item Qualidade superior aos motores comerciais (avaliação subjetiva)
+\item Sistema eficiente e escalável
+\item Ferramenta de pesquisa para comunidade acadêmica
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Trabalho Futuro}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Melhorias de Eficiência:}
+\begin{itemize}
+\item Cache de consultas
+\item Alocação inteligente de disco
+\item Subíndices para termos comuns
+\item Expansão para 100 milhões páginas
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Novas Funcionalidades:}
+\begin{itemize}
+\item Operadores booleanos
+\item Negação e stemming
+\item Feedback de relevância
+\item Clustering avançado
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{Pesquisa Avançada:}
+\begin{itemize}
+\item Algoritmos de atualização inteligentes
+\item Uso de proxy caches
+\item Personalização de PageRank
+\item Contexto do usuário
+\item Sumarização de resultados
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Estrutura de Links:}
+\begin{itemize}
+\item Texto ao redor dos links
+\item Extensões do PageRank
+\item Novos usos da hipertextualidade
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Visão Final}
+\begin{block}{Ambiente Rico para Pesquisa}
+Um motor de busca Web é um ambiente muito rico para ideias de pesquisa. O Google fornece infraestrutura para experimentação em larga escala.
+\end{block}
+
+\vspace{0.3cm}
+\textbf{Objetivos de Longo Prazo:}
+\begin{itemize}
+\item Tornar-se um recurso para pesquisadores mundialmente
+\item Estimular a próxima geração de tecnologia de busca
+\item Manter foco em qualidade enquanto escala
+\item Ambiente tipo "Spacelab" para experimentos em dados Web
+\end{itemize}
+
+\vspace{0.5cm}
+\begin{center}
+\Large{\textbf{Google: Trazendo ordem à Web através da estrutura hipertextual}}
+\end{center}
+\end{frame}
+
+\begin{frame}{Agradecimentos e Suporte}
+\textbf{Contribuidores Críticos:}
+\begin{itemize}
+\item Scott Hassan e Alan Steremberg
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Orientação e Discussões:}
+\begin{itemize}
+\item Hector Garcia-Molina, Rajeev Motwani
+\item Jeff Ullman, Terry Winograd
+\item Grupo WebBase
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Apoio Financeiro e Equipamentos:}
+\begin{itemize}
+\item Stanford Integrated Digital Library Project
+\item National Science Foundation (IRI-9411306)
+\item DARPA, NASA, Interval Research
+\item Doadores: IBM, Intel, Sun
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+
+\vspace{1cm}
+\normalsize
+\textbf{Disponível em:} http://google.stanford.edu
+
+\vspace{0.5cm}
+Sergey Brin e Lawrence Page\\
+Computer Science Department\\
+Stanford University
+\end{frame}
+
+\end{document}

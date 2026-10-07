@@ -1,0 +1,145 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+
+\title[Teorema da Urna (Ballot)]{Exemplo: Teorema da Urna (Ballot Theorem)}
+
+\author[MCBM022-23]{MCBM022-23 Introdução aos Processos Estocásticos }
+
+\date{UFABC 2025-3}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Enunciado do problema}
+  \begin{block}{Problema}
+    Dois candidatos concorrem numa eleição. O candidato A obtém $a$ votos e o candidato B obtém $b$ votos, com $a>b$. Os $n=a+b$ votos são contados numa ordem aleatória (permutação uniforme).  
+    Qual é a probabilidade de que A esteja sempre à frente ao longo da contagem?
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}{Definições e notação}
+  \begin{itemize}\itemsep=1cm
+  \item $n=a+b$ total de votos.
+  \item $S_k$ = \( (\#\text{votos de A} - \#\text{votos de B} )\) após $k$
+    votos contados
+
+    (logo $S_n=a-b$). Note que $S_k$ pode ser negativo.
+  \item Para $0\le k\le n-1$ defina
+    \[
+      X_k=\frac{S_{n-k}}{\,n-k\,}.
+    \]
+  \end{itemize}
+  
+  
+  \textbf{$(X_k)_k$ é martingal em relação a
+    $(\sigma(X_0,\dots,X_{k-1}))_k$.}
+  
+\end{frame}
+% -----------------------------------------------
+\begin{frame}{Por que $(X_k)$ é  martingal?}
+  Queremos mostrar: \(\mathbb{E}[X_k\mid X_0,\dots,X_{k-1}]=X_{k-1}.\)
+  
+  \medskip Condicionar em $X_0,\dots,X_{k-1}$ equivale a condicionar em
+  \(S_n,S_{n-1},\dots,S_{n-k+1}\).
+  
+  \medskip
+  Dado $S_{n-k+1}$, com $n+k-1$ votos contados
+  \begin{itemize}
+  \item A teve
+    \(\dfrac{n-k+1+S_{n-k+1}}{2}\) votos e 
+  \item B teve
+    \(\dfrac{n-k+1-S_{n-k+1}}{2}\) votos.
+  \end{itemize}
+
+  \medskip
+
+  
+  $$
+  S_{n-k} =
+  \begin{cases}
+    S_{n-k+1} +1 & \text{ se o voto foi  em }B\\
+    S_{n-k+1} -1 & \text{ se o voto foi em }A
+  \end{cases}
+  $$
+  
+  
+\end{frame}
+%-----------------------------------------------
+\begin{frame}{Por que $(X_k)$ é  martingal?}
+
+  O voto foi  escolhido uniformemente 
+  \[
+    \begin{split}
+    \mathbb{E}[S_{n-k}\mid S_{n-k+1}]
+    &=
+    (\,S_{n-k+1}+1\,) \cdot \frac{n-k+1-S_{n-k+1}}{2(n-k+1)}
+    + \\ &
+    (\,S_{n-k+1}-1\,)\cdot \frac{n-k+1+S_{n-k+1}}{2(n-k+1)}\\       
+    = \frac{n-k}{n-k+1}\,S_{n-k+1}&.
+  \end{split}
+  \]
+
+  Assim
+  \[
+    \mathbb{E}\!\left[\frac{S_{n-k}}{n-k}\Bigm\vert S_n,\dots,S_{n-k+1}\right]
+    =\frac{S_{n-k+1}}{n-k+1},
+  \]
+  ou seja \(\mathbb{E}[X_k\mid X_0,\dots,X_{k-1}]=X_{k-1}.\)
+\end{frame}
+
+\begin{frame}{Aplicação do teorema de paragem}
+  \begin{itemize}\itemsep=1cm
+  \item Defina o tempo de parada \(T\) como o menor índice \(k\) tal
+    que \(X_k=0\), se existir; caso contrário \(T=n-1\).
+    \item Observações:
+      \begin{itemize}\itemsep=.5cm
+        \item $T$ é um tempo de parada limitado (\(T\le n-1\)), então as hipóteses do teorema de paragem (para martingales limitadas) se aplicam.
+        \item Pelo teorema de paragem temos \(\mathbb{E}[X_T]=\mathbb{E}[X_0]=\dfrac{a-b}{a+b}.\)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Análise dos casos}
+  Existem duas situações mutuamente exclusivas:
+
+  \medskip
+  \textbf{Caso 1: A lidera durante toda a contagem.}
+  \begin{itemize}
+    \item Então todos os \(S_{n-k}>0\) para \(0\le k\le n-1\), logo todos \(X_k>0\).
+    \item Nesse caso \(T=n-1\) e \(X_T=X_{n-1}=S_1/1=1\) (A recebe o primeiro voto).
+  \end{itemize}
+
+  \medskip
+  \textbf{Caso 2: A não lidera durante toda a contagem.}
+  \begin{itemize}
+    \item Então existe algum índice em que \(S_k\le 0\). Pelo raciocínio, haverá algum \(k<n-1\) com \(X_k=0\), então \(T< n-1\) e \(X_T=0\).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Concluir a probabilidade}
+  Como \(X_T\) só pode assumir valores 0 ou 1 nos cenários acima,
+  \[
+    \mathbb{E}[X_T]=1\cdot\Pr(\text{Caso 1}) + 0\cdot\Pr(\text{Caso 2}) = \Pr(\text{A sempre à frente}).
+  \]
+  Mas já vimos que \(\mathbb{E}[X_T]=\mathbb{E}[X_0]=\dfrac{a-b}{a+b}\). Portanto
+  \[
+    \Pr(\text{A sempre à frente})=\frac{a-b}{a+b}.
+  \]
+  Isso conclui a prova via martingal.
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,312 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+
+\title{Exemplos de Aplicações de Desigualdades de Concentração}
+\subtitle{Large Deviations e Bin Packing}
+\author{Com base em Grimmett \& Stirzaker (2020)}
+\date{}
+
+\begin{document}
+
+% -----------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Exemplo (8): Grandes Desvios}
+Considere variáveis aleatórias independentes
+\[
+X_1, X_2,\ldots, X_n \sim \mathrm{Bernoulli}(p).
+\]
+
+Defina:
+\[
+S_n = X_1 + \cdots + X_n, 
+\qquad 
+Y_n = S_n - np.
+\]
+
+Então $(Y_n)$ é um martingal.
+
+\medskip
+
+Pela desigualdade de Hoeffding, para $x>0$:
+\[
+\mathbb{P}\!\left(|S_n - np| \ge x\sqrt{n}\right)
+\le 
+2 \exp\!\left( -\frac{x^2}{2\mu^2} \right),
+\]
+onde 
+\[
+\mu = \max\{p,\,1-p\}.
+\]
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Grandes Desvios: Interpretação}
+\begin{itemize}
+    \item A soma $S_n$ é fortemente concentrada em torno de $np$.
+    \item Desvios maiores que ordem $\sqrt{n}$ têm probabilidade exponencialmente pequena.
+    \item O resultado é análogo às desigualdades de Bernstein e Chernoff.
+\end{itemize}
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Exemplo (9): Bin Packing}
+Problema clássico: determinar o número mínimo de bins de capacidade 1 necessários para empacotar $n$ objetos.
+
+\medskip
+
+Considere variáveis independentes:
+\[
+X_1, \ldots, X_n \in [0,1].
+\]
+
+Seja:
+\[
+B_n = \text{número mínimo de bins para empacotar } X_1,\ldots,X_n.
+\]
+
+\medskip
+
+\textbf{Fato importante}: existe $\beta > 0$ tal que
+\[
+\frac{B_n}{n} \longrightarrow \beta
+\quad \text{q.c. e em } L^2.
+\]
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Construção do Martingal}
+Para $i \le n$, defina:
+\[
+Y_i = \mathbb{E}(B_n \mid \mathcal{F}_i),
+\qquad
+\mathcal{F}_i = \sigma(X_1,\ldots,X_i).
+\]
+
+Então:
+\[
+Y_0 = \mathbb{E}(B_n),
+\qquad
+Y_n = B_n,
+\]
+e $(Y_i)$ é um martingal.
+
+\medskip
+
+Além disso, vale:
+\[
+|Y_i - Y_{i-1}| \le 1.
+\]
+
+Logo, Hoeffding se aplica diretamente.
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Aplicando Hoeffding ao Bin Packing}
+Segue da desigualdade de Hoeffding:
+\[
+\mathbb{P}\left(|B_n - \mathbb{E}(B_n)| \ge x \right)
+\le 2\exp\!\left( -\frac{x^2}{2n} \right),
+\qquad x>0.
+\]
+
+Em particular, tomando $x = \varepsilon n$:
+\[
+\mathbb{P}\!\left(|B_n - \mathbb{E}(B_n)| \ge \varepsilon n\right)
+\le 
+2 \exp\!\left(-\tfrac{1}{2}\varepsilon^2 n\right).
+\]
+
+\medskip
+
+Convergência exponencialmente rápida.
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Concentração em torno de \texorpdfstring{$\beta n$}{βn}}
+Como $B_n/n \to \beta$, temos:
+\[
+\mathbb{P}\!\left(|B_n - \beta n| \ge \varepsilon n \right)
+\le 
+2 \exp\!\left(-\tfrac{1}{2}\varepsilon^2 n[1+o(1)]\right).
+\]
+
+\bigskip
+
+\textbf{Conclusão:}  
+O número ótimo de bins cresce linearmente e apresenta forte concentração em torno de $\beta n$.
+\end{frame}
+
+% -----------------------------------------------------
+\begin{frame}{Conclusões}
+\begin{itemize}
+    \item Hoeffding é uma ferramenta essencial para controle de flutuações.
+    \item No exemplo de Bernoulli, controla grandes desvios da soma.
+    \item No bin packing, mostra que o número de bins raramente foge muito do valor médio.
+    \item Estratégia comum: construir martingais com incrementos limitados.
+\end{itemize}
+\end{frame}
+
+\end{document}
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+
+\title{Exemplos de Aplicações de Desigualdades de Concentração}
+\subtitle{Large Deviations e Bin Packing}
+\author{Com base em Grimmett \& Stirzaker (2020)}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%--------------------------------------------------
+\begin{frame}{Exemplo (8): Grandes Desvios}
+Considere variáveis aleatórias independentes 
+\[
+X_1, X_2, \ldots, X_n \sim \text{Bernoulli}(p).
+\]
+
+Seja
+\[
+S_n = X_1 + \cdots + X_n, 
+\qquad
+Y_n = S_n - np.
+\]
+
+\medskip
+
+Então $(Y_n)$ é um martingal, e pela desigualdade de Hoeffding vale, para $x>0$:
+\[
+\mathbb{P}\left(|S_n - np| \geq x\sqrt{n}\right)
+\le 
+2 \exp\left( -\frac{1}{2}\frac{x^2}{\mu^2} \right),
+\]
+onde 
+\[
+\mu = \max\{p,\;1-p\}.
+\]
+
+\medskip
+
+\textbf{Interpretação:} As flutuações de $S_n$ em torno de sua média $np$ têm probabilidade exponencialmente pequena quando ultrapassam uma escala da ordem de $\sqrt{n}$.
+\end{frame}
+
+%--------------------------------------------------
+\begin{frame}{Grandes Desvios: Comentários}
+\begin{itemize}
+    \item A desigualdade é análoga às desigualdades de Bernstein e Chernoff.
+    \item Captura o fenômeno típico de \textbf{grandes desvios}: a soma de variáveis Bernoulli raramente se desvia muito de sua média.
+    \item Resultado fundamental em estatística, aprendizado de máquina e teoria da informação.
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------
+\begin{frame}{Exemplo (9): Bin Packing}
+Problema clássico de pesquisa operacional:  
+\textbf{“Quantos bins (caixas) de capacidade 1 são necessários para acomodar $n$ objetos com tamanhos aleatórios?”}
+
+\medskip
+
+Considere:
+\[
+X_1, X_2, \ldots, X_n \text{ independentes com distribuição em } [0,1].
+\]
+
+Defina $B_n =$ número mínimo de bins necessários para empacotar todos os objetos eficientemente.
+
+\medskip
+
+\textbf{Fato importante:} Existe $\beta>0$ tal que
+\[
+\frac{1}{n} B_n \longrightarrow \beta
+\quad \text{quase certamente e em média quadrática}.
+\]
+\end{frame}
+
+%--------------------------------------------------
+\begin{frame}{Bin Packing: A Construção do Martingal}
+Para $i\le n$, defina
+\[
+Y_i = \mathbb{E}(B_n \mid \mathcal{F}_i),
+\]
+onde $\mathcal{F}_i = \sigma(X_1,\ldots,X_i)$.
+
+Então $(Y_i)$ é um martingal, com:
+\[
+Y_0 = \mathbb{E}(B_n),
+\qquad
+Y_n = B_n.
+\]
+
+\medskip
+
+Um argumento sobre adicionar ou remover um item mostra que:
+\[
+|Y_i - Y_{i-1}| \le 1.
+\]
+
+Assim, Hoeffding se aplica.
+\end{frame}
+
+%--------------------------------------------------
+\begin{frame}{Bin Packing: Aplicando Hoeffding}
+A desigualdade de Hoeffding fornece:
+\[
+\mathbb{P}\left( |B_n - \mathbb{E}(B_n)| \ge x \right)
+\le 
+2 \exp\left( -\frac{x^2}{2n} \right), 
+\qquad x>0.
+\]
+
+Em particular, para $x = \varepsilon n$:
+\[
+\mathbb{P}\left( |B_n - \mathbb{E}(B_n)| \ge \varepsilon n \right)
+\le 
+2\exp\left( -\frac{1}{2}\varepsilon^2 n \right),
+\]
+decadência exponencial.
+\end{frame}
+
+%--------------------------------------------------
+\begin{frame}{Bin Packing: Convergência em Probabilidade}
+Como $B_n/n \to \beta$, obtemos:
+\[
+\mathbb{P}\left(|B_n - \beta n| \ge \varepsilon n\right)
+\le
+2\exp\left(-\tfrac{1}{2}\varepsilon^2 n[1+o(1)]\right).
+\]
+
+\bigskip
+
+\textbf{Conclusão:}  
+$B_n$ se concentra fortemente em torno de $\beta n$.
+\end{frame}
+
+%--------------------------------------------------
+\begin{frame}{Conclusões da Aula}
+\begin{itemize}
+    \item A desigualdade de Hoeffding é uma ferramenta fundamental para estudar concentração.
+    \item Em (8), controla grandes desvios da soma de Bernoullis.
+    \item Em (9), mostra que o número ótimo de bins oscila pouco em torno de seu valor médio.
+    \item Ideia central: \textbf{construir martingais} cujo incremento é uniformemente limitado.
+\end{itemize}
+\end{frame}
+
+\end{document}

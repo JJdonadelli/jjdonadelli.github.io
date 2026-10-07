@@ -1,0 +1,418 @@
+%Time-stamp: <seg nov 17 20:21:36 2025 yair@ufabcdix>
+\pdfoutput=1
+\documentclass[aspectratio=169]{beamer}
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+\usefonttheme{professionalfonts}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+%%\usepackage{tkz-berge}
+\usepackage{tkz-graph}
+\usetikzlibrary{arrows,chains,fit,shapes,automata, positioning}
+%\usetikzlibrary{arrows,shapes.gates.logic.US,calc}
+\tikzset{>=latex}
+\usepackage{xifthen}
+\usepackage{randomwalk}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      % links internos
+    urlcolor=blue,       % URLs
+    citecolor=blue,      % citações
+    filecolor=blue       % links de arquivos
+}
+\title{Algoritmo PageRank}
+
+\author[MCBM022-23]{MCBM022-23 Introdução aos Processos Estocásticos }
+\institute{UFABC}
+\date{2025-3}
+
+\begin{document}
+
+%------------------------------------------------------------
+\frame{\titlepage}
+
+%------------------------------------------------------------
+\begin{frame}{Motivação}
+\begin{itemize}\itemsep=.75cm
+  \item A \emph{Web} pode ser modelada como um \textbf{grafo dirigido}:
+  \[
+     G = (V,E), \quad V = \text{páginas}, \ E = \text{links entre páginas}.
+  \]
+  \item Problema: \textbf{como medir a importância de uma página?}
+  \item Ideia do Google:
+  \begin{quote}
+  “Usar a estrutura de links da Web como um indicador de valor de uma página.”
+  \end{quote}
+  \item Cada link é interpretado como um “voto” de uma página a outra.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{O Modelo Probabilístico}
+\begin{itemize}\itemsep=.5cm
+  \item Considere o \textbf{surfista aleatório}: um usuário que clica em links ao acaso.
+  \item Seja $G=(V,E)$ com $V=\{1,2,\dots,n\}$.
+  \item Defina:
+  \[
+    \begin{aligned}
+      N^+(a) &= \{b\in V : (a,b)\in E\}, \quad d^+(a)=|N^+(a)|\\
+      N^-(a) &= \{b\in V : (b,a)\in E\}, % \quad d^+(a)=|N^+(a)|.
+    \end{aligned}    
+  \]
+  \item O surfista move-se de $a$ para $b$ com probabilidade
+  \[
+    p_{a,b} =
+    \begin{cases}
+      \frac{1}{d^+(a)}, & \text{se }(a,b)\in E,\\
+      0, & \text{caso contrário.}
+    \end{cases}
+  \]
+\item Assim, $\mathsf{P}=(p_{a,b})$ é a matriz de transição de um
+  passeio aleatório simples em $G$.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Definição do PageRank}
+\begin{itemize}
+\item Cada página $a$ recebe uma pontuação $r_a$ proporcional à soma
+  das pontuações das páginas que apontam para ela
+  \[
+  r_a = \sum_{b\in N^-(a)} \frac{r_b}{d^+(b)}.
+  \]
+  \item Em forma matricial \pause
+  \[
+     \bm{r} = \bm{r}\mathsf{P},
+  \]
+  isto é, $\bm{r} = (r_1,r_2,\dots,r_n)$ é um \textbf{vetor invariante}
+  de $\mathsf{P}$.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Problemas do modelo}
+\begin{block}{1. Vértices pendentes (\emph{dangling nodes})}
+  Páginas sem links de saída: $d^+(a)=0$.
+  \begin{itemize}
+    \item Fazem com que $\mathsf{P}$ não seja estocástica.
+  \end{itemize}
+\end{block}
+\vfill
+\begin{block}{2. Subconjuntos fechados (\emph{rank sinks})}
+  \begin{itemize}
+    \item Conjuntos de páginas que formam um bloco isolado.
+    \item O surfista fica “preso” e nunca mais sai.
+  \end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Exemplo de grafo \emph{Web}}
+  \centering
+
+
+
+      \begin{tikzpicture}[scale=1.32]
+         \tikzstyle{vertex}=[circle,fill=black!25,minimum
+         size=17pt,inner sep=0pt]
+      
+         \tikzstyle{edgeLabel} = [pos=0.5, text centered,
+         font={\small}];
+      
+         \foreach \name/\pos/\text in {P-1/2/1, P-4/0/4}
+         \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\pos,2)
+         {$\text$};
+
+         \foreach \name/\pos/\text in {P-3/2/3, P-5/0/5}
+         \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\pos,0)
+         {$\text$};
+
+         \foreach \name/\pos/\text in {P-2/4/2, P-6/-2/6}
+         \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\pos,1)
+         {$\text$};
+
+      
+         \draw[->] (P-1) .. controls +(0:.7cm) and +(110:.7cm)
+         .. (P-2) node[edgeLabel,above] {$1/2$};
+      
+         \draw[->] (P-1) .. controls +(-80:.7cm) and +(80:.7cm)
+         .. (P-3) node[edgeLabel,right] {$1/2$};
+      
+         \draw[->] (P-2) .. controls +(170:.7cm) and +(-60:.7cm)
+         .. (P-1) node[edgeLabel,above] {$1/2$};
+      
+         \draw[->] (P-2) .. controls +(-110:.7cm) and +(0:.7cm)
+         .. (P-3) node[edgeLabel,below] {$1/2$};
+      
+         \draw[->] (P-3) .. controls +(135:1cm) and +(225:1cm)
+         .. (P-1) node[edgeLabel,left] {$1/2$};
+      
+         \draw[->] (P-3) .. controls +(50:.7cm) and +(190:.7cm)
+         .. (P-2) node[edgeLabel,below] {$1/2$};
+      
+         \draw[->] (P-4) .. controls +(0:1.2cm) and +(180:1.2cm)
+         .. (P-1) node[edgeLabel,above] {$1/3$};
+
+         \draw[->] (P-4) .. controls +(-80:1cm) and +(80:1cm) 
+         .. (P-5)  node[edgeLabel,left] {$1/3$};
+
+         \draw[->] (P-4) .. controls +(180:.7cm) and +(70:.7cm)
+         .. (P-6) node[edgeLabel,above] {$1/3$};
+      
+         \draw[->] (P-5) .. controls +(0:1.2cm) and +(180:1.2cm)
+         .. (P-3) node[edgeLabel,above] {$1/3$};
+
+         \draw[->] (P-5) .. controls +(135:1cm) and +(225:1cm)
+         .. (P-4) node[edgeLabel,left] {$1/3$};
+
+         \draw[->] (P-5) .. controls +(180:.7cm) and +(-70:.7cm)
+         .. (P-6) node[edgeLabel,below] {$1/3$};
+
+         \draw (9,1.5) node[right] { \small $P=\begin{pmatrix}
+              0&1/2&1/2&0&0&0\\
+              1/2&0&1/2&0&0&0\\
+              1/2&1/2&0&0&0&0\\
+              1/3&0&0&0&1/3&1/3\\
+              0&0&1/3&1/3&0&1/3\\
+              0&0&0&0&0&0
+           \end{pmatrix}$
+         };
+      \end{tikzpicture}
+
+
+\vspace{1ex}
+\small{Vértice 6 é pendente $\Rightarrow$ linha nula.}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Correção dos vértices pendentes}
+  \begin{itemize}\itemsep=.6cm
+  \item Seja $\bm{u}\in\{0,1\}^n$ o vetor-linha indicador dos vértices
+    pendentes e \(\mathbf{1}\) é o vetor-linha de 1's.
+  \item Defina:
+    \[
+      \mathsf{Q} = \mathsf{P} + \bm{u}^\intercal \frac{1}{n}\mathbf{1}.
+    \]
+  \item Intuição: se o surfista cai numa página sem links, ele pula
+    para uma página aleatória.
+  \item Agora $\mathsf{Q}$ é uma matriz \textbf{estocástica}.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Matriz corrigida $\mathsf{Q}$}
+\centering
+
+
+      \begin{tikzpicture}[scale=1.3]
+         \tikzstyle{vertex}=[circle,fill=black!25,minimum
+         size=17pt,inner sep=0pt]
+      
+         \tikzstyle{edgeLabel} = [pos=0.5, text centered,
+         font={\small}];
+      
+         \foreach \name/\pos/\text in {P-1/.2/1, P-4/-1.3/4}
+         \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\pos,2)
+         {$\text$};
+
+         \foreach \name/\pos/\text in {P-3/.2/3, P-5/-1.3/5}
+         \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\pos,0)
+         {$\text$};
+
+         \foreach \name/\pos/\text in {P-2/2.2/2, P-6/-3.3/6}
+         \node[vertex,xshift=6cm,yshift=.5cm] (\name) at (\pos,1)
+         {$\text$};
+
+      
+         \draw[->] (P-1) .. controls +(0:.7cm) and +(110:.7cm)
+         .. (P-2) node[edgeLabel,above] {};
+      
+         \draw[->] (P-1) .. controls +(-80:.7cm) and +(80:.7cm)
+         .. (P-3) node[edgeLabel,right] {};
+      
+         \draw[->] (P-2) .. controls +(160:.7cm) and +(-60:.7cm)
+         .. (P-1) node[edgeLabel,above] {};
+      
+         \draw[->] (P-2) .. controls +(-110:.7cm) and +(0:.7cm)
+         .. (P-3) node[edgeLabel,below] {};
+      
+         \draw[->] (P-3) .. controls +(100:1cm) and +(-100:1cm)
+         .. (P-1) node[edgeLabel,left] {};
+      
+         \draw[->] (P-3) .. controls +(50:.7cm) and +(200:.7cm)
+         .. (P-2) node[edgeLabel,below] {};
+      
+         \draw[->] (P-4) .. controls +(0:1.2cm) and +(180:1.2cm)
+         .. (P-1) node[edgeLabel,above] {};
+
+         \draw[->] (P-4) .. controls +(-80:1cm) and +(80:1cm) .. (P-5)
+         node[edgeLabel,right] {};
+
+         \draw[->] (P-4) .. controls +(180:.7cm) and +(70:.7cm)
+         .. (P-6) node[edgeLabel,above] {};
+      
+         \draw[->] (P-5) .. controls +(0:1.2cm) and +(180:1.2cm)
+         .. (P-3) node[edgeLabel,above] {};
+
+         \draw[->] (P-5) .. controls +(100:1cm) and +(-100:1cm)
+         .. (P-4) node[edgeLabel,left] {};
+
+         \draw[->] (P-5) .. controls +(180:.7cm) and +(-70:.7cm)
+         .. (P-6) node[edgeLabel,below] {};
+
+         \draw[->,dashed] (P-6) .. controls +(0:.7cm) and +(180:.7cm)
+         .. (P-2) node[edgeLabel,above] {$1/6$};
+
+         \draw[->,dashed] (P-6) .. controls +(160:.7cm) and +(200:.7cm)
+         .. (P-6) node[edgeLabel,above] {$1/6$};
+
+         \draw[->,dashed] (P-6) .. controls +(0:.7cm) and +(210:.7cm)
+         .. (P-1) node[edgeLabel,left] {$1/6$};
+
+         \draw[->,dashed] (P-6) .. controls +(0:.7cm) and +(150:.7cm)
+         .. (P-3) node[edgeLabel,left] {$1/6$};
+
+         \draw[->,dashed] (P-6) .. controls +(0:.7cm) and +(210:.7cm)
+         .. (P-4) node[edgeLabel,left] {$1/6$};
+
+         \draw[->,dashed] (P-6) .. controls +(0:.7cm) and +(130:.7cm)
+         .. (P-5) node[edgeLabel,left] {$1/6$};
+
+         \draw (7.35,1.5) node[right] {\small  $Q=\begin{pmatrix}
+              0&1/2&1/2&0&0&0\\
+              1/2&0&1/2&0&0&0\\
+              1/2&1/2&0&0&0&0\\
+              1/3&0&0&0&1/3&1/3\\
+              0&0&1/3&1/3&0&1/3\\
+         1/6&1/6&1/6&1/6&1/6&1/6
+      \end{pmatrix}$};
+      \end{tikzpicture}
+
+\vspace{1ex}
+\small{O vértice 6 ``pula'' para qualquer outro uniformemente.}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Tratamento dos subconjuntos fechados}
+\begin{itemize}\itemsep=.5cm
+  \item Ainda pode haver “sorvedouros” de probabilidade.
+  \item Solução: permitir que o surfista reinicie ocasionalmente.
+  \item Com probabilidade $
+    \begin{cases}
+      \alpha, &\text{ segue um link;}\\
+      1-\alpha, &\text{ pula para uma página qualquer.}
+    \end{cases}$
+\end{itemize}
+\[
+\boxed{
+  \mathsf{R} = \alpha\mathsf{Q} + (1-\alpha)\frac{1}{n}\mathbf{1}^\intercal\mathbf{1}
+}
+\]
+\begin{itemize}
+  \item $\mathsf{R}$ é positiva $\Rightarrow$ cadeia ergódica.
+  \item Convergência garantida:
+    $\bm{\sigma}^{(k)} \xrightarrow[k\to\infty]{} \mathbf{r}$, para
+    qualquer distribuição inicial $\bm{\sigma}$.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Tratamento dos subconjuntos fechados -- Exemplo de grafo \emph{Web}}
+$$R=\begin{pmatrix}
+  \frac{1-\alpha}{6} & \frac{\alpha}{2}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{2}+\frac{1-\alpha}{6} & \frac{1-\alpha}{6} &
+  \frac{1-\alpha}{6} &
+  \frac{1-\alpha}{6}\\[0.5em]
+  \frac{\alpha}{2}+\frac{1-\alpha}{6} & \frac{1-\alpha}{6} &
+  \frac{\alpha}{2}+\frac{1-\alpha}{6}
+  & \frac{1-\alpha}{6} & \frac{1-\alpha}{6} & \frac{1-\alpha}{6}\\[0.5em]
+  \frac{\alpha}{2}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{2}+\frac{1-\alpha}{6} & \frac{1-\alpha}{6}
+  & \frac{1-\alpha}{6} & \frac{1-\alpha}{6} & \frac{1-\alpha}{6}\\[0.5em]
+  \frac{1-\alpha}{6} & \frac{1-\alpha}{6} &
+  \frac{\alpha}{3}+\frac{1-\alpha}{6} & \frac{1-\alpha}{6} &
+  \frac{\alpha}{3}+\frac{1-\alpha}{6} & \frac{\alpha}{3}+\frac{1-\alpha}{6}\\[0.5em]
+  \frac{1-\alpha}{6} & \frac{\alpha}{3}+\frac{1-\alpha}{6} &
+  \frac{1-\alpha}{6} & \frac{\alpha}{3}+\frac{1-\alpha}{6} &
+  \frac{1-\alpha}{6} & \frac{\alpha}{3}+\frac{1-\alpha}{6}\\[0.5em]
+  \frac{\alpha}{6}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{6}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{6}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{6}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{6}+\frac{1-\alpha}{6} &
+  \frac{\alpha}{6}+\frac{1-\alpha}{6}
+\end{pmatrix}
+$$
+
+\end{frame}%------------------------------------------------------------
+\begin{frame}{Tratamento dos subconjuntos fechados -- Exemplo de grafo \emph{Web}}
+$$R=\begin{pmatrix}
+0.025  & 0.45   & 0.45   & 0.025  & 0.025  & 0.025 \\[0.3em]
+0.45   & 0.025  & 0.45   & 0.025  & 0.025  & 0.025 \\[0.3em]
+0.45   & 0.45   & 0.025  & 0.025  & 0.025  & 0.025 \\[0.3em]
+0.025  & 0.025  & 0.3083 & 0.025  & 0.3083 & 0.3083 \\[0.3em]
+0.025  & 0.3083 & 0.025  & 0.3083 & 0.025  & 0.3083 \\[0.3em]
+0.1667 & 0.1667 & 0.1667 & 0.1667 & 0.1667 & 0.1667
+\end{pmatrix}
+$$
+
+\begin{center}
+  $$\alpha = 0{,}85$$
+\end{center}
+
+\href{https://pagerank-ipe.streamlit.app/}{Resposta aqui}
+
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}{Cálculo iterativo do PageRank}
+\begin{itemize}\itemsep=.65cm
+  \item Método das potências:
+  \[
+    \bm{\sigma}^{(k+1)} = \bm{\sigma}^{(k)} \mathsf{R}.
+  \]
+  \item Convergência com taxa $|\lambda_2/\lambda_1|$.
+  \item Nesse caso,  $\lambda_1=1$ e $ |\lambda_2| < \alpha$.
+  \item Valor usado pelo Google: $\alpha = 0{,}85$.
+\end{itemize}
+\[
+\Vert \bm{\sigma}^{(t+1)} - \bm{\sigma}^{(t)} \Vert < \varepsilon
+\]
+Critério de parada: $\varepsilon\in[10^{-2},10^{-7}]$, 50–100 iterações.
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Versão computacional}
+  \begin{itemize}\itemsep=.5cm
+  \item A matriz $\mathsf{P}$ é \textbf{esparsa}.
+    
+  \item É suficiente armazenar:  a estrutura de $\mathsf{P}$, o vetor $\bm{u}$
+    
+  \item A iteração prática:
+    \[
+      \bm{\sigma}^{(t)} = \alpha \bm{\sigma}^{(t-1)}\mathsf{P} + \alpha
+      (\bm{\sigma}^{(t-1)}\mathbf{u}^\intercal)\frac{1}{n}\mathbf{1} +
+      (1-\alpha)\frac{1}{n}\mathbf{1}
+    \]onde \(\bm{\sigma}^{(t-1)}\mathbf{u}^\intercal\) é um escalar
+    (massa atual em vértices pendentes) — assim evita-se multiplicar
+    matrizes densas.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------
+\begin{frame}{Referências}
+\small
+\begin{itemize}
+  \item Page, L.; Brin, S.; Motwani, R.; Winograd, T. \href{http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf}{\textit{The PageRank Citation Ranking: Bringing Order to the Web.}} Stanford  (1998)
+  \item Haveliwala, T. H. \href{https://nlp.stanford.edu/pubs/secondeigenvalue.pdf}{\textit{Second eigenvalue of the Google matrix.}} Stanford (2003)
+\end{itemize}
+\end{frame}
+
+\end{document}

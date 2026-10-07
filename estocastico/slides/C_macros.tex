@@ -1,0 +1,256 @@
+%Time-stamp: <qua nov 12 11:53:52 2025 yair@asterix>
+%\usepackage{bbm}%\1
+\usepackage{dsfont} % para \mathds{1}
+\def\mathbbm#1{\mathds{#1}}
+
+\usepackage{amssymb,amsthm,mathtools}
+\mathtoolsset{
+  showonlyrefs=true % or false in draft mode
+}
+\usepackage{xparse}
+
+\def\To{\Rightarrow}
+
+%------------------------------------------------------------------%
+%    CONJUNTOS
+%%-------------------------------------------------------------------
+\DeclareRobustCommand{\C}[0]{\mathbb{C}}
+\DeclareRobustCommand{\F}[0]{\mathbb{F}}
+\DeclareRobustCommand{\N}[0]{\mathbb{N}}
+\DeclareRobustCommand{\Q}[0]{\mathbb{Q}}
+\DeclareRobustCommand{\R}[0]{\mathbb{R}}
+\DeclareRobustCommand{\Z}[0]{\mathbb{Z}}
+\DeclareRobustCommand{\P}[0]{\mathbb{P}}
+\DeclareRobustCommand{\E}[0]{\mathbb{E}}
+%%---------------------------------------------------------------------
+%   DELIMITADORES
+%Now if you use the starred version of the macro you get the desired
+% result: \setc*{x \in X}{x > \frac{1}{2}} You can even adjust to a
+% different size if you think that the braces are too big, with the
+% syntax \setc[\Big]{x \in X}{x > \frac{1}{2}} ￼
+%%---------------------------------------------------------------------
+\DeclarePairedDelimiter\card{\lvert}{\rvert}
+\DeclarePairedDelimiter\paren{\lparen}{\rparen}
+\DeclarePairedDelimiter\colch{\lbrack}{\rbrack}
+\DeclarePairedDelimiter\teto{\lceil}{\rceil}
+\DeclarePairedDelimiter\chao{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\norma{\lVert}{\rVert}
+
+\DeclareRobustCommand{\Card}[1]{\card*{\,#1\,} }
+\DeclareRobustCommand{\Norma}[1]{\norma*{\,#1\,} }
+
+%conjunto
+\DeclarePairedDelimiterX\conj[1]{\lbrace}{\rbrace}{\,#1\,}
+\DeclarePairedDelimiterX\chaves[1]{\lbrace}{\rbrace}{\,#1\,}
+
+% condicionais
+\DeclarePairedDelimiterX\conjc[2]{\lbrace}{\rbrace}%
+% {#1 \;\delimsize\mid\; #2}
+{\,#1 \;\delimsize\vert\; #2\,}
+%{\,#1 \middle|  #2\,}
+\DeclarePairedDelimiterX\chavesc[2]{\lbrace}{\rbrace}%
+% {#1 \;\delimsize\mid\; #2}
+{\,#1 \;\delimsize\vert\; #2\,}
+%{\,#1 \middle|  #2\,}
+\DeclarePairedDelimiterX\parenc[2]{\lparen}{\rparen}%
+%{\,#1 \middle|  #2\,}
+{\,#1 \;\delimsize\vert\; #2\,}
+%{#1 \;\delimsize\mid\; #2}
+\DeclarePairedDelimiterX\colchc[2]{\lbrack}{\rbrack}%
+%{\,#1 \middle|  #2\,}
+{\,#1 \;\delimsize\vert\; #2\,}
+%{#1 \;\delimsize\mid\; #2}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%   PROBABILIDADE
+%---------------------------------------------------------------------
+\DeclareRobustCommand{\prob}[2][{\protect{{\P}}}]%
+{\ensuremath{\mathbb{#1} \paren{\,#2\,}}}
+%\DeclareRobustCommand{\probE}[2][\protect\operatorname{\P}]%
+\DeclareRobustCommand{\probE}[2][\protect{\P}]%
+{\ensuremath{\mathbb{#1} \colch{\,#2\,}}}
+\DeclareRobustCommand{\pLei}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{{\mathbb {#1}}_{#2}}%
+  \paren{#3}}%
+\DeclareRobustCommand{\pLeiE}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{{\mathbb {#1}}_{#2}} \colch{#3}}%
+% condicional -----------------------------------
+\DeclareRobustCommand{\probC}[3][\protect\operatorname{\P}]%
+{\ensuremath{\mathbb {#1} \parenc{\,#2\,}{\,#3\,} }}
+% condicional descrição de evento
+\DeclareRobustCommand{\probCE}[3][\protect\operatorname{\P}]%
+{\ensuremath{\mathbb{#1\,} \colchc{\,#2\,}{\,#3\,} }}
+\DeclareRobustCommand{\PX}[2][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2}}
+% P_{}()-----------------------------------
+\DeclareRobustCommand{\probX}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \paren{#3}}
+% P_{}[]-----------------------------------
+\DeclareRobustCommand{\probXE}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \colch{#3}}
+% P_{}( | )-----------------------------------
+\DeclareRobustCommand{\probCX}[4][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \parenc{#3}{#4} }
+% P_{}[ | ]-----------------------------------
+\DeclareRobustCommand{\probCXE}[4][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \colchc{#3}{#4} }
+%
+% probabilidade com ajuste de delimitadores
+%
+\DeclareRobustCommand{\Prob}[2][\protect\operatorname{\P}]%
+{\ensuremath{\mathbb{#1} \paren*{\,#2\,}}}
+\DeclareRobustCommand{\ProbE}[2][\protect\operatorname{\P}]%
+{\ensuremath{\mathbb{#1} \colch*{\,#2\,}}}
+% condicional -----------------------------------
+\DeclareRobustCommand{\ProbC}[3][\protect\operatorname{\P}]%
+{\ensuremath{\mathbb {#1} \parenc* {\,#2\,}{\,#3\,} }}
+% condicional descrição de evento
+\DeclareRobustCommand{\ProbCE}[3][\protect\operatorname{\P}]%
+{\ensuremath{\mathbb{#1\,} \colchc* {\,#2\,}{\,#3\,} }}
+\DeclareRobustCommand{\PX}[2][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2}}
+% P_{}()-----------------------------------
+\DeclareRobustCommand{\PLei}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{{\mathbb {#1}}_{#2}}%
+  \paren*{#3}}%
+\DeclareRobustCommand{\PLeiE}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{{\mathbb {#1}}_{#2}} \colch*{#3}}%
+\DeclareRobustCommand{\ProbX}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \paren*{#3}}
+% P_{}[]-----------------------------------
+\DeclareRobustCommand{\ProbXE}[3][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \colch*{#3}}
+% P_{}( | )-----------------------------------
+\DeclareRobustCommand{\ProbCX}[4][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \parenc* {#3}{#4} }
+% P_{}[ | ]-----------------------------------
+\DeclareRobustCommand{\ProbCXE}[4][\protect\operatorname{\P}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}%
+  \displaylimits_{#2} \colchc* {#3}{#4} }
+%%---------------------------------------------------------------------
+%%---------------------------------------------------------------------
+%% indicador de evento-----------------------------------
+\DeclareRobustCommand{\1}[1]{\ensuremath \mathbbm{1}_{#1}}
+%
+%% esperança-----------------------------------
+\DeclareRobustCommand{\Es}[2][\protect\operatorname{\mathbb{E}}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}}{\,#2\,} }
+\DeclareRobustCommand{\EX}[3][\protect\operatorname{\mathbb{E}}]%
+{\ensuremath%
+  \protect\operatorname{\mathbb {#1}_{#2}}{\,#3\,} }
+%% esperança expressão-----------------------------------
+\DeclareRobustCommand{\eE}[2][\protect\operatorname{\mathbb{E}}]%
+{\ensuremath%
+  {#1\,}\colch{\,#2\,} }
+%% esperança ondicional
+\DeclareRobustCommand{\eC}[3][\protect\operatorname{\mathbb{E}}]%
+{\ensuremath%
+  {#1\,}\colchc {#2}{#3} }
+% variancia
+\DeclareRobustCommand{\var}[2][\protect\operatorname{\mathrm{Var}}]{%
+  \ensuremath {#1\,} \colch{\,#2\,}}
+%
+% esperança com ajuste de delimitadores
+%% esperança expressão-----------------------------------
+\DeclareRobustCommand{\EE}[2][\protect\operatorname{\mathbb{E}}]%
+{\ensuremath%
+  {#1\,}\colch*{\,#2\,} }
+%% esperança ondicional
+\DeclareRobustCommand{\EC}[3][\protect\operatorname{\mathbb{E}}]%
+{\ensuremath%
+  {#1\,}\colchc* {#2}{#3} }
+% variancia
+\DeclareRobustCommand{\Var}[2][\protect\operatorname{\mathrm{Var}}]{%
+  \ensuremath {#1\,} \colch*{\,#2\,}}
+
+%%--------------------------------------------------------------
+%%-ALIAS-----------------------------------------------------
+% \NewDocumentCommand\mycommand{}{somecodehere}
+% \NewDocumentCommand\varpower{mO{n}}{#1^{#2}}
+%
+\NewDocumentCommand\eps{}{\ensuremath \varepsilon}
+\NewDocumentCommand\rest{}{\ensuremath \!\!\restriction}
+\NewDocumentCommand\qeg{}{\hfill \ensuremath{\lozenge}}
+% 
+% \RenewDocumentCommand\mtctitle{}{Conteúdo}
+%
+%%%% %conjunto vazio% %%%%%%%%%%%%%%%
+\RenewDocumentCommand\emptyset{}{\ensuremath \varnothing}
+% 
+% %em Distribuições%%%
+\NewDocumentCommand\indist{m}{\mathop{\in_{\mathtt{#1}}}}
+%\NewDocumentCommand\inuni{}{\mathop{\in_{\mathcal{U}}}}
+\NewDocumentCommand\inuni{}{\mathop{\in_{\mathrm{R}}}}
+%\NewDocumentCommand\getuni{}{\xleftarrow{\mathrm{R}}}
+\NewDocumentCommand\getuni{}{\xleftarrow{\mathrm{{}_R}}}
+\NewDocumentCommand\inber{m}{\mathop{\in_{\tiny{\mathrm{b}_{#1}}}}}
+\NewDocumentCommand\inbin{m}{\mathop{\in_{\tiny{\mathrm{b}_{#1}}}}}
+\NewDocumentCommand\ingeo{m}{\mathop{\in_{{G}_{#1}}}}
+% 
+% 
+%\NewDocumentCommand\eqdef{}{\coloneqq}
+\NewDocumentCommand\partes{m}{%
+  {\raisebox{.1\baselineskip}{\large\ensuremath{\wp}}}(#1)}
+\RenewDocumentCommand\:{}{\colon}
+\NewDocumentCommand\<{}{\leqslant}
+\RenewDocumentCommand\>{}{\geqslant}
+%no. de Stirling
+\DeclareRobustCommand{\stirling}{\genfrac\{\}{0pt}{}}
+%--------------------------------------------------------------------
+\hyphenation{}
+% --------------------------------------------------------------------
+
+\makeatletter
+\newcommand*{\dotgrande}{}% Check if undefined
+\DeclareRobustCommand*{\dotgrande}{%
+  \mathbin{\mathpalette\dotgrande@{}}%
+}
+\newcommand*{\dotgrande@scalefactor}{.5}
+\newcommand*{\dotgrande@widthfactor}{1.15}
+\newcommand*{\dotgrande@}[2]{%
+  % #1: math style
+  % #2: unused
+  \sbox0{$#1\vcenter{}$}% math axis
+  \sbox2{$#1\cdot\m@th$}%
+  \hbox to \dotgrande@widthfactor\wd2{%
+    \hfil
+    \raise\ht0\hbox{%
+      \scalebox{\dotgrande@scalefactor}{%
+        \lower\ht0\hbox{$#1\bullet\m@th$}%
+      }%
+    }%
+    \hfil
+  }%
+}
+\makeatother
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,188 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+
+\usetheme{Madrid}
+
+\title{Introdução aos Processos Estocásticos}
+\subtitle{Martingais em Tempo Discreto}
+\author{Baseado em Privault (2018)}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%------------------------------------------
+\begin{frame}{Motivação}
+  \begin{itemize}
+    \item Processos estocásticos descrevem sistemas que evoluem ao longo do tempo sob incerteza.
+    \item Exemplos em cursos introdutórios:
+    \begin{itemize}
+        \item Caminhadas aleatórias.
+        \item Filas.
+        \item Processos de Markov.
+        \item Modelagem de apostas ou tomada de decisão sob incerteza.
+    \end{itemize}
+    \item Nesta aula: introdução ao conceito de \textbf{martingal}.
+    \item Martingais capturam matematicamente a ideia de “jogo justo”.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Filtração: informação ao longo do tempo}
+  Em processos estocásticos, a noção de informação é essencial.
+
+  \begin{block}{Definição (Filtração)}
+    Uma \textbf{filtração} é uma sequência crescente de $\sigma$-álgebras:
+    \[
+      \mathcal{F}_0 \subset \mathcal{F}_1 \subset \mathcal{F}_2 \subset \cdots
+    \]
+    Cada $\mathcal{F}_n$ representa tudo o que é possível saber até o tempo $n$.
+  \end{block}
+
+  \begin{itemize}
+    \item Se $(X_n)$ é um processo, então:
+    \[
+      \mathcal{F}_n = \sigma(X_0,\ldots,X_n).
+    \]
+    \item Em cursos introdutórios, pense em: “histórico do processo até o tempo $n$”.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Exemplo: Caminhada Aleatória}
+Considere $S_n = X_1 + \cdots + X_n$, onde $X_k \in \{-1,1\}$ com probabilidade 1/2.
+
+\begin{itemize}
+    \item $\mathcal{F}_0$: nenhuma informação.
+    \item $\mathcal{F}_1$: sabemos o valor de $X_1$.
+    \item $\mathcal{F}_2$: sabemos \emph{ambos} $X_1$ e $X_2$.
+\end{itemize}
+
+\begin{block}{Interpretação}
+No tempo $n$, a filtração contém todo o histórico já observado da caminhada.
+\end{block}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Expectativa Condicional}
+  \begin{block}{Intuição}
+    A expectativa condicional $\mathbb{E}[F \mid \mathcal{F}_n]$ é a melhor previsão de $F$
+    usando apenas as informações disponíveis até o tempo $n$.
+  \end{block}
+
+  \begin{itemize}
+    \item É um conceito essencial para analisar processos que evoluem no tempo.
+    \item Satisfaz a regra da torre:
+    \[
+       \mathbb{E}\!\left[\,\mathbb{E}[F|\mathcal{F}_{n+1}]\,\middle|\,\mathcal{F}_n\right]
+       = \mathbb{E}[F|\mathcal{F}_n].
+    \]
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Martingais: ideia fundamental}
+\begin{block}{Ideia inicial}
+Um martingal é um processo cujo valor esperado futuro, dado o presente, é igual ao valor atual.
+\end{block}
+
+\begin{block}{Definição}
+$(Z_n)$ é um martingal se:
+\[
+   \mathbb{E}[Z_{n+1} \mid \mathcal{F}_n] = Z_n.
+\]
+\end{block}
+
+\begin{itemize}
+    \item Representa um “jogo justo”: não há tendência de ganho ou perda esperada.
+    \item Martingais são essenciais em teoria de apostas e em modelos financeiros.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Exemplos Importantes}
+
+\textbf{1. Caminhada aleatória com incrementos centrados}  
+Se os incrementos têm média zero:
+\[
+\mathbb{E}[S_{n+1} \mid \mathcal{F}_n] = S_n.
+\]
+
+\textbf{2. Processo das projeções condicionais}  
+Se $F$ é uma variável integrável e:
+\[
+X_n = \mathbb{E}[F|\mathcal{F}_n],
+\]
+então $(X_n)$ é um martingal.
+
+\begin{block}{Importante}
+Esse é o tipo mais fundamental de martingal: previsões sucessivamente refinadas.
+\end{block}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Propriedade: Expectativa Constante}
+Martingais têm expectativa preservada:
+
+\[
+   \mathbb{E}[Z_n] = \mathbb{E}[Z_0].
+\]
+
+\begin{itemize}
+  \item Não existe “aceleração” esperada no processo.
+  \item Demonstração usa duas ideias-chave:
+  \begin{itemize}
+    \item definição de martingal,
+    \item propriedade da torre.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Tempos de Parada}
+Tempos de parada modelam momentos aleatórios de interrupção.
+
+\begin{block}{Definição}
+$\tau$ é um tempo de parada se:
+\[
+   \{\tau \le n\} \in \mathcal{F}_n.
+\]
+\end{block}
+
+\begin{itemize}
+    \item Exemplo típico: primeira vez que um processo atinge certo estado.
+    \item Intuição: no tempo $n$, conseguimos responder “já parou?” usando apenas o passado.
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Teorema do Tempo de Parada (Doob)}
+Se $(M_n)$ é um martingal e $\tau$ é um tempo de parada, então o processo parado
+\[
+   M_{n \wedge \tau}
+\]
+também é um martingal.
+
+\begin{itemize}
+    \item Essencial para estudar estratégias de jogo.
+    \item Diz que “parar no meio” não destrói a propriedade de martingal.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------
+\begin{frame}{Resumo da Aula}
+\begin{itemize}
+    \item Filtrações: informação disponível ao longo do tempo.
+    \item Expectativa condicional: previsão ótima baseada no passado.
+    \item Martingais: modelo matemático de jogos justos.
+    \item Tempos de parada: momentos aleatórios baseados em informação passada.
+    \item Teorema de Doob: martingais permanecem martingais após parada.
+\end{itemize}
+\end{frame}
+
+\end{document}
