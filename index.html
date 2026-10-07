@@ -1,7 +1,30 @@
 <HTML>
   <HEAD>
+
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script>
+    (function () {
+      var urlMobile = "https://exemplo.com/mobile/";   // <-- troque pela URL desejada
+
+      var uaMobile = /Android|iPhone|iPad|iPod|Windows Phone|IEMobile|Opera Mini|Mobi/i
+                       .test(navigator.userAgent);
+
+      // Fallback para iPadOS, que se identifica como "Macintosh"
+      var ipadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+
+      if (uaMobile || ipadOS) {
+        // replace() evita que o botão "voltar" fique preso em loop
+        window.location.replace(urlMobile);
+      }
+    })();
+  </script>
+
+
+   
     <TITLE>Jair Donadelli Junior</TITLE>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+   
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   </HEAD>
   
