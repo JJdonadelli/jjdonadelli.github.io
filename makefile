@@ -1,48 +1,34 @@
-SHELL=/bin/bash
+# Diretórios
+PUBLIC_HTML := $(HOME)/public_html
+REPO        := $(HOME)/jjdonadelli.github.io
 
-UFABC=hostel.ufabc.edu.br
-ASTERIX=192.168.0.10
+# Servidor remoto
+HOST        := hostel.ufabc.edu.br
+REMOTE_DIR  := ~/public_html
 
-#get :	
-#	rsync --del --exclude=".git" -avuz  ~/Dropbox/public_html/ .	
-#put :#
-#	rsync --del -Cavuz --exclude="*~" --exclude=".git" ./ ~/Dropbox/public_html
+.PHONY: atualiza repo remoto status
 
-#upload :#
-#	rsync  --del -avuz  --exclude="*~" --exclude=".git" ./  -e ssh jair.donadelli@${UFABC}:~/public_html
-upload:
-	@for i in 1 2 3; do \
-		rsync --del -avuz \
-			--exclude="*~" \
-			--exclude=".git" \
-			./ \
-			jair.donadelli@hostel.ufabc.edu.br:~/public_html \
-		&& exit 0; \
-		echo "falhou; aguardando 60s"; \
-		sleep 60; \
-	done; \
-	exit 1
-sync :
-#	chmod -R 644 ./logica/*.*
-#	make put upload
-#	rm /home/yair/.ssh/known_hosts
-	make upload
-#	cp index.html jjdonadelli.github.io/ && \
-#	cd  jjdonadelli.github.io/ && \
-#	if ! git diff --quiet; then \
-#		git commit -am "Página pessoal atualizada" && \
-#		git push; \
-#	else \
-#		echo "Nada para atualizar."; \
-#	fi
+# Atualiza tudo
+atualiza: repo remoto
 
+# Copia public_html para o repositório Git local
+repo:
+	@echo "==> Atualizando repositório local..."
+	rsync -av --delete \
+		--exclude='.git/' \
+		$(PUBLIC_HTML)/ $(REPO)/
+	@echo "==> Estado do repositório:"
+	cd $(REPO) && git status
 
-download : 
-	 rsync  -avuzb -e ssh jair.donadelli@${UFABC}:~/public_html/  .
+# Copia public_html para o servidor
+remoto:
+	@echo "==> Atualizando $(HOST):$(REMOTE_DIR)..."
+	rsync -av --delete \
+		$(PUBLIC_HTML)/ $(HOST):$(REMOTE_DIR)/
 
-
-
-
+# Mostra o estado do repositório local
+status:
+	cd $(REPO) && git status
 
 
 
