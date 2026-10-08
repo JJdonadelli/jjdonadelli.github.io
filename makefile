@@ -3,6 +3,7 @@ PUBLIC_HTML := $(HOME)/public_html
 REPO        := $(HOME)/jjdonadelli.github.io
 
 # Servidor remoto
+REMOTE_USER := jair.donadelli
 HOST        := hostel.ufabc.edu.br
 REMOTE_DIR  := ~/public_html
 
@@ -24,11 +25,27 @@ repo:
 remoto:
 	@echo "==> Atualizando $(HOST):$(REMOTE_DIR)..."
 	rsync -av --delete \
-		$(PUBLIC_HTML)/ $(HOST):$(REMOTE_DIR)/
+		$(PUBLIC_HTML)/ $(REMOTE_USER)@$(HOST):$(REMOTE_DIR)/
 
 # Mostra o estado do repositório local
 status:
 	cd $(REPO) && git status
+
+upload:
+	@for i in 1 2 3; do \
+		rsync --del -avuz \
+			--exclude="*~" \
+			--exclude=".git" \
+			./ \
+			jair.donadelli@hostel.ufabc.edu.br:~/public_html \
+		&& exit 0; \
+		echo "falhou; aguardando 60s"; \
+		sleep 60; \
+	done; \
+	exit 1
+
+download : 
+	 rsync  -avuzb -e ssh jair.donadelli@${UFABC}:~/public_html/  .
 
 
 

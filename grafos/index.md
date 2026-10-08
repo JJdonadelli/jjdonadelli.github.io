@@ -63,7 +63,7 @@ Revisão da terminologia básica de Teoria dos Grafos. Noções de análise de a
 | **02** | *Congresso UFABC*                        | *não há aula*                                                | —                                      | —                                                            |
 | **03** | Representação                            | Isomorfismo; representações por matriz e lista de adjacência; noções de análise de algoritmos. Buscas. | Erickson; Cormen et al.                | [Notas de aula](semana2.pdf)<br>[Notas de aula](semana3.pdf)<br/> |
 | **04** | Busca em largura e busca em profundidade | Busca em largura (BFS); busca em profundidade (DFS); Caminhos mínimos em grafos não ponderados; | Erickson; Cormen et al.                | [Notas de aula](semana3.pdf)<br/><br/>[Lista 2](lista2.pdf)  |
-| **05** | Árvores geradoras mínimas                | Árvores, florestas. Grafos ponderados; árvores geradoras; problema da árvore geradora mínima. Algoritmos de Prim e Kruskal. | Erickson; Cormen et al.; Bondy & Murty | Notas de aula<br/><br/>Lista 3                               |
+| **05** | Árvores geradoras mínimas                | Árvores, florestas. Grafos ponderados; árvores geradoras; problema da árvore geradora mínima. Algoritmos de Prim e Kruskal. | Erickson; Cormen et al.; Bondy & Murty | [Notas de aula](semana4.pdf)<br/><br/>Lista 3                |
 | **06** | Grafos Eulerianos, Hamiltonianos e TSP   | Trilhas e ciclos eulerianos; caminhos e  circuitos hamiltonianos | Bondy & Murty; Erickson                | Notas de aula                                                |
 | **07** | **P1** e Digrafos e ordenação topológica | Digrafos; graus de entrada e saída; DAGs; ordenação topológica; componentes fortemente conexas | Bondy & Murty; Erickson; Cormen et al. | Notas de aula<br/><br/>Lista 4                               |
 | **08** | Caminhos mínimos em digrafos             | Problema dos caminhos mínimos; relaxação; propriedades de caminhos mínimos; pesos não negativos; algoritmo de Dijkstra. | Erickson; Cormen et al.                | Notas de aula<br/><br/>Lista 5                               |
@@ -234,7 +234,7 @@ Nas avaliações serão atribuídos concentos cujo resultado, ao final da discip
 
 ​        **O não cumprimento das instruções implica anulação da prova.** 
 
-​        **A constatação de fraude, o aluno será *reprovado*.**
+​        **Na constatação de fraude, o aluno será *reprovado*.**
 
 ------
 
