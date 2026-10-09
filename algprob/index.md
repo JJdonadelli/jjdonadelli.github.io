@@ -66,11 +66,11 @@ grafos. Algoritmos distribuídos probabilísticos.
 | Semana | Módulo temático                                              | Tópicos principais                                           | Referências                                                  | Leitura e exercícios                                         |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **1**  | Fundamentos                                                  | Probabilidade discreta, RVs, esperança, linearidade, Monte Carlo/Las Vegas | Mitzenmacher & Upfal, Motwani & Raghavan, Cap. 1             | [Notas de aula](semana01.pdf) e [exercícios da semana](lista1.pdf) |
-| **2**  | Análise Probabilística de Algoritmos (Congresso UFABC e UFABC para todos) | Quicksort aleatorizado, esperança, variância, Markov, Chebyshev | Mitzenmacher & Upfal, Cap. 2,3. Motwani & Raghavan, Cap. 1,3 | [Notas de aula](semana02.pdf) e [exercícios](lista2.pdf).    |
-| **3**  |                                                              | QS, Markov, Chebyshev (cont) <br>Dominância estocástica e acoplamento |                                                              | [slide](dominancia.pdf)<br>[exercícios](lista3.pdf)          |
-| **4**  | Concentração e amplificação<br>Balls and Bins                | Birthday paradox, coupon collector, ocupação, maximum load, Poisson | Mitzenmacher & Upfal, Cap. 5                                 | Notas de aula e exercícios.                                  |
+| **2**  | Análise probabilística de algoritmos (Congresso UFABC e UFABC para todos - aula suspensa) | Quicksort aleatorizado, esperança, variância, Markov, Chebyshev | Mitzenmacher & Upfal, Cap. 2,3. Motwani & Raghavan, Cap. 1,3 | [Notas de aula](semana02.pdf) e [exercícios](lista2.pdf).    |
+| **3**  |                                                              | QS, Markov, Chebyshev (cont) <br>Dominância estocástica e acoplamento |                                                              | [slide](dominancia.pdf)<br>[exercícios](lista3.pdf)<br>[Notas de aula](semana03.pdf) |
+| **4**  | Concentração e amplificação<br> Estruturas aleatorizadas     | Chernoff-Hoeffding, QS, Amplificação de probabilidade de sucesso, Skip list. | Motwani & Raghavan Cap. 4,8 <br>Mitzenmacher & Upfal, Cap. 4 | Notas de aula – em breve – e [exercícios](lista4.pdf).       |
 | **5**  | Hashing e estruturas aleatorizadas                           | Universal hashing, skip lists, Bloom filters e análise de falso positivo, Cuckoo hashing | Motwani & Raghavan, Cap. 8; Mitzenmacher & Upfal             | Notas de aula e exercícios.                                  |
-| **6**  | Fingerprinting e métodos algébricos                          | Fingerprinting, Freivalds, identidade polinomial, Schwartz–Zippel | Motwani & Raghavan; Mitzenmacher & Upfal                     | Notas de aula e exercícios.                                  |
+| **6**  |                                                              | Universal hashing,Bloom filters e análise de falso positivo, Cuckoo hashing |                                                              | Notas de aula e exercícios.                                  |
 | **7**  | Algoritmos aleatorizados em grafos                           | Karger; análise de probabilidade de sucesso e amplificação   | Motwani & Raghavan, Cap. 7                                   | Notas de aula e exercícios.                                  |
 | **8**  | Passeios aleatórios e Markov                                 | Random walks, Markov chains, hitting/cover time, distribuição estacionária | Motwani & Raghavan; Levin, Peres & Wilmer                    | Notas de aula e exercícios.                                  |
 | **9**  | Mixing e Monte Carlo                                         | Coupling, mixing times, MCMC; Metropolis–Hastings como exemplo | Levin, Peres & Wilmer; Mitzenmacher & Upfal                  | Notas de aula e exercícios.                                  |
@@ -183,11 +183,11 @@ Nos casos previstos em resolução, mediante a devida comprovação. O aluno que
 
 ###### Material de ofertas anteriores
 
-- [Listas](https://drive.google.com/drive/folders/1M3lQQ4VZOiEep4P1j5J3mVWmmTe3MezI)
+- [Listas](https://drive.google.com/drive/folders/1fUuqyR3QAoLxFNqdPL6XoJlfdnj-QYrX?usp=sharing)
 - [Provas](https://drive.google.com/drive/folders/1UF8pUMdSfYy59Rx2hFMTxqdhiTySE5TC)
 - [notas](https://drive.google.com/drive/folders/1hVRZpo6rJw45oOMo1UTOaP8WrjGPEkiU?usp=sharing)
 
-###### Notícias relacionadas 
+###### Notícias relacionadas
 
 - [Como a aleatoriedade pode ajudar algoritmos a solucionarem problemas impossíveis](https://www.estadao.com.br/link/cultura-digital/como-a-aleatoriedade-pode-ajudar-algoritmos-a-solucionarem-problemas-impossiveis/)
 - [How Randomness Improves Algorithms](https://www.quantamagazine.org/how-randomness-improves-algorithms-20230403/) (original do item anterior)
