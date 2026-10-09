@@ -1,0 +1,431 @@
+%Time-stamp: <sex out  9 07:49:01 2026 yair@ufabcdix>
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+
+%\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% ---------- macros ----------
+%\newcommand{\E}[1]{\mathbb{E}\!\left[#1\right]}
+%\newcommand{\ProbE}[1]{\Pr\!\left[#1\right]}
+%\newcommand{\Ind}[1]{\mathbf{1}_{#1}}
+%\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\define}[1]{\textbf{#1}}
+\newcommand{\tri}[3]{%
+  \draw (#1,#2) -- ++(-.45,-.9) -- ++(.9,0) -- cycle;
+  \node at (#1,#2-.65) {#3};}
+
+\input{C_macros}
+
+
+\newtheorem{proposicao}[theorem]{Proposição}
+\newtheorem{observacao}[theorem]{Observação}
+\theoremstyle{definition}
+
+\title{\textit{Treaps}}
+\subtitle{Árvores de busca aleatorizadas}
+\author{J.D.}
+\institute{UFABC}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% =====================================================
+\begin{frame}{O problema}
+  \textbf{Dicionário}: manter $S\subset U$ sob
+  \begin{itemize}
+  \item \textbf{busca}($x$): $x\in S$?
+  \item \textbf{inserção}($x$)
+  \item \textbf{remoção}($x$)
+  \end{itemize}
+  \pause
+  \vspace{1ex}
+  Árvores binárias de busca: custo proporcional à \emph{altura}.
+  \begin{itemize}
+  \item Inserções em ordem crescente $\Rightarrow$ árvore degenerada,
+    altura $n-1$.
+  \end{itemize}
+  \pause
+  \vspace{1ex}
+  \textbf{Ideia}: usar aleatoriedade para que a árvore se comporte como
+  uma árvore de busca \emph{construída em ordem aleatória}, sem
+  depender da ordem das operações.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Definição}
+  Uma \define{treap} é uma árvore binária em que cada nó $v$ tem
+  $\mathrm{chave}(v)$ e $\mathrm{prioridade}(v)$ tais que
+  \begin{itemize}
+  \item é \textbf{árvore binária de busca} nas chaves:
+    chaves da subárvore esquerda $<$ $\mathrm{chave}(v)$ $<$ chaves da
+    subárvore direita;
+  \item é \textbf{heap de máximo} nas prioridades:
+    $\mathrm{prioridade}(v)>$ prioridade de todo descendente próprio.
+  \end{itemize}
+  \vspace{1ex}
+  Supomos chaves distintas e prioridades distintas.
+
+  \medskip
+  \small
+  ``Heap'' no sentido de árvore ordenada por prioridades (não é uma
+  heap implícita em vetor: a forma não é determinada por completude).
+\end{frame}
+
+% =====================================================
+\begin{frame}{Exemplo}
+  \centering
+  \begin{tikzpicture}[scale=.85,
+    no/.style={circle, draw, minimum size=1.0cm, inner sep=0pt},
+    rot/.style={font=\itshape\small, inner sep=0pt},
+    val/.style={font=\small, inner sep=0pt}]
+    \node[no] (j) at (0,0)       {};
+    \node[no] (i) at (-3,-1.7)   {};
+    \node[no] (m) at (3,-1.7)    {};
+    \node[no] (a) at (-4.5,-3.4) {};
+    \node[no] (b) at (-1.5,-3.4) {};
+    \node[no] (l) at (1.5,-3.4)  {};
+    \draw (j) -- (i);
+    \draw (j) -- (m);
+    \draw (i) -- (a);
+    \draw (i) -- (b);
+    \draw (m) -- (l);
+    \foreach \n/\letra/\valor in {j/j/31, i/b/26, m/m/27, a/a/13, b/i/25, l/\ell/14}{
+      \draw (\n.45) -- (\n.-135);
+      \node[rot] at ($(\n)+(-0.2,0.2)$) {$\letra$};
+      \node[val] at ($(\n)+(0.2,-0.2)$) {$\valor$};
+    }
+  \end{tikzpicture}
+
+  \vfill
+  
+  \small letras = chaves \quad números = prioridades \quad
+  em-ordem: $a,b,i,j,\ell,m$
+\end{frame}
+
+% =====================================================
+\begin{frame}{Unicidade}
+  \begin{proposicao}
+    Dado um conjunto de pares (chave, prioridade) com chaves distintas
+    e prioridades distintas, existe uma \textbf{única} treap que o
+    representa.
+  \end{proposicao}
+  \pause
+  \textbf{Ideia} (indução no número de nós): a \emph{heap} obriga a
+  raiz a ser o nó de maior prioridade; a busca obriga a subárvore
+  esquerda a ter exatamente as chaves menores que a da raiz e a direita
+  as maiores; cada subárvore é uma treap, única por indução.
+  \pause
+  \medskip
+
+  \textbf{Consequências}
+  \begin{itemize}
+  \item A forma depende só de chaves e prioridades, \emph{não} da
+    ordem de inserção.
+  \item Equivale a inserir os nós em ordem \emph{decrescente} de
+    prioridade numa ABB vazia.
+  \end{itemize}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Rotações}
+
+  
+  Para consertar \textit{heap} sem estragar a ABB
+
+  \vfill
+
+  \centering
+  \begin{tikzpicture}[scale=.8, >={Stealth[length=3mm,width=3.5mm]},
+      no/.style={draw,rectangle,minimum size=5mm,inner sep=1pt,fill=white}]
+    \node[no] (y)  at (0,0)  {$y$};
+    \node[no] (x)  at (-1,-1) {$x$};
+    \draw (y) -- (x);
+    \draw (y) -- (1,-1);   \tri{1}{-1}{$C$}
+    \draw (x) -- (-1.6,-2); \tri{-1.6}{-2}{$A$}
+    \draw (x) -- (-0.4,-2); \tri{-0.4}{-2}{$B$}
+    \draw[->] (2.3,-0.8) to[bend left=40]
+      node[above] {direita em $y$} (4.2,-0.8);
+    \draw[->] (4.2,-1.3) to[bend left=40]
+      node[below] {esquerda em $x$} (2.3,-1.3);
+    \begin{scope}[xshift=6.5cm]
+      \node[no] (x2) at (0,0)  {$x$};
+      \node[no] (y2) at (1,-1) {$y$};
+      \draw (x2) -- (y2);
+      \draw (x2) -- (-0.6,-1); \tri{-0.6}{-1}{$A$}
+      \draw (y2) -- (0.4,-2);  \tri{0.4}{-2}{$B$}
+      \draw (y2) -- (1.8,-2);  \tri{1.8}{-2}{$C$}
+    \end{scope}
+  \end{tikzpicture}
+
+  \medskip
+  \begin{itemize}
+  \item A ordem em-ordem $A,x,B,y,C$ é preservada.
+  \item Só a subárvore $B$ muda de pai: custo $O(1)$.
+  \end{itemize}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Operações}
+  \begin{description}
+  \item[Busca] como em ABB; custo $\propto$ altura.
+  \pause
+  \item[Inserção de $x$]
+    \begin{enumerate}
+    \item busca por $x$; se falhar, insere $x$ como folha com uma
+      prioridade \textbf{sorteada};
+    \item enquanto $x$ tem prioridade maior que a do pai $y$: rotação
+      que sobe $x$.
+    \end{enumerate}
+    {\small
+    A \emph{heap} só pode ser violada entre $x$ e seu pai, e cada
+    rotação preserva a busca. Rotações $\le$ profundidade de $x$.}
+  \pause
+  \item[Remoção de $x$] enquanto $x$ não é folha, rotaciona $x$ com o
+    filho de \textbf{maior} prioridade (que passa a ser o pai de $x$
+    e, portanto, vence o outro filho); depois remove a folha.
+    Rotações $\le$ altura da subárvore de $x$.
+  \end{description}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Aleatoriedade}
+  \begin{itemize}
+  \item Prioridade de cada nó: sorteada uniformemente em $[0,1]$ na
+    inserção, independente das demais (reinserir uma chave sorteia
+    uma prioridade \emph{nova}).
+  \item Com probabilidade $1$, as prioridades são distintas.
+  \end{itemize}
+  \pause
+  \begin{alertblock}{Adversário oblívio}
+    A sequência de operações é escolhida \emph{independentemente} das
+    prioridades.
+
+    Se o adversário visse as prioridades, poderia remover sempre os nós
+    de menor prioridade, e as restantes deixariam de ser i.i.d.\
+    uniformes.
+  \end{alertblock}
+  \pause
+  Pela unicidade, após qualquer sequência oblívia de operações a
+  árvore é \textbf{a treap do conjunto atual, com prioridades i.i.d.\
+    uniformes}.
+
+  $\Rightarrow$ basta analisar uma treap com $n$ nós e prioridades
+  i.i.d.\ uniformes.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Profundidade de um nó}
+  Seja $x_k$ o $k$-ésimo menor elemento de $S$.
+  \begin{itemize}
+  \item $x_j\prec x_k$: $x_j\neq x_k$ é \emph{ancestral próprio} de
+    $x_k$.
+  \item $I_j=\Ind{[x_j\prec x_k]}$.
+  \item \textbf{Profundidade}: $D_k=\sum_{j\neq k}I_j$ (em arestas).
+  \item \textbf{Altura}: $\max_k D_k$.
+  \item $X(j,k)=\{x_j,\dots,x_k\}$ (para $j<k$; $X(k,j)=X(j,k)$).
+  \end{itemize}
+  \pause
+  \begin{proposicao}
+    Para $j\neq k$: $x_j$ é ancestral próprio de $x_k$ $\iff$ $x_j$
+    tem a \textbf{maior prioridade} em $X(j,k)$.
+  \end{proposicao}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Prova da proposição}
+  Seja $a$ o ancestral comum mais baixo de $x_j$ e $x_k$ (todo nó é
+  ancestral de si mesmo, só nesta prova).
+  \begin{enumerate}
+  \item[(i)] $a\in X(j,k)$: se $a\notin\{x_j,x_k\}$, eles estão em
+    subárvores distintas de $a$, e a chave de $a$ fica entre as deles.
+    \pause
+  \item[(ii)] $X(j,k)\subseteq$ subárvore de $a$: acima de $a$, $x_j$
+    e $x_k$ estão do mesmo lado de cada ancestral $b$, logo qualquer
+    $x_i$ com chave entre as deles também. A busca por $x_i$ segue o
+    caminho de $x_j$ até $a$.
+    \pause
+  \item[(iii)] Pela \emph{heap}, $a$ tem prioridade maior que a de
+    todos os outros nós da sua subárvore; portanto é o único de maior
+    prioridade em $X(j,k)$.
+  \end{enumerate}
+  \pause
+  Como $j\neq k$: $x_j\prec x_k\iff a=x_j\iff x_j$ tem a maior
+  prioridade em $X(j,k)$. \hfill $\square$
+\end{frame}
+
+% =====================================================
+\begin{frame}{Profundidade esperada}
+  Prioridades i.i.d.\ contínuas $\Rightarrow$ todo elemento de $X(j,k)$
+  é o de maior prioridade com a mesma probabilidade, e
+  $|X(j,k)|=|k-j|+1$:
+  \[
+    \ProbE{I_j=1}=\frac{1}{|k-j|+1}.
+  \]
+  \pause
+  \[
+    \E{D_k}
+    =\sum_{j<k}\frac1{k-j+1}+\sum_{j>k}\frac1{j-k+1}
+    =H_k+H_{n-k+1}-2 .
+  \]
+  \pause
+  Com $H_m\le1+\ln m$:
+  \[
+    \E{D_k}\le2H_n-2\le2\ln n=O(\log n)\quad\text{para todo }k.
+  \]
+  \medskip
+  Esperança do número de nós no caminho até $x_k$:
+  $H_k+H_{n-k+1}-1$.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Alta probabilidade: independência}
+  Queremos Chernoff, que exige independência.
+
+  \begin{alertblock}{Os $I_j$ \emph{não} são todos independentes}
+    $n=3$, $k=2$:
+    $\ProbE{x_1\prec x_2,\;x_3\prec x_2}
+    =\ProbE{\text{a prioridade de }x_2\text{ é a menor}}=\tfrac13$,
+    mas $\ProbE{x_1\prec x_2}\ProbE{x_3\prec x_2}=\tfrac14$.
+  \end{alertblock}
+  \pause
+  \vspace{1ex}
+  Separamos $D_k=L_k+R_k$ com
+  $L_k=\sum_{j<k}I_j$ e $R_k=\sum_{j>k}I_j$.
+
+  \begin{lemma}
+    Fixado $k$, os $I_j$ com $j<k$ são \textbf{independentes}, com
+    $\ProbE{I_j=1}=\frac1{k-j+1}$. O mesmo vale para $j>k$.
+  \end{lemma}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Prova do lema}
+  \begin{itemize}
+  \item $y_i$ = prioridade de $x_{k-i+1}$, $i=1,\dots,k$.
+  \item Pela proposição: $I_{k-i+1}=1\iff y_i>\max\{y_1,\dots,y_{i-1}\}$.
+  \pause
+  \item $\rho_i\in\{1,\dots,i\}$ = posto de $y_i$ entre $y_1,\dots,y_i$.
+  \item A aplicação
+    $\text{permutação}\mapsto(\rho_1,\dots,\rho_k)$ é injetora
+    (reconstrói-se a permutação inserindo $y_1,y_2,\dots$ nas posições
+    dadas pelos postos) e os dois conjuntos têm $k!$ elementos:
+    é bijetora.
+  \pause
+  \item Logo $\rho_1,\dots,\rho_k$ são independentes, $\rho_i$ uniforme
+    em $\{1,\dots,i\}$.
+  \item $I_{k-i+1}=\Ind{[\rho_i=i]}$ depende só de $\rho_i$:
+    independentes, com probabilidade $1/i$. \hfill $\square$
+  \end{itemize}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Teorema: altura logarítmica}
+  \begin{theorem}
+    Numa treap com $n\ge2$ nós e prioridades i.i.d.\ uniformes, com
+    probabilidade pelo menos $1-2n^{-7}$ a profundidade de todo nó é
+    menor que $2\mathrm e^2\ln n<15\ln n$.
+  \end{theorem}
+  \pause
+  Em particular, a altura é $O(\log n)$ com probabilidade
+  $1-O(n^{-7})$, e, nesse instante, cada operação de dicionário tem
+  custo $O(\log n)$ com essa probabilidade.
+
+  \medskip
+  \small
+  ($n\ge2$ garante $\ln n>0$; para $n=1$ a desigualdade estrita
+  falharia.)
+\end{frame}
+
+% =====================================================
+\begin{frame}{Prova do teorema (1/2)}
+  Fixe $k$. $L_k$ é soma de $k-1$ Bernoullis independentes de
+  parâmetros $1/i$, $2\le i\le k$, e
+  \[
+    \E{L_k}=H_k-1\le\ln n .
+  \]
+  \pause
+  Para $s>0$, usando $1+x\le\mathrm e^x$:
+  \[
+    \E{\mathrm e^{sL_k}}
+    =\prod_{i=2}^{k}\paren{1+\frac{\mathrm e^s-1}{i}}
+    \le\exp\paren{(\mathrm e^s-1)\,\E{L_k}}
+    \le\exp\paren{(\mathrm e^s-1)\ln n}.
+  \]
+  \pause
+  Markov em $\mathrm e^{sL_k}$, com $s=2$ e limiar $\mathrm e^2\ln n$:
+  \[
+    \ProbE{L_k\ge\mathrm e^2\ln n}
+    \le\mathrm e^{-2\mathrm e^2\ln n}\,\mathrm e^{(\mathrm e^2-1)\ln n}
+    =n^{-(\mathrm e^2+1)}<n^{-8}.
+  \]
+\end{frame}
+
+% =====================================================
+\begin{frame}{Prova do teorema (2/2)}
+  O mesmo vale para $R_k$. Se $L_k,R_k<\mathrm e^2\ln n$, então
+  $D_k<2\mathrm e^2\ln n$.
+  \pause
+  \[
+    \ProbE{\exists k:\;D_k\ge2\mathrm e^2\ln n}
+    \le 2n\cdot n^{-8}=2n^{-7}.
+  \]
+  \pause
+  Fora desse evento, todo nó tem profundidade
+  $<2\mathrm e^2\ln n<15\ln n$ (pois $2\mathrm e^2\approx14{,}78$).
+
+  Altura $<15\ln n$ em arestas ($\le15\ln n+1$ em nós). \hfill $\square$
+\end{frame}
+
+% =====================================================
+\begin{frame}{Sequências de operações}
+  O teorema refere-se a uma treap num instante fixo.
+
+  \medskip
+  Numa sequência oblívia de $m$ operações, seja $N\ge2$ o maior número
+  de nós ao longo da sequência.
+  \begin{itemize}
+  \item Cada estado é uma treap com prioridades i.i.d.\ uniformes.
+  \item Em cada estado $\E{L_k}\le\ln n\le\ln N$: a prova vale com
+    $\ln N$ no lugar de $\ln n$.
+  \item Subaditividade sobre os $m$ estados:
+    \[
+      \text{todas as operações custam}<15\ln N+1
+      \ \text{com prob.}\ \ge1-2m\,N^{-7}.
+    \]
+  \item Para $m=O(N^2)$: probabilidade $1-O(N^{-5})$.
+  \end{itemize}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Resumo}
+  \begin{itemize}
+  \item Treap = ABB nas chaves + heap de máximo nas prioridades;
+    \textbf{forma única} dado o conjunto de pares.
+  \item Inserção e remoção por \textbf{rotações}, $O(1)$ cada.
+  \item Prioridades aleatórias (adversário oblívio) $\Rightarrow$
+    árvore como ABB de ordem aleatória.
+  \item $x_j\prec x_k\iff x_j$ tem a maior prioridade em $X(j,k)$.
+  \item $\E{D_k}\le2\ln n$.
+  \item Altura $<15\ln n$ com probabilidade $\ge1-2n^{-7}$, via
+    independência de cada lado + MGF/Markov (Chernoff).
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
