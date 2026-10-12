@@ -24,7 +24,7 @@ repo:
 # Copia public_html para o servidor
 remoto:
 	@echo "==> Atualizando $(HOST):$(REMOTE_DIR)..."
-	rsync -av --delete \
+	rsync -av --delete --exclude="*~" --exclude=".git" \
 		$(PUBLIC_HTML)/ $(REMOTE_USER)@$(HOST):$(REMOTE_DIR)/
 
 # Mostra o estado do repositório local
