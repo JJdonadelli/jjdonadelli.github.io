@@ -1,0 +1,237 @@
+%Time-stamp: <sex out 16 09:01:47 2026 yair@asterix>
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% ---------- macros ----------
+\newcommand{\define}[1]{\textbf{#1}}
+\newcommand{\tri}[3]{%
+  \draw (#1,#2) -- ++(-.45,-.9) -- ++(.9,0) -- cycle;
+  \node at (#1,#2-.65) {#3};}
+
+\input{C_macros}   % \E, \ProbE, \Ind, \paren
+
+\newtheorem{proposicao}[theorem]{Proposição}
+\theoremstyle{definition}
+
+\title{\textit{Treaps}}
+\subtitle{Árvores de busca aleatorizadas}
+\author{J.D.}
+\institute{UFABC}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% =====================================================
+\begin{frame}{O problema}
+  \textbf{Dicionário}: manter $S\subset U$ sob busca, inserção e remoção.
+  \pause
+  \vspace{1ex}
+
+  Árvores binárias de busca (ABB): custo proporcional à \emph{altura}.
+  Inserções em ordem crescente $\Rightarrow$ altura $n-1$.
+  \pause
+  \vspace{1ex}
+
+  \textbf{Ideia}: usar aleatoriedade para que a árvore se comporte como
+  uma ABB \emph{construída em ordem aleatória}, sem depender da ordem
+  das operações.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Definição}
+  Uma \define{treap} é uma árvore binária em que cada nó $v$ tem
+  $\mathrm{chave}(v)$ e $\mathrm{prioridade}(v)$ tais que
+  \begin{itemize}
+  \item é \textbf{ABB} nas chaves;
+  \item é \textbf{heap de máximo} nas prioridades:
+    $\mathrm{prioridade}(v)>$ prioridade de todo descendente próprio.
+  \end{itemize}
+  \vspace{1ex}
+  Supomos chaves distintas e prioridades distintas.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Exemplo}
+  \centering
+  \begin{tikzpicture}[scale=.85,
+    no/.style={circle, draw, minimum size=1.0cm, inner sep=0pt},
+    rot/.style={font=\itshape\small, inner sep=0pt},
+    val/.style={font=\small, inner sep=0pt}]
+    \node[no] (j) at (0,0)       {};
+    \node[no] (i) at (-3,-1.7)   {};
+    \node[no] (m) at (3,-1.7)    {};
+    \node[no] (a) at (-4.5,-3.4) {};
+    \node[no] (b) at (-1.5,-3.4) {};
+    \node[no] (l) at (1.5,-3.4)  {};
+    \draw (j) -- (i);
+    \draw (j) -- (m);
+    \draw (i) -- (a);
+    \draw (i) -- (b);
+    \draw (m) -- (l);
+    \foreach \n/\letra/\valor in {j/j/31, i/b/26, m/m/27, a/a/13, b/i/25, l/\ell/14}{
+      \draw (\n.45) -- (\n.-135);
+      \node[rot] at ($(\n)+(-0.2,0.2)$) {$\letra$};
+      \node[val] at ($(\n)+(0.2,-0.2)$) {$\valor$};
+    }
+  \end{tikzpicture}
+
+  \vfill
+
+  \small letras = chaves \quad números = prioridades \quad
+  em-ordem: $a,b,i,j,\ell,m$
+\end{frame}
+
+% =====================================================
+\begin{frame}{Unicidade}
+  \begin{proposicao}
+    Dado um conjunto de pares (chave, prioridade) com chaves distintas
+    e prioridades distintas, existe uma \textbf{única} treap que o
+    representa.
+  \end{proposicao}
+  \pause
+  \textbf{Ideia}: a heap obriga a raiz a ser o nó de maior prioridade;
+  a busca determina quais chaves vão para cada lado; aplique indução
+  nas subárvores.
+  \pause
+  \medskip
+
+  \textbf{Consequência}: a forma depende só de chaves e prioridades,
+  \emph{não} da ordem de inserção.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Rotações}
+  Consertam a \textit{heap} sem estragar a ABB.
+
+  \vfill
+
+  \centering
+  \begin{tikzpicture}[scale=.8, >={Stealth[length=3mm,width=3.5mm]},
+      no/.style={draw,rectangle,minimum size=5mm,inner sep=1pt,fill=white}]
+    \node[no] (y)  at (0,0)  {$y$};
+    \node[no] (x)  at (-1,-1) {$x$};
+    \draw (y) -- (x);
+    \draw (y) -- (1,-1);   \tri{1}{-1}{$C$}
+    \draw (x) -- (-1.6,-2); \tri{-1.6}{-2}{$A$}
+    \draw (x) -- (-0.4,-2); \tri{-0.4}{-2}{$B$}
+    \draw[->] (2.3,-0.8) to[bend left=40]
+      node[above] {direita em $y$} (4.2,-0.8);
+    \draw[->] (4.2,-1.3) to[bend left=40]
+      node[below] {esquerda em $x$} (2.3,-1.3);
+    \begin{scope}[xshift=6.5cm]
+      \node[no] (x2) at (0,0)  {$x$};
+      \node[no] (y2) at (1,-1) {$y$};
+      \draw (x2) -- (y2);
+      \draw (x2) -- (-0.6,-1); \tri{-0.6}{-1}{$A$}
+      \draw (y2) -- (0.4,-2);  \tri{0.4}{-2}{$B$}
+      \draw (y2) -- (1.8,-2);  \tri{1.8}{-2}{$C$}
+    \end{scope}
+  \end{tikzpicture}
+
+  \medskip
+  A ordem em-ordem $A,x,B,y,C$ é preservada; custo $O(1)$.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Operações}
+  \begin{description}
+  \item[Busca] como em ABB; custo $\propto$ altura.
+  \pause
+  \item[Inserção de $x$] insere como folha com prioridade
+    \textbf{sorteada}; enquanto $x$ tem prioridade maior que a do pai,
+    rotaciona $x$ para cima.
+  \pause
+  \item[Remoção de $x$] enquanto $x$ não é folha, rotaciona $x$ com o
+    filho de \textbf{maior} prioridade; depois remove a folha.
+  \end{description}
+  \pause
+  \medskip
+  Número de rotações $\le$ profundidade (inserção) ou altura da
+  subárvore (remoção) de $x$: todas as operações custam $O(\text{altura})$.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Aleatoriedade}
+  \begin{itemize}
+  \item Prioridade de cada nó: uniforme em $[0,1]$, sorteada na
+    inserção, independente das demais.
+  \item \textbf{Adversário oblívio}: a sequência de operações é
+    escolhida independentemente das prioridades.
+  \end{itemize}
+  \pause
+  Pela unicidade, após qualquer sequência oblívia de operações a árvore
+  é \textbf{a treap do conjunto atual, com prioridades i.i.d.\
+    uniformes}.
+
+  $\Rightarrow$ basta analisar uma treap com $n$ nós e prioridades
+  i.i.d.\ uniformes.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Profundidade esperada}
+  Seja $x_k$ o $k$-ésimo menor elemento e $X(j,k)=\{x_j,\dots,x_k\}$.
+  \begin{proposicao}
+    $x_j$ é ancestral próprio de $x_k$ $\iff$ $x_j$ tem a
+    \textbf{maior prioridade} em $X(j,k)$.
+  \end{proposicao}
+  \pause
+  Logo $\ProbE{x_j \text{ ancestral de } x_k}=\dfrac1{|k-j|+1}$ e
+  \[
+    \E{D_k}=\sum_{j<k}\frac1{k-j+1}+\sum_{j>k}\frac1{j-k+1}
+    =H_k+H_{n-k+1}-2\le 2\ln n .
+  \]
+  \pause
+  Portanto busca, inserção e remoção custam $O(\log n)$ \textbf{em
+    esperança}.
+\end{frame}
+
+% =====================================================
+\begin{frame}{Alta probabilidade}
+  \begin{theorem}
+    Numa treap com $n\ge2$ nós e prioridades i.i.d.\ uniformes, com
+    probabilidade pelo menos $1-2n^{-7}$ a profundidade de todo nó é
+    menor que $2\mathrm e^2\ln n<15\ln n$.
+  \end{theorem}
+  \pause
+  \textbf{Ideia da prova}
+  \begin{itemize}
+  \item $D_k=L_k+R_k$ (ancestrais à esquerda e à direita); cada lado é
+    soma de Bernoullis \emph{independentes} de parâmetros $1/i$.
+  \item Chernoff: $\ProbE{L_k\ge \mathrm e^2\ln n}<n^{-8}$,
+    e o mesmo para $R_k$.
+  \item União sobre os $n$ nós.
+  \end{itemize}
+\end{frame}
+
+% =====================================================
+\begin{frame}{Resumo}
+  \begin{itemize}
+  \item Treap = ABB nas chaves + heap de máximo nas prioridades;
+    \textbf{forma única}.
+  \item Inserção e remoção por \textbf{rotações}, $O(1)$ cada.
+  \item Prioridades aleatórias $\Rightarrow$ árvore equivale a ABB de
+    ordem aleatória.
+  \item $\E{D_k}\le2\ln n$.
+  \item Altura $<15\ln n$ com probabilidade $\ge1-2n^{-7}$.
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
