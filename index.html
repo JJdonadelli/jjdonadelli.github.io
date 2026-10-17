@@ -1,11 +1,30 @@
 <HTML>
   <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+<script>
+  (function () {
+    // Já está no espelho (https) → não faz nada, evita o loop
+    if (location.protocol === "https:") return;
 
+    var urlMobile = "https://jjdonadelli.github.io/";
 
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    var uaMobile = /Android|iPhone|iPad|iPod|Windows Phone|IEMobile|Opera Mini|Mobi/i
+                     .test(navigator.userAgent);
+
+    // Fallback para iPadOS, que se identifica como "Macintosh"
+    var ipadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+
+    if (uaMobile || ipadOS) {
+      window.location.replace(urlMobile);
+    }
+  })();
+</script>
+
+<!---
   <script>
     (function () {
-      var urlMobile = "https://jjdonadelli.github.io/";   // <-- troque pela URL desejada
+      var urlMobile = "https://jjdonadelli.github.io/";  
 
       var uaMobile = /Android|iPhone|iPad|iPod|Windows Phone|IEMobile|Opera Mini|Mobi/i
                        .test(navigator.userAgent);
@@ -19,7 +38,7 @@
       }
     })();
   </script>
-
+-->
 
    
     <TITLE>Jair Donadelli Junior</TITLE>

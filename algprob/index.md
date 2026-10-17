@@ -8,7 +8,7 @@ MCZA035-17 Algoritmos Probabilísticos<br>
 </div> 
 
 ------
-[<img src="../images/estadao.png" style="float:right;width:350px;border:2px solid #444;border-radius:8px;padding:4px;background:white;box-shadow:2px 2px 6px rgba(0,0,0,.3);"/>](https://www.estadao.com.br/link/cultura-digital/como-a-aleatoriedade-pode-ajudar-algoritmos-a-solucionarem-problemas-impossiveis/)A aleatoriedade consolidou-se como um dos paradigmas centrais no projeto de algoritmos eficientes. Em muitos problemas computacionais, algoritmos aleatorizados são mais simples, mais rápidos e utilizam menos memória do que suas contrapartes determinísticas. Em outros, especialmente em aplicações de larga escala, constituem a única abordagem computacionalmente viável. Atualmente, algoritmos aleatorizados estão presentes em inúmeras tecnologias utilizadas diariamente, desde mecanismos de busca na Web, bancos de dados e sistemas distribuídos até criptografia, inteligência artificial, aprendizado de máquina e processamento de grandes volumes de dados. Ao longo do curso, serão estudados tanto os fundamentos teóricos quanto aplicações em problemas práticos, evidenciando como a aleatoriedade pode ser utilizada para obter soluções eficientes e confiáveis.
+[<img src="../images/estadao.png" style="float:right;width:350px;border:2px solid #444;border-radius:8px;padding:4px;background:white;box-shadow:2px 2px 6px rgba(0,0,0,.3);"/>](https://www.estadao.com.br/link/cultura-digital/como-a-aleatoriedade-pode-ajudar-algoritmos-a-solucionarem-problemas-impossiveis/)A aleatoriedade consolidou-se como um dos paradigmas centrais no projeto de algoritmos eficientes. Em muitos  problemas computacionais, algoritmos aleatorizados são  mais simples, mais rápidos e utilizam menos memória do  que suas contrapartes determinísticas. Em outros,  especialmente em aplicações de larga escala, constituem a  única abordagem computacionalmente viável. Atualmente,  algoritmos aleatorizados estão presentes em inúmeras  tecnologias utilizadas diariamente, desde mecanismos de  busca na Web, bancos de dados e sistemas distribuídos até criptografia, inteligência artificial, aprendizado  de máquina e processamento de grandes volumes de dados. Ao longo do curso, serão estudados tanto os  fundamentos teóricos quanto aplicações em problemas práticos, evidenciando como a aleatoriedade pode  ser utilizada para obter soluções eficientes e confiáveis.
 
 ------
 
@@ -20,13 +20,13 @@ Os comunicados gerais ‘professor → aluno’ serão pelo sigaa.
 
 ## **Objetivos**
 
-Esta disciplina propõe uma mudança conceitual no raciocínio algorítmico, substituindo garantias determinísticas e absolutas por análises probabilísticas de desempenho e erro. O objetivo pedagógico central do curso não é a mera apresentação de um catálogo de algoritmos, mas o desenvolvimento de uma intuição probabilística: um arcabouço analítico que capacite o estudante a projetar e avaliar soluções sob condições de incerteza, aproximação e escala. A capacidade de identificar quando e como substituir a certeza absoluta por ganhos expressivos em tratabilidade computacional constitui uma das competências mais relevantes para a formação do profissional, preparando-o para enfrentar os desafios computacionais mais complexos da atualidade.
+Esta disciplina propõe uma mudança conceitual no raciocínio algorítmico, substituindo garantias  determinísticas e absolutas por análises probabilísticas de desempenho e erro. O objetivo pedagógico  central do curso não é a mera apresentação de um catálogo de algoritmos, mas o desenvolvimento de  uma intuição probabilística: um arcabouço analítico que capacite o estudante a projetar e avaliar soluções  sob condições de incerteza, aproximação e escala. A capacidade de identificar quando e como substituir a  certeza absoluta por ganhos expressivos em tratabilidade computacional constitui uma das competências  mais relevantes para a formação do profissional, preparando-o para enfrentar os desafios computacionais  mais complexos da atualidade. 
 
 <img src="../images/uR4WuQ0h.jpg" alt="image-20260806182211831" align="center" style="zoom:40%;" />
 
 ### Objetivos específicos
 
-<img src="../images/cartoon017.gif"  align="right" style="zoom:140%;" />Esta disciplina tem como objetivo  apresentar os fundamentos dos algoritmos aleatorizados, capacitando o aluno a  compreender, analisar e projetar algoritmos que utilizam aleatoriedade como ferramenta para obter soluções eficientes para problemas computacionais. Ao final do curso, o aluno deverá ser capaz de:
+<img src="../images/cartoon017.gif"  align="right" style="zoom:140%;" />Esta disciplina tem como objetivo  apresentar os fundamentos dos algoritmos  aleatorizados, capacitando o aluno a  compreender, analisar e projetar algoritmos que  utilizam aleatoriedade como ferramenta para obter soluções eficientes para problemas  computacionais. Ao final do curso, o aluno deverá ser capaz de: 
 
 - *Compreender*  o comportamento de processos e algoritmos aleatórios, o poder e as limitações da aleatoriedade no projeto de algoritmos. 
 - *Analisar* algoritmos aleatorizados, dominando técnicas de análise probabilística baseadas em desigualdades de concentração; a maestria dessas técnicas é um resultado central do curso. 
@@ -38,11 +38,7 @@ Esta disciplina propõe uma mudança conceitual no raciocínio algorítmico, sub
 
 ### Ementa
 
-Revisão de probabilidade discreta. Exemplos de algoritmos aleatorizados: Algoritmo para
-Identidade polinomial; Sigilo perfeito; MAX 3-SAT. Leis de desvios e aplicações em algoritmos e
-estruturas de dados: hashing universal; treaps. Modelos de computação e classes
-probabilísticas de complexidade. Aplicações de Cadeias de Markov. Passeios aleatórios em
-grafos. Algoritmos distribuídos probabilísticos.
+Revisão de probabilidade discreta. Exemplos de algoritmos aleatorizados: Algoritmo para Identidade  polinomial; Sigilo perfeito; MAX 3-SAT. Leis de desvios e aplicações em algoritmos e estruturas de dados:  hashing universal; treaps. Modelos de computação e classes probabilísticas de complexidade. Aplicações  de Cadeias de Markov. Passeios aleatórios em grafos. Algoritmos distribuídos probabilísticos.
 
 ### Calendário
 
@@ -69,7 +65,7 @@ grafos. Algoritmos distribuídos probabilísticos.
 | **2**  | Análise probabilística de algoritmos (Congresso UFABC e UFABC para todos - aula suspensa) | Quicksort aleatorizado, esperança, variância, Markov, Chebyshev | Mitzenmacher & Upfal, Cap. 2,3. Motwani & Raghavan, Cap. 1,3 | [Notas de aula](semana02.pdf) e [exercícios](lista2.pdf).    |
 | **3**  |                                                              | QS, Markov, Chebyshev (cont) <br>Dominância estocástica e acoplamento |                                                              | [slide](dominancia.pdf)<br>[exercícios](lista3.pdf)<br>[Notas de aula](semana03.pdf) |
 | **4**  | Concentração e amplificação<br> Estruturas aleatorizadas     | Chernoff-Hoeffding, QS, Amplificação de probabilidade de sucesso, Skip list. | Motwani & Raghavan Cap. 4,8 <br>Mitzenmacher & Upfal, Cap. 4 | [Notas de aula](semana04.pdf) e [exercícios](lista4.pdf).    |
-| **5**  | Hashing e estruturas aleatorizadas                           | Skip list, Streaming (alg. Morris para contagem)             |                                                              |                                                              |
+| **5**  | Hashing e estruturas aleatorizadas                           | Skip list, Streaming (alg. Morris para contagem, o truque da média para diminuir variância e da mediana para aumentar garantia) |                                                              |                                                              |
 | **6**  |                                                              | Universal hashing,Bloom filters e análise de falso positivo, Cuckoo hashing |                                                              | Notas de aula e exercícios.                                  |
 | **7**  | Algoritmos aleatorizados em grafos                           | Karger; análise de probabilidade de sucesso e amplificação   | Motwani & Raghavan, Cap. 7                                   | Notas de aula e exercícios.                                  |
 | **8**  | Passeios aleatórios e Markov                                 | Random walks, Markov chains, hitting/cover time, distribuição estacionária | Motwani & Raghavan; Levin, Peres & Wilmer                    | Notas de aula e exercícios.                                  |
