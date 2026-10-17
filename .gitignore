@@ -1,4 +1,7 @@
 # Arquivos de backup e temporários (gerados por editores)
+
+auto/
+
 *~
 #*#
 *.swp

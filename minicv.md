@@ -1,4 +1,4 @@
-# Jair Donadelli Jr
+# Jair Donadelli
 
 É professor do Centro de Matemática, Computação e Cognição (CMCC) da Universidade Federal do ABC (UFABC), atuando nos cursos de Ciência da Computação, Ciência de Dados e Matemática, e membro do grupo de pesquisa em Teoria da Computação, Otimização, Combinatória e Algoritmos da mesma instituição. Anteriormente, foi professor do Departamento de Informática (DINF) da Universidade Federal do Paraná (UFPR), onde mantém vínculo como membro externo do Grupo de Pesquisa em Teoria da Computação, Otimização e Combinatória.
 
