@@ -1,7 +1,7 @@
 \documentclass[aspectratio=169,11pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathtools}
+\usepackage{amsmath,amssymb,mathtools,bbm}
 \usepackage{tikz}
 %\usetheme{Madrid}
 \usecolortheme{default}
@@ -12,13 +12,15 @@
 \providecommand{\proofname}{Prova}
 \newtheorem{proposition}{Proposição}
 
-\newcommand{\E}{\mathbb{E}}
+%\newcommand{\E}{\mathbb{E}}
 \newcommand{\PP}{\mathbb P}
-\newcommand{\Var}{\operatorname{Var}}
-\newcommand{\Ind}[1]{\mathbf{1}_{#1}}
-\newcommand{\conj}[1]{\{#1\}}
-\newcommand{\card}[1]{\lvert #1\rvert}
-\newcommand{\tq}{\colon}
+%\newcommand{\Var}{\operatorname{Var}}
+%\newcommand{\Ind}[1]{\mathbbm{1}_{#1}}
+%\newcommand{\conj}[1]{\{#1\}}
+%\newcommand{\card}[1]{\lvert #1\rvert}
+%\newcommand{\tq}{\colon}
+
+\input{C_macros}
 
 \title[Hashing]{Hashing: funções aleatórias e colisões}
 
@@ -109,7 +111,8 @@
       \item Vetor $H$ com $n$ posições; cada $H[i]$ é uma lista ligada.
       \item Acesso via $h\tq U\to\conj{0,1,\dots,n-1}$: o elemento $x$ vive na
         lista $H[h(x)]$.
-      \item $S\subseteq U$ com $m=\card S$; interessa o caso $m=\Omega(n)$.
+      \item $S\subseteq U$ com $m=\card S$; o caso interessante é
+        $m=\Theta(n)$.
       \item Um vetor de bits de tamanho $\card U$ daria busca $O(1)$, mas é
         inviável.
       \end{itemize}
@@ -161,11 +164,11 @@
   \end{block}
   \pause
   \begin{definition}
-    A \alert{carga} da tabela é $c=m/n$, o número esperado de elementos de $S$
-    por posição.
+    A \alert{carga} da tabela é $c=m/n$, o número esperado de elementos
+    de $S$ por posição.
   \end{definition}
   \vspace{-0.3em}
-  Sobre $c$: se $m=\Theta(n)$, então $c=\Theta(1)$.
+%  Sobre $c$: se $m=\Theta(n)$, então $c=\Theta(1)$.
 \end{frame}
 
 %% ---------------------------------------------------------------- 8
@@ -184,13 +187,13 @@
     \E\,\bigl|H[h(x)]\bigr|=
     \begin{cases}
       \dfrac mn=c, & x\notin S,\\[2ex]
-      \dfrac{m-1}{n}+1, & x\in S.
+      \dfrac{m-1}{n}+1 = c + \paren*{ 1- \dfrac{1}n}, & x\in S.
     \end{cases}
   \]
   \pause
   \begin{alertblock}{Conclusão}
-    Com $h$ aleatória em $N^U$, o tempo esperado de busca é proporcional à
-    carga: \alert{$O(1)$ quando $n=\Theta(m)$}.
+    Com $h$ aleatória em $N^U$, o tempo esperado de busca é
+    proporcional à carga\\ \alert{$O(1)$ quando $n=\Theta(m)$}.
   \end{alertblock}
 \end{frame}
 
@@ -201,13 +204,13 @@
     das listas. Então
     \begin{enumerate}
     \item busca \emph{sem sucesso}: tempo esperado $c+1$;
-    \item busca \emph{com sucesso}: tempo esperado $1+\dfrac c2-\dfrac1{2n}$.
+    \item busca \emph{com sucesso}: tempo esperado
+      $\dfrac c2+1-\dfrac1{2n}$.
     \end{enumerate}
   \end{proposition}
-  \pause
-  \textbf{Ideia da prova do item 2.} Se $x$ foi o $i$-ésimo inserido, só os
-  $m-i$ elementos inseridos \emph{depois} podem ficar na frente de $x$; em
-  média $(m-i)/n$ deles colidem com $x$. Logo
+  \pause \textbf{Ideia da prova do item 2.} Se $x$ foi o $i$-ésimo
+  inserido, só os $m-i$ elementos inseridos \emph{depois} podem ficar
+  na frente de $x$; em média $(m-i)/n$ deles colidem com $x$. Logo
   \[
     \frac1m\sum_{i=1}^m\Bigl(1+\frac{m-i}n\Bigr)=1+\frac{m-1}{2n}
     =1+\frac c2-\frac1{2n}.
@@ -248,29 +251,30 @@
 %% ---------------------------------------------------------------- 11
 \begin{frame}{A maior lista é sublogarítmica}
   \begin{lemma}
-    Seja $X_i=\card{\conj{y\in S\tq h(y)=i}}$, $c\le1$ e $n$ suficientemente
-    grande. Então
+    Seja $X_i=\card{\conj{y\in S\tq h(y)=i}}$, $c\le1$ e $n$
+    suficientemente grande. Então
     \[
-      \PP\Bigl[\max_i X_i\ \ge\ \frac{8\ln n}{\ln\ln n}\Bigr]\ \le\ \frac1n .
+      \PP\Bigl[\max_i X_i\ \ge\ \frac{8\ln n}{\ln\ln n}\Bigr]\ \le\
+      \frac1n .
     \]
   \end{lemma}
-  Como $n=\Theta(m)$, a maior lista tem tamanho $O(\log m/\log\log m)$ com
-  probabilidade $\ge1-1/n$.
-  \pause
-  \begin{block}{Estratégia}
-    \begin{enumerate}
-    \item cota para $\PP[X_i\ge k]$ por união sobre subconjuntos $T\subseteq S$;
-    \item limitar $k!$ por baixo;
-    \item cota da união sobre as $n$ posições e escolha de $k$.
-    \end{enumerate}
-  \end{block}
+  Como $n=\Theta(m)$, a maior lista tem tamanho $O(\log m/\log\log m)$
+  com probabilidade $\ge1-1/n$.
+%  \pause
+%  \begin{block}{Estratégia}
+%    \begin{enumerate}
+%    \item cota para $\PP[X_i\ge k]$ por união sobre subconjuntos $T\subseteq S$;
+%    \item limitar $k!$ por baixo;
+%    \item cota da união sobre as $n$ posições e escolha de $k$.
+%    \end{enumerate}
+%  \end{block}
 \end{frame}
 
 %% ---------------------------------------------------------------- 12
 \begin{frame}{Prova (1): cota para uma posição}
-  Se $X_i\ge k$, existe $T\subseteq S$, $\card T=k$, com $h(y)=i$ para todo
-  $y\in T$. Pela independência, cada $T$ tem probabilidade $n^{-k}$. Pela
-  cota da união,
+  Se $X_i\ge k$, existe $T\subseteq S$, $\card T=k$, com $h(y)=i$ para
+  todo $y\in T$. Pela independência, cada $T$ tem probabilidade
+  $n^{-k}$. Pela cota da união,
   \[
     \PP[X_i\ge k]\le\binom mk\frac1{n^k}\le\frac{m^k}{k!\,n^k}
     =\frac{c^k}{k!}\le\frac1{k!}.
@@ -326,9 +330,8 @@
   \item \textbf{O que foi usado?} A independência de $k$ valores $h(y)$ ao
     mesmo tempo (probabilidade $n^{-k}$ para cada $T$).
   \end{itemize}
-  \begin{alertblock}{Guardem isto}
-    Este resultado precisa de independência de \emph{muitas} variáveis. Será
-    o preço da descrição curta nas famílias universais.
+  \begin{alertblock}{}
+    Este resultado precisa de ``\alert{muita} independência''.
   \end{alertblock}
 \end{frame}
 

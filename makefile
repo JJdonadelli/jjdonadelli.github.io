@@ -35,6 +35,7 @@ upload:
 	@for i in 1 2 3; do \
 		rsync --del -avuz \
 			--exclude="*~" \
+			--exclude="*.{aux,log,nav,out,snm}" \
 			--exclude=".git" \
 			./ \
 			jair.donadelli@hostel.ufabc.edu.br:~/public_html \
