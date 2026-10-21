@@ -1,4 +1,4 @@
-%Time-stamp: <sex out 16 09:01:47 2026 yair@asterix>
+%Time-stamp: <ter out 20 21:42:00 2026 yair@asterix>
 \documentclass[aspectratio=169,11pt]{beamer}
 
 \usepackage[brazilian]{babel}
@@ -19,10 +19,11 @@
 
 \input{C_macros}   % \E, \ProbE, \Ind, \paren
 
-\newtheorem{proposicao}[theorem]{Proposição}
+\newtheorem{teorema}{Teorema}
+\newtheorem{proposicao}[teorema]{Proposição}
 \theoremstyle{definition}
 
-\title{\textit{Treaps}}
+\title{\textit{Treaps} (resumido)}
 \subtitle{Árvores de busca aleatorizadas}
 \author{J.D.}
 \institute{UFABC}
@@ -60,7 +61,7 @@
     $\mathrm{prioridade}(v)>$ prioridade de todo descendente próprio.
   \end{itemize}
   \vspace{1ex}
-  Supomos chaves distintas e prioridades distintas.
+  %Supomos chaves distintas e prioridades distintas.
 \end{frame}
 
 % =====================================================
@@ -109,7 +110,8 @@
   \medskip
 
   \textbf{Consequência}: a forma depende só de chaves e prioridades,
-  \emph{não} da ordem de inserção.
+  \emph{não} da ordem de inserção.  Equivale a inserir os nós em ordem
+  \emph{decrescente} de prioridade numa ABB vazia.
 \end{frame}
 
 % =====================================================
@@ -167,17 +169,25 @@
 \begin{frame}{Aleatoriedade}
   \begin{itemize}
   \item Prioridade de cada nó: uniforme em $[0,1]$, sorteada na
-    inserção, independente das demais.
+    inserção, independente das demais. Com probabilidade $1$, as
+    prioridades são distintas.
   \item \textbf{Adversário oblívio}: a sequência de operações é
     escolhida independentemente das prioridades.
   \end{itemize}
-  \pause
-  Pela unicidade, após qualquer sequência oblívia de operações a árvore
-  é \textbf{a treap do conjunto atual, com prioridades i.i.d.\
-    uniformes}.
+  \pause Pela \alert{unicidade}, após qualquer sequência oblívia de
+  operações a árvore é \textbf{a treap do conjunto atual, com
+    prioridades i.i.d.\ uniformes}.
 
   $\Rightarrow$ basta analisar uma treap com $n$ nós e prioridades
   i.i.d.\ uniformes.
+
+  \pause
+
+  Independentemente de como o conjunto de dados evoluiu, a árvore
+  resultante é exatamente a mesma que seria obtida se criássemos uma
+  Treap do zero com os elementos atuais.
+
+  
 \end{frame}
 
 % =====================================================
