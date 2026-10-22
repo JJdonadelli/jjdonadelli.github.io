@@ -292,7 +292,58 @@
     =n\,e^{-k(\ln k-1)}.
   \]
 \end{frame}
+%% ---------------------------------------------------------------- 13
+\begin{frame}
+  \frametitle{Estimação de $k$}
 
+  Queremos $k$ tal que $ e^{-k(\ln k-1)} \le e^{-2(\ln n)}$
+  ou seja 
+  \[
+    k \ln k = 2 \ln n
+  \]
+  Queremos isolar $k$ em termos de $n$ para grandes valores de $n$.
+
+  \bigskip
+
+  \textbf{Heurística} $k$ deve crescer com $n$, mas de forma muito mais
+  lenta que $n$ (pois $k^k$ cresce super-exponencialmente), testamos
+  um chute educado para $k$:
+  \[
+    k = \frac{c \ln n}{f(n)}
+  \]
+  onde $1\ll f(n)\ll \ln n$ é alguma função de crescimento lento e $C$
+  é uma constante.
+\end{frame}
+%% ---------------------------------------------------------------- 13
+\begin{frame} {Calculando $\ln k$}
+
+\[
+  k = \dfrac{C \ln n}{f(n)} \quad\Longrightarrow\quad
+  \ln k 
+  = \ln C + \ln(\ln n) - \ln(f(n))
+\]
+
+Para $n$ grande, o termo dominante em $\ln k$ é $\ln(\ln n)$, logo
+
+\[
+  \ln k \approx \ln \ln n
+\]
+
+e
+
+\[
+k \ln k \approx \left( \frac{C \ln n}{f(n)} \right) (\ln \ln n)
+\]
+
+de volta à estimação da probabilidade
+\[
+  \frac{C \ln n \cdot \ln \ln n}{f(n)} \approx 2 \ln n
+  \quad\Longrightarrow\quad
+  \frac{C \ln \ln n}{f(n)} \approx 2
+  \quad\Longrightarrow\quad
+  f(n) = \Theta (\ln\ln(n))
+\]
+\end{frame}
 %% ---------------------------------------------------------------- 13
 \begin{frame}{Prova (2): escolha de $k$}
   Tome $k_0=\dfrac{8\ln n}{\ln\ln n}$, $k=\lceil k_0\rceil$,
