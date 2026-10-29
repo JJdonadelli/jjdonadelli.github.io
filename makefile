@@ -17,6 +17,7 @@ repo:
 	@echo "==> Atualizando repositório local..."
 	rsync -av --delete \
 		--exclude='.git/' \
+		--exclude='.htaccess' \
 		$(PUBLIC_HTML)/ $(REPO)/
 	@echo "==> Estado do repositório:"
 	cd $(REPO) && git status
