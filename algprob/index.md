@@ -65,13 +65,13 @@ Revisão de probabilidade discreta. Exemplos de algoritmos aleatorizados: Algori
 | **2**  | Análise probabilística de algoritmos (Congresso UFABC e UFABC para todos - aula suspensa) | Quicksort aleatorizado, esperança, variância, Markov, Chebyshev | Mitzenmacher & Upfal, Cap. 2,3. Motwani & Raghavan, Cap. 1,3 | [Notas de aula](semana02.pdf) e [exercícios](lista2.pdf).    |
 | **3**  |                                                              | QS, Markov, Chebyshev (cont) <br>Dominância estocástica e acoplamento |                                                              | [slide](dominancia.pdf)<br>[exercícios](lista3.pdf)<br>[Notas de aula](semana03.pdf) |
 | **4**  | Concentração e amplificação<br> Estruturas aleatorizadas     | Chernoff-Hoeffding, QS, Amplificação de probabilidade de sucesso, Skip list. | Motwani & Raghavan Cap. 4,8 <br>Mitzenmacher & Upfal, Cap. 4 | [Notas de aula](semana04.pdf) e [exercícios](lista4.pdf).    |
-| **5**  | Hashing e estruturas aleatorizadas                           | Skip list, Streaming (alg. Morris para contagem, o truque da média para diminuir variância e da mediana para aumentar garantia) |                                                              |                                                              |
-| **6**  |                                                              | Função de hash; tabela hashing; Hashing universal e aplicações |                                                              | [Notas de aula](semana05.pdf) e exercícios das notas de aula. |
-| **7**  |                                                              | Hashing 2-universal; desaleatorização de maxcut              |                                                              | Notas de aula e exercícios.                                  |
-| **8**  | Passeios aleatórios e Markov                                 | Random walks, Markov chains, hitting/cover time, distribuição estacionária | Motwani & Raghavan; Levin, Peres & Wilmer                    | Notas de aula e exercícios.                                  |
-| **9**  | Mixing e Monte Carlo                                         | Coupling, mixing times, MCMC; Metropolis–Hastings como exemplo | Levin, Peres & Wilmer; Mitzenmacher & Upfal                  | Notas de aula e exercícios.                                  |
-| **10** | Redução de dimensionalidade **ou** Algoritmos aleatorizados para grandes volumes de dados **ou** Complexidade computacional | Projeções aleatórias, Lema de Johnson–Lindenstrauss <br> **ou** <br> streaming, sketches, estimação de frequência, elementos distintos<br/> **ou** <br/>classes de complexidade, P, NP,RP, ZPP, BPP. | Vershynin, Arora & Barak; Dubahshi & Panconesi; Motwani & Raghavan; Mitzenmacher & Upfal | Notas de aula e exercícios.                                  |
-| **11** | Redução de dimensionalidade **ou** Algoritmos aleatorizados para grandes volumes de dados **ou **Criptografia | Locality Sensitive Hashing e approximate nearest neighbors <br> **ou** <br> streaming, heavy hitters, estimação de frequência, elementos distintos<br/> **ou** <br/> funções one-way; geradores pseudoaleatórios seguros;criptografia de chave pública. Provas com conhecimento zero. | Vershynin, Arora & Barak; Dubahshi & Panconesi; Motwani & Raghavan; Mitzenmacher & Upfal | Notas de aula e exercícios.                                  |
+| **5**  | Hashing e estruturas aleatorizadas                           | Skip list, Streaming (alg. Morris para contagem, o truque da média para diminuir variância e da mediana para aumentar garantia) | Motwani & Raghavan Cap. 8                                    |                                                              |
+| **6**  |                                                              | Função de hash; tabela hashing                               | Motwani & Raghavan Cap. 8 <br/>Mitzenmacher & Upfal, Cap. 4  | [Notas de aula](semana05.pdf) e exercícios das notas de aula. |
+| **7**  | Hashing universal e aplicações                               | Hashing universal e aplicações (Count Sketch, Bloom)         | Motwani & Raghavan Cap. 8 <br/>Mitzenmacher & Upfal, Cap. 4,15 | [slides](hashing.pdf)                                        |
+| **8**  | Prova                                                        | Hashing universal e aplicações; Hashing 2-universal; desaleatorização de maxcut | Mitzenmacher & Upfal, Cap. 4,15                              | Notas de aula e exercícios.                                  |
+| **9**  | Passeios aleatórios e Markov                                 | Random walks, Markov chains, hitting/cover time, distribuição estacionária | Motwani & Raghavan; Levin, Peres & Wilmer                    | Notas de aula e exercícios.                                  |
+| **10** | Mixing e Monte Carlo                                         | Coupling, mixing times, MCMC; Metropolis–Hastings como exemplo | Levin, Peres & Wilmer; Mitzenmacher & Upfal                  | Notas de aula e exercícios.                                  |
+| **11** | Redução de dimensionalidade ou  Complexidade computacional   | Projeções aleatórias, Lema de Johnson–Lindenstrauss <br/> ou <br/>classes de complexidade, P, NP,RP, ZPP, BPP. | Vershynin, Arora & Barak; Dubahshi & Panconesi; Motwani & Raghavan; Mitzenmacher & Upfal | Notas de aula e exercícios.                                  |
 | **12** | **Prova** e **Sub**                                          | —                                                            | —                                                            | —                                                            |
 | **13** | **Avaliação recuperativa** em **11/12**                      | Todo conteúdo                                                | —                                                            | —                                                            |
 
@@ -90,8 +90,23 @@ Revisão de probabilidade discreta. Exemplos de algoritmos aleatorizados: Algori
 4. HROMKOVIČ, Juraj. *Design and analysis of randomized algorithms: introduction to design paradigms*. Berlin: Springer, 2005. (*[online](https://link.springer.com/book/10.1007/3-540-27903-2)*)
 5. ARORA, Sanjeev; BARAK, Boaz. *Computational complexity: a modern approach*. Cambridge: Cambridge University Press, 2009.
 6. BLUM, Avrim; HOPCROFT, John; KANNAN, Ravindran. *Foundations of data science*. Cambridge: Cambridge University Press, 2020. ([*online*](https://www.cs.cornell.edu/jeh/book.pdf))
-7. VERSHYNIN, Roman. High-dimensional probability: an introduction with applications in data science. Cambridge: Cambridge University Press, 2018. (online, soluções)
+7. VERSHYNIN, Roman. High-dimensional probability: an introduction with applications in data science. Cambridge: Cambridge University Press, 2018. ([online](https://webapps.math.uci.edu/~rvershyn/papers/HDP-book/HDP-2.pdf), soluções)
 8. HÄGGSTRÖM, Olle. *Finite Markov chains and algorithmic applications*. Cambridge: Cambridge University Press, 2002.
+
+###### Material complementar online
+
+- [Markov Chains and Mixing Times](https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf), David A. Levin, Yuval Peres With contributions by Elizabeth L. Wilmer
+- [Pseudorandomness](https://people.seas.harvard.edu/~salil/pseudorandomness/), Salil Vadhan
+- [Introduction to Random Graphs](https://www.math.cmu.edu/users/af1p/Teaching/RandomGraphs/Undergraduate/BOOK.pdf), Frieze and Karonski
+- [Random walks and electric networks](https://arxiv.org/pdf/math/0001057), Peter G. Doyle  e J. Laurie Snell
+- [Introduction to Probability for Computin](https://www.cs.cmu.edu/~harchol/Probability/chapters/HarcholBalterWholeBook.pdf)g, Harchol-Balter.
+- [Reversible Markov Chains and Random Walks on Graphs](https://www.stat.berkeley.edu/~aldous/RWG/book.pdf), David Aldous and James Allen Fill
+- [The Discrepancy Method](https://www.cs.princeton.edu/~chazelle/pubs/book.pdf) Randomness and Complexity, Bernard Chazelle
+- [Useful Inequalities](https://www.lkozma.net/inequalities_cheat_sheet/ineq.pdf) cheat sheet
+
+- [Notes on Randomized Algorithms](https://www.cs.yale.edu/homes/aspnes/classes/4690/notes.pdf), James Aspnes
+- [Algorithms for Big Data](https://courses.grainger.illinois.edu/cs498abg/fa2022/schedule.html), Chandra Chekuri
+- [Hashing, Load Balancing and Multiple Choice](https://udiwieder.wordpress.com/wp-content/uploads/2014/10/hashbook.pdf), Udi Wieder
 
 ------
 
@@ -190,20 +205,7 @@ Nos casos previstos em resolução, mediante a devida comprovação. O aluno que
 - [Avi Wigderson ganha prémio Turing, o ‘Nobel da computação’](https://visao.pt/exameinformatica/noticias-ei/internet/2024-04-12-avi-wigderson-ganha-premio-turing-o-nobel-da-computacao/) pelos estudos sobre a aplicação da aleatoridade na criação de algoritmos de computação
 - [Os números aleatórios](https://www.bbc.com/portuguese/articles/c51y05zev73o) que guiam nossas vidas e a busca para encontrá-los
 
-###### Material online 
 
-- [Markov Chains and Mixing Times](https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf), David A. Levin, Yuval Peres With contributions by Elizabeth L. Wilmer
-- [Pseudorandomness](https://people.seas.harvard.edu/~salil/pseudorandomness/), Salil Vadhan
-- [Introduction to Random Graphs](https://www.math.cmu.edu/users/af1p/Teaching/RandomGraphs/Undergraduate/BOOK.pdf), Frieze and Karonski
-- [Random walks and electric networks](https://arxiv.org/pdf/math/0001057), Peter G. Doyle  e J. Laurie Snell
-- [Introduction to Probability for Computin](https://www.cs.cmu.edu/~harchol/Probability/chapters/HarcholBalterWholeBook.pdf)g, Harchol-Balter.
-- [Reversible Markov Chains and Random Walks on Graphs](https://www.stat.berkeley.edu/~aldous/RWG/book.pdf), David Aldous and James Allen Fill
--  [The Discrepancy Method](https://www.cs.princeton.edu/~chazelle/pubs/book.pdf) Randomness and Complexity, Bernard Chazelle
-- [Useful Inequalities](https://www.lkozma.net/inequalities_cheat_sheet/ineq.pdf) cheat sheet
-
-- [Notes on Randomized Algorithms](https://www.cs.yale.edu/homes/aspnes/classes/4690/notes.pdf), James Aspnes
-- [Algorithms for Big Data](https://courses.grainger.illinois.edu/cs498abg/fa2022/schedule.html), Chandra Chekuri
-- [Hashing, Load Balancing and Multiple Choice](https://udiwieder.wordpress.com/wp-content/uploads/2014/10/hashbook.pdf), Udi Wieder
 
 ###### A.P. em outras instituições
 
