@@ -1,5 +1,5 @@
 # Diretórios
-PUBLIC_HTML := $(HOME)/public_html
+PUBLIC_HTML := $(HOME)/Dropbox/public_html
 REPO        := $(HOME)/jjdonadelli.github.io
 
 # Servidor remoto
