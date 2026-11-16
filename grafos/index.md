@@ -39,9 +39,8 @@ Revisão da terminologia básica de Teoria dos Grafos. Noções de análise de a
 
 ####  Bibliografia complementar
 
-1.  DIESTEL, R. *Graph Theory*. 6. ed. Heidelberg: Springer-Verlag, 2025.
-2.  SEDGEWICK, Robert. *Algorithms in C, Part 5: Graph Algorithms*. 3. ed. Reading, USA: Addison Wesley Professional, 2002.
-3.  DASGUPTA, Sanjoy; PAPADIMITRIOU, Christos H.; VAZIRANI, Umesh V. *Algorithms*. Boston, USA: McGraw-Hill, 2008.
+1.  SEDGEWICK, Robert. *Algorithms in C, Part 5: Graph Algorithms*. 3. ed. Reading, USA: Addison Wesley Professional, 2002.
+3.  John KLEINBERG, Éva TARDOS. *AlgorithmDesign*. Boston, USA: Addison Wesley, 2005
 4.  David JOYNER, Minh VAN NGUYEN, Nathann COHEN. *Algorithmic Graph Theory*, [online](https://static.latexstudio.net/wp-content/uploads/2013/03/book.pdf), 2013.
 5.  Tim ROUGHGARDEN, *Algorithms Illuminated, Part 2: Graph Algorithms and Data Structures*, [online](https://www.rexresearch1.com/AlgorithmLibrary/AlgorithmsIlluminated2Roughgarden.pdf),  2018.
 6.  BRASSARD, Gilles; BRATLEY, Paul. *Fundamentals of algorithmics*. Englewood Cliffs: Prentice Hall, 1996.
@@ -67,9 +66,9 @@ Revisão da terminologia básica de Teoria dos Grafos. Noções de análise de a
 | **06** |                                                      | Algoritmos de Kruskal e estruturas para união-e-busca        | Cormen et al                           | [slides](union-find.pdf)                                     |
 | **07** | **P1** e Digrafos  ordenação topológica              | Digrafos; graus de entrada e saída; DAGs; classificação das arestas por uma BP | Bondy & Murty; Erickson; Cormen et al. | [Notas de aula](semana7.pdf)<br/><br/>[Lista 4](lista4.pdf)  |
 | **08** | Ordenação topológica; Componentes fortemente conexas | Ordenação topológica; componentes fortemente conexas         | Erickson; Cormen et al.                |                                                              |
-| **09** | Caminhos mínimos em digrafos com pesos               | Problema dos caminhos mínimos; algoritmo de Dijkstra. Pesos negativos; ciclos negativos; algoritmo de Bellman-Ford | Erickson; Cormen et al.                | [Notas de aula](semana8.pdf)<br/>[Lista 5](lista5.pdf)       |
-| **10** | Fluxo máximo                                         | Redes de fluxo; capacidades; conservação de fluxo; fluxos e cortes; caminhos aumentantes; | Erickson; Cormen et al.                | Notas de aula<br/><br/>Lista 6                               |
-| **11** | Fluxo máximo                                         | algoritmo de Ford-Fulkerson; fluxo máximo e corte mínimo     |                                        |                                                              |
+| **09** | Caminhos mínimos em digrafos com pesos               | Problema dos caminhos mínimos; algoritmo de Dijkstra. Pesos negativos; ciclos negativos; algoritmo de Bellman-Ford. | Erickson; Cormen et al.                | [Notas de aula](semana8.pdf)<br/>[Lista 5](lista5.pdf)<br/>[slides](caminhos_minimos.pdf) |
+| **10** | Fluxo máximo                                         | Cont. cam. minimos: Floyd-Warshall. <br/>Redes de fluxo; capacidades; conservação de fluxo; fluxos e cortes; caminhos aumentantes; | Erickson; Cormen et al.                | Notas de aula<br/><br/>Lista 6                               |
+| **11** | Fluxo máximo                                         | algoritmo de Ford-Fulkerson; teorema fluxo máximo e corte mínimo; algoritmo de Edmonds |                                        |                                                              |
 | **12** | **P2** e **Sub**                                     |                                                              |                                        |                                                              |
 | **13** | **Avaliação recuperativa**                           |                                                              |                                        |                                                              |
 
