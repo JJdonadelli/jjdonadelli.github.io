@@ -66,12 +66,12 @@ Revisão de probabilidade discreta. Exemplos de algoritmos aleatorizados: Algori
 | **3**  |                                                              | QS, Markov, Chebyshev (cont) <br>Dominância estocástica e acoplamento |                                                              | [slide](dominancia.pdf)<br>[exercícios](lista3.pdf)<br>[Notas de aula](semana03.pdf) |
 | **4**  | Concentração e amplificação<br> Estruturas de dados aleatorizadas | Chernoff-Hoeffding, QS, Amplificação de probabilidade de sucesso, Skip list. | Motwani & Raghavan Cap. 4,8 <br>Mitzenmacher & Upfal, Cap. 4 | [Notas de aula](semana04.pdf) e [exercícios](lista4.pdf).    |
 | **5**  | Hashing                                                      | Skip list, Streaming (alg. Morris para contagem, o truque da média para diminuir variância e da mediana para aumentar garantia) | Motwani & Raghavan Cap. 8                                    |                                                              |
-| **6**  |                                                              | Função de hash; tabela hashing.Hashing universal             | Motwani & Raghavan Cap. 8 <br/>Mitzenmacher & Upfal, Cap. 4  | [Notas de aula](semana05.pdf) e exercícios das notas de aula. |
+| **6**  | Hashing                                                      | Função de hash; tabela hashing.Hashing universal             | Motwani & Raghavan Cap. 8 <br/>Mitzenmacher & Upfal, Cap. 4  | [Notas de aula](semana05.pdf) e exercícios das notas de aula. |
 | **7**  | Hashing universal e aplicações                               | Hashing universal - aplicações (Count Sketch, Bloom, hashing perfeito) | Motwani & Raghavan Cap. 8 <br/>Mitzenmacher & Upfal, Cap. 4,15 | [slides](hashing.pdf)                                        |
 | **8**  | Prova                                                        | Hashing 2-universal; desaleatorização de maxcut              | Mitzenmacher & Upfal, Cap. 4,15                              | [Notas de aula](semana06.pdf) e [exercícios](lista5.pdf).    |
-| **9**  |                                                              |                                                              |                                                              | Notas de aula, [slides](esperancas_condicionais.pdf)  e exercícios. |
-| **10** | Passeios aleatórios e Markov.Mixing e Monte Carlo            | Random walks, Markov chains, hitting/cover time, distribuição estacionária.Coupling, mixing times, MCMC; Metropolis–Hastings como exemplo | Levin, Peres & Wilmer; Mitzenmacher & Upfal                  | Notas de aula e exercícios.                                  |
-| **11** | Redução de dimensionalidade ou  Complexidade computacional   | Projeções aleatórias, Lema de Johnson–Lindenstrauss <br/> ou <br/>classes de complexidade, P, NP,RP, ZPP, BPP. | Vershynin, Arora & Barak; Dubahshi & Panconesi; Motwani & Raghavan; Mitzenmacher & Upfal | Notas de aula e exercícios.                                  |
+| **9**  | Desaleatorização                                             | O método das esperanças condicionais.  Aproximações para max-sat e max-cut, desaleatorização. | Motwani & Raghavan 5.6 <br/>Mitzenmacher & Upfal, 6.3        | Notas de aula, [slides](esperancas_condicionais.pdf)  e [exercícios](lista6) |
+| **10** | Aproximação, Relaxação e Arredondamento aleatório            | O algoritmo 0,87-aproximativo de Goemans-Willianson para maxcut | [Improved Approximation Algorithms for Maximum Cut and Satisfiability Problems Using Semidefinite Programming](https://math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf) | [Notas de aula](semana10.pdf), [slides](relaxacao.pdf) , e [exercícios](lista7.pdf). |
+| **11** | Aproximação, Relaxação e Arredondamento aleatório            | cont. de Goemans-Willianson para maxcut.<br/>0,75-aprox para max-sat |                                                              |                                                              |
 | **12** | **Prova** e **Sub**                                          | —                                                            | —                                                            | —                                                            |
 | **13** | **Avaliação recuperativa** em **11/12**                      | Todo conteúdo                                                | —                                                            | —                                                            |
 
@@ -196,7 +196,7 @@ Nos casos previstos em resolução, mediante a devida comprovação. O aluno que
 
 - [Listas](https://drive.google.com/drive/folders/1fUuqyR3QAoLxFNqdPL6XoJlfdnj-QYrX?usp=sharing)
 - [Provas](https://drive.google.com/drive/folders/1UF8pUMdSfYy59Rx2hFMTxqdhiTySE5TC)
-- [notas](https://drive.google.com/drive/folders/1hVRZpo6rJw45oOMo1UTOaP8WrjGPEkiU?usp=sharing)
+- [notas de aula](https://drive.google.com/drive/folders/1hVRZpo6rJw45oOMo1UTOaP8WrjGPEkiU?usp=sharing)
 
 ###### Notícias relacionadas
 
