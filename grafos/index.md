@@ -1,3 +1,5 @@
+[[Conceitos](https://docs.google.com/spreadsheets/d/e/2PACX-1vQCwlEi_4KVM52HCOminPuTi6hBy2sgRmhsbgYUA07fRNjPWXP37tPpuYX2fVwZSOnLCGjOcEyEtUk9/pubhtml?gid=692641240&single=true)] 
+
 <div style="text-align:center; color:#006080; font-size:32px;">
 MCCC003-23 Algoritmos em Grafos<br>
 <span style="color:initial;font-size:22px;">2026-3</span>
@@ -68,7 +70,7 @@ Revisão da terminologia básica de Teoria dos Grafos. Noções de análise de a
 | **08** | Ordenação topológica; Componentes fortemente conexas | Ordenação topológica; componentes fortemente conexas         | Erickson; Cormen et al.                |                                                              |
 | **09** | Caminhos mínimos em digrafos com pesos               | Problema dos caminhos mínimos; algoritmo de Dijkstra. Pesos negativos; ciclos negativos; algoritmo de Bellman-Ford. | Erickson; Cormen et al.                | [Notas de aula](semana8.pdf)<br/>[Lista 5](lista5.pdf)<br/>[slides](caminhos_minimos.pdf) |
 | **10** | Fluxo máximo                                         | Cont. cam. minimos: Floyd-Warshall. <br/>Redes de fluxo; capacidades; conservação de fluxo; fluxos e cortes; caminhos aumentantes; | Erickson; Cormen et al.                | [Notas de aula](semana9.pdf)<br/><br/>[Lista 6](lista6.pdf)  |
-| **11** | Fluxo máximo                                         | algoritmo de Ford-Fulkerson; teorema fluxo máximo e corte mínimo; algoritmo de Edmonds |                                        |                                                              |
+| **11** | Fluxo máximo                                         | algoritmo de Ford-Fulkerson; teorema fluxo máximo e corte mínimo |                                        |                                                              |
 | **12** | **P2** e **Sub**                                     |                                                              |                                        |                                                              |
 | **13** | **Avaliação recuperativa**                           |                                                              |                                        |                                                              |
 
